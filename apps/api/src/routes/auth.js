@@ -369,7 +369,7 @@ authRoutes.get(
         return res.send(oauthErrorCallbackHtml(err.message || "Authentication failed", 500));
       }
       if (!user) {
-        const msg = info?.message || "No account found for this email. Contact your worship team lead to get added.";
+        const msg = info?.message || "No account found for this Google account. Access is by invitation only — reach out to your worship team lead to get added.";
         return res.send(oauthErrorCallbackHtml(msg, 403));
       }
       req.user = user;
@@ -395,33 +395,45 @@ function oauthCallbackHtml(token, user) {
     role: user.role,
   }).replace(/</g, "\\u003c");
   return `<!DOCTYPE html><html><body><script>
+    var payload = {
+      type: 'VPC_OAUTH_CALLBACK',
+      success: true,
+      token: ${JSON.stringify(token)},
+      user: ${safeUser}
+    };
+    // BroadcastChannel works even when COOP severs window.opener
+    try {
+      var bc = new BroadcastChannel('vpc_oauth');
+      bc.postMessage(payload);
+      bc.close();
+    } catch(e) {}
+    // Fallback: postMessage to opener if still accessible
     if (window.opener) {
-      window.opener.postMessage({
-        type: 'VPC_OAUTH_CALLBACK',
-        success: true,
-        token: ${JSON.stringify(token)},
-        user: ${safeUser}
-      }, ${JSON.stringify(env.FRONTEND_URL)});
-      window.close();
-    } else {
-      window.location.href = '/';
+      try { window.opener.postMessage(payload, ${JSON.stringify(env.FRONTEND_URL)}); } catch(e) {}
     }
+    window.close();
   </script></body></html>`;
 }
 
 function oauthErrorCallbackHtml(message, status = 500) {
   const safeMessage = JSON.stringify(message);
   return `<!DOCTYPE html><html><body><script>
+    var payload = {
+      type: 'VPC_OAUTH_CALLBACK',
+      success: false,
+      error: ${safeMessage},
+      status: ${JSON.stringify(status)}
+    };
+    try {
+      var bc = new BroadcastChannel('vpc_oauth');
+      bc.postMessage(payload);
+      bc.close();
+    } catch(e) {}
     if (window.opener) {
-      window.opener.postMessage({
-        type: 'VPC_OAUTH_CALLBACK',
-        success: false,
-        error: ${safeMessage},
-        status: ${JSON.stringify(status)}
-      }, ${JSON.stringify(env.FRONTEND_URL)});
-      window.close();
-    } else {
-      document.body.innerText = ${safeMessage};
+      try { window.opener.postMessage(payload, ${JSON.stringify(env.FRONTEND_URL)}); } catch(e) {}
     }
+    window.close();
+    // If window.close() doesn't work (no opener), show the error
+    setTimeout(function() { document.body.innerText = ${safeMessage}; }, 300);
   </script></body></html>`;
 }

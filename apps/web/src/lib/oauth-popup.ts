@@ -50,31 +50,56 @@ export function openOAuthPopup(provider: "google"): Promise<OAuthResult> {
       return;
     }
 
-    const activePopup = popup;
+    let settled = false;
 
+    // BroadcastChannel handles the case where COOP severs window.opener during the Google flow
+    let bc: BroadcastChannel | null = null;
+    try {
+      bc = new BroadcastChannel("vpc_oauth");
+      bc.addEventListener("message", (event: MessageEvent) => {
+        if (event.data?.type !== "VPC_OAUTH_CALLBACK") return;
+        settle(event.data as OAuthResult);
+      });
+    } catch {
+      /* BroadcastChannel not supported — fall through to postMessage */
+    }
+
+    // Fallback: postMessage from the popup when opener is still accessible
     function onMessage(event: MessageEvent) {
       if (!trustedOrigins.has(event.origin)) return;
       if (event.data?.type !== "VPC_OAUTH_CALLBACK") return;
-
-      cleanup();
-      resolve(event.data as OAuthResult);
+      settle(event.data as OAuthResult);
     }
 
-    function onClose() {
-      const timer = setInterval(() => {
-        if (activePopup.closed) {
-          clearInterval(timer);
-          cleanup();
-          resolve({ success: false });
+    // Poll for popup close (COOP may block .closed; catch and ignore if so)
+    const closeTimer = setInterval(() => {
+      try {
+        if (popup.closed) {
+          clearInterval(closeTimer);
+          settle({ success: false });
         }
-      }, 500);
+      } catch {
+        clearInterval(closeTimer);
+        settle({ success: false });
+      }
+    }, 500);
+
+    function settle(result: OAuthResult) {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve(result);
     }
 
     function cleanup() {
+      clearInterval(closeTimer);
       window.removeEventListener("message", onMessage);
+      if (bc) {
+        bc.close();
+        bc = null;
+      }
     }
 
     window.addEventListener("message", onMessage);
-    onClose();
   });
 }
