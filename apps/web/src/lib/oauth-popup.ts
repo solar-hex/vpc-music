@@ -9,6 +9,11 @@
 
 const API_ORIGIN = import.meta.env.VITE_API_URL || "";
 
+function buildApiUrl(path: string) {
+  const normalizedPath = API_ORIGIN && path.startsWith("/api/") ? path.slice(4) : path;
+  return `${API_ORIGIN}${normalizedPath}`;
+}
+
 export interface OAuthResult {
   success: boolean;
   token?: string;
@@ -35,7 +40,7 @@ export function openOAuthPopup(provider: "google"): Promise<OAuthResult> {
     }
 
     const popup = window.open(
-      `${API_ORIGIN}/api/auth/${provider}`,
+      buildApiUrl(`/api/auth/${provider}`),
       `vpc-oauth-${provider}`,
       `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`,
     );

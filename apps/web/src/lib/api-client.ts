@@ -1,5 +1,10 @@
 const API_ORIGIN = import.meta.env.VITE_API_URL || "";
 
+function buildApiUrl(path: string) {
+  const normalizedPath = API_ORIGIN && path.startsWith("/api/") ? path.slice(4) : path;
+  return `${API_ORIGIN}${normalizedPath}`;
+}
+
 // ── Active Organization ──────────────────────────
 let _activeOrgId: string | null = null;
 
@@ -21,7 +26,7 @@ function withOrganizationHeaders(headers?: HeadersInit) {
 }
 
 function fetchWithOrganization(path: string, options?: RequestInit) {
-  return fetch(`${API_ORIGIN}${path}`, {
+  return fetch(buildApiUrl(path), {
     credentials: "include",
     ...options,
     headers: withOrganizationHeaders(options?.headers),
@@ -33,7 +38,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
     "Content-Type": "application/json",
     ...withOrganizationHeaders(options?.headers),
   };
-  const res = await fetch(`${API_ORIGIN}${path}`, {
+  const res = await fetch(buildApiUrl(path), {
     credentials: "include",
     ...options,
     headers,
@@ -51,7 +56,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 // ── Auth ─────────────────────────────────────────
 export const authApi = {
   login: async (email: string, password: string) => {
-    const res = await fetch(`${API_ORIGIN}/api/auth/login`, {
+    const res = await fetch(buildApiUrl("/api/auth/login"), {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -237,13 +242,13 @@ export const songsApi = {
   exportText: (id: string, variationId?: string | null, lyricsOnly?: boolean) =>
     fetchWithOrganization(`/api/songs/${id}/export/text${variationId || lyricsOnly ? `?${new URLSearchParams({ ...(variationId ? { variationId } : {}), ...(lyricsOnly ? { lyricsOnly: "true" } : {}) }).toString()}` : ""}`),
   exportPdf: (id: string, variationId?: string | null) =>
-    `${API_ORIGIN}/api/songs/${id}/export/pdf${variationId ? `?variationId=${variationId}` : ""}`,
+    buildApiUrl(`/api/songs/${id}/export/pdf${variationId ? `?variationId=${variationId}` : ""}`),
   importPdf: async (file: File) => {
     const formData = new FormData();
     formData.append("file", file);
     const headers: Record<string, string> = {};
     if (_activeOrgId) headers["X-Organization-Id"] = _activeOrgId;
-    const res = await fetch(`${API_ORIGIN}/api/songs/import/pdf`, {
+    const res = await fetch(buildApiUrl("/api/songs/import/pdf"), {
       method: "POST",
       credentials: "include",
       headers,
@@ -260,7 +265,7 @@ export const songsApi = {
     formData.append("file", file);
     const headers: Record<string, string> = {};
     if (_activeOrgId) headers["X-Organization-Id"] = _activeOrgId;
-    const res = await fetch(`${API_ORIGIN}/api/songs/import/pdf/preview`, {
+    const res = await fetch(buildApiUrl("/api/songs/import/pdf/preview"), {
       method: "POST",
       credentials: "include",
       headers,

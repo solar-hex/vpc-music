@@ -4,6 +4,7 @@ import { openOAuthPopup, type OAuthResult } from "@/lib/oauth-popup";
 describe("openOAuthPopup", () => {
   let originalOpen: typeof window.open;
   let mockPopup: { closed: boolean; close: () => void };
+  const expectedAuthPath = import.meta.env.VITE_API_URL ? "/auth/google" : "/api/auth/google";
 
   beforeEach(() => {
     vi.clearAllMocks();
@@ -23,7 +24,7 @@ describe("openOAuthPopup", () => {
     it("opens a popup window with correct URL", () => {
       openOAuthPopup("google");
       expect(window.open).toHaveBeenCalledWith(
-        expect.stringContaining("/api/auth/google"),
+        expect.stringContaining(expectedAuthPath),
         expect.stringContaining("vpc-oauth-google"),
         expect.any(String),
       );
