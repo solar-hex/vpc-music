@@ -58,6 +58,12 @@ vi.mock("@/lib/api-client", () => ({
     update: vi.fn(),
     delete: vi.fn(),
   },
+  songCollaborationApi: {
+    list: vi.fn().mockResolvedValue({ items: [] }),
+    create: vi.fn(),
+    update: vi.fn(),
+    delete: vi.fn(),
+  },
 }));
 
 vi.mock("react-router-dom", async () => {

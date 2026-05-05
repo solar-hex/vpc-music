@@ -16,7 +16,8 @@
 
   // Optional: your SSH key ID in DigitalOcean (from doctl compute ssh-key list)
   // If omitted the droplet is created without a pre-loaded key (you'll need to add one manually)
-  "DO_SSH_KEY_ID": "",
+  // SSH key ID — "floline-deploy" key (id 54801725) is already on the account
+  "DO_SSH_KEY_ID": "54801725",
 
   // ── Staging Overrides (optional) ─────────────────────────────────
   // If present, these are used when running: pnpm run deploy staging

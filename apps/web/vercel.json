@@ -3,7 +3,7 @@
     {
       "source": "/api/:path*",
       "has": [{ "type": "host", "value": "stg-app.vpcmusic.life" }],
-      "destination": "https://stg-api.vpcmusic.life/api/:path*"
+      "destination": "https://stg-api.vpcmusic.life/:path*"
     },
     {
       "source": "/health",
@@ -13,14 +13,14 @@
     {
       "source": "/api/:path*",
       "has": [{ "type": "host", "value": "stg.vpcmusic.life" }],
-      "destination": "https://stg-api.vpcmusic.life/api/:path*"
+      "destination": "https://stg-api.vpcmusic.life/:path*"
     },
     {
       "source": "/health",
       "has": [{ "type": "host", "value": "stg.vpcmusic.life" }],
       "destination": "https://stg-api.vpcmusic.life/health"
     },
-    { "source": "/api/:path*", "destination": "https://api.vpcmusic.life/api/:path*" },
+    { "source": "/api/:path*", "destination": "https://api.vpcmusic.life/:path*" },
     { "source": "/health", "destination": "https://api.vpcmusic.life/health" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]

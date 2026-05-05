@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SongViewPage } from "@/pages/songs/SongViewPage";
 
@@ -50,6 +50,12 @@ vi.mock("@/lib/api-client", () => ({
     create: (...args: any[]) => mockCreateNote(...args),
     update: (...args: any[]) => mockUpdateNote(...args),
     delete: (...args: any[]) => mockDeleteNote(...args),
+  },
+  songCollaborationApi: {
+    list: vi.fn().mockResolvedValue({ items: [] }),
+    create: vi.fn(),
+    update: vi.fn(),
+    delete: vi.fn(),
   },
 }));
 
@@ -279,6 +285,10 @@ describe("Sticky Notes", () => {
       const deleteBtn = screen.getByTitle("Delete note");
       fireEvent.click(deleteBtn);
 
+      // Confirm the dialog
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete note"));
+
       await waitFor(() => {
         expect(mockDeleteNote).toHaveBeenCalledWith("song-1", "n1");
       });
@@ -358,6 +368,9 @@ describe("Sticky Notes", () => {
       });
 
       fireEvent.click(screen.getByTitle("Delete note"));
+
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete note"));
 
       await waitFor(() => {
         expect(toast.error).toHaveBeenCalledWith("Forbidden");

@@ -35,16 +35,16 @@ app.get("/health", (_req, res) => {
 });
 
 // ── Routes ───────────────────────────────────────
-app.use("/api/auth", authRoutes);
-app.use("/api/songs", songRoutes);
-app.use("/api/songs", stickyNoteRoutes);  // /api/songs/:songId/notes
-app.use("/api/songs", collaborationRoutes);  // /api/songs/:songId/collaboration
-app.use("/api/setlists", setlistRoutes);
-app.use("/api/platform", platformRoutes);
-app.use("/api/admin", adminRoutes);
-app.use("/api/events", eventRoutes);
-app.use("/api/organizations", orgRoutes);
-app.use("/api", shareRoutes);   // /api/songs/:id/share(s) + /api/shared/:token
+app.use("/auth", authRoutes);
+app.use("/songs", songRoutes);
+app.use("/songs", stickyNoteRoutes);  // /songs/:songId/notes
+app.use("/songs", collaborationRoutes);  // /songs/:songId/collaboration
+app.use("/setlists", setlistRoutes);
+app.use("/platform", platformRoutes);
+app.use("/admin", adminRoutes);
+app.use("/events", eventRoutes);
+app.use("/organizations", orgRoutes);
+app.use("/", shareRoutes);   // /songs/:id/share(s) + /shared/:token
 
 // ── Error handler (must be last) ─────────────────
 app.use(errorHandler);

@@ -15,9 +15,9 @@ region: nyc
 
 databases:
   - engine: PG
-    name: vpc-music-prd
+    name: vpc-music-db
     num_nodes: 1
-    size: db-s-dev-database
+    size: db-s-1vcpu-1gb
     version: "16"
     production: true
 
@@ -50,7 +50,7 @@ services:
         value: production
       - key: DATABASE_URL
         scope: RUN_TIME
-        value: ${vpc-music-prd.DATABASE_URL}
+        value: ${vpc-music-db.DATABASE_URL}
       - key: JWT_SECRET
         type: SECRET
         value: REPLACE_ME

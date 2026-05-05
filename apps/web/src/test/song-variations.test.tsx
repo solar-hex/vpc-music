@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SongViewPage } from "@/pages/songs/SongViewPage";
 
@@ -48,6 +48,12 @@ vi.mock("@/lib/api-client", () => ({
   stickyNotesApi: {
     list: vi.fn().mockResolvedValue({ notes: [] }),
     create: vi.fn().mockResolvedValue({ note: { id: "n1", content: "Test", color: "yellow" } }),
+    update: vi.fn(),
+    delete: vi.fn(),
+  },
+  songCollaborationApi: {
+    list: vi.fn().mockResolvedValue({ items: [] }),
+    create: vi.fn(),
     update: vi.fn(),
     delete: vi.fn(),
   },
@@ -348,6 +354,9 @@ describe("Song Variations", () => {
       const deleteBtn = screen.getByTitle("Delete variation");
       fireEvent.click(deleteBtn);
 
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete variation"));
+
       await waitFor(() => {
         expect(mockVariationDelete).toHaveBeenCalledWith("song-1", "v1");
       });
@@ -364,6 +373,9 @@ describe("Song Variations", () => {
       });
 
       fireEvent.click(screen.getByTitle("Delete variation"));
+
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete variation"));
 
       await waitFor(() => {
         expect(toast.success).toHaveBeenCalledWith("Variation deleted");
@@ -387,6 +399,9 @@ describe("Song Variations", () => {
 
       // Delete it
       fireEvent.click(screen.getByTitle("Delete variation"));
+
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete variation"));
 
       await waitFor(() => {
         expect(screen.getByTestId("chordpro-renderer")).toHaveTextContent("[G]Amazing grace");
@@ -432,6 +447,9 @@ describe("Song Variations", () => {
       });
 
       fireEvent.click(screen.getByTitle("Delete variation"));
+
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      fireEvent.click(within(screen.getByRole("dialog")).getByText("Delete variation"));
 
       await waitFor(() => {
         expect(toast.error).toHaveBeenCalledWith("Cannot delete");

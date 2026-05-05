@@ -1,0 +1,10 @@
+{
+  "name": "@vpc-music/shared",
+  "version": "0.1.0",
+  "description": "Shared models, constants, and utilities for VPC Music",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "zod": "^3.24.1"
+  }
+}
