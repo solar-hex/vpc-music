@@ -15,6 +15,26 @@ declare module "@vpc-music/shared" {
   export const ROLE_DESCRIPTIONS: Record<string, string>;
   export function roleLabel(role: string): string;
 
+  // ── Permissions ────────────────────────────────
+  export interface PermissionDefinition {
+    id: string;
+    label: string;
+    description: string;
+  }
+  export interface PermissionCategory {
+    key: string;
+    label: string;
+    permissions: PermissionDefinition[];
+  }
+  export const PERMISSION_CATEGORIES: PermissionCategory[];
+  export const ALL_PERMISSIONS: string[];
+  export const ROLE_PERMISSION_DEFAULTS: Record<string, string[]>;
+  export function hasPermission(
+    customPermissions: string[] | null | undefined,
+    baseRole: string,
+    permission: string,
+  ): boolean;
+
   // ── Song Schema (Zod) ─────────────────────────
   export const songSchema: any;
   export const songVariationSchema: any;

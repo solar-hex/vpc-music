@@ -1,5 +1,5 @@
 // Drizzle ORM schema — events (services, rehearsals, etc.)
-import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, uuid, jsonb } from "drizzle-orm/pg-core";
 import { organizations } from "./organizations.js";
 import { setlists } from "./setlists.js";
 import { users } from "./users.js";
@@ -10,6 +10,9 @@ export const events = pgTable("events", {
   date: timestamp("date").notNull(),           // event date/time
   location: text("location"),                  // e.g. "Main Sanctuary", "Fellowship Hall"
   notes: text("notes"),                        // freeform notes
+  theme: text("theme"),                        // service theme, e.g. "Gratitude"
+  preparedBy: uuid("prepared_by").references(() => users.id), // who is preparing/leading the plan
+  team: jsonb("team"),                         // [{ userId?, name, role }] — assigned team for the service
   organizationId: uuid("organization_id").references(() => organizations.id),
   setlistId: uuid("setlist_id").references(() => setlists.id), // optional linked setlist
   createdBy: uuid("created_by").references(() => users.id),

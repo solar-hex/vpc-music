@@ -13,6 +13,7 @@ import {
   Minimize2,
   Music,
   SkipForward,
+  Sun,
 } from "lucide-react";
 import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRenderer";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
@@ -59,6 +60,7 @@ export function PerformanceMode({
   const [showChords, setShowChords] = useState(true);
   const [fontSize, setFontSize] = useState(20);
   const [showToolbar, setShowToolbar] = useState(true);
+  const [brightness, setBrightness] = useState(100); // percent, 40–100
 
   // Timer state
   const [timerEnabled, setTimerEnabled] = useState(false);
@@ -220,6 +222,22 @@ export function PerformanceMode({
               A+
             </button>
 
+            {/* Stage brightness */}
+            <div className="flex items-center gap-1" title="Stage brightness">
+              <Sun className="h-3.5 w-3.5 text-[hsl(var(--muted-foreground))]" />
+              <input
+                data-testid="perf-brightness"
+                type="range"
+                min={40}
+                max={100}
+                step={5}
+                value={brightness}
+                onChange={(e) => setBrightness(Number(e.target.value))}
+                className="w-16 accent-[hsl(var(--secondary))]"
+                aria-label="Stage brightness"
+              />
+            </div>
+
             {/* Timer toggle */}
             <button
               data-testid="perf-timer-toggle"
@@ -373,6 +391,12 @@ export function PerformanceMode({
               {currentSong?.variationName && (
                 <span className="badge-muted">{currentSong.variationName}</span>
               )}
+              {currentSong?.capo ? (
+                <span className="badge-muted">Capo {currentSong.capo}</span>
+              ) : null}
+              {currentSong?.arrangement && (
+                <span className="badge-muted capitalize">{currentSong.arrangement.replace("_", " ").toLowerCase()}</span>
+              )}
             </div>
           </div>
 
@@ -380,6 +404,7 @@ export function PerformanceMode({
           <div
             ref={scrollRef}
             className="flex-1 overflow-y-auto px-6 py-4"
+            style={brightness < 100 ? { filter: `brightness(${brightness}%)` } : undefined}
           >
             {content ? (
               <ChordProRenderer
@@ -442,6 +467,13 @@ export function PerformanceMode({
                 <span>
                   Up next: <span className="font-medium text-[hsl(var(--foreground))]">{songs[currentIndex + 1]?.songTitle}</span>
                 </span>
+                {currentSong?.transitionCues?.map((cue, i) => (
+                  <span key={i} className="badge-muted" data-testid="perf-transition-cue">
+                    {cue.type === "COUNTDOWN" && cue.durationSec
+                      ? `Countdown ${cue.durationSec}s`
+                      : `${cue.type.charAt(0)}${cue.type.slice(1).toLowerCase()}${cue.text ? `: ${cue.text}` : ""}`}
+                  </span>
+                ))}
               </>
             )}
             {currentIndex === songs.length - 1 && (

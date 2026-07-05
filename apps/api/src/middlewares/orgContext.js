@@ -11,7 +11,8 @@
  */
 import { eq } from "drizzle-orm";
 import { db } from "../db.js";
-import { organizationMembers, organizations } from "../schema/index.js";
+import { organizationMembers, organizations, orgRoles } from "../schema/index.js";
+import { ROLE_PERMISSION_DEFAULTS } from "@vpc-music/shared";
 
 /**
  * Attaches org context to the request. Must be used after `auth` middleware.
@@ -25,6 +26,7 @@ export async function orgContext(req, _res, next) {
         id: organizations.id,
         name: organizations.name,
         role: organizationMembers.role,
+        customRoleId: organizationMembers.customRoleId,
       })
       .from(organizationMembers)
       .innerJoin(organizations, eq(organizationMembers.organizationId, organizations.id))
@@ -81,6 +83,61 @@ export function requireOrgRole(...allowedRoles) {
     if (!allowedRoles.includes(req.orgRole)) {
       return res.status(403).json({
         error: { message: `Requires one of: ${allowedRoles.join(", ")}` },
+      });
+    }
+    next();
+  };
+}
+
+/**
+ * Resolve the member's effective permission set (cached on the request):
+ * the custom role's explicit list when assigned, else the base-role defaults.
+ * @returns {Promise<string[]>}
+ */
+export async function resolveEffectivePermissions(req) {
+  if (req._effectivePermissions) return req._effectivePermissions;
+
+  let permissions = ROLE_PERMISSION_DEFAULTS[req.orgRole] ?? [];
+  if (req.org?.customRoleId) {
+    try {
+      const [customRole] = await db
+        .select({ permissions: orgRoles.permissions })
+        .from(orgRoles)
+        .where(eq(orgRoles.id, req.org.customRoleId))
+        .limit(1);
+      if (customRole && Array.isArray(customRole.permissions)) {
+        permissions = customRole.permissions;
+      }
+    } catch {
+      // Fall back to base-role defaults if the custom role can't be loaded
+    }
+  }
+
+  req._effectivePermissions = permissions;
+  return permissions;
+}
+
+/**
+ * Factory that returns middleware requiring at least one of the given
+ * permissions. Global owners bypass; members without a custom role use the
+ * base-role defaults, so behavior matches the old requireOrgRole checks.
+ * @param  {...string} requiredPermissions — e.g. "songs:edit"
+ */
+export function requirePermission(...requiredPermissions) {
+  return async (req, res, next) => {
+    // Global owners bypass org-level permission checks
+    if (req.user?.role === "owner") return next();
+
+    if (!req.org) {
+      return res.status(400).json({
+        error: { message: "Organization context required" },
+      });
+    }
+
+    const effective = await resolveEffectivePermissions(req);
+    if (!requiredPermissions.some((permission) => effective.includes(permission))) {
+      return res.status(403).json({
+        error: { message: `Requires one of: ${requiredPermissions.join(", ")}` },
       });
     }
     next();

@@ -6,12 +6,16 @@ import { ChordProRenderer, AutoScroll, type ChordProRendererHandle } from "@/com
 import { SongCollaborationPanel } from "@/components/songs/SongCollaborationPanel";
 import { ShareManageDialog } from "@/components/songs/ShareManageDialog";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
+import { SongStatusBadge } from "@/components/songs/SongStatusBadge";
+import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
+import { StaffNotation } from "@/components/songs/StaffNotation";
+import { MetronomeWidget } from "@/components/songs/MetronomeWidget";
 import { useAuth } from "@/contexts/AuthContext";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
 import { ALL_KEYS } from "@vpc-music/shared";
 import { toast } from "sonner";
-import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2 } from "lucide-react";
 
 const ENHARMONIC_KEY_MAP: Record<string, string> = {
   "B#": "C",
@@ -75,6 +79,7 @@ export function SongViewPage() {
   const [loggingUsage, setLoggingUsage] = useState(false);
   const [showShareManage, setShowShareManage] = useState(false);
   const [showExportMenu, setShowExportMenu] = useState(false);
+  const [showMusicianTools, setShowMusicianTools] = useState(false);
   const [showSetlistPicker, setShowSetlistPicker] = useState(false);
   const [availableSetlists, setAvailableSetlists] = useState<Setlist[]>([]);
   const [loadingSetlists, setLoadingSetlists] = useState(false);
@@ -669,13 +674,24 @@ export function SongViewPage() {
 
       {/* Song metadata */}
       <div className="space-y-1 print-meta">
-        <h2 className="page-title">
-          {song.title}
-          {activeVariation && (
-            <span className="ml-2 text-base font-normal text-[hsl(var(--secondary))]">
-              — {activeVariation.name}
-            </span>
-          )}
+        <h2 className="page-title flex flex-wrap items-center gap-2">
+          <span>
+            {song.title}
+            {activeVariation && (
+              <span className="ml-2 text-base font-normal text-[hsl(var(--secondary))]">
+                — {activeVariation.name}
+              </span>
+            )}
+          </span>
+          <span className="print-hidden inline-flex items-center gap-2">
+            <SongStatusBadge status={song.status} isArchived={song.isArchived} size="md" />
+            <SongActionsMenu
+              song={song}
+              canEdit={!!canEdit}
+              onChanged={(updated) => setSong((prev) => (prev ? { ...prev, ...updated } : prev))}
+              onRemoved={() => navigate("/songs")}
+            />
+          </span>
         </h2>
         <div className="flex flex-wrap gap-3 text-sm text-[hsl(var(--muted-foreground))]">
           {song.artist && <span>{song.artist}</span>}
@@ -791,6 +807,26 @@ export function SongViewPage() {
           fontSize={fontSize}
         />
       </div>
+
+      {/* Musician tools: staff notation + metronome */}
+      {(song.abcNotation || song.tempo) && (
+        <div className="space-y-2 print-hidden">
+          <button
+            onClick={() => setShowMusicianTools((prev) => !prev)}
+            className="section-title w-full text-left"
+            aria-expanded={showMusicianTools}
+          >
+            <Music2 className="section-title-icon" /> Musician Tools
+            <ChevronDown className={`h-4 w-4 transition-transform ${showMusicianTools ? "rotate-180" : ""}`} />
+          </button>
+          {showMusicianTools && (
+            <div className="space-y-3">
+              {song.tempo ? <MetronomeWidget tempo={song.tempo} /> : null}
+              {song.abcNotation && <StaffNotation abc={song.abcNotation} />}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Usage History */}
       {usages.length > 0 && (

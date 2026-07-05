@@ -2,6 +2,7 @@
 import { pgTable, text, timestamp, uuid, pgEnum, uniqueIndex } from "drizzle-orm/pg-core";
 import { organizations } from "./organizations.js";
 import { users } from "./users.js";
+import { orgRoles } from "./orgRoles.js";
 
 export const orgRoleEnum = pgEnum("org_role", ["admin", "musician", "observer"]);
 
@@ -16,6 +17,8 @@ export const organizationMembers = pgTable(
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     role: orgRoleEnum("role").default("musician").notNull(),
+    // Optional custom-role overlay; null = pure base-role behavior
+    customRoleId: uuid("custom_role_id").references(() => orgRoles.id, { onDelete: "set null" }),
     createdAt: timestamp("created_at").defaultNow(),
   },
   (table) => [

@@ -35,10 +35,12 @@ import {
   AlertTriangle,
   Download,
   ChevronDown,
+  Settings2,
 } from "lucide-react";
 import { ALL_KEYS } from "@vpc-music/shared";
 import { useConductor } from "@/hooks/useConductor";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
+import { SetlistItemTools } from "@/components/setlists/SetlistItemTools";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { getKeyDistance } from "@/utils/key-compat";
 
@@ -58,6 +60,7 @@ export function SetlistViewPage() {
   const [searchQ, setSearchQ] = useState("");
   const [draggedSongItemId, setDraggedSongItemId] = useState<string | null>(null);
   const [dragOverSongItemId, setDragOverSongItemId] = useState<string | null>(null);
+  const [toolsItem, setToolsItem] = useState<SetlistSongItem | null>(null);
 
   // ── Performance mode state ─────────────────────
   const [performanceMode, setPerformanceMode] = useState(false);
@@ -528,6 +531,17 @@ export function SetlistViewPage() {
         onConfirm={handleDeleteSetlist}
       />
 
+      {toolsItem && id && (
+        <SetlistItemTools
+          setlistId={id}
+          item={toolsItem}
+          onClose={() => setToolsItem(null)}
+          onSaved={(updated) =>
+            setSongs((prev) => prev.map((s) => (s.id === updated.id ? { ...s, ...updated } : s)))
+          }
+        />
+      )}
+
       {/* Song list */}
       <div className="space-y-2">
         <div className="section-header">
@@ -702,11 +716,26 @@ export function SetlistViewPage() {
                       item.key || item.songKey ? `Key: ${item.key || item.songKey}` : null,
                       item.songArtist,
                       item.songTempo ? `${item.songTempo} BPM` : null,
+                      item.capo ? `Capo ${item.capo}` : null,
+                      item.arrangement ? item.arrangement.replace("_", " ").toLowerCase() : null,
+                      item.transitionCues?.length ? `${item.transitionCues.length} cue${item.transitionCues.length !== 1 ? "s" : ""}` : null,
                     ]
                       .filter(Boolean)
                       .join(" · ")}
                   </div>
                 </Link>
+
+                {/* Per-song performance tools */}
+                {canEdit && (
+                  <button
+                    onClick={() => setToolsItem(item)}
+                    className="btn-icon rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
+                    title="Performance tools (capo, arrangement, transitions)"
+                    aria-label={`Performance tools for ${item.songTitle}`}
+                  >
+                    <Settings2 className="h-4 w-4" />
+                  </button>
+                )}
 
                 {/* Conductor: Go-to button */}
                 {liveMode === "conductor" && idx !== conductor.currentSong && (

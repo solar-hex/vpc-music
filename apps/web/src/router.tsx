@@ -10,7 +10,8 @@ import { DashboardPage } from "./pages/DashboardPage";
 import { SongListPage } from "./pages/songs/SongListPage";
 import { SongViewPage } from "./pages/songs/SongViewPage";
 import { SongEditPage } from "./pages/songs/SongEditPage";
-import { SetlistsPage } from "./pages/setlists/SetlistsPage";
+import { SetlistHubPage } from "./pages/setlists/SetlistHubPage";
+import { ArtistsPage } from "./pages/artists/ArtistsPage";
 import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { ForgotPasswordPage } from "./pages/auth/ForgotPasswordPage";
@@ -41,9 +42,10 @@ export const router = createBrowserRouter([
       { path: "/songs/new", element: <SongEditPage /> },
       { path: "/songs/:id", element: <SongViewPage /> },
       { path: "/songs/:id/edit", element: <SongEditPage /> },
-      { path: "/setlists", element: <SetlistsPage /> },
-      { path: "/setlists/new", element: <SetlistsPage /> },
+      { path: "/setlists", element: <SetlistHubPage /> },
+      { path: "/setlists/new", element: <SetlistHubPage /> },
       { path: "/setlists/:id", element: <SetlistViewPage /> },
+      { path: "/artists", element: <ArtistsPage /> },
       { path: "/settings", element: <SettingsPage /> },
       { path: "/admin", element: <AdminPage /> },
       { path: "*", element: <NotFoundPage /> },

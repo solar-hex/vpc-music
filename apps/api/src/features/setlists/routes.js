@@ -1,12 +1,13 @@
 import { Router } from "express";
-import { eq, and, desc, asc, sql } from "drizzle-orm";
+import { eq, and, desc, asc, sql, isNull, isNotNull } from "drizzle-orm";
 import { db } from "../../db.js";
-import { setlists, setlistSongs, songs, songUsages, songVariations } from "../../schema/index.js";
+import { setlists, setlistSongs, songs, songUsages, songVariations, events } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
-import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
+import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../../middlewares/orgContext.js";
 import { chordProToOnSong, chordProToPlainText } from "@vpc-music/shared";
 import JSZip from "jszip";
+import { notifyOrgMembers } from "../notifications/service.js";
 
 export const setlistRoutes = Router();
 
@@ -73,12 +74,18 @@ function convertExportContent(target, format) {
   };
 }
 
-// ── GET /api/setlists — list all setlists ────────────────────
+// ── GET /api/setlists — list setlists ────────────────────────
+// ?view=active (default) | archived | trash | all
 setlistRoutes.get(
   "/",
   auth,
   orgContext,
   asyncHandler(async (req, res) => {
+    const view = String(req.query.view || "active");
+    if (!["active", "archived", "trash", "all"].includes(view)) {
+      throw createError(400, "view must be active, archived, trash, or all");
+    }
+
     let query = db
       .select({
         id: setlists.id,
@@ -86,14 +93,33 @@ setlistRoutes.get(
         category: setlists.category,
         notes: setlists.notes,
         status: setlists.status,
+        leader: setlists.leader,
+        tags: setlists.tags,
+        isArchived: setlists.isArchived,
+        archivedAt: setlists.archivedAt,
+        deletedAt: setlists.deletedAt,
         createdAt: setlists.createdAt,
         updatedAt: setlists.updatedAt,
         songCount: sql`(SELECT count(*) FROM setlist_songs WHERE setlist_songs.setlist_id = ${setlists.id})::int`,
+        totalDuration: sql`(SELECT coalesce(sum(duration), 0) FROM setlist_songs WHERE setlist_songs.setlist_id = ${setlists.id})::int`,
+        averageBpm: sql`(SELECT round(avg(songs.tempo)) FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = ${setlists.id} AND songs.tempo IS NOT NULL)::int`,
+        keys: sql`(SELECT string_agg(DISTINCT coalesce(setlist_songs.key, songs.key), ',') FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = ${setlists.id})`,
       })
       .from(setlists);
 
+    const conditions = [];
     if (req.org) {
-      query = query.where(eq(setlists.organizationId, req.org.id));
+      conditions.push(eq(setlists.organizationId, req.org.id));
+    }
+    if (view === "active") {
+      conditions.push(eq(setlists.isArchived, false), isNull(setlists.deletedAt));
+    } else if (view === "archived") {
+      conditions.push(eq(setlists.isArchived, true), isNull(setlists.deletedAt));
+    } else if (view === "trash") {
+      conditions.push(isNotNull(setlists.deletedAt));
+    }
+    if (conditions.length > 0) {
+      query = query.where(and(...conditions));
     }
 
     const result = await query.orderBy(desc(setlists.updatedAt));
@@ -125,6 +151,10 @@ setlistRoutes.get(
         position: setlistSongs.position,
         key: setlistSongs.key,
         notes: setlistSongs.notes,
+        duration: setlistSongs.duration,
+        capo: setlistSongs.capo,
+        arrangement: setlistSongs.arrangement,
+        transitionCues: setlistSongs.transitionCues,
         songTitle: songs.title,
         songKey: songs.key,
         songArtist: songs.artist,
@@ -239,8 +269,8 @@ setlistRoutes.post(
   "/",
   auth,
   orgContext,
-  requireOrg,  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
-    const { name, category, notes } = req.body;
+  requireOrg,  requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
+    const { name, category, notes, leader, tags } = req.body;
 
     if (!name) throw createError(400, "Name is required");
 
@@ -250,6 +280,8 @@ setlistRoutes.post(
         name,
         category: category || null,
         notes: notes || null,
+        leader: leader || null,
+        tags: tags || null,
         organizationId: req.org.id,
         createdBy: req.user.id,
       })
@@ -264,8 +296,8 @@ setlistRoutes.put(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
-    const { name, category, notes, status } = req.body;
+  requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
+    const { name, category, notes, status, leader, tags } = req.body;
 
     const [existing] = await db
       .select({ id: setlists.id })
@@ -286,6 +318,8 @@ setlistRoutes.put(
         ...(category !== undefined && { category }),
         ...(notes !== undefined && { notes }),
         ...(status !== undefined && { status }),
+        ...(leader !== undefined && { leader }),
+        ...(tags !== undefined && { tags }),
         updatedAt: new Date(),
       })
       .where(eq(setlists.id, req.params.id))
@@ -295,12 +329,52 @@ setlistRoutes.put(
   })
 );
 
-// ── DELETE /api/setlists/:id ─────────────────────────────────
+// ── POST /api/setlists/:id/archive — archive a setlist ──────
+setlistRoutes.post(
+  "/:id/archive",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:edit"),
+  asyncHandler(async (req, res) => {
+    const [setlist] = await db
+      .update(setlists)
+      .set({ isArchived: true, archivedAt: new Date(), updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id))
+      .returning();
+
+    if (!setlist) throw createError(404, "Setlist not found");
+
+    res.json({ setlist });
+  })
+);
+
+// ── POST /api/setlists/:id/unarchive — restore from archive ─
+setlistRoutes.post(
+  "/:id/unarchive",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:edit"),
+  asyncHandler(async (req, res) => {
+    const [setlist] = await db
+      .update(setlists)
+      .set({ isArchived: false, archivedAt: null, updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id))
+      .returning();
+
+    if (!setlist) throw createError(404, "Setlist not found");
+
+    res.json({ setlist });
+  })
+);
+
+// ── DELETE /api/setlists/:id — move to trash (soft delete) ──
 setlistRoutes.delete(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
+  requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
     const [existing] = await db
       .select({ id: setlists.id })
       .from(setlists)
@@ -309,10 +383,57 @@ setlistRoutes.delete(
 
     if (!existing) throw createError(404, "Setlist not found");
 
+    await db
+      .update(setlists)
+      .set({ deletedAt: new Date(), updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id));
+
+    res.json({ message: "Setlist moved to trash" });
+  })
+);
+
+// ── POST /api/setlists/:id/restore — restore from trash ─────
+setlistRoutes.post(
+  "/:id/restore",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:edit"),
+  asyncHandler(async (req, res) => {
+    const [setlist] = await db
+      .update(setlists)
+      .set({ deletedAt: null, updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id))
+      .returning();
+
+    if (!setlist) throw createError(404, "Setlist not found");
+
+    res.json({ setlist });
+  })
+);
+
+// ── DELETE /api/setlists/:id/permanent — hard delete (admin) ─
+setlistRoutes.delete(
+  "/:id/permanent",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:delete_permanent"),
+  asyncHandler(async (req, res) => {
+    const [existing] = await db
+      .select({ id: setlists.id })
+      .from(setlists)
+      .where(eq(setlists.id, req.params.id))
+      .limit(1);
+
+    if (!existing) throw createError(404, "Setlist not found");
+
+    // Unlink events referencing this setlist before deleting (FK)
+    await db.update(events).set({ setlistId: null }).where(eq(events.setlistId, req.params.id));
     await db.delete(setlistSongs).where(eq(setlistSongs.setlistId, req.params.id));
     await db.delete(setlists).where(eq(setlists.id, req.params.id));
 
-    res.json({ message: "Setlist deleted" });
+    res.json({ message: "Setlist permanently deleted" });
   })
 );
 
@@ -322,7 +443,7 @@ setlistRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
     const { songId, variationId, key, notes } = req.body;
 
@@ -373,7 +494,7 @@ setlistRoutes.put(
   "/:id/songs",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
+  requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
     const { order } = req.body; // Array of { id, position }
 
     if (!Array.isArray(order)) {
@@ -396,13 +517,74 @@ setlistRoutes.put(
   })
 );
 
+// ── PATCH /api/setlists/:id/songs/:songItemId — update one item ─
+// Per-item performance metadata: key override, notes, duration, capo,
+// arrangement, and transition cues.
+const ARRANGEMENTS = ["ACOUSTIC", "ELECTRIC", "FULL_BAND", "STRIPPED_DOWN"];
+const CUE_TYPES = ["SPEAKING", "PRAYER", "INSTRUMENTAL", "COUNTDOWN", "SPONTANEOUS", "NOTE"];
+
+function sanitizeTransitionCues(cues) {
+  if (cues === null) return null;
+  if (!Array.isArray(cues)) return undefined;
+  return cues
+    .filter((cue) => cue && typeof cue === "object" && CUE_TYPES.includes(cue.type))
+    .map((cue) => ({
+      type: cue.type,
+      ...(typeof cue.text === "string" && cue.text.trim() ? { text: cue.text.trim() } : {}),
+      ...(Number.isFinite(Number(cue.durationSec)) && Number(cue.durationSec) > 0
+        ? { durationSec: Math.round(Number(cue.durationSec)) }
+        : {}),
+    }));
+}
+
+setlistRoutes.patch(
+  "/:id/songs/:songItemId",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:edit"),
+  asyncHandler(async (req, res) => {
+    const { key, notes, duration, capo, arrangement, transitionCues } = req.body;
+
+    if (arrangement !== undefined && arrangement !== null && !ARRANGEMENTS.includes(arrangement)) {
+      throw createError(400, `arrangement must be one of: ${ARRANGEMENTS.join(", ")}`);
+    }
+    if (capo !== undefined && capo !== null && (!Number.isInteger(capo) || capo < 0 || capo > 12)) {
+      throw createError(400, "capo must be an integer between 0 and 12");
+    }
+    const sanitizedCues = sanitizeTransitionCues(transitionCues);
+
+    const [item] = await db
+      .update(setlistSongs)
+      .set({
+        ...(key !== undefined && { key: key || null }),
+        ...(notes !== undefined && { notes: notes || null }),
+        ...(duration !== undefined && { duration: duration || null }),
+        ...(capo !== undefined && { capo }),
+        ...(arrangement !== undefined && { arrangement }),
+        ...(sanitizedCues !== undefined && { transitionCues: sanitizedCues }),
+      })
+      .where(and(eq(setlistSongs.id, req.params.songItemId), eq(setlistSongs.setlistId, req.params.id)))
+      .returning();
+
+    if (!item) throw createError(404, "Setlist song not found");
+
+    await db
+      .update(setlists)
+      .set({ updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id));
+
+    res.json({ item });
+  })
+);
+
 // ── DELETE /api/setlists/:id/songs/:songItemId — remove song ─
 setlistRoutes.delete(
   "/:id/songs/:songItemId",
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
     await db
       .delete(setlistSongs)
@@ -418,7 +600,7 @@ setlistRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
     const { usedAt } = req.body; // optional date string (defaults to today)
     const usedDate = usedAt || new Date().toISOString().split("T")[0];
@@ -456,6 +638,17 @@ setlistRoutes.post(
       );
     }
 
+    await notifyOrgMembers(
+      req.org.id,
+      {
+        type: "setlist",
+        title: "Setlist completed",
+        message: `"${existing.name}" was marked complete.`,
+        linkPath: `/setlists/${req.params.id}`,
+      },
+      { excludeUserId: req.user.id },
+    );
+
     res.json({ setlist, usagesLogged: setlistItems.length });
   })
 );
@@ -466,7 +659,7 @@ setlistRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
     const [setlist] = await db
       .update(setlists)

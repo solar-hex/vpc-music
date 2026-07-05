@@ -1,12 +1,26 @@
 import { Router } from "express";
-import { eq, and, gte, asc, desc } from "drizzle-orm";
+import { eq, and, gte, asc, desc, sql } from "drizzle-orm";
 import { db } from "../../db.js";
-import { events, setlists } from "../../schema/index.js";
+import { events, setlists, setlistSongs, users } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
-import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
+import { orgContext, requireOrg, requirePermission } from "../../middlewares/orgContext.js";
+import { notifyOrgMembers } from "../notifications/service.js";
 
 export const eventRoutes = Router();
+
+/** Normalize a `team` payload: array of { userId?, name, role? } entries. */
+function sanitizeTeam(team) {
+  if (team === null) return null;
+  if (!Array.isArray(team)) return undefined;
+  return team
+    .filter((m) => m && typeof m === "object" && typeof m.name === "string" && m.name.trim())
+    .map((m) => ({
+      ...(typeof m.userId === "string" && m.userId ? { userId: m.userId } : {}),
+      name: m.name.trim(),
+      ...(typeof m.role === "string" && m.role.trim() ? { role: m.role.trim() } : {}),
+    }));
+}
 
 // ── GET /api/events — list events ────────────────────────────
 // ?upcoming=true  → only future events (default)
@@ -26,12 +40,19 @@ eventRoutes.get(
         date: events.date,
         location: events.location,
         notes: events.notes,
+        theme: events.theme,
+        preparedBy: events.preparedBy,
+        preparedByName: users.displayName,
+        team: events.team,
         setlistId: events.setlistId,
         setlistName: setlists.name,
+        setlistStatus: setlists.status,
+        songCount: sql`(select count(*)::int from ${setlistSongs} where ${setlistSongs.setlistId} = ${events.setlistId})`,
         createdAt: events.createdAt,
       })
       .from(events)
-      .leftJoin(setlists, eq(events.setlistId, setlists.id));
+      .leftJoin(setlists, eq(events.setlistId, setlists.id))
+      .leftJoin(users, eq(events.preparedBy, users.id));
 
     const conditions = [];
     if (req.org) {
@@ -62,14 +83,21 @@ eventRoutes.get(
         date: events.date,
         location: events.location,
         notes: events.notes,
+        theme: events.theme,
+        preparedBy: events.preparedBy,
+        preparedByName: users.displayName,
+        team: events.team,
         setlistId: events.setlistId,
         setlistName: setlists.name,
+        setlistStatus: setlists.status,
+        songCount: sql`(select count(*)::int from ${setlistSongs} where ${setlistSongs.setlistId} = ${events.setlistId})`,
         createdBy: events.createdBy,
         createdAt: events.createdAt,
         updatedAt: events.updatedAt,
       })
       .from(events)
       .leftJoin(setlists, eq(events.setlistId, setlists.id))
+      .leftJoin(users, eq(events.preparedBy, users.id))
       .where(eq(events.id, req.params.id))
       .limit(1);
 
@@ -84,8 +112,8 @@ eventRoutes.post(
   "/",
   auth,
   orgContext,
-  requireOrg,  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
-    const { title, date, location, notes, setlistId } = req.body;
+  requireOrg,  requirePermission("events:edit"),  asyncHandler(async (req, res) => {
+    const { title, date, location, notes, theme, preparedBy, team, setlistId } = req.body;
 
     if (!title || !date) {
       throw createError(400, "Title and date are required");
@@ -98,11 +126,25 @@ eventRoutes.post(
         date: new Date(date),
         location: location || null,
         notes: notes || null,
+        theme: theme || null,
+        preparedBy: preparedBy || null,
+        team: sanitizeTeam(team) ?? null,
         organizationId: req.org.id,
         setlistId: setlistId || null,
         createdBy: req.user.id,
       })
       .returning();
+
+    await notifyOrgMembers(
+      req.org.id,
+      {
+        type: "event",
+        title: "New event scheduled",
+        message: `${event.title} — ${new Date(event.date).toLocaleDateString()}`,
+        linkPath: "/dashboard",
+      },
+      { excludeUserId: req.user.id },
+    );
 
     res.status(201).json({ event });
   })
@@ -113,8 +155,8 @@ eventRoutes.put(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
-    const { title, date, location, notes, setlistId } = req.body;
+  requirePermission("events:edit"),  asyncHandler(async (req, res) => {
+    const { title, date, location, notes, theme, preparedBy, team, setlistId } = req.body;
 
     const [existing] = await db
       .select({ id: events.id })
@@ -124,6 +166,7 @@ eventRoutes.put(
 
     if (!existing) throw createError(404, "Event not found");
 
+    const sanitizedTeam = sanitizeTeam(team);
     const [event] = await db
       .update(events)
       .set({
@@ -131,6 +174,9 @@ eventRoutes.put(
         ...(date !== undefined && { date: new Date(date) }),
         ...(location !== undefined && { location }),
         ...(notes !== undefined && { notes }),
+        ...(theme !== undefined && { theme: theme || null }),
+        ...(preparedBy !== undefined && { preparedBy: preparedBy || null }),
+        ...(sanitizedTeam !== undefined && { team: sanitizedTeam }),
         ...(setlistId !== undefined && { setlistId: setlistId || null }),
         updatedAt: new Date(),
       })
@@ -146,7 +192,7 @@ eventRoutes.delete(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
+  requirePermission("events:edit"),  asyncHandler(async (req, res) => {
     const [existing] = await db
       .select({ id: events.id })
       .from(events)

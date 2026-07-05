@@ -168,6 +168,7 @@ describe("Song direct user shares", () => {
       },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
@@ -175,7 +176,8 @@ describe("Song direct user shares", () => {
       .mockImplementationOnce(() => sharedTeamIdsChain)
       .mockImplementationOnce(() => sharedOrganizationIdsChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?scope=shared")
@@ -198,6 +200,7 @@ describe("Song direct user shares", () => {
           updatedAt: "2026-03-10T00:00:00Z",
           sharedWithMe: true,
           organizationName: "Mercy Chapel",
+          isFavorite: false,
         },
       ],
       total: 1,

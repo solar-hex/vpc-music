@@ -23,12 +23,36 @@ import {
   stickyNotes,
 } from "../../schema/index.js";
 import { auth } from "../../middlewares/auth.js";
+import { orgContext, requireOrg } from "../../middlewares/orgContext.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
+import { users } from "../../schema/index.js";
 
 export const orgRoutes = Router();
 
 // All org routes require authentication
 orgRoutes.use(auth);
+
+// ── GET /current/members — list members of the active org ────
+// Readable by every org role (observer included) — powers team displays.
+orgRoutes.get(
+  "/current/members",
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const members = await db
+      .select({
+        userId: organizationMembers.userId,
+        displayName: users.displayName,
+        role: organizationMembers.role,
+      })
+      .from(organizationMembers)
+      .innerJoin(users, eq(organizationMembers.userId, users.id))
+      .where(eq(organizationMembers.organizationId, req.org.id))
+      .orderBy(users.displayName);
+
+    res.json({ members });
+  }),
+);
 
 // ── POST / — Create organization ─────────────────────────────
 orgRoutes.post(

@@ -203,13 +203,16 @@ describe("Song team shares", () => {
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
 
+    const favoritesChain = createQueryChain([]);
+
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => directSharedIds)
       .mockImplementationOnce(() => teamSharedIds)
       .mockImplementationOnce(() => organizationSharedIds)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?scope=shared")

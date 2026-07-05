@@ -59,11 +59,13 @@ describe("Song list filters", () => {
       { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?q=grace&tag=hymn&key=G&tempoMin=70&tempoMax=90")
@@ -72,7 +74,7 @@ describe("Song list filters", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       songs: [
-        { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
+        { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn", isFavorite: false },
       ],
       total: 1,
     });
@@ -88,11 +90,13 @@ describe("Song list filters", () => {
       { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?category=Church")
@@ -101,7 +105,7 @@ describe("Song list filters", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       songs: [
-        { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
+        { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn", isFavorite: false },
       ],
       total: 1,
     });
@@ -116,12 +120,14 @@ describe("Song list filters", () => {
       { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => groupedSongsChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?groupId=group-1")
@@ -130,7 +136,7 @@ describe("Song list filters", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       songs: [
-        { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
+        { id: "song-1", title: "Amazing Grace", category: "Church", key: "G", tempo: 72, artist: "Newton", tags: "hymn", isFavorite: false },
       ],
       total: 1,
     });
@@ -167,11 +173,13 @@ describe("Song list filters", () => {
       { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?q=grace%20song")
@@ -180,7 +188,7 @@ describe("Song list filters", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       songs: [
-        { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn" },
+        { id: "song-1", title: "Amazing Grace", aka: "Grace Song", key: "G", tempo: 72, artist: "Newton", tags: "hymn", isFavorite: false },
       ],
       total: 1,
     });
@@ -195,12 +203,14 @@ describe("Song list filters", () => {
       { id: "song-2", title: "How Great", aka: null, key: "C", tempo: 120, artist: "Tomlin", tags: "worship" },
     ]);
     const countChain = createQueryChain([{ count: 1 }]);
+    const favoritesChain = createQueryChain([]);
 
     mockDb.select
       .mockImplementationOnce(() => membershipChain)
       .mockImplementationOnce(() => usageAggregateChain)
       .mockImplementationOnce(() => listChain)
-      .mockImplementationOnce(() => countChain);
+      .mockImplementationOnce(() => countChain)
+      .mockImplementationOnce(() => favoritesChain);
 
     const res = await request(app)
       .get("/api/songs?sort=mostUsed")
@@ -209,7 +219,7 @@ describe("Song list filters", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       songs: [
-        { id: "song-2", title: "How Great", aka: null, key: "C", tempo: 120, artist: "Tomlin", tags: "worship" },
+        { id: "song-2", title: "How Great", aka: null, key: "C", tempo: 120, artist: "Tomlin", tags: "worship", isFavorite: false },
       ],
       total: 1,
     });

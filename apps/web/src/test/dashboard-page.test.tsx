@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { DashboardPage } from "@/pages/DashboardPage";
 
@@ -13,11 +13,19 @@ const mockSongsList = vi.fn();
 const mockSetlistsList = vi.fn();
 const mockEventsList = vi.fn();
 const mockMostUsed = vi.fn();
+const mockOrgMembers = vi.fn();
+const mockEventCreate = vi.fn();
+const mockEventUpdate = vi.fn();
 vi.mock("@/lib/api-client", () => ({
   songsApi: { list: (...args: any[]) => mockSongsList(...args) },
   setlistsApi: { list: (...args: any[]) => mockSetlistsList(...args) },
-  eventsApi: { list: (...args: any[]) => mockEventsList(...args) },
+  eventsApi: {
+    list: (...args: any[]) => mockEventsList(...args),
+    create: (...args: any[]) => mockEventCreate(...args),
+    update: (...args: any[]) => mockEventUpdate(...args),
+  },
   songUsageApi: { mostUsed: (...args: any[]) => mockMostUsed(...args) },
+  orgsApi: { members: (...args: any[]) => mockOrgMembers(...args) },
 }));
 
 function renderDashboard() {
@@ -37,6 +45,7 @@ describe("DashboardPage", () => {
     });
     mockEventsList.mockResolvedValue({ events: [] });
     mockMostUsed.mockResolvedValue({ songs: [] });
+    mockOrgMembers.mockResolvedValue({ members: [] });
   });
 
   // ===================== POSITIVE =====================
@@ -211,8 +220,9 @@ describe("DashboardPage", () => {
       });
       renderDashboard();
       await waitFor(() => {
-        expect(screen.getByText("Sunday Morning Worship")).toBeInTheDocument();
-        expect(screen.getByText("Main Sanctuary")).toBeInTheDocument();
+        // Title/location can also appear in the Next Performance hero
+        expect(screen.getAllByText("Sunday Morning Worship").length).toBeGreaterThan(0);
+        expect(screen.getAllByText("Main Sanctuary").length).toBeGreaterThan(0);
       });
     });
 
@@ -246,6 +256,81 @@ describe("DashboardPage", () => {
       await waitFor(() => {
         expect(mockEventsList).toHaveBeenCalledWith({ upcoming: true });
       });
+    });
+  });
+
+  // ===================== NEXT PERFORMANCE / PLAN MODAL =====================
+
+  describe("next performance hero", () => {
+    const heroEvent = {
+      id: "e1",
+      title: "Sunday Morning Worship",
+      date: "2099-08-10T10:00:00.000Z",
+      location: "Main Sanctuary",
+      theme: "Gratitude",
+      preparedByName: "Sam Carter",
+      team: [{ name: "Alex", role: "Drums" }],
+      setlistId: "sl1",
+      setlistName: "Sunday Set",
+      setlistStatus: "draft",
+      songCount: 5,
+    };
+
+    it("spotlights the first upcoming event", async () => {
+      mockSongsList.mockResolvedValue({ songs: [], total: 0 });
+      mockSetlistsList.mockResolvedValue({ setlists: [] });
+      mockEventsList.mockResolvedValue({ events: [heroEvent] });
+      renderDashboard();
+      await waitFor(() => {
+        expect(screen.getByText("Next Performance")).toBeInTheDocument();
+        expect(screen.getByText("5 songs")).toBeInTheDocument();
+      });
+    });
+
+    it("opens the service plan modal from the hero", async () => {
+      mockSongsList.mockResolvedValue({ songs: [], total: 0 });
+      mockSetlistsList.mockResolvedValue({ setlists: [] });
+      mockEventsList.mockResolvedValue({ events: [heroEvent] });
+      renderDashboard();
+      await waitFor(() => screen.getByText("Next Performance"));
+
+      fireEvent.click(screen.getByRole("button", { name: /view plan/i }));
+
+      const dialog = await screen.findByRole("dialog");
+      expect(dialog).toHaveTextContent("Prepared By");
+      expect(dialog).toHaveTextContent("Sam Carter");
+      expect(dialog).toHaveTextContent("Alex");
+      expect(dialog).toHaveTextContent("Drums");
+    });
+
+    it("hides New plan / Edit actions from observers", async () => {
+      mockUseAuth.mockReturnValue({
+        user: { displayName: "John", email: "john@test.com", role: "member" },
+        activeOrg: { id: "org1", name: "Test Church", role: "observer" },
+      });
+      mockSongsList.mockResolvedValue({ songs: [], total: 0 });
+      mockSetlistsList.mockResolvedValue({ setlists: [] });
+      mockEventsList.mockResolvedValue({ events: [heroEvent] });
+      renderDashboard();
+      await waitFor(() => screen.getByText("Next Performance"));
+
+      expect(screen.queryByText(/new plan/i)).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /view plan/i }));
+      const dialog = await screen.findByRole("dialog");
+      expect(dialog).toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: /edit plan/i })).not.toBeInTheDocument();
+    });
+
+    it("opens the New Plan dialog for editors", async () => {
+      mockSongsList.mockResolvedValue({ songs: [], total: 0 });
+      mockSetlistsList.mockResolvedValue({ setlists: [] });
+      mockEventsList.mockResolvedValue({ events: [] });
+      renderDashboard();
+      await waitFor(() => expect(mockEventsList).toHaveBeenCalled());
+
+      // "New Plan" appears both in quick actions and the events section header
+      fireEvent.click(screen.getAllByRole("button", { name: /new plan/i })[0]);
+      expect(await screen.findByRole("dialog", { name: /new plan/i })).toBeInTheDocument();
     });
   });
 });

@@ -6,21 +6,22 @@ import { Router } from "express";
 import crypto from "crypto";
 import { eq, and } from "drizzle-orm";
 import { db } from "../../db.js";
-import { users, organizationMembers, passwordResetTokens } from "../../schema/index.js";
+import { users, organizationMembers, passwordResetTokens, orgRoles } from "../../schema/index.js";
 import { env } from "../../config/env.js";
 import { auth } from "../../middlewares/auth.js";
-import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
+import { orgContext, requireOrg, requirePermission } from "../../middlewares/orgContext.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { logger } from "../../utils/logger.js";
 import { sendEmail, buildInviteEmail } from "../../utils/email.js";
+import { notifyUser, notifyOrgMembers } from "../notifications/service.js";
 
 export const adminRoutes = Router();
 
-// All admin routes require authentication + org context + admin role (or global owner)
+// All admin routes require authentication + org context + team management rights
 adminRoutes.use(auth);
 adminRoutes.use(orgContext);
 adminRoutes.use(requireOrg);
-adminRoutes.use(requireOrgRole("admin"));
+adminRoutes.use(requirePermission("team:manage"));
 
 // ── GET /api/admin/users ─────────────────────────────────────
 // List team members in the current organization.
@@ -34,6 +35,7 @@ adminRoutes.get(
         displayName: users.displayName,
         globalRole: users.role,
         orgRole: organizationMembers.role,
+        customRoleId: organizationMembers.customRoleId,
         hasPassword: users.passwordHash,
         createdAt: users.createdAt,
       })
@@ -142,6 +144,25 @@ adminRoutes.post(
     });
     logger.info(`Invite sent to ${normalizedEmail}`);
 
+    // Let the rest of the team's admins know (never fails the request)
+    await notifyOrgMembers(
+      req.org.id,
+      {
+        type: "team",
+        title: "New team member invited",
+        message: `${normalizedDisplayName} (${normalizedEmail}) was invited as ${assignedRole}.`,
+        linkPath: "/admin",
+      },
+      { excludeUserId: req.user.id, roles: ["admin"] },
+    );
+    await notifyUser(user.id, {
+      type: "team",
+      title: `Welcome to ${req.org.name}`,
+      message: `You've been added to ${req.org.name} as ${assignedRole}.`,
+      linkPath: "/dashboard",
+      organizationId: req.org.id,
+    });
+
     res.status(201).json({
       user: {
         id: user.id,
@@ -162,10 +183,13 @@ adminRoutes.put(
   "/users/:id/role",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const { role } = req.body;
+    const { role, customRoleId } = req.body;
 
     const validRoles = ["admin", "musician", "observer"];
-    if (!validRoles.includes(role)) {
+    if (role !== undefined && !validRoles.includes(role)) {
+      throw createError(400, `Role must be one of: ${validRoles.join(", ")}`);
+    }
+    if (role === undefined && customRoleId === undefined) {
       throw createError(400, `Role must be one of: ${validRoles.join(", ")}`);
     }
 
@@ -184,10 +208,33 @@ adminRoutes.put(
       throw createError(404, "User not found in this organization");
     }
 
+    // Validate the custom role belongs to this org (null clears the overlay)
+    if (customRoleId) {
+      const [customRole] = await db
+        .select({ id: orgRoles.id })
+        .from(orgRoles)
+        .where(and(eq(orgRoles.id, customRoleId), eq(orgRoles.organizationId, req.org.id)))
+        .limit(1);
+      if (!customRole) {
+        throw createError(400, "Custom role not found in this organization");
+      }
+    }
+
     await db
       .update(organizationMembers)
-      .set({ role })
+      .set({
+        ...(role !== undefined && { role }),
+        ...(customRoleId !== undefined && { customRoleId: customRoleId || null }),
+      })
       .where(eq(organizationMembers.id, membership.id));
+
+    await notifyUser(id, {
+      type: "team",
+      title: "Your role changed",
+      message: `Your role in ${req.org.name} is now ${role}.`,
+      linkPath: "/dashboard",
+      organizationId: req.org.id,
+    });
 
     res.json({ message: "Role updated" });
   })

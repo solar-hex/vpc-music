@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AppShell } from "@/components/layout/AppShell";
 
 // ---------- Mocks ----------
@@ -67,13 +68,27 @@ vi.mock("@/lib/api-client", () => ({
   orgsApi: {
     create: (...args: any[]) => mockCreateOrg(...args),
   },
+  notificationsApi: {
+    list: vi.fn().mockResolvedValue({ notifications: [] }),
+    unreadCount: vi.fn().mockResolvedValue({ count: 0 }),
+    markRead: vi.fn(),
+    markAllRead: vi.fn(),
+    delete: vi.fn(),
+    clearAll: vi.fn(),
+  },
+  assistantApi: {
+    chat: vi.fn().mockResolvedValue({ reply: "", actions: [] }),
+  },
 }));
 
 function renderShell() {
+  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   return render(
-    <MemoryRouter initialEntries={["/dashboard"]}>
-      <AppShell />
-    </MemoryRouter>,
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter initialEntries={["/dashboard"]}>
+        <AppShell />
+      </MemoryRouter>
+    </QueryClientProvider>,
   );
 }
 
@@ -109,18 +124,29 @@ describe("AppShell", () => {
   // ===================== POSITIVE =====================
 
   describe("positive", () => {
+    // Desktop sidebar and mobile drawer both render in jsdom (visibility is
+    // CSS-only), so shared elements appear twice — query with getAllBy*.
+
     it("renders logo and brand name", () => {
       renderShell();
-      expect(screen.getByText("VPC Music")).toBeInTheDocument();
-      expect(screen.getByAltText("")).toBeInTheDocument(); // logo img
+      expect(screen.getAllByText("VPC Music").length).toBeGreaterThan(0);
+      expect(screen.getAllByAltText("").length).toBeGreaterThan(0); // logo img
     });
 
-    it("renders nav links", () => {
+    it("renders nav links in sections", () => {
       renderShell();
-      expect(screen.getByText("Dashboard")).toBeInTheDocument();
-      expect(screen.getByText("Songs")).toBeInTheDocument();
-      expect(screen.getByText("Setlists")).toBeInTheDocument();
-      expect(screen.getByText("Settings")).toBeInTheDocument();
+      expect(screen.getAllByText("Dashboard").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Songs").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Set Lists").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Settings").length).toBeGreaterThan(0);
+      // Section headings
+      expect(screen.getAllByText("Library").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Tools").length).toBeGreaterThan(0);
+    });
+
+    it("shows Admin link for org admins", () => {
+      renderShell();
+      expect(screen.getAllByText("Admin").length).toBeGreaterThan(0);
     });
 
     it("renders outlet for child routes", () => {
@@ -130,23 +156,39 @@ describe("AppShell", () => {
 
     it("shows user display name", () => {
       renderShell();
-      expect(screen.getByText("John")).toBeInTheDocument();
+      expect(screen.getAllByText("John").length).toBeGreaterThan(0);
+    });
+
+    it("shows the role badge", () => {
+      renderShell();
+      const badges = screen.getAllByTestId("role-badge");
+      expect(badges.length).toBeGreaterThan(0);
+      expect(badges[0]).toHaveTextContent(/worship leader/i);
     });
 
     it("renders theme toggle button", () => {
       renderShell();
-      expect(screen.getByLabelText("Toggle theme")).toBeInTheDocument();
+      expect(screen.getAllByLabelText("Toggle theme").length).toBeGreaterThan(0);
     });
 
     it("calls toggleTheme when button clicked", () => {
       renderShell();
-      fireEvent.click(screen.getByLabelText("Toggle theme"));
+      fireEvent.click(screen.getAllByLabelText("Toggle theme")[0]);
       expect(mockToggleTheme).toHaveBeenCalledOnce();
     });
 
     it("renders sign out button", () => {
       renderShell();
-      expect(screen.getByTitle("Sign out")).toBeInTheDocument();
+      expect(screen.getAllByTitle("Sign out").length).toBeGreaterThan(0);
+    });
+
+    it("opens the mobile drawer from the hamburger button", async () => {
+      renderShell();
+      const user = userEvent.setup();
+      const drawer = document.getElementById("mobile-nav-drawer");
+      expect(drawer?.className).toContain("-translate-x-full");
+      await user.click(screen.getByLabelText("Open menu"));
+      expect(drawer?.className).toContain("translate-x-0");
     });
 
     it("renders the org switcher with the active organization", () => {
@@ -242,7 +284,7 @@ describe("AppShell", () => {
   describe("negative", () => {
     it("calls logout and navigates on sign out", async () => {
       renderShell();
-      fireEvent.click(screen.getByTitle("Sign out"));
+      fireEvent.click(screen.getAllByTitle("Sign out")[0]);
 
       await waitFor(() => {
         expect(mockLogout).toHaveBeenCalled();

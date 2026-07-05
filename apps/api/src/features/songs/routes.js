@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { eq, ilike, or, and, asc, desc, sql, inArray, gte, lte } from "drizzle-orm";
+import { eq, ilike, or, and, asc, desc, sql, inArray, gte, lte, isNull, isNotNull } from "drizzle-orm";
 import { db } from "../../db.js";
-import { songs, songVariations, songUsages, songEdits, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users } from "../../schema/index.js";
+import { songs, songFavorites, songVariations, songUsages, songEdits, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
-import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
+import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../../middlewares/orgContext.js";
 import { chordProToOnSong, chordProToPlainText, convertChrdToChordPro, onSongToChordPro, parseChordPro } from "@vpc-music/shared";
 import { env } from "../../config/env.js";
 import multer from "multer";
@@ -447,6 +447,9 @@ songRoutes.get(
       key: songKey,
       tempoMin,
       tempoMax,
+      status,
+      favorites,
+      archived,
       sort,
       limit = "50",
       offset = "0",
@@ -509,6 +512,27 @@ songRoutes.get(
       conditions.push(inArray(songs.id, groupedSongIds));
     }
 
+    // Trash is always excluded; archived songs only show when requested
+    conditions.push(isNull(songs.deletedAt));
+    conditions.push(eq(songs.isArchived, archived === "true"));
+
+    if (typeof status === "string" && status.trim()) {
+      conditions.push(eq(songs.status, status.trim()));
+    }
+
+    if (favorites === "true") {
+      const favoriteRows = await db
+        .select({ songId: songFavorites.songId })
+        .from(songFavorites)
+        .where(eq(songFavorites.userId, req.user.id));
+      const favoriteIds = favoriteRows.map((row) => row.songId);
+      if (favoriteIds.length === 0) {
+        res.json({ songs: [], total: 0 });
+        return;
+      }
+      conditions.push(inArray(songs.id, favoriteIds));
+    }
+
     let query = db
       .select({
         id: songs.id,
@@ -520,6 +544,8 @@ songRoutes.get(
         artist: songs.artist,
         tags: songs.tags,
         isDraft: songs.isDraft,
+        status: songs.status,
+        isArchived: songs.isArchived,
         createdAt: songs.createdAt,
         updatedAt: songs.updatedAt,
         ...(normalizedScope === "shared"
@@ -595,7 +621,20 @@ songRoutes.get(
       ? await db.select({ count: sql`count(*)::int` }).from(songs).where(and(...conditions))
       : await db.select({ count: sql`count(*)::int` }).from(songs);
 
-    res.json({ songs: result, total: count });
+    // Flag the caller's favorites
+    let favoriteIdSet = new Set();
+    if (result.length > 0) {
+      const favoriteRows = await db
+        .select({ songId: songFavorites.songId })
+        .from(songFavorites)
+        .where(and(eq(songFavorites.userId, req.user.id), inArray(songFavorites.songId, result.map((s) => s.id))));
+      favoriteIdSet = new Set(favoriteRows.map((row) => row.songId));
+    }
+
+    res.json({
+      songs: result.map((song) => ({ ...song, isFavorite: favoriteIdSet.has(song.id) })),
+      total: count,
+    });
   })
 );
 
@@ -740,7 +779,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const name = String(req.body?.name || "").trim();
     if (!name) {
@@ -1155,9 +1194,9 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
-    const { title, aka, category, key, tempo, artist, shout, year, tags, content, isDraft } = req.body;
+    const { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft } = req.body;
 
     if (!title || !content) {
       throw createError(400, "Title and content are required");
@@ -1176,6 +1215,7 @@ songRoutes.post(
         year: year || null,
         tags: tags || null,
         content,
+        abcNotation: abcNotation || null,
         isDraft: isDraft ?? false,
         organizationId: req.org.id,
         createdBy: req.user.id,
@@ -1191,7 +1231,7 @@ songRoutes.put(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
+  requirePermission("songs:edit"),  asyncHandler(async (req, res) => {
     const {
       title,
       aka,
@@ -1203,6 +1243,7 @@ songRoutes.put(
       year,
       tags,
       content,
+      abcNotation,
       isDraft,
       lastKnownUpdatedAt,
       forceOverwrite,
@@ -1231,7 +1272,7 @@ songRoutes.put(
     }
 
     // Track field-level changes for edit history
-    const trackedFields = { title, aka, category, key, tempo, artist, shout, year, tags, content, isDraft };
+    const trackedFields = { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft };
     const edits = [];
     for (const [field, newVal] of Object.entries(trackedFields)) {
       if (newVal === undefined) continue;
@@ -1262,6 +1303,7 @@ songRoutes.put(
         ...(year !== undefined && { year }),
         ...(tags !== undefined && { tags }),
         ...(content !== undefined && { content }),
+        ...(abcNotation !== undefined && { abcNotation: abcNotation || null }),
         ...(isDraft !== undefined && { isDraft }),
         updatedAt: new Date(),
       })
@@ -1277,12 +1319,39 @@ songRoutes.put(
   })
 );
 
-// ── DELETE /api/songs/:id — delete song ──────────────────────
+// ── DELETE /api/songs/:id — move song to trash (soft delete) ─
 songRoutes.delete(
   "/:id",
   auth,  orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),  asyncHandler(async (req, res) => {
+  requirePermission("songs:edit"),  asyncHandler(async (req, res) => {
+    const [existing] = await db
+      .select({ id: songs.id })
+      .from(songs)
+      .where(eq(songs.id, req.params.id))
+      .limit(1);
+
+    if (!existing) {
+      throw createError(404, "Song not found");
+    }
+
+    await db
+      .update(songs)
+      .set({ deletedAt: new Date(), updatedAt: new Date() })
+      .where(eq(songs.id, req.params.id));
+
+    res.json({ message: "Song moved to trash" });
+  })
+);
+
+// ── DELETE /api/songs/:id/permanent — hard delete (admin) ────
+songRoutes.delete(
+  "/:id/permanent",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:delete_permanent"),
+  asyncHandler(async (req, res) => {
     const [existing] = await db
       .select({ id: songs.id })
       .from(songs)
@@ -1305,7 +1374,134 @@ songRoutes.delete(
 
     await db.delete(songs).where(eq(songs.id, req.params.id));
 
-    res.json({ message: "Song deleted" });
+    res.json({ message: "Song permanently deleted" });
+  })
+);
+
+// ── POST /api/songs/:id/restore — restore from trash ─────────
+songRoutes.post(
+  "/:id/restore",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:edit"),
+  asyncHandler(async (req, res) => {
+    const [song] = await db
+      .update(songs)
+      .set({ deletedAt: null, updatedAt: new Date() })
+      .where(eq(songs.id, req.params.id))
+      .returning();
+
+    if (!song) throw createError(404, "Song not found");
+
+    res.json({ song });
+  })
+);
+
+// ── POST /api/songs/:id/archive — archive song ───────────────
+songRoutes.post(
+  "/:id/archive",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:edit"),
+  asyncHandler(async (req, res) => {
+    const [song] = await db
+      .update(songs)
+      .set({ isArchived: true, archivedAt: new Date(), updatedAt: new Date() })
+      .where(eq(songs.id, req.params.id))
+      .returning();
+
+    if (!song) throw createError(404, "Song not found");
+
+    res.json({ song });
+  })
+);
+
+// ── POST /api/songs/:id/unarchive — restore from archive ─────
+songRoutes.post(
+  "/:id/unarchive",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:edit"),
+  asyncHandler(async (req, res) => {
+    const [song] = await db
+      .update(songs)
+      .set({ isArchived: false, archivedAt: null, updatedAt: new Date() })
+      .where(eq(songs.id, req.params.id))
+      .returning();
+
+    if (!song) throw createError(404, "Song not found");
+
+    res.json({ song });
+  })
+);
+
+// ── PATCH /api/songs/:id/status — set rehearsal status ───────
+const SONG_STATUSES = ["ready", "needs_review", "in_rehearsal", "updated", "missing_chords"];
+
+songRoutes.patch(
+  "/:id/status",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:edit"),
+  asyncHandler(async (req, res) => {
+    const { status } = req.body;
+
+    if (status !== null && !SONG_STATUSES.includes(status)) {
+      throw createError(400, `status must be null or one of: ${SONG_STATUSES.join(", ")}`);
+    }
+
+    const [song] = await db
+      .update(songs)
+      .set({ status, updatedAt: new Date() })
+      .where(eq(songs.id, req.params.id))
+      .returning();
+
+    if (!song) throw createError(404, "Song not found");
+
+    res.json({ song });
+  })
+);
+
+// ── POST /api/songs/:id/favorite — favorite (personal, any role) ─
+songRoutes.post(
+  "/:id/favorite",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const [song] = await db
+      .select({ id: songs.id })
+      .from(songs)
+      .where(eq(songs.id, req.params.id))
+      .limit(1);
+
+    if (!song) throw createError(404, "Song not found");
+
+    await db
+      .insert(songFavorites)
+      .values({ songId: req.params.id, userId: req.user.id })
+      .onConflictDoNothing();
+
+    res.status(201).json({ message: "Song favorited" });
+  })
+);
+
+// ── DELETE /api/songs/:id/favorite — unfavorite ──────────────
+songRoutes.delete(
+  "/:id/favorite",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    await db
+      .delete(songFavorites)
+      .where(and(eq(songFavorites.songId, req.params.id), eq(songFavorites.userId, req.user.id)));
+
+    res.json({ message: "Song unfavorited" });
   })
 );
 
@@ -1341,7 +1537,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { filename, content: rawContent } = req.body;
 
@@ -1359,7 +1555,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { filename, content: rawContent } = req.body;
 
@@ -1394,7 +1590,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { filename, content: rawContent } = req.body;
 
@@ -1421,7 +1617,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { filename, content: rawContent } = req.body;
 
@@ -1462,7 +1658,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   upload.single("file"),
   asyncHandler(async (req, res) => {
     if (!req.file) {
@@ -1503,7 +1699,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   upload.single("file"),
   asyncHandler(async (req, res) => {
     if (!req.file) {
@@ -1669,7 +1865,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { usedAt, notes } = req.body;
 
@@ -1720,7 +1916,7 @@ songRoutes.delete(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const [existing] = await db
       .select({ id: songUsages.id })
@@ -1749,7 +1945,7 @@ songRoutes.patch(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { variationId = null } = req.body ?? {};
 
@@ -1803,7 +1999,7 @@ songRoutes.post(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { name, content, key } = req.body;
 
@@ -1841,7 +2037,7 @@ songRoutes.put(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const { name, content, key } = req.body;
 
@@ -1879,7 +2075,7 @@ songRoutes.delete(
   auth,
   orgContext,
   requireOrg,
-  requireOrgRole("admin", "musician"),
+  requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
     const [existing] = await db
       .select({ id: songVariations.id })

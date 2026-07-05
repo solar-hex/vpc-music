@@ -9,6 +9,7 @@ export const env = {
   CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5176",
   FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:5176",
   PDF_CO_API_KEY: process.env.PDF_CO_API_KEY || "",
+  ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY || "",
 
   // Mailgun HTTP API
   MAILGUN_DOMAIN: process.env.MAILGUN_DOMAIN || "",

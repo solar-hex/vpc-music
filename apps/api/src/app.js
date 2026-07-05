@@ -16,6 +16,10 @@ import { shareRoutes } from "./features/share/routes.js";
 import { stickyNoteRoutes } from "./features/songs/stickyNoteRoutes.js";
 import { collaborationRoutes } from "./features/songs/collaborationRoutes.js";
 import { orgRoutes } from "./features/organizations/routes.js";
+import { artistRoutes } from "./features/artists/routes.js";
+import { notificationRoutes } from "./features/notifications/routes.js";
+import { assistantRoutes } from "./features/assistant/routes.js";
+import { roleRoutes } from "./features/roles/routes.js";
 
 const app = express();
 
@@ -34,6 +38,16 @@ app.get("/health", (_req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
+// ── /api prefix tolerance ────────────────────────
+// Routes mount unprefixed, but clients and proxies may send /api/*
+// (the Vite dev proxy rewrites it away; other deployments may not).
+app.use((req, _res, next) => {
+  if (req.url.startsWith("/api/")) {
+    req.url = req.url.slice(4);
+  }
+  next();
+});
+
 // ── Routes ───────────────────────────────────────
 app.use("/auth", authRoutes);
 app.use("/songs", songRoutes);
@@ -44,6 +58,10 @@ app.use("/platform", platformRoutes);
 app.use("/admin", adminRoutes);
 app.use("/events", eventRoutes);
 app.use("/organizations", orgRoutes);
+app.use("/artists", artistRoutes);
+app.use("/notifications", notificationRoutes);
+app.use("/assistant", assistantRoutes);
+app.use("/roles", roleRoutes);
 app.use("/", shareRoutes);   // /songs/:id/share(s) + /shared/:token
 
 // ── Error handler (must be last) ─────────────────

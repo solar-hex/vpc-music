@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { adminApi, shareApi, songsApi, type OrgUser, type OrganizationShareTarget, type Song, type SongGroup } from "@/lib/api-client";
+import { adminApi, shareApi, songsApi, type OrgUser, type OrganizationShareTarget, type Song, type SongGroup, type SongStatus } from "@/lib/api-client";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
+import { SongStatusBadge, SONG_STATUS_CONFIGS } from "@/components/songs/SongStatusBadge";
+import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
 import { useAuth } from "@/contexts/AuthContext";
 import { ALL_KEYS } from "@vpc-music/shared";
-import { Search, Plus, Music, X, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2 } from "lucide-react";
+import { Search, Plus, Music, X, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2, Star, Archive } from "lucide-react";
 import { toast } from "sonner";
 
 const PAGE_SIZE = 50;
@@ -32,6 +34,9 @@ export function SongListPage() {
   const [tempoMin, setTempoMin] = useState("");
   const [tempoMax, setTempoMax] = useState("");
   const [sort, setSort] = useState<"lastEdited" | "title" | "recentlyAdded" | "mostUsed">("lastEdited");
+  const [statusFilter, setStatusFilter] = useState<SongStatus | "">("");
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
+  const [showArchived, setShowArchived] = useState(false);
   const [debouncedQ, setDebouncedQ] = useState("");
   const [page, setPage] = useState(0);
   const [selectedSongIds, setSelectedSongIds] = useState<string[]>([]);
@@ -151,6 +156,9 @@ export function SongListPage() {
         tag: tagFilter || undefined,
         tempoMin: parsedTempoMin,
         tempoMax: parsedTempoMax,
+        status: statusFilter || undefined,
+        favorites: favoritesOnly || undefined,
+        archived: showArchived || undefined,
         sort,
         limit: PAGE_SIZE,
         offset: page * PAGE_SIZE,
@@ -168,11 +176,11 @@ export function SongListPage() {
     return () => {
       cancelled = true;
     };
-  }, [debouncedQ, libraryScope, groupFilter, categoryFilter, keyFilter, tagFilter, parsedTempoMin, parsedTempoMax, sort, page]);
+  }, [debouncedQ, libraryScope, groupFilter, categoryFilter, keyFilter, tagFilter, parsedTempoMin, parsedTempoMax, statusFilter, favoritesOnly, showArchived, sort, page]);
 
   useEffect(() => {
     setPage(0);
-  }, [debouncedQ, libraryScope, groupFilter, categoryFilter, keyFilter, tagFilter, parsedTempoMin, parsedTempoMax, sort]);
+  }, [debouncedQ, libraryScope, groupFilter, categoryFilter, keyFilter, tagFilter, parsedTempoMin, parsedTempoMax, statusFilter, favoritesOnly, showArchived, sort]);
 
   useEffect(() => {
     if (isSharedScope && groupFilter) {
@@ -584,6 +592,19 @@ export function SongListPage() {
           className="input w-28"
         />
         <select
+          aria-label="Filter by status"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value as SongStatus | "")}
+          className="select w-auto"
+        >
+          <option value="">All statuses</option>
+          {(Object.keys(SONG_STATUS_CONFIGS) as SongStatus[]).map((status) => (
+            <option key={status} value={status}>
+              {SONG_STATUS_CONFIGS[status].label}
+            </option>
+          ))}
+        </select>
+        <select
           aria-label="Sort songs"
           value={sort}
           onChange={(e) => setSort(e.target.value as "lastEdited" | "title" | "recentlyAdded" | "mostUsed")}
@@ -594,6 +615,22 @@ export function SongListPage() {
           <option value="recentlyAdded">Recently added</option>
           <option value="mostUsed">Most used</option>
         </select>
+        <button
+          type="button"
+          onClick={() => setFavoritesOnly((prev) => !prev)}
+          aria-pressed={favoritesOnly}
+          className={favoritesOnly ? "btn-primary btn-sm" : "btn-outline btn-sm"}
+        >
+          <Star className={`h-4 w-4 ${favoritesOnly ? "fill-current" : ""}`} /> Favorites
+        </button>
+        <button
+          type="button"
+          onClick={() => setShowArchived((prev) => !prev)}
+          aria-pressed={showArchived}
+          className={showArchived ? "btn-primary btn-sm" : "btn-outline btn-sm"}
+        >
+          <Archive className="h-4 w-4" /> Archived
+        </button>
       </div>
 
       {/* Results */}
@@ -716,8 +753,14 @@ export function SongListPage() {
                   className="flex min-w-0 flex-1 items-center gap-3"
                 >
                   <div className="min-w-0 flex-1">
-                    <div className="font-medium text-[hsl(var(--foreground))] truncate">
-                      {song.title}
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="font-medium text-[hsl(var(--foreground))] truncate">
+                        {song.title}
+                      </span>
+                      {song.isFavorite && (
+                        <Star className="h-3.5 w-3.5 shrink-0 fill-[hsl(var(--secondary))] text-[hsl(var(--secondary))]" aria-label="Favorite" />
+                      )}
+                      <SongStatusBadge status={song.status} isArchived={song.isArchived} />
                     </div>
                     <div className="mt-0.5 text-xs text-[hsl(var(--muted-foreground))]">
                       {[
@@ -736,6 +779,19 @@ export function SongListPage() {
                     {song.tempo && <TempoIndicator tempo={song.tempo} />}
                   </div>
                 </Link>
+                {!isSharedScope && (
+                  <SongActionsMenu
+                    song={song}
+                    canEdit={!!canEdit}
+                    onChanged={(updated) =>
+                      setSongs((prev) => prev.map((s) => (s.id === updated.id ? { ...s, ...updated } : s)))
+                    }
+                    onRemoved={(removed) => {
+                      setSongs((prev) => prev.filter((s) => s.id !== removed.id));
+                      setTotal((prev) => Math.max(0, prev - 1));
+                    }}
+                  />
+                )}
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SongListPage } from "@/pages/songs/SongListPage";
 import { SongViewPage } from "@/pages/songs/SongViewPage";
-import { SetlistsPage } from "@/pages/setlists/SetlistsPage";
+import { SetlistHubPage } from "@/pages/setlists/SetlistHubPage";
 import { SetlistViewPage } from "@/pages/setlists/SetlistViewPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 
@@ -51,9 +51,18 @@ vi.mock("@/lib/api-client", () => ({
     create: vi.fn(),
     markComplete: vi.fn(),
     reopen: vi.fn(),
+    archive: vi.fn(),
+    unarchive: vi.fn(),
+    restore: vi.fn(),
+    permanentDelete: vi.fn(),
   },
   eventsApi: {
     list: (...args: any[]) => mockEventsList(...args),
+    create: vi.fn(),
+    update: vi.fn(),
+  },
+  orgsApi: {
+    members: vi.fn().mockResolvedValue({ members: [] }),
   },
   shareApi: {
     create: vi.fn(),
@@ -194,7 +203,7 @@ function renderSongView() {
 function renderSetlistsList() {
   return render(
     <MemoryRouter initialEntries={["/setlists"]}>
-      <SetlistsPage />
+      <SetlistHubPage />
     </MemoryRouter>,
   );
 }
@@ -331,8 +340,8 @@ describe("Role-gated UI", () => {
     });
   });
 
-  // ── SetlistsPage ──────────────────────────────────
-  describe("SetlistsPage", () => {
+  // ── SetlistHubPage ────────────────────────────────
+  describe("SetlistHubPage", () => {
     it("musician sees New Setlist button", async () => {
       mockAuthValue = musicianAuth;
       renderSetlistsList();
@@ -347,18 +356,20 @@ describe("Role-gated UI", () => {
       expect(screen.queryByRole("button", { name: /new setlist/i })).not.toBeInTheDocument();
     });
 
-    it("observer does NOT see delete buttons on setlist cards", async () => {
+    it("observer does NOT see archive/trash buttons on setlist cards", async () => {
       mockAuthValue = observerAuth;
       renderSetlistsList();
       await waitFor(() => expect(screen.getByText("Sunday")).toBeInTheDocument());
-      expect(screen.queryByTitle("Delete")).not.toBeInTheDocument();
+      expect(screen.queryByTitle("Archive")).not.toBeInTheDocument();
+      expect(screen.queryByTitle("Move to trash")).not.toBeInTheDocument();
     });
 
-    it("musician sees delete buttons on setlist cards", async () => {
+    it("musician sees archive/trash buttons on setlist cards", async () => {
       mockAuthValue = musicianAuth;
       renderSetlistsList();
       await waitFor(() => expect(screen.getByText("Sunday")).toBeInTheDocument());
-      expect(screen.getByTitle("Delete")).toBeInTheDocument();
+      expect(screen.getByTitle("Archive")).toBeInTheDocument();
+      expect(screen.getByTitle("Move to trash")).toBeInTheDocument();
     });
   });
 

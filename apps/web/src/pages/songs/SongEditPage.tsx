@@ -9,6 +9,7 @@ import { ArrowLeft, Save, Upload, Layers } from "lucide-react";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { ChordProRenderer } from "@/components/songs/ChordProRenderer";
+import { StaffNotationEditor } from "@/components/songs/StaffNotation";
 import { ArrangementBuilder } from "@/components/songs/ArrangementBuilder";
 import { TagInput } from "@/components/songs/TagInput";
 import { enqueueOfflineSongEdit, isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
@@ -57,6 +58,7 @@ export function SongEditPage() {
   const [shout, setShout] = useState("");
   const [tags, setTags] = useState("");
   const [content, setContent] = useState("");
+  const [abcNotation, setAbcNotation] = useState("");
   const [isDraft, setIsDraft] = useState(false);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
@@ -106,6 +108,7 @@ export function SongEditPage() {
       shout: songRecord?.shout || "",
       tags: songRecord?.tags || "",
       content: currentVariation?.content || songRecord?.content || "",
+      abcNotation: songRecord?.abcNotation || "",
       isDraft: !!songRecord?.isDraft,
     }),
     [currentVariation, songRecord],
@@ -121,17 +124,18 @@ export function SongEditPage() {
       shout,
       tags,
       content,
+      abcNotation,
       isDraft,
     }),
-    [title, aka, category, key, tempo, artist, shout, tags, content, isDraft],
+    [title, aka, category, key, tempo, artist, shout, tags, content, abcNotation, isDraft],
   );
   const isDirty = useMemo(() => {
     if (isNew) {
-      return Boolean(title.trim() || aka.trim() || category.trim() || key || tempo || artist.trim() || shout.trim() || tags.trim() || content.trim() || isDraft);
+      return Boolean(title.trim() || aka.trim() || category.trim() || key || tempo || artist.trim() || shout.trim() || tags.trim() || content.trim() || abcNotation.trim() || isDraft);
     }
 
     return JSON.stringify(currentFormState) !== JSON.stringify(initialFormState);
-  }, [aka, category, content, currentFormState, initialFormState, isDraft, isNew, key, tags, tempo, title, artist, shout]);
+  }, [aka, abcNotation, category, content, currentFormState, initialFormState, isDraft, isNew, key, tags, tempo, title, artist, shout]);
   const shouldWarnOnLeave = isDirty && !saving && !allowNavigationRef.current;
 
   useBeforeUnload(
@@ -158,6 +162,7 @@ export function SongEditPage() {
       setKey(song.key || "");
       setContent(song.content || "");
     }
+    setAbcNotation(song.abcNotation || "");
     setIsDraft(!!song.isDraft);
   };
 
@@ -169,6 +174,7 @@ export function SongEditPage() {
     artist: artist.trim() || undefined,
     shout: shout.trim() || undefined,
     tags: tags.trim() || undefined,
+    abcNotation: abcNotation.trim() || undefined,
     isDraft,
     ...(currentVariation ? {} : { key: key || undefined, content }),
   });
@@ -1190,6 +1196,11 @@ export function SongEditPage() {
               </div>
             )}
           </div>
+        )}
+
+        {/* Staff notation (ABC) — optional, main song version only */}
+        {!currentVariation && (
+          <StaffNotationEditor value={abcNotation} onChange={setAbcNotation} disabled={saving} />
         )}
 
         {/* Draft toggle */}

@@ -98,6 +98,8 @@ export const authApi = {
 };
 
 // ── Songs ────────────────────────────────────────
+export type SongStatus = "ready" | "needs_review" | "in_rehearsal" | "updated" | "missing_chords";
+
 export interface Song {
   id: string;
   title: string;
@@ -110,7 +112,11 @@ export interface Song {
   year?: string | null;
   tags?: string | null;
   content: string;
+  abcNotation?: string | null;
   isDraft?: boolean;
+  status?: SongStatus | null;
+  isArchived?: boolean;
+  isFavorite?: boolean;
   defaultVariationId?: string | null;
   sharedWithMe?: boolean;
   organizationName?: string | null;
@@ -172,7 +178,7 @@ export type SongWriteInput = Partial<Song> & {
 };
 
 export const songsApi = {
-  list: (params?: { q?: string; groupId?: string; scope?: "organization" | "shared"; category?: string; tag?: string; key?: string; tempoMin?: number; tempoMax?: number; sort?: "lastEdited" | "title" | "recentlyAdded" | "mostUsed"; limit?: number; offset?: number }) => {
+  list: (params?: { q?: string; groupId?: string; scope?: "organization" | "shared"; category?: string; tag?: string; key?: string; tempoMin?: number; tempoMax?: number; status?: SongStatus; favorites?: boolean; archived?: boolean; sort?: "lastEdited" | "title" | "recentlyAdded" | "mostUsed"; limit?: number; offset?: number }) => {
     const qs = new URLSearchParams();
     if (params?.q) qs.set("q", params.q);
     if (params?.groupId) qs.set("groupId", params.groupId);
@@ -182,12 +188,24 @@ export const songsApi = {
     if (params?.key) qs.set("key", params.key);
     if (params?.tempoMin !== undefined) qs.set("tempoMin", String(params.tempoMin));
     if (params?.tempoMax !== undefined) qs.set("tempoMax", String(params.tempoMax));
+    if (params?.status) qs.set("status", params.status);
+    if (params?.favorites) qs.set("favorites", "true");
+    if (params?.archived) qs.set("archived", "true");
     if (params?.sort) qs.set("sort", params.sort);
     if (params?.limit) qs.set("limit", String(params.limit));
     if (params?.offset) qs.set("offset", String(params.offset));
     const query = qs.toString();
     return request<{ songs: Song[]; total: number }>(`/api/songs${query ? `?${query}` : ""}`);
   },
+  setStatus: (id: string, status: SongStatus | null) =>
+    request<{ song: Song }>(`/api/songs/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
+  archive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/archive`, { method: "POST" }),
+  unarchive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/unarchive`, { method: "POST" }),
+  restore: (id: string) => request<{ song: Song }>(`/api/songs/${id}/restore`, { method: "POST" }),
+  permanentDelete: (id: string) =>
+    request<{ message: string }>(`/api/songs/${id}/permanent`, { method: "DELETE" }),
+  favorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "POST" }),
+  unfavorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "DELETE" }),
   get: (id: string) => request<{ song: Song; variations: SongVariation[] }>(`/api/songs/${id}`),
   getGroups: () => request<{ groups: SongGroup[] }>("/api/songs/groups"),
   createGroup: (data: { name: string }) =>
@@ -307,9 +325,30 @@ export interface Setlist {
   category?: string | null;
   notes?: string | null;
   status?: "draft" | "complete";
+  leader?: string | null;
+  tags?: string | null;
+  isArchived?: boolean;
+  archivedAt?: string | null;
+  deletedAt?: string | null;
   songCount?: number;
+  /** Sum of per-song planned durations, in seconds. */
+  totalDuration?: number | null;
+  averageBpm?: number | null;
+  /** Comma-separated distinct keys across the set. */
+  keys?: string | null;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export type SetlistView = "active" | "archived" | "trash" | "all";
+
+export type SetlistArrangement = "ACOUSTIC" | "ELECTRIC" | "FULL_BAND" | "STRIPPED_DOWN";
+export type TransitionCueType = "SPEAKING" | "PRAYER" | "INSTRUMENTAL" | "COUNTDOWN" | "SPONTANEOUS" | "NOTE";
+
+export interface TransitionCue {
+  type: TransitionCueType;
+  text?: string;
+  durationSec?: number;
 }
 
 export interface SetlistSongItem {
@@ -320,6 +359,10 @@ export interface SetlistSongItem {
   position: number;
   key?: string | null;
   notes?: string | null;
+  duration?: number | null;
+  capo?: number | null;
+  arrangement?: SetlistArrangement | null;
+  transitionCues?: TransitionCue[] | null;
   songTitle: string;
   songKey?: string | null;
   songArtist?: string | null;
@@ -327,7 +370,13 @@ export interface SetlistSongItem {
 }
 
 export const setlistsApi = {
-  list: () => request<{ setlists: Setlist[] }>("/api/setlists"),
+  list: (params?: { view?: SetlistView }) =>
+    request<{ setlists: Setlist[] }>(`/api/setlists${params?.view ? `?view=${params.view}` : ""}`),
+  archive: (id: string) => request<{ setlist: Setlist }>(`/api/setlists/${id}/archive`, { method: "POST" }),
+  unarchive: (id: string) => request<{ setlist: Setlist }>(`/api/setlists/${id}/unarchive`, { method: "POST" }),
+  restore: (id: string) => request<{ setlist: Setlist }>(`/api/setlists/${id}/restore`, { method: "POST" }),
+  permanentDelete: (id: string) =>
+    request<{ message: string }>(`/api/setlists/${id}/permanent`, { method: "DELETE" }),
   get: (id: string) => request<{ setlist: Setlist; songs: SetlistSongItem[] }>(`/api/setlists/${id}`),
   exportZip: (id: string, format: "chordpro" | "onsong" | "text" = "chordpro") =>
     fetchWithOrganization(`/api/setlists/${id}/export/zip?format=${format}`),
@@ -345,6 +394,15 @@ export const setlistsApi = {
     request<{ message: string }>(`/api/setlists/${setlistId}/songs`, {
       method: "PUT",
       body: JSON.stringify({ order }),
+    }),
+  updateSong: (
+    setlistId: string,
+    songItemId: string,
+    data: Partial<Pick<SetlistSongItem, "key" | "notes" | "duration" | "capo" | "arrangement" | "transitionCues">>,
+  ) =>
+    request<{ item: SetlistSongItem }>(`/api/setlists/${setlistId}/songs/${songItemId}`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
     }),
   removeSong: (setlistId: string, songItemId: string) =>
     request<{ message: string }>(`/api/setlists/${setlistId}/songs/${songItemId}`, { method: "DELETE" }),
@@ -378,14 +436,26 @@ export const platformApi = {
 };
 
 // ── Events ───────────────────────────────────────
+export interface EventTeamMember {
+  userId?: string;
+  name: string;
+  role?: string;
+}
+
 export interface Event {
   id: string;
   title: string;
   date: string;
   location?: string | null;
   notes?: string | null;
+  theme?: string | null;
+  preparedBy?: string | null;
+  preparedByName?: string | null;
+  team?: EventTeamMember[] | null;
   setlistId?: string | null;
   setlistName?: string | null;
+  setlistStatus?: "draft" | "complete" | null;
+  songCount?: number | null;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -666,6 +736,7 @@ export interface OrgUser {
   displayName: string | null;
   globalRole: "owner" | "member";
   orgRole: "admin" | "musician" | "observer";
+  customRoleId?: string | null;
   hasPassword: boolean;
   createdAt: string;
 }
@@ -685,11 +756,37 @@ export const adminApi = {
       method: "PUT",
       body: JSON.stringify({ role }),
     }),
+  /** Assign or clear a member's custom-role overlay */
+  updateCustomRole: (userId: string, customRoleId: string | null) =>
+    request<{ message: string }>(`/api/admin/users/${userId}/role`, {
+      method: "PUT",
+      body: JSON.stringify({ customRoleId }),
+    }),
   /** Remove a member from the org */
   removeMember: (userId: string) =>
     request<{ message: string }>(`/api/admin/users/${userId}`, {
       method: "DELETE",
     }),
+};
+
+// ── Roles & Permissions ──────────────────────────
+export interface OrgRole {
+  id: string;
+  name: string;
+  description?: string | null;
+  color?: string | null;
+  permissions: string[];
+  isSystem: boolean;
+  memberCount?: number;
+}
+
+export const rolesApi = {
+  list: () => request<{ roles: OrgRole[] }>("/api/roles"),
+  create: (data: { name: string; description?: string; color?: string; permissions: string[] }) =>
+    request<{ role: OrgRole }>("/api/roles", { method: "POST", body: JSON.stringify(data) }),
+  update: (id: string, data: Partial<{ name: string; description: string; color: string; permissions: string[] }>) =>
+    request<{ role: OrgRole }>(`/api/roles/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/roles/${id}`, { method: "DELETE" }),
 };
 
 // ── Organizations ────────────────────────────────
@@ -699,9 +796,106 @@ export interface Organization {
   role?: "admin" | "musician" | "observer";
 }
 
+export interface OrgMember {
+  userId: string;
+  displayName: string | null;
+  role: "admin" | "musician" | "observer";
+}
+
+// ── Assistant ────────────────────────────────────
+export interface AssistantMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface AssistantAction {
+  label: string;
+  linkPath: string;
+}
+
+export const assistantApi = {
+  chat: (messages: AssistantMessage[]) =>
+    request<{ reply: string; actions: AssistantAction[] }>("/api/assistant/chat", {
+      method: "POST",
+      body: JSON.stringify({ messages }),
+    }),
+};
+
+// ── Notifications ────────────────────────────────
+export interface AppNotification {
+  id: string;
+  type: "event" | "team" | "setlist" | "system";
+  title: string;
+  message?: string | null;
+  linkPath?: string | null;
+  readAt?: string | null;
+  createdAt?: string;
+}
+
+export const notificationsApi = {
+  list: (params?: { unread?: boolean; limit?: number }) => {
+    const qs = new URLSearchParams();
+    if (params?.unread) qs.set("unread", "true");
+    if (params?.limit) qs.set("limit", String(params.limit));
+    const query = qs.toString();
+    return request<{ notifications: AppNotification[] }>(`/api/notifications${query ? `?${query}` : ""}`);
+  },
+  unreadCount: () => request<{ count: number }>("/api/notifications/unread-count"),
+  markRead: (id: string) =>
+    request<{ notification: AppNotification }>(`/api/notifications/${id}/read`, { method: "POST" }),
+  markAllRead: () => request<{ message: string }>("/api/notifications/read-all", { method: "POST" }),
+  delete: (id: string) => request<{ message: string }>(`/api/notifications/${id}`, { method: "DELETE" }),
+  clearAll: () => request<{ message: string }>("/api/notifications", { method: "DELETE" }),
+};
+
+// ── Artists ──────────────────────────────────────
+export interface Artist {
+  id: string;
+  name: string;
+  bio?: string | null;
+  genre?: string | null;
+  website?: string | null;
+  imageUrl?: string | null;
+  verified?: boolean;
+  songCount?: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface ArtistSong {
+  id: string;
+  title: string;
+  key?: string | null;
+  tempo?: number | null;
+  useCount?: number;
+}
+
+export const artistsApi = {
+  list: (params?: { q?: string; genre?: string }) => {
+    const qs = new URLSearchParams();
+    if (params?.q) qs.set("q", params.q);
+    if (params?.genre) qs.set("genre", params.genre);
+    const query = qs.toString();
+    return request<{ artists: Artist[] }>(`/api/artists${query ? `?${query}` : ""}`);
+  },
+  get: (id: string) => request<{ artist: Artist; songs: ArtistSong[] }>(`/api/artists/${id}`),
+  create: (data: Partial<Artist>) =>
+    request<{ artist: Artist }>("/api/artists", { method: "POST", body: JSON.stringify(data) }),
+  resolve: (name: string) =>
+    request<{ artist: Artist; created: boolean }>("/api/artists/resolve", {
+      method: "POST",
+      body: JSON.stringify({ name }),
+    }),
+  update: (id: string, data: Partial<Artist>) =>
+    request<{ artist: Artist }>(`/api/artists/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/artists/${id}`, { method: "DELETE" }),
+};
+
 export const orgsApi = {
   /** List organizations the user belongs to (owners see all) */
   list: () => request<{ organizations: Organization[] }>("/api/organizations"),
+  /** List members of the active organization (readable by all org roles) */
+  members: () => request<{ members: OrgMember[] }>("/api/organizations/current/members"),
   /** Create a new organization */
   create: (name: string) =>
     request<{ organization: Organization }>("/api/organizations", {

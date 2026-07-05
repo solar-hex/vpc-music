@@ -1,5 +1,5 @@
 // Drizzle ORM schema — setlists & song groups
-import { pgTable, text, timestamp, integer, uuid } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, integer, boolean, uuid, jsonb } from "drizzle-orm/pg-core";
 import { pgEnum } from "drizzle-orm/pg-core";
 import { songs } from "./songs.js";
 import { songVariations } from "./songs.js";
@@ -13,6 +13,11 @@ export const setlists = pgTable("setlists", {
   category: text("category"),          // e.g. "Church", "Weddings", "Special Events"
   notes: text("notes"),
   status: setlistStatusEnum("status").default("draft"),
+  leader: text("leader"),              // who leads this set
+  tags: text("tags"),                  // comma-separated tags
+  isArchived: boolean("is_archived").default(false).notNull(),
+  archivedAt: timestamp("archived_at"),
+  deletedAt: timestamp("deleted_at"),  // soft delete (trash) — null = live
   organizationId: uuid("organization_id").references(() => organizations.id),
   createdBy: uuid("created_by"),
   createdAt: timestamp("created_at").defaultNow(),
@@ -27,4 +32,8 @@ export const setlistSongs = pgTable("setlist_songs", {
   position: integer("position").notNull(),
   key: text("key"),                     // override key for this setlist
   notes: text("notes"),                 // per-song notes within the setlist
+  duration: integer("duration"),        // planned duration in seconds
+  capo: integer("capo"),                // suggested capo fret (0–12)
+  arrangement: text("arrangement"),     // ACOUSTIC | ELECTRIC | FULL_BAND | STRIPPED_DOWN
+  transitionCues: jsonb("transition_cues"), // [{ type, text, durationSec }] between this song and the next
 });

@@ -1,7 +1,9 @@
 export * from "./organizations.js";
 export * from "./organizationMembers.js";
+export * from "./orgRoles.js";
 export * from "./users.js";
 export * from "./songs.js";
+export * from "./artists.js";
 export * from "./songUserShares.js";
 export * from "./songOrganizationShares.js";
 export * from "./songGroups.js";
@@ -14,3 +16,4 @@ export * from "./songUsages.js";
 export * from "./songEdits.js";
 export * from "./stickyNotes.js";
 export * from "./songCollaborationEntries.js";
+export * from "./notifications.js";

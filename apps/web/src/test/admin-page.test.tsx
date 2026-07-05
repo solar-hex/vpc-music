@@ -14,7 +14,14 @@ vi.mock("@/lib/api-client", () => ({
     listUsers: (...args: any[]) => mockListUsers(...args),
     invite: (...args: any[]) => mockInvite(...args),
     updateRole: (...args: any[]) => mockUpdateRole(...args),
+    updateCustomRole: vi.fn(),
     removeMember: (...args: any[]) => mockRemoveMember(...args),
+  },
+  rolesApi: {
+    list: vi.fn().mockResolvedValue({ roles: [] }),
+    create: vi.fn(),
+    update: vi.fn(),
+    delete: vi.fn(),
   },
 }));
 
@@ -381,11 +388,12 @@ describe("AdminPage", () => {
       expect(src).toContain("removeMember:");
     });
 
-    it("Admin nav link is conditional on admin role in AppShell", async () => {
+    it("Admin nav link is conditional on admin role in the sidebar", async () => {
       const fs = await import("fs");
-      const src = fs.readFileSync("src/components/layout/AppShell.tsx", "utf-8");
+      const src = fs.readFileSync("src/components/layout/Sidebar.tsx", "utf-8");
       expect(src).toContain("isAdmin");
-      expect(src).toContain('to="/admin"');
+      expect(src).toContain('to: "/admin"');
+      expect(src).toContain("adminOnly: true");
     });
   });
 });
