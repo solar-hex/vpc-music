@@ -5,9 +5,9 @@ import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import { SongStatusBadge, SONG_STATUS_CONFIGS } from "@/components/songs/SongStatusBadge";
 import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
+import { SongFilterToolbar, type FilterChip, type SongSortMode } from "@/components/songs/SongFilterToolbar";
 import { useAuth } from "@/contexts/AuthContext";
-import { ALL_KEYS } from "@vpc-music/shared";
-import { Search, Plus, Music, X, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2, Star, Archive } from "lucide-react";
+import { Plus, Music, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2, Star } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { toast } from "sonner";
 
@@ -34,7 +34,7 @@ export function SongListPage() {
   const [tagFilter, setTagFilter] = useState("");
   const [tempoMin, setTempoMin] = useState("");
   const [tempoMax, setTempoMax] = useState("");
-  const [sort, setSort] = useState<"lastEdited" | "title" | "recentlyAdded" | "mostUsed">("lastEdited");
+  const [sort, setSort] = useState<SongSortMode>("lastEdited");
   const [statusFilter, setStatusFilter] = useState<SongStatus | "">("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [showArchived, setShowArchived] = useState(false);
@@ -59,7 +59,10 @@ export function SongListPage() {
   const parsedTempoMin = /^\d+$/.test(tempoMin) ? Number.parseInt(tempoMin, 10) : undefined;
   const parsedTempoMax = /^\d+$/.test(tempoMax) ? Number.parseInt(tempoMax, 10) : undefined;
   const isSharedScope = libraryScope === "shared";
-  const hasActiveFilters = Boolean(debouncedQ || groupFilter || categoryFilter || keyFilter || tagFilter || tempoMin || tempoMax);
+  const hasActiveFilters = Boolean(
+    debouncedQ || groupFilter || categoryFilter || keyFilter || tagFilter || tempoMin || tempoMax ||
+    statusFilter || favoritesOnly || showArchived || isSharedScope,
+  );
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   const pageStart = total === 0 ? 0 : page * PAGE_SIZE + 1;
   const pageEnd = total === 0 ? 0 : Math.min(total, (page + 1) * PAGE_SIZE);
@@ -474,6 +477,66 @@ export function SongListPage() {
     }
   };
 
+  const handleStatusChange = (next: { statusFilter: SongStatus | ""; favoritesOnly: boolean; showArchived: boolean }) => {
+    setStatusFilter(next.statusFilter);
+    setFavoritesOnly(next.favoritesOnly);
+    setShowArchived(next.showArchived);
+  };
+
+  const handleResetAdvanced = () => {
+    setGroupFilter("");
+    setCategoryFilter("");
+    setKeyFilter("");
+    setTagFilter("");
+    setTempoMin("");
+    setTempoMax("");
+  };
+
+  const handleClearAll = () => {
+    setQ("");
+    setLibraryScope("organization");
+    handleResetAdvanced();
+    handleStatusChange({ statusFilter: "", favoritesOnly: false, showArchived: false });
+  };
+
+  // Active-filter chips shown below the toolbar. Sort is a view preference,
+  // not a filter, so it's intentionally excluded; Search already has its own
+  // inline clear button, so it doesn't get a redundant chip here.
+  const filterChips: FilterChip[] = [
+    isSharedScope
+      ? { key: "scope", label: "Organization: Shared with me", onRemove: () => setLibraryScope("organization") }
+      : null,
+    favoritesOnly
+      ? { key: "status", label: "Status: Favorites", onRemove: () => setFavoritesOnly(false) }
+      : showArchived
+      ? { key: "status", label: "Status: Archived", onRemove: () => setShowArchived(false) }
+      : statusFilter
+      ? { key: "status", label: `Status: ${SONG_STATUS_CONFIGS[statusFilter].label}`, onRemove: () => setStatusFilter("") }
+      : null,
+    groupFilter
+      ? {
+          key: "group",
+          label: `Group: ${availableGroups.find((g) => g.id === groupFilter)?.name ?? groupFilter}`,
+          onRemove: () => setGroupFilter(""),
+        }
+      : null,
+    categoryFilter
+      ? { key: "category", label: `Category: ${categoryFilter}`, onRemove: () => setCategoryFilter("") }
+      : null,
+    keyFilter ? { key: "key", label: `Key: ${keyFilter}`, onRemove: () => setKeyFilter("") } : null,
+    tagFilter ? { key: "tag", label: `Tag: ${tagFilter}`, onRemove: () => setTagFilter("") } : null,
+    tempoMin || tempoMax
+      ? {
+          key: "bpm",
+          label: `BPM: ${tempoMin || "…"}–${tempoMax || "…"}`,
+          onRemove: () => {
+            setTempoMin("");
+            setTempoMax("");
+          },
+        }
+      : null,
+  ].filter((chip): chip is FilterChip => chip !== null);
+
   return (
     <div className="space-y-4">
       {/* Header */}
@@ -490,149 +553,37 @@ export function SongListPage() {
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3">
-        <div className="relative flex-1 min-w-50">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[hsl(var(--muted-foreground))]" />
-          <input
-            type="text"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search songs..."
-            className="input pl-10 pr-9"
-          />
-          {q && (
-            <button
-              onClick={() => setQ("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-        <select
-          aria-label="Song scope"
-          value={libraryScope}
-          onChange={(e) => setLibraryScope(e.target.value as "organization" | "shared")}
-          className="select w-auto"
-        >
-          <option value="organization">Current organization</option>
-          <option value="shared">Shared with me</option>
-        </select>
-        <select
-          aria-label="Filter by group"
-          value={groupFilter}
-          onChange={(e) => setGroupFilter(e.target.value)}
-          className="select w-auto"
-          disabled={isSharedScope}
-        >
-          <option value="">All groups</option>
-          {availableGroups.map((group) => (
-            <option key={group.id} value={group.id}>
-              {group.name}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label="Filter by category"
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-          className="select w-auto"
-        >
-          <option value="">All categories</option>
-          {availableCategories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-        <select
-          value={keyFilter}
-          onChange={(e) => setKeyFilter(e.target.value)}
-          className="select w-auto"
-        >
-          <option value="">All keys</option>
-          {ALL_KEYS.map((k) => (
-            <option key={k} value={k}>
-              {k}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label="Filter by tag"
-          value={tagFilter}
-          onChange={(e) => setTagFilter(e.target.value)}
-          className="select w-auto"
-        >
-          <option value="">All tags</option>
-          {availableTags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          ))}
-        </select>
-        <input
-          type="number"
-          inputMode="numeric"
-          min="1"
-          step="1"
-          aria-label="Minimum BPM"
-          value={tempoMin}
-          onChange={(e) => setTempoMin(e.target.value)}
-          placeholder="Min BPM"
-          className="input w-28"
-        />
-        <input
-          type="number"
-          inputMode="numeric"
-          min="1"
-          step="1"
-          aria-label="Maximum BPM"
-          value={tempoMax}
-          onChange={(e) => setTempoMax(e.target.value)}
-          placeholder="Max BPM"
-          className="input w-28"
-        />
-        <select
-          aria-label="Filter by status"
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value as SongStatus | "")}
-          className="select w-auto"
-        >
-          <option value="">All statuses</option>
-          {(Object.keys(SONG_STATUS_CONFIGS) as SongStatus[]).map((status) => (
-            <option key={status} value={status}>
-              {SONG_STATUS_CONFIGS[status].label}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label="Sort songs"
-          value={sort}
-          onChange={(e) => setSort(e.target.value as "lastEdited" | "title" | "recentlyAdded" | "mostUsed")}
-          className="select w-auto"
-        >
-          <option value="lastEdited">Last edited</option>
-          <option value="title">Title (A–Z)</option>
-          <option value="recentlyAdded">Recently added</option>
-          <option value="mostUsed">Most used</option>
-        </select>
-        <button
-          type="button"
-          onClick={() => setFavoritesOnly((prev) => !prev)}
-          aria-pressed={favoritesOnly}
-          className={favoritesOnly ? "btn-primary btn-sm" : "btn-outline btn-sm"}
-        >
-          <Star className={`h-4 w-4 ${favoritesOnly ? "fill-current" : ""}`} /> Favorites
-        </button>
-        <button
-          type="button"
-          onClick={() => setShowArchived((prev) => !prev)}
-          aria-pressed={showArchived}
-          className={showArchived ? "btn-primary btn-sm" : "btn-outline btn-sm"}
-        >
-          <Archive className="h-4 w-4" /> Archived
-        </button>
-      </div>
+      <SongFilterToolbar
+        q={q}
+        onQChange={setQ}
+        libraryScope={libraryScope}
+        onLibraryScopeChange={setLibraryScope}
+        statusFilter={statusFilter}
+        favoritesOnly={favoritesOnly}
+        showArchived={showArchived}
+        onStatusChange={handleStatusChange}
+        sort={sort}
+        onSortChange={setSort}
+        isSharedScope={isSharedScope}
+        groupFilter={groupFilter}
+        onGroupFilterChange={setGroupFilter}
+        categoryFilter={categoryFilter}
+        onCategoryFilterChange={setCategoryFilter}
+        keyFilter={keyFilter}
+        onKeyFilterChange={setKeyFilter}
+        tagFilter={tagFilter}
+        onTagFilterChange={setTagFilter}
+        tempoMin={tempoMin}
+        onTempoMinChange={setTempoMin}
+        tempoMax={tempoMax}
+        onTempoMaxChange={setTempoMax}
+        onResetAdvanced={handleResetAdvanced}
+        availableGroups={availableGroups}
+        availableCategories={availableCategories}
+        availableTags={availableTags}
+        chips={filterChips}
+        onClearAll={handleClearAll}
+      />
 
       {/* Results */}
       {loading ? (

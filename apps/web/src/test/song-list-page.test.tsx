@@ -69,6 +69,12 @@ function renderPage() {
   );
 }
 
+// Group/Category/Key/Tag/BPM live inside the collapsed "Advanced Filters"
+// panel by default (80/20 toolbar redesign) — open it before interacting.
+async function openAdvancedFilters(user: ReturnType<typeof userEvent.setup>) {
+  await user.click(screen.getByRole("button", { name: /advanced filters/i }));
+}
+
 describe("SongListPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -130,18 +136,34 @@ describe("SongListPage", () => {
       expect(screen.getByRole("link", { name: /new song/i })).toHaveAttribute("href", "/songs/new");
     });
 
-    it("renders search input and key filter dropdown", async () => {
+    it("renders only the 5 primary controls by default", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
       expect(screen.getByPlaceholderText(/search songs/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/song scope/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/filter by status/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/sort songs/i)).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /advanced filters/i })).toBeInTheDocument();
+      // Secondary filters are tucked away until requested
+      expect(screen.queryByLabelText(/filter by group/i)).not.toBeInTheDocument();
+      expect(screen.queryByLabelText(/filter by category/i)).not.toBeInTheDocument();
+      expect(screen.queryByLabelText(/filter by tag/i)).not.toBeInTheDocument();
+      expect(screen.queryByLabelText(/minimum bpm/i)).not.toBeInTheDocument();
+    });
+
+    it("reveals group, category, key, tag, and BPM filters inside Advanced Filters", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await openAdvancedFilters(user);
+
       expect(screen.getByLabelText(/filter by group/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/filter by category/i)).toBeInTheDocument();
       expect(screen.getByText("All keys")).toBeInTheDocument();
       expect(screen.getByLabelText(/filter by tag/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/minimum bpm/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/maximum bpm/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/sort songs/i)).toBeInTheDocument();
     });
 
     it("renders songs list when available", async () => {
@@ -164,6 +186,8 @@ describe("SongListPage", () => {
     it("renders available song categories in the category filter dropdown", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       const categorySelect = await screen.findByLabelText(/filter by category/i);
       expect(categorySelect.querySelectorAll("option").length).toBe(3);
@@ -174,6 +198,8 @@ describe("SongListPage", () => {
     it("renders available song groups in the group filter dropdown", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       const groupSelect = await screen.findByLabelText(/filter by group/i);
       expect(groupSelect.querySelectorAll("option").length).toBe(2);
@@ -184,6 +210,7 @@ describe("SongListPage", () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       await screen.findByLabelText(/filter by category/i);
       await user.selectOptions(screen.getByLabelText(/filter by category/i), "Church");
@@ -207,6 +234,7 @@ describe("SongListPage", () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       await screen.findByLabelText(/filter by group/i);
       await user.selectOptions(screen.getByLabelText(/filter by group/i), "group-1");
@@ -248,6 +276,7 @@ describe("SongListPage", () => {
         });
       });
 
+      await openAdvancedFilters(user);
       expect(screen.getByLabelText(/filter by group/i)).toBeDisabled();
     });
 
@@ -321,6 +350,9 @@ describe("SongListPage", () => {
     it("renders key filter options from ALL_KEYS", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
+
       const select = screen.getByDisplayValue("All keys");
       expect(select).toBeInTheDocument();
       // Check some key options exist
@@ -330,6 +362,8 @@ describe("SongListPage", () => {
     it("renders available song tags in the tag filter dropdown", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       const tagSelect = await screen.findByLabelText(/filter by tag/i);
       expect(tagSelect.querySelectorAll("option").length).toBe(4);
@@ -341,6 +375,7 @@ describe("SongListPage", () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       await screen.findByLabelText(/filter by tag/i);
       await user.selectOptions(screen.getByLabelText(/filter by tag/i), "worship");
@@ -363,6 +398,8 @@ describe("SongListPage", () => {
     it("requests songs with the selected tempo range", async () => {
       mockList.mockResolvedValue({ songs: [], total: 0 });
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       fireEvent.change(screen.getByLabelText(/minimum bpm/i), { target: { value: "70" } });
       fireEvent.change(screen.getByLabelText(/maximum bpm/i), { target: { value: "90" } });
@@ -406,6 +443,197 @@ describe("SongListPage", () => {
       });
     });
 
+    // ── Status consolidation: one dropdown replaces status + Favorites + Archived ──
+    it("requests songs with the selected status", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "status:ready");
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          status: "ready",
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+    });
+
+    it("requests favorites-only songs from the status dropdown", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "meta:favorites");
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          favorites: true,
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+    });
+
+    it("requests archived songs from the status dropdown, replacing any prior status pick", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "status:ready");
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "meta:archived");
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          archived: true,
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+    });
+
+    // ── Active filter chips ──
+    it("shows a removable chip for an applied advanced filter and clears it independently", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await openAdvancedFilters(user);
+      await user.selectOptions(screen.getByLabelText(/filter by category/i), "Church");
+
+      const chip = await screen.findByTestId("filter-chip-category");
+      expect(chip).toHaveTextContent("Category: Church");
+
+      await user.click(screen.getByRole("button", { name: /remove category: church filter/i }));
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+      expect(screen.queryByTestId("filter-chip-category")).not.toBeInTheDocument();
+    });
+
+    it("shows a combined BPM range chip and a status chip for Favorites", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "meta:favorites");
+      await openAdvancedFilters(user);
+      fireEvent.change(screen.getByLabelText(/minimum bpm/i), { target: { value: "70" } });
+      fireEvent.change(screen.getByLabelText(/maximum bpm/i), { target: { value: "90" } });
+
+      expect(await screen.findByTestId("filter-chip-status")).toHaveTextContent("Status: Favorites");
+      expect(screen.getByTestId("filter-chip-bpm")).toHaveTextContent("BPM: 70–90");
+    });
+
+    it("Clear All removes every active filter and returns to the default state", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.type(screen.getByPlaceholderText(/search songs/i), "acoustic");
+      vi.advanceTimersByTime(350);
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "meta:favorites");
+      await openAdvancedFilters(user);
+      await user.selectOptions(screen.getByLabelText(/filter by category/i), "Church");
+
+      await screen.findByTestId("filter-chip-category");
+      await user.click(screen.getByRole("button", { name: /clear all/i }));
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+      expect(screen.getByPlaceholderText(/search songs/i)).toHaveValue("");
+      expect(screen.queryByTestId("filter-chip-category")).not.toBeInTheDocument();
+      expect(screen.queryByTestId("filter-chip-status")).not.toBeInTheDocument();
+    });
+
+    it("Reset Filters inside the panel clears only group/category/key/tag/BPM, not the primary status pick", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await user.selectOptions(screen.getByLabelText(/filter by status/i), "meta:favorites");
+      await openAdvancedFilters(user);
+      await user.selectOptions(screen.getByLabelText(/filter by category/i), "Church");
+      await screen.findByTestId("filter-chip-category");
+
+      await user.click(screen.getByRole("button", { name: /^reset filters$/i }));
+
+      await waitFor(() => {
+        expect(mockList).toHaveBeenLastCalledWith({
+          q: undefined,
+          scope: undefined,
+          groupId: undefined,
+          category: undefined,
+          key: undefined,
+          tag: undefined,
+          favorites: true,
+          sort: "lastEdited",
+          limit: 50,
+          offset: 0,
+        });
+      });
+      expect(screen.queryByTestId("filter-chip-category")).not.toBeInTheDocument();
+      expect(screen.getByTestId("filter-chip-status")).toHaveTextContent("Status: Favorites");
+    });
+
+    it("shows a count badge on Advanced Filters while it's collapsed", async () => {
+      mockList.mockResolvedValue({ songs: [], total: 0 });
+      renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+
+      await openAdvancedFilters(user);
+      await user.selectOptions(screen.getByLabelText(/filter by category/i), "Church");
+      await user.selectOptions(screen.getByLabelText(/filter by tag/i), "worship");
+      await user.click(screen.getByRole("button", { name: /^apply filters$/i }));
+
+      expect(screen.queryByLabelText(/filter by category/i)).not.toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /advanced filters/i })).toHaveTextContent("2");
+    });
+
     it("carries the selected key into song links", async () => {
       mockList.mockResolvedValue({
         songs: [{ id: "1", title: "Amazing Grace", key: "G", content: "" }],
@@ -413,6 +641,7 @@ describe("SongListPage", () => {
       });
       renderPage();
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      await openAdvancedFilters(user);
 
       await user.selectOptions(screen.getByDisplayValue("All keys"), "C");
 
@@ -689,6 +918,7 @@ describe("SongListPage", () => {
         expect(screen.getByText("X")).toBeInTheDocument();
       });
 
+      await openAdvancedFilters(user);
       await user.selectOptions(screen.getByLabelText(/filter by tag/i), "worship");
 
       await waitFor(() => {
@@ -702,11 +932,13 @@ describe("SongListPage", () => {
         .mockResolvedValueOnce({ songs: [], total: 0 });
 
       renderPage();
+      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
       await waitFor(() => {
         expect(screen.getByText("X")).toBeInTheDocument();
       });
 
+      await openAdvancedFilters(user);
       fireEvent.change(screen.getByLabelText(/minimum bpm/i), { target: { value: "200" } });
 
       await waitFor(() => {
