@@ -1,5 +1,36 @@
 import { describe, it, expect } from "vitest";
-import { transposeChord, transposeChordPro, composeTranspose, spellForTarget, interval, transposeKeyName } from "@vpc-music/shared";
+import {
+  transposeChord,
+  transposeChordPro,
+  composeTranspose,
+  spellForTarget,
+  interval,
+  transposeKeyName,
+  noteIndex,
+  parseKeyRoot,
+} from "@vpc-music/shared";
+
+describe("noteIndex / parseKeyRoot — the canonical pitch resolver", () => {
+  // These are the shared primitives flow.js's keyPitchClass now delegates to
+  // instead of keeping its own separate note table.
+  it("noteIndex resolves standard and unusual enharmonic spellings", () => {
+    expect(noteIndex("C")).toBe(0);
+    expect(noteIndex("Bb")).toBe(10);
+    expect(noteIndex("B#")).toBe(0); // B# == C
+    expect(noteIndex("Cb")).toBe(11); // Cb == B
+  });
+
+  it("noteIndex returns -1 for garbage input", () => {
+    expect(noteIndex("H")).toBe(-1);
+  });
+
+  it("parseKeyRoot extracts root and mode", () => {
+    expect(parseKeyRoot("Bbm")).toEqual({ root: "Bb", isMinor: true });
+    expect(parseKeyRoot("G")).toEqual({ root: "G", isMinor: false });
+    expect(parseKeyRoot("F# minor")).toEqual({ root: "F#", isMinor: true });
+    expect(parseKeyRoot(null)).toBeNull();
+  });
+});
 
 describe("unusual enharmonic roots (Cb, Fb, E#, B#)", () => {
   // These fall outside the standard 12-name CHROMATIC_SHARP/CHROMATIC_FLAT

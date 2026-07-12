@@ -9,28 +9,25 @@
  *  - Duration must include gaps: track lengths alone lie. A default
  *    changeover gap per song plus optional per-item talk time is added.
  */
+import { noteIndex, parseKeyRoot } from "./transpose.js";
 
 // Circle of fifths positions keyed by pitch class (C=0 … B=11)
 const FIFTHS_POSITION = { 0: 0, 7: 1, 2: 2, 9: 3, 4: 4, 11: 5, 6: 6, 1: 7, 8: 8, 3: 9, 10: 10, 5: 11 };
-
-const NOTE_INDEX = {
-  C: 0, "C#": 1, Db: 1, D: 2, "D#": 3, Eb: 3, E: 4, Fb: 4, F: 5, "E#": 5,
-  "F#": 6, Gb: 6, G: 7, "G#": 8, Ab: 8, A: 9, "A#": 10, Bb: 10, B: 11, Cb: 11,
-};
 
 export const DEFAULT_GAP_SECONDS = 20;
 
 /**
  * Parse a key into its pitch class (0-11) and mode. Returns null for
  * unparseable keys. ("Bb" → {pitch:10, minor:false}, "Em" → {pitch:4, minor:true})
+ * Note resolution (including Cb/Fb/E#/B#) is shared with transpose.js's
+ * noteIndex — one canonical pitch table, not a second copy.
  */
 export function keyPitchClass(key) {
-  const match = String(key || "").trim().match(/^([A-G][b#]?)\s*(m|min|minor)?/i);
-  if (!match || !match[1]) return null;
-  const root = match[1][0].toUpperCase() + (match[1][1] ?? "");
-  const pitch = NOTE_INDEX[root];
-  if (pitch === undefined) return null;
-  return { pitch, minor: Boolean(match[2]) };
+  const parsed = parseKeyRoot(key);
+  if (!parsed) return null;
+  const pitch = noteIndex(parsed.root);
+  if (pitch === -1) return null;
+  return { pitch, minor: parsed.isMinor };
 }
 
 /**
@@ -52,16 +49,6 @@ export function circleDistance(fromKey, toKey) {
   if (from === null || to === null) return null;
   const diff = Math.abs(from - to);
   return Math.min(diff, 12 - diff);
-}
-
-/** Transition quality between adjacent keys. */
-export function transitionQuality(fromKey, toKey) {
-  const distance = circleDistance(fromKey, toKey);
-  if (distance === null) return "unknown";
-  if (distance <= 1) return "smooth";
-  if (distance <= 2) return "ok";
-  if (distance <= 3) return "notable";
-  return "harsh";
 }
 
 /**
@@ -117,7 +104,6 @@ export function analyze(items, options = {}) {
       fromKey,
       toKey,
       distance: circleDistance(fromKey, toKey),
-      quality: transitionQuality(fromKey, toKey),
     });
   }
 

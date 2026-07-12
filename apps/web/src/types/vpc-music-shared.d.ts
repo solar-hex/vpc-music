@@ -115,6 +115,8 @@ declare module "@vpc-music/shared" {
   export function interval(fromKey: string, toKey: string): number;
   export function keyPrefersFlats(key: string): boolean;
   export function normalizeEnharmonicKey(key: string | null | undefined): string;
+  export function parseKeyRoot(key: string | null | undefined): { root: string; isMinor: boolean } | null;
+  export function noteIndex(note: string): number;
   export function transposeKeyName(key: string, semitones: number, preferFlats?: boolean): string;
   export function spellForTarget(
     sourceKey: string | null | undefined,
@@ -164,7 +166,6 @@ declare module "@vpc-music/shared" {
     fromKey: string | null;
     toKey: string | null;
     distance: number | null;
-    quality: "smooth" | "ok" | "notable" | "harsh" | "unknown";
   }
   export interface FlowSignal {
     type: string;
@@ -189,7 +190,6 @@ declare module "@vpc-music/shared" {
   export function keyPitchClass(key: string | null | undefined): { pitch: number; minor: boolean } | null;
   export function circlePosition(key: string | null | undefined): number | null;
   export function circleDistance(fromKey: string | null | undefined, toKey: string | null | undefined): number | null;
-  export function transitionQuality(fromKey: string | null | undefined, toKey: string | null | undefined): FlowTransition["quality"];
   export function songEnergy(item: { bpm?: number | null; energy?: number | null }): number | null;
   export function analyze(
     items: FlowItem[],

@@ -45,16 +45,25 @@ export function isChordToken(token) {
   return CHORD_REGEX_STRICT.test(trimmed);
 }
 
+/**
+ * Parse a key string into its root note and major/minor mode.
+ * ("Bbm" / "Bb minor" / "Bbmin" → { root: "Bb", isMinor: true })
+ * @param {string|null|undefined} key
+ * @returns {{ root: string, isMinor: boolean }|null}
+ */
+export function parseKeyRoot(key) {
+  if (!key) return null;
+  const match = String(key).trim().match(/^([A-G][b#]?)\s*(m|min|minor)?/i);
+  if (!match) return null;
+  const root = match[1][0].toUpperCase() + (match[1][1] ?? "");
+  return { root, isMinor: Boolean(match[2]) };
+}
+
 /** Does this key conventionally use flats? ("Bb", "Dm", "Gb" → true) */
 export function keyPrefersFlats(key) {
-  if (!key) return false;
-  const normalized = String(key).trim();
-  // Normalize "Bbm"/"Bb minor"/"Bbmin" → "Bbm"; majors pass through
-  const match = normalized.match(/^([A-G][b#]?)\s*(m|min|minor)?/i);
-  if (!match) return false;
-  const root = match[1][0].toUpperCase() + (match[1][1] ?? "");
-  const isMinor = Boolean(match[2]);
-  return FLAT_KEYS.has(isMinor ? `${root}m` : root);
+  const parsed = parseKeyRoot(key);
+  if (!parsed) return false;
+  return FLAT_KEYS.has(parsed.isMinor ? `${parsed.root}m` : parsed.root);
 }
 
 // Enharmonic respellings not resolved by CHROMATIC_SHARP/CHROMATIC_FLAT alone:
@@ -77,12 +86,17 @@ export function normalizeEnharmonicKey(key) {
   return (ENHARMONIC_ALIASES[root] ?? root) + rest;
 }
 
-function noteIndex(note) {
+/**
+ * Pitch class (0-11) for a note name, or -1 if unparseable. The single
+ * canonical note→pitch resolver — covers the 12 standard sharp/flat
+ * spellings plus the unusual-but-valid ones outside both chromatic arrays
+ * (Cb, Fb, E#, B#).
+ */
+export function noteIndex(note) {
   const sharpIdx = CHROMATIC_SHARP.indexOf(note);
   if (sharpIdx !== -1) return sharpIdx;
   const flatIdx = CHROMATIC_FLAT.indexOf(note);
   if (flatIdx !== -1) return flatIdx;
-  // Unusual-but-valid spellings outside both chromatic arrays (Cb, Fb, E#, B#)
   const alias = ENHARMONIC_ALIASES[note];
   return alias && alias !== note ? noteIndex(alias) : -1;
 }

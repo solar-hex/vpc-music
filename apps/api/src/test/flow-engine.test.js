@@ -3,9 +3,9 @@ import {
   analyze,
   circleDistance,
   circlePosition,
-  transitionQuality,
   songEnergy,
   DEFAULT_GAP_SECONDS,
+  flow,
 } from "@vpc-music/shared";
 
 const song = (overrides = {}) => ({
@@ -35,12 +35,24 @@ describe("flow engine — circle of fifths", () => {
     expect(circleDistance("G", "Bb")).toBe(3);
   });
 
-  it("grades transition quality", () => {
-    expect(transitionQuality("C", "G")).toBe("smooth");
-    expect(transitionQuality("C", "D")).toBe("ok");
-    expect(transitionQuality("C", "A")).toBe("notable");
-    expect(transitionQuality("C", "E")).toBe("harsh");
-    expect(transitionQuality("C", null)).toBe("unknown");
+  it("resolves unusual enharmonic roots (Cb, Fb, E#, B#) via the shared pitch table", () => {
+    // keyPitchClass delegates to transpose.js's noteIndex rather than keeping
+    // its own note table — B# (== C) used to fall through both.
+    expect(circleDistance("B#", "D")).toBe(2); // C -> D
+    expect(circlePosition("B#")).toBe(circlePosition("C"));
+  });
+
+  // Grading (smooth/ok/notable/harsh) lives in the flow facade's
+  // keyTransition(), which also special-cases parallel/relative major-minor —
+  // raw circle distance alone can't. Full grading matrix is covered in
+  // apps/web/src/test/setflow.test.ts; this just confirms it's reachable here.
+  it("grades transition quality via the flow facade", () => {
+    expect(flow.keyTransition("C", "G").grade).toBe("smooth");
+    expect(flow.keyTransition("C", "D").grade).toBe("ok");
+    expect(flow.keyTransition("C", "A").grade).toBe("ok");
+    expect(flow.keyTransition("C", "E").grade).toBe("notable");
+    expect(flow.keyTransition("C", "F#").grade).toBe("harsh");
+    expect(flow.keyTransition("C", null).grade).toBe("unknown");
   });
 });
 
