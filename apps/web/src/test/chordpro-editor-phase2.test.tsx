@@ -6,6 +6,9 @@ import { ChordProEditor } from "@/components/songs/ChordProEditor";
 // ---------- Mocks ----------
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
+  composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
+  spellForTarget: (key: string | null | undefined) =>
+    key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),
   CHORD_REGEX: /^[A-G][b#]?(?:m|min|maj|dim|aug|sus[24]?|add)?[2-9]?(?:\/[A-G][b#]?)?$/,

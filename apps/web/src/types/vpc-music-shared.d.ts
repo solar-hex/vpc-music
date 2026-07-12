@@ -115,6 +115,15 @@ declare module "@vpc-music/shared" {
   export function interval(fromKey: string, toKey: string): number;
   export function keyPrefersFlats(key: string): boolean;
   export function transposeKeyName(key: string, semitones: number, preferFlats?: boolean): string;
+  export function spellForTarget(
+    sourceKey: string | null | undefined,
+    steps: number,
+  ): { preferFlats: boolean | undefined; targetKey: string | null };
+  export function composeTranspose(input?: {
+    sourceKey?: string | null;
+    overrideKey?: string | null;
+    nudge?: number;
+  }): { semis: number; preferFlats: boolean | undefined; displayKey: string | null };
 
   // ── chords: consolidated chord + chart API (namespaced facade) ──
   export interface ParsedChord {

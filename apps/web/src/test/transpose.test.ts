@@ -1,5 +1,46 @@
 import { describe, it, expect } from "vitest";
-import { transposeChord, transposeChordPro } from "@vpc-music/shared";
+import { transposeChord, transposeChordPro, composeTranspose, spellForTarget } from "@vpc-music/shared";
+
+describe("composeTranspose", () => {
+  it("combines a set-list key override into a net shift and target key", () => {
+    // G stored, overridden to Bb → up 3, spelled flat
+    const r = composeTranspose({ sourceKey: "G", overrideKey: "Bb" });
+    expect(r.semis).toBe(3);
+    expect(r.preferFlats).toBe(true);
+    expect(r.displayKey).toBe("Bb");
+  });
+
+  it("adds a live nudge on top of the override, wrapping 0-11", () => {
+    const r = composeTranspose({ sourceKey: "G", overrideKey: "A", nudge: -2 });
+    // G→A is +2, nudge −2 → net 0
+    expect(r.semis).toBe(0);
+    expect(r.displayKey).toBe("G");
+  });
+
+  it("treats a no-op override (same key) as zero", () => {
+    expect(composeTranspose({ sourceKey: "C", overrideKey: "C" }).semis).toBe(0);
+  });
+
+  it("returns a null display key when the source is unknown", () => {
+    const r = composeTranspose({ sourceKey: null, nudge: 2 });
+    expect(r.displayKey).toBeNull();
+    expect(r.preferFlats).toBeUndefined();
+  });
+});
+
+describe("spellForTarget", () => {
+  it("spells for the target key (into a flat key → flats)", () => {
+    expect(spellForTarget("G", 3)).toEqual({ preferFlats: true, targetKey: "Bb" });
+  });
+
+  it("spells sharp when the target is a sharp key", () => {
+    expect(spellForTarget("G", 2)).toEqual({ preferFlats: false, targetKey: "A" });
+  });
+
+  it("is undefined-safe when the source key is missing", () => {
+    expect(spellForTarget(null, 3)).toEqual({ preferFlats: undefined, targetKey: null });
+  });
+});
 
 describe("transposeChord", () => {
   it("transposes a simple major chord up by 2 semitones", () => {

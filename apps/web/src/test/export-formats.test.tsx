@@ -87,6 +87,9 @@ vi.mock("@vpc-music/shared", () => ({
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
+  composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
+  spellForTarget: (key: string | null | undefined) =>
+    key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },
   parseChordPro: (input: string) => ({
     directives: {},
     sections: [{ name: "", lines: [{ chords: [], lyrics: input }] }],

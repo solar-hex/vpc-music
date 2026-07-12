@@ -93,6 +93,39 @@ export function transposeKeyName(key, steps, preferFlats) {
 }
 
 /**
+ * Spell a transposition for its TARGET key. Given the source key and a net
+ * semitone shift, return whether the result should be spelled with flats (into
+ * Bb you get Eb, not D#) and the resulting display key. `preferFlats` is
+ * undefined when the source key is unknown, so callers fall back to
+ * source-spelling behavior.
+ * @param {string|null|undefined} sourceKey
+ * @param {number} steps
+ * @returns {{ preferFlats: boolean|undefined, targetKey: string|null }}
+ */
+export function spellForTarget(sourceKey, steps) {
+  if (!sourceKey) return { preferFlats: undefined, targetKey: null };
+  const preferFlats = keyPrefersFlats(transposeKeyName(sourceKey, steps, true));
+  return { preferFlats, targetKey: transposeKeyName(sourceKey, steps, preferFlats) };
+}
+
+/**
+ * Compose a render-time transposition from the three inputs a view combines:
+ * the chart's stored key, an optional set-list key override, and a live nudge
+ * in rehearsal mode (semitones). Returns the net shift (0-11), the target-key
+ * flat preference, and the resulting display key. Transposition is always a
+ * view transform — never write the result back.
+ * @param {{ sourceKey?: string|null, overrideKey?: string|null, nudge?: number }} [input]
+ * @returns {{ semis: number, preferFlats: boolean|undefined, displayKey: string|null }}
+ */
+export function composeTranspose({ sourceKey = null, overrideKey = null, nudge = 0 } = {}) {
+  const overrideSteps =
+    sourceKey && overrideKey && overrideKey !== sourceKey ? interval(sourceKey, overrideKey) : 0;
+  const semis = (((overrideSteps + nudge) % 12) + 12) % 12;
+  const { preferFlats, targetKey } = spellForTarget(sourceKey, semis);
+  return { semis, preferFlats, displayKey: targetKey };
+}
+
+/**
  * Transpose a single chord name by `steps` semitones.
  * @param {string} chord — e.g. "G", "Bm", "F#m7", "C/E"
  * @param {number} steps — positive = up, negative = down

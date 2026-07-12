@@ -25,21 +25,29 @@ vi.mock("@/hooks/useKeyboardShortcuts", () => ({
 
 vi.mock("@vpc-music/shared", () => {
   const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+  const interval = (from: string, to: string) => {
+    const f = scale.indexOf(from);
+    const t = scale.indexOf(to);
+    if (f === -1 || t === -1) return 0;
+    return ((t - f) % 12 + 12) % 12;
+  };
+  const transposeKeyName = (key: string, steps: number) => {
+    const index = scale.indexOf(key);
+    if (index === -1) return key;
+    return scale[((index + steps) % 12 + 12) % 12];
+  };
   return {
     ALL_KEYS: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
-    interval: (from: string, to: string) => {
-      const f = scale.indexOf(from);
-      const t = scale.indexOf(to);
-      if (f === -1 || t === -1) return 0;
-      return ((t - f) % 12 + 12) % 12;
-    },
-    transposeKeyName: (key: string, steps: number) => {
-      const index = scale.indexOf(key);
-      if (index === -1) return key;
-      return scale[((index + steps) % 12 + 12) % 12];
-    },
+    interval,
+    transposeKeyName,
     keyPrefersFlats: () => false,
-  parseBarLine: () => ({ measures: [] }),
+    parseBarLine: () => ({ measures: [] }),
+    composeTranspose: ({ sourceKey = null, overrideKey = null, nudge = 0 }: any = {}) => {
+      const overrideSteps =
+        sourceKey && overrideKey && overrideKey !== sourceKey ? interval(sourceKey, overrideKey) : 0;
+      const semis = (((overrideSteps + nudge) % 12) + 12) % 12;
+      return { semis, preferFlats: false, displayKey: sourceKey ? transposeKeyName(sourceKey, semis) : null };
+    },
   };
 });
 

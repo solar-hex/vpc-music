@@ -13,7 +13,7 @@ import { MetronomeWidget } from "@/components/songs/MetronomeWidget";
 import { useAuth } from "@/contexts/AuthContext";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
-import { ALL_KEYS } from "@vpc-music/shared";
+import { ALL_KEYS, composeTranspose } from "@vpc-music/shared";
 import { toast } from "sonner";
 import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2 } from "lucide-react";
 
@@ -33,21 +33,6 @@ function normalizeSongKey(key: string | null | undefined) {
   if (!key) return null;
   const trimmed = key.trim();
   return ENHARMONIC_KEY_MAP[trimmed] ?? trimmed;
-}
-
-function getTransposeSteps(fromKey: string | null | undefined, toKey: string | null | undefined) {
-  const normalizedFrom = normalizeSongKey(fromKey);
-  const normalizedTo = normalizeSongKey(toKey);
-
-  if (!normalizedFrom || !normalizedTo) return 0;
-
-  const fromIndex = ALL_KEYS.indexOf(normalizedFrom);
-  const toIndex = ALL_KEYS.indexOf(normalizedTo);
-
-  if (fromIndex === -1 || toIndex === -1) return 0;
-
-  const ascendingDistance = (toIndex - fromIndex + ALL_KEYS.length) % ALL_KEYS.length;
-  return ascendingDistance <= ALL_KEYS.length / 2 ? ascendingDistance : ascendingDistance - ALL_KEYS.length;
 }
 
 interface ConfirmState {
@@ -409,7 +394,7 @@ export function SongViewPage() {
   const originalKey = activeVariation?.key ?? song?.key;
   const requestedSearchKey = normalizeSongKey(searchParams.get("key"));
   const displayKey = requestedSearchKey && ALL_KEYS.includes(requestedSearchKey) ? requestedSearchKey : originalKey;
-  const baseTranspose = getTransposeSteps(originalKey, displayKey);
+  const baseTranspose = composeTranspose({ sourceKey: originalKey, overrideKey: displayKey }).semis;
 
   const openNewVariation = () => {
     setEditingVariation(null);

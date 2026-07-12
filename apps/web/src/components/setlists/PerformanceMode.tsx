@@ -20,7 +20,7 @@ import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import type { SetlistSongItem } from "@/lib/api-client";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { formatDuration } from "@/lib/format";
-import { interval, transposeKeyName, keyPrefersFlats } from "@vpc-music/shared";
+import { composeTranspose } from "@vpc-music/shared";
 
 // ── Types ────────────────────────────────────────
 interface SongContent {
@@ -105,16 +105,13 @@ export function PerformanceMode({
     : undefined;
 
   // ── Key math: override + live transpose, spelled for the target key ──
-  const overrideSteps =
-    content?.originalKey && content.key && content.key !== content.originalKey
-      ? interval(content.originalKey, content.key)
-      : 0;
-  const manualSteps = liveTranspose[currentIndex] ?? 0;
-  const totalSteps = ((overrideSteps + manualSteps) % 12 + 12) % 12;
   const sourceKey = content?.originalKey ?? content?.key ?? null;
-  const displayKey = sourceKey
-    ? transposeKeyName(sourceKey, totalSteps, keyPrefersFlats(transposeKeyName(sourceKey, totalSteps, true)))
-    : null;
+  const manualSteps = liveTranspose[currentIndex] ?? 0;
+  const { semis: totalSteps, displayKey } = composeTranspose({
+    sourceKey,
+    overrideKey: content?.key ?? null,
+    nudge: manualSteps,
+  });
 
   const nudgeTranspose = (delta: number) => {
     setLiveTranspose((prev) => ({ ...prev, [currentIndex]: (prev[currentIndex] ?? 0) + delta }));

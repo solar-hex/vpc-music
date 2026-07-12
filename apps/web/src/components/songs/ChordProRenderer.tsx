@@ -1,4 +1,4 @@
-import { parseChordPro, transposeChordPro, chordToNashville, transposeKeyName, keyPrefersFlats, parseBarLine } from "@vpc-music/shared";
+import { parseChordPro, transposeChordPro, chordToNashville, spellForTarget, parseBarLine } from "@vpc-music/shared";
 import { useState, useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from "react";
 
 function normalizeTranspose(steps: number) {
@@ -48,9 +48,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
   // Apply transposition to raw ChordPro, then parse. Enharmonic spelling
   // follows the TARGET key (into Bb you get Eb, not D#): if the flat name
   // of the destination is a conventional flat key, spell the chart flat.
-  const flatTarget = songKey ? transposeKeyName(songKey, transpose, true) : null;
-  const preferFlats = flatTarget ? keyPrefersFlats(flatTarget) : undefined;
-  const targetKey = songKey ? transposeKeyName(songKey, transpose, preferFlats) : null;
+  const { preferFlats, targetKey } = spellForTarget(songKey, transpose);
   const transposedContent = transpose !== 0 ? transposeChordPro(content, transpose, preferFlats) : content;
   const doc = parseChordPro(transposedContent);
 

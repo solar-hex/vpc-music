@@ -77,6 +77,7 @@ vi.mock("@vpc-music/shared", () => ({
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
+  composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
 }));
 
 vi.mock("@/components/songs/ChordProRenderer", () => ({
