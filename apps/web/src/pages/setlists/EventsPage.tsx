@@ -5,6 +5,7 @@ import { formatEventDateTime } from "@/lib/format";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { Calendar, Plus, MapPin, ListMusic, CheckCircle2, Ban } from "lucide-react";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { StatusBadge, type StatusVariant } from "@/components/shared/StatusBadge";
 
@@ -115,13 +116,13 @@ export function EventsPage() {
             {upcoming.length === 0 ? (
               <p className="text-sm text-[hsl(var(--muted-foreground))]">Nothing scheduled yet.</p>
             ) : (
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{upcoming.map(renderEvent)}</div>
+              <CardGrid>{upcoming.map(renderEvent)}</CardGrid>
             )}
           </section>
           {past.length > 0 && (
             <section className="space-y-3">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Past</h4>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{past.map(renderEvent)}</div>
+              <CardGrid>{past.map(renderEvent)}</CardGrid>
             </section>
           )}
         </>

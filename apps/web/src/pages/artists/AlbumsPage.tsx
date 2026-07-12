@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { albumsApi, artistsApi, type Album, type Artist } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Disc3, Plus, Pencil, Trash2, X } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
@@ -216,11 +217,11 @@ export function AlbumsPage() {
           }
         />
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {albums.map((album) => (
             <AlbumCard key={album.id} album={album} canEdit={!!canEdit} onEdit={setFormAlbum} onDelete={setPendingDelete} />
           ))}
-        </div>
+        </CardGrid>
       )}
 
       {formAlbum !== undefined && (

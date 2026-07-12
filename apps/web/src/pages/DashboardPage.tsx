@@ -9,6 +9,7 @@ import { ServicePlanModal } from "@/components/dashboard/ServicePlanModal";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { TeamAvatarsRow } from "@/components/dashboard/TeamAvatarsRow";
 import { Music, ListMusic, Plus, Calendar, MapPin, TrendingUp, AlertCircle } from "lucide-react";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { EmptyState } from "@/components/shared/EmptyState";
 
 function formatEventDate(iso: string): string {
@@ -164,7 +165,7 @@ export function DashboardPage() {
         ) : upcomingEvents.length === 0 ? (
           <EmptyState icon={Calendar} message="No upcoming events" />
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {upcomingEvents.map((evt) => (
               <div
                 key={evt.id}
@@ -206,7 +207,7 @@ export function DashboardPage() {
                 )}
               </div>
             ))}
-          </div>
+          </CardGrid>
         )}
       </section>
 
@@ -238,7 +239,7 @@ export function DashboardPage() {
             }
           />
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {recentSongs.map((song) => (
               <Link
                 key={song.id}
@@ -261,7 +262,7 @@ export function DashboardPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardGrid>
         )}
       </section>
 
@@ -274,7 +275,7 @@ export function DashboardPage() {
               Frequently Used
             </h3>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {frequentSongs.map((song) => (
               <Link
                 key={song.id}
@@ -300,7 +301,7 @@ export function DashboardPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardGrid>
         </section>
       )}
 
@@ -332,7 +333,7 @@ export function DashboardPage() {
             }
           />
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {setlists.map((sl) => (
               <Link
                 key={sl.id}
@@ -348,7 +349,7 @@ export function DashboardPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </CardGrid>
         )}
       </section>
 

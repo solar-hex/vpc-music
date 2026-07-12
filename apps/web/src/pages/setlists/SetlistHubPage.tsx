@@ -7,6 +7,7 @@ import { ArchivedSetlistsPanel } from "@/components/setlists/ArchivedSetlistsPan
 import { SetlistTrashPanel } from "@/components/setlists/SetlistTrashPanel";
 import { toast } from "sonner";
 import { Plus, ListMusic, Archive, Trash2, Search } from "lucide-react";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { EmptyState } from "@/components/shared/EmptyState";
 
 type SortMode = "edited" | "alphabetical" | "duration" | "songs";
@@ -207,7 +208,7 @@ export function SetlistHubPage() {
           }
         />
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {visibleSetlists.map((sl) => (
             <SetlistCard
               key={sl.id}
@@ -217,7 +218,7 @@ export function SetlistHubPage() {
               onTrash={handleTrash}
             />
           ))}
-        </div>
+        </CardGrid>
       )}
 
       {/* Create Modal */}

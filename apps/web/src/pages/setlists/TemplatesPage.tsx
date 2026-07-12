@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { templatesApi, type SetlistTemplate } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { LayoutTemplate, Plus, Pencil, Trash2, Play, X } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
@@ -181,7 +182,7 @@ export function TemplatesPage() {
           }
         />
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {templates.map((template) => (
             <div key={template.id} className="card card-body space-y-2">
               <div className="flex items-center justify-between gap-2">
@@ -212,7 +213,7 @@ export function TemplatesPage() {
               )}
             </div>
           ))}
-        </div>
+        </CardGrid>
       )}
 
       {formTemplate !== undefined && (

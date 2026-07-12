@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { artistsApi, type Artist } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Search, Plus, MicVocal, BadgeCheck, Pencil, Trash2 } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
@@ -207,7 +208,7 @@ export function ArtistsPage() {
           }
         />
       ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <CardGrid>
           {visible.map((artist) => (
             <div key={artist.id} className="card-interactive card-body relative group">
               <Link to={`/artists/${artist.id}`} className="flex items-center gap-3 w-full text-left">
@@ -246,7 +247,7 @@ export function ArtistsPage() {
               )}
             </div>
           ))}
-        </div>
+        </CardGrid>
       )}
 
       {formArtist !== undefined && (

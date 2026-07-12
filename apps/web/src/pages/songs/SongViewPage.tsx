@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Link, useNavigate, useSearchParams } from "react-router-dom";
 import { songsApi, shareApi, songUsageApi, songHistoryApi, variationsApi, stickyNotesApi, setlistsApi, type Song, type SongUsage, type SongVariation, type SongEdit, type StickyNote, type Setlist } from "@/lib/api-client";
+import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ChordProRenderer, AutoScroll, type ChordProRendererHandle } from "@/components/songs/ChordProRenderer";
 import { SongCollaborationPanel } from "@/components/songs/SongCollaborationPanel";
@@ -932,7 +933,7 @@ export function SongViewPage() {
           )}
         </div>
         {stickyNotes.length > 0 && (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <CardGrid>
             {stickyNotes.map((note) => {
               const colorMap: Record<string, string> = {
                 yellow: "bg-yellow-100 border-yellow-300 dark:bg-yellow-900/30 dark:border-yellow-700",
@@ -979,7 +980,7 @@ export function SongViewPage() {
                 </div>
               );
             })}
-          </div>
+          </CardGrid>
         )}
         {stickyNotes.length === 0 && (
           <p className="text-xs text-[hsl(var(--muted-foreground))]">
