@@ -64,6 +64,8 @@ vi.mock("@/lib/api-client", () => ({
   orgsApi: {
     members: vi.fn().mockResolvedValue({ members: [] }),
   },
+  rehearsalsApi: { list: vi.fn().mockResolvedValue({ rehearsals: [] }) },
+  usageReportApi: { get: vi.fn().mockResolvedValue({ songs: [] }) },
   shareApi: {
     create: vi.fn(),
     list: vi.fn().mockResolvedValue({ shares: [] }),

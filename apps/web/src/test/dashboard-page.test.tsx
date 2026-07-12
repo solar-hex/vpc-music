@@ -26,6 +26,8 @@ vi.mock("@/lib/api-client", () => ({
   },
   songUsageApi: { mostUsed: (...args: any[]) => mockMostUsed(...args) },
   orgsApi: { members: (...args: any[]) => mockOrgMembers(...args) },
+  rehearsalsApi: { list: vi.fn().mockResolvedValue({ rehearsals: [] }) },
+  usageReportApi: { get: vi.fn().mockResolvedValue({ songs: [] }) },
 }));
 
 function renderDashboard() {

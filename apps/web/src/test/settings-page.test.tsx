@@ -158,7 +158,7 @@ describe("SettingsProfileTab", () => {
 
   it("renders Change Password section", () => {
     renderProfile();
-    expect(screen.getByText("Change Password")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /change password/i })).toBeInTheDocument();
     expect(screen.getByLabelText("Current Password")).toBeInTheDocument();
   });
 
@@ -342,8 +342,9 @@ describe("AdminOrganizationTab", () => {
     renderOrganization();
     const user = userEvent.setup();
     await user.click(screen.getByRole("button", { name: /delete organization/i }));
-    // Confirm dialog opens — confirm the destructive action
-    await user.click(screen.getByRole("button", { name: /^delete organization$/i }));
+    // Confirm dialog opens — click its confirm button (same label as the trigger)
+    const deleteButtons = screen.getAllByRole("button", { name: /delete organization/i });
+    await user.click(deleteButtons[deleteButtons.length - 1]);
     await waitFor(() => {
       expect(mockRemoveOrg).toHaveBeenCalledWith("org1");
     });

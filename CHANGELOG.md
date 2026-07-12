@@ -6,6 +6,24 @@ This project follows a simple Keep a Changelog-style format.
 
 ## [Unreleased]
 
+### Added — tabbed sections build-out (July 2026)
+
+- Tabbed sub-navigation on every sidebar section as real nested routes (deep-linkable, back-button-safe); the sidebar stays at six items
+- Dashboard tabs: Overview (with next-event countdown, rehearsals-this-week, awaiting-approval, and stale-song stat cards), Song usage (sortable play report with "not played in X days" filter), and Event history (completed events expandable to the set played)
+- Songs tabs: Media library (org-wide file grid with type filter, unattached surfacing, and song linking) and song detail tabs Details / Charts & media (uploads with inline chart, PDF, text, and audio previews) / History (play stats, play log, edit log, appears-in set lists)
+- Set Lists tabs: Templates (reusable slot structures; applying creates a set list with labelled empty slots), Events (with type/status and a full event detail page whose "Mark completed" logs a play per song), Calendar (month view of events + rehearsals, click-a-day create), and Rehearsals
+- Artists tabs: Albums (org-wide, with artist and track counts) and artist detail tabs Profile (editable) / Songs / Albums
+- Admin tabs: Organization (name, slug, logo, owner-only danger zone), Members, Availability (member×date grid — everyone edits their own row, admins edit all), Roles & permissions (read-only matrix + custom-role manager), and Activity log (filterable audit trail)
+- Settings tabs: Profile, Preferences (key notation, duration display, time zone, theme), Integrations (placeholder shells), and Import & export (CSV song import + print-ready set list export)
+- Set list approval flow (draft → in review → approved) with a new `setlists:approve` permission, plus soft builder warnings for slow-song runs and long totals
+- Media uploads stored under `uploads/` and served at `/uploads`; song metadata gains time signature, duration, genre, and album link
+- Switching organizations now resets the route to the section's default tab so record IDs never cross org boundaries
+
+### Migration notes (tabbed build-out)
+
+- Run `pnpm --filter @vpc-music/api db:push`: new tables `albums`, `media`, `setlist_templates`, `rehearsals`, `availability`, `activity_log`; new columns on `organizations` (slug, logo), `events` (type/status/completed_at), `setlists` (status enum values), `setlist_songs` (nullable song_id, slot_label), `songs` (album/time-signature/duration/genre)
+- The API host needs a writable `uploads/` directory for media files
+
 ### Added — prototype merge (July 2026)
 
 - Sidebar app shell replacing the top nav: sectioned navigation (Main / Library / Tools), org switcher under the logo, user block, and a bottom control bar with theme toggle and notification bell; mobile top bar with slide-in drawer

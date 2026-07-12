@@ -155,5 +155,5 @@ describe("Accessibility audit", () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  });
+  }, 30_000); // axe crawls the large time-zone select
 });
