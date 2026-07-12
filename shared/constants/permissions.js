@@ -22,6 +22,7 @@ export const PERMISSION_CATEGORIES = [
     label: "Setlists",
     permissions: [
       { id: "setlists:edit", label: "Create & edit setlists", description: "Create, edit, reorder, archive, complete, and trash setlists." },
+      { id: "setlists:approve", label: "Approve setlists", description: "Approve setlists submitted for review." },
       { id: "setlists:delete_permanent", label: "Permanently delete setlists", description: "Hard-delete setlists from the trash." },
     ],
   },

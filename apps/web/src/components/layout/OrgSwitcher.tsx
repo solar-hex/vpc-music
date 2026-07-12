@@ -1,10 +1,21 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Building2, ChevronDown, Plus } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 
 export function OrgSwitcher({ onRequestCreate }: { onRequestCreate: () => void }) {
   const { user, activeOrg, switchOrg } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
+
+  // Never carry a record ID across orgs — reset to the section's default tab
+  const handleSwitch = (orgId: string) => {
+    switchOrg(orgId);
+    setOpen(false);
+    const section = location.pathname.split("/")[1] || "dashboard";
+    navigate(`/${section}`);
+  };
   const ref = useRef<HTMLDivElement>(null);
   const orgs = user?.organizations ?? [];
   const canCreate = user?.role === "owner" || activeOrg?.role === "admin";
@@ -44,7 +55,7 @@ export function OrgSwitcher({ onRequestCreate }: { onRequestCreate: () => void }
           {orgs.map((org) => (
             <button
               key={org.id}
-              onClick={() => { switchOrg(org.id); setOpen(false); }}
+              onClick={() => handleSwitch(org.id)}
               className={`block w-full text-left px-3 py-1.5 text-xs hover:bg-[hsl(var(--muted))] transition-colors ${
                 org.id === activeOrg?.id
                   ? "text-[hsl(var(--secondary))] font-medium"

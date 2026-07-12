@@ -117,6 +117,11 @@ export interface Song {
   status?: SongStatus | null;
   isArchived?: boolean;
   isFavorite?: boolean;
+  timeSignature?: string | null;
+  durationSeconds?: number | null;
+  genre?: string | null;
+  albumId?: string | null;
+  lastPlayed?: string | null;
   defaultVariationId?: string | null;
   sharedWithMe?: boolean;
   organizationName?: string | null;
@@ -197,6 +202,8 @@ export const songsApi = {
     const query = qs.toString();
     return request<{ songs: Song[]; total: number }>(`/api/songs${query ? `?${query}` : ""}`);
   },
+  listSetlists: (id: string) =>
+    request<{ setlists: { id: string; name: string; status?: string; updatedAt?: string }[] }>(`/api/songs/${id}/setlists`),
   setStatus: (id: string, status: SongStatus | null) =>
     request<{ song: Song }>(`/api/songs/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
   archive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/archive`, { method: "POST" }),
@@ -324,7 +331,7 @@ export interface Setlist {
   name: string;
   category?: string | null;
   notes?: string | null;
-  status?: "draft" | "complete";
+  status?: "draft" | "in_review" | "approved" | "complete";
   leader?: string | null;
   tags?: string | null;
   isArchived?: boolean;
@@ -353,7 +360,9 @@ export interface TransitionCue {
 
 export interface SetlistSongItem {
   id: string;
-  songId: string;
+  /** Null when this row is an unfilled template slot */
+  songId: string | null;
+  slotLabel?: string | null;
   variationId?: string | null;
   variationName?: string | null;
   position: number;
@@ -363,7 +372,7 @@ export interface SetlistSongItem {
   capo?: number | null;
   arrangement?: SetlistArrangement | null;
   transitionCues?: TransitionCue[] | null;
-  songTitle: string;
+  songTitle: string | null;
   songKey?: string | null;
   songArtist?: string | null;
   songTempo?: number | null;
@@ -395,10 +404,11 @@ export const setlistsApi = {
       method: "PUT",
       body: JSON.stringify({ order }),
     }),
+  approve: (id: string) => request<{ setlist: Setlist }>(`/api/setlists/${id}/approve`, { method: "POST" }),
   updateSong: (
     setlistId: string,
     songItemId: string,
-    data: Partial<Pick<SetlistSongItem, "key" | "notes" | "duration" | "capo" | "arrangement" | "transitionCues">>,
+    data: Partial<Pick<SetlistSongItem, "key" | "notes" | "duration" | "capo" | "arrangement" | "transitionCues" | "songId">>,
   ) =>
     request<{ item: SetlistSongItem }>(`/api/setlists/${setlistId}/songs/${songItemId}`, {
       method: "PATCH",
@@ -449,6 +459,9 @@ export interface Event {
   location?: string | null;
   notes?: string | null;
   theme?: string | null;
+  eventType?: string | null;
+  status?: "scheduled" | "completed" | "cancelled";
+  completedAt?: string | null;
   preparedBy?: string | null;
   preparedByName?: string | null;
   team?: EventTeamMember[] | null;
@@ -461,12 +474,17 @@ export interface Event {
 }
 
 export const eventsApi = {
-  list: (params?: { upcoming?: boolean }) => {
+  list: (params?: { upcoming?: boolean; status?: "scheduled" | "completed" | "cancelled" }) => {
     const qs = new URLSearchParams();
     if (params?.upcoming !== undefined) qs.set("upcoming", String(params.upcoming));
+    if (params?.status) qs.set("status", params.status);
     const query = qs.toString();
     return request<{ events: Event[] }>(`/api/events${query ? `?${query}` : ""}`);
   },
+  complete: (id: string) =>
+    request<{ event: Event; playsLogged: number }>(`/api/events/${id}/complete`, { method: "POST" }),
+  setStatus: (id: string, status: "scheduled" | "cancelled") =>
+    request<{ event: Event }>(`/api/events/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
   get: (id: string) => request<{ event: Event }>(`/api/events/${id}`),
   create: (data: Partial<Event>) =>
     request<{ event: Event }>("/api/events", { method: "POST", body: JSON.stringify(data) }),
@@ -793,6 +811,8 @@ export const rolesApi = {
 export interface Organization {
   id: string;
   name: string;
+  slug?: string | null;
+  logoUrl?: string | null;
   role?: "admin" | "musician" | "observer";
 }
 
@@ -801,6 +821,184 @@ export interface OrgMember {
   displayName: string | null;
   role: "admin" | "musician" | "observer";
 }
+
+// ── Albums ───────────────────────────────────────
+export interface Album {
+  id: string;
+  title: string;
+  year?: number | null;
+  coverUrl?: string | null;
+  artistId?: string | null;
+  artistName?: string | null;
+  trackCount?: number;
+  createdAt?: string;
+}
+
+export const albumsApi = {
+  list: (params?: { artistId?: string }) => {
+    const qs = new URLSearchParams();
+    if (params?.artistId) qs.set("artistId", params.artistId);
+    const query = qs.toString();
+    return request<{ albums: Album[] }>(`/api/albums${query ? `?${query}` : ""}`);
+  },
+  get: (id: string) => request<{ album: Album; songs: Song[] }>(`/api/albums/${id}`),
+  create: (data: Partial<Album>) =>
+    request<{ album: Album }>("/api/albums", { method: "POST", body: JSON.stringify(data) }),
+  update: (id: string, data: Partial<Album>) =>
+    request<{ album: Album }>(`/api/albums/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/albums/${id}`, { method: "DELETE" }),
+};
+
+// ── Media ────────────────────────────────────────
+export type MediaType = "chart" | "lyrics" | "audio" | "backing_track" | "stem" | "other";
+
+export interface MediaFile {
+  id: string;
+  type: MediaType;
+  fileUrl: string;
+  filename: string;
+  mimeType?: string | null;
+  sizeBytes?: number | null;
+  songId?: string | null;
+  songTitle?: string | null;
+  createdAt?: string;
+}
+
+export const mediaApi = {
+  list: (params?: { type?: MediaType; songId?: string; unattached?: boolean }) => {
+    const qs = new URLSearchParams();
+    if (params?.type) qs.set("type", params.type);
+    if (params?.songId) qs.set("songId", params.songId);
+    if (params?.unattached) qs.set("unattached", "true");
+    const query = qs.toString();
+    return request<{ media: MediaFile[] }>(`/api/media${query ? `?${query}` : ""}`);
+  },
+  upload: (file: File, options?: { type?: MediaType; songId?: string }) => {
+    const form = new FormData();
+    form.append("file", file);
+    if (options?.type) form.append("type", options.type);
+    if (options?.songId) form.append("songId", options.songId);
+    return fetchWithOrganization("/api/media", { method: "POST", body: form }).then(async (res) => {
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        const error: any = new Error(body?.error?.message || "Upload failed");
+        error.status = res.status;
+        throw error;
+      }
+      return res.json() as Promise<{ media: MediaFile }>;
+    });
+  },
+  update: (id: string, data: { type?: MediaType; songId?: string | null }) =>
+    request<{ media: MediaFile }>(`/api/media/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/media/${id}`, { method: "DELETE" }),
+};
+
+// ── Set list templates ───────────────────────────
+export interface SetlistTemplate {
+  id: string;
+  title: string;
+  description?: string | null;
+  structure: { label: string }[];
+  createdAt?: string;
+}
+
+export const templatesApi = {
+  list: () => request<{ templates: SetlistTemplate[] }>("/api/setlists/templates"),
+  create: (data: { title: string; description?: string; structure: { label: string }[] }) =>
+    request<{ template: SetlistTemplate }>("/api/setlists/templates", { method: "POST", body: JSON.stringify(data) }),
+  update: (id: string, data: Partial<{ title: string; description: string; structure: { label: string }[] }>) =>
+    request<{ template: SetlistTemplate }>(`/api/setlists/templates/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/setlists/templates/${id}`, { method: "DELETE" }),
+  apply: (id: string, name?: string) =>
+    request<{ setlist: Setlist; slotCount: number }>(`/api/setlists/templates/${id}/apply`, {
+      method: "POST",
+      body: JSON.stringify({ name }),
+    }),
+};
+
+// ── Rehearsals ───────────────────────────────────
+export interface Rehearsal {
+  id: string;
+  rehearsalDate: string;
+  location?: string | null;
+  notes?: string | null;
+  eventId?: string | null;
+  eventTitle?: string | null;
+  setlistId?: string | null;
+  setlistName?: string | null;
+  createdAt?: string;
+}
+
+export const rehearsalsApi = {
+  list: (params?: { upcoming?: boolean }) => {
+    const qs = new URLSearchParams();
+    if (params?.upcoming) qs.set("upcoming", "true");
+    const query = qs.toString();
+    return request<{ rehearsals: Rehearsal[] }>(`/api/rehearsals${query ? `?${query}` : ""}`);
+  },
+  create: (data: Partial<Rehearsal>) =>
+    request<{ rehearsal: Rehearsal }>("/api/rehearsals", { method: "POST", body: JSON.stringify(data) }),
+  update: (id: string, data: Partial<Rehearsal>) =>
+    request<{ rehearsal: Rehearsal }>(`/api/rehearsals/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+  delete: (id: string) => request<{ message: string }>(`/api/rehearsals/${id}`, { method: "DELETE" }),
+};
+
+// ── Availability ─────────────────────────────────
+export type AvailabilityStatus = "available" | "tentative" | "unavailable";
+
+export interface AvailabilityEntry {
+  userId: string;
+  date: string;
+  status: AvailabilityStatus;
+}
+
+export const availabilityApi = {
+  list: (params: { from: string; to: string }) =>
+    request<{ entries: AvailabilityEntry[] }>(`/api/availability?from=${params.from}&to=${params.to}`),
+  set: (data: { userId?: string; date: string; status: AvailabilityStatus }) =>
+    request<{ entry: AvailabilityEntry }>("/api/availability", { method: "PUT", body: JSON.stringify(data) }),
+  clear: (data: { userId?: string; date: string }) =>
+    request<{ message: string }>("/api/availability", { method: "DELETE", body: JSON.stringify(data) }),
+};
+
+// ── Activity log ─────────────────────────────────
+export interface ActivityEntry {
+  id: string;
+  action: string;
+  targetType?: string | null;
+  targetId?: string | null;
+  targetLabel?: string | null;
+  actorId?: string | null;
+  actorName?: string | null;
+  createdAt: string;
+}
+
+export const activityApi = {
+  list: (params?: { actorId?: string; action?: string; limit?: number }) => {
+    const qs = new URLSearchParams();
+    if (params?.actorId) qs.set("actorId", params.actorId);
+    if (params?.action) qs.set("action", params.action);
+    if (params?.limit) qs.set("limit", String(params.limit));
+    const query = qs.toString();
+    return request<{ entries: ActivityEntry[] }>(`/api/activity${query ? `?${query}` : ""}`);
+  },
+};
+
+// ── Usage report ─────────────────────────────────
+export interface SongUsageReportRow {
+  id: string;
+  title: string;
+  artist?: string | null;
+  key?: string | null;
+  tempo?: number | null;
+  playCount: number;
+  lastPlayed?: string | null;
+  setlistNames?: string | null;
+}
+
+export const usageReportApi = {
+  get: () => request<{ songs: SongUsageReportRow[] }>("/api/songs/usage-report"),
+};
 
 // ── Assistant ────────────────────────────────────
 export interface AssistantMessage {
@@ -902,11 +1100,11 @@ export const orgsApi = {
       method: "POST",
       body: JSON.stringify({ name }),
     }),
-  /** Rename an organization */
-  update: (id: string, name: string) =>
+  /** Update an organization (name, slug, logo) */
+  update: (id: string, data: string | { name?: string; slug?: string | null; logoUrl?: string | null }) =>
     request<{ organization: Organization }>(`/api/organizations/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ name }),
+      body: JSON.stringify(typeof data === "string" ? { name: data } : data),
     }),
   /** Delete an organization (owner only) */
   remove: (id: string) =>

@@ -8,6 +8,7 @@ import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../..
 import { chordProToOnSong, chordProToPlainText } from "@vpc-music/shared";
 import JSZip from "jszip";
 import { notifyOrgMembers } from "../notifications/service.js";
+import { logActivity } from "../activity/service.js";
 
 export const setlistRoutes = Router();
 
@@ -141,11 +142,12 @@ setlistRoutes.get(
 
     if (!setlist) throw createError(404, "Setlist not found");
 
-    // Get songs in order
+    // Get songs in order (left join: template slots have no song yet)
     const items = await db
       .select({
         id: setlistSongs.id,
         songId: setlistSongs.songId,
+        slotLabel: setlistSongs.slotLabel,
         variationId: setlistSongs.variationId,
         variationName: songVariations.name,
         position: setlistSongs.position,
@@ -161,7 +163,7 @@ setlistRoutes.get(
         songTempo: songs.tempo,
       })
       .from(setlistSongs)
-      .innerJoin(songs, eq(setlistSongs.songId, songs.id))
+      .leftJoin(songs, eq(setlistSongs.songId, songs.id))
       .leftJoin(songVariations, eq(setlistSongs.variationId, songVariations.id))
       .where(eq(setlistSongs.setlistId, req.params.id))
       .orderBy(asc(setlistSongs.position));
@@ -287,6 +289,7 @@ setlistRoutes.post(
       })
       .returning();
 
+    await logActivity(req, "setlist.created", { type: "setlist", id: setlist.id, label: setlist.name });
     res.status(201).json({ setlist });
   })
 );
@@ -307,8 +310,9 @@ setlistRoutes.put(
 
     if (!existing) throw createError(404, "Setlist not found");
 
-    if (status !== undefined && !['draft', 'complete'].includes(status)) {
-      throw createError(400, "Status must be 'draft' or 'complete'");
+    // "approved" only via POST /:id/approve; "complete" also via /complete
+    if (status !== undefined && !['draft', 'in_review', 'complete'].includes(status)) {
+      throw createError(400, "Status must be 'draft', 'in_review', or 'complete'");
     }
 
     const [setlist] = await db
@@ -324,6 +328,38 @@ setlistRoutes.put(
       })
       .where(eq(setlists.id, req.params.id))
       .returning();
+
+    res.json({ setlist });
+  })
+);
+
+// ── POST /api/setlists/:id/approve — approve a reviewed setlist ─
+setlistRoutes.post(
+  "/:id/approve",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("setlists:approve"),
+  asyncHandler(async (req, res) => {
+    const [setlist] = await db
+      .update(setlists)
+      .set({ status: "approved", updatedAt: new Date() })
+      .where(eq(setlists.id, req.params.id))
+      .returning();
+
+    if (!setlist) throw createError(404, "Setlist not found");
+
+    await notifyOrgMembers(
+      req.org.id,
+      {
+        type: "setlist",
+        title: "Setlist approved",
+        message: `"${setlist.name}" is approved and ready.`,
+        linkPath: `/setlists/${req.params.id}`,
+      },
+      { excludeUserId: req.user.id },
+    );
+    await logActivity(req, "setlist.approved", { type: "setlist", id: setlist.id, label: setlist.name });
 
     res.json({ setlist });
   })
@@ -544,7 +580,7 @@ setlistRoutes.patch(
   requireOrg,
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
-    const { key, notes, duration, capo, arrangement, transitionCues } = req.body;
+    const { key, notes, duration, capo, arrangement, transitionCues, songId } = req.body;
 
     if (arrangement !== undefined && arrangement !== null && !ARRANGEMENTS.includes(arrangement)) {
       throw createError(400, `arrangement must be one of: ${ARRANGEMENTS.join(", ")}`);
@@ -563,6 +599,8 @@ setlistRoutes.patch(
         ...(capo !== undefined && { capo }),
         ...(arrangement !== undefined && { arrangement }),
         ...(sanitizedCues !== undefined && { transitionCues: sanitizedCues }),
+        // Fill (or clear) a template slot's song
+        ...(songId !== undefined && { songId: songId || null }),
       })
       .where(and(eq(setlistSongs.id, req.params.songItemId), eq(setlistSongs.setlistId, req.params.id)))
       .returning();

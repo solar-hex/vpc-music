@@ -5,7 +5,8 @@ import { songs } from "./songs.js";
 import { songVariations } from "./songs.js";
 import { organizations } from "./organizations.js";
 
-export const setlistStatusEnum = pgEnum("setlist_status", ["draft", "complete"]);
+// draft → in_review → approved is the approval flow; complete = performed
+export const setlistStatusEnum = pgEnum("setlist_status", ["draft", "in_review", "approved", "complete"]);
 
 export const setlists = pgTable("setlists", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -27,7 +28,9 @@ export const setlists = pgTable("setlists", {
 export const setlistSongs = pgTable("setlist_songs", {
   id: uuid("id").defaultRandom().primaryKey(),
   setlistId: uuid("setlist_id").notNull().references(() => setlists.id),
-  songId: uuid("song_id").notNull().references(() => songs.id),
+  // Nullable so template-created slots can exist before a song is chosen
+  songId: uuid("song_id").references(() => songs.id),
+  slotLabel: text("slot_label"),        // template slot name, e.g. "Fast opener"
   variationId: uuid("variation_id").references(() => songVariations.id),
   position: integer("position").notNull(),
   key: text("key"),                     // override key for this setlist

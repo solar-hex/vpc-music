@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
-import { RolesPermissionsManager } from "@/components/admin/RolesPermissionsManager";
 import { adminApi, rolesApi, type OrgUser, type OrgRole } from "@/lib/api-client";
 import { toast } from "sonner";
 import { roleLabel, ROLE_DESCRIPTIONS } from "@vpc-music/shared";
@@ -14,8 +13,6 @@ import {
   Loader2,
   Crown,
   Copy,
-  Users,
-  ShieldCheck,
 } from "lucide-react";
 
 const ROLE_OPTIONS: { value: string; label: string; icon: typeof Shield }[] = [
@@ -41,7 +38,6 @@ export function AdminPage() {
   const { user, activeOrg } = useAuth();
   const [members, setMembers] = useState<OrgUser[]>([]);
   const [loading, setLoading] = useState(true);
-  const [section, setSection] = useState<"users" | "roles">("users");
   const [customRoles, setCustomRoles] = useState<OrgRole[]>([]);
 
   // Invite form
@@ -80,7 +76,7 @@ export function AdminPage() {
       .list()
       .then((res) => setCustomRoles(res.roles.filter((role) => !role.isSystem)))
       .catch(() => setCustomRoles([]));
-  }, [isAdmin, section]);
+  }, [isAdmin]);
 
   // Guard: non-admins see a forbidden message
   if (!isAdmin) {
@@ -186,38 +182,8 @@ export function AdminPage() {
         </p>
       </div>
 
-      {/* Section tabs */}
-      <div className="flex items-center gap-1 border-b border-[hsl(var(--border))]" role="tablist">
-        <button
-          role="tab"
-          aria-selected={section === "users"}
-          onClick={() => setSection("users")}
-          className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
-            section === "users"
-              ? "border-[hsl(var(--secondary))] text-[hsl(var(--secondary))]"
-              : "border-transparent text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-          }`}
-        >
-          <Users className="h-4 w-4" /> Users
-        </button>
-        <button
-          role="tab"
-          aria-selected={section === "roles"}
-          onClick={() => setSection("roles")}
-          className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
-            section === "roles"
-              ? "border-[hsl(var(--secondary))] text-[hsl(var(--secondary))]"
-              : "border-transparent text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-          }`}
-        >
-          <ShieldCheck className="h-4 w-4" /> Roles &amp; Permissions
-        </button>
-      </div>
-
-      {section === "roles" && <RolesPermissionsManager />}
-
       {/* Invite section */}
-      <div className={`rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-5 space-y-4 ${section !== "users" ? "hidden" : ""}`}>
+      <div className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-5 space-y-4">
         <h2 className="text-lg font-brand text-[hsl(var(--foreground))] flex items-center gap-2">
           <UserPlus className="h-5 w-5 text-[hsl(var(--secondary))]" />
           Invite Member
@@ -292,7 +258,7 @@ export function AdminPage() {
       </div>
 
       {/* Members list */}
-      <div className={`rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] ${section !== "users" ? "hidden" : ""}`}>
+      <div className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))]">
         <div className="border-b border-[hsl(var(--border))] px-5 py-3">
           <h2 className="text-lg font-brand text-[hsl(var(--foreground))]">
             Members ({members.length})

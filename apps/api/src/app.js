@@ -20,6 +20,12 @@ import { artistRoutes } from "./features/artists/routes.js";
 import { notificationRoutes } from "./features/notifications/routes.js";
 import { assistantRoutes } from "./features/assistant/routes.js";
 import { roleRoutes } from "./features/roles/routes.js";
+import { albumRoutes } from "./features/albums/routes.js";
+import { mediaRoutes, UPLOADS_DIR } from "./features/media/routes.js";
+import { setlistTemplateRoutes } from "./features/setlists/templateRoutes.js";
+import { rehearsalRoutes } from "./features/rehearsals/routes.js";
+import { availabilityRoutes } from "./features/availability/routes.js";
+import { activityRoutes } from "./features/activity/routes.js";
 
 const app = express();
 
@@ -53,6 +59,7 @@ app.use("/auth", authRoutes);
 app.use("/songs", songRoutes);
 app.use("/songs", stickyNoteRoutes);  // /songs/:songId/notes
 app.use("/songs", collaborationRoutes);  // /songs/:songId/collaboration
+app.use("/setlists/templates", setlistTemplateRoutes); // before /setlists so "templates" ≠ ":id"
 app.use("/setlists", setlistRoutes);
 app.use("/platform", platformRoutes);
 app.use("/admin", adminRoutes);
@@ -62,6 +69,14 @@ app.use("/artists", artistRoutes);
 app.use("/notifications", notificationRoutes);
 app.use("/assistant", assistantRoutes);
 app.use("/roles", roleRoutes);
+app.use("/albums", albumRoutes);
+app.use("/media", mediaRoutes);
+app.use("/rehearsals", rehearsalRoutes);
+app.use("/availability", availabilityRoutes);
+app.use("/activity", activityRoutes);
+
+// Uploaded media files (charts, audio, stems)
+app.use("/uploads", express.static(UPLOADS_DIR));
 app.use("/", shareRoutes);   // /songs/:id/share(s) + /shared/:token
 
 // ── Error handler (must be last) ─────────────────

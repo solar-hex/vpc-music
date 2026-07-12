@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { artistsApi, type Artist, type ArtistSong } from "@/lib/api-client";
+import { artistsApi, type Artist } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
-import { Search, Plus, MicVocal, BadgeCheck, X, Pencil, Trash2, Globe, Music, TrendingUp } from "lucide-react";
+import { Search, Plus, MicVocal, BadgeCheck, Pencil, Trash2 } from "lucide-react";
 
 function artistInitials(name: string): string {
   return name
@@ -103,107 +103,6 @@ function ArtistFormDialog({
   );
 }
 
-function ArtistDetailModal({
-  artistId,
-  onClose,
-  canEdit,
-  onEdit,
-}: {
-  artistId: string;
-  onClose: () => void;
-  canEdit: boolean;
-  onEdit: (artist: Artist) => void;
-}) {
-  const [artist, setArtist] = useState<Artist | null>(null);
-  const [songs, setSongs] = useState<ArtistSong[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    artistsApi
-      .get(artistId)
-      .then((res) => {
-        setArtist(res.artist);
-        setSongs(res.songs);
-      })
-      .catch(() => onClose())
-      .finally(() => setLoading(false));
-  }, [artistId, onClose]);
-
-  return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="artist-detail-title">
-      <div className="modal-content max-w-lg space-y-4 max-h-[90vh] overflow-y-auto">
-        {loading || !artist ? (
-          <div className="flex justify-center py-8"><div className="spinner" /></div>
-        ) : (
-          <>
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[hsl(var(--secondary))]/20 text-[hsl(var(--secondary))] font-bold shrink-0">
-                  {artistInitials(artist.name)}
-                </div>
-                <div className="min-w-0">
-                  <h3 id="artist-detail-title" className="text-lg font-semibold flex items-center gap-1.5 truncate">
-                    {artist.name}
-                    {artist.verified && <BadgeCheck className="h-4 w-4 text-[hsl(var(--secondary))] shrink-0" />}
-                  </h3>
-                  <p className="text-xs text-[hsl(var(--muted-foreground))]">
-                    {[artist.genre, `${artist.songCount ?? songs.length} song${(artist.songCount ?? songs.length) !== 1 ? "s" : ""}`]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </p>
-                </div>
-              </div>
-              <button onClick={onClose} className="btn-icon rounded-md text-[hsl(var(--muted-foreground))]" aria-label="Close">
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            {artist.bio && <p className="text-sm text-[hsl(var(--muted-foreground))]">{artist.bio}</p>}
-            {artist.website && (
-              <a href={artist.website} target="_blank" rel="noreferrer" className="link-accent inline-flex items-center gap-1 text-sm">
-                <Globe className="h-3.5 w-3.5" /> {artist.website}
-              </a>
-            )}
-
-            <div className="space-y-2">
-              <h4 className="section-title">
-                <Music className="section-title-icon" /> Songs
-              </h4>
-              {songs.length === 0 ? (
-                <p className="text-sm text-[hsl(var(--muted-foreground))]">No songs linked to this artist yet.</p>
-              ) : (
-                <div className="list-container">
-                  {songs.map((song) => (
-                    <Link key={song.id} to={`/songs/${song.id}`} className="list-item hover:bg-[hsl(var(--muted))]" onClick={onClose}>
-                      <span className="flex-1 truncate text-sm font-medium">{song.title}</span>
-                      <span className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]">
-                        {song.key && <span className="badge-key">{song.key}</span>}
-                        {song.useCount ? (
-                          <span className="inline-flex items-center gap-1">
-                            <TrendingUp className="h-3 w-3" /> {song.useCount}×
-                          </span>
-                        ) : null}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {canEdit && (
-              <div className="flex justify-end">
-                <button onClick={() => onEdit(artist)} className="btn-outline btn-sm">
-                  <Pencil className="h-4 w-4" /> Edit artist
-                </button>
-              </div>
-            )}
-          </>
-        )}
-      </div>
-    </div>
-  );
-}
-
 /** Artist directory — browse, search, and manage the artists behind the library. */
 export function ArtistsPage() {
   const { user, activeOrg } = useAuth();
@@ -212,7 +111,6 @@ export function ArtistsPage() {
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [genreFilter, setGenreFilter] = useState("");
-  const [detailId, setDetailId] = useState<string | null>(null);
   const [formArtist, setFormArtist] = useState<Artist | null | undefined>(undefined); // undefined = closed, null = create
   const [pendingDelete, setPendingDelete] = useState<Artist | null>(null);
   const [deleting, setDeleting] = useState(false);
@@ -311,7 +209,7 @@ export function ArtistsPage() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((artist) => (
             <div key={artist.id} className="card-interactive card-body relative group">
-              <button onClick={() => setDetailId(artist.id)} className="flex items-center gap-3 w-full text-left">
+              <Link to={`/artists/${artist.id}`} className="flex items-center gap-3 w-full text-left">
                 <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[hsl(var(--secondary))]/20 text-[hsl(var(--secondary))] text-sm font-bold shrink-0">
                   {artistInitials(artist.name)}
                 </div>
@@ -323,10 +221,10 @@ export function ArtistsPage() {
                   <div className="text-xs text-[hsl(var(--muted-foreground))]">
                     {[artist.genre, `${artist.songCount ?? 0} song${(artist.songCount ?? 0) !== 1 ? "s" : ""}`]
                       .filter(Boolean)
-                      .join(" · ")}
+                      .join(" Â· ")}
                   </div>
                 </div>
-              </button>
+              </Link>
               {canEdit && (
                 <div className="absolute top-3 right-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
                   <button
@@ -348,18 +246,6 @@ export function ArtistsPage() {
             </div>
           ))}
         </div>
-      )}
-
-      {detailId && (
-        <ArtistDetailModal
-          artistId={detailId}
-          onClose={() => setDetailId(null)}
-          canEdit={!!canEdit}
-          onEdit={(artist) => {
-            setDetailId(null);
-            setFormArtist(artist);
-          }}
-        />
       )}
 
       {formArtist !== undefined && (

@@ -3,7 +3,8 @@ import { render } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { MemoryRouter } from "react-router-dom";
-import { SettingsPage } from "@/pages/settings/SettingsPage";
+import { SettingsProfileTab } from "@/pages/settings/SettingsProfileTab";
+import { SettingsPreferencesTab } from "@/pages/settings/SettingsPreferencesTab";
 
 expect.extend(toHaveNoViolations as Parameters<typeof expect.extend>[0]);
 
@@ -134,10 +135,21 @@ describe("Accessibility audit", () => {
     expect(results).toHaveNoViolations();
   });
 
-  it("SettingsPage has no obvious accessibility violations", async () => {
+  it("Settings profile tab has no obvious accessibility violations", async () => {
     const { container } = render(
       <MemoryRouter>
-        <SettingsPage />
+        <SettingsProfileTab />
+      </MemoryRouter>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it("Settings preferences tab has no obvious accessibility violations", async () => {
+    const { container } = render(
+      <MemoryRouter>
+        <SettingsPreferencesTab />
       </MemoryRouter>,
     );
 

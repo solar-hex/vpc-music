@@ -25,19 +25,24 @@ function toLocalInputValue(iso: string): string {
 export function EventFormDialog({
   open,
   event,
+  creatingFromDate = false,
   onClose,
   onSaved,
 }: {
   open: boolean;
   /** When set, the dialog edits this event; otherwise it creates a new one. */
   event?: Event | null;
+  /** Treat `event` as initial values only (create mode with a prefilled date). */
+  creatingFromDate?: boolean;
   onClose: () => void;
   onSaved: (event: Event) => void;
 }) {
+  const isEditing = Boolean(event && !creatingFromDate);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [theme, setTheme] = useState("");
+  const [eventType, setEventType] = useState("");
   const [preparedBy, setPreparedBy] = useState("");
   const [setlistId, setSetlistId] = useState("");
   const [notes, setNotes] = useState("");
@@ -54,6 +59,7 @@ export function EventFormDialog({
     setDate(event?.date ? toLocalInputValue(event.date) : "");
     setLocation(event?.location ?? "");
     setTheme(event?.theme ?? "");
+    setEventType(event?.eventType ?? "");
     setPreparedBy(event?.preparedBy ?? "");
     setSetlistId(event?.setlistId ?? "");
     setNotes(event?.notes ?? "");
@@ -107,15 +113,16 @@ export function EventFormDialog({
         date: new Date(date).toISOString(),
         location: location.trim() || null,
         theme: theme.trim() || null,
+        eventType: eventType.trim() || null,
         preparedBy: preparedBy || null,
         setlistId: setlistId || null,
         notes: notes.trim() || null,
         team,
       };
-      const res = event
+      const res = isEditing && event
         ? await eventsApi.update(event.id, payload)
         : await eventsApi.create(payload);
-      toast.success(event ? "Plan updated" : "Plan created");
+      toast.success(isEditing ? "Plan updated" : "Plan created");
       onSaved(res.event);
       onClose();
     } catch (err: any) {
@@ -131,7 +138,7 @@ export function EventFormDialog({
         <div className="flex items-start justify-between">
           <div className="space-y-1">
             <h2 id="event-form-title" className="text-lg font-semibold text-[hsl(var(--foreground))]">
-              {event ? "Edit plan" : "New plan"}
+              {isEditing ? "Edit plan" : "New plan"}
             </h2>
             <p className="text-sm text-[hsl(var(--muted-foreground))]">
               Schedule a service or rehearsal and link a setlist.
@@ -186,6 +193,24 @@ export function EventFormDialog({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label className="space-y-2 block">
+              <span className="text-sm font-medium text-[hsl(var(--foreground))]">Type</span>
+              <input
+                type="text"
+                value={eventType}
+                onChange={(e) => setEventType(e.target.value)}
+                placeholder="Service, Concert, Wedding…"
+                className="input w-full"
+                disabled={saving}
+                list="event-type-suggestions"
+              />
+              <datalist id="event-type-suggestions">
+                <option value="Service" />
+                <option value="Concert" />
+                <option value="Wedding" />
+                <option value="Special Event" />
+              </datalist>
+            </label>
             <label className="space-y-2 block">
               <span className="text-sm font-medium text-[hsl(var(--foreground))]">Theme</span>
               <input

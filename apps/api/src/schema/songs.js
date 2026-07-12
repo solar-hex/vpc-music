@@ -21,6 +21,10 @@ export const songs = pgTable("songs", {
   tempo: integer("tempo"),       // BPM
   artist: text("artist"),        // free-text artist name (kept as fallback)
   artistId: uuid("artist_id").references(() => artists.id, { onDelete: "set null" }), // optional directory link
+  albumId: uuid("album_id"),     // optional album link (FK lives in albums.js to avoid an import cycle)
+  timeSignature: text("time_signature"),   // e.g. "4/4", "6/8"
+  durationSeconds: integer("duration_seconds"),
+  genre: text("genre"),
   shout: text("shout"),
   year: text("year"),
   tags: text("tags"),            // comma-separated or JSON array

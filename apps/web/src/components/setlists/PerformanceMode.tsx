@@ -72,7 +72,7 @@ export function PerformanceMode({
   const rendererRef = useRef<any>(null);
 
   const currentSong = songs[currentIndex];
-  const content = currentSong
+  const content = currentSong?.songId
     ? songContents.get(currentSong.songId)
     : undefined;
 
@@ -436,7 +436,7 @@ export function PerformanceMode({
                       ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
                       : "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))]/80"
                   }`}
-                  title={songs[idx]?.songTitle}
+                  title={songs[idx]?.songTitle ?? songs[idx]?.slotLabel ?? undefined}
                 >
                   {idx + 1}
                 </button>

@@ -122,10 +122,16 @@ orgRoutes.put(
   "/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const { name } = req.body;
+    const { name, slug, logoUrl } = req.body;
 
-    if (!name || !name.trim()) {
+    if (name === undefined && slug === undefined && logoUrl === undefined) {
       throw createError(400, "Organization name is required");
+    }
+    if (name !== undefined && (!name || !name.trim())) {
+      throw createError(400, "Organization name is required");
+    }
+    if (slug !== undefined && slug && !/^[a-z0-9-]+$/.test(slug)) {
+      throw createError(400, "Slug may only contain lowercase letters, numbers, and hyphens");
     }
 
     // Check authorization: global owner or org admin
@@ -148,7 +154,12 @@ orgRoutes.put(
 
     const [updated] = await db
       .update(organizations)
-      .set({ name: name.trim(), updatedAt: new Date() })
+      .set({
+        ...(name !== undefined && { name: name.trim() }),
+        ...(slug !== undefined && { slug: slug || null }),
+        ...(logoUrl !== undefined && { logoUrl: logoUrl || null }),
+        updatedAt: new Date(),
+      })
       .where(eq(organizations.id, id))
       .returning();
 

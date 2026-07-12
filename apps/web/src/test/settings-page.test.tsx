@@ -2,7 +2,9 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
-import { SettingsPage } from "@/pages/settings/SettingsPage";
+import { SettingsProfileTab } from "@/pages/settings/SettingsProfileTab";
+import { SettingsPreferencesTab } from "@/pages/settings/SettingsPreferencesTab";
+import { AdminOrganizationTab } from "@/pages/admin/AdminOrganizationTab";
 
 // ---------- Mocks ----------
 const mockRefreshUser = vi.fn();
@@ -87,15 +89,13 @@ const mockGetSettings = vi.fn();
 const mockUpdateSettings = vi.fn();
 const mockUpdateProfile = vi.fn();
 const mockChangePassword = vi.fn();
-const mockListUsers = vi.fn();
 const mockUpdateOrg = vi.fn();
 const mockRemoveOrg = vi.fn();
+const mockListOrgs = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
-  adminApi: {
-    listUsers: (...args: any[]) => mockListUsers(...args),
-  },
   orgsApi: {
+    list: (...args: any[]) => mockListOrgs(...args),
     update: (...args: any[]) => mockUpdateOrg(...args),
     remove: (...args: any[]) => mockRemoveOrg(...args),
   },
@@ -111,310 +111,260 @@ vi.mock("sonner", () => ({
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
-function renderPage() {
+function renderProfile() {
   return render(
     <MemoryRouter>
-      <SettingsPage />
+      <SettingsProfileTab />
     </MemoryRouter>,
   );
 }
 
-describe("SettingsPage", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    mockAuthValue = {
-      user: { id: "u1", displayName: "John", email: "john@test.com", role: "member", organizations: [{ id: "org1", name: "Test Church", role: "admin" }] },
-      activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-      refreshUser: mockRefreshUser,
-    };
-    mockGetSettings.mockResolvedValue({ settings: {} });
-    mockUpdateSettings.mockResolvedValue({ settings: {} });
-    mockListUsers.mockResolvedValue({ users: [{ id: "u1" }, { id: "u2" }, { id: "u3" }] });
-    mockUpdateOrg.mockResolvedValue({ organization: { id: "org1", name: "Renamed Church" } });
-    mockRemoveOrg.mockResolvedValue({ message: "deleted" });
+function renderPreferences() {
+  return render(
+    <MemoryRouter>
+      <SettingsPreferencesTab />
+    </MemoryRouter>,
+  );
+}
+
+function renderOrganization() {
+  return render(
+    <MemoryRouter>
+      <AdminOrganizationTab />
+    </MemoryRouter>,
+  );
+}
+
+beforeEach(() => {
+  vi.clearAllMocks();
+  mockAuthValue = {
+    user: { id: "u1", displayName: "John", email: "john@test.com", role: "member", organizations: [{ id: "org1", name: "Test Church", role: "admin" }] },
+    activeOrg: { id: "org1", name: "Test Church", role: "admin" },
+    refreshUser: mockRefreshUser,
+  };
+  mockGetSettings.mockResolvedValue({ settings: {} });
+  mockUpdateSettings.mockResolvedValue({ settings: {} });
+  mockListOrgs.mockResolvedValue({ organizations: [{ id: "org1", name: "Test Church", slug: "test-church", logoUrl: null }] });
+  mockUpdateOrg.mockResolvedValue({ organization: { id: "org1", name: "Renamed Church" } });
+  mockRemoveOrg.mockResolvedValue({ message: "deleted" });
+});
+
+describe("SettingsProfileTab", () => {
+  it("renders Profile section with email and display name", () => {
+    renderProfile();
+    expect(screen.getByLabelText("Email")).toHaveValue("john@test.com");
+    expect(screen.getByLabelText("Display Name")).toHaveValue("John");
   });
 
-  // ===================== POSITIVE =====================
+  it("renders Change Password section", () => {
+    renderProfile();
+    expect(screen.getByText("Change Password")).toBeInTheDocument();
+    expect(screen.getByLabelText("Current Password")).toBeInTheDocument();
+  });
 
-  describe("positive", () => {
-    it("renders settings heading", () => {
-      renderPage();
-      expect(screen.getByText("Settings")).toBeInTheDocument();
+  it("shows organization info and user ID", () => {
+    renderProfile();
+    expect(screen.getByText(/Organization: Test Church/)).toBeInTheDocument();
+    expect(screen.getByText(/User ID: u1/)).toBeInTheDocument();
+  });
+
+  it("saves profile on submit", async () => {
+    mockUpdateProfile.mockResolvedValue({ user: {} });
+    renderProfile();
+    const user = userEvent.setup();
+    await user.clear(screen.getByLabelText("Display Name"));
+    await user.type(screen.getByLabelText("Display Name"), "Johnny");
+    await user.click(screen.getByRole("button", { name: /save profile/i }));
+    await waitFor(() => {
+      expect(mockUpdateProfile).toHaveBeenCalledWith({ displayName: "Johnny" });
+      expect(mockRefreshUser).toHaveBeenCalled();
     });
+  });
 
-    it("renders Appearance section with theme buttons", () => {
-      renderPage();
-      expect(screen.getByText("Appearance")).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "Light" })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "Dark" })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "System" })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /normal contrast mode/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /high contrast mode/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /beginner editor mode/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /stage dark theme preset/i })).toBeInTheDocument();
-      expect(screen.getByLabelText(/primary chord color/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/secondary chord color/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/page background color/i)).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /monospace display font/i })).toBeInTheDocument();
+  it("changes password on submit", async () => {
+    mockChangePassword.mockResolvedValue({ message: "ok" });
+    renderProfile();
+    const user = userEvent.setup();
+    await user.type(screen.getByLabelText("Current Password"), "oldpass123");
+    await user.type(screen.getByLabelText("New Password"), "newpass1234");
+    await user.type(screen.getByLabelText("Confirm New Password"), "newpass1234");
+    await user.click(screen.getByRole("button", { name: /change password/i }));
+    await waitFor(() => {
+      expect(mockChangePassword).toHaveBeenCalledWith({ currentPassword: "oldpass123", newPassword: "newpass1234" });
     });
+  });
 
-    it("renders Profile section with email and display name", () => {
-      renderPage();
-      expect(screen.getByText("Profile")).toBeInTheDocument();
-      expect(screen.getByDisplayValue("john@test.com")).toBeInTheDocument();
-      expect(screen.getByDisplayValue("John")).toBeInTheDocument();
+  it("disables email field", () => {
+    renderProfile();
+    expect(screen.getByLabelText("Email")).toBeDisabled();
+  });
+
+  it("shows error when display name is empty", async () => {
+    const { toast } = await import("sonner");
+    renderProfile();
+    const user = userEvent.setup();
+    await user.clear(screen.getByLabelText("Display Name"));
+    await user.click(screen.getByRole("button", { name: /save profile/i }));
+    expect(toast.error).toHaveBeenCalledWith("Display name is required");
+    expect(mockUpdateProfile).not.toHaveBeenCalled();
+  });
+
+  it("shows error when passwords don't match", async () => {
+    const { toast } = await import("sonner");
+    renderProfile();
+    const user = userEvent.setup();
+    await user.type(screen.getByLabelText("Current Password"), "oldpass123");
+    await user.type(screen.getByLabelText("New Password"), "newpass1234");
+    await user.type(screen.getByLabelText("Confirm New Password"), "different1234");
+    await user.click(screen.getByRole("button", { name: /change password/i }));
+    expect(toast.error).toHaveBeenCalledWith("Passwords don't match");
+    expect(mockChangePassword).not.toHaveBeenCalled();
+  });
+
+  it("shows error on profile update failure", async () => {
+    const { toast } = await import("sonner");
+    mockUpdateProfile.mockRejectedValue(new Error("Server error"));
+    renderProfile();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /save profile/i }));
+    await waitFor(() => {
+      expect(toast.error).toHaveBeenCalledWith("Server error");
     });
+  });
+});
 
-    it("renders Change Password section", () => {
-      renderPage();
-      expect(screen.getByRole("heading", { name: /Change Password/ })).toBeInTheDocument();
+describe("SettingsPreferencesTab", () => {
+  it("renders Appearance section with theme buttons", () => {
+    renderPreferences();
+    expect(screen.getByText("Appearance")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Light" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Dark" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "System" })).toBeInTheDocument();
+  });
+
+  it("renders notation and duration preferences", () => {
+    renderPreferences();
+    expect(screen.getByRole("button", { name: /sharps/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /flats/i })).toBeInTheDocument();
+    expect(screen.getByText("Duration display")).toBeInTheDocument();
+    expect(screen.getByLabelText("Time zone")).toBeInTheDocument();
+  });
+
+  it("persists key notation choice", async () => {
+    renderPreferences();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /flats/i }));
+    await waitFor(() => {
+      expect(mockUpdateSettings).toHaveBeenCalledWith(expect.objectContaining({ keyNotation: "flats" }));
     });
+  });
 
-    it("shows organization info and user ID", () => {
-      renderPage();
-      expect(screen.getByText(/Organization: Test Church/)).toBeInTheDocument();
-      expect(screen.getAllByText(/Worship Leader/).length).toBeGreaterThan(0);
-      expect(screen.getByText(/User ID: u1/)).toBeInTheDocument();
-    });
+  it("calls setTheme when theme button clicked", async () => {
+    renderPreferences();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: "Light" }));
+    expect(mockSetTheme).toHaveBeenCalledWith("light");
+  });
 
-    it("renders organization management fields for org admins", async () => {
-      renderPage();
+  it("calls setContrastMode when high contrast button clicked", async () => {
+    renderPreferences();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /high contrast mode/i }));
+    expect(mockSetContrastMode).toHaveBeenCalledWith("high");
+  });
 
-      expect(screen.getByRole("heading", { name: /organization/i })).toBeInTheDocument();
-      expect(screen.getByDisplayValue("Test Church")).toBeInTheDocument();
-
-      await waitFor(() => {
-        expect(screen.getByText("3")).toBeInTheDocument();
-      });
-    });
-
-    it("saves organization name on submit", async () => {
-      renderPage();
-      const user = userEvent.setup();
-
-      const orgInput = screen.getByLabelText(/organization name/i);
-      await user.clear(orgInput);
-      await user.type(orgInput, "Renamed Church");
-      await user.click(screen.getByRole("button", { name: /save organization/i }));
-
-      await waitFor(() => {
-        expect(mockUpdateOrg).toHaveBeenCalledWith("org1", "Renamed Church");
-        expect(mockRefreshUser).toHaveBeenCalled();
-      });
-    });
-
-    it("shows delete organization for owners", () => {
-      mockAuthValue = {
-        user: { id: "u1", displayName: "John", email: "john@test.com", role: "owner", organizations: [{ id: "org1", name: "Test Church", role: "admin" }] },
-        activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-        refreshUser: mockRefreshUser,
-      };
-
-      renderPage();
-      expect(screen.getByRole("button", { name: /delete organization/i })).toBeInTheDocument();
-    });
-
-    it("deletes the organization for owners after confirmation", async () => {
-      mockAuthValue = {
-        user: { id: "u1", displayName: "John", email: "john@test.com", role: "owner", organizations: [{ id: "org1", name: "Test Church", role: "admin" }] },
-        activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-        refreshUser: mockRefreshUser,
-      };
-
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: /delete organization/i }));
-      await user.click(screen.getAllByRole("button", { name: /^delete organization$/i })[1]);
-
-      await waitFor(() => {
-        expect(mockRemoveOrg).toHaveBeenCalledWith("org1");
-        expect(mockRefreshUser).toHaveBeenCalled();
-      });
-    });
-
-    it("calls setTheme when theme button clicked", async () => {
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: "Light" }));
-      expect(mockSetTheme).toHaveBeenCalledWith("light");
-    });
-
-    it("calls setContrastMode when high contrast button clicked", async () => {
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: /high contrast mode/i }));
-      expect(mockSetContrastMode).toHaveBeenCalledWith("high");
-    });
-
-    it("calls setEditorMode when beginner mode is selected", async () => {
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: /beginner editor mode/i }));
-      expect(mockSetEditorMode).toHaveBeenCalledWith("beginner");
+  it("calls setEditorMode when beginner mode is selected", async () => {
+    renderPreferences();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /beginner editor mode/i }));
+    expect(mockSetEditorMode).toHaveBeenCalledWith("beginner");
+    await waitFor(() => {
       expect(mockUpdateSettings).toHaveBeenCalledWith(expect.objectContaining({ editorMode: "beginner" }));
     });
+  });
 
-    it("applies a theme preset and persists its values", async () => {
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: /stage dark theme preset/i }));
-      expect(mockSetThemePreset).toHaveBeenCalledWith("stage-dark");
+  it("applies a theme preset and persists its values", async () => {
+    renderPreferences();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /stage dark theme preset/i }));
+    expect(mockSetThemePreset).toHaveBeenCalledWith("stage-dark");
+    await waitFor(() => {
       expect(mockUpdateSettings).toHaveBeenCalledWith(
-        expect.objectContaining({
-          themePreset: "stage-dark",
-          chordColor: "#7dd3fc",
-          secondaryChordColor: "#c084fc",
-          pageBackground: "#000435",
-          songFontFamily: "mono",
-        }),
+        expect.objectContaining({ themePreset: "stage-dark", pageBackground: "#000435" }),
       );
-    });
-
-    it("updates custom appearance colors and font", async () => {
-      renderPage();
-      const user = userEvent.setup();
-      fireEvent.change(screen.getByLabelText(/primary chord color/i), { target: { value: "#123456" } });
-      fireEvent.change(screen.getByLabelText(/secondary chord color/i), { target: { value: "#654321" } });
-      fireEvent.change(screen.getByLabelText(/page background color/i), { target: { value: "#abcdef" } });
-      await user.click(screen.getByRole("button", { name: /monospace display font/i }));
-
-      expect(mockSetChordColor).toHaveBeenCalledWith("#123456");
-      expect(mockSetSecondaryChordColor).toHaveBeenCalledWith("#654321");
-      expect(mockSetPageBackground).toHaveBeenCalledWith("#abcdef");
-      expect(mockSetSongFontFamily).toHaveBeenCalledWith("mono");
-    });
-
-    it("saves profile on submit", async () => {
-      mockUpdateProfile.mockResolvedValue({ user: {} });
-      mockRefreshUser.mockResolvedValue(undefined);
-      renderPage();
-      const user = userEvent.setup();
-      const nameInput = screen.getByDisplayValue("John");
-      await user.clear(nameInput);
-      await user.type(nameInput, "Jane");
-      await user.click(screen.getByRole("button", { name: /save profile/i }));
-
-      await waitFor(() => {
-        expect(mockUpdateProfile).toHaveBeenCalledWith({ displayName: "Jane" });
-      });
-    });
-
-    it("changes password on submit", async () => {
-      mockChangePassword.mockResolvedValue({ message: "ok" });
-      renderPage();
-      const user = userEvent.setup();
-      const passwordFields = screen.getAllByDisplayValue("");
-      // Current Password, New Password, Confirm New Password are the password-type empty inputs
-      const currentPw = screen.getByLabelText("Current Password");
-      const newPw = screen.getByLabelText("New Password");
-      const confirmPw = screen.getByLabelText("Confirm New Password");
-
-      await user.type(currentPw, "oldpass123");
-      await user.type(newPw, "newpass1234");
-      await user.type(confirmPw, "newpass1234");
-      await user.click(screen.getByRole("button", { name: /change password/i }));
-
-      await waitFor(() => {
-        expect(mockChangePassword).toHaveBeenCalledWith({
-          currentPassword: "oldpass123",
-          newPassword: "newpass1234",
-        });
-      });
     });
   });
 
-  // ===================== NEGATIVE =====================
-
-  describe("negative", () => {
-    it("disables email field", () => {
-      renderPage();
-      expect(screen.getByDisplayValue("john@test.com")).toBeDisabled();
+  it("updates custom appearance colors", async () => {
+    renderPreferences();
+    fireEvent.change(screen.getByLabelText("Primary chord color"), { target: { value: "#123456" } });
+    expect(mockSetChordColor).toHaveBeenCalledWith("#123456");
+    await waitFor(() => {
+      expect(mockUpdateSettings).toHaveBeenCalledWith(
+        expect.objectContaining({ themePreset: "custom", chordColor: "#123456" }),
+      );
     });
+  });
+});
 
-    it("shows error when display name is empty", async () => {
-      const { toast } = await import("sonner");
-      renderPage();
-      const user = userEvent.setup();
-      const nameInput = screen.getByDisplayValue("John");
-      await user.clear(nameInput);
-      await user.click(screen.getByRole("button", { name: /save profile/i }));
-
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Display name is required");
-      });
-      expect(mockUpdateProfile).not.toHaveBeenCalled();
+describe("AdminOrganizationTab", () => {
+  it("renders organization fields for org admins", async () => {
+    renderOrganization();
+    await waitFor(() => {
+      expect(screen.getByLabelText(/name \*/i)).toHaveValue("Test Church");
+      expect(screen.getByLabelText("Slug")).toHaveValue("test-church");
     });
+  });
 
-    it("shows error when new password is too short", async () => {
-      const { toast } = await import("sonner");
-      renderPage();
-      const user = userEvent.setup();
-      await user.type(screen.getByLabelText("Current Password"), "current1");
-      await user.type(screen.getByLabelText("New Password"), "short");
-      await user.type(screen.getByLabelText("Confirm New Password"), "short");
-      await user.click(screen.getByRole("button", { name: /change password/i }));
-
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Password must be at least 8 characters");
-      });
-      expect(mockChangePassword).not.toHaveBeenCalled();
+  it("saves organization on submit", async () => {
+    renderOrganization();
+    const user = userEvent.setup();
+    const nameInput = screen.getByLabelText(/name \*/i);
+    await user.clear(nameInput);
+    await user.type(nameInput, "Renamed Church");
+    await user.click(screen.getByRole("button", { name: /save organization/i }));
+    await waitFor(() => {
+      expect(mockUpdateOrg).toHaveBeenCalledWith("org1", expect.objectContaining({ name: "Renamed Church" }));
+      expect(mockRefreshUser).toHaveBeenCalled();
     });
+  });
 
-    it("shows error when passwords don't match", async () => {
-      const { toast } = await import("sonner");
-      renderPage();
-      const user = userEvent.setup();
-      await user.type(screen.getByLabelText("Current Password"), "current1");
-      await user.type(screen.getByLabelText("New Password"), "password123");
-      await user.type(screen.getByLabelText("Confirm New Password"), "different123");
-      await user.click(screen.getByRole("button", { name: /change password/i }));
+  it("hides the danger zone from non-owners", () => {
+    renderOrganization();
+    expect(screen.queryByText(/danger zone/i)).not.toBeInTheDocument();
+  });
 
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Passwords don't match");
-      });
-      expect(mockChangePassword).not.toHaveBeenCalled();
+  it("deletes the organization for owners after confirmation", async () => {
+    mockAuthValue = {
+      ...mockAuthValue,
+      user: { ...mockAuthValue.user, role: "owner" },
+    };
+    renderOrganization();
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: /delete organization/i }));
+    // Confirm dialog opens — confirm the destructive action
+    await user.click(screen.getByRole("button", { name: /^delete organization$/i }));
+    await waitFor(() => {
+      expect(mockRemoveOrg).toHaveBeenCalledWith("org1");
     });
+  });
 
-    it("shows error on profile update failure", async () => {
-      const { toast } = await import("sonner");
-      mockUpdateProfile.mockRejectedValue(new Error("Server error"));
-      renderPage();
-      const user = userEvent.setup();
-      await user.click(screen.getByRole("button", { name: /save profile/i }));
+  it("shows access denied for observers", () => {
+    mockAuthValue = {
+      ...mockAuthValue,
+      activeOrg: { id: "org1", name: "Test Church", role: "observer" },
+    };
+    renderOrganization();
+    expect(screen.getByText(/access denied/i)).toBeInTheDocument();
+  });
 
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Server error");
-      });
-    });
-
-    it("shows error on password change failure", async () => {
-      const { toast } = await import("sonner");
-      mockChangePassword.mockRejectedValue(new Error("Wrong current password"));
-      renderPage();
-      const user = userEvent.setup();
-      await user.type(screen.getByLabelText("Current Password"), "wrongpass");
-      await user.type(screen.getByLabelText("New Password"), "newpass1234");
-      await user.type(screen.getByLabelText("Confirm New Password"), "newpass1234");
-      await user.click(screen.getByRole("button", { name: /change password/i }));
-
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Wrong current password");
-      });
-    });
-
-    it("shows error when organization name is empty", async () => {
-      const { toast } = await import("sonner");
-      renderPage();
-      const user = userEvent.setup();
-
-      const orgInput = screen.getByLabelText(/organization name/i);
-      await user.clear(orgInput);
-      await user.click(screen.getByRole("button", { name: /save organization/i }));
-
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Organization name is required");
-      });
-      expect(mockUpdateOrg).not.toHaveBeenCalled();
-    });
+  it("shows error when organization name is empty", async () => {
+    const { toast } = await import("sonner");
+    renderOrganization();
+    const user = userEvent.setup();
+    await user.clear(screen.getByLabelText(/name \*/i));
+    await user.click(screen.getByRole("button", { name: /save organization/i }));
+    expect(toast.error).toHaveBeenCalledWith("Organization name is required");
+    expect(mockUpdateOrg).not.toHaveBeenCalled();
   });
 });

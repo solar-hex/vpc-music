@@ -36,6 +36,7 @@ import {
   Download,
   ChevronDown,
   Settings2,
+  Clock,
 } from "lucide-react";
 import { ALL_KEYS } from "@vpc-music/shared";
 import { useConductor } from "@/hooks/useConductor";
@@ -49,6 +50,7 @@ export function SetlistViewPage() {
   const navigate = useNavigate();
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
+  const isAdmin = user?.role === "owner" || activeOrg?.role === "admin";
   const [setlist, setSetlist] = useState<Setlist | null>(null);
   const [songs, setSongs] = useState<SetlistSongItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -145,6 +147,7 @@ export function SetlistViewPage() {
       const map = new Map<string, { songId: string; content: string; key?: string | null; tempo?: number | null }>();
       await Promise.all(
         songs.map(async (item) => {
+          if (!item.songId) return; // template slot without a song yet
           try {
             const res = await songsApi.get(item.songId);
             const song = res.song;
@@ -182,13 +185,27 @@ export function SetlistViewPage() {
     fetchAll();
   }, [id, performanceMode, songs]);
 
-  // Load available songs for the add-song modal
+  // Load available songs for the add-song modal and slot fillers
+  const hasEmptySlots = songs.some((item) => !item.songId);
   useEffect(() => {
-    if (!showAddSong) return;
-    songsApi.list({ q: searchQ || undefined, limit: 20 }).then((res) => {
+    if (!showAddSong && !hasEmptySlots) return;
+    songsApi.list({ q: searchQ || undefined, limit: hasEmptySlots ? 200 : 20 }).then((res) => {
       setAvailableSongs(res.songs);
     });
-  }, [showAddSong, searchQ]);
+  }, [showAddSong, searchQ, hasEmptySlots]);
+
+  const handleFillSlot = async (itemId: string, songId: string) => {
+    if (!id) return;
+    try {
+      await setlistsApi.updateSong(id, itemId, { songId });
+      // Reload to pick up the song's title/key/artist join fields
+      const res = await setlistsApi.get(id);
+      setSongs(res.songs);
+      toast.success("Slot filled");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to fill slot");
+    }
+  };
 
   const handleAddSong = async (songId: string) => {
     if (!id) return;
@@ -308,6 +325,28 @@ export function SetlistViewPage() {
     }
   };
 
+  const handleSubmitForReview = async () => {
+    if (!id) return;
+    try {
+      const res = await setlistsApi.update(id, { status: "in_review" });
+      setSetlist(res.setlist);
+      toast.success("Submitted for review");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to submit");
+    }
+  };
+
+  const handleApprove = async () => {
+    if (!id) return;
+    try {
+      const res = await setlistsApi.approve(id);
+      setSetlist(res.setlist);
+      toast.success("Setlist approved");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to approve");
+    }
+  };
+
   const handleExportZip = async (format: "chordpro" | "onsong" | "text") => {
     if (!id || songs.length === 0) return;
     try {
@@ -329,6 +368,18 @@ export function SetlistViewPage() {
     }
     setShowExportMenu(false);
   };
+
+  // Soft set-analysis signals: advise, never block
+  const SLOW_BPM = 75;
+  const LONG_SET_SECONDS = 75 * 60;
+  const totalDurationSeconds = songs.reduce((sum, item) => sum + (item.duration ?? 0), 0);
+  const totalDurationLabel =
+    totalDurationSeconds > 0
+      ? `${Math.floor(totalDurationSeconds / 60)}:${String(Math.round(totalDurationSeconds % 60)).padStart(2, "0")} total`
+      : null;
+  const isSlow = (item: SetlistSongItem) => item.songTempo != null && item.songTempo <= SLOW_BPM;
+  const slowRunEndsAt = (index: number) =>
+    index >= 2 && isSlow(songs[index]) && isSlow(songs[index - 1]) && isSlow(songs[index - 2]);
 
   if (loading) {
     return (
@@ -362,6 +413,16 @@ export function SetlistViewPage() {
         <div className="flex-1" />
         {canEdit && (
           <>
+            {setlist.status === "draft" && (
+              <button onClick={handleSubmitForReview} className="btn-outline btn-sm">
+                Submit for review
+              </button>
+            )}
+            {setlist.status === "in_review" && isAdmin && (
+              <button onClick={handleApprove} className="btn-primary btn-sm">
+                <CheckCircle2 className="h-3.5 w-3.5" /> Approve
+              </button>
+            )}
             {setlist.status === "complete" ? (
               <button
                 onClick={handleReopen}
@@ -404,9 +465,20 @@ export function SetlistViewPage() {
             <span className="badge-success">
               <CheckCircle2 className="h-3 w-3" /> Complete
             </span>
+          ) : setlist.status === "approved" ? (
+            <span className="badge-success">
+              <CheckCircle2 className="h-3 w-3" /> Approved
+            </span>
+          ) : setlist.status === "in_review" ? (
+            <span className="badge-warning">In review</span>
           ) : (
             <span className="badge-muted">
               Draft
+            </span>
+          )}
+          {totalDurationLabel && (
+            <span className="badge badge-muted" title="Running total of planned durations">
+              <Clock className="h-3 w-3" /> {totalDurationLabel}
             </span>
           )}
         </div>
@@ -542,6 +614,14 @@ export function SetlistViewPage() {
         />
       )}
 
+      {/* Long-set advisory (soft) */}
+      {totalDurationSeconds > LONG_SET_SECONDS && (
+        <div className="flex items-center gap-1.5 rounded-md border border-amber-300/50 bg-amber-50 dark:bg-amber-900/20 px-3 py-2 text-xs text-amber-700 dark:text-amber-300">
+          <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+          Planned durations add up to over {Math.round(LONG_SET_SECONDS / 60)} minutes — double-check the event's time allowance.
+        </div>
+      )}
+
       {/* Song list */}
       <div className="space-y-2">
         <div className="section-header">
@@ -641,6 +721,16 @@ export function SetlistViewPage() {
                       </span>
                     </div>
                   )}
+                  {/* Pacing warning: three or more slow songs in a row */}
+                  {slowRunEndsAt(idx) && !slowRunEndsAt(idx + 1) && (
+                    <div
+                      data-testid={`slow-run-warning-${idx}`}
+                      className="flex items-center gap-1.5 px-3 py-1 text-xs text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 border-y border-amber-200 dark:border-amber-800/40"
+                    >
+                      <AlertTriangle className="h-3 w-3 shrink-0" />
+                      <span>Three or more slow songs in a row (≤{SLOW_BPM} BPM) — consider varying the pace.</span>
+                    </div>
+                  )}
                   <div
                     data-song-index={idx}
                     className={`flex items-center gap-3 p-3 transition-colors ${
@@ -702,31 +792,55 @@ export function SetlistViewPage() {
                   {idx + 1}
                 </span>
 
-                {/* Song info */}
-                <Link
-                  to={item.variationId ? `/songs/${item.songId}?variation=${item.variationId}` : `/songs/${item.songId}`}
-                  className="flex-1 min-w-0 hover:text-[hsl(var(--secondary))]"
-                >
-                  <div className="font-medium truncate text-[hsl(var(--foreground))]">
-                    {item.songTitle}
+                {/* Song info (or an unfilled template slot) */}
+                {item.songId ? (
+                  <Link
+                    to={item.variationId ? `/songs/${item.songId}?variation=${item.variationId}` : `/songs/${item.songId}`}
+                    className="flex-1 min-w-0 hover:text-[hsl(var(--secondary))]"
+                  >
+                    <div className="font-medium truncate text-[hsl(var(--foreground))]">
+                      {item.songTitle}
+                      {item.slotLabel && <span className="ml-2 text-xs font-normal text-[hsl(var(--muted-foreground))]">({item.slotLabel})</span>}
+                    </div>
+                    <div className="text-xs text-[hsl(var(--muted-foreground))]">
+                      {[
+                        item.variationName ? `Variation: ${item.variationName}` : null,
+                        item.key || item.songKey ? `Key: ${item.key || item.songKey}` : null,
+                        item.songArtist,
+                        item.songTempo ? `${item.songTempo} BPM` : null,
+                        item.capo ? `Capo ${item.capo}` : null,
+                        item.arrangement ? item.arrangement.replace("_", " ").toLowerCase() : null,
+                        item.transitionCues?.length ? `${item.transitionCues.length} cue${item.transitionCues.length !== 1 ? "s" : ""}` : null,
+                      ]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="flex-1 min-w-0 flex flex-wrap items-center gap-2">
+                    <span className="badge badge-warning">{item.slotLabel || "Empty slot"}</span>
+                    {canEdit && (
+                      <select
+                        value=""
+                        onChange={(e) => {
+                          if (e.target.value) void handleFillSlot(item.id, e.target.value);
+                        }}
+                        className="input !py-1 text-xs w-auto max-w-[220px]"
+                        aria-label={`Fill slot ${item.slotLabel || idx + 1}`}
+                      >
+                        <option value="">Choose a song…</option>
+                        {availableSongs.map((song) => (
+                          <option key={song.id} value={song.id}>
+                            {song.title}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                   </div>
-                  <div className="text-xs text-[hsl(var(--muted-foreground))]">
-                    {[
-                      item.variationName ? `Variation: ${item.variationName}` : null,
-                      item.key || item.songKey ? `Key: ${item.key || item.songKey}` : null,
-                      item.songArtist,
-                      item.songTempo ? `${item.songTempo} BPM` : null,
-                      item.capo ? `Capo ${item.capo}` : null,
-                      item.arrangement ? item.arrangement.replace("_", " ").toLowerCase() : null,
-                      item.transitionCues?.length ? `${item.transitionCues.length} cue${item.transitionCues.length !== 1 ? "s" : ""}` : null,
-                    ]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </div>
-                </Link>
+                )}
 
                 {/* Per-song performance tools */}
-                {canEdit && (
+                {canEdit && item.songId && (
                   <button
                     onClick={() => setToolsItem(item)}
                     className="btn-icon rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { songsApi, setlistsApi, eventsApi, songUsageApi, type Song, type Setlist, type Event } from "@/lib/api-client";
+import { songsApi, setlistsApi, eventsApi, songUsageApi, rehearsalsApi, usageReportApi, type Song, type Setlist, type Event } from "@/lib/api-client";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import { NextPerformanceHero } from "@/components/dashboard/NextPerformanceHero";
 import { QuickActionsGrid } from "@/components/dashboard/QuickActionsGrid";
@@ -32,6 +32,8 @@ export function DashboardPage() {
   const [planModalEvent, setPlanModalEvent] = useState<Event | null>(null);
   const [eventFormOpen, setEventFormOpen] = useState(false);
   const [eventBeingEdited, setEventBeingEdited] = useState<Event | null>(null);
+  const [rehearsalsThisWeek, setRehearsalsThisWeek] = useState<number | null>(null);
+  const [staleSongCount, setStaleSongCount] = useState<number | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -53,9 +55,33 @@ export function DashboardPage() {
       }
     }
     load();
+
+    // Secondary stats — best-effort, render as they arrive
+    rehearsalsApi
+      .list({ upcoming: true })
+      .then((res) => {
+        const weekAhead = Date.now() + 7 * 86_400_000;
+        setRehearsalsThisWeek(
+          res.rehearsals.filter((rehearsal) => new Date(rehearsal.rehearsalDate).getTime() <= weekAhead).length,
+        );
+      })
+      .catch(() => {});
+    usageReportApi
+      .get()
+      .then((res) => {
+        const cutoff = Date.now() - 90 * 86_400_000;
+        setStaleSongCount(
+          res.songs.filter((song) => !song.lastPlayed || new Date(song.lastPlayed).getTime() < cutoff).length,
+        );
+      })
+      .catch(() => {});
   }, []);
 
   const nextEvent = upcomingEvents[0];
+  const awaitingApproval = setlists.filter((setlist) => setlist.status === "in_review").length;
+  const daysToNextEvent = nextEvent
+    ? Math.max(0, Math.ceil((new Date(nextEvent.date).getTime() - Date.now()) / 86_400_000))
+    : null;
 
   const handleNewPlan = () => {
     setEventBeingEdited(null);
@@ -94,6 +120,30 @@ export function DashboardPage() {
 
       {/* Next performance hero */}
       {!loading && nextEvent && <NextPerformanceHero event={nextEvent} onViewPlan={setPlanModalEvent} />}
+
+      {/* At-a-glance stats */}
+      {!loading && (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="card card-body">
+            <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Next event</p>
+            <p className="text-lg font-bold">
+              {daysToNextEvent === null ? "—" : daysToNextEvent === 0 ? "Today" : `${daysToNextEvent}d`}
+            </p>
+          </div>
+          <Link to="/setlists/rehearsals" className="card-interactive card-body">
+            <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Rehearsals this week</p>
+            <p className="text-lg font-bold tabular-nums">{rehearsalsThisWeek ?? "—"}</p>
+          </Link>
+          <Link to="/setlists" className="card-interactive card-body">
+            <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Awaiting approval</p>
+            <p className="text-lg font-bold tabular-nums">{awaitingApproval}</p>
+          </Link>
+          <Link to="/dashboard/usage" className="card-interactive card-body">
+            <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Not played in 90d</p>
+            <p className="text-lg font-bold tabular-nums">{staleSongCount ?? "—"}</p>
+          </Link>
+        </div>
+      )}
 
       {/* Upcoming events */}
       <section className="space-y-3">

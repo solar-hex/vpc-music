@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { eq, ilike, or, and, asc, desc, sql, inArray, gte, lte, isNull, isNotNull } from "drizzle-orm";
 import { db } from "../../db.js";
-import { songs, songFavorites, songVariations, songUsages, songEdits, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users } from "../../schema/index.js";
+import { songs, songFavorites, songVariations, songUsages, songEdits, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users, setlists, setlistSongs } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../../middlewares/orgContext.js";
@@ -10,6 +10,7 @@ import { env } from "../../config/env.js";
 import multer from "multer";
 import JSZip from "jszip";
 import { convertPdfToChordPro } from "./pdfToChordPro.js";
+import { logActivity } from "../activity/service.js";
 
 export const songRoutes = Router();
 
@@ -546,6 +547,9 @@ songRoutes.get(
         isDraft: songs.isDraft,
         status: songs.status,
         isArchived: songs.isArchived,
+        durationSeconds: songs.durationSeconds,
+        genre: songs.genre,
+        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = ${songs.id})`,
         createdAt: songs.createdAt,
         updatedAt: songs.updatedAt,
         ...(normalizedScope === "shared"
@@ -1037,6 +1041,38 @@ songRoutes.get(
   })
 );
 
+// ── GET /api/songs/usage-report — plays per song ─────────────
+// Per song: play count, last played date, and the setlists it appears in.
+songRoutes.get(
+  "/usage-report",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const rows = await db
+      .select({
+        id: songs.id,
+        title: songs.title,
+        artist: songs.artist,
+        key: songs.key,
+        tempo: songs.tempo,
+        playCount: sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = ${songs.id})::int`,
+        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = ${songs.id})`,
+        setlistNames: sql`(
+          SELECT string_agg(DISTINCT setlists.name, ', ')
+          FROM setlist_songs
+          JOIN setlists ON setlists.id = setlist_songs.setlist_id
+          WHERE setlist_songs.song_id = ${songs.id} AND setlists.deleted_at IS NULL
+        )`,
+      })
+      .from(songs)
+      .where(and(eq(songs.organizationId, req.org.id), isNull(songs.deletedAt), eq(songs.isArchived, false)))
+      .orderBy(asc(songs.title));
+
+    res.json({ songs: rows });
+  })
+);
+
 // ── GET /api/songs/export/zip — export selected songs as zip ─
 songRoutes.get(
   "/export/zip",
@@ -1196,7 +1232,7 @@ songRoutes.post(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
-    const { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft } = req.body;
+    const { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft, timeSignature, durationSeconds, genre, albumId } = req.body;
 
     if (!title || !content) {
       throw createError(400, "Title and content are required");
@@ -1216,12 +1252,17 @@ songRoutes.post(
         tags: tags || null,
         content,
         abcNotation: abcNotation || null,
+        timeSignature: timeSignature || null,
+        durationSeconds: Number.isFinite(Number(durationSeconds)) && Number(durationSeconds) > 0 ? Math.round(Number(durationSeconds)) : null,
+        genre: genre || null,
+        albumId: albumId || null,
         isDraft: isDraft ?? false,
         organizationId: req.org.id,
         createdBy: req.user.id,
       })
       .returning();
 
+    await logActivity(req, "song.created", { type: "song", id: song.id, label: song.title });
     res.status(201).json({ song });
   })
 );
@@ -1245,6 +1286,10 @@ songRoutes.put(
       content,
       abcNotation,
       isDraft,
+      timeSignature,
+      durationSeconds,
+      genre,
+      albumId,
       lastKnownUpdatedAt,
       forceOverwrite,
     } = req.body;
@@ -1305,6 +1350,12 @@ songRoutes.put(
         ...(content !== undefined && { content }),
         ...(abcNotation !== undefined && { abcNotation: abcNotation || null }),
         ...(isDraft !== undefined && { isDraft }),
+        ...(timeSignature !== undefined && { timeSignature: timeSignature || null }),
+        ...(durationSeconds !== undefined && {
+          durationSeconds: Number.isFinite(Number(durationSeconds)) && Number(durationSeconds) > 0 ? Math.round(Number(durationSeconds)) : null,
+        }),
+        ...(genre !== undefined && { genre: genre || null }),
+        ...(albumId !== undefined && { albumId: albumId || null }),
         updatedAt: new Date(),
       })
       .where(eq(songs.id, req.params.id))
@@ -1340,6 +1391,7 @@ songRoutes.delete(
       .set({ deletedAt: new Date(), updatedAt: new Date() })
       .where(eq(songs.id, req.params.id));
 
+    await logActivity(req, "song.trashed", { type: "song", id: req.params.id });
     res.json({ message: "Song moved to trash" });
   })
 );
@@ -1502,6 +1554,32 @@ songRoutes.delete(
       .where(and(eq(songFavorites.songId, req.params.id), eq(songFavorites.userId, req.user.id)));
 
     res.json({ message: "Song unfavorited" });
+  })
+);
+
+// ── GET /api/songs/:id/setlists — setlists containing the song ─
+songRoutes.get(
+  "/:id/setlists",
+  auth,
+  orgContext,
+  asyncHandler(async (req, res) => {
+    const rows = await db
+      .select({
+        id: setlists.id,
+        name: setlists.name,
+        status: setlists.status,
+        updatedAt: setlists.updatedAt,
+      })
+      .from(setlistSongs)
+      .innerJoin(setlists, eq(setlistSongs.setlistId, setlists.id))
+      .where(and(eq(setlistSongs.songId, req.params.id), isNull(setlists.deletedAt)))
+      .orderBy(desc(setlists.updatedAt));
+
+    // A song can appear multiple times in one setlist — dedupe
+    const seen = new Set();
+    const unique = rows.filter((row) => (seen.has(row.id) ? false : (seen.add(row.id), true)));
+
+    res.json({ setlists: unique });
   })
 );
 
