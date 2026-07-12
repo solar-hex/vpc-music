@@ -39,6 +39,7 @@ vi.mock("@vpc-music/shared", () => {
       return scale[((index + steps) % 12 + 12) % 12];
     },
     keyPrefersFlats: () => false,
+  parseBarLine: () => ({ measures: [] }),
   };
 });
 

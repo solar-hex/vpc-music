@@ -11,6 +11,7 @@ expect.extend(toHaveNoViolations as Parameters<typeof expect.extend>[0]);
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
+  parseBarLine: () => ({ measures: [] }),
   CHORD_REGEX: /^[A-G][b#]?(?:m|min|maj|dim|aug|sus[24]?|add)?[2-9]?(?:\/[A-G][b#]?)?$/,
   transposeChord: (chord: string, _steps: number) => `${chord}#`,
   parseChordPro: (content: string) => ({

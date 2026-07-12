@@ -72,6 +72,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
+  parseBarLine: () => ({ measures: [] }),
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
 }));
 

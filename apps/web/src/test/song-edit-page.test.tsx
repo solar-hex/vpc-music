@@ -62,6 +62,7 @@ vi.mock("sonner", () => ({
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
+  parseBarLine: () => ({ measures: [] }),
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
   CHORD_REGEX: /^[A-G][b#]?(?:m|min|maj|dim|aug|sus[24]?|add)?[0-9]?(?:\/[A-G][b#]?)?$/,
   PRESET_TAGS: ["worship", "praise", "hymn", "classic", "contemporary"],

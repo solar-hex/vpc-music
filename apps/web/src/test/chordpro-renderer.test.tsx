@@ -12,6 +12,7 @@ const mockChordToNashville = vi.fn();
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
+  parseBarLine: () => ({ measures: [] }),
   parseChordPro: (...args: any[]) => mockParseChordPro(...args),
   transposeChordPro: (...args: any[]) => mockTransposeChordPro(...args),
   chordToNashville: (...args: any[]) => mockChordToNashville(...args),

@@ -1,4 +1,4 @@
-import { parseChordPro, transposeChordPro, chordToNashville, transposeKeyName, keyPrefersFlats } from "@vpc-music/shared";
+import { parseChordPro, transposeChordPro, chordToNashville, transposeKeyName, keyPrefersFlats, parseBarLine } from "@vpc-music/shared";
 import { useState, useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from "react";
 
 function normalizeTranspose(steps: number) {
@@ -118,14 +118,23 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
 
       {/* Sections */}
       <div className="space-y-4" style={{ fontSize: `${fontSize}px` }}>
-        {doc.sections.map((section: any, si: number) => (
-          <div key={si} className="space-y-1">
-            {section.name && (
-              <div className="song-secondary-chord mt-2 text-sm font-semibold uppercase tracking-wide">
-                {section.name}
-              </div>
-            )}
-            {section.lines.map((line: any, li: number) => (
+        {doc.sections.map((section: any, si: number) => {
+          // Consecutive bar rows ("| G | C |") render as one aligned grid
+          const rows: React.ReactNode[] = [];
+          let barRun: string[] = [];
+          const flushBars = (key: string) => {
+            if (barRun.length && showChords) {
+              rows.push(<BarGrid key={key} lines={barRun} nashville={nashville} songKey={songKey} />);
+            }
+            barRun = [];
+          };
+          section.lines.forEach((line: any, li: number) => {
+            if (!line.chords.length && line.lyrics.trimStart().startsWith("|")) {
+              barRun.push(line.lyrics);
+              return;
+            }
+            flushBars(`bars-${li}`);
+            rows.push(
               <ChordLine
                 key={li}
                 chords={line.chords}
@@ -133,14 +142,84 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
                 showChords={showChords}
                 nashville={nashville}
                 songKey={songKey}
-              />
-            ))}
-          </div>
-        ))}
+              />,
+            );
+          });
+          flushBars("bars-tail");
+          return (
+            <div key={si} className="space-y-1">
+              {section.name && (
+                <div className="song-secondary-chord mt-2 text-sm font-semibold uppercase tracking-wide">
+                  {section.name}
+                </div>
+              )}
+              {rows}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 });
+
+/**
+ * Aligned grid for instrumental bar rows. Consecutive rows share column
+ * widths so measures line up vertically; rows shorter than the widest row
+ * get invisible trailing cells.
+ */
+function BarGrid({
+  lines,
+  nashville = false,
+  songKey,
+}: {
+  lines: string[];
+  nashville?: boolean;
+  songKey?: string | null;
+}) {
+  const rows = lines
+    .map((line) => parseBarLine(line))
+    .filter((row): row is NonNullable<ReturnType<typeof parseBarLine>> => Boolean(row));
+  if (!rows.length) return null;
+  const columns = Math.max(1, ...rows.map((row) => row.measures.length));
+
+  return (
+    <div className="font-mono space-y-px py-1" data-testid="bar-grid">
+      {rows.map((row, ri) => (
+        <div
+          key={ri}
+          className="grid"
+          style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
+        >
+          {Array.from({ length: columns }, (_, ci) => {
+            const tokens = row.measures[ci];
+            return (
+              <div
+                key={ci}
+                className={`border-l border-[hsl(var(--border))] px-2 py-0.5 ${
+                  ci === columns - 1 ? "border-r" : ""
+                } ${tokens === undefined ? "invisible" : ""}`}
+              >
+                {tokens?.length
+                  ? tokens.map((token, ti) =>
+                      token.type === "chord" ? (
+                        <span key={ti} className="song-primary-chord font-bold mr-2 last:mr-0">
+                          {nashville && songKey ? chordToNashville(token.value, songKey) : token.value}
+                        </span>
+                      ) : (
+                        <span key={ti} className="text-[hsl(var(--muted-foreground))] mr-2 last:mr-0">
+                          {token.value}
+                        </span>
+                      ),
+                    )
+                  : " "}
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 /** Renders a single lyric/chord line pair */
 function ChordLine({

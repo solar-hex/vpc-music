@@ -80,6 +80,33 @@ declare module "@vpc-music/shared" {
   export function toChordProString(doc: ChordProDocument): string;
   export function convertChrdToChordPro(filename: string, input: string): LegacyChrdConversionResult;
 
+  // ── Structured chart AST (lossless) ────────────
+  export interface BarToken {
+    type: "chord" | "text";
+    value: string;
+  }
+  export interface BarRow {
+    measures: BarToken[][];
+  }
+  export type ChartLinePart =
+    | { type: "text"; text: string }
+    | { type: "token"; value: string; isChord: boolean };
+  export type ChartLine = { raw: string } & (
+    | { type: "blank" }
+    | { type: "comment"; text: string }
+    | { type: "directive"; key: string; value: string }
+    | { type: "section"; name: string }
+    | { type: "bars"; measures: BarToken[][] }
+    | { type: "lyric"; parts: ChartLinePart[] }
+  );
+  export interface Chart {
+    lines: ChartLine[];
+  }
+  export function parseBarLine(line: string): BarRow | null;
+  export function parseChart(text: string): Chart;
+  export function chartToText(chart: Chart): string;
+  export function transposeChart(chart: Chart, steps: number, preferFlats?: boolean): Chart;
+
   // ── Transpose ──────────────────────────────────
   export function transposeChord(chord: string, semitones: number, preferFlats?: boolean): string;
   export function transposeChordPro(input: string, semitones: number, preferFlats?: boolean): string;
