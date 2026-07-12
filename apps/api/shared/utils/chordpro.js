@@ -2,6 +2,7 @@
  * ChordPro parser and utilities.
  * Parse ChordPro text into a structured document object.
  */
+import { isSectionToken } from "./transpose.js";
 
 /**
  * Parse a ChordPro string into sections of directives and lyric/chord lines.
@@ -16,6 +17,17 @@ export function parseChordPro(input) {
 
   for (const line of lines) {
     const trimmed = line.trim();
+
+    // Comment line — stripped on render
+    if (trimmed.startsWith("#")) continue;
+
+    // Standalone section header line, e.g. "[Verse 1]" / "[Chorus]"
+    const bracketHeader = trimmed.match(/^\[([^\]]+)\]$/);
+    if (bracketHeader && isSectionToken(bracketHeader[1])) {
+      if (currentSection.lines.length > 0) sections.push(currentSection);
+      currentSection = { name: bracketHeader[1], lines: [] };
+      continue;
+    }
 
     // Directive: {key: value}
     const directiveMatch = trimmed.match(/^\{(\w+):\s*(.*?)\}$/);
