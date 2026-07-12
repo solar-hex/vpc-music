@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { eventsApi, type Event } from "@/lib/api-client";
+import { formatEventDateTime } from "@/lib/format";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { Calendar, Plus, MapPin, ListMusic, CheckCircle2, Ban } from "lucide-react";
@@ -56,7 +57,7 @@ export function EventsPage() {
       </div>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[hsl(var(--muted-foreground))]">
         <span>
-          {new Date(event.date).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}
+          {formatEventDateTime(event.date)}
         </span>
         {event.eventType && <span>{event.eventType}</span>}
         {event.location && (

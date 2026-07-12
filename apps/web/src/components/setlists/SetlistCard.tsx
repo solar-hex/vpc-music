@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle2, Archive, Trash2, Clock, User, Activity } from "lucide-react";
 import type { Setlist } from "@/lib/api-client";
-
-export function formatSetlistDuration(totalSeconds?: number | null): string | null {
-  if (!totalSeconds) return null;
-  const minutes = Math.round(totalSeconds / 60);
-  if (minutes < 60) return `${minutes} min`;
-  return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
-}
+import { formatSetlistDuration } from "@/lib/format";
 
 /** "G,C,D" → "G · C · D" (capped) for the card's key summary. */
 export function formatKeys(keys?: string | null): string | null {

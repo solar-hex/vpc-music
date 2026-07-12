@@ -5,12 +5,7 @@ import { rehearsalsApi, eventsApi, setlistsApi, type Rehearsal, type Event, type
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Mic2, Plus, Pencil, Trash2, X, ListMusic, CalendarDays } from "lucide-react";
-
-function toLocalInputValue(iso: string): string {
-  const d = new Date(iso);
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
-}
+import { toLocalInputValue, formatEventDateTime } from "@/lib/format";
 
 export function RehearsalFormDialog({
   rehearsal,
@@ -201,7 +196,7 @@ export function RehearsalsPage() {
             <div key={rehearsal.id} className="list-item">
               <div className="min-w-0 flex-1">
                 <div className="text-sm font-medium">
-                  {new Date(rehearsal.rehearsalDate).toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}
+                  {formatEventDateTime(rehearsal.rehearsalDate)}
                   {rehearsal.location && <span className="text-[hsl(var(--muted-foreground))]"> · {rehearsal.location}</span>}
                 </div>
                 <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-[hsl(var(--muted-foreground))]">

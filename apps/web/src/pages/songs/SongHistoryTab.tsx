@@ -9,6 +9,7 @@ import {
   type SongEdit,
 } from "@/lib/api-client";
 import { History, TrendingUp, ListMusic, ArrowLeft, CalendarDays } from "lucide-react";
+import { formatShortDate } from "@/lib/format";
 
 interface ContainingSetlist {
   id: string;
@@ -57,7 +58,7 @@ export function SongHistoryTab() {
           <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Last played</p>
           <p className="text-sm font-medium mt-1.5">
             {lastPlayed
-              ? new Date(lastPlayed + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+              ? formatShortDate(lastPlayed + "T00:00:00")
               : "Never"}
           </p>
         </div>

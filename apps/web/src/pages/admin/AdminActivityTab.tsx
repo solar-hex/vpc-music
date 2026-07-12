@@ -2,16 +2,7 @@ import { useEffect, useState } from "react";
 import { activityApi, orgsApi, type ActivityEntry, type OrgMember } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { ScrollText, RefreshCw } from "lucide-react";
-
-function timeAgo(iso: string): string {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  const minutes = Math.floor(diffMs / 60_000);
-  if (minutes < 1) return "just now";
-  if (minutes < 60) return `${minutes}m ago`;
-  const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours}h ago`;
-  return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
-}
+import { timeAgo } from "@/lib/format";
 
 /** Admin → Activity log: who did what, to what, when. */
 export function AdminActivityTab() {

@@ -19,6 +19,7 @@ import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRendere
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import type { SetlistSongItem } from "@/lib/api-client";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { formatDuration } from "@/lib/format";
 import { interval, transposeKeyName, keyPrefersFlats } from "@vpc-music/shared";
 
 // ── Types ────────────────────────────────────────
@@ -55,13 +56,6 @@ export interface PerformanceModeProps {
   onExit: () => void;
   /** If conductor mode, broadcast current song index */
   onSongChange?: (index: number) => void;
-}
-
-// ── Timer helpers ────────────────────────────────
-function formatTime(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
 // ── Component ────────────────────────────────────
@@ -158,8 +152,7 @@ export function PerformanceMode({
   useEffect(() => {
     const tick = () => {
       const seconds = Math.floor((Date.now() - setStartedAt) / 1000);
-      const minutes = Math.floor(seconds / 60);
-      setElapsedLabel(`${minutes}:${String(seconds % 60).padStart(2, "0")}`);
+      setElapsedLabel(formatDuration(seconds));
     };
     tick();
     const timer = setInterval(tick, 1000);
@@ -440,7 +433,7 @@ export function PerformanceMode({
                     : "text-[hsl(var(--muted-foreground))]"
               }`}
             >
-              {isTimerExpired ? "0:00" : formatTime(timerRemaining)}
+              {isTimerExpired ? "0:00" : formatDuration(timerRemaining)}
             </span>
           </div>
         </div>

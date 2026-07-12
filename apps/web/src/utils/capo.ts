@@ -1,5 +1,8 @@
 import { CHROMATIC_SHARP, CHROMATIC_FLAT } from "@vpc-music/shared";
 
+// Re-exported for back-compat; the canonical formatter lives in lib/format.
+export { formatDuration } from "@/lib/format";
+
 export type CapoDifficulty = "EASY" | "MODERATE" | "DIFFICULT";
 
 export interface CapoOption {
@@ -57,11 +60,4 @@ export function suggestCapoOptions(targetKey: string): CapoOption[] {
     }
   }
   return options;
-}
-
-/** Format seconds as M:SS. */
-export function formatDuration(seconds: number): string {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.round(seconds % 60);
-  return `${mins}:${String(secs).padStart(2, "0")}`;
 }

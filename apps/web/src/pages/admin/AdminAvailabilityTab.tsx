@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { availabilityApi, orgsApi, type AvailabilityEntry, type AvailabilityStatus, type OrgMember } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { CalendarCheck2, ChevronLeft, ChevronRight } from "lucide-react";
+import { toDateKey } from "@/lib/format";
 
 const DAYS_SHOWN = 14;
 
@@ -19,11 +20,6 @@ const STATUS_SHORT: Record<AvailabilityStatus, string> = {
   tentative: "?",
   unavailable: "✕",
 };
-
-function toDateKey(date: Date): string {
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
 
 /**
  * Admin → Availability: members down the side, dates across the top.

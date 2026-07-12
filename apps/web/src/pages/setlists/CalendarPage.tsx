@@ -5,11 +5,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { RehearsalFormDialog } from "./RehearsalsPage";
 import { CalendarDays, ChevronLeft, ChevronRight, X } from "lucide-react";
-
-function toDateKey(date: Date): string {
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
+import { toDateKey } from "@/lib/format";
 
 /** Set Lists → Calendar: month view combining events and rehearsals. */
 export function CalendarPage() {

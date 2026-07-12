@@ -44,6 +44,7 @@ import { useConductor } from "@/hooks/useConductor";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
 import { SetlistItemTools } from "@/components/setlists/SetlistItemTools";
 import { FlowStrip } from "@/components/setlists/FlowStrip";
+import { formatDuration } from "@/lib/format";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { getKeyDistance } from "@/utils/key-compat";
 
@@ -405,7 +406,7 @@ export function SetlistViewPage() {
   const totalDurationSeconds = songs.reduce((sum, item) => sum + (item.duration ?? 0), 0);
   const totalDurationLabel =
     totalDurationSeconds > 0
-      ? `${Math.floor(totalDurationSeconds / 60)}:${String(Math.round(totalDurationSeconds % 60)).padStart(2, "0")} total`
+      ? `${formatDuration(totalDurationSeconds)} total`
       : null;
   const isSlow = (item: SetlistSongItem) => item.songTempo != null && item.songTempo <= SLOW_BPM;
   const slowRunEndsAt = (index: number) =>

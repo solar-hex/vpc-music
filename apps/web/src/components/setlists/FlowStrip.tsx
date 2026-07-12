@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { analyze, type FlowItem, type FlowTransition } from "@vpc-music/shared";
 import type { SetlistSongItem } from "@/lib/api-client";
+import { formatDuration } from "@/lib/format";
 import { AlertTriangle, Info } from "lucide-react";
 
 const QUALITY_COLORS: Record<FlowTransition["quality"], string> = {
@@ -10,12 +11,6 @@ const QUALITY_COLORS: Record<FlowTransition["quality"], string> = {
   harsh: "bg-red-500",
   unknown: "bg-[hsl(var(--muted-foreground))]/20",
 };
-
-function formatMinutes(seconds: number): string {
-  const minutes = Math.floor(seconds / 60);
-  const rest = Math.round(seconds % 60);
-  return `${minutes}:${String(rest).padStart(2, "0")}`;
-}
 
 /**
  * Ambient set-flow strip: energy sparkline, key sequence with transition
@@ -111,8 +106,8 @@ export function FlowStrip({
             />
           </div>
           <span className="text-xs tabular-nums text-[hsl(var(--muted-foreground))] whitespace-nowrap">
-            {formatMinutes(timing.musicSeconds)} music · {formatMinutes(timing.gapSeconds)} gaps
-            {timing.targetSeconds != null && ` / ${formatMinutes(timing.targetSeconds)} slot`}
+            {formatDuration(timing.musicSeconds)} music · {formatDuration(timing.gapSeconds)} gaps
+            {timing.targetSeconds != null && ` / ${formatDuration(timing.targetSeconds)} slot`}
           </span>
         </div>
       </div>

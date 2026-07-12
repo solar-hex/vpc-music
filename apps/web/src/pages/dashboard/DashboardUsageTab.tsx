@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { usageReportApi, type SongUsageReportRow } from "@/lib/api-client";
+import { formatShortDate } from "@/lib/format";
 import { TrendingUp, ArrowUpDown } from "lucide-react";
 
 type SortKey = "title" | "playCount" | "lastPlayed";
@@ -113,7 +114,7 @@ export function DashboardUsageTab() {
                   <td className="px-4 py-2.5 tabular-nums">{row.playCount}</td>
                   <td className="px-4 py-2.5 text-[hsl(var(--muted-foreground))]">
                     {row.lastPlayed
-                      ? new Date(row.lastPlayed).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+                      ? formatShortDate(row.lastPlayed)
                       : "Never"}
                   </td>
                   <td className="px-4 py-2.5 text-xs text-[hsl(var(--muted-foreground))] max-w-[280px] truncate" title={row.setlistNames ?? undefined}>
