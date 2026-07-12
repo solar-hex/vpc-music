@@ -10,6 +10,7 @@ describe("flow — key transitions", () => {
   it("C→F# tritone → harsh", () => expect(keyTransition("C", "F#").grade).toBe("harsh"));
   it("G→Eb → notable", () => expect(keyTransition("G", "Eb").grade).toBe("notable"));
   it("C→D two steps → ok", () => expect(keyTransition("C", "D").grade).toBe("ok"));
+  it("C→A three steps → ok (not notable)", () => expect(keyTransition("C", "A").grade).toBe("ok"));
   it("enharmonic Db→C# → same", () => expect(keyTransition("Db", "C#").grade).toBe("same"));
 });
 
@@ -18,6 +19,10 @@ describe("flow — fmt", () => {
     expect(fmt(1410)).toBe("23:30");
     expect(fmt(80)).toBe("1:20");
     expect(fmt(1200)).toBe("20:00");
+  });
+
+  it("formats a negative duration with a leading minus, not clamped to zero", () => {
+    expect(fmt(-90)).toBe("-1:30");
   });
 });
 

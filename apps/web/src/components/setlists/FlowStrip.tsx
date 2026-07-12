@@ -1,10 +1,15 @@
 import { useMemo } from "react";
-import { analyze, type FlowItem, type FlowTransition } from "@vpc-music/shared";
+import { flow, type SetFlowItem, type KeyTransitionGrade } from "@vpc-music/shared";
 import type { SetlistSongItem } from "@/lib/api-client";
 import { formatDuration } from "@/lib/format";
 import { AlertTriangle, Info } from "lucide-react";
 
-const QUALITY_COLORS: Record<FlowTransition["quality"], string> = {
+// Grade colors — driven by flow.keyTransition(), which (unlike a raw circle-
+// of-fifths distance) special-cases parallel and relative major/minor as
+// smooth. A ribbon that mis-grades a common move like C -> Cm as "notable"
+// trains people to ignore every warning.
+const GRADE_COLORS: Record<KeyTransitionGrade["grade"], string> = {
+  same: "bg-emerald-500",
   smooth: "bg-emerald-500",
   ok: "bg-[hsl(var(--muted-foreground))]/40",
   notable: "bg-amber-500",
@@ -27,7 +32,7 @@ export function FlowStrip({
   recentlyPlayed?: string[];
 }) {
   const result = useMemo(() => {
-    const flowItems: FlowItem[] = items.map((item) => ({
+    const flowItems: SetFlowItem[] = items.map((item) => ({
       songId: item.songId,
       title: item.songTitle ?? item.slotLabel ?? "Song",
       key: item.key || item.songKey || null,
@@ -37,7 +42,7 @@ export function FlowStrip({
       talkSeconds: item.talkSeconds ?? null,
       status: item.songStatus ?? null,
     }));
-    return analyze(flowItems, { targetSeconds: targetSeconds ?? null, recentlyPlayed });
+    return flow.analyze(flowItems, { targetSeconds: targetSeconds ?? null, recentlyPlayed });
   }, [items, targetSeconds, recentlyPlayed]);
 
   if (items.length < 2) return null;
@@ -85,7 +90,7 @@ export function FlowStrip({
             <span key={index} className="flex items-center gap-0.5">
               {index > 0 && (
                 <span
-                  className={`inline-block h-0.5 w-3 rounded ${QUALITY_COLORS[transitions[index - 1]?.quality ?? "unknown"]}`}
+                  className={`inline-block h-0.5 w-3 rounded ${GRADE_COLORS[transitions[index - 1]?.grade ?? "unknown"]}`}
                   data-testid={`flow-connector-${index}`}
                   aria-hidden="true"
                 />

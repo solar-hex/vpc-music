@@ -33,8 +33,8 @@ const READY_STATUSES = new Set(["ready", "live_ready"]);
  * Grade a key change: { grade, note? }.
  *  same    — enharmonically the same key (Db → C#)
  *  smooth  — adjacent on the circle, or relative/parallel major-minor
- *  ok      — two steps
- *  notable — three or four steps
+ *  ok      — two or three steps
+ *  notable — four steps
  *  harsh   — five or six steps
  */
 export function keyTransition(fromKey, toKey) {
@@ -50,8 +50,8 @@ export function keyTransition(fromKey, toKey) {
 
   let grade;
   if (distance <= 1) grade = "smooth";
-  else if (distance === 2) grade = "ok";
-  else if (distance <= 4) grade = "notable";
+  else if (distance <= 3) grade = "ok";
+  else if (distance === 4) grade = "notable";
   else grade = "harsh";
 
   return grade === "smooth"
@@ -59,11 +59,13 @@ export function keyTransition(fromKey, toKey) {
     : { grade, note: `${distance} steps on the circle of fifths` };
 }
 
-/** Format seconds as "m:ss". */
+/** Format seconds as "m:ss" (or "-m:ss" for a negative duration). */
 export function fmt(seconds) {
-  const total = Math.max(0, Math.round(seconds ?? 0));
+  const value = seconds ?? 0;
+  const negative = value < 0;
+  const total = Math.round(Math.abs(value));
   const minutes = Math.floor(total / 60);
-  return `${minutes}:${String(total % 60).padStart(2, "0")}`;
+  return `${negative ? "-" : ""}${minutes}:${String(total % 60).padStart(2, "0")}`;
 }
 
 /**

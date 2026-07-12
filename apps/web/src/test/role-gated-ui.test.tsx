@@ -118,6 +118,11 @@ vi.mock("@vpc-music/shared", () => ({
   spellForTarget: (key: string | null | undefined) =>
     key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },
   analyze: () => ({ curve: [], keys: [], transitions: [], timing: { musicSeconds: 0, gapSeconds: 0, totalSeconds: 0, targetSeconds: null, overBySeconds: null, underBySeconds: null }, signals: [] }),
+  flow: {
+    analyze: () => ({ curve: [], keys: [], transitions: [], timing: { musicSeconds: 0, gapSeconds: 0, totalSeconds: 0, targetSeconds: null, overBySeconds: null, underBySeconds: null }, signals: [] }),
+    keyTransition: () => ({ grade: "unknown" }),
+    fmt: (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`,
+  },
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
