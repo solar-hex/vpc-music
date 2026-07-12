@@ -14,27 +14,9 @@ import { MetronomeWidget } from "@/components/songs/MetronomeWidget";
 import { useAuth } from "@/contexts/AuthContext";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
-import { ALL_KEYS, composeTranspose } from "@vpc-music/shared";
+import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey } from "@vpc-music/shared";
 import { toast } from "sonner";
 import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2 } from "lucide-react";
-
-const ENHARMONIC_KEY_MAP: Record<string, string> = {
-  "B#": "C",
-  "C#": "Db",
-  "D#": "Eb",
-  "E#": "F",
-  "F#": "Gb",
-  "G#": "Ab",
-  "A#": "Bb",
-  Cb: "B",
-  Fb: "E",
-};
-
-function normalizeSongKey(key: string | null | undefined) {
-  if (!key) return null;
-  const trimmed = key.trim();
-  return ENHARMONIC_KEY_MAP[trimmed] ?? trimmed;
-}
 
 interface ConfirmState {
   title: string;
@@ -393,7 +375,7 @@ export function SongViewPage() {
     : null;
   const displayContent = activeVariation ? activeVariation.content : song?.content ?? "";
   const originalKey = activeVariation?.key ?? song?.key;
-  const requestedSearchKey = normalizeSongKey(searchParams.get("key"));
+  const requestedSearchKey = normalizeEnharmonicKey(searchParams.get("key"));
   const displayKey = requestedSearchKey && ALL_KEYS.includes(requestedSearchKey) ? requestedSearchKey : originalKey;
   const baseTranspose = composeTranspose({ sourceKey: originalKey, overrideKey: displayKey }).semis;
 

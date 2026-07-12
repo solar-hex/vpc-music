@@ -74,6 +74,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
+  normalizeEnharmonicKey: (key: string | null | undefined) => key,
   composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
   spellForTarget: (key: string | null | undefined) =>
     key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },

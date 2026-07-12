@@ -1,4 +1,4 @@
-import { ALL_KEYS } from "@vpc-music/shared";
+import { ALL_KEYS, normalizeEnharmonicKey } from "@vpc-music/shared";
 
 /**
  * Computes the "distance" in semitones between two musical keys.
@@ -13,8 +13,8 @@ import { ALL_KEYS } from "@vpc-music/shared";
  *   5–6     → distant (awkward)
  */
 export function getKeyDistance(key1: string, key2: string): number | null {
-  const i1 = ALL_KEYS.indexOf(normalize(key1));
-  const i2 = ALL_KEYS.indexOf(normalize(key2));
+  const i1 = ALL_KEYS.indexOf(normalizeEnharmonicKey(key1));
+  const i2 = ALL_KEYS.indexOf(normalizeEnharmonicKey(key2));
   if (i1 === -1 || i2 === -1) return null;
 
   const diff = Math.abs(i1 - i2);
@@ -65,20 +65,4 @@ export function analyzeKeyTransitions(
     });
   }
   return transitions;
-}
-
-/** Normalize common enharmonic variants */
-function normalize(key: string): string {
-  const map: Record<string, string> = {
-    "C#": "Db",
-    "D#": "Eb",
-    "F#": "Gb",
-    "G#": "Ab",
-    "A#": "Bb",
-    "Cb": "B",
-    "Fb": "E",
-    "E#": "F",
-    "B#": "C",
-  };
-  return map[key] || key;
 }

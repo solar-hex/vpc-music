@@ -57,6 +57,26 @@ export function keyPrefersFlats(key) {
   return FLAT_KEYS.has(isMinor ? `${root}m` : root);
 }
 
+// Enharmonic respellings not resolved by CHROMATIC_SHARP/CHROMATIC_FLAT alone:
+// the default sharp-name → flat-name mapping, plus unusual natural-note
+// spellings (Cb, Fb, E#, B#) that fall outside both chromatic arrays.
+const ENHARMONIC_ALIASES = {
+  "C#": "Db", "D#": "Eb", "F#": "Gb", "G#": "Ab", "A#": "Bb",
+  Cb: "B", Fb: "E", "E#": "F", "B#": "C",
+};
+
+/**
+ * Normalize a key's root to one canonical spelling, for comparison/lookup
+ * where "C#" and "Db" (or "Cb" and "B") must be treated as the same key.
+ * Preserves any suffix ("C#m" → "Dbm"). Unknown input passes through.
+ */
+export function normalizeEnharmonicKey(key) {
+  const match = String(key || "").trim().match(/^([A-G][b#]?)(.*)$/);
+  if (!match) return key;
+  const [, root, rest] = match;
+  return (ENHARMONIC_ALIASES[root] ?? root) + rest;
+}
+
 function noteIndex(note) {
   const sharpIdx = CHROMATIC_SHARP.indexOf(note);
   if (sharpIdx !== -1) return sharpIdx;

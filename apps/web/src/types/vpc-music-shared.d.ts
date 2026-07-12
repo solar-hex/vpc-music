@@ -114,6 +114,7 @@ declare module "@vpc-music/shared" {
   export function isSectionToken(token: string): boolean;
   export function interval(fromKey: string, toKey: string): number;
   export function keyPrefersFlats(key: string): boolean;
+  export function normalizeEnharmonicKey(key: string | null | undefined): string;
   export function transposeKeyName(key: string, semitones: number, preferFlats?: boolean): string;
   export function spellForTarget(
     sourceKey: string | null | undefined,

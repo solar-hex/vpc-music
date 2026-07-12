@@ -1,4 +1,4 @@
-import { CHROMATIC_SHARP, CHROMATIC_FLAT } from "@vpc-music/shared";
+import { CHROMATIC_SHARP, CHROMATIC_FLAT, interval, transposeKeyName } from "@vpc-music/shared";
 
 // Re-exported for back-compat; the canonical formatter lives in lib/format.
 export { formatDuration } from "@/lib/format";
@@ -21,20 +21,8 @@ function keyIndex(key: string): number {
 
 /** Semitone distance from one key to another, normalized to (-6, 6]. */
 export function semitonesBetween(fromKey: string, toKey: string): number {
-  const from = keyIndex(fromKey);
-  const to = keyIndex(toKey);
-  if (from === -1 || to === -1) return 0;
-  let diff = to - from;
-  if (diff > 6) diff -= 12;
-  if (diff <= -6) diff += 12;
-  return diff;
-}
-
-function transposeKeyName(key: string, steps: number): string {
-  const idx = keyIndex(key);
-  if (idx === -1) return key;
-  const scale = key.includes("b") ? CHROMATIC_FLAT : CHROMATIC_SHARP;
-  return scale[(idx + steps + 120) % 12];
+  const steps = interval(fromKey, toKey); // 0..11, or 0 if either key is unparseable
+  return steps > 6 ? steps - 12 : steps;
 }
 
 // Open-chord shapes guitarists prefer; capo suggestions aim for one of these.

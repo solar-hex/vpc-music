@@ -47,6 +47,7 @@ vi.mock("sonner", () => ({
 
 vi.mock("@vpc-music/shared", () => ({
   transposeKeyName: (key: string) => key,
+  normalizeEnharmonicKey: (key: string | null | undefined) => key,
   analyze: () => ({ curve: [], keys: [], transitions: [], timing: { musicSeconds: 0, gapSeconds: 0, totalSeconds: 0, targetSeconds: null, overBySeconds: null, underBySeconds: null }, signals: [] }),
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),
