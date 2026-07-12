@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { rehearsalsApi, eventsApi, setlistsApi, type Rehearsal, type Event, type Setlist } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Mic2, Plus, Pencil, Trash2, X, ListMusic, CalendarDays } from "lucide-react";
@@ -131,23 +132,13 @@ export function RehearsalFormDialog({
 export function RehearsalsPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
-  const [rehearsals, setRehearsals] = useState<Rehearsal[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: rehearsals, setData: setRehearsals, loading, refresh } = useApiList<Rehearsal[]>(
+    () => rehearsalsApi.list().then((res) => res.rehearsals),
+    [],
+  );
   const [formRehearsal, setFormRehearsal] = useState<Rehearsal | null | undefined>(undefined);
   const [pendingDelete, setPendingDelete] = useState<Rehearsal | null>(null);
   const [deleting, setDeleting] = useState(false);
-
-  const refresh = () => {
-    rehearsalsApi
-      .list()
-      .then((res) => setRehearsals(res.rehearsals))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   const handleDelete = async () => {
     if (!pendingDelete) return;

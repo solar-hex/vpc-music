@@ -1,4 +1,5 @@
-﻿import { useEffect, useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
+import { useApiList } from "@/hooks/useApiList";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { artistsApi, type Artist } from "@/lib/api-client";
@@ -109,25 +110,15 @@ function ArtistFormDialog({
 export function ArtistsPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
-  const [artists, setArtists] = useState<Artist[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: artists, setData: setArtists, loading, refresh } = useApiList<Artist[]>(
+    () => artistsApi.list().then((res) => res.artists),
+    [],
+  );
   const [query, setQuery] = useState("");
   const [genreFilter, setGenreFilter] = useState("");
   const [formArtist, setFormArtist] = useState<Artist | null | undefined>(undefined); // undefined = closed, null = create
   const [pendingDelete, setPendingDelete] = useState<Artist | null>(null);
   const [deleting, setDeleting] = useState(false);
-
-  const refresh = () => {
-    artistsApi
-      .list()
-      .then((res) => setArtists(res.artists))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   const genres = useMemo(
     () => [...new Set(artists.map((a) => a.genre).filter(Boolean))] as string[],

@@ -1,6 +1,7 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { setlistsApi, type Setlist } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { useAuth } from "@/contexts/AuthContext";
 import { SetlistCard } from "@/components/setlists/SetlistCard";
 import { ArchivedSetlistsPanel } from "@/components/setlists/ArchivedSetlistsPanel";
@@ -47,8 +48,10 @@ export function SetlistHubPage() {
   const navigate = useNavigate();
   const isNew = window.location.pathname.endsWith("/new");
 
-  const [setlists, setSetlists] = useState<Setlist[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: setlists, setData: setSetlists, loading, refresh } = useApiList<Setlist[]>(
+    () => setlistsApi.list({ view: "active" }).then((res) => res.setlists),
+    [],
+  );
   const [query, setQuery] = useState("");
   const [sortMode, setSortMode] = useState<SortMode>("edited");
   const [showArchived, setShowArchived] = useState(false);
@@ -60,19 +63,6 @@ export function SetlistHubPage() {
   const [newCategory, setNewCategory] = useState("");
   const [newLeader, setNewLeader] = useState("");
   const [creating, setCreating] = useState(false);
-
-  const refresh = () => {
-    setlistsApi
-      .list({ view: "active" })
-      .then((res) => setSetlists(res.setlists))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();

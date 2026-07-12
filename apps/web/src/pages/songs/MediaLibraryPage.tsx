@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { mediaApi, songsApi, type MediaFile, type MediaType, type Song } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { useAuth } from "@/contexts/AuthContext";
 import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
@@ -43,24 +44,17 @@ export function formatBytes(bytes?: number | null): string {
 export function MediaLibraryPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
-  const [files, setFiles] = useState<MediaFile[]>([]);
+  const { data: files, setData: setFiles, loading, refresh } = useApiList<MediaFile[]>(
+    () => mediaApi.list().then((res) => res.media),
+    [],
+  );
   const [songs, setSongs] = useState<Song[]>([]);
-  const [loading, setLoading] = useState(true);
   const [typeFilter, setTypeFilter] = useState<MediaType | "">("");
   const [uploading, setUploading] = useState(false);
   const [pendingDelete, setPendingDelete] = useState<MediaFile | null>(null);
   const [deleting, setDeleting] = useState(false);
 
-  const refresh = () => {
-    mediaApi
-      .list()
-      .then((res) => setFiles(res.media))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
   useEffect(() => {
-    refresh();
     songsApi
       .list({ limit: 500 })
       .then((res) => setSongs(res.songs))

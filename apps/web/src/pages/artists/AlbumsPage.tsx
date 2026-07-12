@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { albumsApi, artistsApi, type Album, type Artist } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { useAuth } from "@/contexts/AuthContext";
 import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
@@ -156,23 +157,13 @@ export function AlbumCard({
 export function AlbumsPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
-  const [albums, setAlbums] = useState<Album[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: albums, setData: setAlbums, loading, refresh } = useApiList<Album[]>(
+    () => albumsApi.list().then((res) => res.albums),
+    [],
+  );
   const [formAlbum, setFormAlbum] = useState<Album | null | undefined>(undefined);
   const [pendingDelete, setPendingDelete] = useState<Album | null>(null);
   const [deleting, setDeleting] = useState(false);
-
-  const refresh = () => {
-    albumsApi
-      .list()
-      .then((res) => setAlbums(res.albums))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   const handleDelete = async () => {
     if (!pendingDelete) return;

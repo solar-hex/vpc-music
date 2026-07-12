@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { templatesApi, type SetlistTemplate } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { useAuth } from "@/contexts/AuthContext";
 import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
@@ -107,24 +108,14 @@ export function TemplatesPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
   const navigate = useNavigate();
-  const [templates, setTemplates] = useState<SetlistTemplate[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: templates, setData: setTemplates, loading, refresh } = useApiList<SetlistTemplate[]>(
+    () => templatesApi.list().then((res) => res.templates),
+    [],
+  );
   const [formTemplate, setFormTemplate] = useState<SetlistTemplate | null | undefined>(undefined);
   const [pendingDelete, setPendingDelete] = useState<SetlistTemplate | null>(null);
   const [deleting, setDeleting] = useState(false);
   const [applyingId, setApplyingId] = useState<string | null>(null);
-
-  const refresh = () => {
-    templatesApi
-      .list()
-      .then((res) => setTemplates(res.templates))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   const handleApply = async (template: SetlistTemplate) => {
     setApplyingId(template.id);

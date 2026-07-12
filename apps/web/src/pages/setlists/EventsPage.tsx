@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { eventsApi, type Event } from "@/lib/api-client";
+import { useApiList } from "@/hooks/useApiList";
 import { formatEventDateTime } from "@/lib/format";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
@@ -23,22 +24,12 @@ export function eventStatusBadge(status?: Event["status"]) {
 export function EventsPage() {
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: events, loading, refresh } = useApiList<Event[]>(
+    () => eventsApi.list({ upcoming: false }).then((res) => res.events),
+    [],
+  );
   const [formOpen, setFormOpen] = useState(false);
   const [editingEvent, setEditingEvent] = useState<Event | null>(null);
-
-  const refresh = () => {
-    eventsApi
-      .list({ upcoming: false })
-      .then((res) => setEvents(res.events))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  };
-
-  useEffect(() => {
-    refresh();
-  }, []);
 
   const { upcoming, past } = useMemo(() => {
     const now = Date.now();
