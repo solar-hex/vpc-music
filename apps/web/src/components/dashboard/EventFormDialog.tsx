@@ -43,6 +43,7 @@ export function EventFormDialog({
   const [location, setLocation] = useState("");
   const [theme, setTheme] = useState("");
   const [eventType, setEventType] = useState("");
+  const [slotMinutes, setSlotMinutes] = useState("");
   const [preparedBy, setPreparedBy] = useState("");
   const [setlistId, setSetlistId] = useState("");
   const [notes, setNotes] = useState("");
@@ -60,6 +61,7 @@ export function EventFormDialog({
     setLocation(event?.location ?? "");
     setTheme(event?.theme ?? "");
     setEventType(event?.eventType ?? "");
+    setSlotMinutes(event?.targetSeconds ? String(Math.round(event.targetSeconds / 60)) : "");
     setPreparedBy(event?.preparedBy ?? "");
     setSetlistId(event?.setlistId ?? "");
     setNotes(event?.notes ?? "");
@@ -114,6 +116,7 @@ export function EventFormDialog({
         location: location.trim() || null,
         theme: theme.trim() || null,
         eventType: eventType.trim() || null,
+        targetSeconds: /^\d+$/.test(slotMinutes) ? Number(slotMinutes) * 60 : null,
         preparedBy: preparedBy || null,
         setlistId: setlistId || null,
         notes: notes.trim() || null,
@@ -239,6 +242,22 @@ export function EventFormDialog({
               </select>
             </label>
           </div>
+
+          <label className="space-y-2 block">
+            <span className="text-sm font-medium text-[hsl(var(--foreground))]">Music slot (minutes)</span>
+            <input
+              type="number"
+              min="1"
+              value={slotMinutes}
+              onChange={(e) => setSlotMinutes(e.target.value)}
+              placeholder="e.g. 45"
+              className="input w-full"
+              disabled={saving}
+            />
+            <span className="block text-xs text-[hsl(var(--muted-foreground))]">
+              The set list builder checks its total (with gaps) against this.
+            </span>
+          </label>
 
           <label className="space-y-2 block">
             <span className="text-sm font-medium text-[hsl(var(--foreground))]">Linked setlist</span>

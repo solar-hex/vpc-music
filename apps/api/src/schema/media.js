@@ -20,6 +20,8 @@ export const media = pgTable(
     type: mediaTypeEnum("type").notNull().default("other"),
     fileUrl: text("file_url").notNull(),   // served path, e.g. /uploads/<name>
     filename: text("filename").notNull(),
+    content: text("content"),             // structured chart source (first-class path)
+    format: text("format"),               // 'chordpro' | 'pdf' | 'image'
     mimeType: text("mime_type"),
     sizeBytes: integer("size_bytes"),
     songId: uuid("song_id").references(() => songs.id, { onDelete: "set null" }), // null = unattached

@@ -49,6 +49,7 @@ eventRoutes.get(
         eventType: events.eventType,
         status: events.status,
         completedAt: events.completedAt,
+        targetSeconds: events.targetSeconds,
         preparedBy: events.preparedBy,
         preparedByName: users.displayName,
         team: events.team,
@@ -98,6 +99,7 @@ eventRoutes.get(
         eventType: events.eventType,
         status: events.status,
         completedAt: events.completedAt,
+        targetSeconds: events.targetSeconds,
         preparedBy: events.preparedBy,
         preparedByName: users.displayName,
         team: events.team,
@@ -127,7 +129,7 @@ eventRoutes.post(
   auth,
   orgContext,
   requireOrg,  requirePermission("events:edit"),  asyncHandler(async (req, res) => {
-    const { title, date, location, notes, theme, eventType, preparedBy, team, setlistId } = req.body;
+    const { title, date, location, notes, theme, eventType, preparedBy, team, setlistId, targetSeconds } = req.body;
 
     if (!title || !date) {
       throw createError(400, "Title and date are required");
@@ -142,6 +144,7 @@ eventRoutes.post(
         notes: notes || null,
         theme: theme || null,
         eventType: eventType || null,
+        targetSeconds: Number.isFinite(Number(targetSeconds)) && Number(targetSeconds) > 0 ? Math.round(Number(targetSeconds)) : null,
         preparedBy: preparedBy || null,
         team: sanitizeTeam(team) ?? null,
         organizationId: req.org.id,
@@ -173,7 +176,7 @@ eventRoutes.put(
   auth,  orgContext,
   requireOrg,
   requirePermission("events:edit"),  asyncHandler(async (req, res) => {
-    const { title, date, location, notes, theme, eventType, preparedBy, team, setlistId } = req.body;
+    const { title, date, location, notes, theme, eventType, preparedBy, team, setlistId, targetSeconds } = req.body;
 
     const [existing] = await db
       .select({ id: events.id })
@@ -193,6 +196,9 @@ eventRoutes.put(
         ...(notes !== undefined && { notes }),
         ...(theme !== undefined && { theme: theme || null }),
         ...(eventType !== undefined && { eventType: eventType || null }),
+        ...(targetSeconds !== undefined && {
+          targetSeconds: Number.isFinite(Number(targetSeconds)) && Number(targetSeconds) > 0 ? Math.round(Number(targetSeconds)) : null,
+        }),
         ...(preparedBy !== undefined && { preparedBy: preparedBy || null }),
         ...(sanitizedTeam !== undefined && { team: sanitizedTeam }),
         ...(setlistId !== undefined && { setlistId: setlistId || null }),

@@ -60,6 +60,8 @@ vi.mock("sonner", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  transposeKeyName: (key: string) => key,
+  keyPrefersFlats: () => false,
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
   CHORD_REGEX: /^[A-G][b#]?(?:m|min|maj|dim|aug|sus[24]?|add)?[0-9]?(?:\/[A-G][b#]?)?$/,
   PRESET_TAGS: ["worship", "praise", "hymn", "classic", "contemporary"],
@@ -349,6 +351,7 @@ describe("SongEditPage", () => {
           artist: "Newton",
           shout: "Choir echoes",
           tags: "hymn",
+          energy: null,
           isDraft: false,
         });
         expect(mockVariationUpdate).toHaveBeenCalledWith("song-1", "v1", {

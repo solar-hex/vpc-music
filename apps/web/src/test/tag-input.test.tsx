@@ -13,6 +13,8 @@ vi.mock("@/lib/api-client", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  transposeKeyName: (key: string) => key,
+  keyPrefersFlats: () => false,
   PRESET_TAGS: [
     "worship",
     "praise",

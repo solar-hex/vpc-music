@@ -59,6 +59,7 @@ export function SongEditPage() {
   const [tags, setTags] = useState("");
   const [content, setContent] = useState("");
   const [abcNotation, setAbcNotation] = useState("");
+  const [energyValue, setEnergyValue] = useState("");
   const [isDraft, setIsDraft] = useState(false);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
@@ -163,6 +164,7 @@ export function SongEditPage() {
       setContent(song.content || "");
     }
     setAbcNotation(song.abcNotation || "");
+    setEnergyValue(song.energy ? String(song.energy) : "");
     setIsDraft(!!song.isDraft);
   };
 
@@ -175,6 +177,7 @@ export function SongEditPage() {
     shout: shout.trim() || undefined,
     tags: tags.trim() || undefined,
     abcNotation: abcNotation.trim() || undefined,
+    energy: /^[1-5]$/.test(energyValue) ? Number(energyValue) : null,
     isDraft,
     ...(currentVariation ? {} : { key: key || undefined, content }),
   });
@@ -973,6 +976,23 @@ export function SongEditPage() {
               className="input"
               placeholder="120"
             />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-[hsl(var(--foreground))]" htmlFor="song-energy">Energy</label>
+            <select
+              id="song-energy"
+              value={energyValue}
+              onChange={(e) => setEnergyValue(e.target.value)}
+              className="input"
+            >
+              <option value="">Auto (from BPM)</option>
+              <option value="1">1 — Reflective</option>
+              <option value="2">2 — Gentle</option>
+              <option value="3">3 — Mid</option>
+              <option value="4">4 — Driving</option>
+              <option value="5">5 — Full send</option>
+            </select>
           </div>
 
           <div className="space-y-2">

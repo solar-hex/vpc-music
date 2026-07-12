@@ -6,8 +6,13 @@ import type { SetlistSongItem } from "@/lib/api-client";
 
 // ---------- Mocks ----------
 vi.mock("@/components/songs/ChordProRenderer", () => ({
-  ChordProRenderer: ({ content, showChords, fontSize }: any) => (
-    <div data-testid="chordpro-renderer" data-show-chords={showChords} data-font-size={fontSize}>
+  ChordProRenderer: ({ content, showChords, fontSize, baseTranspose }: any) => (
+    <div
+      data-testid="chordpro-renderer"
+      data-show-chords={showChords}
+      data-font-size={fontSize}
+      data-transpose={baseTranspose ?? 0}
+    >
       {content}
     </div>
   ),
@@ -18,9 +23,24 @@ vi.mock("@/hooks/useKeyboardShortcuts", () => ({
   useKeyboardShortcuts: vi.fn(),
 }));
 
-vi.mock("@vpc-music/shared", () => ({
-  ALL_KEYS: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
-}));
+vi.mock("@vpc-music/shared", () => {
+  const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+  return {
+    ALL_KEYS: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
+    interval: (from: string, to: string) => {
+      const f = scale.indexOf(from);
+      const t = scale.indexOf(to);
+      if (f === -1 || t === -1) return 0;
+      return ((t - f) % 12 + 12) % 12;
+    },
+    transposeKeyName: (key: string, steps: number) => {
+      const index = scale.indexOf(key);
+      if (index === -1) return key;
+      return scale[((index + steps) % 12 + 12) % 12];
+    },
+    keyPrefersFlats: () => false,
+  };
+});
 
 // ---------- Test data ----------
 const mockSongs: SetlistSongItem[] = [
@@ -42,10 +62,11 @@ const mockSongs: SetlistSongItem[] = [
 ];
 
 function makeSongContents() {
-  const m = new Map<string, { songId: string; content: string; key?: string | null; tempo?: number | null }>();
-  m.set("s1", { songId: "s1", content: "{title: Amazing Grace}\n[G]Amazing grace", key: "G", tempo: 72 });
-  m.set("s2", { songId: "s2", content: "{title: How Great}\n[D]How great", key: "D", tempo: 130 });
-  m.set("s3", { songId: "s3", content: "{title: Be Thou My Vision}\n[Eb]Be thou", key: "Eb", tempo: null });
+  const m = new Map<string, { songId: string; content: string; key?: string | null; originalKey?: string | null; tempo?: number | null }>();
+  m.set("s1", { songId: "s1", content: "{title: Amazing Grace}\n[G]Amazing grace", key: "G", originalKey: "G", tempo: 72 });
+  // s2 carries a set list key override: chart written in D, performed in E
+  m.set("s2", { songId: "s2", content: "{title: How Great}\n[D]How great", key: "E", originalKey: "D", tempo: 130 });
+  m.set("s3", { songId: "s3", content: "{title: Be Thou My Vision}\n[Eb]Be thou", key: "Eb", originalKey: "Eb", tempo: null });
   return m;
 }
 
@@ -66,6 +87,7 @@ describe("PerformanceMode", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.useFakeTimers();
+    localStorage.clear();
   });
 
   afterEach(() => {
@@ -253,13 +275,50 @@ describe("PerformanceMode", () => {
       expect(Number(newSize)).toBe(Number(initialSize) - 2);
     });
 
-    it("has a minimum font size of 12", () => {
+    it("has a minimum font size of 18 (readable from a music stand)", () => {
       renderPerf();
       // Press minus many times
       for (let i = 0; i < 20; i++) {
         fireEvent.keyDown(document, { key: "-" });
       }
-      expect(Number(screen.getByTestId("chordpro-renderer").getAttribute("data-font-size"))).toBe(12);
+      expect(Number(screen.getByTestId("chordpro-renderer").getAttribute("data-font-size"))).toBe(18);
+    });
+
+    it("persists font size changes to localStorage", () => {
+      renderPerf();
+      fireEvent.keyDown(document, { key: "+" });
+      expect(localStorage.getItem("perform-font-size")).toBeTruthy();
+    });
+  });
+
+  // ===================== LIVE TRANSPOSE & KEY OVERRIDES =====================
+
+  describe("live transpose", () => {
+    it("moves the chart and displayed key one tap at a time", () => {
+      renderPerf();
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("G");
+      fireEvent.click(screen.getByTestId("perf-transpose-up"));
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("G#");
+      expect(screen.getByTestId("chordpro-renderer").getAttribute("data-transpose")).toBe("1");
+      fireEvent.click(screen.getByTestId("perf-transpose-down"));
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("G");
+    });
+
+    it("applies the set list key override as a render-time transpose", () => {
+      renderPerf({ initialSongIndex: 1 }); // chart in D, override E
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("E");
+      expect(screen.getByTestId("chordpro-renderer").getAttribute("data-transpose")).toBe("2");
+    });
+
+    it("keeps per-song transpose independent between songs", () => {
+      renderPerf();
+      fireEvent.click(screen.getByTestId("perf-transpose-up"));
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("G#");
+      fireEvent.click(screen.getByTestId("perf-next"));
+      // Song 2 shows its own key, unaffected by song 1's nudge
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("E");
+      fireEvent.click(screen.getByTestId("perf-prev"));
+      expect(screen.getByTestId("perf-current-key")).toHaveTextContent("G#");
     });
 
     it("has a maximum font size of 36", () => {

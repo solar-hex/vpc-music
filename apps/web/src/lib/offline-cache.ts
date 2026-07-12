@@ -19,7 +19,9 @@ type SetlistPerformanceContent = {
   songId: string;
   content: string;
   key?: string | null;
+  originalKey?: string | null;
   tempo?: number | null;
+  durationSeconds?: number | null;
 };
 
 type SetlistCacheEntry = {

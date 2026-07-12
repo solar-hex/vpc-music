@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import {
   setlistsApi,
   songsApi,
+  eventsApi,
   type Setlist,
   type SetlistSongItem,
   type Song,
@@ -42,6 +43,7 @@ import { ALL_KEYS } from "@vpc-music/shared";
 import { useConductor } from "@/hooks/useConductor";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
 import { SetlistItemTools } from "@/components/setlists/SetlistItemTools";
+import { FlowStrip } from "@/components/setlists/FlowStrip";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { getKeyDistance } from "@/utils/key-compat";
 
@@ -63,10 +65,13 @@ export function SetlistViewPage() {
   const [draggedSongItemId, setDraggedSongItemId] = useState<string | null>(null);
   const [dragOverSongItemId, setDragOverSongItemId] = useState<string | null>(null);
   const [toolsItem, setToolsItem] = useState<SetlistSongItem | null>(null);
+  // Flow-analysis context: the linked event's slot + the last event's songs
+  const [flowTargetSeconds, setFlowTargetSeconds] = useState<number | null>(null);
+  const [recentlyPlayed, setRecentlyPlayed] = useState<string[]>([]);
 
   // ── Performance mode state ─────────────────────
   const [performanceMode, setPerformanceMode] = useState(false);
-  const [songContents, setSongContents] = useState<Map<string, { songId: string; content: string; key?: string | null; tempo?: number | null }>>(new Map());
+  const [songContents, setSongContents] = useState<Map<string, { songId: string; content: string; key?: string | null; originalKey?: string | null; tempo?: number | null; durationSeconds?: number | null }>>(new Map());
   const [loadingContents, setLoadingContents] = useState(false);
 
   // ── Live mode state ────────────────────────────
@@ -144,7 +149,7 @@ export function SetlistViewPage() {
     if (!performanceMode || songs.length === 0) return;
     setLoadingContents(true);
     const fetchAll = async () => {
-      const map = new Map<string, { songId: string; content: string; key?: string | null; tempo?: number | null }>();
+      const map = new Map<string, { songId: string; content: string; key?: string | null; originalKey?: string | null; tempo?: number | null; durationSeconds?: number | null }>();
       await Promise.all(
         songs.map(async (item) => {
           if (!item.songId) return; // template slot without a song yet
@@ -158,7 +163,11 @@ export function SetlistViewPage() {
               songId: item.songId,
               content: variation?.content || song.content,
               key: item.key || variation?.key || song.key,
+              // Kept separately so a per-set key_override can transpose the
+              // chart on render (transposition is a view concern)
+              originalKey: variation?.key || song.key,
               tempo: song.tempo,
+              durationSeconds: song.durationSeconds,
             });
           } catch {
             // Skip songs that fail to load
@@ -184,6 +193,28 @@ export function SetlistViewPage() {
     };
     fetchAll();
   }, [id, performanceMode, songs]);
+
+  // Flow-analysis context (best-effort; the strip works without it)
+  useEffect(() => {
+    if (!id) return;
+    eventsApi
+      .list({ upcoming: false })
+      .then(async (res) => {
+        const linked = res.events.find((event) => event.setlistId === id && event.status !== "cancelled");
+        setFlowTargetSeconds(linked?.targetSeconds ?? null);
+
+        const lastCompleted = res.events
+          .filter((event) => event.status === "completed" && event.setlistId && event.setlistId !== id)
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
+        if (lastCompleted?.setlistId) {
+          const lastSetlist = await setlistsApi.get(lastCompleted.setlistId).catch(() => null);
+          setRecentlyPlayed(
+            (lastSetlist?.songs ?? []).map((item) => item.songId).filter((songId): songId is string => Boolean(songId)),
+          );
+        }
+      })
+      .catch(() => {});
+  }, [id]);
 
   // Load available songs for the add-song modal and slot fillers
   const hasEmptySlots = songs.some((item) => !item.songId);
@@ -371,7 +402,6 @@ export function SetlistViewPage() {
 
   // Soft set-analysis signals: advise, never block
   const SLOW_BPM = 75;
-  const LONG_SET_SECONDS = 75 * 60;
   const totalDurationSeconds = songs.reduce((sum, item) => sum + (item.duration ?? 0), 0);
   const totalDurationLabel =
     totalDurationSeconds > 0
@@ -449,7 +479,9 @@ export function SetlistViewPage() {
         {songs.length > 0 && (
           <button
             data-testid="enter-performance-mode"
-            onClick={() => setPerformanceMode(true)}
+            // In a live-sync session keep the in-page overlay (conductor
+            // callbacks); otherwise use the full-bleed rehearsal route.
+            onClick={() => (liveMode !== "off" ? setPerformanceMode(true) : navigate(`/setlists/${id}/perform`))}
             className="btn-primary btn-sm"
           >
             <Tv className="h-3.5 w-3.5" /> Perform
@@ -614,13 +646,8 @@ export function SetlistViewPage() {
         />
       )}
 
-      {/* Long-set advisory (soft) */}
-      {totalDurationSeconds > LONG_SET_SECONDS && (
-        <div className="flex items-center gap-1.5 rounded-md border border-amber-300/50 bg-amber-50 dark:bg-amber-900/20 px-3 py-2 text-xs text-amber-700 dark:text-amber-300">
-          <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
-          Planned durations add up to over {Math.round(LONG_SET_SECONDS / 60)} minutes — double-check the event's time allowance.
-        </div>
-      )}
+      {/* Set flow strip — ambient, advisory, recomputed on every change */}
+      <FlowStrip items={songs} targetSeconds={flowTargetSeconds} recentlyPlayed={recentlyPlayed} />
 
       {/* Song list */}
       <div className="space-y-2">

@@ -19,13 +19,31 @@ import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRendere
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import type { SetlistSongItem } from "@/lib/api-client";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { interval, transposeKeyName, keyPrefersFlats } from "@vpc-music/shared";
 
 // ── Types ────────────────────────────────────────
 interface SongContent {
   songId: string;
   content: string;
+  /** Effective key (set list override wins) */
   key?: string | null;
+  /** The key the chart source is written in */
+  originalKey?: string | null;
   tempo?: number | null;
+  durationSeconds?: number | null;
+}
+
+const FONT_SIZE_KEY = "perform-font-size";
+const MIN_FONT_SIZE = 18;
+
+function loadFontSize(): number {
+  try {
+    const stored = Number(localStorage.getItem(FONT_SIZE_KEY));
+    if (Number.isFinite(stored) && stored >= MIN_FONT_SIZE && stored <= 40) return stored;
+  } catch {
+    // localStorage unavailable
+  }
+  return 20;
 }
 
 export interface PerformanceModeProps {
@@ -58,9 +76,25 @@ export function PerformanceMode({
   // ── State ──────────────────────────────────────
   const [currentIndex, setCurrentIndex] = useState(initialSongIndex);
   const [showChords, setShowChords] = useState(true);
-  const [fontSize, setFontSize] = useState(20);
+  const [fontSize, setFontSizeState] = useState(loadFontSize);
   const [showToolbar, setShowToolbar] = useState(true);
   const [brightness, setBrightness] = useState(100); // percent, 40–100
+  // Live transpose: extra semitones per song index, on top of any key override
+  const [liveTranspose, setLiveTranspose] = useState<Record<number, number>>({});
+  const [setStartedAt] = useState(() => Date.now());
+  const [elapsedLabel, setElapsedLabel] = useState("0:00");
+
+  const setFontSize = (updater: (size: number) => number) => {
+    setFontSizeState((prev) => {
+      const next = Math.max(MIN_FONT_SIZE, Math.min(40, updater(prev)));
+      try {
+        localStorage.setItem(FONT_SIZE_KEY, String(next));
+      } catch {
+        // persistence is best-effort
+      }
+      return next;
+    });
+  };
 
   // Timer state
   const [timerEnabled, setTimerEnabled] = useState(false);
@@ -75,6 +109,62 @@ export function PerformanceMode({
   const content = currentSong?.songId
     ? songContents.get(currentSong.songId)
     : undefined;
+
+  // ── Key math: override + live transpose, spelled for the target key ──
+  const overrideSteps =
+    content?.originalKey && content.key && content.key !== content.originalKey
+      ? interval(content.originalKey, content.key)
+      : 0;
+  const manualSteps = liveTranspose[currentIndex] ?? 0;
+  const totalSteps = ((overrideSteps + manualSteps) % 12 + 12) % 12;
+  const sourceKey = content?.originalKey ?? content?.key ?? null;
+  const displayKey = sourceKey
+    ? transposeKeyName(sourceKey, totalSteps, keyPrefersFlats(transposeKeyName(sourceKey, totalSteps, true)))
+    : null;
+
+  const nudgeTranspose = (delta: number) => {
+    setLiveTranspose((prev) => ({ ...prev, [currentIndex]: (prev[currentIndex] ?? 0) + delta }));
+  };
+
+  // ── Wake lock: a chart that sleeps mid-song is worse than no chart ──
+  useEffect(() => {
+    let wakeLock: any = null;
+    let released = false;
+
+    const acquire = async () => {
+      try {
+        const wakeLockApi = (navigator as any).wakeLock;
+        if (!wakeLockApi || document.visibilityState !== "visible") return;
+        wakeLock = await wakeLockApi.request("screen");
+      } catch {
+        // Not supported or denied — nothing else to do
+      }
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible" && !released) void acquire();
+    };
+
+    void acquire();
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      released = true;
+      document.removeEventListener("visibilitychange", handleVisibility);
+      wakeLock?.release?.().catch?.(() => {});
+    };
+  }, []);
+
+  // ── Elapsed set time ─────────────────────────────
+  useEffect(() => {
+    const tick = () => {
+      const seconds = Math.floor((Date.now() - setStartedAt) / 1000);
+      const minutes = Math.floor(seconds / 60);
+      setElapsedLabel(`${minutes}:${String(seconds % 60).padStart(2, "0")}`);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    return () => clearInterval(timer);
+  }, [setStartedAt]);
 
   // ── Navigation ─────────────────────────────────
   const goToSong = useCallback(
@@ -371,20 +461,56 @@ export function PerformanceMode({
 
         {/* Main chord sheet area */}
         <div className="flex-1 flex flex-col min-w-0">
-          {/* Song title bar */}
+          {/* Song title bar — title · key (live transpose) · BPM · position · elapsed */}
           <div className="px-4 py-2 border-b border-[hsl(var(--border))] shrink-0">
             <h2 className="text-lg font-brand text-[hsl(var(--foreground))] truncate">
               {currentSong?.songTitle || "—"}
             </h2>
-            <div className="flex items-center gap-3 text-xs text-[hsl(var(--muted-foreground))]">
-              {(currentSong?.key || currentSong?.songKey) && (
-                <span className="badge-key">
-                  {currentSong.key || currentSong.songKey}
+            <div className="flex flex-wrap items-center gap-3 text-xs text-[hsl(var(--muted-foreground))]">
+              {displayKey && (
+                <span className="inline-flex items-center gap-1">
+                  <button
+                    data-testid="perf-transpose-down"
+                    onClick={() => nudgeTranspose(-1)}
+                    className="h-6 w-6 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
+                    aria-label="Transpose down"
+                  >
+                    −
+                  </button>
+                  <span className="badge-key min-w-[2.5ch] text-center" data-testid="perf-current-key">
+                    {displayKey}
+                  </span>
+                  <button
+                    data-testid="perf-transpose-up"
+                    onClick={() => nudgeTranspose(1)}
+                    className="h-6 w-6 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
+                    aria-label="Transpose up"
+                  >
+                    +
+                  </button>
+                  {manualSteps !== 0 && (
+                    <button
+                      onClick={() => setLiveTranspose((prev) => ({ ...prev, [currentIndex]: 0 }))}
+                      className="text-[hsl(var(--secondary))] hover:underline"
+                    >
+                      reset
+                    </button>
+                  )}
                 </span>
               )}
-              {currentSong?.songTempo && (
-                <TempoIndicator tempo={currentSong.songTempo} />
+              {(content?.tempo || currentSong?.songTempo) && (
+                <span className="inline-flex items-center gap-1.5">
+                  {/* Visual pulse locked to the song's BPM */}
+                  <span
+                    className="inline-block h-2 w-2 rounded-full bg-[hsl(var(--secondary))]"
+                    style={{ animation: `perf-pulse ${60 / (content?.tempo || currentSong?.songTempo || 60)}s ease-in-out infinite` }}
+                    aria-hidden="true"
+                  />
+                  <TempoIndicator tempo={(content?.tempo ?? currentSong?.songTempo)!} />
+                </span>
               )}
+              <span className="tabular-nums">{currentIndex + 1} of {songs.length}</span>
+              <span className="tabular-nums" title="Elapsed set time">⏱ {elapsedLabel}</span>
               {currentSong?.songArtist && (
                 <span>{currentSong.songArtist}</span>
               )}
@@ -398,6 +524,7 @@ export function PerformanceMode({
                 <span className="badge-muted capitalize">{currentSong.arrangement.replace("_", " ").toLowerCase()}</span>
               )}
             </div>
+            <style>{`@keyframes perf-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.7); } }`}</style>
           </div>
 
           {/* Scrollable chord sheet */}
@@ -410,8 +537,10 @@ export function PerformanceMode({
               <ChordProRenderer
                 ref={rendererRef}
                 content={content.content}
-                songKey={content.key}
+                songKey={sourceKey}
+                baseTranspose={totalSteps}
                 showChords={showChords}
+                showControls={false}
                 fontSize={fontSize}
               />
             ) : (
@@ -421,9 +550,19 @@ export function PerformanceMode({
             )}
           </div>
 
-          {/* Auto-scroll controls */}
+          {/* Auto-scroll controls — default speed derived from song duration/BPM */}
           <div className="px-4 py-2 border-t border-[hsl(var(--border))] shrink-0 flex items-center gap-4">
-            <AutoScroll containerRef={scrollRef} />
+            <AutoScroll
+              key={currentIndex}
+              containerRef={scrollRef}
+              defaultSpeed={
+                content?.durationSeconds
+                  ? Math.max(10, Math.min(60, Math.round(2400 / content.durationSeconds)))
+                  : content?.tempo
+                    ? Math.max(10, Math.min(50, Math.round(content.tempo / 3)))
+                    : 30
+              }
+            />
             <div className="flex-1" />
             {/* Song list quick nav */}
             <div className="flex items-center gap-1">

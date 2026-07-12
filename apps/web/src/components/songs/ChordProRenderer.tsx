@@ -1,4 +1,4 @@
-import { parseChordPro, transposeChordPro, chordToNashville } from "@vpc-music/shared";
+import { parseChordPro, transposeChordPro, chordToNashville, transposeKeyName, keyPrefersFlats } from "@vpc-music/shared";
 import { useState, useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from "react";
 
 function normalizeTranspose(steps: number) {
@@ -13,6 +13,8 @@ interface ChordProRendererProps {
   showChords?: boolean;
   nashville?: boolean;
   fontSize?: number;
+  /** Hide the inline transpose row (the host renders its own control) */
+  showControls?: boolean;
   onTranspose?: (newKey: string) => void;
 }
 
@@ -33,6 +35,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
   showChords = true,
   nashville = false,
   fontSize = 16,
+  showControls = true,
   onTranspose,
 }, ref) {
   const [manualTranspose, setManualTranspose] = useState(0);
@@ -42,8 +45,13 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
     setManualTranspose(0);
   }, [baseTranspose, content, songKey]);
 
-  // Apply transposition to raw ChordPro, then parse
-  const transposedContent = transpose !== 0 ? transposeChordPro(content, transpose) : content;
+  // Apply transposition to raw ChordPro, then parse. Enharmonic spelling
+  // follows the TARGET key (into Bb you get Eb, not D#): if the flat name
+  // of the destination is a conventional flat key, spell the chart flat.
+  const flatTarget = songKey ? transposeKeyName(songKey, transpose, true) : null;
+  const preferFlats = flatTarget ? keyPrefersFlats(flatTarget) : undefined;
+  const targetKey = songKey ? transposeKeyName(songKey, transpose, preferFlats) : null;
+  const transposedContent = transpose !== 0 ? transposeChordPro(content, transpose, preferFlats) : content;
   const doc = parseChordPro(transposedContent);
 
   const handleUp = () => setManualTranspose((t) => normalizeTranspose(t + 1));
@@ -59,7 +67,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
   return (
     <div className="song-display-font space-y-2" data-testid="chordpro-renderer">
       {/* Transpose controls */}
-      {showChords && (
+      {showChords && showControls && (
         <div className="flex items-center gap-3 text-sm print-hidden">
           <span className="text-[hsl(var(--muted-foreground))]">Transpose:</span>
           <button
@@ -88,6 +96,9 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
           {songKey && (
             <span className="ml-auto text-xs text-[hsl(var(--muted-foreground))]">
               Original key: {songKey}
+              {transpose !== 0 && targetKey && (
+                <span className="ml-1 font-medium text-[hsl(var(--secondary))]">→ {targetKey}</span>
+              )}
             </span>
           )}
         </div>

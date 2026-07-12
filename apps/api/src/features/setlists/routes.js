@@ -157,10 +157,14 @@ setlistRoutes.get(
         capo: setlistSongs.capo,
         arrangement: setlistSongs.arrangement,
         transitionCues: setlistSongs.transitionCues,
+        talkSeconds: setlistSongs.talkSeconds,
         songTitle: songs.title,
         songKey: songs.key,
         songArtist: songs.artist,
         songTempo: songs.tempo,
+        songDurationSeconds: songs.durationSeconds,
+        songEnergy: songs.energy,
+        songStatus: songs.status,
       })
       .from(setlistSongs)
       .leftJoin(songs, eq(setlistSongs.songId, songs.id))
@@ -580,7 +584,7 @@ setlistRoutes.patch(
   requireOrg,
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
-    const { key, notes, duration, capo, arrangement, transitionCues, songId } = req.body;
+    const { key, notes, duration, capo, arrangement, transitionCues, songId, talkSeconds } = req.body;
 
     if (arrangement !== undefined && arrangement !== null && !ARRANGEMENTS.includes(arrangement)) {
       throw createError(400, `arrangement must be one of: ${ARRANGEMENTS.join(", ")}`);
@@ -601,6 +605,9 @@ setlistRoutes.patch(
         ...(sanitizedCues !== undefined && { transitionCues: sanitizedCues }),
         // Fill (or clear) a template slot's song
         ...(songId !== undefined && { songId: songId || null }),
+        ...(talkSeconds !== undefined && {
+          talkSeconds: Number.isFinite(Number(talkSeconds)) && Number(talkSeconds) >= 0 ? Math.round(Number(talkSeconds)) : 0,
+        }),
       })
       .where(and(eq(setlistSongs.id, req.params.songItemId), eq(setlistSongs.setlistId, req.params.id)))
       .returning();

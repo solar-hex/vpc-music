@@ -24,6 +24,7 @@ import { EventDetailPage } from "./pages/setlists/EventDetailPage";
 import { CalendarPage } from "./pages/setlists/CalendarPage";
 import { RehearsalsPage } from "./pages/setlists/RehearsalsPage";
 import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
+import { PerformPage } from "./pages/setlists/PerformPage";
 import { ArtistsPage } from "./pages/artists/ArtistsPage";
 import { AlbumsPage } from "./pages/artists/AlbumsPage";
 import { ArtistDetailLayout, ArtistProfileTab, ArtistSongsTab, ArtistAlbumsTab } from "./pages/artists/ArtistDetailPage";
@@ -51,6 +52,17 @@ export const router = createBrowserRouter([
   { path: "/forgot-password", element: <ForgotPasswordPage /> },
   { path: "/reset-password", element: <ResetPasswordPage /> },
   { path: "/shared/:token", element: <SharedSongPage /> },
+
+  // Rehearsal mode — full-bleed, no shell. The only screen used under pressure.
+  {
+    path: "/setlists/:id/perform",
+    element: (
+      <ProtectedRoute>
+        <PerformPage />
+      </ProtectedRoute>
+    ),
+    errorElement: <RouteErrorPage />,
+  },
 
   // ── Authenticated routes (inside AppShell) ───
   {

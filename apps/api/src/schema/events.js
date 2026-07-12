@@ -1,5 +1,5 @@
 // Drizzle ORM schema — events (services, rehearsals, etc.)
-import { pgTable, text, timestamp, uuid, jsonb, pgEnum } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, uuid, jsonb, pgEnum, integer } from "drizzle-orm/pg-core";
 import { organizations } from "./organizations.js";
 import { setlists } from "./setlists.js";
 import { users } from "./users.js";
@@ -15,6 +15,7 @@ export const events = pgTable("events", {
   eventType: text("event_type"),               // e.g. "Service", "Concert", "Wedding"
   status: eventStatusEnum("status").default("scheduled").notNull(),
   completedAt: timestamp("completed_at"),      // set when marked completed (plays logged)
+  targetSeconds: integer("target_seconds"),    // the allotted music slot
   theme: text("theme"),                        // service theme, e.g. "Gratitude"
   preparedBy: uuid("prepared_by").references(() => users.id), // who is preparing/leading the plan
   team: jsonb("team"),                         // [{ userId?, name, role }] — assigned team for the service

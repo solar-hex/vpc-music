@@ -6,6 +6,20 @@ This project follows a simple Keep a Changelog-style format.
 
 ## [Unreleased]
 
+### Added — foundation spec: charts, rehearsal mode, set flow (July 2026)
+
+- Structured chart engine (`shared/utils/transpose.js`): section tokens like `[Chorus]`/`[Bridge 2]` are never parsed as chords; strict chord grammar keeps extensions intact (`C#m7b5`, `A7(#9)`, `Fsus4`); slash chords transpose both halves; bar lines `| G | C/E | D |` transpose in place; enharmonic spelling follows the *target* key (flat keys F/Bb/Eb/Ab/Db/Gb and relative minors get flats); zero-net transposition returns the stored chart byte-for-byte, so round-trips are lossless
+- Transposition stays a view concern: charts are stored once in the source key, every rendered view (song page, set list, rehearsal mode, exports) transposes at render time, and a per-set-list key override now actually transposes the chart instead of only relabelling the key
+- Rehearsal mode at `/setlists/:id/perform`: full-bleed dark route outside the app shell with wake lock (re-acquired on tab return), cache-first offline loading, minimum 18px chart type with the size persisted across sessions, one-tap live transpose per song, a BPM visual pulse, elapsed set time, and BPM/duration-derived autoscroll — and deliberately no editing, comments, or notifications
+- Set flow analysis strip under the set list builder: energy sparkline, key sequence coloured by circle-of-fifths transition quality (relative minors treated as their relative major), and a duration bar that includes between-song gaps and talk time against the event's music slot
+- Flow advisory signals (never blocking): key clashes, energy plateaus, flat curves, unready songs, over/under time, soft open/close, and repeat-set overlap with the last completed event; recomputed client-side on every reorder
+- Chart text uploads (`.cho`, `.chordpro`, `.crd`, `.txt`, …) are read into `media.content` with a detected `format` so charts are searchable text, not opaque files
+- New per-song energy override (1–5, else derived from BPM), per-item talk seconds in the builder, and a music-slot target on events
+
+### Migration notes (foundation spec)
+
+- Run `pnpm --filter @vpc-music/api db:push`: new columns `media.content` + `media.format`, `songs.energy`, `setlist_songs.talk_seconds`, `events.target_seconds`
+
 ### Added — tabbed sections build-out (July 2026)
 
 - Tabbed sub-navigation on every sidebar section as real nested routes (deep-linkable, back-button-safe); the sidebar stays at six items

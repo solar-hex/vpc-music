@@ -37,6 +37,7 @@ export const setlistSongs = pgTable("setlist_songs", {
   notes: text("notes"),                 // per-song notes within the setlist
   duration: integer("duration"),        // planned duration in seconds
   capo: integer("capo"),                // suggested capo fret (0–12)
+  talkSeconds: integer("talk_seconds").default(0), // planned talk/transition time before the next song
   arrangement: text("arrangement"),     // ACOUSTIC | ELECTRIC | FULL_BAND | STRIPPED_DOWN
   transitionCues: jsonb("transition_cues"), // [{ type, text, durationSec }] between this song and the next
 });

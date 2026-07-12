@@ -49,6 +49,7 @@ export function SetlistItemTools({
   const [capo, setCapo] = useState<number | null>(item.capo ?? null);
   const [arrangement, setArrangement] = useState<SetlistArrangement | "">(item.arrangement ?? "");
   const [durationMin, setDurationMin] = useState(item.duration ? String(Math.round(item.duration / 60)) : "");
+  const [talkSecondsValue, setTalkSecondsValue] = useState(item.talkSeconds ? String(item.talkSeconds) : "");
   const [cues, setCues] = useState<TransitionCue[]>(item.transitionCues ?? []);
   const [saving, setSaving] = useState(false);
 
@@ -73,6 +74,7 @@ export function SetlistItemTools({
         capo,
         arrangement: arrangement || null,
         duration: /^\d+$/.test(durationMin) ? Number(durationMin) * 60 : null,
+        talkSeconds: /^\d+$/.test(talkSecondsValue) ? Number(talkSecondsValue) : 0,
         transitionCues: cues,
       });
       toast.success("Song settings saved");
@@ -165,6 +167,22 @@ export function SetlistItemTools({
             />
           </label>
         </div>
+
+        <label className="space-y-2 block">
+          <span className="text-sm font-medium">Talk time before the next song (seconds)</span>
+          <input
+            type="number"
+            min="0"
+            value={talkSecondsValue}
+            onChange={(e) => setTalkSecondsValue(e.target.value)}
+            placeholder="0"
+            className="input w-full"
+            disabled={saving}
+          />
+          <span className="block text-xs text-[hsl(var(--muted-foreground))]">
+            Counts toward the set's total alongside the default changeover gap.
+          </span>
+        </label>
 
         {/* Transition cues */}
         <div className="space-y-2">

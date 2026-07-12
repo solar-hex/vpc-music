@@ -112,6 +112,9 @@ vi.mock("sonner", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  transposeKeyName: (key: string) => key,
+  analyze: () => ({ curve: [], keys: [], transitions: [], timing: { musicSeconds: 0, gapSeconds: 0, totalSeconds: 0, targetSeconds: null, overBySeconds: null, underBySeconds: null }, signals: [] }),
+  keyPrefersFlats: () => false,
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
 }));
 

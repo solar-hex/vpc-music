@@ -74,6 +74,7 @@ mediaRoutes.get(
         filename: media.filename,
         mimeType: media.mimeType,
         sizeBytes: media.sizeBytes,
+        format: media.format,
         songId: media.songId,
         songTitle: songs.title,
         createdAt: media.createdAt,
@@ -87,6 +88,17 @@ mediaRoutes.get(
   }),
 );
 
+// Structured chart sources get their text stored first-class; PDFs and
+// images stay file-only viewers.
+const CHART_TEXT_EXT = /\.(cho|chordpro|chopro|crd|chrd|onsong|txt)$/i;
+
+function detectFormat(file) {
+  if (file.mimetype === "application/pdf" || /\.pdf$/i.test(file.originalname)) return "pdf";
+  if (file.mimetype?.startsWith("image/") || /\.(png|jpe?g|gif|webp|svg)$/i.test(file.originalname)) return "image";
+  if (CHART_TEXT_EXT.test(file.originalname) || file.mimetype?.startsWith("text/")) return "chordpro";
+  return null;
+}
+
 // ── POST / — upload ──────────────────────────────────────────
 mediaRoutes.post(
   "/",
@@ -98,6 +110,14 @@ mediaRoutes.post(
     const type = MEDIA_TYPES.includes(req.body?.type) ? req.body.type : "other";
     const songId = String(req.body?.songId || "").trim() || null;
 
+    const format = detectFormat(req.file);
+    let content = null;
+    if (format === "chordpro") {
+      content = await fs.promises
+        .readFile(path.join(UPLOADS_DIR, req.file.filename), "utf8")
+        .catch(() => null);
+    }
+
     const [row] = await db
       .insert(media)
       .values({
@@ -106,6 +126,8 @@ mediaRoutes.post(
         filename: req.file.originalname,
         mimeType: req.file.mimetype || null,
         sizeBytes: req.file.size ?? null,
+        content,
+        format,
         songId,
         organizationId: req.org.id,
         uploadedBy: req.user.id,

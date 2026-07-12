@@ -121,6 +121,7 @@ export interface Song {
   durationSeconds?: number | null;
   genre?: string | null;
   albumId?: string | null;
+  energy?: number | null;
   lastPlayed?: string | null;
   defaultVariationId?: string | null;
   sharedWithMe?: boolean;
@@ -372,10 +373,14 @@ export interface SetlistSongItem {
   capo?: number | null;
   arrangement?: SetlistArrangement | null;
   transitionCues?: TransitionCue[] | null;
+  talkSeconds?: number | null;
   songTitle: string | null;
   songKey?: string | null;
   songArtist?: string | null;
   songTempo?: number | null;
+  songDurationSeconds?: number | null;
+  songEnergy?: number | null;
+  songStatus?: SongStatus | null;
 }
 
 export const setlistsApi = {
@@ -408,7 +413,7 @@ export const setlistsApi = {
   updateSong: (
     setlistId: string,
     songItemId: string,
-    data: Partial<Pick<SetlistSongItem, "key" | "notes" | "duration" | "capo" | "arrangement" | "transitionCues" | "songId">>,
+    data: Partial<Pick<SetlistSongItem, "key" | "notes" | "duration" | "capo" | "arrangement" | "transitionCues" | "songId" | "talkSeconds">>,
   ) =>
     request<{ item: SetlistSongItem }>(`/api/setlists/${setlistId}/songs/${songItemId}`, {
       method: "PATCH",
@@ -462,6 +467,7 @@ export interface Event {
   eventType?: string | null;
   status?: "scheduled" | "completed" | "cancelled";
   completedAt?: string | null;
+  targetSeconds?: number | null;
   preparedBy?: string | null;
   preparedByName?: string | null;
   team?: EventTeamMember[] | null;
@@ -859,6 +865,7 @@ export interface MediaFile {
   filename: string;
   mimeType?: string | null;
   sizeBytes?: number | null;
+  format?: "chordpro" | "pdf" | "image" | null;
   songId?: string | null;
   songTitle?: string | null;
   createdAt?: string;

@@ -25,6 +25,7 @@ export const songs = pgTable("songs", {
   timeSignature: text("time_signature"),   // e.g. "4/4", "6/8"
   durationSeconds: integer("duration_seconds"),
   genre: text("genre"),
+  energy: integer("energy"),               // 1-5 explicit override; null = derive from BPM
   shout: text("shout"),
   year: text("year"),
   tags: text("tags"),            // comma-separated or JSON array

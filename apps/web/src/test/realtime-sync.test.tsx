@@ -41,6 +41,7 @@ const mockSongsList = vi.fn();
 const mockNavigate = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
+  eventsApi: { list: vi.fn().mockResolvedValue({ events: [] }) },
   setlistsApi: {
     get: (...args: any[]) => mockGetSetlist(...args),
     delete: (...args: any[]) => mockDeleteSetlist(...args),
@@ -68,6 +69,9 @@ vi.mock("sonner", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  transposeKeyName: (key: string) => key,
+  analyze: () => ({ curve: [], keys: [], transitions: [], timing: { musicSeconds: 0, gapSeconds: 0, totalSeconds: 0, targetSeconds: null, overBySeconds: null, underBySeconds: null }, signals: [] }),
+  keyPrefersFlats: () => false,
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
 }));
 

@@ -81,8 +81,62 @@ declare module "@vpc-music/shared" {
   export function convertChrdToChordPro(filename: string, input: string): LegacyChrdConversionResult;
 
   // ── Transpose ──────────────────────────────────
-  export function transposeChord(chord: string, semitones: number): string;
-  export function transposeChordPro(input: string, semitones: number): string;
+  export function transposeChord(chord: string, semitones: number, preferFlats?: boolean): string;
+  export function transposeChordPro(input: string, semitones: number, preferFlats?: boolean): string;
+  export function isChordToken(token: string): boolean;
+  export function isSectionToken(token: string): boolean;
+  export function interval(fromKey: string, toKey: string): number;
+  export function keyPrefersFlats(key: string): boolean;
+  export function transposeKeyName(key: string, semitones: number, preferFlats?: boolean): string;
+
+  // ── Set flow analysis ──────────────────────────
+  export const DEFAULT_GAP_SECONDS: number;
+  export interface FlowItem {
+    songId?: string | null;
+    title?: string;
+    key?: string | null;
+    bpm?: number | null;
+    energy?: number | null;
+    durationSeconds?: number | null;
+    talkSeconds?: number | null;
+    status?: string | null;
+  }
+  export interface FlowTransition {
+    fromIndex: number;
+    toIndex: number;
+    fromKey: string | null;
+    toKey: string | null;
+    distance: number | null;
+    quality: "smooth" | "ok" | "notable" | "harsh" | "unknown";
+  }
+  export interface FlowSignal {
+    type: string;
+    severity: "warn" | "info";
+    index?: number;
+    message: string;
+  }
+  export interface FlowResult {
+    curve: (number | null)[];
+    keys: (string | null)[];
+    transitions: FlowTransition[];
+    timing: {
+      musicSeconds: number;
+      gapSeconds: number;
+      totalSeconds: number;
+      targetSeconds: number | null;
+      overBySeconds: number | null;
+      underBySeconds: number | null;
+    };
+    signals: FlowSignal[];
+  }
+  export function circlePosition(key: string | null | undefined): number | null;
+  export function circleDistance(fromKey: string | null | undefined, toKey: string | null | undefined): number | null;
+  export function transitionQuality(fromKey: string | null | undefined, toKey: string | null | undefined): FlowTransition["quality"];
+  export function songEnergy(item: { bpm?: number | null; energy?: number | null }): number | null;
+  export function analyze(
+    items: FlowItem[],
+    options?: { targetSeconds?: number | null; recentlyPlayed?: string[]; gapSeconds?: number },
+  ): FlowResult;
 
   // ── Nashville Number System ────────────────────
   export function chordToNashville(chord: string, key: string): string;

@@ -10,6 +10,8 @@ const mockTransposeChordPro = vi.fn();
 const mockChordToNashville = vi.fn();
 
 vi.mock("@vpc-music/shared", () => ({
+  transposeKeyName: (key: string) => key,
+  keyPrefersFlats: () => false,
   parseChordPro: (...args: any[]) => mockParseChordPro(...args),
   transposeChordPro: (...args: any[]) => mockTransposeChordPro(...args),
   chordToNashville: (...args: any[]) => mockChordToNashville(...args),
@@ -126,13 +128,13 @@ describe("ChordProRenderer", () => {
       render(<ChordProRenderer content="test" />);
       fireEvent.click(screen.getByText("+"));
       expect(screen.getByText("+1")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1, undefined);
     });
 
     it("decrements transpose on − click", () => {
       render(<ChordProRenderer content="test" />);
       fireEvent.click(screen.getByText("−"));
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1, undefined);
     });
 
     it("shows Reset button when transposed", () => {
@@ -161,7 +163,7 @@ describe("ChordProRenderer", () => {
       mockTransposeChordPro.mockReturnValue("transposed-content");
       render(<ChordProRenderer content="test" />);
       fireEvent.click(screen.getByText("+"));
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1, undefined);
       expect(mockParseChordPro).toHaveBeenCalledWith("transposed-content");
     });
 
@@ -171,7 +173,7 @@ describe("ChordProRenderer", () => {
         fireEvent.click(screen.getByText("+"));
       }
       expect(screen.getByText("0")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", 11);
+      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", 11, undefined);
     });
 
     it("wraps transpose back to 0 after 12 downward clicks", () => {
@@ -180,7 +182,7 @@ describe("ChordProRenderer", () => {
         fireEvent.click(screen.getByText("−"));
       }
       expect(screen.getByText("0")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", -11);
+      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", -11, undefined);
     });
   });
 
@@ -198,7 +200,7 @@ describe("ChordProRenderer", () => {
       const ref = createRef<ChordProRendererHandle>();
       render(<ChordProRenderer ref={ref} content="test" />);
       act(() => ref.current!.transposeDown());
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1, undefined);
     });
 
     it("exposes transposeReset method", () => {
@@ -260,7 +262,7 @@ describe("ChordProRenderer", () => {
 
     it("applies base transpose before rendering", () => {
       render(<ChordProRenderer content="test" songKey="G" baseTranspose={2} />);
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 2);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 2, false);
       expect(screen.getByText("+2")).toBeInTheDocument();
     });
 

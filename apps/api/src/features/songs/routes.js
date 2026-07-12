@@ -1232,7 +1232,7 @@ songRoutes.post(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
-    const { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft, timeSignature, durationSeconds, genre, albumId } = req.body;
+    const { title, aka, category, key, tempo, artist, shout, year, tags, content, abcNotation, isDraft, timeSignature, durationSeconds, genre, albumId, energy } = req.body;
 
     if (!title || !content) {
       throw createError(400, "Title and content are required");
@@ -1256,6 +1256,7 @@ songRoutes.post(
         durationSeconds: Number.isFinite(Number(durationSeconds)) && Number(durationSeconds) > 0 ? Math.round(Number(durationSeconds)) : null,
         genre: genre || null,
         albumId: albumId || null,
+        energy: Number.isInteger(energy) && energy >= 1 && energy <= 5 ? energy : null,
         isDraft: isDraft ?? false,
         organizationId: req.org.id,
         createdBy: req.user.id,
@@ -1290,6 +1291,7 @@ songRoutes.put(
       durationSeconds,
       genre,
       albumId,
+      energy,
       lastKnownUpdatedAt,
       forceOverwrite,
     } = req.body;
@@ -1356,6 +1358,9 @@ songRoutes.put(
         }),
         ...(genre !== undefined && { genre: genre || null }),
         ...(albumId !== undefined && { albumId: albumId || null }),
+        ...(energy !== undefined && {
+          energy: Number.isInteger(energy) && energy >= 1 && energy <= 5 ? energy : null,
+        }),
         updatedAt: new Date(),
       })
       .where(eq(songs.id, req.params.id))
