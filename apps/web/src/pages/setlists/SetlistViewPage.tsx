@@ -47,6 +47,7 @@ import { FlowStrip } from "@/components/setlists/FlowStrip";
 import { formatDuration } from "@/lib/format";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { SetlistStatusBadge } from "@/components/setlists/SetlistStatusBadge";
 import { getKeyDistance } from "@/utils/key-compat";
 
 export function SetlistViewPage() {
@@ -495,21 +496,7 @@ export function SetlistViewPage() {
       <div>
         <div className="flex items-center gap-2">
           <h2 className="page-title">{setlist.name}</h2>
-          {setlist.status === "complete" ? (
-            <span className="badge-success">
-              <CheckCircle2 className="h-3 w-3" /> Complete
-            </span>
-          ) : setlist.status === "approved" ? (
-            <span className="badge-success">
-              <CheckCircle2 className="h-3 w-3" /> Approved
-            </span>
-          ) : setlist.status === "in_review" ? (
-            <span className="badge-warning">In review</span>
-          ) : (
-            <span className="badge-muted">
-              Draft
-            </span>
-          )}
+          <SetlistStatusBadge status={setlist.status} />
           {totalDurationLabel && (
             <span className="badge badge-muted" title="Running total of planned durations">
               <Clock className="h-3 w-3" /> {totalDurationLabel}

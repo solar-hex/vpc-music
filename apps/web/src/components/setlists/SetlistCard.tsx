@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { CheckCircle2, Archive, Trash2, Clock, User, Activity } from "lucide-react";
+import { Archive, Trash2, Clock, User, Activity } from "lucide-react";
 import type { Setlist } from "@/lib/api-client";
 import { formatSetlistDuration } from "@/lib/format";
+import { SetlistStatusBadge } from "./SetlistStatusBadge";
 
 /** "G,C,D" → "G · C · D" (capped) for the card's key summary. */
 export function formatKeys(keys?: string | null): string | null {
@@ -31,11 +32,7 @@ export function SetlistCard({
       <Link to={`/setlists/${setlist.id}`} className="block space-y-1.5">
         <div className="flex items-center gap-2 pr-14">
           <span className="font-medium text-[hsl(var(--foreground))] truncate">{setlist.name}</span>
-          {setlist.status === "complete" && (
-            <span className="badge-success shrink-0">
-              <CheckCircle2 className="h-3 w-3" /> Complete
-            </span>
-          )}
+          {setlist.status === "complete" && <SetlistStatusBadge status="complete" className="shrink-0" />}
         </div>
         <div className="text-xs text-[hsl(var(--muted-foreground))]">
           {setlist.songCount ?? 0} song{(setlist.songCount ?? 0) !== 1 ? "s" : ""}

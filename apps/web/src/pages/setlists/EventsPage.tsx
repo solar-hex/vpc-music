@@ -6,16 +6,16 @@ import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { Calendar, Plus, MapPin, ListMusic, CheckCircle2, Ban } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { StatusBadge, type StatusVariant } from "@/components/shared/StatusBadge";
+
+const EVENT_STATUS: Record<string, StatusVariant> = {
+  completed: { label: "Completed", className: "badge-success", icon: CheckCircle2 },
+  cancelled: { label: "Cancelled", className: "badge badge-muted", icon: Ban },
+};
 
 export function eventStatusBadge(status?: Event["status"]) {
-  switch (status) {
-    case "completed":
-      return <span className="badge-success"><CheckCircle2 className="h-3 w-3" /> Completed</span>;
-    case "cancelled":
-      return <span className="badge badge-muted"><Ban className="h-3 w-3" /> Cancelled</span>;
-    default:
-      return <span className="badge badge-warning">Scheduled</span>;
-  }
+  const variant = (status && EVENT_STATUS[status]) || { label: "Scheduled", className: "badge badge-warning" };
+  return <StatusBadge variant={variant} />;
 }
 
 /** Set Lists → Events: upcoming and past events with create/edit. */
