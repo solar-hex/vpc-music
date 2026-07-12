@@ -4,6 +4,7 @@ import { albumsApi, artistsApi, type Album, type Artist } from "@/lib/api-client
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Disc3, Plus, Pencil, Trash2, X } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 export function AlbumFormDialog({
   album,
@@ -203,17 +204,17 @@ export function AlbumsPage() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : albums.length === 0 ? (
-        <div className="card-empty">
-          <Disc3 className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Group songs by the records they came from.
-          </p>
-          {canEdit && (
-            <button onClick={() => setFormAlbum(null)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Add album
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={Disc3}
+          message="Group songs by the records they came from."
+          action={
+            canEdit ? (
+              <button onClick={() => setFormAlbum(null)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Add album
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {albums.map((album) => (

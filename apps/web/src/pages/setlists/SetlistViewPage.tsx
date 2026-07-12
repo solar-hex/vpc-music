@@ -46,6 +46,7 @@ import { SetlistItemTools } from "@/components/setlists/SetlistItemTools";
 import { FlowStrip } from "@/components/setlists/FlowStrip";
 import { formatDuration } from "@/lib/format";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { getKeyDistance } from "@/utils/key-compat";
 
 export function SetlistViewPage() {
@@ -707,20 +708,18 @@ export function SetlistViewPage() {
         </div>
 
         {songs.length === 0 ? (
-          <div className="card-empty !p-8">
-            <Music className="mx-auto h-10 w-10 mb-2 text-[hsl(var(--muted-foreground))]" />
-            <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            No songs in this setlist.
-            </p>
-            {canEdit && (
-              <button
-                onClick={() => setShowAddSong(true)}
-                className="link-accent mt-2"
-              >
-                Add a song
-              </button>
-            )}
-          </div>
+          <EmptyState
+            className="!p-8"
+            icon={Music}
+            message="No songs in this setlist."
+            action={
+              canEdit ? (
+                <button onClick={() => setShowAddSong(true)} className="link-accent">
+                  Add a song
+                </button>
+              ) : undefined
+            }
+          />
         ) : (
           <div
             ref={songListRef}

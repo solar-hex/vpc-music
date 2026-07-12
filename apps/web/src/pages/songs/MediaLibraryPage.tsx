@@ -5,6 +5,7 @@ import { mediaApi, songsApi, type MediaFile, type MediaType, type Song } from "@
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { FolderOpen, Upload, FileText, Music4, AudioLines, File, Trash2, Link2, AlertCircle } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 export const MEDIA_TYPE_LABELS: Record<MediaType, string> = {
   chart: "Chart",
@@ -171,26 +172,26 @@ export function MediaLibraryPage() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : visible.length === 0 ? (
-        <div className="card-empty">
-          <FolderOpen className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Charts, lyrics, and audio for the whole library live here.
-          </p>
-          {canEdit && (
-            <label className="btn-primary mt-4 cursor-pointer">
-              <Upload className="h-4 w-4" /> Upload a file
-              <input
-                type="file"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) void handleUpload(file);
-                  e.target.value = "";
-                }}
-              />
-            </label>
-          )}
-        </div>
+        <EmptyState
+          icon={FolderOpen}
+          message="Charts, lyrics, and audio for the whole library live here."
+          action={
+            canEdit ? (
+              <label className="btn-primary cursor-pointer">
+                <Upload className="h-4 w-4" /> Upload a file
+                <input
+                  type="file"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) void handleUpload(file);
+                    e.target.value = "";
+                  }}
+                />
+              </label>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((file) => {

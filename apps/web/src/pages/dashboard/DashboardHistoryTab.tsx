@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { eventsApi, setlistsApi, type Event, type SetlistSongItem } from "@/lib/api-client";
 import { History, ChevronDown, MapPin, ListMusic } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 /** Dashboard → Event history: completed events, expandable to their set list. */
 export function DashboardHistoryTab() {
@@ -40,15 +41,15 @@ export function DashboardHistoryTab() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : events.length === 0 ? (
-        <div className="card-empty">
-          <History className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Completed events land here. Mark an event completed to start the record.
-          </p>
-          <Link to="/setlists/events" className="btn-primary mt-4">
-            View events
-          </Link>
-        </div>
+        <EmptyState
+          icon={History}
+          message="Completed events land here. Mark an event completed to start the record."
+          action={
+            <Link to="/setlists/events" className="btn-primary">
+              View events
+            </Link>
+          }
+        />
       ) : (
         <div className="space-y-2">
           {events.map((event) => {

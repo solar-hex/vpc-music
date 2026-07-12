@@ -7,6 +7,7 @@ import { ArchivedSetlistsPanel } from "@/components/setlists/ArchivedSetlistsPan
 import { SetlistTrashPanel } from "@/components/setlists/SetlistTrashPanel";
 import { toast } from "sonner";
 import { Plus, ListMusic, Archive, Trash2, Search } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 type SortMode = "edited" | "alphabetical" | "duration" | "songs";
 
@@ -194,17 +195,17 @@ export function SetlistHubPage() {
           <div className="spinner" />
         </div>
       ) : visibleSetlists.length === 0 ? (
-        <div className="card-empty">
-          <ListMusic className="mx-auto h-12 w-12 text-[hsl(var(--muted-foreground))]" />
-          <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
-            {query ? "No setlists match your search." : "No setlists yet."}
-          </p>
-          {canEdit && !query && (
-            <button onClick={() => setShowCreate(true)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Create Setlist
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={ListMusic}
+          message={query ? "No setlists match your search." : "No setlists yet."}
+          action={
+            canEdit && !query ? (
+              <button onClick={() => setShowCreate(true)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Create Setlist
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visibleSetlists.map((sl) => (

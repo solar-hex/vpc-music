@@ -5,6 +5,7 @@ import { formatEventDateTime } from "@/lib/format";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { Calendar, Plus, MapPin, ListMusic, CheckCircle2, Ban } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 export function eventStatusBadge(status?: Event["status"]) {
   switch (status) {
@@ -96,17 +97,17 @@ export function EventsPage() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : events.length === 0 ? (
-        <div className="card-empty">
-          <Calendar className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Events tie a date, a venue, and a set list together.
-          </p>
-          {canEdit && (
-            <button onClick={() => setFormOpen(true)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Schedule event
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={Calendar}
+          message="Events tie a date, a venue, and a set list together."
+          action={
+            canEdit ? (
+              <button onClick={() => setFormOpen(true)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Schedule event
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <>
           <section className="space-y-3">

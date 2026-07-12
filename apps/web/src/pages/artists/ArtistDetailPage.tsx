@@ -7,6 +7,7 @@ import { SectionTabs } from "@/components/layout/SectionTabs";
 import { AlbumCard, AlbumFormDialog } from "./AlbumsPage";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ArrowLeft, BadgeCheck, Music, TrendingUp, Globe, Plus, Disc3 } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 interface ArtistOutletContext {
   artist: Artist;
@@ -173,15 +174,15 @@ export function ArtistSongsTab() {
 
   if (songs.length === 0) {
     return (
-      <div className="card-empty">
-        <Music className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-        <p className="text-sm text-[hsl(var(--muted-foreground))]">
-          No songs are linked to {artist.name} yet.
-        </p>
-        <Link to="/songs" className="btn-primary mt-4">
-          Browse songs
-        </Link>
-      </div>
+      <EmptyState
+        icon={Music}
+        message={<>No songs are linked to {artist.name} yet.</>}
+        action={
+          <Link to="/songs" className="btn-primary">
+            Browse songs
+          </Link>
+        }
+      />
     );
   }
 
@@ -251,10 +252,7 @@ export function ArtistAlbumsTab() {
       {loading ? (
         <div className="flex justify-center py-8"><div className="spinner" /></div>
       ) : albums.length === 0 ? (
-        <div className="card-empty">
-          <Disc3 className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">No albums for {artist.name} yet.</p>
-        </div>
+        <EmptyState icon={Disc3} message={<>No albums for {artist.name} yet.</>} />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2">
           {albums.map((album) => (

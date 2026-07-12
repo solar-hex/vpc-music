@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { StaffNotation } from "@/components/songs/StaffNotation";
 import { MEDIA_TYPE_LABELS, mediaTypeIcon, formatBytes } from "./MediaLibraryPage";
 import { Upload, Trash2, ArrowLeft, FolderOpen } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 const PREVIEWABLE_IMAGE = /\.(png|jpe?g|gif|webp|svg)$/i;
 const PREVIEWABLE_PDF = /\.pdf$/i;
@@ -145,26 +146,26 @@ export function SongMediaTab() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : files.length === 0 && !song?.abcNotation ? (
-        <div className="card-empty">
-          <FolderOpen className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Charts, lyric sheets, and audio for this song live here.
-          </p>
-          {canEdit && (
-            <label className="btn-primary mt-4 cursor-pointer">
-              <Upload className="h-4 w-4" /> Upload a file
-              <input
-                type="file"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) void handleUpload(file);
-                  e.target.value = "";
-                }}
-              />
-            </label>
-          )}
-        </div>
+        <EmptyState
+          icon={FolderOpen}
+          message="Charts, lyric sheets, and audio for this song live here."
+          action={
+            canEdit ? (
+              <label className="btn-primary cursor-pointer">
+                <Upload className="h-4 w-4" /> Upload a file
+                <input
+                  type="file"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) void handleUpload(file);
+                    e.target.value = "";
+                  }}
+                />
+              </label>
+            ) : undefined
+          }
+        />
       ) : (
         byType.map((group) => (
           <section key={group.type} className="space-y-2">

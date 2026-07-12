@@ -5,6 +5,7 @@ import { artistsApi, type Artist } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Search, Plus, MicVocal, BadgeCheck, Pencil, Trash2 } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 function artistInitials(name: string): string {
   return name
@@ -194,17 +195,17 @@ export function ArtistsPage() {
           <div className="spinner" />
         </div>
       ) : visible.length === 0 ? (
-        <div className="card-empty">
-          <MicVocal className="mx-auto h-12 w-12 text-[hsl(var(--muted-foreground))]" />
-          <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
-            {query || genreFilter ? "No artists match your search." : "No artists yet. Add the artists behind your library."}
-          </p>
-          {canEdit && !query && !genreFilter && (
-            <button onClick={() => setFormArtist(null)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Add Artist
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={MicVocal}
+          message={query || genreFilter ? "No artists match your search." : "No artists yet. Add the artists behind your library."}
+          action={
+            canEdit && !query && !genreFilter ? (
+              <button onClick={() => setFormArtist(null)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Add Artist
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((artist) => (

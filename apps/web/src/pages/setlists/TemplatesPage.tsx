@@ -5,6 +5,7 @@ import { templatesApi, type SetlistTemplate } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { LayoutTemplate, Plus, Pencil, Trash2, Play, X } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 function TemplateFormDialog({
   template,
@@ -168,17 +169,17 @@ export function TemplatesPage() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : templates.length === 0 ? (
-        <div className="card-empty">
-          <LayoutTemplate className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Templates capture a set's shape once so every week starts pre-structured.
-          </p>
-          {canEdit && (
-            <button onClick={() => setFormTemplate(null)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Create template
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={LayoutTemplate}
+          message="Templates capture a set's shape once so every week starts pre-structured."
+          action={
+            canEdit ? (
+              <button onClick={() => setFormTemplate(null)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Create template
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {templates.map((template) => (

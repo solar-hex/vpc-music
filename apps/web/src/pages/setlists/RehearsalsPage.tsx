@@ -5,6 +5,7 @@ import { rehearsalsApi, eventsApi, setlistsApi, type Rehearsal, type Event, type
 import { useAuth } from "@/contexts/AuthContext";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { Mic2, Plus, Pencil, Trash2, X, ListMusic, CalendarDays } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { toLocalInputValue, formatEventDateTime } from "@/lib/format";
 
 export function RehearsalFormDialog({
@@ -179,17 +180,17 @@ export function RehearsalsPage() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : rehearsals.length === 0 ? (
-        <div className="card-empty">
-          <Mic2 className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Rehearsals keep prep visible — tie each one to an event and a set list.
-          </p>
-          {canEdit && (
-            <button onClick={() => setFormRehearsal(null)} className="btn-primary mt-4">
-              <Plus className="h-4 w-4" /> Schedule rehearsal
-            </button>
-          )}
-        </div>
+        <EmptyState
+          icon={Mic2}
+          message="Rehearsals keep prep visible — tie each one to an event and a set list."
+          action={
+            canEdit ? (
+              <button onClick={() => setFormRehearsal(null)} className="btn-primary">
+                <Plus className="h-4 w-4" /> Schedule rehearsal
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <div className="list-container">
           {rehearsals.map((rehearsal) => (

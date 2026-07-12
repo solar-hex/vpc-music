@@ -8,6 +8,7 @@ import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
 import { useAuth } from "@/contexts/AuthContext";
 import { ALL_KEYS } from "@vpc-music/shared";
 import { Search, Plus, Music, X, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2, Star, Archive } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { toast } from "sonner";
 
 const PAGE_SIZE = 50;
@@ -639,24 +640,23 @@ export function SongListPage() {
           <div className="spinner" />
         </div>
       ) : songs.length === 0 ? (
-        <div className="card-empty">
-          <Music className="mx-auto h-12 w-12 text-[hsl(var(--muted-foreground))]" />
-          <p className="mt-3 text-sm text-[hsl(var(--muted-foreground))]">
-            {isSharedScope
+        <EmptyState
+          icon={Music}
+          message={
+            isSharedScope
               ? "No shared songs yet."
               : hasActiveFilters
               ? "No songs match your search."
-              : "No songs yet. Import your library to get started."}
-          </p>
-          {!hasActiveFilters && canEdit && (
-            <Link
-              to="/songs/new"
-              className="btn-primary mt-4"
-            >
-              <Plus className="h-4 w-4" /> Create Song
-            </Link>
-          )}
-        </div>
+              : "No songs yet. Import your library to get started."
+          }
+          action={
+            !hasActiveFilters && canEdit ? (
+              <Link to="/songs/new" className="btn-primary">
+                <Plus className="h-4 w-4" /> Create Song
+              </Link>
+            ) : undefined
+          }
+        />
       ) : (
         <>
           <div className="flex flex-wrap items-center justify-between gap-3">

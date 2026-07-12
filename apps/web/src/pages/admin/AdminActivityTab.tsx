@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { activityApi, orgsApi, type ActivityEntry, type OrgMember } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { ScrollText, RefreshCw } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { timeAgo } from "@/lib/format";
 
 /** Admin → Activity log: who did what, to what, when. */
@@ -75,12 +76,7 @@ export function AdminActivityTab() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : entries.length === 0 ? (
-        <div className="card-empty">
-          <ScrollText className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Team actions are recorded here as they happen.
-          </p>
-        </div>
+        <EmptyState icon={ScrollText} message="Team actions are recorded here as they happen." />
       ) : (
         <div className="list-container">
           {entries.map((entry) => (

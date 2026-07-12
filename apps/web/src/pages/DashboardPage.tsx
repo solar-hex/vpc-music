@@ -9,6 +9,7 @@ import { ServicePlanModal } from "@/components/dashboard/ServicePlanModal";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { TeamAvatarsRow } from "@/components/dashboard/TeamAvatarsRow";
 import { Music, ListMusic, Plus, Calendar, MapPin, TrendingUp, AlertCircle } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 function formatEventDate(iso: string): string {
   const d = new Date(iso);
@@ -161,10 +162,7 @@ export function DashboardPage() {
         {loading ? (
           <div className="text-sm text-[hsl(var(--muted-foreground))]">Loading...</div>
         ) : upcomingEvents.length === 0 ? (
-          <div className="card-empty">
-            <Calendar className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-            <p className="text-sm text-[hsl(var(--muted-foreground))]">No upcoming events</p>
-          </div>
+          <EmptyState icon={Calendar} message="No upcoming events" />
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((evt) => (
@@ -226,17 +224,19 @@ export function DashboardPage() {
         {loading ? (
           <div className="text-sm text-[hsl(var(--muted-foreground))]">Loading...</div>
         ) : recentSongs.length === 0 ? (
-          <div className="card-empty">
-            <Music className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-            <p className="text-sm text-[hsl(var(--muted-foreground))]">
-              No songs yet.{" "}
-              {canEdit && (
-                <Link to="/songs/new" className="link-accent">
-                  Create your first song
-                </Link>
-              )}
-            </p>
-          </div>
+          <EmptyState
+            icon={Music}
+            message={
+              <>
+                No songs yet.{" "}
+                {canEdit && (
+                  <Link to="/songs/new" className="link-accent">
+                    Create your first song
+                  </Link>
+                )}
+              </>
+            }
+          />
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {recentSongs.map((song) => (
@@ -318,17 +318,19 @@ export function DashboardPage() {
         {loading ? (
           <div className="text-sm text-[hsl(var(--muted-foreground))]">Loading...</div>
         ) : setlists.length === 0 ? (
-          <div className="card-empty">
-            <ListMusic className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-            <p className="text-sm text-[hsl(var(--muted-foreground))]">
-              No setlists yet.{" "}
-              {canEdit && (
-                <Link to="/setlists/new" className="link-accent">
-                  Create your first setlist
-                </Link>
-              )}
-            </p>
-          </div>
+          <EmptyState
+            icon={ListMusic}
+            message={
+              <>
+                No setlists yet.{" "}
+                {canEdit && (
+                  <Link to="/setlists/new" className="link-accent">
+                    Create your first setlist
+                  </Link>
+                )}
+              </>
+            }
+          />
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {setlists.map((sl) => (

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { usageReportApi, type SongUsageReportRow } from "@/lib/api-client";
 import { formatShortDate } from "@/lib/format";
 import { TrendingUp, ArrowUpDown } from "lucide-react";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 type SortKey = "title" | "playCount" | "lastPlayed";
 
@@ -83,14 +84,14 @@ export function DashboardUsageTab() {
       {loading ? (
         <div className="flex justify-center py-12"><div className="spinner" /></div>
       ) : visible.length === 0 ? (
-        <div className="card-empty">
-          <TrendingUp className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))] mb-2" />
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            {staleDays !== null
+        <EmptyState
+          icon={TrendingUp}
+          message={
+            staleDays !== null
               ? `Every song has been played in the last ${staleDays} days.`
-              : "Play data appears here once events are completed."}
-          </p>
-        </div>
+              : "Play data appears here once events are completed."
+          }
+        />
       ) : (
         <div className="overflow-x-auto rounded-lg border border-[hsl(var(--border))]">
           <table className="w-full text-sm">
