@@ -116,6 +116,26 @@ declare module "@vpc-music/shared" {
   export function keyPrefersFlats(key: string): boolean;
   export function transposeKeyName(key: string, semitones: number, preferFlats?: boolean): string;
 
+  // ── chords: consolidated chord + chart API (namespaced facade) ──
+  export interface ParsedChord {
+    root: string;
+    quality: string;
+    bass?: string;
+    raw: string;
+  }
+  export interface ChartWithDirectives extends Chart {
+    directives: Record<string, string>;
+  }
+  export const chords: {
+    interval(fromKey: string, toKey: string): number;
+    preferFlats(key: string): boolean;
+    parseChord(chord: string): ParsedChord | null;
+    transposeChord(chord: string | ParsedChord, semitones: number, preferFlats?: boolean): string;
+    parseChart(text: string): ChartWithDirectives;
+    transposeChart(chart: Chart, semitones: number, preferFlats?: boolean): ChartWithDirectives;
+    toText(chart: Chart): string;
+  };
+
   // ── Set flow analysis ──────────────────────────
   export const DEFAULT_GAP_SECONDS: number;
   export interface FlowItem {
