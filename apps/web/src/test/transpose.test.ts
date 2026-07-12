@@ -1,5 +1,27 @@
 import { describe, it, expect } from "vitest";
-import { transposeChord, transposeChordPro, composeTranspose, spellForTarget } from "@vpc-music/shared";
+import { transposeChord, transposeChordPro, composeTranspose, spellForTarget, interval, transposeKeyName } from "@vpc-music/shared";
+
+describe("unusual enharmonic roots (Cb, Fb, E#, B#)", () => {
+  // These fall outside the standard 12-name CHROMATIC_SHARP/CHROMATIC_FLAT
+  // arrays but are valid spellings (Cb==B, Fb==E, E#==F, B#==C) — getKeyDistance
+  // and flow.js's key-transition grading already resolved them; transposeChord/
+  // interval/transposeKeyName must too, or a chart written with these spellings
+  // silently fails to transpose.
+  it("interval treats Cb as B and E#/B# as their natural-note equivalents", () => {
+    expect(interval("Cb", "D")).toBe(3); // B -> D
+    expect(interval("E#", "F")).toBe(0); // same pitch
+    expect(interval("B#", "D")).toBe(2); // C -> D
+  });
+
+  it("transposeChord actually moves a chord spelled with an unusual root", () => {
+    expect(transposeChord("Cbm7", 2)).not.toBe("Cbm7");
+    expect(transposeChord("Fb", 2)).toBe("Gb"); // E -> F#, spelled flat (source used "b")
+  });
+
+  it("transposeKeyName resolves the aliased pitch before shifting", () => {
+    expect(transposeKeyName("Cb", 3)).toBe("D"); // B -> D
+  });
+});
 
 describe("composeTranspose", () => {
   it("combines a set-list key override into a net shift and target key", () => {

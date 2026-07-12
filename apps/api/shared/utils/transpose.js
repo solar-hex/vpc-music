@@ -80,7 +80,11 @@ export function normalizeEnharmonicKey(key) {
 function noteIndex(note) {
   const sharpIdx = CHROMATIC_SHARP.indexOf(note);
   if (sharpIdx !== -1) return sharpIdx;
-  return CHROMATIC_FLAT.indexOf(note);
+  const flatIdx = CHROMATIC_FLAT.indexOf(note);
+  if (flatIdx !== -1) return flatIdx;
+  // Unusual-but-valid spellings outside both chromatic arrays (Cb, Fb, E#, B#)
+  const alias = ENHARMONIC_ALIASES[note];
+  return alias && alias !== note ? noteIndex(alias) : -1;
 }
 
 /** Semitones from one key to another, normalized to 0..11. ("G" → "Bb" = 3) */
