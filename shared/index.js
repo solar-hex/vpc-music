@@ -11,6 +11,9 @@ export * from "./utils/transpose.js";
 // re-present the transpose.js/chart.js primitives, so it can't be a flat `export *`.
 export * as chords from "./utils/chords.js";
 export * from "./utils/flow.js";
+// Namespaced: its analyze() re-presents flow.js's primitive with a snake_case
+// set shape and graded transitions, so it can't be a flat `export *`.
+export * as flow from "./utils/setflow.js";
 export * from "./utils/nashville.js";
 export * from "./utils/onsong.js";
 export * from "./utils/plainText.js";

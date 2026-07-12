@@ -21,17 +21,27 @@ const NOTE_INDEX = {
 export const DEFAULT_GAP_SECONDS = 20;
 
 /**
+ * Parse a key into its pitch class (0-11) and mode. Returns null for
+ * unparseable keys. ("Bb" → {pitch:10, minor:false}, "Em" → {pitch:4, minor:true})
+ */
+export function keyPitchClass(key) {
+  const match = String(key || "").trim().match(/^([A-G][b#]?)\s*(m|min|minor)?/i);
+  if (!match || !match[1]) return null;
+  const root = match[1][0].toUpperCase() + (match[1][1] ?? "");
+  const pitch = NOTE_INDEX[root];
+  if (pitch === undefined) return null;
+  return { pitch, minor: Boolean(match[2]) };
+}
+
+/**
  * Position of a key on the circle of fifths (0-11), with minor keys mapped
  * to their relative major. Returns null for unparseable keys.
  */
 export function circlePosition(key) {
-  const match = String(key || "").trim().match(/^([A-G][b#]?)\s*(m|min|minor)?/i);
-  if (!match || !match[1]) return null;
-  const root = match[1][0].toUpperCase() + (match[1][1] ?? "");
-  let pitch = NOTE_INDEX[root];
-  if (pitch === undefined) return null;
+  const info = keyPitchClass(key);
+  if (!info) return null;
   // Relative major of a minor key is 3 semitones up
-  if (match[2]) pitch = (pitch + 3) % 12;
+  const pitch = info.minor ? (info.pitch + 3) % 12 : info.pitch;
   return FIFTHS_POSITION[pitch];
 }
 

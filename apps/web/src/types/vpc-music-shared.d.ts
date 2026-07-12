@@ -176,6 +176,7 @@ declare module "@vpc-music/shared" {
     };
     signals: FlowSignal[];
   }
+  export function keyPitchClass(key: string | null | undefined): { pitch: number; minor: boolean } | null;
   export function circlePosition(key: string | null | undefined): number | null;
   export function circleDistance(fromKey: string | null | undefined, toKey: string | null | undefined): number | null;
   export function transitionQuality(fromKey: string | null | undefined, toKey: string | null | undefined): FlowTransition["quality"];
@@ -184,6 +185,45 @@ declare module "@vpc-music/shared" {
     items: FlowItem[],
     options?: { targetSeconds?: number | null; recentlyPlayed?: string[]; gapSeconds?: number },
   ): FlowResult;
+
+  // ── flow: consolidated set-flow API (namespaced facade) ──
+  export interface KeyTransitionGrade {
+    grade: "same" | "smooth" | "ok" | "notable" | "harsh" | "unknown";
+    note?: string;
+  }
+  export interface SetFlowItem {
+    song_id?: string | number | null;
+    songId?: string | number | null;
+    title?: string;
+    song_key?: string | null;
+    key?: string | null;
+    bpm?: number | null;
+    energy?: number | null;
+    duration_seconds?: number | null;
+    durationSeconds?: number | null;
+    talk_seconds?: number | null;
+    talkSeconds?: number | null;
+    status?: string | null;
+  }
+  export interface SetFlowTransition {
+    fromIndex: number;
+    toIndex: number;
+    from: string | null;
+    to: string | null;
+    grade: KeyTransitionGrade["grade"];
+    note?: string;
+  }
+  export interface SetFlowResult extends Omit<FlowResult, "transitions"> {
+    transitions: SetFlowTransition[];
+  }
+  export const flow: {
+    analyze(
+      items: SetFlowItem[],
+      options?: { targetSeconds?: number | null; recentlyPlayed?: (string | number)[]; gapSeconds?: number },
+    ): SetFlowResult;
+    keyTransition(fromKey: string, toKey: string): KeyTransitionGrade;
+    fmt(seconds: number): string;
+  };
 
   // ── Nashville Number System ────────────────────
   export function chordToNashville(chord: string, key: string): string;
