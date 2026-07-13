@@ -7,6 +7,9 @@ const mockDb = {
   insert: vi.fn(),
   update: vi.fn(),
   delete: vi.fn(),
+  // Real Drizzle transactions pass a `tx` with the same query-builder surface
+  // as `db`; route through the same mocks so existing insert expectations hold.
+  transaction: vi.fn((callback) => callback(mockDb)),
 };
 
 vi.mock("../../src/db.js", () => ({ db: mockDb, pool: {} }));

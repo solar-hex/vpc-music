@@ -74,6 +74,9 @@ export function SetlistHubPage() {
         category: newCategory.trim() || undefined,
         leader: newLeader.trim() || undefined,
       });
+      if (!res?.setlist?.id) {
+        throw new Error("Server did not return the new setlist");
+      }
       toast.success("Setlist created!");
       navigate(`/setlists/${res.setlist.id}`);
     } catch (err: any) {

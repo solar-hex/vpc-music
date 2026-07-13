@@ -134,28 +134,34 @@ setlistTemplateRoutes.post(
     if (!template) throw createError(404, "Template not found");
 
     const name = String(req.body?.name || "").trim() || template.title;
-
-    const [setlist] = await db
-      .insert(setlists)
-      .values({
-        name,
-        notes: template.description || null,
-        organizationId: req.org.id,
-        createdBy: req.user.id,
-      })
-      .returning();
-
     const slots = Array.isArray(template.structure) ? template.structure : [];
-    if (slots.length > 0) {
-      await db.insert(setlistSongs).values(
-        slots.map((slot, index) => ({
-          setlistId: setlist.id,
-          songId: null,
-          slotLabel: slot.label,
-          position: index + 1,
-        })),
-      );
-    }
+
+    // Both inserts must land together — a partial failure would otherwise
+    // leave an orphaned, slot-less setlist behind.
+    const setlist = await db.transaction(async (tx) => {
+      const [created] = await tx
+        .insert(setlists)
+        .values({
+          name,
+          notes: template.description || null,
+          organizationId: req.org.id,
+          createdBy: req.user.id,
+        })
+        .returning();
+
+      if (slots.length > 0) {
+        await tx.insert(setlistSongs).values(
+          slots.map((slot, index) => ({
+            setlistId: created.id,
+            songId: null,
+            slotLabel: slot.label,
+            position: index + 1,
+          })),
+        );
+      }
+
+      return created;
+    });
 
     await logActivity(req, "setlist.created_from_template", { type: "setlist", id: setlist.id, label: name });
     res.status(201).json({ setlist, slotCount: slots.length });

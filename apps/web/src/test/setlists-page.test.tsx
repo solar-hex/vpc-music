@@ -204,6 +204,23 @@ describe("SetlistHubPage", () => {
         expect(mockNavigate).toHaveBeenCalledWith("/setlists/new-1");
       });
     });
+
+    it("shows an error instead of navigating when the server response is missing the new setlist", async () => {
+      // Regression guard: silently routing to /setlists/undefined would land
+      // on a "Setlist not found" screen instead of surfacing the failure.
+      mockCreate.mockResolvedValue({});
+      renderPage();
+      const user = userEvent.setup();
+      await user.click(screen.getAllByRole("button", { name: /new setlist|create setlist/i })[0]);
+
+      await user.type(screen.getByPlaceholderText(/sunday morning/i), "Easter Service");
+      await user.click(screen.getByRole("button", { name: /^create$/i }));
+
+      await waitFor(() => {
+        expect(mockCreate).toHaveBeenCalled();
+      });
+      expect(mockNavigate).not.toHaveBeenCalled();
+    });
   });
 
   // ===================== NEGATIVE =====================

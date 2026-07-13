@@ -121,6 +121,9 @@ export function TemplatesPage() {
     setApplyingId(template.id);
     try {
       const res = await templatesApi.apply(template.id);
+      if (!res?.setlist?.id) {
+        throw new Error("Server did not return the new setlist");
+      }
       toast.success(`Set list created with ${res.slotCount} slots`);
       navigate(`/setlists/${res.setlist.id}`);
     } catch (err: any) {
