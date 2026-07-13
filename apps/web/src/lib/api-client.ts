@@ -6,7 +6,13 @@ function buildApiUrl(path: string) {
 }
 
 // ── Active Organization ──────────────────────────
-let _activeOrgId: string | null = null;
+// Seeded synchronously from localStorage (same key AuthContext reads) so a
+// request fired from a page's own mount effect already carries the right
+// org header even if it runs before AuthContext's sync effect does — those
+// two effects race on the very first render after login/reload, and losing
+// that race now 400s on org-scoped GETs instead of just fetching cross-org.
+let _activeOrgId: string | null =
+  typeof localStorage !== "undefined" ? localStorage.getItem("vpc-music-active-org-id") : null;
 
 /** Call from AuthContext whenever the active org changes */
 export function setActiveOrganizationId(id: string | null) {

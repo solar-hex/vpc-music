@@ -97,8 +97,12 @@ export function SetlistHubPage() {
         action: {
           label: "Undo",
           onClick: async () => {
-            await setlistsApi.unarchive(setlist.id).catch(() => {});
-            refresh();
+            try {
+              await setlistsApi.unarchive(setlist.id);
+              refresh();
+            } catch (err: any) {
+              toast.error(err.message || "Failed to undo — try unarchiving from the Archived view");
+            }
           },
         },
       });
@@ -115,8 +119,12 @@ export function SetlistHubPage() {
         action: {
           label: "Undo",
           onClick: async () => {
-            await setlistsApi.restore(setlist.id).catch(() => {});
-            refresh();
+            try {
+              await setlistsApi.restore(setlist.id);
+              refresh();
+            } catch (err: any) {
+              toast.error(err.message || "Failed to undo — try restoring from the Trash view");
+            }
           },
         },
       });
