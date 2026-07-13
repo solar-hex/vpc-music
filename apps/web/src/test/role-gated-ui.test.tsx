@@ -83,6 +83,7 @@ vi.mock("@/lib/api-client", () => ({
     log: vi.fn(),
     list: vi.fn().mockResolvedValue({ usages: [] }),
     remove: vi.fn(),
+    mostUsed: vi.fn().mockResolvedValue({ songs: [] }),
   },
   songHistoryApi: {
     list: vi.fn().mockResolvedValue({ history: [] }),

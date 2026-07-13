@@ -167,6 +167,34 @@ describe("DashboardPage", () => {
       });
     });
 
+    it("still shows setlists when only the songs request fails", async () => {
+      // Regression guard: one flaky endpoint (a timeout, a network blip)
+      // must not blank out sections whose own requests actually succeeded.
+      mockSongsList.mockRejectedValue(new Error("Timeout"));
+      mockSetlistsList.mockResolvedValue({
+        setlists: [{ id: "sl-1", name: "Sunday Service", songCount: 5 }],
+      });
+      renderDashboard();
+      await waitFor(() => {
+        expect(screen.getByText("Sunday Service")).toBeInTheDocument();
+      });
+      // The songs section independently falls back to its own empty state
+      expect(screen.getByText(/no songs yet/i)).toBeInTheDocument();
+    });
+
+    it("still shows recent songs when only the setlists request fails", async () => {
+      mockSongsList.mockResolvedValue({
+        songs: [{ id: "1", title: "Amazing Grace", key: "G", tempo: 72, artist: "Newton" }],
+        total: 1,
+      });
+      mockSetlistsList.mockRejectedValue(new Error("Timeout"));
+      renderDashboard();
+      await waitFor(() => {
+        expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
+      });
+      expect(screen.getByText(/no setlists yet/i)).toBeInTheDocument();
+    });
+
     it("shows greeting without name when displayName is empty", () => {
       mockUseAuth.mockReturnValue({ user: { displayName: "", email: "a@b.com" } });
       mockSongsList.mockResolvedValue({ songs: [], total: 0 });

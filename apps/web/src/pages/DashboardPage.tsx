@@ -39,22 +39,29 @@ export function DashboardPage() {
 
   useEffect(() => {
     async function load() {
-      try {
-        const [songRes, setlistRes, eventRes, usageRes] = await Promise.all([
-          songsApi.list({ limit: 6 }),
-          setlistsApi.list(),
-          eventsApi.list({ upcoming: true }),
-          songUsageApi.mostUsed(6).catch(() => ({ songs: [] })),
-        ]);
-        setRecentSongs(songRes.songs);
-        setSetlists(setlistRes.setlists);
-        setUpcomingEvents(eventRes.events);
-        setFrequentSongs(usageRes.songs);
-      } catch {
-        // Silently handle — components show empty state
-      } finally {
-        setLoading(false);
-      }
+      // Each section loads independently — one endpoint failing (a timeout,
+      // a transient network blip, or even a synchronous throw) must not
+      // blank out the whole dashboard. `safe` normalizes both a rejected
+      // promise AND a synchronous throw into something Promise.allSettled
+      // can catch — a bare call in the array only guards against the former.
+      const safe = <T,>(fn: () => Promise<T>): Promise<T> => {
+        try {
+          return fn();
+        } catch (err) {
+          return Promise.reject(err);
+        }
+      };
+      const [songRes, setlistRes, eventRes, usageRes] = await Promise.allSettled([
+        safe(() => songsApi.list({ limit: 6 })),
+        safe(() => setlistsApi.list()),
+        safe(() => eventsApi.list({ upcoming: true })),
+        safe(() => songUsageApi.mostUsed(6)),
+      ]);
+      if (songRes.status === "fulfilled") setRecentSongs(songRes.value.songs);
+      if (setlistRes.status === "fulfilled") setSetlists(setlistRes.value.setlists);
+      if (eventRes.status === "fulfilled") setUpcomingEvents(eventRes.value.events);
+      if (usageRes.status === "fulfilled") setFrequentSongs(usageRes.value.songs);
+      setLoading(false);
     }
     load();
 
