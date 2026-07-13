@@ -61,7 +61,7 @@ describe("TemplatesPage — Apply", () => {
 
     await waitFor(() => {
       expect(mockApply).toHaveBeenCalledWith("t1");
-      expect(mockNavigate).toHaveBeenCalledWith("/setlists/new-1");
+      expect(mockNavigate).toHaveBeenCalledWith("/setlists/new-1", { state: { setlist: { id: "new-1" } } });
     });
   });
 

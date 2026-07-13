@@ -201,7 +201,7 @@ describe("SetlistHubPage", () => {
 
       await waitFor(() => {
         expect(mockCreate).toHaveBeenCalled();
-        expect(mockNavigate).toHaveBeenCalledWith("/setlists/new-1");
+        expect(mockNavigate).toHaveBeenCalledWith("/setlists/new-1", { state: { setlist: { id: "new-1" } } });
       });
     });
 

@@ -125,7 +125,7 @@ export function TemplatesPage() {
         throw new Error("Server did not return the new setlist");
       }
       toast.success(`Set list created with ${res.slotCount} slots`);
-      navigate(`/setlists/${res.setlist.id}`);
+      navigate(`/setlists/${res.setlist.id}`, { state: { setlist: res.setlist } });
     } catch (err: any) {
       toast.error(err.message || "Failed to apply template");
     } finally {

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { toast } from "sonner";
 import { SetlistViewPage } from "@/pages/setlists/SetlistViewPage";
 
 // ---------- Mocks ----------
@@ -93,9 +94,9 @@ vi.mock("@/hooks/useConductor", () => ({
   }),
 }));
 
-function renderPage(id = "sl-1") {
+function renderPage(id = "sl-1", state?: unknown) {
   return render(
-    <MemoryRouter initialEntries={[`/setlists/${id}`]}>
+    <MemoryRouter initialEntries={[{ pathname: `/setlists/${id}`, state }]}>
       <Routes>
         <Route path="/setlists/:id" element={<SetlistViewPage />} />
         <Route path="/setlists" element={<div>Setlists List</div>} />
@@ -270,6 +271,46 @@ describe("SetlistViewPage", () => {
     });
   });
 
+  // Regression coverage: arriving from "New Setlist" / "Use template" passes
+  // the freshly-created setlist via navigation state, so a slow or failed
+  // background refresh can't make a setlist that definitely exists look like
+  // it doesn't (the "created, then immediately not found" bug).
+  describe("seeded from navigation state (just created)", () => {
+    const seed = { id: "sl-new", name: "Brand New Setlist" };
+
+    it("renders immediately from the seed without waiting on the network", async () => {
+      mockGetSetlist.mockReturnValue(new Promise(() => {})); // never resolves
+      renderPage("sl-new", { setlist: seed });
+
+      expect(screen.getByText("Brand New Setlist")).toBeInTheDocument();
+      expect(document.querySelector(".spinner")).not.toBeInTheDocument();
+    });
+
+    it("keeps showing the seeded setlist (not 'not found') when the refresh fails", async () => {
+      mockGetSetlist.mockRejectedValue(Object.assign(new Error("HTTP 500"), { status: 500 }));
+      renderPage("sl-new", { setlist: seed });
+
+      await waitFor(() => {
+        expect(mockGetSetlist).toHaveBeenCalledWith("sl-new");
+      });
+
+      expect(screen.getByText("Brand New Setlist")).toBeInTheDocument();
+      expect(screen.queryByText(/setlist not found/i)).not.toBeInTheDocument();
+      expect(toast.error).toHaveBeenCalledWith(expect.stringMatching(/couldn't refresh/i));
+    });
+
+    it("does not seed when the state's setlist id doesn't match the URL", async () => {
+      mockGetSetlist.mockResolvedValue({ setlist: mockSetlist, songs: [] });
+      renderPage("sl-1", { setlist: seed }); // seed is for a different id
+
+      // Falls back to the normal fetch path — shows a spinner, then the real data
+      expect(document.querySelector(".spinner")).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText("Sunday Service")).toBeInTheDocument();
+      });
+    });
+  });
+
   // ===================== NEGATIVE =====================
 
   describe("negative", () => {
@@ -280,11 +321,24 @@ describe("SetlistViewPage", () => {
     });
 
     it("shows not found when setlist doesn't exist", async () => {
-      mockGetSetlist.mockRejectedValue(new Error("Not found"));
+      mockGetSetlist.mockRejectedValue(Object.assign(new Error("Setlist not found"), { status: 404 }));
       renderPage();
       await waitFor(() => {
         expect(screen.getByText("Setlist not found.")).toBeInTheDocument();
       });
+      expect(toast.error).toHaveBeenCalledWith("Setlist not found");
+    });
+
+    it("shows a generic load error (not 'not found') for a non-404 failure", async () => {
+      // A timeout, 500, or other transient failure is a different problem
+      // than "this setlist doesn't exist" and shouldn't be reported as such.
+      mockGetSetlist.mockRejectedValue(Object.assign(new Error("Server error"), { status: 500 }));
+      renderPage();
+      await waitFor(() => {
+        expect(mockGetSetlist).toHaveBeenCalled();
+      });
+      expect(toast.error).toHaveBeenCalledWith("Server error");
+      expect(toast.error).not.toHaveBeenCalledWith("Setlist not found");
     });
 
     it("has link back from not-found", async () => {

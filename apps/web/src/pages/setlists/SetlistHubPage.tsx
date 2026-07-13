@@ -78,7 +78,7 @@ export function SetlistHubPage() {
         throw new Error("Server did not return the new setlist");
       }
       toast.success("Setlist created!");
-      navigate(`/setlists/${res.setlist.id}`);
+      navigate(`/setlists/${res.setlist.id}`, { state: { setlist: res.setlist } });
     } catch (err: any) {
       toast.error(err.message || "Failed to create");
     } finally {

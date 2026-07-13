@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import {
   setlistsApi,
   songsApi,
@@ -53,12 +53,19 @@ import { getKeyDistance } from "@/utils/key-compat";
 export function SetlistViewPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { user, activeOrg } = useAuth();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
   const isAdmin = user?.role === "owner" || activeOrg?.role === "admin";
-  const [setlist, setSetlist] = useState<Setlist | null>(null);
+  // A setlist just created (or created from a template) arrives with the
+  // fresh row already in hand — seed from it instead of forcing an
+  // immediate re-fetch race right after the write.
+  const seedSetlist = (location.state as { setlist?: Setlist } | null)?.setlist;
+  const isSeeded = Boolean(seedSetlist && seedSetlist.id === id);
+  const [setlist, setSetlist] = useState<Setlist | null>(isSeeded ? seedSetlist! : null);
   const [songs, setSongs] = useState<SetlistSongItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!isSeeded);
+  const seededIdRef = useRef<string | null>(isSeeded ? id ?? null : null);
   const [showAddSong, setShowAddSong] = useState(false);
   const [showExportMenu, setShowExportMenu] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -125,7 +132,11 @@ export function SetlistViewPage() {
   // Load setlist
   useEffect(() => {
     if (!id) return;
-    setLoading(true);
+    // If we arrived here right after creating this exact setlist, we already
+    // have it — skip the spinner and don't let a slow/failed refresh make a
+    // setlist that definitely exists look like it doesn't.
+    const wasSeeded = seededIdRef.current === id;
+    if (!wasSeeded) setLoading(true);
     setlistsApi
       .get(id)
       .then((res) => {
@@ -142,7 +153,19 @@ export function SetlistViewPage() {
           return;
         }
 
-        toast.error("Setlist not found");
+        if (wasSeeded) {
+          toast.error("Couldn't refresh this setlist, but it was saved — showing what you just created.");
+          return;
+        }
+
+        // Only a genuine 404 means "this setlist doesn't exist." Any other
+        // failure (timeout, 500, offline) is a different problem and
+        // shouldn't be reported as if the setlist were missing.
+        if (error?.status === 404) {
+          toast.error("Setlist not found");
+        } else {
+          toast.error(error?.message || "Couldn't load this setlist. Try again.");
+        }
       })
       .finally(() => setLoading(false));
   }, [id]);
