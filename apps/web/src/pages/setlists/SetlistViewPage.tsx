@@ -137,21 +137,41 @@ export function SetlistViewPage() {
     // setlist that definitely exists look like it doesn't.
     const wasSeeded = seededIdRef.current === id;
     if (!wasSeeded) setLoading(true);
+
+    // Guards against React StrictMode's dev-mode double-invoke (mount ->
+    // cleanup -> mount) firing this fetch twice and, if it fails, showing
+    // the same toast twice. Also protects against a stale response landing
+    // after the user has already navigated to a different setlist.
+    let cancelled = false;
+
+    console.log(`[Refresh] Fetch started — GET /api/setlists/${id}`);
     setlistsApi
       .get(id)
       .then((res) => {
+        if (cancelled) return;
+        console.log(`[Refresh] Fetch succeeded — GET /api/setlists/${id}`);
         setSetlist(res.setlist);
         setSongs(res.songs);
         saveCachedSetlist(res);
       })
       .catch((error) => {
+        if (cancelled) return;
+
         const cached = loadCachedSetlist(id);
         if (cached && isOfflineRequestError(error)) {
+          console.warn(`[Refresh] Failed — offline, falling back to cache`, { endpoint: `/api/setlists/${id}` });
           setSetlist(cached.response.setlist);
           setSongs(cached.response.songs);
           toast.info("Showing cached setlist while offline");
           return;
         }
+
+        console.error(`[Refresh] Failed`, {
+          endpoint: `/api/setlists/${id}`,
+          status: error?.status,
+          reason: error?.message,
+          response: error?.body,
+        });
 
         if (wasSeeded) {
           // Surface the real failure (status/message) instead of a generic
@@ -160,7 +180,6 @@ export function SetlistViewPage() {
           // refresh request, not a one-off network blip.
           const detail = error?.status ? `HTTP ${error.status}` : error?.message || "network error";
           toast.error(`Couldn't refresh this setlist (${detail}), but it was saved — showing what you just created.`);
-          console.error("Setlist refresh failed:", error);
           return;
         }
 
@@ -173,7 +192,13 @@ export function SetlistViewPage() {
           toast.error(error?.message || "Couldn't load this setlist. Try again.");
         }
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
 
   // Load song contents when entering performance mode

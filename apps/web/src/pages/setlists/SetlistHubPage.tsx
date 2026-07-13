@@ -68,6 +68,7 @@ export function SetlistHubPage() {
     e.preventDefault();
     if (!newName.trim()) return;
     setCreating(true);
+    console.log("[Create] POST started — POST /api/setlists");
     try {
       const res = await setlistsApi.create({
         name: newName.trim(),
@@ -77,9 +78,11 @@ export function SetlistHubPage() {
       if (!res?.setlist?.id) {
         throw new Error("Server did not return the new setlist");
       }
+      console.log(`[Create] POST succeeded — Returned ID: ${res.setlist.id}`);
       toast.success("Setlist created!");
       navigate(`/setlists/${res.setlist.id}`, { state: { setlist: res.setlist } });
     } catch (err: any) {
+      console.error("[Create] POST failed", { endpoint: "/api/setlists", reason: err?.message, status: err?.status });
       toast.error(err.message || "Failed to create");
     } finally {
       setCreating(false);

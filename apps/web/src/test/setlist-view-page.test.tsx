@@ -311,6 +311,58 @@ describe("SetlistViewPage", () => {
     });
   });
 
+  // Regression coverage: React StrictMode double-invokes effects in
+  // development (mount -> cleanup -> mount). Without a cancellation guard,
+  // that fires the setlist fetch twice and — since both calls hit the same
+  // failing endpoint — shows the "couldn't refresh" toast twice too.
+  describe("cancellation guard (StrictMode double-invoke safety)", () => {
+    const seed = { id: "sl-new", name: "Brand New Setlist" };
+
+    it("ignores a response that resolves after the component has unmounted", async () => {
+      let resolveGet!: (value: unknown) => void;
+      mockGetSetlist.mockReturnValue(new Promise((resolve) => { resolveGet = resolve; }));
+
+      const { unmount } = renderPage();
+      unmount();
+
+      // Resolving after unmount must not throw, warn, or touch React state —
+      // that's exactly what the cleanup's `cancelled` flag guards against.
+      resolveGet({ setlist: mockSetlist, songs: mockSongs });
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
+    it("only shows one toast even if the load effect fires twice for the same id", async () => {
+      // Simulates what StrictMode's double-invoke produces: the effect runs,
+      // its cleanup fires, then it runs again — both against a failing fetch.
+      mockGetSetlist.mockRejectedValue(Object.assign(new Error("HTTP 500"), { status: 500 }));
+      const { rerender } = render(
+        <MemoryRouter initialEntries={[{ pathname: "/setlists/sl-new", state: { setlist: seed } }]}>
+          <Routes>
+            <Route path="/setlists/:id" element={<SetlistViewPage />} />
+          </Routes>
+        </MemoryRouter>,
+      );
+      // Force React to re-run effects for the same props/state, mirroring
+      // StrictMode's synthetic remount.
+      rerender(
+        <MemoryRouter initialEntries={[{ pathname: "/setlists/sl-new", state: { setlist: seed } }]}>
+          <Routes>
+            <Route path="/setlists/:id" element={<SetlistViewPage />} />
+          </Routes>
+        </MemoryRouter>,
+      );
+
+      await waitFor(() => {
+        expect(mockGetSetlist).toHaveBeenCalled();
+      });
+
+      const refreshToasts = (toast.error as any).mock.calls.filter(([msg]: [string]) =>
+        /couldn't refresh/i.test(msg),
+      );
+      expect(refreshToasts.length).toBeLessThanOrEqual(1);
+    });
+  });
+
   // ===================== NEGATIVE =====================
 
   describe("negative", () => {

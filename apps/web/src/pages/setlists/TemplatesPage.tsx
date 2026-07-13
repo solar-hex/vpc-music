@@ -119,14 +119,21 @@ export function TemplatesPage() {
 
   const handleApply = async (template: SetlistTemplate) => {
     setApplyingId(template.id);
+    console.log(`[Create] POST started — POST /api/setlists/templates/${template.id}/apply`);
     try {
       const res = await templatesApi.apply(template.id);
       if (!res?.setlist?.id) {
         throw new Error("Server did not return the new setlist");
       }
+      console.log(`[Create] POST succeeded — Returned ID: ${res.setlist.id}`);
       toast.success(`Set list created with ${res.slotCount} slots`);
       navigate(`/setlists/${res.setlist.id}`, { state: { setlist: res.setlist } });
     } catch (err: any) {
+      console.error("[Create] POST failed", {
+        endpoint: `/api/setlists/templates/${template.id}/apply`,
+        reason: err?.message,
+        status: err?.status,
+      });
       toast.error(err.message || "Failed to apply template");
     } finally {
       setApplyingId(null);
