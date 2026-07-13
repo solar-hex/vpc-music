@@ -60,7 +60,10 @@ roleRoutes.get(
         permissions: orgRoles.permissions,
         createdAt: orgRoles.createdAt,
         updatedAt: orgRoles.updatedAt,
-        memberCount: sql`(SELECT count(*) FROM organization_members WHERE organization_members.custom_role_id = ${orgRoles.id})::int`,
+        // Explicitly qualified — see features/setlists/routes.js for why
+        // ${orgRoles.id} interpolation here would silently zero every count
+        // instead of correlating to the outer row.
+        memberCount: sql`(SELECT count(*) FROM organization_members WHERE organization_members.custom_role_id = "org_roles"."id")::int`,
       })
       .from(orgRoles)
       .where(eq(orgRoles.organizationId, req.org.id))

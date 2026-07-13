@@ -101,10 +101,21 @@ setlistRoutes.get(
         deletedAt: setlists.deletedAt,
         createdAt: setlists.createdAt,
         updatedAt: setlists.updatedAt,
-        songCount: sql`(SELECT count(*) FROM setlist_songs WHERE setlist_songs.setlist_id = ${setlists.id})::int`,
-        totalDuration: sql`(SELECT coalesce(sum(duration), 0) FROM setlist_songs WHERE setlist_songs.setlist_id = ${setlists.id})::int`,
-        averageBpm: sql`(SELECT round(avg(songs.tempo)) FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = ${setlists.id} AND songs.tempo IS NOT NULL)::int`,
-        keys: sql`(SELECT string_agg(DISTINCT coalesce(setlist_songs.key, songs.key), ',') FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = ${setlists.id})`,
+        // Each subquery below correlates back to the outer row via an
+        // explicitly qualified "setlists"."id" — NOT a ${setlists.id}
+        // interpolation. Drizzle renders that interpolation as a bare "id"
+        // here (since the outer query's sole top-level FROM is `setlists`,
+        // so it looks unambiguous from the outer query's own perspective),
+        // but each of these subqueries introduces its own setlist_songs/
+        // songs tables into scope, both of which also have an "id" column.
+        // With a join (averageBpm/keys) that's a real ambiguous-column SQL
+        // error; without a join (songCount/totalDuration) it's worse — no
+        // error, just a silent wrong-column match against the row's own id
+        // instead of the intended correlation, corrupting the aggregate.
+        songCount: sql`(SELECT count(*) FROM setlist_songs WHERE setlist_songs.setlist_id = "setlists"."id")::int`,
+        totalDuration: sql`(SELECT coalesce(sum(duration), 0) FROM setlist_songs WHERE setlist_songs.setlist_id = "setlists"."id")::int`,
+        averageBpm: sql`(SELECT round(avg(songs.tempo)) FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = "setlists"."id" AND songs.tempo IS NOT NULL)::int`,
+        keys: sql`(SELECT string_agg(DISTINCT coalesce(setlist_songs.key, songs.key), ',') FROM setlist_songs JOIN songs ON songs.id = setlist_songs.song_id WHERE setlist_songs.setlist_id = "setlists"."id")`,
       })
       .from(setlists);
 

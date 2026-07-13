@@ -142,7 +142,10 @@ async function executeTool(name, input, ctx) {
           name: setlists.name,
           category: setlists.category,
           status: setlists.status,
-          songCount: sql`(SELECT count(*) FROM setlist_songs WHERE setlist_songs.setlist_id = ${setlists.id})::int`,
+          // Explicitly qualified — see features/setlists/routes.js for why
+          // ${setlists.id} interpolation here would silently zero every
+          // count instead of correlating to the outer row.
+          songCount: sql`(SELECT count(*) FROM setlist_songs WHERE setlist_songs.setlist_id = "setlists"."id")::int`,
         })
         .from(setlists)
         .where(and(eq(setlists.organizationId, ctx.orgId), eq(setlists.isArchived, false), sql`${setlists.deletedAt} IS NULL`))

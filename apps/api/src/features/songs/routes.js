@@ -549,7 +549,10 @@ songRoutes.get(
         isArchived: songs.isArchived,
         durationSeconds: songs.durationSeconds,
         genre: songs.genre,
-        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = ${songs.id})`,
+        // Explicitly qualified — see features/setlists/routes.js for why
+        // ${songs.id} interpolation here would silently return null instead
+        // of correlating to the outer row.
+        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = "songs"."id")`,
         createdAt: songs.createdAt,
         updatedAt: songs.updatedAt,
         ...(normalizedScope === "shared"
@@ -713,7 +716,10 @@ songRoutes.get(
         name: songGroups.name,
         createdAt: songGroups.createdAt,
         updatedAt: songGroups.updatedAt,
-        songCount: sql`(SELECT count(*) FROM song_group_songs WHERE song_group_songs.group_id = ${songGroups.id})::int`,
+        // Explicitly qualified — see features/setlists/routes.js for why
+        // ${songGroups.id} interpolation here would silently zero every
+        // count instead of correlating to the outer row.
+        songCount: sql`(SELECT count(*) FROM song_group_songs WHERE song_group_songs.group_id = "song_groups"."id")::int`,
       })
       .from(songGroups)
       .where(eq(songGroups.organizationId, req.org.id))
@@ -1056,8 +1062,11 @@ songRoutes.get(
         artist: songs.artist,
         key: songs.key,
         tempo: songs.tempo,
-        playCount: sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = ${songs.id})::int`,
-        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = ${songs.id})`,
+        // Explicitly qualified — see features/setlists/routes.js for why
+        // ${songs.id} interpolation here would silently zero/null these
+        // instead of correlating to the outer row.
+        playCount: sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = "songs"."id")::int`,
+        lastPlayed: sql`(SELECT max(used_at) FROM song_usages WHERE song_usages.song_id = "songs"."id")`,
         setlistNames: sql`(
           SELECT string_agg(DISTINCT setlists.name, ', ')
           FROM setlist_songs

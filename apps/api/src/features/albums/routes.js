@@ -20,7 +20,14 @@ export const albumRoutes = Router();
 
 albumRoutes.use(auth, orgContext, requireOrg);
 
-const trackCountExpr = sql`(SELECT count(*) FROM songs WHERE songs.album_id = ${albums.id})::int`;
+// Must reference the outer table via an explicitly qualified "albums"."id" —
+// interpolating ${albums.id} here renders as a bare "id", which the
+// subquery's own `songs` table (which also has its own id column) resolves
+// locally instead of correlating to the outer row. That's not an error (a
+// single-table subquery has no ambiguity to complain about) — it silently
+// filters `songs.album_id = songs.id`, which is essentially always false,
+// so every album's track count would read 0.
+const trackCountExpr = sql`(SELECT count(*) FROM songs WHERE songs.album_id = "albums"."id")::int`;
 
 async function loadAlbumInOrg(id, orgId) {
   const [album] = await db

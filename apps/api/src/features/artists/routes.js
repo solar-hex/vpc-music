@@ -18,7 +18,9 @@ import { orgContext, requireOrg, requirePermission } from "../../middlewares/org
 
 export const artistRoutes = Router();
 
-const songCountExpr = sql`(SELECT count(*) FROM songs WHERE songs.artist_id = ${artists.id})::int`;
+// Explicitly qualified — see the comment on albums/routes.js's trackCountExpr
+// for why ${artists.id} interpolation here would silently zero every count.
+const songCountExpr = sql`(SELECT count(*) FROM songs WHERE songs.artist_id = "artists"."id")::int`;
 
 async function loadArtistInOrg(id, orgId) {
   const [artist] = await db
@@ -97,11 +99,11 @@ artistRoutes.get(
         title: songs.title,
         key: songs.key,
         tempo: songs.tempo,
-        useCount: sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = ${songs.id})::int`,
+        useCount: sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = "songs"."id")::int`,
       })
       .from(songs)
       .where(eq(songs.artistId, artist.id))
-      .orderBy(desc(sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = ${songs.id})`), songs.title);
+      .orderBy(desc(sql`(SELECT count(*) FROM song_usages WHERE song_usages.song_id = "songs"."id")`), songs.title);
 
     res.json({ artist, songs: linkedSongs });
   }),
