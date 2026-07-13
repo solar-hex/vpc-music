@@ -154,7 +154,13 @@ export function SetlistViewPage() {
         }
 
         if (wasSeeded) {
-          toast.error("Couldn't refresh this setlist, but it was saved — showing what you just created.");
+          // Surface the real failure (status/message) instead of a generic
+          // line — this is diagnostic: a failure here every time (not just
+          // occasionally) means something is actually wrong with the
+          // refresh request, not a one-off network blip.
+          const detail = error?.status ? `HTTP ${error.status}` : error?.message || "network error";
+          toast.error(`Couldn't refresh this setlist (${detail}), but it was saved — showing what you just created.`);
+          console.error("Setlist refresh failed:", error);
           return;
         }
 
