@@ -7,6 +7,9 @@ const mockDb = {
   insert: vi.fn(),
   update: vi.fn(),
   delete: vi.fn(),
+  // Real Drizzle transactions pass a `tx` with the same query-builder surface
+  // as `db`; route through the same mocks so existing expectations hold.
+  transaction: vi.fn((callback) => callback(mockDb)),
 };
 
 vi.mock("../../src/db.js", () => ({ db: mockDb, pool: {} }));
@@ -189,7 +192,9 @@ describe("Setlists — archive / trash lifecycle", () => {
   it("updates per-item performance metadata (capo, arrangement, cues)", async () => {
     const itemUpdateChain = createUpdateChain([{ id: "item-1", capo: 2, arrangement: "ACOUSTIC" }]);
     const setlistTouchChain = createUpdateChain([]);
-    mockDb.select.mockImplementationOnce(() => membership("musician"));
+    mockDb.select
+      .mockImplementationOnce(() => membership("musician"))
+      .mockImplementationOnce(() => createQueryChain([{ id: "s1", organizationId: "org-1" }]));
     mockDb.update
       .mockImplementationOnce(() => itemUpdateChain)
       .mockImplementationOnce(() => setlistTouchChain);
@@ -220,14 +225,18 @@ describe("Setlists — archive / trash lifecycle", () => {
   });
 
   it("rejects invalid arrangement and capo values", async () => {
-    mockDb.select.mockImplementationOnce(() => membership("admin"));
+    mockDb.select
+      .mockImplementationOnce(() => membership("admin"))
+      .mockImplementationOnce(() => createQueryChain([{ id: "s1", organizationId: "org-1" }]));
     const badArrangement = await request(app)
       .patch("/api/setlists/s1/songs/item-1")
       .set("Cookie", `token=${tokenFor()}`)
       .send({ arrangement: "JAZZ_ODYSSEY" });
     expect(badArrangement.status).toBe(400);
 
-    mockDb.select.mockImplementationOnce(() => membership("admin"));
+    mockDb.select
+      .mockImplementationOnce(() => membership("admin"))
+      .mockImplementationOnce(() => createQueryChain([{ id: "s1", organizationId: "org-1" }]));
     const badCapo = await request(app)
       .patch("/api/setlists/s1/songs/item-1")
       .set("Cookie", `token=${tokenFor()}`)

@@ -54,6 +54,18 @@ function sanitizeFilename(value) {
   return value.replace(/[^a-zA-Z0-9._ -]/g, "").trim() || "untitled";
 }
 
+/** Load a setlist by id, scoped to the caller's org — the only safe way to
+ * resolve a :id param, since it never trusts the URL alone to prove
+ * ownership. */
+async function loadSetlistInOrg(id, orgId) {
+  const [setlist] = await db
+    .select()
+    .from(setlists)
+    .where(and(eq(setlists.id, id), eq(setlists.organizationId, orgId)))
+    .limit(1);
+  return setlist ?? null;
+}
+
 function convertExportContent(target, format) {
   if (format === "onsong") {
     return {
@@ -144,12 +156,10 @@ setlistRoutes.get(
 setlistRoutes.get(
   "/:id",
   auth,
+  orgContext,
+  requireOrg,
   asyncHandler(async (req, res) => {
-    const [setlist] = await db
-      .select()
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const setlist = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!setlist) throw createError(404, "Setlist not found");
 
@@ -191,21 +201,15 @@ setlistRoutes.get(
 setlistRoutes.get(
   "/:id/export/zip",
   auth,
+  orgContext,
+  requireOrg,
   asyncHandler(async (req, res) => {
     const format = String(req.query.format || "chordpro").toLowerCase();
     if (!["chordpro", "onsong", "text"].includes(format)) {
       throw createError(400, "format must be chordpro, onsong, or text");
     }
 
-    const [setlist] = await db
-      .select({
-        id: setlists.id,
-        name: setlists.name,
-        notes: setlists.notes,
-      })
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const setlist = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!setlist) throw createError(404, "Setlist not found");
 
@@ -317,11 +321,7 @@ setlistRoutes.put(
   requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
     const { name, category, notes, status, leader, tags } = req.body;
 
-    const [existing] = await db
-      .select({ id: setlists.id })
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const existing = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Setlist not found");
 
@@ -341,7 +341,7 @@ setlistRoutes.put(
         ...(tags !== undefined && { tags }),
         updatedAt: new Date(),
       })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     res.json({ setlist });
@@ -359,7 +359,7 @@ setlistRoutes.post(
     const [setlist] = await db
       .update(setlists)
       .set({ status: "approved", updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     if (!setlist) throw createError(404, "Setlist not found");
@@ -391,7 +391,7 @@ setlistRoutes.post(
     const [setlist] = await db
       .update(setlists)
       .set({ isArchived: true, archivedAt: new Date(), updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     if (!setlist) throw createError(404, "Setlist not found");
@@ -411,7 +411,7 @@ setlistRoutes.post(
     const [setlist] = await db
       .update(setlists)
       .set({ isArchived: false, archivedAt: null, updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     if (!setlist) throw createError(404, "Setlist not found");
@@ -426,18 +426,14 @@ setlistRoutes.delete(
   auth,  orgContext,
   requireOrg,
   requirePermission("setlists:edit"),  asyncHandler(async (req, res) => {
-    const [existing] = await db
-      .select({ id: setlists.id })
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const existing = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Setlist not found");
 
     await db
       .update(setlists)
       .set({ deletedAt: new Date(), updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id));
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)));
 
     res.json({ message: "Setlist moved to trash" });
   })
@@ -454,7 +450,7 @@ setlistRoutes.post(
     const [setlist] = await db
       .update(setlists)
       .set({ deletedAt: null, updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     if (!setlist) throw createError(404, "Setlist not found");
@@ -471,18 +467,19 @@ setlistRoutes.delete(
   requireOrg,
   requirePermission("setlists:delete_permanent"),
   asyncHandler(async (req, res) => {
-    const [existing] = await db
-      .select({ id: setlists.id })
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const existing = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Setlist not found");
 
-    // Unlink events referencing this setlist before deleting (FK)
-    await db.update(events).set({ setlistId: null }).where(eq(events.setlistId, req.params.id));
-    await db.delete(setlistSongs).where(eq(setlistSongs.setlistId, req.params.id));
-    await db.delete(setlists).where(eq(setlists.id, req.params.id));
+    // All three statements must land together — a failure partway through
+    // would otherwise leave events unlinked and/or songs deleted while the
+    // setlist row itself survives.
+    await db.transaction(async (tx) => {
+      // Unlink events referencing this setlist before deleting (FK)
+      await tx.update(events).set({ setlistId: null }).where(eq(events.setlistId, req.params.id));
+      await tx.delete(setlistSongs).where(eq(setlistSongs.setlistId, req.params.id));
+      await tx.delete(setlists).where(eq(setlists.id, req.params.id));
+    });
 
     res.json({ message: "Setlist permanently deleted" });
   })
@@ -499,6 +496,16 @@ setlistRoutes.post(
     const { songId, variationId, key, notes } = req.body;
 
     if (!songId) throw createError(400, "songId is required");
+
+    const targetSetlist = await loadSetlistInOrg(req.params.id, req.org.id);
+    if (!targetSetlist) throw createError(404, "Setlist not found");
+
+    const [targetSong] = await db
+      .select({ id: songs.id })
+      .from(songs)
+      .where(and(eq(songs.id, songId), eq(songs.organizationId, req.org.id)))
+      .limit(1);
+    if (!targetSong) throw createError(400, "Song not found in this organization");
 
     let selectedVariation = null;
     if (variationId) {
@@ -524,7 +531,7 @@ setlistRoutes.post(
       .from(setlistSongs)
       .where(eq(setlistSongs.setlistId, req.params.id));
 
-    const [item] = await db
+    const [inserted] = await db
       .insert(setlistSongs)
       .values({
         setlistId: req.params.id,
@@ -535,6 +542,37 @@ setlistRoutes.post(
         notes: notes || (selectedVariation ? `Variation: ${selectedVariation.name}` : null),
       })
       .returning();
+
+    // Return the same joined shape GET /:id uses, so the caller can render
+    // the new row directly instead of needing an immediate refetch.
+    const [item] = await db
+      .select({
+        id: setlistSongs.id,
+        songId: setlistSongs.songId,
+        slotLabel: setlistSongs.slotLabel,
+        variationId: setlistSongs.variationId,
+        variationName: songVariations.name,
+        position: setlistSongs.position,
+        key: setlistSongs.key,
+        notes: setlistSongs.notes,
+        duration: setlistSongs.duration,
+        capo: setlistSongs.capo,
+        arrangement: setlistSongs.arrangement,
+        transitionCues: setlistSongs.transitionCues,
+        talkSeconds: setlistSongs.talkSeconds,
+        songTitle: songs.title,
+        songKey: songs.key,
+        songArtist: songs.artist,
+        songTempo: songs.tempo,
+        songDurationSeconds: songs.durationSeconds,
+        songEnergy: songs.energy,
+        songStatus: songs.status,
+      })
+      .from(setlistSongs)
+      .leftJoin(songs, eq(setlistSongs.songId, songs.id))
+      .leftJoin(songVariations, eq(setlistSongs.variationId, songVariations.id))
+      .where(eq(setlistSongs.id, inserted.id))
+      .limit(1);
 
     res.status(201).json({ item });
   })
@@ -552,11 +590,17 @@ setlistRoutes.put(
       throw createError(400, "order must be an array of { id, position }");
     }
 
+    const targetSetlist = await loadSetlistInOrg(req.params.id, req.org.id);
+    if (!targetSetlist) throw createError(404, "Setlist not found");
+
     for (const { id, position } of order) {
+      // Scoped to this setlist — without it, a caller could reposition any
+      // setlist_songs row by id, including ones belonging to other setlists
+      // (or other orgs).
       await db
         .update(setlistSongs)
         .set({ position })
-        .where(eq(setlistSongs.id, id));
+        .where(and(eq(setlistSongs.id, id), eq(setlistSongs.setlistId, req.params.id)));
     }
 
     await db
@@ -596,6 +640,9 @@ setlistRoutes.patch(
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
     const { key, notes, duration, capo, arrangement, transitionCues, songId, talkSeconds } = req.body;
+
+    const targetSetlist = await loadSetlistInOrg(req.params.id, req.org.id);
+    if (!targetSetlist) throw createError(404, "Setlist not found");
 
     if (arrangement !== undefined && arrangement !== null && !ARRANGEMENTS.includes(arrangement)) {
       throw createError(400, `arrangement must be one of: ${ARRANGEMENTS.join(", ")}`);
@@ -642,9 +689,12 @@ setlistRoutes.delete(
   requireOrg,
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
+    const targetSetlist = await loadSetlistInOrg(req.params.id, req.org.id);
+    if (!targetSetlist) throw createError(404, "Setlist not found");
+
     await db
       .delete(setlistSongs)
-      .where(eq(setlistSongs.id, req.params.songItemId));
+      .where(and(eq(setlistSongs.id, req.params.songItemId), eq(setlistSongs.setlistId, req.params.id)));
 
     res.json({ message: "Song removed from setlist" });
   })
@@ -661,38 +711,41 @@ setlistRoutes.post(
     const { usedAt } = req.body; // optional date string (defaults to today)
     const usedDate = usedAt || new Date().toISOString().split("T")[0];
 
-    const [existing] = await db
-      .select()
-      .from(setlists)
-      .where(eq(setlists.id, req.params.id))
-      .limit(1);
+    const existing = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Setlist not found");
 
-    // Mark setlist as complete
-    const [setlist] = await db
-      .update(setlists)
-      .set({ status: "complete", updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
-      .returning();
+    // Status flip and usage logging must land together — a failure partway
+    // through would otherwise leave the setlist marked complete with no (or
+    // partial) usage history.
+    const { setlist, usagesLogged } = await db.transaction(async (tx) => {
+      const [updated] = await tx
+        .update(setlists)
+        .set({ status: "complete", updatedAt: new Date() })
+        .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
+        .returning();
 
-    // Log usage for every song in the setlist
-    const setlistItems = await db
-      .select({ songId: setlistSongs.songId })
-      .from(setlistSongs)
-      .where(eq(setlistSongs.setlistId, req.params.id));
+      // Log usage for every FILLED song slot — template slots left empty
+      // have a null songId, which songUsages.songId (NOT NULL) rejects.
+      const setlistItems = await tx
+        .select({ songId: setlistSongs.songId })
+        .from(setlistSongs)
+        .where(and(eq(setlistSongs.setlistId, req.params.id), isNotNull(setlistSongs.songId)));
 
-    if (setlistItems.length > 0) {
-      await db.insert(songUsages).values(
-        setlistItems.map((item) => ({
-          songId: item.songId,
-          usedAt: usedDate,
-          notes: `Setlist: ${existing.name}`,
-          organizationId: req.org?.id || existing.organizationId,
-          recordedBy: req.user.id,
-        }))
-      );
-    }
+      if (setlistItems.length > 0) {
+        await tx.insert(songUsages).values(
+          setlistItems.map((item) => ({
+            songId: item.songId,
+            usedAt: usedDate,
+            notes: `Setlist: ${existing.name}`,
+            organizationId: req.org.id,
+            recordedBy: req.user.id,
+          }))
+        );
+      }
+
+      return { setlist: updated, usagesLogged: setlistItems.length };
+    });
 
     await notifyOrgMembers(
       req.org.id,
@@ -705,7 +758,7 @@ setlistRoutes.post(
       { excludeUserId: req.user.id },
     );
 
-    res.json({ setlist, usagesLogged: setlistItems.length });
+    res.json({ setlist, usagesLogged });
   })
 );
 
@@ -720,7 +773,7 @@ setlistRoutes.post(
     const [setlist] = await db
       .update(setlists)
       .set({ status: "draft", updatedAt: new Date() })
-      .where(eq(setlists.id, req.params.id))
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
       .returning();
 
     if (!setlist) throw createError(404, "Setlist not found");
