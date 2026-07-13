@@ -36,7 +36,10 @@ const FEATURES_DIR = join(__dirname, "..", "features");
 
 // A `sql`(SELECT ...)` subquery, single-line by convention in this codebase,
 // that also contains a `${...}` interpolation before its closing backtick.
-const DANGEROUS_PATTERN = /sql`\(SELECT[^`]*\$\{[^}]+\}[^`]*`/g;
+// Case-insensitive: a lowercase `sql`(select ...)` with the same
+// interpolation is just as dangerous (see features/events/routes.js's
+// songCount, found this way — the original case-sensitive pattern missed it).
+const DANGEROUS_PATTERN = /sql`\(select[^`]*\$\{[^}]+\}[^`]*`/gi;
 
 function findJsFiles(dir) {
   // Node's fs.globSync is available in the Node version this project targets

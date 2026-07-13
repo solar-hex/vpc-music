@@ -23,6 +23,17 @@ function sanitizeTeam(team) {
     }));
 }
 
+/** Load an event by id, scoped to the caller's org — see the identical
+ * helper in features/setlists/routes.js for why this matters. */
+async function loadEventInOrg(id, orgId) {
+  const [event] = await db
+    .select()
+    .from(events)
+    .where(and(eq(events.id, id), eq(events.organizationId, orgId)))
+    .limit(1);
+  return event ?? null;
+}
+
 // ── GET /api/events — list events ────────────────────────────
 // ?upcoming=true  → only future events (default)
 // ?upcoming=false → all events
@@ -31,6 +42,7 @@ eventRoutes.get(
   "/",
   auth,
   orgContext,
+  requireOrg,
   asyncHandler(async (req, res) => {
     const upcoming = req.query.upcoming !== "false";
     const statusFilter = ["scheduled", "completed", "cancelled"].includes(String(req.query.status))
@@ -56,17 +68,24 @@ eventRoutes.get(
         setlistId: events.setlistId,
         setlistName: setlists.name,
         setlistStatus: setlists.status,
-        songCount: sql`(select count(*)::int from ${setlistSongs} where ${setlistSongs.setlistId} = ${events.setlistId})`,
+        // Explicitly qualified — an interpolated ${events.setlistId} here
+        // renders as a bare "setlist_id", which resolves against this
+        // subquery's own setlist_songs.setlist_id instead of the outer
+        // events row: a tautological self-comparison ("setlist_id" =
+        // "setlist_id") that silently counted every setlist_songs row in
+        // the entire database for every event, regardless of org or
+        // setlist. See features/setlists/routes.js for the same bug class.
+        songCount: sql`(select count(*)::int from setlist_songs where setlist_songs.setlist_id = "events"."setlist_id")`,
         createdAt: events.createdAt,
       })
       .from(events)
       .leftJoin(setlists, eq(events.setlistId, setlists.id))
       .leftJoin(users, eq(events.preparedBy, users.id));
 
-    const conditions = [];
-    if (req.org) {
-      conditions.push(eq(events.organizationId, req.org.id));
-    }
+    // Unconditional — requireOrg below guarantees req.org exists, and a
+    // conditional filter here would otherwise leak every organization's
+    // events on any request where req.org somehow came back unset.
+    const conditions = [eq(events.organizationId, req.org.id)];
     if (upcoming) {
       conditions.push(gte(events.date, now));
     }
@@ -87,6 +106,8 @@ eventRoutes.get(
 eventRoutes.get(
   "/:id",
   auth,
+  orgContext,
+  requireOrg,
   asyncHandler(async (req, res) => {
     const [event] = await db
       .select({
@@ -106,7 +127,7 @@ eventRoutes.get(
         setlistId: events.setlistId,
         setlistName: setlists.name,
         setlistStatus: setlists.status,
-        songCount: sql`(select count(*)::int from ${setlistSongs} where ${setlistSongs.setlistId} = ${events.setlistId})`,
+        songCount: sql`(select count(*)::int from setlist_songs where setlist_songs.setlist_id = "events"."setlist_id")`,
         createdBy: events.createdBy,
         createdAt: events.createdAt,
         updatedAt: events.updatedAt,
@@ -114,7 +135,7 @@ eventRoutes.get(
       .from(events)
       .leftJoin(setlists, eq(events.setlistId, setlists.id))
       .leftJoin(users, eq(events.preparedBy, users.id))
-      .where(eq(events.id, req.params.id))
+      .where(and(eq(events.id, req.params.id), eq(events.organizationId, req.org.id)))
       .limit(1);
 
     if (!event) throw createError(404, "Event not found");
@@ -178,11 +199,7 @@ eventRoutes.put(
   requirePermission("events:edit"),  asyncHandler(async (req, res) => {
     const { title, date, location, notes, theme, eventType, preparedBy, team, setlistId, targetSeconds } = req.body;
 
-    const [existing] = await db
-      .select({ id: events.id })
-      .from(events)
-      .where(eq(events.id, req.params.id))
-      .limit(1);
+    const existing = await loadEventInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Event not found");
 
@@ -204,7 +221,7 @@ eventRoutes.put(
         ...(setlistId !== undefined && { setlistId: setlistId || null }),
         updatedAt: new Date(),
       })
-      .where(eq(events.id, req.params.id))
+      .where(and(eq(events.id, req.params.id), eq(events.organizationId, req.org.id)))
       .returning();
 
     res.json({ event });
@@ -217,11 +234,7 @@ eventRoutes.delete(
   auth,  orgContext,
   requireOrg,
   requirePermission("events:edit"),  asyncHandler(async (req, res) => {
-    const [existing] = await db
-      .select({ id: events.id })
-      .from(events)
-      .where(eq(events.id, req.params.id))
-      .limit(1);
+    const existing = await loadEventInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Event not found");
 
@@ -241,51 +254,54 @@ eventRoutes.post(
   requireOrg,
   requirePermission("events:edit"),
   asyncHandler(async (req, res) => {
-    const [existing] = await db
-      .select()
-      .from(events)
-      .where(eq(events.id, req.params.id))
-      .limit(1);
+    const existing = await loadEventInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Event not found");
     if (existing.status === "completed") {
       throw createError(400, "Event is already completed");
     }
 
-    const [event] = await db
-      .update(events)
-      .set({ status: "completed", completedAt: new Date(), updatedAt: new Date() })
-      .where(eq(events.id, req.params.id))
-      .returning();
+    // Status flip, usage logging, and the linked setlist's status update
+    // must land together — a failure partway through would otherwise leave
+    // the event marked complete with missing or partial usage history.
+    const { event, playsLogged } = await db.transaction(async (tx) => {
+      const [updated] = await tx
+        .update(events)
+        .set({ status: "completed", completedAt: new Date(), updatedAt: new Date() })
+        .where(and(eq(events.id, req.params.id), eq(events.organizationId, req.org.id)))
+        .returning();
 
-    let playsLogged = 0;
-    if (existing.setlistId) {
-      const items = await db
-        .select({ songId: setlistSongs.songId })
-        .from(setlistSongs)
-        .where(eq(setlistSongs.setlistId, existing.setlistId));
+      let logged = 0;
+      if (existing.setlistId) {
+        const items = await tx
+          .select({ songId: setlistSongs.songId })
+          .from(setlistSongs)
+          .where(eq(setlistSongs.setlistId, existing.setlistId));
 
-      const playedSongIds = items.map((item) => item.songId).filter(Boolean);
-      if (playedSongIds.length > 0) {
-        const usedDate = new Date(existing.date).toISOString().split("T")[0];
-        await db.insert(songUsages).values(
-          playedSongIds.map((songId) => ({
-            songId,
-            usedAt: usedDate,
-            eventId: existing.id,
-            notes: `Event: ${existing.title}`,
-            organizationId: req.org.id,
-            recordedBy: req.user.id,
-          })),
-        );
-        playsLogged = playedSongIds.length;
+        const playedSongIds = items.map((item) => item.songId).filter(Boolean);
+        if (playedSongIds.length > 0) {
+          const usedDate = new Date(existing.date).toISOString().split("T")[0];
+          await tx.insert(songUsages).values(
+            playedSongIds.map((songId) => ({
+              songId,
+              usedAt: usedDate,
+              eventId: existing.id,
+              notes: `Event: ${existing.title}`,
+              organizationId: req.org.id,
+              recordedBy: req.user.id,
+            })),
+          );
+          logged = playedSongIds.length;
+        }
+
+        await tx
+          .update(setlists)
+          .set({ status: "complete", updatedAt: new Date() })
+          .where(eq(setlists.id, existing.setlistId));
       }
 
-      await db
-        .update(setlists)
-        .set({ status: "complete", updatedAt: new Date() })
-        .where(eq(setlists.id, existing.setlistId));
-    }
+      return { event: updated, playsLogged: logged };
+    });
 
     await logActivity(req, "event.completed", { type: "event", id: event.id, label: existing.title });
     res.json({ event, playsLogged });
@@ -308,7 +324,7 @@ eventRoutes.patch(
     const [event] = await db
       .update(events)
       .set({ status, updatedAt: new Date() })
-      .where(eq(events.id, req.params.id))
+      .where(and(eq(events.id, req.params.id), eq(events.organizationId, req.org.id)))
       .returning();
 
     if (!event) throw createError(404, "Event not found");

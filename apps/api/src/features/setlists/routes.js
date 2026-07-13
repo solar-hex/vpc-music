@@ -93,6 +93,7 @@ setlistRoutes.get(
   "/",
   auth,
   orgContext,
+  requireOrg,
   asyncHandler(async (req, res) => {
     const view = String(req.query.view || "active");
     if (!["active", "archived", "trash", "all"].includes(view)) {
@@ -131,10 +132,10 @@ setlistRoutes.get(
       })
       .from(setlists);
 
-    const conditions = [];
-    if (req.org) {
-      conditions.push(eq(setlists.organizationId, req.org.id));
-    }
+    // Unconditional — requireOrg above guarantees req.org exists, and a
+    // conditional filter here would otherwise leak every organization's
+    // setlists on any request where req.org somehow came back unset.
+    const conditions = [eq(setlists.organizationId, req.org.id)];
     if (view === "active") {
       conditions.push(eq(setlists.isArchived, false), isNull(setlists.deletedAt));
     } else if (view === "archived") {
