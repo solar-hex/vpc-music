@@ -6,6 +6,46 @@ This project follows a simple Keep a Changelog-style format.
 
 ## [Unreleased]
 
+<!-- changelog-cursor: f13d628 — last commit recorded below. Log new commits in the range f13d628..HEAD, then advance this marker to the newest hash. -->
+
+### Fixed — cross-org security & data-integrity hardening (July 2026)
+
+- Closed a cross-org IDOR across every setlist route (`GET /:id`, export, `PUT`, approve/archive/unarchive/restore/complete/reopen, delete, permanent-delete, and all `/:id/songs` mutations): lookups resolved rows by id alone, letting any authenticated member of any org view, edit, reorder, or delete another org's setlist. Every lookup/update/delete is now scoped to the caller's `organizationId` via a `loadSetlistInOrg()` helper
+- Closed the same cross-org IDOR on events routes (`GET/PUT/DELETE /:id`, `/complete`, `PATCH /:id/status`) — `GET /:id` was also missing org middleware entirely — via a matching `loadEventInOrg()` helper
+- Fixed a correlated-subquery bug corrupting counts/aggregates at 13 sites across albums, artists, assistant, roles, setlists, and songs: `${table.id}` interpolated inside a `sql` subquery rendered as a bare, unqualified `id` that silently resolved to the subquery's own row — album track counts, artist song counts, song play counts/last-played, group counts, and role member counts all read as 0/null, and the setlists list's `averageBpm`/`keys` columns 500'd with "ambiguous column" (the real root cause behind "dashboard shows nothing after creating a setlist"). Fixed with explicit literal identifiers (`"setlists"."id"`)
+- Fixed a tautological variant on events' `songCount` subquery, where both interpolations collapsed to the same bare `setlist_id` (`"setlist_id" = "setlist_id"`, always true) so every event counted every `setlist_songs` row in the whole database across all orgs
+- Hardened `GET /` on both setlists and events so a request that resolves no org context returns an empty list instead of every org's rows
+- Seed `api-client`'s active org synchronously from `localStorage` so a page's data-fetch effect can't race ahead of `AuthContext`'s org-sync effect and fire without an `X-Organization-Id` header on first load; surfaced previously-swallowed archive/trash "Undo" failures as a toast
+- Added a pg-mem-backed e2e test harness (real Express routes + real Drizzle queries, no external Postgres), two-org IDOR regression tests, and a case-insensitive static guard against the dangerous `${table.column}`-in-subquery pattern
+
+### Fixed — setlist/dashboard load reliability (July 2026)
+
+- One failing dashboard request no longer blanks the whole page: `Promise.all` rejected as a unit and the outer catch swallowed it, hiding sections whose own requests had succeeded. Switched to `Promise.allSettled` with a per-call `safe()` wrapper so each section fails independently
+- Seed `SetlistViewPage` from router navigation state on create/use-template so it renders immediately instead of racing an immediate re-fetch of a just-committed row (which surfaced as a false "Setlist not found"); a failed background refresh no longer clobbers seeded data, and load errors now distinguish a genuine 404 from other failures
+- Eliminated a duplicate setlist-refresh (and its double error toast) caused by React StrictMode double-invoking the load effect, via a `cancelled` cleanup flag; added stage-by-stage `[Create]`/`[Refresh]` logging to surface the real cause of background-GET failures
+- Setlist creation now runs in a transaction with error handling for a missing setlist in the response
+
+### Fixed — music-engine correctness (July 2026)
+
+- Resolve unusual enharmonic roots (`Cb`, `Fb`, `E#`, `B#`) in the transpose engine: `noteIndex()` checked only the standard 12-name tables, so chords/keys spelled this way silently failed to transpose (e.g. `transposeChord("Cbm7", 2)` returned unchanged). Now falls back to the enharmonic-alias map, fixing everything built on `interval`/`transposeChord`/`transposeKeyName`
+- FlowStrip's key-transition ribbon called the raw circle-of-fifths grader instead of the `flow.keyTransition()` facade, so a smooth `C → Cm` move rendered as an amber "notable" connector instead of green "smooth"; wired it to the corrected grader and added first-time coverage
+- Retired the stale, now-diverged `transitionQuality()` grader and the dead `.quality` field, unifying on the single correct key-transition path
+- Fixed a latent gap in `flow.js`'s note table (`B#` was missing, so `circleDistance("B#", "D")` returned null) by delegating to the one canonical `noteIndex()`
+
+### Changed — shared-module consolidation & de-duplication (July 2026)
+
+- Consolidated the chords API into `shared/utils/chords.js` as an ESM facade (namespaced `chords`) over the existing `transpose.js` + `chart.js` primitives — a single source of truth for `parseChord`/`transposeChord`/`interval`/`preferFlats`/`parseChart`/`transposeChart`/`toText`, with `transposeChart` rewriting the `{key: ...}` directive so a rendered chart's key label tracks its chords
+- Consolidated set-flow analysis into `shared/utils/setflow.js` (namespaced `flow`) as a thin facade over `flow.js`, exposing `analyze`/`keyTransition`/`fmt` with parallel/relative major-minor treated as smooth modulations
+- Centralized composition helpers in `transpose.js`: `spellForTarget` (target-key enharmonic spelling) and `composeTranspose` (stored key + set-list override + live nudge → normalized shift), wiring `ChordProRenderer`, `PerformanceMode`, and `SongViewPage` off their hand-rolled copies
+- Centralized time/date formatters in `lib/format.ts` (`formatDuration`, `formatSetlistDuration`, `timeAgo`, `toDateKey`, `toLocalInputValue`, `formatEventDateTime`, `formatShortDate`), collapsing several byte-identical copies
+- Deduplicated residual key math: a shared `normalizeEnharmonicKey` and `parseKeyRoot` replace three copies of the sharp↔flat alias table; `capo.ts` delegates to shared `interval`/`transposeKeyName`
+- Extracted shared UI primitives — `EmptyState` (18 hand-written empty blocks), `StatusBadge` (unifying setlist + event status pills), `CardGrid` (12 copy-pasted grid shells) — and a `useApiList` hook collapsing the fetch/loading/refresh boilerplate across 7 uniform list pages
+- Synced root `shared/` into `apps/api/shared/` (the structured-chart commit left the API copy running stale transposition logic) and raised the web test timeout to 15s to stabilize the heavy jsdom suite under parallel load
+
+### Added — song filtering (July 2026)
+
+- `SongFilterToolbar` for enhanced song filtering and sorting
+
 ### Added — foundation spec: charts, rehearsal mode, set flow (July 2026)
 
 - Structured chart engine (`shared/utils/transpose.js`): section tokens like `[Chorus]`/`[Bridge 2]` are never parsed as chords; strict chord grammar keeps extensions intact (`C#m7b5`, `A7(#9)`, `Fsus4`); slash chords transpose both halves; bar lines `| G | C/E | D |` transpose in place; enharmonic spelling follows the *target* key (flat keys F/Bb/Eb/Ab/Db/Gb and relative minors get flats); zero-net transposition returns the stored chart byte-for-byte, so round-trips are lossless
