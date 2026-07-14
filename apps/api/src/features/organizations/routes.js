@@ -26,6 +26,7 @@ import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg } from "../../middlewares/orgContext.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { users } from "../../schema/index.js";
+import { inviteMemberToOrg } from "../admin/service.js";
 
 export const orgRoutes = Router();
 
@@ -77,6 +78,53 @@ orgRoutes.post(
 
     res.status(201).json({
       organization: { id: org.id, name: org.name, role: "admin" },
+    });
+  }),
+);
+
+// ── POST /provision — Stand up an org for someone else ───────
+// Owner/developer only. Creates the org and makes the invited person its admin,
+// without forcing the caller to join (story 6). New orgs immediately see the
+// global core library, so no separate song seeding is needed.
+orgRoutes.post(
+  "/provision",
+  asyncHandler(async (req, res) => {
+    if (req.user.role !== "owner") {
+      throw createError(403, "Only platform owners can provision organizations for others");
+    }
+
+    const { name, adminEmail, adminDisplayName, joinAsMember } = req.body;
+    if (!name || !name.trim()) {
+      throw createError(400, "Organization name is required");
+    }
+    if (!adminEmail || !adminEmail.trim()) {
+      throw createError(400, "An admin email is required");
+    }
+
+    const [org] = await db.insert(organizations).values({ name: name.trim() }).returning();
+
+    if (joinAsMember) {
+      await db.insert(organizationMembers).values({
+        organizationId: org.id,
+        userId: req.user.id,
+        role: "admin",
+      });
+    }
+
+    const result = await inviteMemberToOrg({
+      org,
+      email: adminEmail,
+      displayName: adminDisplayName || adminEmail,
+      role: "admin",
+    });
+
+    res.status(201).json({
+      organization: { id: org.id, name: org.name },
+      admin: {
+        email: adminEmail.toLowerCase().trim(),
+        alreadyMember: result.alreadyMember ?? false,
+        inviteUrl: result.inviteUrl ?? null,
+      },
     });
   }),
 );

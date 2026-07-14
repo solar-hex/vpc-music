@@ -20,6 +20,7 @@ export * from "./shareTokens.js";
 export * from "./shareTeams.js";
 export * from "./songUsages.js";
 export * from "./songEdits.js";
+export * from "./songInstrumentParts.js";
 export * from "./stickyNotes.js";
 export * from "./songCollaborationEntries.js";
 export * from "./notifications.js";

@@ -1,6 +1,7 @@
 CREATE TYPE "public"."org_role" AS ENUM('admin', 'musician', 'observer');--> statement-breakpoint
 CREATE TYPE "public"."user_role" AS ENUM('owner', 'member');--> statement-breakpoint
 CREATE TYPE "public"."song_status" AS ENUM('ready', 'needs_review', 'in_rehearsal', 'updated', 'missing_chords');--> statement-breakpoint
+CREATE TYPE "public"."song_tier" AS ENUM('personal', 'organization', 'global');--> statement-breakpoint
 CREATE TYPE "public"."media_type" AS ENUM('chart', 'lyrics', 'audio', 'backing_track', 'stem', 'other');--> statement-breakpoint
 CREATE TYPE "public"."availability_status" AS ENUM('available', 'tentative', 'unavailable');--> statement-breakpoint
 CREATE TYPE "public"."setlist_status" AS ENUM('draft', 'in_review', 'approved', 'complete');--> statement-breakpoint
@@ -84,6 +85,7 @@ CREATE TABLE "songs" (
 	"content" text NOT NULL,
 	"abc_notation" text,
 	"is_draft" boolean DEFAULT false,
+	"tier" "song_tier" DEFAULT 'organization' NOT NULL,
 	"status" "song_status",
 	"is_archived" boolean DEFAULT false NOT NULL,
 	"archived_at" timestamp,
@@ -351,6 +353,20 @@ CREATE TABLE "sticky_notes" (
 	"updated_at" timestamp DEFAULT now()
 );
 --> statement-breakpoint
+CREATE TABLE "song_instrument_parts" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"song_id" uuid NOT NULL,
+	"user_id" uuid NOT NULL,
+	"name" text NOT NULL,
+	"icon" text,
+	"color" text,
+	"content" text,
+	"abc_notation" text,
+	"tier" "song_tier" DEFAULT 'personal' NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
+);
+--> statement-breakpoint
 CREATE TABLE "song_collaboration_entries" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"song_id" uuid NOT NULL,
@@ -450,6 +466,10 @@ ALTER TABLE "song_collaboration_entries" ADD CONSTRAINT "song_collaboration_entr
 ALTER TABLE "song_collaboration_entries" ADD CONSTRAINT "song_collaboration_entries_author_id_users_id_fk" FOREIGN KEY ("author_id") REFERENCES "public"."users"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "notifications" ADD CONSTRAINT "notifications_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "notifications" ADD CONSTRAINT "notifications_organization_id_organizations_id_fk" FOREIGN KEY ("organization_id") REFERENCES "public"."organizations"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "song_instrument_parts" ADD CONSTRAINT "song_instrument_parts_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "song_instrument_parts" ADD CONSTRAINT "song_instrument_parts_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+CREATE INDEX "song_instrument_parts_song_idx" ON "song_instrument_parts" USING btree ("song_id");--> statement-breakpoint
+CREATE INDEX "song_instrument_parts_user_idx" ON "song_instrument_parts" USING btree ("user_id");--> statement-breakpoint
 CREATE UNIQUE INDEX "org_member_unique" ON "organization_members" USING btree ("organization_id","user_id");--> statement-breakpoint
 CREATE UNIQUE INDEX "org_role_org_name_unique" ON "org_roles" USING btree ("organization_id","name");--> statement-breakpoint
 CREATE UNIQUE INDEX "song_favorite_unique" ON "song_favorites" USING btree ("song_id","user_id");--> statement-breakpoint

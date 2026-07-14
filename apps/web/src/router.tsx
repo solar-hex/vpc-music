@@ -13,6 +13,7 @@ import { DashboardHistoryTab } from "./pages/dashboard/DashboardHistoryTab";
 import { SongListPage } from "./pages/songs/SongListPage";
 import { MediaLibraryPage } from "./pages/songs/MediaLibraryPage";
 import { SongViewPage } from "./pages/songs/SongViewPage";
+import { SongFocusPage } from "./pages/songs/SongFocusPage";
 import { SongDetailLayout } from "./pages/songs/SongDetailLayout";
 import { SongMediaTab } from "./pages/songs/SongMediaTab";
 import { SongHistoryTab } from "./pages/songs/SongHistoryTab";
@@ -59,6 +60,17 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <PerformPage />
+      </ProtectedRoute>
+    ),
+    errorElement: <RouteErrorPage />,
+  },
+
+  // Single-song focus mode — full-bleed reader, no shell (story 3).
+  {
+    path: "/songs/:id/focus",
+    element: (
+      <ProtectedRoute>
+        <SongFocusPage />
       </ProtectedRoute>
     ),
     errorElement: <RouteErrorPage />,

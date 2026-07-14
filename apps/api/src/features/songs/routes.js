@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { eq, ilike, or, and, asc, desc, sql, inArray, gte, lte, isNull, isNotNull } from "drizzle-orm";
+import { eq, ne, ilike, or, and, asc, desc, sql, inArray, gte, lte, isNull, isNotNull } from "drizzle-orm";
 import { db } from "../../db.js";
-import { songs, songFavorites, songVariations, songUsages, songEdits, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users, setlists, setlistSongs } from "../../schema/index.js";
+import { songs, songFavorites, songVariations, songUsages, songEdits, songInstrumentParts, songGroups, songGroupSongs, songGroupManagers, songOrganizationShares, songTeamShares, songUserShares, shareTeamMembers, organizationMembers, organizations, users, setlists, setlistSongs } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../../middlewares/orgContext.js";
@@ -11,6 +11,7 @@ import multer from "multer";
 import JSZip from "jszip";
 import { convertPdfToChordPro } from "./pdfToChordPro.js";
 import { logActivity } from "../activity/service.js";
+import { notifyOrgMembers } from "../notifications/service.js";
 
 export const songRoutes = Router();
 
@@ -488,8 +489,18 @@ songRoutes.get(
 
       conditions.push(inArray(songs.id, sharedSongIds));
     } else if (req.org) {
-      // Scope to organization if context available
-      conditions.push(eq(songs.organizationId, req.org.id));
+      // Org scope, plus the platform-wide global core library, minus other
+      // people's personal (private) songs. A personal song is only visible to
+      // the member who created it.
+      conditions.push(
+        or(
+          eq(songs.tier, "global"),
+          and(
+            eq(songs.organizationId, req.org.id),
+            or(ne(songs.tier, "personal"), eq(songs.createdBy, req.user.id)),
+          ),
+        ),
+      );
     }
 
     if (typeof groupId === "string" && groupId.trim()) {
@@ -545,6 +556,7 @@ songRoutes.get(
         artist: songs.artist,
         tags: songs.tags,
         isDraft: songs.isDraft,
+        tier: songs.tier,
         status: songs.status,
         isArchived: songs.isArchived,
         durationSeconds: songs.durationSeconds,
@@ -579,7 +591,10 @@ songRoutes.get(
           ilike(songs.aka, `%${q}%`),
           ilike(songs.category, `%${q}%`),
           ilike(songs.artist, `%${q}%`),
-          ilike(songs.tags, `%${q}%`)
+          ilike(songs.tags, `%${q}%`),
+          // Also match the chord/lyric body so a phrase like "blood of Jesus"
+          // finds songs even when it only appears in the lyrics.
+          ilike(songs.content, `%${q}%`)
         )
       );
     }
@@ -1195,6 +1210,86 @@ songRoutes.post(
   })
 );
 
+// ── GET /api/songs/:id/similar — songs you can switch to ─────
+// Suggests other songs in the org with a close tempo and/or overlapping tags,
+// so a leader can pivot mid-set (story 2). Key distance is ranked client-side.
+function parseSongTags(raw) {
+  if (!raw) return [];
+  return [...new Set(
+    String(raw)
+      .split(",")
+      .map((t) => t.trim().toLowerCase())
+      .filter(Boolean),
+  )];
+}
+
+songRoutes.get(
+  "/:id/similar",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const [source] = await db
+      .select()
+      .from(songs)
+      .where(and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id)))
+      .limit(1);
+
+    if (!source) throw createError(404, "Song not found");
+
+    const tolerance = Math.min(60, Math.max(1, parseInt(req.query.tempoTolerance, 10) || 12));
+    const limit = Math.min(50, Math.max(1, parseInt(req.query.limit, 10) || 12));
+    const sourceTags = parseSongTags(source.tags);
+
+    const candidates = await db
+      .select({
+        id: songs.id,
+        title: songs.title,
+        artist: songs.artist,
+        key: songs.key,
+        tempo: songs.tempo,
+        tags: songs.tags,
+        energy: songs.energy,
+        durationSeconds: songs.durationSeconds,
+      })
+      .from(songs)
+      .where(
+        and(
+          eq(songs.organizationId, req.org.id),
+          isNull(songs.deletedAt),
+          eq(songs.isArchived, false),
+          sql`${songs.id} <> ${source.id}`,
+        ),
+      );
+
+    const scored = [];
+    for (const c of candidates) {
+      const tempoDiff =
+        source.tempo != null && c.tempo != null ? Math.abs(source.tempo - c.tempo) : null;
+      const cTags = parseSongTags(c.tags);
+      const sharedTags = cTags.filter((t) => sourceTags.includes(t));
+      const tempoOk = tempoDiff != null && tempoDiff <= tolerance;
+      // Only surface songs that are plausibly switchable.
+      if (!tempoOk && sharedTags.length === 0) continue;
+      const energyDiff =
+        source.energy != null && c.energy != null ? Math.abs(source.energy - c.energy) : null;
+      // Lower score = better match (tight tempo, more shared tags, similar energy).
+      let score = tempoDiff != null ? tempoDiff : tolerance + 1;
+      score -= sharedTags.length * 5;
+      if (energyDiff != null) score += energyDiff;
+      scored.push({ ...c, tempoDiff, sharedTags });
+      scored[scored.length - 1]._score = score;
+    }
+
+    scored.sort((a, b) => a._score - b._score);
+
+    res.json({
+      source: { id: source.id, key: source.key, tempo: source.tempo, tags: source.tags },
+      songs: scored.slice(0, limit).map(({ _score, ...s }) => s),
+    });
+  }),
+);
+
 // ── GET /api/songs/:id — get single song ─────────────────────
 songRoutes.get(
   "/:id",
@@ -1209,7 +1304,20 @@ songRoutes.get(
       const [orgSong] = await db
         .select()
         .from(songs)
-        .where(and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id)))
+        .where(
+          and(
+            eq(songs.id, req.params.id),
+            // Own org songs (but not someone else's personal song), or any
+            // global core-library song.
+            or(
+              eq(songs.tier, "global"),
+              and(
+                eq(songs.organizationId, req.org.id),
+                or(ne(songs.tier, "personal"), eq(songs.createdBy, req.user.id)),
+              ),
+            ),
+          ),
+        )
         .limit(1);
 
       song = orgSong || null;
@@ -1305,10 +1413,16 @@ songRoutes.put(
       forceOverwrite,
     } = req.body;
 
+    // Org-scope the lookup so a song from another org can't be edited by id.
+    // Global owners may edit any song.
+    const existingWhere =
+      req.user?.role === "owner"
+        ? eq(songs.id, req.params.id)
+        : and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id));
     const [existing] = await db
       .select()
       .from(songs)
-      .where(eq(songs.id, req.params.id))
+      .where(existingWhere)
       .limit(1);
 
     if (!existing) {
@@ -1384,16 +1498,67 @@ songRoutes.put(
   })
 );
 
+// ── PATCH /api/songs/:id/tier — change a song's sharing tier ──
+// personal ↔ organization: the creator, an org admin, or a global owner.
+// to/from global (the platform core library): global owner/developer only —
+// this control is intentionally hidden from the normal org UI.
+songRoutes.patch(
+  "/:id/tier",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const { tier } = req.body;
+    if (!["personal", "organization", "global"].includes(tier)) {
+      throw createError(400, "Invalid tier");
+    }
+
+    const isOwner = req.user?.role === "owner";
+    const songWhere = isOwner
+      ? eq(songs.id, req.params.id)
+      : and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id));
+    const [song] = await db.select().from(songs).where(songWhere).limit(1);
+    if (!song) throw createError(404, "Song not found");
+
+    // Moving to or from the global tier is developer-only.
+    if ((tier === "global" || song.tier === "global") && !isOwner) {
+      throw createError(403, "Only a developer can change the global core library.");
+    }
+
+    // personal ↔ organization: creator, org admin, or owner.
+    if (tier !== "global" && song.tier !== "global") {
+      const isCreator = song.createdBy && song.createdBy === req.user.id;
+      const isAdmin = req.orgRole === "admin";
+      if (!isOwner && !isAdmin && !isCreator) {
+        throw createError(403, "You can only change the visibility of songs you created.");
+      }
+    }
+
+    const [updated] = await db
+      .update(songs)
+      .set({ tier, updatedAt: new Date() })
+      .where(eq(songs.id, song.id))
+      .returning();
+
+    res.json({ song: updated });
+  }),
+);
+
 // ── DELETE /api/songs/:id — move song to trash (soft delete) ─
 songRoutes.delete(
   "/:id",
   auth,  orgContext,
   requireOrg,
   requirePermission("songs:edit"),  asyncHandler(async (req, res) => {
+    // Org-scope the lookup so a song from another org can't be trashed by id.
+    const deleteWhere =
+      req.user?.role === "owner"
+        ? eq(songs.id, req.params.id)
+        : and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id));
     const [existing] = await db
       .select({ id: songs.id })
       .from(songs)
-      .where(eq(songs.id, req.params.id))
+      .where(deleteWhere)
       .limit(1);
 
     if (!existing) {
@@ -2199,6 +2364,286 @@ songRoutes.delete(
 
     res.json({ message: "Variation deleted" });
   })
+);
+
+// ── POST /api/songs/:id/variations/:varId/promote ────────────
+// Promote a personal variation's content up to the canonical song, so the whole
+// org gets it (story 4, Personal → Org). Guards against clobbering a newer
+// canonical (version check), records the change in edit history, and notifies
+// the team. Optionally also promotes the variation's key.
+songRoutes.post(
+  "/:id/variations/:varId/promote",
+  auth,
+  orgContext,
+  requireOrg,
+  requirePermission("songs:edit"),
+  asyncHandler(async (req, res) => {
+    const { lastKnownUpdatedAt, forceOverwrite, promoteKey } = req.body;
+
+    const songWhere =
+      req.user?.role === "owner"
+        ? eq(songs.id, req.params.id)
+        : and(eq(songs.id, req.params.id), eq(songs.organizationId, req.org.id));
+    const [song] = await db.select().from(songs).where(songWhere).limit(1);
+    if (!song) throw createError(404, "Song not found");
+
+    const [variation] = await db
+      .select()
+      .from(songVariations)
+      .where(and(eq(songVariations.id, req.params.varId), eq(songVariations.songId, req.params.id)))
+      .limit(1);
+    if (!variation) throw createError(404, "Variation not found");
+
+    // Version check — don't overwrite a canonical that changed since it was opened.
+    if (!forceOverwrite && lastKnownUpdatedAt && song.updatedAt) {
+      const current = new Date(song.updatedAt).toISOString();
+      const provided = new Date(lastKnownUpdatedAt).toISOString();
+      if (current !== provided) {
+        return res.status(409).json({
+          error: {
+            message:
+              "This song changed since you opened it. Review the latest version before promoting.",
+          },
+          currentSong: song,
+        });
+      }
+    }
+
+    const willPromoteKey = Boolean(promoteKey && variation.key);
+    const nextKey = willPromoteKey ? variation.key : song.key;
+
+    const edits = [];
+    if (song.content !== variation.content) {
+      edits.push({
+        songId: song.id,
+        editedBy: req.user.id,
+        field: "content",
+        oldValue: song.content,
+        newValue: variation.content,
+      });
+    }
+    if (willPromoteKey && song.key !== variation.key) {
+      edits.push({
+        songId: song.id,
+        editedBy: req.user.id,
+        field: "key",
+        oldValue: song.key == null ? null : String(song.key),
+        newValue: variation.key == null ? null : String(variation.key),
+      });
+    }
+
+    const [updated] = await db
+      .update(songs)
+      .set({
+        content: variation.content,
+        ...(willPromoteKey ? { key: nextKey } : {}),
+        updatedAt: new Date(),
+      })
+      .where(eq(songs.id, song.id))
+      .returning();
+
+    if (edits.length > 0) {
+      await db.insert(songEdits).values(edits);
+    }
+
+    if (song.organizationId) {
+      await notifyOrgMembers(
+        song.organizationId,
+        {
+          type: "song",
+          title: "Song updated",
+          message: `"${song.title}" was updated from the "${variation.name}" version.`,
+          linkPath: `/songs/${song.id}`,
+        },
+        { excludeUserId: req.user.id },
+      );
+    }
+
+    res.json({ song: updated, variation });
+  }),
+);
+
+// ─────────────────────────────────────────────────────────────
+// Instrument parts — per-musician layers over a song's chart (story 5).
+// Each part belongs to its creator and starts personal (private). A part can
+// be promoted on its own: personal → organization → global.
+// ─────────────────────────────────────────────────────────────
+
+/** Load a song the caller may see (own org, or a global core song). */
+async function loadVisibleSong(req) {
+  const where =
+    req.user?.role === "owner"
+      ? eq(songs.id, req.params.id)
+      : and(
+          eq(songs.id, req.params.id),
+          or(eq(songs.tier, "global"), eq(songs.organizationId, req.org.id)),
+        );
+  const [song] = await db.select().from(songs).where(where).limit(1);
+  return song || null;
+}
+
+// GET /:id/instrument-parts — parts visible to this user for the song.
+songRoutes.get(
+  "/:id/instrument-parts",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const parts = await db
+      .select({
+        id: songInstrumentParts.id,
+        songId: songInstrumentParts.songId,
+        userId: songInstrumentParts.userId,
+        name: songInstrumentParts.name,
+        icon: songInstrumentParts.icon,
+        color: songInstrumentParts.color,
+        content: songInstrumentParts.content,
+        abcNotation: songInstrumentParts.abcNotation,
+        tier: songInstrumentParts.tier,
+        createdAt: songInstrumentParts.createdAt,
+        updatedAt: songInstrumentParts.updatedAt,
+        authorName: users.displayName,
+      })
+      .from(songInstrumentParts)
+      .innerJoin(songs, eq(songInstrumentParts.songId, songs.id))
+      .leftJoin(users, eq(songInstrumentParts.userId, users.id))
+      .where(
+        and(
+          eq(songInstrumentParts.songId, req.params.id),
+          or(
+            eq(songInstrumentParts.userId, req.user.id),
+            eq(songInstrumentParts.tier, "global"),
+            and(eq(songInstrumentParts.tier, "organization"), eq(songs.organizationId, req.org.id)),
+          ),
+        ),
+      )
+      .orderBy(asc(songInstrumentParts.createdAt));
+
+    res.json({ parts: parts.map((p) => ({ ...p, isMine: p.userId === req.user.id })) });
+  }),
+);
+
+// POST /:id/instrument-parts — add my own part (any member; starts personal).
+songRoutes.post(
+  "/:id/instrument-parts",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const { name, icon, color, content, abcNotation } = req.body;
+    if (!name || !name.trim()) throw createError(400, "Instrument name is required");
+
+    const song = await loadVisibleSong(req);
+    if (!song) throw createError(404, "Song not found");
+
+    const [part] = await db
+      .insert(songInstrumentParts)
+      .values({
+        songId: req.params.id,
+        userId: req.user.id,
+        name: name.trim(),
+        icon: icon || null,
+        color: color || null,
+        content: content || null,
+        abcNotation: abcNotation || null,
+      })
+      .returning();
+
+    res.status(201).json({ part: { ...part, isMine: true } });
+  }),
+);
+
+/** Load a part scoped to the song and check the caller may manage it. */
+async function loadManageablePart(req) {
+  const [part] = await db
+    .select()
+    .from(songInstrumentParts)
+    .where(and(eq(songInstrumentParts.id, req.params.partId), eq(songInstrumentParts.songId, req.params.id)))
+    .limit(1);
+  if (!part) return { part: null, canManage: false };
+  const isCreator = part.userId === req.user.id;
+  const isAdmin = req.orgRole === "admin" || req.user?.role === "owner";
+  return { part, canManage: isCreator || isAdmin, isAdmin };
+}
+
+// PUT /:id/instrument-parts/:partId — update a part (creator or admin/owner).
+songRoutes.put(
+  "/:id/instrument-parts/:partId",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const { part, canManage } = await loadManageablePart(req);
+    if (!part) throw createError(404, "Instrument part not found");
+    if (!canManage) throw createError(403, "You can only edit your own instrument parts");
+
+    const { name, icon, color, content, abcNotation } = req.body;
+    const [updated] = await db
+      .update(songInstrumentParts)
+      .set({
+        ...(name !== undefined && { name: name.trim() }),
+        ...(icon !== undefined && { icon: icon || null }),
+        ...(color !== undefined && { color: color || null }),
+        ...(content !== undefined && { content: content || null }),
+        ...(abcNotation !== undefined && { abcNotation: abcNotation || null }),
+        updatedAt: new Date(),
+      })
+      .where(eq(songInstrumentParts.id, part.id))
+      .returning();
+
+    res.json({ part: { ...updated, isMine: updated.userId === req.user.id } });
+  }),
+);
+
+// DELETE /:id/instrument-parts/:partId — remove a part (creator or admin/owner).
+songRoutes.delete(
+  "/:id/instrument-parts/:partId",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const { part, canManage } = await loadManageablePart(req);
+    if (!part) throw createError(404, "Instrument part not found");
+    if (!canManage) throw createError(403, "You can only delete your own instrument parts");
+
+    await db.delete(songInstrumentParts).where(eq(songInstrumentParts.id, part.id));
+    res.json({ message: "Instrument part deleted" });
+  }),
+);
+
+// PATCH /:id/instrument-parts/:partId/tier — promote a single part.
+// personal ↔ organization: creator, org admin, or owner.
+// to/from global: global owner/developer only.
+songRoutes.patch(
+  "/:id/instrument-parts/:partId/tier",
+  auth,
+  orgContext,
+  requireOrg,
+  asyncHandler(async (req, res) => {
+    const { tier } = req.body;
+    if (!["personal", "organization", "global"].includes(tier)) {
+      throw createError(400, "Invalid tier");
+    }
+
+    const { part, canManage } = await loadManageablePart(req);
+    if (!part) throw createError(404, "Instrument part not found");
+
+    const isOwner = req.user?.role === "owner";
+    if ((tier === "global" || part.tier === "global") && !isOwner) {
+      throw createError(403, "Only a developer can change the global tier.");
+    }
+    if (tier !== "global" && part.tier !== "global" && !canManage) {
+      throw createError(403, "You can only change your own instrument parts");
+    }
+
+    const [updated] = await db
+      .update(songInstrumentParts)
+      .set({ tier, updatedAt: new Date() })
+      .where(eq(songInstrumentParts.id, part.id))
+      .returning();
+
+    res.json({ part: { ...updated, isMine: updated.userId === req.user.id } });
+  }),
 );
 
 /** Minimal HTML entity escaper for PDF template. */

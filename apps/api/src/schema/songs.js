@@ -12,6 +12,13 @@ export const songStatusEnum = pgEnum("song_status", [
   "missing_chords",
 ]);
 
+// Sharing tier (story 4 & 6): personal → organization → global.
+//  - personal: visible only to its creator (a private draft/version).
+//  - organization: the default; shared with the whole org.
+//  - global: a platform-wide "core library" song visible to every org.
+//    Only a global owner/developer may set this tier.
+export const songTierEnum = pgEnum("song_tier", ["personal", "organization", "global"]);
+
 export const songs = pgTable("songs", {
   id: uuid("id").defaultRandom().primaryKey(),
   title: text("title").notNull(),
@@ -32,6 +39,7 @@ export const songs = pgTable("songs", {
   content: text("content").notNull(), // ChordPro source
   abcNotation: text("abc_notation"),  // optional ABC staff notation source
   isDraft: boolean("is_draft").default(false),
+  tier: songTierEnum("tier").default("organization").notNull(), // personal | organization | global
   status: songStatusEnum("status"),   // rehearsal-readiness status (null = unset)
   isArchived: boolean("is_archived").default(false).notNull(),
   archivedAt: timestamp("archived_at"),

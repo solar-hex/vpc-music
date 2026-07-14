@@ -11,12 +11,16 @@ import { SongStatusBadge } from "@/components/songs/SongStatusBadge";
 import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
 import { StaffNotation } from "@/components/songs/StaffNotation";
 import { MetronomeWidget } from "@/components/songs/MetronomeWidget";
+import { SimilarSongsPanel } from "@/components/songs/SimilarSongsPanel";
+import { VariationCompareDialog } from "@/components/songs/VariationCompareDialog";
+import { SongVisibilityControl } from "@/components/songs/SongVisibilityControl";
+import { InstrumentPartsPanel } from "@/components/songs/InstrumentPartsPanel";
 import { useAuth } from "@/contexts/AuthContext";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
 import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey } from "@vpc-music/shared";
 import { toast } from "sonner";
-import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2 } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2, Maximize2, GitCompare } from "lucide-react";
 
 interface ConfirmState {
   title: string;
@@ -72,6 +76,7 @@ export function SongViewPage() {
   const [varKey, setVarKey] = useState("");
   const [varContent, setVarContent] = useState("");
   const [savingVariation, setSavingVariation] = useState(false);
+  const [compareVariation, setCompareVariation] = useState<SongVariation | null>(null);
   const [confirmState, setConfirmState] = useState<ConfirmState | null>(null);
   const [confirmingAction, setConfirmingAction] = useState(false);
   const requestedVariationId = searchParams.get("variation");
@@ -501,6 +506,21 @@ export function SongViewPage() {
         </Link>
         <div className="flex-1" />
         <AutoScroll containerRef={scrollRef} />
+        <Link
+          to={`/songs/${id}/focus${
+            (() => {
+              const p = new URLSearchParams();
+              if (activeVariationId) p.set("variation", activeVariationId);
+              if (requestedSearchKey) p.set("key", requestedSearchKey);
+              const s = p.toString();
+              return s ? `?${s}` : "";
+            })()
+          }`}
+          className="btn-outline btn-sm"
+          title="Open full-screen focus view"
+        >
+          <Maximize2 className="h-3.5 w-3.5" /> Focus
+        </Link>
         <button
           onClick={() => setShowChords((v) => !v)}
           className="btn-outline btn-sm"
@@ -653,6 +673,13 @@ export function SongViewPage() {
           </span>
           <span className="print-hidden inline-flex items-center gap-2">
             <SongStatusBadge status={song.status} isArchived={song.isArchived} size="md" />
+            <SongVisibilityControl
+              song={song}
+              isOwner={user?.role === "owner"}
+              isAdmin={activeOrg?.role === "admin"}
+              currentUserId={user?.id}
+              onChanged={(updated) => setSong((prev) => (prev ? { ...prev, ...updated } : updated))}
+            />
             <SongActionsMenu
               song={song}
               canEdit={!!canEdit}
@@ -707,6 +734,14 @@ export function SongViewPage() {
               </button>
               {canEdit && (
                 <div className="hidden group-hover:flex items-center gap-0.5 ml-1">
+                  <button
+                    onClick={() => setCompareVariation(v)}
+                    className="rounded p-0.5 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
+                    title="Compare & promote to canonical"
+                    aria-label="Compare and promote to canonical"
+                  >
+                    <GitCompare className="h-3 w-3" />
+                  </button>
                   <button
                     onClick={() => openEditVariation(v)}
                     className="rounded p-0.5 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
@@ -794,6 +829,21 @@ export function SongViewPage() {
             </div>
           )}
         </div>
+      )}
+
+      {/* Instrument parts — per-musician layers over the chart */}
+      {id && (
+        <InstrumentPartsPanel
+          songId={id}
+          songKey={originalKey}
+          baseTranspose={baseTranspose}
+          showChords={showChords}
+          nashville={nashville}
+          fontSize={fontSize}
+          isOwner={user?.role === "owner"}
+          isAdmin={activeOrg?.role === "admin"}
+          currentUserId={user?.id}
+        />
       )}
 
       {/* Usage History */}
@@ -970,6 +1020,8 @@ export function SongViewPage() {
           </p>
         )}
       </div>
+
+      <SimilarSongsPanel songId={song.id} songKey={displayKey} />
 
       <SongCollaborationPanel
         songId={song.id}
@@ -1257,6 +1309,19 @@ export function SongViewPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {compareVariation && (
+        <VariationCompareDialog
+          song={song}
+          variation={compareVariation}
+          canPromote={!!canEdit}
+          onClose={() => setCompareVariation(null)}
+          onPromoted={(updated) => {
+            setSong((prev) => (prev ? { ...prev, ...updated } : updated));
+            selectVariation(null);
+          }}
+        />
       )}
 
       <ConfirmDialog
