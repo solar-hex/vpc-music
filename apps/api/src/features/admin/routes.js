@@ -14,6 +14,8 @@ import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { logger } from "../../utils/logger.js";
 import { sendEmail, buildInviteEmail } from "../../utils/email.js";
 import { notifyUser, notifyOrgMembers } from "../notifications/service.js";
+import { inviteMemberToOrg, resendInvite } from "./service.js";
+import { logActivity } from "../activity/service.js";
 
 export const adminRoutes = Router();
 
@@ -177,6 +179,79 @@ adminRoutes.post(
   })
 );
 
+// ── POST /api/admin/users/invite-bulk ────────────────────────
+// Invite several people at once. Each row is invited independently; the
+// response reports per-email status so one bad address doesn't sink the batch.
+adminRoutes.post(
+  "/users/invite-bulk",
+  asyncHandler(async (req, res) => {
+    const { invites } = req.body;
+    if (!Array.isArray(invites) || invites.length === 0) {
+      throw createError(400, "invites must be a non-empty array");
+    }
+    if (invites.length > 50) {
+      throw createError(400, "Too many invites at once (max 50)");
+    }
+
+    const results = [];
+    for (const invite of invites) {
+      const email = invite?.email;
+      if (!email) {
+        results.push({ email: null, status: "error", message: "Email is required" });
+        continue;
+      }
+      try {
+        const outcome = await inviteMemberToOrg({
+          org: req.org,
+          email,
+          displayName: invite.displayName || email,
+          role: invite.role,
+        });
+        results.push({
+          email: String(email).toLowerCase().trim(),
+          status: outcome.alreadyMember ? "skipped" : "invited",
+          role: outcome.assignedRole,
+        });
+      } catch (err) {
+        results.push({ email, status: "error", message: err.message });
+      }
+    }
+
+    const invited = results.filter((r) => r.status === "invited").length;
+    if (invited > 0) {
+      await notifyOrgMembers(
+        req.org.id,
+        {
+          type: "team",
+          title: "New team members invited",
+          message: `${invited} member${invited === 1 ? "" : "s"} were invited to ${req.org.name}.`,
+          linkPath: "/admin",
+        },
+        { excludeUserId: req.user.id, roles: ["admin"] },
+      );
+    }
+
+    res.status(201).json({ results, invited });
+  })
+);
+
+// ── POST /api/admin/users/:id/resend-invite ──────────────────
+// Re-send a fresh invite link to a member who hasn't set a password yet.
+adminRoutes.post(
+  "/users/:id/resend-invite",
+  asyncHandler(async (req, res) => {
+    const [membership] = await db
+      .select({ id: organizationMembers.id })
+      .from(organizationMembers)
+      .where(and(eq(organizationMembers.organizationId, req.org.id), eq(organizationMembers.userId, req.params.id)))
+      .limit(1);
+    if (!membership) throw createError(404, "User not found in this organization");
+
+    const { inviteUrl, email } = await resendInvite({ org: req.org, userId: req.params.id });
+    res.json({ message: `Invite resent to ${email}`, inviteUrl });
+  })
+);
+
 // ── PUT /api/admin/users/:id/role ────────────────────────────
 // Update a team member's org role.
 adminRoutes.put(
@@ -236,6 +311,7 @@ adminRoutes.put(
       organizationId: req.org.id,
     });
 
+    await logActivity(req, "member.role_changed", { type: "member", id, label: role ?? "custom role" });
     res.json({ message: "Role updated" });
   })
 );

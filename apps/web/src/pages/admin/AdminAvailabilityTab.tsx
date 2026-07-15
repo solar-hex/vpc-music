@@ -137,7 +137,7 @@ export function AdminAvailabilityTab() {
                 <tr key={member.userId} className="border-b border-[hsl(var(--border))]/50 last:border-b-0">
                   <td className={`sticky left-0 bg-[hsl(var(--card))] px-3 py-1.5 text-sm font-medium whitespace-nowrap ${member.userId === user?.id ? "text-[hsl(var(--secondary))]" : ""}`}>
                     {member.displayName || "Member"}
-                    {member.userId === user?.id && <span className="text-[10px] text-[hsl(var(--muted-foreground))]"> (you)</span>}
+                    {member.userId === user?.id && <span className="text-xs text-[hsl(var(--muted-foreground))]"> (you)</span>}
                   </td>
                   {dates.map((date) => {
                     const dateKey = toDateKey(date);

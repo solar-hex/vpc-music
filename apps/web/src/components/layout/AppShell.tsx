@@ -9,6 +9,7 @@ import { Sidebar } from "./Sidebar";
 import { MobileTopBar } from "./MobileTopBar";
 import { NotificationPanel } from "./NotificationPanel";
 import { AiChat } from "@/components/assistant/AiChat";
+import { SongQuickLauncher } from "@/components/songs/SongQuickLauncher";
 
 export function AppShell() {
   const { user, logout, refreshUser, switchOrg } = useAuth();
@@ -91,6 +92,9 @@ export function AppShell() {
           )}
         </main>
       </div>
+
+      {/* Global quick-song launcher — Cmd/Ctrl+K or "/" from anywhere */}
+      <SongQuickLauncher />
 
       {/* Floating AI assistant (z-40, under PerformanceMode's z-50 overlay) */}
       <AiChat />

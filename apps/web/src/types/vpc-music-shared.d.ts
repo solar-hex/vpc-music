@@ -52,13 +52,32 @@ declare module "@vpc-music/shared" {
 
   export interface ChordProSection {
     name: string;
+    /** Preformatted environment (tab) — lines kept verbatim, never chord-parsed. */
+    raw?: boolean;
     lines: ChordProLine[];
+  }
+
+  export interface ChordShapeDefinition {
+    name: string;
+    baseFret: number;
+    frets: number[];
+    fingers?: number[] | null;
   }
 
   export interface ChordProDocument {
     directives: Record<string, string>;
     sections: ChordProSection[];
+    /** Shapes declared with {define:} / {chord:} directives, keyed by name.
+        Always present on parseChordPro output; optional for hand-built docs. */
+    chordDefinitions?: Record<string, ChordShapeDefinition>;
   }
+
+  // ── Chord shapes (guitar diagrams) ─────────────
+  export const GUITAR_SHAPES: Record<string, { baseFret: number; frets: number[]; fingers?: number[] | null }>;
+  export function resolveChordShape(
+    chordName: string,
+    definitions?: Record<string, { baseFret: number; frets: number[]; fingers?: number[] | null }>,
+  ): ChordShapeDefinition | null;
 
   export interface LegacyChrdMetadata {
     title: string;

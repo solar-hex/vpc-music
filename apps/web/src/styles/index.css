@@ -227,6 +227,7 @@
   @media (pointer: coarse) {
     button,
     [role="button"],
+    select,
     .btn,
     .btn-sm,
     .btn-xs,
@@ -504,16 +505,20 @@
   }
 
   /* ── Modal / Overlay ──────────────────────────────────────── */
+  /* Mobile-first: modals are bottom sheets on phones (rounded top, capped
+     height, slide-up position) and centered dialogs from sm: upward. */
   .modal-backdrop {
-    @apply fixed inset-0 z-50 flex items-center justify-center;
+    @apply fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4;
     background-color: rgb(0 0 0 / 0.5);
   }
 
   .modal-content {
-    @apply w-full rounded-lg border p-6;
+    @apply w-full max-h-[85vh] overflow-y-auto rounded-t-xl border p-6 sm:max-h-[90vh] sm:rounded-lg;
     border-color: hsl(var(--border));
     background-color: hsl(var(--card));
     box-shadow: var(--shadow-modal);
+    /* Keep sheet content above the home-indicator on notched phones. */
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
   }
 
   /* ── Section headers ──────────────────────────────────────── */
@@ -598,6 +603,16 @@
   header,
   nav,
   [data-print-hidden] {
+    display: none !important;
+  }
+
+  /* Setlist page: print the real running order, minus every control.
+     The song rows (position, title, key/BPM/capo metadata) print as-is. */
+  .setlist-print-root button,
+  .setlist-print-root select,
+  .setlist-print-root input,
+  .setlist-print-root [role="menu"],
+  .setlist-print-root a[class*="btn"] {
     display: none !important;
   }
 

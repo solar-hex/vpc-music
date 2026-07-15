@@ -45,7 +45,7 @@ export function DashboardHistoryTab() {
           icon={History}
           message="Completed events land here. Mark an event completed to start the record."
           action={
-            <Link to="/setlists/events" className="btn-primary">
+            <Link to="/setlists/schedule" className="btn-primary">
               View events
             </Link>
           }

@@ -16,6 +16,7 @@ vi.mock("@vpc-music/shared", () => ({
   parseChordPro: (...args: any[]) => mockParseChordPro(...args),
   transposeChordPro: (...args: any[]) => mockTransposeChordPro(...args),
   chordToNashville: (...args: any[]) => mockChordToNashville(...args),
+  transposeKeyName: (key: string) => key,
 }));
 
 // Standard parsed document returned by parseChordPro

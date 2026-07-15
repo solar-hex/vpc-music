@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { eq, and, desc, asc, sql, isNull, isNotNull } from "drizzle-orm";
+import { eq, and, desc, asc, sql, isNull, isNotNull, inArray } from "drizzle-orm";
 import { db } from "../../db.js";
 import { setlists, setlistSongs, songs, songUsages, songVariations, events } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
@@ -436,6 +436,7 @@ setlistRoutes.delete(
       .set({ deletedAt: new Date(), updatedAt: new Date() })
       .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)));
 
+    await logActivity(req, "setlist.trashed", { type: "setlist", id: req.params.id, label: existing.name });
     res.json({ message: "Setlist moved to trash" });
   })
 );
@@ -709,12 +710,19 @@ setlistRoutes.post(
   requireOrg,
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
-    const { usedAt } = req.body; // optional date string (defaults to today)
+    const { usedAt, source } = req.body; // optional date string (defaults to today)
     const usedDate = usedAt || new Date().toISOString().split("T")[0];
+    // Perform mode passes source="perform"; anything else is a manual complete.
+    const usageSource = source === "perform" ? "perform" : "setlist_complete";
 
     const existing = await loadSetlistInOrg(req.params.id, req.org.id);
 
     if (!existing) throw createError(404, "Setlist not found");
+
+    // Completing twice would double-count plays — reopen first.
+    if (existing.status === "complete") {
+      throw createError(400, "This setlist is already complete. Reopen it before completing again.");
+    }
 
     // Status flip and usage logging must land together — a failure partway
     // through would otherwise leave the setlist marked complete with no (or
@@ -738,6 +746,8 @@ setlistRoutes.post(
           setlistItems.map((item) => ({
             songId: item.songId,
             usedAt: usedDate,
+            setlistId: req.params.id,
+            source: usageSource,
             notes: `Setlist: ${existing.name}`,
             organizationId: req.org.id,
             recordedBy: req.user.id,
@@ -759,6 +769,7 @@ setlistRoutes.post(
       { excludeUserId: req.user.id },
     );
 
+    await logActivity(req, "setlist.completed", { type: "setlist", id: req.params.id, label: existing.name });
     res.json({ setlist, usagesLogged });
   })
 );
@@ -771,14 +782,32 @@ setlistRoutes.post(
   requireOrg,
   requirePermission("setlists:edit"),
   asyncHandler(async (req, res) => {
-    const [setlist] = await db
-      .update(setlists)
-      .set({ status: "draft", updatedAt: new Date() })
-      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
-      .returning();
+    // Reopening removes the machine-generated usage rows that /complete
+    // created (source setlist_complete/perform), so a later re-complete
+    // regenerates them instead of double-counting. Manual and event-sourced
+    // rows are user/event history and are never touched.
+    const setlist = await db.transaction(async (tx) => {
+      const [updated] = await tx
+        .update(setlists)
+        .set({ status: "draft", updatedAt: new Date() })
+        .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
+        .returning();
 
-    if (!setlist) throw createError(404, "Setlist not found");
+      if (!updated) throw createError(404, "Setlist not found");
 
+      await tx
+        .delete(songUsages)
+        .where(
+          and(
+            eq(songUsages.setlistId, req.params.id),
+            inArray(songUsages.source, ["setlist_complete", "perform"]),
+          ),
+        );
+
+      return updated;
+    });
+
+    await logActivity(req, "setlist.reopened", { type: "setlist", id: req.params.id, label: setlist.name });
     res.json({ setlist });
   })
 );

@@ -147,7 +147,7 @@ export function DashboardPage() {
             <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Awaiting approval</p>
             <p className="text-lg font-bold tabular-nums">{awaitingApproval}</p>
           </Link>
-          <Link to="/dashboard/usage" className="card-interactive card-body">
+          <Link to="/dashboard/analytics?view=usage" className="card-interactive card-body">
             <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Not played in 90d</p>
             <p className="text-lg font-bold tabular-nums">{staleSongCount ?? "—"}</p>
           </Link>

@@ -1,4 +1,4 @@
-import { parseChordPro, transposeChordPro, chordToNashville, spellForTarget, parseBarLine } from "@vpc-music/shared";
+import { parseChordPro, transposeChordPro, chordToNashville, spellForTarget, parseBarLine, transposeKeyName } from "@vpc-music/shared";
 import { useState, useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from "react";
 
 function normalizeTranspose(steps: number) {
@@ -16,6 +16,8 @@ interface ChordProRendererProps {
   /** Hide the inline transpose row (the host renders its own control) */
   showControls?: boolean;
   onTranspose?: (newKey: string) => void;
+  /** Makes chords tappable (e.g. to open a fingering diagram). */
+  onChordTap?: (chord: string) => void;
 }
 
 export interface ChordProRendererHandle {
@@ -37,12 +39,16 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
   fontSize = 16,
   showControls = true,
   onTranspose,
+  onChordTap,
 }, ref) {
   const [manualTranspose, setManualTranspose] = useState(0);
-  const transpose = normalizeTranspose(baseTranspose + manualTranspose);
+  // Capo: play friendlier shapes N frets down while sounding the same key.
+  const [capo, setCapo] = useState(0);
+  const transpose = normalizeTranspose(baseTranspose + manualTranspose - capo);
 
   useEffect(() => {
     setManualTranspose(0);
+    setCapo(0);
   }, [baseTranspose, content, songKey]);
 
   // Apply transposition to raw ChordPro, then parse. Enharmonic spelling
@@ -51,6 +57,15 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
   const { preferFlats, targetKey } = spellForTarget(songKey, transpose);
   const transposedContent = transpose !== 0 ? transposeChordPro(content, transpose, preferFlats) : content;
   const doc = parseChordPro(transposedContent);
+
+  // The key the audience hears: what the chart would be at WITHOUT the capo
+  // shift (base + manual only).
+  const soundingTranspose = normalizeTranspose(baseTranspose + manualTranspose);
+  const soundingKey = songKey ? spellForTarget(songKey, soundingTranspose).targetKey ?? songKey : null;
+
+  // A {capo: N} directive in the source acts as the initial suggestion.
+  const directiveCapo = Number(doc.directives.capo);
+  const suggestedCapo = Number.isInteger(directiveCapo) && directiveCapo >= 1 && directiveCapo <= 12 ? directiveCapo : null;
 
   const handleUp = () => setManualTranspose((t) => normalizeTranspose(t + 1));
   const handleDown = () => setManualTranspose((t) => normalizeTranspose(t - 1));
@@ -92,6 +107,24 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
             </button>
           )}
           {songKey && (
+            <label className="inline-flex items-center gap-1.5 text-xs text-[hsl(var(--muted-foreground))]">
+              Capo
+              <select
+                value={capo}
+                onChange={(e) => setCapo(Number(e.target.value))}
+                className="select btn-sm w-auto"
+                title="Play open shapes with a capo; the sounding key stays the same"
+              >
+                <option value={0}>Off</option>
+                {[1, 2, 3, 4, 5, 6, 7].map((fret) => (
+                  <option key={fret} value={fret}>
+                    {fret} — play {soundingKey ? transposeKeyName(soundingKey, -fret) : "?"}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+          {songKey && (
             <span className="ml-auto text-xs text-[hsl(var(--muted-foreground))]">
               Original key: {songKey}
               {transpose !== 0 && targetKey && (
@@ -100,6 +133,23 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
             </span>
           )}
         </div>
+      )}
+
+      {/* Capo banner — active capo, or the chart's {capo:} suggestion */}
+      {showChords && capo > 0 && soundingKey && (
+        <div className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--secondary))]/40 bg-[hsl(var(--secondary))]/10 px-2.5 py-1 text-xs font-medium text-[hsl(var(--foreground))]">
+          Capo {capo} — play {targetKey ?? "?"}, sounds {soundingKey}
+        </div>
+      )}
+      {showChords && capo === 0 && suggestedCapo && soundingKey && (
+        <button
+          type="button"
+          onClick={() => setCapo(suggestedCapo)}
+          className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-dashed border-[hsl(var(--border))] px-2.5 py-1 text-xs text-[hsl(var(--muted-foreground))] hover:border-[hsl(var(--secondary))] hover:text-[hsl(var(--foreground))]"
+          title="Apply the chart's suggested capo"
+        >
+          Suggested: Capo {suggestedCapo} — play {transposeKeyName(soundingKey, -suggestedCapo)}
+        </button>
       )}
 
       {/* Directives (title, artist, etc.) — hidden in print because SongViewPage has its own print-meta block */}
@@ -140,6 +190,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
                 showChords={showChords}
                 nashville={nashville}
                 songKey={songKey}
+                onChordTap={onChordTap}
               />,
             );
           });
@@ -226,12 +277,14 @@ function ChordLine({
   showChords,
   nashville = false,
   songKey,
+  onChordTap,
 }: {
   chords: { chord: string; position: number }[];
   lyrics: string;
   showChords: boolean;
   nashville?: boolean;
   songKey?: string | null;
+  onChordTap?: (chord: string) => void;
 }) {
   if (!chords.length && !lyrics.trim()) return null;
 
@@ -260,9 +313,24 @@ function ChordLine({
     }
     const displayChord = nashville && songKey ? chordToNashville(chord, songKey) : chord;
     chordSpans.push(
-      <span key={`ch-${i}`} className="song-primary-chord font-bold">
-        {displayChord}
-      </span>
+      onChordTap ? (
+        // Tappable chord → fingering diagram. min-h-0 opts out of the global
+        // 44px coarse-pointer rule (it would inflate every chord row); the
+        // negative-margin padding grows the hit area without moving layout.
+        <button
+          key={`ch-${i}`}
+          type="button"
+          onClick={() => onChordTap(chord)}
+          className="song-primary-chord min-h-0 -my-2 border-0 bg-transparent p-0 py-2 font-bold cursor-pointer hover:underline"
+          title={`Show ${displayChord} chord diagram`}
+        >
+          {displayChord}
+        </button>
+      ) : (
+        <span key={`ch-${i}`} className="song-primary-chord font-bold">
+          {displayChord}
+        </span>
+      )
     );
     lastEnd = position + chord.length;
   }

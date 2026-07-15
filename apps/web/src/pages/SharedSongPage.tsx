@@ -155,7 +155,7 @@ export function SharedSongPage() {
         <div
           ref={scrollRef}
           className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 overflow-y-auto print-sheet"
-          style={{ maxHeight: "calc(100vh - 280px)" }}
+          style={{ maxHeight: "max(320px, calc(100dvh - 280px))" }}
         >
           <ChordProRenderer
             ref={chordProRef}

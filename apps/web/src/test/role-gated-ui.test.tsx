@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SongListPage } from "@/pages/songs/SongListPage";
 import { SongViewPage } from "@/pages/songs/SongViewPage";
@@ -29,6 +29,10 @@ const mockSetlistsGet = vi.fn();
 const mockEventsList = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
+  annotationsApi: {
+    get: vi.fn().mockResolvedValue({ annotation: null }),
+    save: vi.fn().mockResolvedValue({ annotation: { id: "a1", data: [] } }),
+  },
   songsApi: {
     list: (...args: any[]) => mockSongsList(...args),
     get: (...args: any[]) => mockSongsGet(...args),
@@ -113,6 +117,7 @@ vi.mock("sonner", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
   transposeKeyName: (key: string) => key,
   normalizeEnharmonicKey: (key: string | null | undefined) => key,
   composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
@@ -306,24 +311,26 @@ describe("Role-gated UI", () => {
 
   // ── SongViewPage ──────────────────────────────────
   describe("SongViewPage", () => {
-    it("musician sees Edit, Delete, Share, Log Usage buttons", async () => {
+    it("musician sees Edit link plus Delete, Share, Log Usage in the More menu", async () => {
       mockAuthValue = musicianAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       expect(screen.getByRole("link", { name: /edit/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /delete/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /log usage/i })).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByRole("menuitem", { name: "Delete" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Share link" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Log Usage" })).toBeInTheDocument();
     });
 
-    it("observer does NOT see Edit, Delete, Share, Log Usage buttons", async () => {
+    it("observer does NOT see Edit, Delete, Share, Log Usage actions", async () => {
       mockAuthValue = observerAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       expect(screen.queryByRole("link", { name: /edit/i })).not.toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: /delete/i })).not.toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: /log usage/i })).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.queryByRole("menuitem", { name: "Delete" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Share link" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Log Usage" })).not.toBeInTheDocument();
     });
 
     it("observer can still see song content", async () => {
@@ -347,12 +354,13 @@ describe("Role-gated UI", () => {
       expect(screen.getByRole("button", { name: /add note/i })).toBeInTheDocument();
     });
 
-    it("observer still sees Print and Export buttons", async () => {
+    it("observer still sees Print and export actions in the More menu", async () => {
       mockAuthValue = observerAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("button", { name: /print/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /export/i })).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByRole("menuitem", { name: "Print" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "ChordPro (.cho)" })).toBeInTheDocument();
     });
   });
 

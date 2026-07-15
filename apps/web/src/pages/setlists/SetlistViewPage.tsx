@@ -36,9 +36,13 @@ import {
   AlertTriangle,
   Download,
   ChevronDown,
+  ChevronUp,
   Settings2,
   Clock,
+  Share2,
+  Printer,
 } from "lucide-react";
+import { ActionMenu } from "@/components/ui/ActionMenu";
 import { ALL_KEYS } from "@vpc-music/shared";
 import { useConductor } from "@/hooks/useConductor";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
@@ -67,7 +71,7 @@ export function SetlistViewPage() {
   const [loading, setLoading] = useState(!isSeeded);
   const seededIdRef = useRef<string | null>(isSeeded ? id ?? null : null);
   const [showAddSong, setShowAddSong] = useState(false);
-  const [showExportMenu, setShowExportMenu] = useState(false);
+  const [sharingSetlist, setSharingSetlist] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deletingSetlist, setDeletingSetlist] = useState(false);
   const [availableSongs, setAvailableSongs] = useState<Song[]>([]);
@@ -454,7 +458,21 @@ export function SetlistViewPage() {
     } catch (err: any) {
       toast.error(err.message || "Export failed");
     }
-    setShowExportMenu(false);
+  };
+
+  const handleShareSetlist = async () => {
+    if (!id) return;
+    setSharingSetlist(true);
+    try {
+      const { shareUrl } = await setlistsApi.share(id);
+      const fullUrl = `${window.location.origin}${shareUrl}`;
+      await navigator.clipboard.writeText(fullUrl);
+      toast.success("Public set-list link copied to clipboard");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to create share link");
+    } finally {
+      setSharingSetlist(false);
+    }
   };
 
   // Soft set-analysis signals: advise, never block
@@ -488,7 +506,7 @@ export function SetlistViewPage() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 setlist-print-root">
       {/* Header */}
       <div className="flex flex-wrap items-center gap-3">
         <Link
@@ -498,6 +516,21 @@ export function SetlistViewPage() {
           <ArrowLeft className="h-4 w-4" /> Setlists
         </Link>
         <div className="flex-1" />
+        {songs.length > 0 && (
+          <>
+            <button
+              onClick={handleShareSetlist}
+              disabled={sharingSetlist}
+              className="btn-outline btn-sm"
+              title="Copy a public read-only link to this set list"
+            >
+              <Share2 className="h-3.5 w-3.5" /> {sharingSetlist ? "Sharing…" : "Share"}
+            </button>
+            <button onClick={() => window.print()} className="btn-outline btn-sm" title="Print the set list">
+              <Printer className="h-3.5 w-3.5" /> Print
+            </button>
+          </>
+        )}
         {canEdit && (
           <>
             {setlist.status === "draft" && (
@@ -700,41 +733,19 @@ export function SetlistViewPage() {
           </h3>
           <div className="flex flex-wrap items-center gap-2">
             {songs.length > 0 && (
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setShowExportMenu((value) => !value)}
-                  className="btn-outline btn-sm"
-                >
-                  <Download className="h-3.5 w-3.5" /> Export ZIP <ChevronDown className="h-3.5 w-3.5" />
-                </button>
-
-                {showExportMenu && (
-                  <div className="absolute right-0 z-20 mt-2 w-48 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-1 shadow-lg">
-                    <button
-                      type="button"
-                      onClick={() => handleExportZip("chordpro")}
-                      className="flex w-full items-center rounded-lg px-3 py-2 text-left text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
-                    >
-                      ChordPro ZIP (.zip)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleExportZip("onsong")}
-                      className="flex w-full items-center rounded-lg px-3 py-2 text-left text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
-                    >
-                      OnSong ZIP (.zip)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleExportZip("text")}
-                      className="flex w-full items-center rounded-lg px-3 py-2 text-left text-sm text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
-                    >
-                      Plain Text ZIP (.zip)
-                    </button>
-                  </div>
-                )}
-              </div>
+              <ActionMenu
+                label="Export ZIP"
+                trigger={
+                  <>
+                    <Download className="h-3.5 w-3.5" /> Export ZIP <ChevronDown className="h-3.5 w-3.5" />
+                  </>
+                }
+                items={[
+                  { label: "ChordPro ZIP (.zip)", onSelect: () => handleExportZip("chordpro") },
+                  { label: "OnSong ZIP (.zip)", onSelect: () => handleExportZip("onsong") },
+                  { label: "Plain Text ZIP (.zip)", onSelect: () => handleExportZip("text") },
+                ]}
+              />
             )}
 
             {canEdit && (
@@ -801,7 +812,7 @@ export function SetlistViewPage() {
                   )}
                   <div
                     data-song-index={idx}
-                    className={`flex items-center gap-3 p-3 transition-colors ${
+                    className={`flex flex-wrap items-center gap-x-3 gap-y-1 p-3 transition-colors ${
                       liveMode !== "off" && idx === conductor.currentSong
                         ? "bg-[hsl(var(--secondary))]/10 ring-1 ring-inset ring-[hsl(var(--secondary))]/30"
                         : ""
@@ -821,37 +832,38 @@ export function SetlistViewPage() {
                       setDragOverSongItemId(null);
                     }}
                   >
-                {/* Reorder controls */}
+                {/* Reorder controls — drag is desktop-only (HTML5 DnD doesn't
+                    work on touch); phones get properly-sized arrow buttons. */}
                 {canEdit && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <button
                       type="button"
                       draggable
                       onDragStart={() => handleDragStart(item.id)}
-                      className="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] cursor-grab active:cursor-grabbing"
+                      className="hidden sm:block text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] cursor-grab active:cursor-grabbing"
                       title="Drag to reorder"
                       aria-label={`Drag ${item.songTitle} to reorder`}
                     >
                       <GripVertical className="h-4 w-4" />
                     </button>
-                    <div className="flex flex-col gap-0.5">
-                      <button
-                        onClick={() => void handleMoveUp(idx)}
-                        disabled={idx === 0}
-                        className="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] disabled:opacity-30"
-                        title="Move up"
-                      >
-                        ▲
-                      </button>
-                      <button
-                        onClick={() => void handleMoveDown(idx)}
-                        disabled={idx === songs.length - 1}
-                        className="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] disabled:opacity-30"
-                        title="Move down"
-                      >
-                        ▼
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => void handleMoveUp(idx)}
+                      disabled={idx === 0}
+                      className="btn-icon rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] disabled:opacity-30"
+                      title="Move up"
+                      aria-label={`Move ${item.songTitle || "slot"} up`}
+                    >
+                      <ChevronUp className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={() => void handleMoveDown(idx)}
+                      disabled={idx === songs.length - 1}
+                      className="btn-icon rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] disabled:opacity-30"
+                      title="Move down"
+                      aria-label={`Move ${item.songTitle || "slot"} down`}
+                    >
+                      <ChevronDown className="h-4 w-4" />
+                    </button>
                   </div>
                 )}
 

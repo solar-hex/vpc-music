@@ -741,7 +741,7 @@ function ShareRow({
             )}
           </button>
         )}
-        <span className={`text-[10px] font-semibold uppercase ${status.color}`}>
+        <span className={`text-xs font-semibold uppercase ${status.color}`}>
           {status.text}
         </span>
       </div>

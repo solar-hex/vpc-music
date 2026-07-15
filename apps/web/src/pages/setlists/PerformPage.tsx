@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { setlistsApi, songsApi, type Setlist, type SetlistSongItem } from "@/lib/api-client";
 import {
@@ -8,6 +8,8 @@ import {
   saveCachedSetlistPerformanceContents,
 } from "@/lib/offline-cache";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
+import { ResponsiveModal } from "@/components/ui/ResponsiveModal";
+import { toast } from "sonner";
 
 type ContentsMap = Map<
   string,
@@ -27,6 +29,11 @@ export function PerformPage() {
   const [contents, setContents] = useState<ContentsMap>(new Map());
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
+  // End-of-set logging: offer a one-tap "mark as played" when the user
+  // reached the final song and then exits (stats without ceremony).
+  const reachedEndRef = useRef(false);
+  const [showEndPrompt, setShowEndPrompt] = useState(false);
+  const [completing, setCompleting] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -115,12 +122,62 @@ export function PerformPage() {
     );
   }
 
+  const filledSongCount = songs.filter((s) => s.songId).length;
+
+  const exitToSetlist = () => navigate(`/setlists/${id}`);
+
+  const handleExit = () => {
+    // Only offer to log when the set was actually played through and the
+    // setlist isn't already complete. A one-song set counts as played through.
+    const playedThrough = reachedEndRef.current || songs.length === 1;
+    if (playedThrough && setlist.status !== "complete" && filledSongCount > 0) {
+      setShowEndPrompt(true);
+    } else {
+      exitToSetlist();
+    }
+  };
+
+  const handleMarkPlayed = async () => {
+    if (!id) return;
+    setCompleting(true);
+    try {
+      const res = await setlistsApi.markComplete(id, undefined, "perform");
+      toast.success(`Set marked as played — ${res.usagesLogged} play${res.usagesLogged === 1 ? "" : "s"} logged`);
+    } catch (err: any) {
+      toast.error(err?.message || "Couldn't mark the set as played — you can complete it from the set list page.");
+    } finally {
+      setCompleting(false);
+      exitToSetlist();
+    }
+  };
+
   return (
-    <PerformanceMode
-      songs={songs}
-      songContents={contents}
-      setlistName={setlist.name}
-      onExit={() => navigate(`/setlists/${id}`)}
-    />
+    <>
+      <PerformanceMode
+        songs={songs}
+        songContents={contents}
+        setlistName={setlist.name}
+        onExit={handleExit}
+        onSongChange={(idx) => {
+          if (idx === songs.length - 1) reachedEndRef.current = true;
+        }}
+      />
+      <ResponsiveModal
+        open={showEndPrompt}
+        onClose={exitToSetlist}
+        title="Mark this set as played?"
+        description={`Logs ${filledSongCount} play${filledSongCount === 1 ? "" : "s"} to your song statistics and marks "${setlist.name}" complete.`}
+        showCloseButton={false}
+      >
+        <div className="flex flex-wrap justify-end gap-3">
+          <button type="button" onClick={exitToSetlist} className="btn-outline" disabled={completing}>
+            Not now
+          </button>
+          <button type="button" onClick={handleMarkPlayed} className="btn-primary" disabled={completing}>
+            {completing ? "Logging…" : "Mark as played"}
+          </button>
+        </div>
+      </ResponsiveModal>
+    </>
   );
 }

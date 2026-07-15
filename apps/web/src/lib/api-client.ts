@@ -105,6 +105,7 @@ export const authApi = {
 
 // ── Songs ────────────────────────────────────────
 export type SongStatus = "ready" | "needs_review" | "in_rehearsal" | "updated" | "missing_chords";
+export type SongTier = "personal" | "organization" | "global";
 
 export interface Song {
   id: string;
@@ -120,6 +121,7 @@ export interface Song {
   content: string;
   abcNotation?: string | null;
   isDraft?: boolean;
+  tier?: SongTier;
   status?: SongStatus | null;
   isArchived?: boolean;
   isFavorite?: boolean;
@@ -147,6 +149,19 @@ export interface SongVariation {
   createdBy?: string | null;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface SimilarSong {
+  id: string;
+  title: string;
+  artist?: string | null;
+  key?: string | null;
+  tempo?: number | null;
+  tags?: string | null;
+  energy?: number | null;
+  durationSeconds?: number | null;
+  tempoDiff?: number | null;
+  sharedTags: string[];
 }
 
 export interface SongGroup {
@@ -213,6 +228,8 @@ export const songsApi = {
     request<{ setlists: { id: string; name: string; status?: string; updatedAt?: string }[] }>(`/api/songs/${id}/setlists`),
   setStatus: (id: string, status: SongStatus | null) =>
     request<{ song: Song }>(`/api/songs/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
+  setTier: (id: string, tier: SongTier) =>
+    request<{ song: Song }>(`/api/songs/${id}/tier`, { method: "PATCH", body: JSON.stringify({ tier }) }),
   archive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/archive`, { method: "POST" }),
   unarchive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/unarchive`, { method: "POST" }),
   restore: (id: string) => request<{ song: Song }>(`/api/songs/${id}/restore`, { method: "POST" }),
@@ -221,6 +238,16 @@ export const songsApi = {
   favorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "POST" }),
   unfavorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "DELETE" }),
   get: (id: string) => request<{ song: Song; variations: SongVariation[] }>(`/api/songs/${id}`),
+  similar: (id: string, params?: { tempoTolerance?: number; limit?: number }) => {
+    const qs = new URLSearchParams();
+    if (params?.tempoTolerance) qs.set("tempoTolerance", String(params.tempoTolerance));
+    if (params?.limit) qs.set("limit", String(params.limit));
+    const query = qs.toString();
+    return request<{
+      source: { id: string; key?: string | null; tempo?: number | null; tags?: string | null };
+      songs: SimilarSong[];
+    }>(`/api/songs/${id}/similar${query ? `?${query}` : ""}`);
+  },
   getGroups: () => request<{ groups: SongGroup[] }>("/api/songs/groups"),
   createGroup: (data: { name: string }) =>
     request<{ group: SongGroup }>("/api/songs/groups", { method: "POST", body: JSON.stringify(data) }),
@@ -330,6 +357,62 @@ export const variationsApi = {
     }),
   delete: (songId: string, varId: string) =>
     request<{ message: string }>(`/api/songs/${songId}/variations/${varId}`, { method: "DELETE" }),
+  promote: (
+    songId: string,
+    varId: string,
+    data?: { lastKnownUpdatedAt?: string; forceOverwrite?: boolean; promoteKey?: boolean },
+  ) =>
+    request<{ song: Song; variation: SongVariation }>(
+      `/api/songs/${songId}/variations/${varId}/promote`,
+      { method: "POST", body: JSON.stringify(data ?? {}) },
+    ),
+};
+
+// ── Instrument parts (per-musician layers) ───────
+export interface InstrumentPart {
+  id: string;
+  songId: string;
+  userId: string;
+  name: string;
+  icon?: string | null;
+  color?: string | null;
+  content?: string | null;
+  abcNotation?: string | null;
+  tier: SongTier;
+  authorName?: string | null;
+  isMine?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export type InstrumentPartInput = {
+  name?: string;
+  icon?: string | null;
+  color?: string | null;
+  content?: string | null;
+  abcNotation?: string | null;
+};
+
+export const instrumentPartsApi = {
+  list: (songId: string) =>
+    request<{ parts: InstrumentPart[] }>(`/api/songs/${songId}/instrument-parts`),
+  create: (songId: string, data: InstrumentPartInput) =>
+    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  update: (songId: string, partId: string, data: InstrumentPartInput) =>
+    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts/${partId}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    }),
+  delete: (songId: string, partId: string) =>
+    request<{ message: string }>(`/api/songs/${songId}/instrument-parts/${partId}`, { method: "DELETE" }),
+  setTier: (songId: string, partId: string, tier: SongTier) =>
+    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts/${partId}/tier`, {
+      method: "PATCH",
+      body: JSON.stringify({ tier }),
+    }),
 };
 
 // ── Setlists ─────────────────────────────────────
@@ -427,11 +510,33 @@ export const setlistsApi = {
     }),
   removeSong: (setlistId: string, songItemId: string) =>
     request<{ message: string }>(`/api/setlists/${setlistId}/songs/${songItemId}`, { method: "DELETE" }),
-  markComplete: (setlistId: string, usedAt?: string) =>
+  markComplete: (setlistId: string, usedAt?: string, source?: "perform") =>
     request<{ setlist: Setlist; usagesLogged: number }>(`/api/setlists/${setlistId}/complete`, {
       method: "POST",
-      body: JSON.stringify({ usedAt }),
+      body: JSON.stringify({ usedAt, source }),
     }),
+  share: (setlistId: string, data?: { label?: string; expiresInDays?: number }) =>
+    request<{ shareToken: { token: string }; shareUrl: string }>(`/api/setlists/${setlistId}/share`, {
+      method: "POST",
+      body: JSON.stringify(data ?? {}),
+    }),
+  getShared: (token: string) =>
+    request<{
+      setlist: { id: string; name: string; category?: string | null };
+      songs: Array<{
+        id: string;
+        position: number;
+        keyOverride?: string | null;
+        capo?: number | null;
+        notes?: string | null;
+        songId: string;
+        title: string;
+        artist?: string | null;
+        songKey?: string | null;
+        tempo?: number | null;
+        content: string;
+      }>;
+    }>(`/api/shared/setlist/${token}`),
   reopen: (setlistId: string) =>
     request<{ setlist: Setlist }>(`/api/setlists/${setlistId}/reopen`, { method: "POST" }),
 };
@@ -780,6 +885,17 @@ export const adminApi = {
       "/api/admin/users/invite",
       { method: "POST", body: JSON.stringify(data) },
     ),
+  /** Invite several members at once */
+  inviteBulk: (invites: Array<{ email: string; displayName?: string; role?: string }>) =>
+    request<{ results: Array<{ email: string | null; status: "invited" | "skipped" | "error"; role?: string; message?: string }>; invited: number }>(
+      "/api/admin/users/invite-bulk",
+      { method: "POST", body: JSON.stringify({ invites }) },
+    ),
+  /** Re-send a fresh invite link to a member who hasn't set a password */
+  resendInvite: (userId: string) =>
+    request<{ message: string; inviteUrl: string }>(`/api/admin/users/${userId}/resend-invite`, {
+      method: "POST",
+    }),
   /** Update a member's org role */
   updateRole: (userId: string, role: string) =>
     request<{ message: string }>(`/api/admin/users/${userId}/role`, {
@@ -1013,6 +1129,58 @@ export const usageReportApi = {
   get: () => request<{ songs: SongUsageReportRow[] }>("/api/songs/usage-report"),
 };
 
+// ── Statistics ───────────────────────────────────
+export interface MonthPlays {
+  month: string; // "YYYY-MM"
+  plays: number;
+}
+
+export interface StatsOverview {
+  playsByMonth: MonthPlays[];
+  topSongs: Array<{ id: string; title: string; plays: number; lastPlayed?: string | null }>;
+  keyDistribution: Array<{ key: string; count: number }>;
+  tempoDistribution: Array<{ band: string; count: number }>;
+  memberActivity: Array<{ userId: string; name?: string | null; plays: number }>;
+  totals: { totalPlays: number; songsPlayed: number };
+}
+
+export interface SongPerformance {
+  id: string;
+  usedAt: string;
+  source: string;
+  notes?: string | null;
+  eventTitle?: string | null;
+  eventId?: string | null;
+  setlistName?: string | null;
+  setlistId?: string | null;
+}
+
+// ── Ink annotations ──────────────────────────────
+export interface AnnotationStroke {
+  tool: "pen" | "highlighter";
+  color: string;
+  /** Normalized [0..1] coordinates relative to the chart's content box. */
+  points: Array<{ x: number; y: number }>;
+}
+
+export const annotationsApi = {
+  get: (songId: string) =>
+    request<{ annotation: { id: string; data: AnnotationStroke[] } | null }>(`/api/songs/${songId}/annotations`),
+  save: (songId: string, data: AnnotationStroke[]) =>
+    request<{ annotation: { id: string; data: AnnotationStroke[] } }>(`/api/songs/${songId}/annotations`, {
+      method: "PUT",
+      body: JSON.stringify({ data }),
+    }),
+};
+
+export const statsApi = {
+  overview: () => request<StatsOverview>("/api/stats/overview"),
+  song: (id: string) =>
+    request<{ song: { id: string; title: string }; playsByMonth: MonthPlays[]; performances: SongPerformance[] }>(
+      `/api/stats/songs/${id}`,
+    ),
+};
+
 // ── Assistant ────────────────────────────────────
 export interface AssistantMessage {
   role: "user" | "assistant";
@@ -1113,6 +1281,12 @@ export const orgsApi = {
       method: "POST",
       body: JSON.stringify({ name }),
     }),
+  /** Owner-only: stand up an org for someone else and make them its admin */
+  provision: (data: { name: string; adminEmail: string; adminDisplayName?: string; joinAsMember?: boolean }) =>
+    request<{ organization: Organization; admin: { email: string; alreadyMember: boolean; inviteUrl: string | null } }>(
+      "/api/organizations/provision",
+      { method: "POST", body: JSON.stringify(data) },
+    ),
   /** Update an organization (name, slug, logo) */
   update: (id: string, data: string | { name?: string; slug?: string | null; logoUrl?: string | null }) =>
     request<{ organization: Organization }>(`/api/organizations/${id}`, {

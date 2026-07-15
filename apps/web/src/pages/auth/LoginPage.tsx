@@ -292,7 +292,7 @@ export function LoginPage() {
                   className="flex flex-col items-center gap-0.5 rounded-md border border-[hsl(var(--border))] px-2 py-2 text-center hover:bg-[hsl(var(--muted))] transition-colors disabled:opacity-50"
                 >
                   <span className="text-xs font-medium text-[hsl(var(--foreground))]">{acct.label}</span>
-                  <span className="text-[10px] leading-tight text-[hsl(var(--muted-foreground))]">{acct.desc}</span>
+                  <span className="text-xs leading-tight text-[hsl(var(--muted-foreground))]">{acct.desc}</span>
                 </button>
               ))}
             </div>

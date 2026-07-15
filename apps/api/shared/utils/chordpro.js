@@ -4,19 +4,73 @@
  */
 import { isSectionToken } from "./transpose.js";
 
+// ChordPro environment directives → default section names. Both the long and
+// short forms open a named section; the matching end_* closes it. A label
+// value overrides the default ({start_of_verse: Verse 2} → "Verse 2").
+const ENVIRONMENT_STARTS = {
+  soc: "Chorus", start_of_chorus: "Chorus",
+  sov: "Verse", start_of_verse: "Verse",
+  sob: "Bridge", start_of_bridge: "Bridge",
+  sot: "Tab", start_of_tab: "Tab",
+};
+const ENVIRONMENT_ENDS = new Set([
+  "eoc", "end_of_chorus",
+  "eov", "end_of_verse",
+  "eob", "end_of_bridge",
+  "eot", "end_of_tab",
+]);
+// Environments whose body is preformatted — no chord extraction, no trimming.
+const RAW_ENVIRONMENTS = new Set(["sot", "start_of_tab"]);
+
+/**
+ * Parse a `{define: Name base-fret N frets f f f f f f [fingers …]}` value
+ * into a chord-shape object. Returns null when it doesn't match the spec.
+ */
+function parseDefineValue(value) {
+  const match = value.match(/^(\S+)\s+base-fret\s+(\d+)\s+frets((?:\s+(?:x|X|\d+))+)(?:\s+fingers((?:\s+(?:x|X|\d+))+))?\s*$/);
+  if (!match) return null;
+  const toFret = (token) => (token.toLowerCase() === "x" ? -1 : Number(token));
+  return {
+    name: match[1],
+    baseFret: Number(match[2]),
+    frets: match[3].trim().split(/\s+/).map(toFret),
+    fingers: match[4] ? match[4].trim().split(/\s+/).map(toFret) : null,
+  };
+}
+
 /**
  * Parse a ChordPro string into sections of directives and lyric/chord lines.
  * @param {string} input — raw ChordPro source text
- * @returns {{ directives: Record<string, string>, sections: Array<{ name: string, lines: Array<{ chords: Array<{chord: string, position: number}>, lyrics: string }> }> }}
+ * @returns {{ directives: Record<string, string>, sections: Array<{ name: string, raw?: boolean, lines: Array<{ chords: Array<{chord: string, position: number}>, lyrics: string }> }>, chordDefinitions: Record<string, {name: string, baseFret: number, frets: number[], fingers: number[]|null}> }}
  */
 export function parseChordPro(input) {
   const lines = input.split("\n");
   const directives = {};
+  const chordDefinitions = {};
   const sections = [];
   let currentSection = { name: "", lines: [] };
+  let rawMode = false;
+
+  const pushSection = () => {
+    if (currentSection.lines.length > 0) sections.push(currentSection);
+  };
 
   for (const line of lines) {
     const trimmed = line.trim();
+
+    // Inside a raw environment (tab): only the end directive is special;
+    // every other line is preserved verbatim (no trimming, no chord parse).
+    if (rawMode) {
+      const endMatch = trimmed.match(/^\{(\w+)\}$/);
+      if (endMatch && ENVIRONMENT_ENDS.has(endMatch[1])) {
+        pushSection();
+        currentSection = { name: "", lines: [] };
+        rawMode = false;
+        continue;
+      }
+      currentSection.lines.push({ chords: [], lyrics: line });
+      continue;
+    }
 
     // Comment line — stripped on render
     if (trimmed.startsWith("#")) continue;
@@ -24,7 +78,7 @@ export function parseChordPro(input) {
     // Standalone section header line, e.g. "[Verse 1]" / "[Chorus]"
     const bracketHeader = trimmed.match(/^\[([^\]]+)\]$/);
     if (bracketHeader && isSectionToken(bracketHeader[1])) {
-      if (currentSection.lines.length > 0) sections.push(currentSection);
+      pushSection();
       currentSection = { name: bracketHeader[1], lines: [] };
       continue;
     }
@@ -33,18 +87,19 @@ export function parseChordPro(input) {
     const directiveMatch = trimmed.match(/^\{(\w+):\s*(.*?)\}$/);
     if (directiveMatch) {
       const [, key, value] = directiveMatch;
-      // Section directives
       if (key === "comment" || key === "c") {
-        if (currentSection.lines.length > 0) {
-          sections.push(currentSection);
-        }
+        pushSection();
         currentSection = { name: value, lines: [] };
-      } else if (key === "start_of_chorus" || key === "soc") {
-        if (currentSection.lines.length > 0) sections.push(currentSection);
-        currentSection = { name: "Chorus", lines: [] };
-      } else if (key === "end_of_chorus" || key === "eoc") {
-        sections.push(currentSection);
-        currentSection = { name: "", lines: [] };
+      } else if (key in ENVIRONMENT_STARTS) {
+        pushSection();
+        currentSection = { name: value || ENVIRONMENT_STARTS[key], lines: [] };
+        if (RAW_ENVIRONMENTS.has(key)) {
+          currentSection.raw = true;
+          rawMode = true;
+        }
+      } else if (key === "define" || key === "chord") {
+        const def = parseDefineValue(value);
+        if (def) chordDefinitions[def.name] = def;
       } else {
         directives[key] = value;
       }
@@ -54,11 +109,15 @@ export function parseChordPro(input) {
     // Standalone directive: {directive}
     if (/^\{\w+\}$/.test(trimmed)) {
       const key = trimmed.slice(1, -1);
-      if (key === "start_of_chorus" || key === "soc") {
-        if (currentSection.lines.length > 0) sections.push(currentSection);
-        currentSection = { name: "Chorus", lines: [] };
-      } else if (key === "end_of_chorus" || key === "eoc") {
-        sections.push(currentSection);
+      if (key in ENVIRONMENT_STARTS) {
+        pushSection();
+        currentSection = { name: ENVIRONMENT_STARTS[key], lines: [] };
+        if (RAW_ENVIRONMENTS.has(key)) {
+          currentSection.raw = true;
+          rawMode = true;
+        }
+      } else if (ENVIRONMENT_ENDS.has(key)) {
+        pushSection();
         currentSection = { name: "", lines: [] };
       }
       continue;
@@ -76,7 +135,6 @@ export function parseChordPro(input) {
     // Lyric/chord line — extract [Chord] tokens
     const chords = [];
     let lyrics = "";
-    let pos = 0;
     const regex = /\[([^\]]+)\]/g;
     let match;
     let lastIndex = 0;
@@ -91,11 +149,9 @@ export function parseChordPro(input) {
     currentSection.lines.push({ chords, lyrics });
   }
 
-  if (currentSection.lines.length > 0) {
-    sections.push(currentSection);
-  }
+  pushSection();
 
-  return { directives, sections };
+  return { directives, sections, chordDefinitions };
 }
 
 /**

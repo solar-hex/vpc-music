@@ -2,7 +2,7 @@ import { Router } from "express";
 import { eq, and, inArray } from "drizzle-orm";
 import crypto from "node:crypto";
 import { db } from "../../db.js";
-import { organizationMembers, organizations, shareTeamMembers, shareTeams, shareTokens, songOrganizationShares, songTeamShares, songUserShares, songs, users } from "../../schema/index.js";
+import { organizationMembers, organizations, shareTeamMembers, shareTeams, shareTokens, songOrganizationShares, songTeamShares, songUserShares, songs, users, setlists, setlistSongs } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
@@ -856,7 +856,7 @@ shareRoutes.get(
       .where(eq(shareTokens.token, token))
       .limit(1);
 
-    if (!share) throw createError(404, "Invalid or expired share link");
+    if (!share || !share.songId) throw createError(404, "Invalid or expired share link");
     if (share.revoked) throw createError(410, "This share link has been revoked");
     if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
       throw createError(410, "This share link has expired");
@@ -883,5 +883,92 @@ shareRoutes.get(
     if (!song) throw createError(404, "Song no longer available");
 
     res.json({ song, shared: true });
+  })
+);
+
+// ── POST /api/setlists/:id/share — create a setlist share link ─
+shareRoutes.post(
+  "/setlists/:id/share",
+  auth,
+  orgContext,
+  requireOrg,
+  requireOrgRole("admin", "musician"),
+  asyncHandler(async (req, res) => {
+    const [setlist] = await db
+      .select({ id: setlists.id })
+      .from(setlists)
+      .where(and(eq(setlists.id, req.params.id), eq(setlists.organizationId, req.org.id)))
+      .limit(1);
+
+    if (!setlist) throw createError(404, "Setlist not found");
+
+    const { label, expiresInDays } = req.body ?? {};
+    const expiresAt = expiresInDays ? new Date(Date.now() + expiresInDays * 86400000) : null;
+    const token = generateToken();
+
+    const [created] = await db
+      .insert(shareTokens)
+      .values({
+        token,
+        setlistId: req.params.id,
+        createdBy: req.user.id,
+        label: label || null,
+        expiresAt,
+      })
+      .returning();
+
+    res.status(201).json({
+      shareToken: created,
+      shareUrl: `/shared/setlist/${token}`,
+    });
+  })
+);
+
+// ── GET /api/shared/setlist/:token — PUBLIC: view a shared setlist ─
+// No auth required — the token IS the credential. Returns the setlist plus
+// each filled song's read-only chart so a guest musician can play the set.
+shareRoutes.get(
+  "/shared/setlist/:token",
+  asyncHandler(async (req, res) => {
+    const [share] = await db
+      .select()
+      .from(shareTokens)
+      .where(eq(shareTokens.token, req.params.token))
+      .limit(1);
+
+    if (!share || !share.setlistId) throw createError(404, "Invalid or expired share link");
+    if (share.revoked) throw createError(410, "This share link has been revoked");
+    if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
+      throw createError(410, "This share link has expired");
+    }
+
+    const [setlist] = await db
+      .select({ id: setlists.id, name: setlists.name, category: setlists.category })
+      .from(setlists)
+      .where(eq(setlists.id, share.setlistId))
+      .limit(1);
+
+    if (!setlist) throw createError(404, "Setlist no longer available");
+
+    const items = await db
+      .select({
+        id: setlistSongs.id,
+        position: setlistSongs.position,
+        keyOverride: setlistSongs.key,
+        capo: setlistSongs.capo,
+        notes: setlistSongs.notes,
+        songId: songs.id,
+        title: songs.title,
+        artist: songs.artist,
+        songKey: songs.key,
+        tempo: songs.tempo,
+        content: songs.content,
+      })
+      .from(setlistSongs)
+      .innerJoin(songs, eq(setlistSongs.songId, songs.id))
+      .where(eq(setlistSongs.setlistId, share.setlistId))
+      .orderBy(setlistSongs.position);
+
+    res.json({ setlist, songs: items, shared: true });
   })
 );

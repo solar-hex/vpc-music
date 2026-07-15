@@ -5,6 +5,7 @@ import { ChordProEditor } from "@/components/songs/ChordProEditor";
 
 // ---------- Mocks ----------
 vi.mock("@vpc-music/shared", () => ({
+  parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
   transposeKeyName: (key: string) => key,
   composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
   spellForTarget: (key: string | null | undefined) =>

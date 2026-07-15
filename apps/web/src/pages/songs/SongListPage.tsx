@@ -660,7 +660,7 @@ export function SongListPage() {
                 </button>
 
                 {showExportMenu && selectedSongIds.length > 0 && (
-                  <div className="absolute right-0 z-20 mt-2 w-48 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-1 shadow-lg">
+                  <div className="fixed inset-x-4 bottom-4 z-50 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-1 shadow-lg sm:absolute sm:inset-x-auto sm:bottom-auto sm:right-0 sm:z-20 sm:mt-2 sm:w-48">
                     <button
                       type="button"
                       onClick={() => handleExportZip("chordpro")}

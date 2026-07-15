@@ -45,7 +45,7 @@ export function EventDetailPage() {
       setRehearsals(rehearsalRes.rehearsals.filter((rehearsal) => rehearsal.eventId === id));
     } catch {
       toast.error("Event not found");
-      navigate("/setlists/events");
+      navigate("/setlists/schedule");
     } finally {
       setLoading(false);
     }
@@ -94,7 +94,7 @@ export function EventDetailPage() {
 
   return (
     <div className="space-y-6">
-      <Link to="/setlists/events" className="link-accent inline-flex items-center gap-1 text-sm">
+      <Link to="/setlists/schedule" className="link-accent inline-flex items-center gap-1 text-sm">
         <ArrowLeft className="h-4 w-4" /> All events
       </Link>
 
