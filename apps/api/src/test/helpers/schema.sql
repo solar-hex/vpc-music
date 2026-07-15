@@ -288,13 +288,15 @@ CREATE TABLE "password_reset_tokens" (
 CREATE TABLE "share_tokens" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"token" text NOT NULL,
-	"song_id" uuid NOT NULL,
+	"song_id" uuid,
+	"setlist_id" uuid,
 	"created_by" uuid,
 	"label" text,
 	"expires_at" timestamp,
 	"revoked" boolean DEFAULT false,
 	"created_at" timestamp DEFAULT now(),
-	CONSTRAINT "share_tokens_token_unique" UNIQUE("token")
+	CONSTRAINT "share_tokens_token_unique" UNIQUE("token"),
+	CONSTRAINT "share_tokens_target_check" CHECK (("song_id" IS NOT NULL) <> ("setlist_id" IS NOT NULL))
 );
 --> statement-breakpoint
 CREATE TABLE "share_team_members" (
@@ -326,6 +328,8 @@ CREATE TABLE "song_usages" (
 	"song_id" uuid NOT NULL,
 	"used_at" date NOT NULL,
 	"event_id" uuid,
+	"setlist_id" uuid,
+	"source" text DEFAULT 'manual' NOT NULL,
 	"notes" text,
 	"organization_id" uuid,
 	"recorded_by" uuid,
@@ -363,6 +367,15 @@ CREATE TABLE "song_instrument_parts" (
 	"content" text,
 	"abc_notation" text,
 	"tier" "song_tier" DEFAULT 'personal' NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
+);
+--> statement-breakpoint
+CREATE TABLE "song_annotations" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"song_id" uuid NOT NULL,
+	"user_id" uuid NOT NULL,
+	"data" jsonb DEFAULT '[]'::jsonb NOT NULL,
 	"created_at" timestamp DEFAULT now(),
 	"updated_at" timestamp DEFAULT now()
 );
@@ -444,6 +457,7 @@ ALTER TABLE "events" ADD CONSTRAINT "events_setlist_id_setlists_id_fk" FOREIGN K
 ALTER TABLE "events" ADD CONSTRAINT "events_created_by_users_id_fk" FOREIGN KEY ("created_by") REFERENCES "public"."users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "password_reset_tokens" ADD CONSTRAINT "password_reset_tokens_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "share_tokens" ADD CONSTRAINT "share_tokens_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "share_tokens" ADD CONSTRAINT "share_tokens_setlist_id_setlists_id_fk" FOREIGN KEY ("setlist_id") REFERENCES "public"."setlists"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "share_tokens" ADD CONSTRAINT "share_tokens_created_by_users_id_fk" FOREIGN KEY ("created_by") REFERENCES "public"."users"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "share_team_members" ADD CONSTRAINT "share_team_members_team_id_share_teams_id_fk" FOREIGN KEY ("team_id") REFERENCES "public"."share_teams"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "share_team_members" ADD CONSTRAINT "share_team_members_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
@@ -454,6 +468,7 @@ ALTER TABLE "song_team_shares" ADD CONSTRAINT "song_team_shares_team_id_share_te
 ALTER TABLE "song_team_shares" ADD CONSTRAINT "song_team_shares_created_by_users_id_fk" FOREIGN KEY ("created_by") REFERENCES "public"."users"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_usages" ADD CONSTRAINT "song_usages_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_usages" ADD CONSTRAINT "song_usages_event_id_events_id_fk" FOREIGN KEY ("event_id") REFERENCES "public"."events"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "song_usages" ADD CONSTRAINT "song_usages_setlist_id_setlists_id_fk" FOREIGN KEY ("setlist_id") REFERENCES "public"."setlists"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_usages" ADD CONSTRAINT "song_usages_organization_id_organizations_id_fk" FOREIGN KEY ("organization_id") REFERENCES "public"."organizations"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_usages" ADD CONSTRAINT "song_usages_recorded_by_users_id_fk" FOREIGN KEY ("recorded_by") REFERENCES "public"."users"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_edits" ADD CONSTRAINT "song_edits_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
@@ -468,6 +483,9 @@ ALTER TABLE "notifications" ADD CONSTRAINT "notifications_user_id_users_id_fk" F
 ALTER TABLE "notifications" ADD CONSTRAINT "notifications_organization_id_organizations_id_fk" FOREIGN KEY ("organization_id") REFERENCES "public"."organizations"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_instrument_parts" ADD CONSTRAINT "song_instrument_parts_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "song_instrument_parts" ADD CONSTRAINT "song_instrument_parts_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "song_annotations" ADD CONSTRAINT "song_annotations_song_id_songs_id_fk" FOREIGN KEY ("song_id") REFERENCES "public"."songs"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "song_annotations" ADD CONSTRAINT "song_annotations_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+CREATE UNIQUE INDEX "song_annotation_unique" ON "song_annotations" USING btree ("song_id","user_id");--> statement-breakpoint
 CREATE INDEX "song_instrument_parts_song_idx" ON "song_instrument_parts" USING btree ("song_id");--> statement-breakpoint
 CREATE INDEX "song_instrument_parts_user_idx" ON "song_instrument_parts" USING btree ("user_id");--> statement-breakpoint
 CREATE UNIQUE INDEX "org_member_unique" ON "organization_members" USING btree ("organization_id","user_id");--> statement-breakpoint

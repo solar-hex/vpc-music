@@ -12,11 +12,13 @@ import {
   Maximize2,
   Minimize2,
   Music,
+  Music2,
   SkipForward,
   Sun,
 } from "lucide-react";
 import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRenderer";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
+import { MetronomeWidget } from "@/components/songs/MetronomeWidget";
 import type { SetlistSongItem } from "@/lib/api-client";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { formatDuration } from "@/lib/format";
@@ -72,6 +74,7 @@ export function PerformanceMode({
   const [showChords, setShowChords] = useState(true);
   const [fontSize, setFontSizeState] = useState(loadFontSize);
   const [showToolbar, setShowToolbar] = useState(true);
+  const [showMetronome, setShowMetronome] = useState(false);
   const [brightness, setBrightness] = useState(100); // percent, 40–100
   // Live transpose: extra semitones per song index, on top of any key override
   const [liveTranspose, setLiveTranspose] = useState<Record<number, number>>({});
@@ -342,6 +345,22 @@ export function PerformanceMode({
               <Timer className="h-4 w-4" />
             </button>
 
+            {/* Metronome toggle (audible click; needs a BPM) */}
+            {(content?.tempo || currentSong?.songTempo) && (
+              <button
+                data-testid="perf-metronome-toggle"
+                onClick={() => setShowMetronome((v) => !v)}
+                className={`p-1.5 rounded transition-colors ${
+                  showMetronome
+                    ? "text-[hsl(var(--secondary))]"
+                    : "text-[hsl(var(--muted-foreground))]"
+                } hover:bg-[hsl(var(--muted))]`}
+                title="Toggle click track"
+              >
+                <Music2 className="h-4 w-4" />
+              </button>
+            )}
+
             {/* Timer duration picker (only visible when timer enabled) */}
             {timerEnabled && (
               <select
@@ -383,6 +402,13 @@ export function PerformanceMode({
               <X className="h-4 w-4" />
             </button>
           </div>
+        </div>
+      )}
+
+      {/* Click track — keyed per song so it reseeds from each song's BPM */}
+      {showMetronome && (content?.tempo || currentSong?.songTempo) && (
+        <div className="border-b border-[hsl(var(--border))] px-4 py-2 shrink-0">
+          <MetronomeWidget key={currentIndex} tempo={content?.tempo ?? currentSong?.songTempo} />
         </div>
       )}
 
@@ -462,7 +488,7 @@ export function PerformanceMode({
                   <button
                     data-testid="perf-transpose-down"
                     onClick={() => nudgeTranspose(-1)}
-                    className="h-6 w-6 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
+                    className="h-6 w-6 pointer-coarse:h-11 pointer-coarse:w-11 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
                     aria-label="Transpose down"
                   >
                     −
@@ -473,7 +499,7 @@ export function PerformanceMode({
                   <button
                     data-testid="perf-transpose-up"
                     onClick={() => nudgeTranspose(1)}
-                    className="h-6 w-6 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
+                    className="h-6 w-6 pointer-coarse:h-11 pointer-coarse:w-11 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
                     aria-label="Transpose up"
                   >
                     +
@@ -554,23 +580,39 @@ export function PerformanceMode({
               }
             />
             <div className="flex-1" />
-            {/* Song list quick nav */}
-            <div className="flex items-center gap-1">
-              {songs.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => goToSong(idx)}
-                  className={`w-6 h-6 rounded-full text-xs font-mono transition-colors ${
-                    idx === currentIndex
-                      ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                      : "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))]/80"
-                  }`}
-                  title={songs[idx]?.songTitle ?? songs[idx]?.slotLabel ?? undefined}
-                >
-                  {idx + 1}
-                </button>
-              ))}
-            </div>
+            {/* Song list quick nav — dots for short sets; a jump select for
+                long ones (a native picker beats 20 tiny dots on a phone). */}
+            {songs.length > 10 ? (
+              <select
+                value={currentIndex}
+                onChange={(e) => goToSong(Number(e.target.value))}
+                className="select btn-sm w-auto max-w-48"
+                aria-label="Jump to song"
+              >
+                {songs.map((s, idx) => (
+                  <option key={idx} value={idx}>
+                    {idx + 1}. {s.songTitle ?? s.slotLabel ?? "—"}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <div className="flex flex-wrap items-center gap-1">
+                {songs.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToSong(idx)}
+                    className={`w-6 h-6 pointer-coarse:w-10 pointer-coarse:h-10 rounded-full text-xs font-mono transition-colors ${
+                      idx === currentIndex
+                        ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+                        : "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))]/80"
+                    }`}
+                    title={songs[idx]?.songTitle ?? songs[idx]?.slotLabel ?? undefined}
+                  >
+                    {idx + 1}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

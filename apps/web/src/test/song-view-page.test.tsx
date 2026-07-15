@@ -26,6 +26,10 @@ let mockAuthValue: any = {
 };
 
 vi.mock("@/lib/api-client", () => ({
+  annotationsApi: {
+    get: vi.fn().mockResolvedValue({ annotation: null }),
+    save: vi.fn().mockResolvedValue({ annotation: { id: "a1", data: [] } }),
+  },
   songsApi: {
     get: (...args: any[]) => mockGet(...args),
     delete: (...args: any[]) => mockDelete(...args),
@@ -195,12 +199,15 @@ describe("SongViewPage", () => {
       renderPage();
       await waitFor(() => {
         expect(screen.getByText("Edit")).toBeInTheDocument();
-        expect(screen.getByText("Add to Setlist")).toBeInTheDocument();
-        expect(screen.getByText("Export")).toBeInTheDocument();
-        expect(screen.getByText("Print")).toBeInTheDocument();
-        expect(screen.getByText("Delete")).toBeInTheDocument();
         expect(screen.getByText("Chords")).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /more actions/i })).toBeInTheDocument();
       });
+      // Secondary actions live inside the More overflow menu
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByText("Add to Setlist")).toBeInTheDocument();
+      expect(screen.getByText("Print")).toBeInTheDocument();
+      expect(screen.getByText("Delete")).toBeInTheDocument();
+      expect(screen.getByText("ChordPro (.cho)")).toBeInTheDocument();
     });
 
     it("adds the selected variation to a setlist with variation context", async () => {
@@ -212,7 +219,8 @@ describe("SongViewPage", () => {
       renderPage();
 
       await user.click(await screen.findByRole("button", { name: /acoustic/i }));
-      await user.click(screen.getByRole("button", { name: /add to setlist/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("menuitem", { name: /add to setlist/i }));
       await user.click(await screen.findByRole("button", { name: /sunday service/i }));
 
       await waitFor(() => {
@@ -385,10 +393,11 @@ describe("SongViewPage", () => {
       renderPage();
 
       await waitFor(() => {
-        expect(screen.getByText("Delete")).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /more actions/i })).toBeInTheDocument();
       });
 
-      fireEvent.click(screen.getByText("Delete"));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      fireEvent.click(screen.getByRole("menuitem", { name: /delete/i }));
       fireEvent.click(screen.getByRole("button", { name: /delete song/i }));
 
       await waitFor(() => {
@@ -405,10 +414,11 @@ describe("SongViewPage", () => {
       renderPage();
 
       await waitFor(() => {
-        expect(screen.getByText("Delete")).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /more actions/i })).toBeInTheDocument();
       });
 
-      fireEvent.click(screen.getByText("Delete"));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      fireEvent.click(screen.getByRole("menuitem", { name: /delete/i }));
       fireEvent.click(screen.getByRole("button", { name: /delete song/i }));
 
       await waitFor(() => {

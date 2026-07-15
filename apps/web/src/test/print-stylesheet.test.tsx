@@ -10,6 +10,10 @@ import path from "node:path";
 // songsApi
 const mockGet = vi.fn();
 vi.mock("@/lib/api-client", () => ({
+  annotationsApi: {
+    get: vi.fn().mockResolvedValue({ annotation: null }),
+    save: vi.fn().mockResolvedValue({ annotation: { id: "a1", data: [] } }),
+  },
   songsApi: {
     get: (...args: any[]) => mockGet(...args),
     delete: vi.fn(),
@@ -133,37 +137,32 @@ describe("Print stylesheet feature", () => {
 
   // ===================== SongViewPage =====================
 
-  describe("SongViewPage — print button", () => {
-    it("renders a Print button in the toolbar", async () => {
+  describe("SongViewPage — print action", () => {
+    it("offers Print inside the More actions menu", async () => {
       renderSongView();
-      await waitFor(() => {
-        expect(screen.getByText("Print")).toBeInTheDocument();
-      });
+      const user = userEvent.setup();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByRole("menuitem", { name: "Print" })).toBeInTheDocument();
     });
 
-    it("Print button has correct title attribute", async () => {
-      renderSongView();
-      await waitFor(() => {
-        const btn = screen.getByTitle("Print chord chart");
-        expect(btn).toBeInTheDocument();
-        expect(btn).toHaveTextContent("Print");
-      });
-    });
-
-    it("calls window.print when Print button is clicked", async () => {
+    it("calls window.print when Print is selected", async () => {
       const printSpy = vi.spyOn(window, "print").mockImplementation(() => {});
       renderSongView();
       const user = userEvent.setup();
-      await waitFor(() => screen.getByText("Print"));
-      await user.click(screen.getByText("Print"));
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("menuitem", { name: "Print" }));
       expect(printSpy).toHaveBeenCalledOnce();
       printSpy.mockRestore();
     });
 
     it("toolbar has print-hidden class for print media", async () => {
       renderSongView();
-      await waitFor(() => screen.getByText("Print"));
-      const toolbar = screen.getByText("Print").closest("div.print-hidden");
+      const user = userEvent.setup();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      const toolbar = screen.getByRole("menuitem", { name: "Print" }).closest("div.print-hidden");
       expect(toolbar).toBeInTheDocument();
     });
 

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { RouteErrorPage } from "./components/shared/RouteErrorPage";
 import { ProtectedRoute } from "./components/shared/ProtectedRoute";
@@ -7,9 +7,9 @@ import { SectionLayout } from "./components/layout/SectionTabs";
 // ── Pages ────────────────────────────────────────
 import { LandingPage } from "./pages/LandingPage";
 import { SharedSongPage } from "./pages/SharedSongPage";
+import { SharedSetlistPage } from "./pages/SharedSetlistPage";
 import { DashboardPage } from "./pages/DashboardPage";
-import { DashboardUsageTab } from "./pages/dashboard/DashboardUsageTab";
-import { DashboardHistoryTab } from "./pages/dashboard/DashboardHistoryTab";
+import { DashboardAnalyticsTab } from "./pages/dashboard/DashboardAnalyticsTab";
 import { SongListPage } from "./pages/songs/SongListPage";
 import { MediaLibraryPage } from "./pages/songs/MediaLibraryPage";
 import { SongViewPage } from "./pages/songs/SongViewPage";
@@ -20,10 +20,8 @@ import { SongHistoryTab } from "./pages/songs/SongHistoryTab";
 import { SongEditPage } from "./pages/songs/SongEditPage";
 import { SetlistHubPage } from "./pages/setlists/SetlistHubPage";
 import { TemplatesPage } from "./pages/setlists/TemplatesPage";
-import { EventsPage } from "./pages/setlists/EventsPage";
+import { SchedulePage } from "./pages/setlists/SchedulePage";
 import { EventDetailPage } from "./pages/setlists/EventDetailPage";
-import { CalendarPage } from "./pages/setlists/CalendarPage";
-import { RehearsalsPage } from "./pages/setlists/RehearsalsPage";
 import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
 import { PerformPage } from "./pages/setlists/PerformPage";
 import { ArtistsPage } from "./pages/artists/ArtistsPage";
@@ -53,6 +51,7 @@ export const router = createBrowserRouter([
   { path: "/forgot-password", element: <ForgotPasswordPage /> },
   { path: "/reset-password", element: <ResetPasswordPage /> },
   { path: "/shared/:token", element: <SharedSongPage /> },
+  { path: "/shared/setlist/:token", element: <SharedSetlistPage /> },
 
   // Rehearsal mode — full-bleed, no shell. The only screen used under pressure.
   {
@@ -91,15 +90,16 @@ export const router = createBrowserRouter([
           <SectionLayout
             tabs={[
               { to: "", label: "Overview" },
-              { to: "usage", label: "Song usage" },
-              { to: "history", label: "Event history" },
+              { to: "analytics", label: "Analytics" },
             ]}
           />
         ),
         children: [
           { index: true, element: <DashboardPage /> },
-          { path: "usage", element: <DashboardUsageTab /> },
-          { path: "history", element: <DashboardHistoryTab /> },
+          { path: "analytics", element: <DashboardAnalyticsTab /> },
+          // Old tab URLs → the consolidated Analytics views
+          { path: "usage", element: <Navigate to="/dashboard/analytics?view=usage" replace /> },
+          { path: "history", element: <Navigate to="/dashboard/analytics?view=history" replace /> },
         ],
       },
       {
@@ -146,18 +146,18 @@ export const router = createBrowserRouter([
             tabs={[
               { to: "", label: "Set lists" },
               { to: "templates", label: "Templates" },
-              { to: "events", label: "Events" },
-              { to: "calendar", label: "Calendar" },
-              { to: "rehearsals", label: "Rehearsals" },
+              { to: "schedule", label: "Schedule" },
             ]}
           />
         ),
         children: [
           { index: true, element: <SetlistHubPage /> },
           { path: "templates", element: <TemplatesPage /> },
-          { path: "events", element: <EventsPage /> },
-          { path: "calendar", element: <CalendarPage /> },
-          { path: "rehearsals", element: <RehearsalsPage /> },
+          { path: "schedule", element: <SchedulePage /> },
+          // Old schedule tab URLs → consolidated Schedule views
+          { path: "events", element: <Navigate to="/setlists/schedule" replace /> },
+          { path: "calendar", element: <Navigate to="/setlists/schedule?view=calendar" replace /> },
+          { path: "rehearsals", element: <Navigate to="/setlists/schedule?view=rehearsals" replace /> },
         ],
       },
       { path: "/setlists/new", element: <SetlistHubPage /> },

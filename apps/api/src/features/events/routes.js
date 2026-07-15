@@ -286,6 +286,8 @@ eventRoutes.post(
               songId,
               usedAt: usedDate,
               eventId: existing.id,
+              setlistId: existing.setlistId,
+              source: "event_complete",
               notes: `Event: ${existing.title}`,
               organizationId: req.org.id,
               recordedBy: req.user.id,

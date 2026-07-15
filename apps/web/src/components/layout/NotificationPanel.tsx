@@ -90,7 +90,7 @@ export function NotificationPanel() {
         <div
           role="dialog"
           aria-label="Notifications"
-          className="absolute bottom-full right-0 mb-2 z-50 w-80 max-h-[420px] flex flex-col rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-lg"
+          className="fixed inset-x-4 bottom-4 z-50 max-h-[70vh] flex flex-col rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-lg sm:absolute sm:inset-x-auto sm:bottom-full sm:right-0 sm:mb-2 sm:w-80 sm:max-h-[420px] sm:rounded-md"
         >
           <div className="flex items-center justify-between px-3 py-2 border-b border-[hsl(var(--border))]">
             <span className="text-sm font-semibold">Notifications</span>
@@ -136,7 +136,7 @@ export function NotificationPanel() {
                           {notification.message}
                         </p>
                       )}
-                      <p className="text-[10px] text-[hsl(var(--muted-foreground))]/70 mt-0.5">{timeAgo(notification.createdAt)}</p>
+                      <p className="text-xs text-[hsl(var(--muted-foreground))]/70 mt-0.5">{timeAgo(notification.createdAt)}</p>
                     </button>
                     <div className="flex flex-col gap-1 shrink-0">
                       {!notification.readAt && (

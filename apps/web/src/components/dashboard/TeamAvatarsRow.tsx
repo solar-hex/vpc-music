@@ -40,7 +40,7 @@ export function TeamAvatarsRow() {
             </div>
             <div className="hidden sm:block">
               <p className="text-xs font-medium leading-tight">{m.displayName || "Member"}</p>
-              <p className="text-[10px] text-[hsl(var(--muted-foreground))]">{roleLabel(m.role)}</p>
+              <p className="text-xs text-[hsl(var(--muted-foreground))]">{roleLabel(m.role)}</p>
             </div>
           </div>
         ))}

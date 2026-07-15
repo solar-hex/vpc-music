@@ -4,12 +4,16 @@ import {
   songsApi,
   songUsageApi,
   songHistoryApi,
+  statsApi,
   type Song,
   type SongUsage,
   type SongEdit,
+  type MonthPlays,
+  type SongPerformance,
 } from "@/lib/api-client";
 import { History, TrendingUp, ListMusic, ArrowLeft, CalendarDays } from "lucide-react";
 import { formatShortDate } from "@/lib/format";
+import { MonthlyColumns } from "@/components/charts/MonthlyColumns";
 
 interface ContainingSetlist {
   id: string;
@@ -24,6 +28,8 @@ export function SongHistoryTab() {
   const [usages, setUsages] = useState<SongUsage[]>([]);
   const [edits, setEdits] = useState<SongEdit[]>([]);
   const [containing, setContaining] = useState<ContainingSetlist[]>([]);
+  const [playsByMonth, setPlaysByMonth] = useState<MonthPlays[]>([]);
+  const [performances, setPerformances] = useState<SongPerformance[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +39,13 @@ export function SongHistoryTab() {
       songUsageApi.list(id).then((res) => setUsages(res.usages)).catch(() => {}),
       songHistoryApi.list(id).then((res) => setEdits(res.history)).catch(() => {}),
       songsApi.listSetlists(id).then((res) => setContaining(res.setlists)).catch(() => {}),
+      statsApi
+        .song(id)
+        .then((res) => {
+          setPlaysByMonth(res.playsByMonth);
+          setPerformances(res.performances);
+        })
+        .catch(() => {}),
     ]).finally(() => setLoading(false));
   }, [id]);
 
@@ -68,10 +81,48 @@ export function SongHistoryTab() {
         </div>
       </div>
 
+      {/* Plays over time */}
+      {playsByMonth.some((m) => m.plays > 0) && (
+        <section className="max-w-xl space-y-2">
+          <h4 className="section-title">
+            <TrendingUp className="section-title-icon" /> Plays per month
+          </h4>
+          <MonthlyColumns data={playsByMonth} height={72} ariaLabel="This song's plays per month" />
+        </section>
+      )}
+
+      {/* Where it was actually played — survives setlist/event deletion */}
+      {performances.length > 0 && (
+        <section className="space-y-2">
+          <h4 className="section-title">
+            <CalendarDays className="section-title-icon" /> Played at
+          </h4>
+          <div className="list-container">
+            {performances.slice(0, 20).map((p) => (
+              <div key={p.id} className="list-item text-sm">
+                <span className="font-medium shrink-0">{formatShortDate(p.usedAt + "T00:00:00")}</span>
+                <span className="min-w-0 flex-1 truncate text-xs text-[hsl(var(--muted-foreground))]">
+                  {p.eventTitle
+                    ? `Event: ${p.eventTitle}`
+                    : p.setlistName
+                      ? `Setlist: ${p.setlistName}`
+                      : p.notes || "Logged manually"}
+                </span>
+                {p.eventId && (
+                  <Link to={`/setlists/events/${p.eventId}`} className="link-accent shrink-0 text-xs">
+                    View event
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Set lists containing the song */}
       <section className="space-y-2">
         <h4 className="section-title">
-          <ListMusic className="section-title-icon" /> Appears in
+          <ListMusic className="section-title-icon" /> Currently in
         </h4>
         {containing.length === 0 ? (
           <p className="text-sm text-[hsl(var(--muted-foreground))]">Not in any set list yet.</p>

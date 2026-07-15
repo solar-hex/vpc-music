@@ -96,3 +96,62 @@ describe("toChordProString", () => {
     expect(output).toContain("{artist: Me}");
   });
 });
+
+describe("parseChordPro — environments (verse/bridge/tab)", () => {
+  it("opens a Verse section from {sov} and closes on {eov}", () => {
+    const input = `{sov}
+[G]Amazing grace
+{eov}
+[C]After the verse`;
+    const doc = parseChordPro(input);
+    expect(doc.sections[0].name).toBe("Verse");
+    expect(doc.sections[0].lines).toHaveLength(1);
+    expect(doc.sections[1].name).toBe("");
+  });
+
+  it("honors a label on {start_of_verse: Verse 2}", () => {
+    const doc = parseChordPro(`{start_of_verse: Verse 2}\n[G]Line\n{end_of_verse}`);
+    expect(doc.sections[0].name).toBe("Verse 2");
+  });
+
+  it("opens a Bridge section from {sob}", () => {
+    const doc = parseChordPro(`{sob}\n[Em]Bridge line\n{eob}`);
+    expect(doc.sections[0].name).toBe("Bridge");
+  });
+
+  it("keeps tab content verbatim — no chord extraction", () => {
+    const input = `{sot}
+e|--0--2--3--|
+B|--[1]--3---|
+{eot}`;
+    const doc = parseChordPro(input);
+    expect(doc.sections[0].name).toBe("Tab");
+    expect(doc.sections[0].raw).toBe(true);
+    // The [1] inside the tab must NOT be eaten as a chord token
+    expect(doc.sections[0].lines[1].lyrics).toBe("B|--[1]--3---|");
+    expect(doc.sections[0].lines[1].chords).toHaveLength(0);
+  });
+});
+
+describe("parseChordPro — chord definitions", () => {
+  it("parses {define:} into chordDefinitions", () => {
+    const doc = parseChordPro(`{define: G base-fret 1 frets 3 2 0 0 0 3}\n[G]Line`);
+    expect(doc.chordDefinitions?.G).toEqual({
+      name: "G",
+      baseFret: 1,
+      frets: [3, 2, 0, 0, 0, 3],
+      fingers: null,
+    });
+  });
+
+  it("parses muted strings and fingers", () => {
+    const doc = parseChordPro(`{define: C base-fret 1 frets x 3 2 0 1 0 fingers x 3 2 0 1 0}`);
+    expect(doc.chordDefinitions?.C.frets).toEqual([-1, 3, 2, 0, 1, 0]);
+    expect(doc.chordDefinitions?.C.fingers).toEqual([-1, 3, 2, 0, 1, 0]);
+  });
+
+  it("ignores malformed define values", () => {
+    const doc = parseChordPro(`{define: nonsense}`);
+    expect(doc.chordDefinitions).toEqual({});
+  });
+});

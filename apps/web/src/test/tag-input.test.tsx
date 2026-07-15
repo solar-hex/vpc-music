@@ -13,6 +13,7 @@ vi.mock("@/lib/api-client", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),

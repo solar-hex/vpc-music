@@ -5,6 +5,7 @@ export * from "./constants/permissions.js";
 export * from "./models/song.js";
 export * from "./utils/chart.js";
 export * from "./utils/chordpro.js";
+export * from "./utils/chordShapes.js";
 export * from "./utils/chrd.js";
 export * from "./utils/transpose.js";
 // Namespaced: its parseChart/transposeChart/transposeChord/interval intentionally

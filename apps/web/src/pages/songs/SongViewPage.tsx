@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, Link, useNavigate, useSearchParams } from "react-router-dom";
-import { songsApi, shareApi, songUsageApi, songHistoryApi, variationsApi, stickyNotesApi, setlistsApi, type Song, type SongUsage, type SongVariation, type SongEdit, type StickyNote, type Setlist } from "@/lib/api-client";
+import { songsApi, shareApi, songUsageApi, variationsApi, stickyNotesApi, setlistsApi, type Song, type SongVariation, type StickyNote, type Setlist } from "@/lib/api-client";
 import { CardGrid } from "@/components/shared/CardGrid";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ChordProRenderer, AutoScroll, type ChordProRendererHandle } from "@/components/songs/ChordProRenderer";
@@ -15,12 +15,16 @@ import { SimilarSongsPanel } from "@/components/songs/SimilarSongsPanel";
 import { VariationCompareDialog } from "@/components/songs/VariationCompareDialog";
 import { SongVisibilityControl } from "@/components/songs/SongVisibilityControl";
 import { InstrumentPartsPanel } from "@/components/songs/InstrumentPartsPanel";
+import { ActionMenu } from "@/components/ui/ActionMenu";
+import { CollapsibleSection } from "@/components/shared/CollapsibleSection";
+import { ChordDiagramSheet } from "@/components/songs/ChordDiagramSheet";
+import { AnnotationOverlay } from "@/components/songs/AnnotationOverlay";
 import { useAuth } from "@/contexts/AuthContext";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
-import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey } from "@vpc-music/shared";
+import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey, parseChordPro } from "@vpc-music/shared";
 import { toast } from "sonner";
-import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, History, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, FileText, StickyNote as StickyNoteIcon, Music2, Maximize2, GitCompare } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, Download, Eye, EyeOff, Share2, Check, Copy, CalendarPlus, X, Printer, Settings2, Hash, ChevronDown, Layers, Plus, Pencil, StickyNote as StickyNoteIcon, Music2, Maximize2, GitCompare, MoreHorizontal, MessageSquare } from "lucide-react";
 
 interface ConfirmState {
   title: string;
@@ -43,21 +47,18 @@ export function SongViewPage() {
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const chartContentRef = useRef<HTMLDivElement>(null);
   const chordProRef = useRef<ChordProRendererHandle>(null);
-  const [usages, setUsages] = useState<SongUsage[]>([]);
   const [showUsageForm, setShowUsageForm] = useState(false);
   const [usageDate, setUsageDate] = useState(() => new Date().toISOString().split("T")[0]);
   const [usageNotes, setUsageNotes] = useState("");
   const [loggingUsage, setLoggingUsage] = useState(false);
   const [showShareManage, setShowShareManage] = useState(false);
-  const [showExportMenu, setShowExportMenu] = useState(false);
   const [showMusicianTools, setShowMusicianTools] = useState(false);
   const [showSetlistPicker, setShowSetlistPicker] = useState(false);
   const [availableSetlists, setAvailableSetlists] = useState<Setlist[]>([]);
   const [loadingSetlists, setLoadingSetlists] = useState(false);
   const [addingToSetlistId, setAddingToSetlistId] = useState<string | null>(null);
-  const [editHistory, setEditHistory] = useState<SongEdit[]>([]);
-  const [showEditHistory, setShowEditHistory] = useState(false);
 
   // Sticky notes state
   const [stickyNotes, setStickyNotes] = useState<StickyNote[]>([]);
@@ -77,6 +78,7 @@ export function SongViewPage() {
   const [varContent, setVarContent] = useState("");
   const [savingVariation, setSavingVariation] = useState(false);
   const [compareVariation, setCompareVariation] = useState<SongVariation | null>(null);
+  const [tappedChord, setTappedChord] = useState<string | null>(null);
   const [confirmState, setConfirmState] = useState<ConfirmState | null>(null);
   const [confirmingAction, setConfirmingAction] = useState(false);
   const requestedVariationId = searchParams.get("variation");
@@ -152,18 +154,6 @@ export function SongViewPage() {
       .finally(() => setLoadingSetlists(false));
   }, [showSetlistPicker]);
 
-  // Load usage history
-  useEffect(() => {
-    if (!id) return;
-    songUsageApi.list(id).then((res) => setUsages(res.usages)).catch(() => {});
-  }, [id]);
-
-  // Load edit history
-  useEffect(() => {
-    if (!id) return;
-    songHistoryApi.list(id).then((res) => setEditHistory(res.history)).catch(() => {});
-  }, [id]);
-
   // Load sticky notes
   useEffect(() => {
     if (!id) return;
@@ -225,11 +215,10 @@ export function SongViewPage() {
     if (!id || !usageDate) return;
     setLoggingUsage(true);
     try {
-      const res = await songUsageApi.log(id, {
+      await songUsageApi.log(id, {
         usedAt: usageDate,
         notes: usageNotes.trim() || undefined,
       });
-      setUsages((prev) => [res.usage, ...prev]);
       toast.success("Usage logged");
       setShowUsageForm(false);
       setUsageNotes("");
@@ -237,17 +226,6 @@ export function SongViewPage() {
       toast.error(err.message || "Failed to log usage");
     } finally {
       setLoggingUsage(false);
-    }
-  };
-
-  const handleDeleteUsage = async (usageId: string) => {
-    if (!id) return;
-    try {
-      await songUsageApi.remove(id, usageId);
-      setUsages((prev) => prev.filter((u) => u.id !== usageId));
-      toast.success("Usage record removed");
-    } catch (err: any) {
-      toast.error(err.message || "Failed to remove");
     }
   };
 
@@ -302,7 +280,7 @@ export function SongViewPage() {
     } catch {
       toast.error("Export failed");
     }
-    setShowExportMenu(false);
+
   };
 
   const handleExportOnSong = async () => {
@@ -319,7 +297,7 @@ export function SongViewPage() {
     } catch {
       toast.error("Export failed");
     }
-    setShowExportMenu(false);
+
   };
 
   const handleExportText = async () => {
@@ -336,13 +314,13 @@ export function SongViewPage() {
     } catch {
       toast.error("Export failed");
     }
-    setShowExportMenu(false);
+
   };
 
   const handleExportPdf = () => {
     if (!id) return;
     window.open(songsApi.exportPdf(id, activeVariation?.id), "_blank");
-    setShowExportMenu(false);
+
   };
 
   const handleShare = async () => {
@@ -379,6 +357,8 @@ export function SongViewPage() {
     ? variations.find((v) => v.id === song.defaultVariationId) ?? null
     : null;
   const displayContent = activeVariation ? activeVariation.content : song?.content ?? "";
+  // Custom {define:} chord shapes from the chart, for tap-a-chord diagrams
+  const chordDefinitions = useMemo(() => parseChordPro(displayContent).chordDefinitions, [displayContent]);
   const originalKey = activeVariation?.key ?? song?.key;
   const requestedSearchKey = normalizeEnharmonicKey(searchParams.get("key"));
   const displayKey = requestedSearchKey && ALL_KEYS.includes(requestedSearchKey) ? requestedSearchKey : originalKey;
@@ -556,32 +536,6 @@ export function SongViewPage() {
           ))}
         </select>
         {canEdit && (
-          <button
-            onClick={shareUrl ? handleCopyLink : handleShare}
-            disabled={sharing}
-            className="btn-outline btn-sm"
-            title="Generate a read-only share link"
-          >
-            {copied ? (
-              <Check className="h-3.5 w-3.5 text-green-500" />
-            ) : shareUrl ? (
-              <Copy className="h-3.5 w-3.5" />
-            ) : (
-              <Share2 className="h-3.5 w-3.5" />
-            )}
-            {sharing ? "Sharing..." : copied ? "Copied!" : shareUrl ? "Copy Link" : "Share"}
-          </button>
-        )}
-        {canEdit && (
-          <button
-            onClick={() => setShowShareManage(true)}
-            className="btn-outline btn-sm"
-            title="Manage share links"
-          >
-            <Settings2 className="h-3.5 w-3.5" /> Links
-          </button>
-        )}
-        {canEdit && (
           <Link
             to={activeVariationId ? `/songs/${id}/edit?variation=${activeVariationId}` : `/songs/${id}/edit`}
             className="btn-outline btn-sm"
@@ -589,75 +543,45 @@ export function SongViewPage() {
             <Edit className="h-3.5 w-3.5" /> Edit
           </Link>
         )}
-        {canEdit && (
-          <button
-            onClick={() => setShowSetlistPicker(true)}
-            className="btn-outline btn-sm"
-            title="Add this song to a setlist"
-          >
-            <Plus className="h-3.5 w-3.5" /> Add to Setlist
-          </button>
-        )}
-        <div className="relative">
-          <button
-            onClick={() => setShowExportMenu(!showExportMenu)}
-            className="btn-outline btn-sm"
-          >
-            <Download className="h-3.5 w-3.5" /> Export <ChevronDown className="h-3 w-3" />
-          </button>
-          {showExportMenu && (
-            <div className="absolute right-0 top-full mt-1 z-10 w-44 card card-body py-1 !p-0">
-              <button
-                onClick={handleExport}
-                className="w-full px-3 py-1.5 text-left text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-              >
-                ChordPro (.cho)
-              </button>
-              <button
-                onClick={handleExportOnSong}
-                className="w-full px-3 py-1.5 text-left text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-              >
-                OnSong (.onsong)
-              </button>
-              <button
-                onClick={handleExportText}
-                className="w-full px-3 py-1.5 text-left text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-              >
-                Plain Text (.txt)
-              </button>
-              <button
-                onClick={handleExportPdf}
-                className="w-full px-3 py-1.5 text-left text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-              >
-                PDF (print)
-              </button>
-            </div>
-          )}
-        </div>
-        {canEdit && (
-          <button
-            onClick={() => setShowUsageForm(true)}
-            className="btn-primary btn-sm"
-            title="Log when this song was used in a service"
-          >
-            <CalendarPlus className="h-3.5 w-3.5" /> Log Usage
-          </button>
-        )}
-        <button
-          onClick={() => window.print()}
-          className="btn-outline btn-sm"
-          title="Print chord chart"
-        >
-          <Printer className="h-3.5 w-3.5" /> Print
-        </button>
-        {canEdit && (
-          <button
-            onClick={handleDelete}
-            className="btn-destructive btn-sm"
-          >
-            <Trash2 className="h-3.5 w-3.5" /> Delete
-          </button>
-        )}
+        {/* Secondary actions live in one overflow menu so the toolbar stays
+            to ~2 rows on a phone instead of 5-7. */}
+        <ActionMenu
+          label="More actions"
+          triggerTitle="More actions"
+          trigger={
+            <>
+              <MoreHorizontal className="h-3.5 w-3.5" /> More
+            </>
+          }
+          items={[
+            ...(canEdit
+              ? ([
+                  {
+                    label: sharing ? "Sharing..." : copied ? "Copied!" : shareUrl ? "Copy share link" : "Share link",
+                    icon: copied ? <Check /> : shareUrl ? <Copy /> : <Share2 />,
+                    onSelect: () => void (shareUrl ? handleCopyLink() : handleShare()),
+                    disabled: sharing,
+                  },
+                  { label: "Manage share links", icon: <Settings2 />, onSelect: () => setShowShareManage(true) },
+                  { label: "Add to Setlist", icon: <Plus />, onSelect: () => setShowSetlistPicker(true) },
+                  { label: "Log Usage", icon: <CalendarPlus />, onSelect: () => setShowUsageForm(true) },
+                  "separator",
+                ] as const)
+              : []),
+            { label: "ChordPro (.cho)", icon: <Download />, onSelect: handleExport },
+            { label: "OnSong (.onsong)", icon: <Download />, onSelect: handleExportOnSong },
+            { label: "Plain Text (.txt)", icon: <Download />, onSelect: handleExportText },
+            { label: "PDF (print)", icon: <Download />, onSelect: handleExportPdf },
+            "separator",
+            { label: "Print", icon: <Printer />, onSelect: () => window.print() },
+            ...(canEdit
+              ? ([
+                  "separator",
+                  { label: "Delete", icon: <Trash2 />, onSelect: handleDelete, destructive: true },
+                ] as const)
+              : []),
+          ]}
+        />
       </div>
 
       {/* Song metadata */}
@@ -733,7 +657,7 @@ export function SongViewPage() {
                 )}
               </button>
               {canEdit && (
-                <div className="hidden group-hover:flex items-center gap-0.5 ml-1">
+                <div className="hidden group-hover:flex group-focus-within:flex pointer-coarse:flex items-center gap-0.5 ml-1">
                   <button
                     onClick={() => setCompareVariation(v)}
                     className="rounded p-0.5 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors"
@@ -773,43 +697,59 @@ export function SongViewPage() {
         </div>
       )}
 
-      <div className="card card-body flex flex-wrap items-center gap-2 print-hidden">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[hsl(var(--muted-foreground))]">
-          Default View
-        </span>
-        <span className="badge-muted">
-          {defaultVariation ? defaultVariation.name : "Original"}
-        </span>
-        {canSetDefaultVariation && (
-          activeVariation?.id === song.defaultVariationId || (!activeVariation && !song.defaultVariationId) ? (
-            <span className="text-xs text-[hsl(var(--muted-foreground))]">Current selection is already the default.</span>
-          ) : (
-            <button
-              onClick={() => handleSetDefaultVariation(activeVariation?.id ?? null)}
-              className="btn-outline btn-sm"
-            >
-              {activeVariation ? "Make Selected Variation Default" : "Use Original as Default"}
-            </button>
-          )
-        )}
-      </div>
+      {/* Default-view picker is only meaningful once variations exist. */}
+      {variations.length > 0 && (
+        <div className="card card-body flex flex-wrap items-center gap-2 print-hidden">
+          <span className="text-xs font-semibold uppercase tracking-wide text-[hsl(var(--muted-foreground))]">
+            Default View
+          </span>
+          <span className="badge-muted">
+            {defaultVariation ? defaultVariation.name : "Original"}
+          </span>
+          {canSetDefaultVariation && (
+            activeVariation?.id === song.defaultVariationId || (!activeVariation && !song.defaultVariationId) ? (
+              <span className="text-xs text-[hsl(var(--muted-foreground))]">Current selection is already the default.</span>
+            ) : (
+              <button
+                onClick={() => handleSetDefaultVariation(activeVariation?.id ?? null)}
+                className="btn-outline btn-sm"
+              >
+                {activeVariation ? "Make Selected Variation Default" : "Use Original as Default"}
+              </button>
+            )
+          )}
+        </div>
+      )}
 
-      {/* ChordPro renderer */}
+      {/* ChordPro renderer — dvh handles mobile URL bars; the floor keeps a
+          usable chart window on short landscape phones. */}
       <div
         ref={scrollRef}
         className="card card-body-lg overflow-y-auto print-sheet"
-        style={{ maxHeight: "calc(100vh - 280px)" }}
+        style={{ maxHeight: "max(320px, calc(100dvh - 280px))" }}
       >
-        <ChordProRenderer
-          ref={chordProRef}
-          content={displayContent}
-          songKey={originalKey}
-          baseTranspose={baseTranspose}
-          showChords={showChords}
-          nashville={nashville}
-          fontSize={fontSize}
-        />
+        <div ref={chartContentRef} className="relative">
+          {/* Personal ink markup layer (pen/highlighter, saved per user) */}
+          {id && <AnnotationOverlay songId={id} hostRef={chartContentRef} />}
+          <ChordProRenderer
+            ref={chordProRef}
+            content={displayContent}
+            songKey={originalKey}
+            baseTranspose={baseTranspose}
+            showChords={showChords}
+            nashville={nashville}
+            fontSize={fontSize}
+            onChordTap={setTappedChord}
+          />
+        </div>
       </div>
+
+      {/* Tap-a-chord fingering diagram */}
+      <ChordDiagramSheet
+        chord={tappedChord}
+        definitions={chordDefinitions}
+        onClose={() => setTappedChord(null)}
+      />
 
       {/* Musician tools: staff notation + metronome */}
       {(song.abcNotation || song.tempo) && (
@@ -846,98 +786,7 @@ export function SongViewPage() {
         />
       )}
 
-      {/* Usage History */}
-      {usages.length > 0 && (
-        <div className="space-y-2 print-hidden">
-          <h3 className="section-title">
-            <History className="section-title-icon" /> Usage History
-          </h3>
-          <div className="list-container">
-            {usages.map((u) => (
-              <div key={u.id} className="flex items-center justify-between px-4 py-2.5 group">
-                <div>
-                  <span className="text-sm font-medium text-[hsl(var(--foreground))]">
-                    {new Date(u.usedAt + "T00:00:00").toLocaleDateString(undefined, {
-                      weekday: "short",
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </span>
-                  {u.notes && (
-                    <span className="ml-2 text-xs text-[hsl(var(--muted-foreground))]">
-                      — {u.notes}
-                    </span>
-                  )}
-                </div>
-                {canEdit && (
-                  <button
-                    onClick={() => handleDeleteUsage(u.id)}
-                    className="opacity-0 group-hover:opacity-100 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--destructive))] transition-all"
-                    title="Remove usage record"
-                  >
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Edit History */}
-      {editHistory.length > 0 && (
-        <div className="space-y-2 print-hidden">
-          <button
-            onClick={() => setShowEditHistory((v) => !v)}
-            className="section-title hover:text-[hsl(var(--secondary))] transition-colors cursor-pointer"
-          >
-            <FileText className="section-title-icon" /> Edit History
-            <ChevronDown className={`h-4 w-4 transition-transform ${showEditHistory ? "rotate-180" : ""}`} />
-            <span className="text-xs font-normal text-[hsl(var(--muted-foreground))]">
-              ({editHistory.length} change{editHistory.length !== 1 ? "s" : ""})
-            </span>
-          </button>
-          {showEditHistory && (
-            <div className="list-container max-h-64 overflow-y-auto">
-              {editHistory.map((edit) => (
-                <div key={edit.id} className="px-4 py-2.5 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-[hsl(var(--foreground))] capitalize">
-                      {edit.field === "content" ? "Content" : edit.field}
-                    </span>
-                    <span className="text-xs text-[hsl(var(--muted-foreground))]">
-                      {edit.createdAt && new Date(edit.createdAt).toLocaleString(undefined, {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                        hour: "numeric",
-                        minute: "2-digit",
-                      })}
-                    </span>
-                  </div>
-                  {edit.field !== "content" && (
-                    <div className="mt-1 text-xs text-[hsl(var(--muted-foreground))]">
-                      <span className="line-through text-[hsl(var(--destructive))]">
-                        {edit.oldValue || "(empty)"}
-                      </span>
-                      {" → "}
-                      <span className="text-[hsl(var(--secondary))]">
-                        {edit.newValue || "(empty)"}
-                      </span>
-                    </div>
-                  )}
-                  {edit.field === "content" && (
-                    <div className="mt-1 text-xs text-[hsl(var(--muted-foreground))]">
-                      Content updated
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      {/* Play log & edit history live in the History tab (SongHistoryTab). */}
 
       {/* Sticky Notes */}
       <div className="space-y-2 print-hidden">
@@ -984,7 +833,7 @@ export function SongViewPage() {
                     {note.content}
                   </p>
                   {note.createdAt && (
-                    <p className="mt-2 text-[10px] text-[hsl(var(--muted-foreground))]">
+                    <p className="mt-2 text-xs text-[hsl(var(--muted-foreground))]">
                       {new Date(note.createdAt).toLocaleDateString(undefined, {
                         month: "short",
                         day: "numeric",
@@ -992,7 +841,7 @@ export function SongViewPage() {
                     </p>
                   )}
                   {canEdit && (
-                    <div className="absolute top-1.5 right-1.5 hidden group-hover:flex items-center gap-0.5">
+                    <div className="absolute top-1.5 right-1.5 hidden group-hover:flex group-focus-within:flex pointer-coarse:flex items-center gap-0.5">
                       <button
                         onClick={() => openEditNote(note)}
                         className="rounded p-1 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-black/10 transition-colors"
@@ -1023,11 +872,17 @@ export function SongViewPage() {
 
       <SimilarSongsPanel songId={song.id} songKey={displayKey} />
 
-      <SongCollaborationPanel
-        songId={song.id}
-        sourceContent={displayContent}
-        canEdit={canEdit}
-      />
+      <CollapsibleSection
+        title="Collaboration & Rehearsal"
+        icon={<MessageSquare className="section-title-icon" />}
+      >
+        <SongCollaborationPanel
+          songId={song.id}
+          sourceContent={displayContent}
+          canEdit={canEdit}
+          hideHeader
+        />
+      </CollapsibleSection>
 
       {/* Quick Add to Setlist */}
       {showSetlistPicker && (

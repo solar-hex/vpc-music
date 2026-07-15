@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { songsApi, type Song, type SongVariation } from "@/lib/api-client";
 import { ChordProRenderer, AutoScroll, type ChordProRendererHandle } from "@/components/songs/ChordProRenderer";
+import { ChordDiagramSheet } from "@/components/songs/ChordDiagramSheet";
 import { isOfflineRequestError, loadCachedSong } from "@/lib/offline-cache";
-import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey } from "@vpc-music/shared";
+import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey, parseChordPro } from "@vpc-music/shared";
 import { toast } from "sonner";
 import { X, Minus, Plus, Eye, EyeOff, Hash } from "lucide-react";
 
@@ -22,6 +23,7 @@ export function SongFocusPage() {
   const [showChords, setShowChords] = useState(true);
   const [nashville, setNashville] = useState(false);
   const [fontSize, setFontSize] = useState(20); // larger default for stage legibility
+  const [tappedChord, setTappedChord] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const chordProRef = useRef<ChordProRendererHandle>(null);
 
@@ -98,6 +100,8 @@ export function SongFocusPage() {
       : null;
 
   const displayContent = activeVariation ? activeVariation.content : song?.content ?? "";
+  // Custom {define:} chord shapes from the chart, for tap-a-chord diagrams
+  const chordDefinitions = useMemo(() => parseChordPro(displayContent).chordDefinitions, [displayContent]);
   const originalKey = activeVariation?.key ?? song?.key;
   const requestedSearchKey = normalizeEnharmonicKey(searchParams.get("key"));
   const displayKey = requestedSearchKey && ALL_KEYS.includes(requestedSearchKey) ? requestedSearchKey : originalKey;
@@ -215,8 +219,16 @@ export function SongFocusPage() {
           showChords={showChords}
           nashville={nashville}
           fontSize={fontSize}
+          onChordTap={setTappedChord}
         />
       </div>
+
+      {/* Tap-a-chord fingering diagram */}
+      <ChordDiagramSheet
+        chord={tappedChord}
+        definitions={chordDefinitions}
+        onClose={() => setTappedChord(null)}
+      />
     </div>
   );
 }

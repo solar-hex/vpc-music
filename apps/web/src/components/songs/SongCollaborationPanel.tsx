@@ -8,6 +8,8 @@ interface SongCollaborationPanelProps {
   songId: string;
   sourceContent: string;
   canEdit: boolean;
+  /** Omit the internal section header (when hosted inside a CollapsibleSection). */
+  hideHeader?: boolean;
 }
 
 type ComposerState = {
@@ -48,7 +50,7 @@ function getEmptyState(type: SongCollaborationItem["type"]) {
   return "No comment threads yet.";
 }
 
-export function SongCollaborationPanel({ songId, sourceContent, canEdit }: SongCollaborationPanelProps) {
+export function SongCollaborationPanel({ songId, sourceContent, canEdit, hideHeader = false }: SongCollaborationPanelProps) {
   const [items, setItems] = useState<SongCollaborationItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [supported, setSupported] = useState(true);
@@ -212,12 +214,14 @@ export function SongCollaborationPanel({ songId, sourceContent, canEdit }: SongC
   return (
     <div className="space-y-3 print-hidden" data-testid="song-collaboration-panel">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="section-title">
-          <MessageSquare className="section-title-icon" /> Collaboration & Rehearsal
-          <span className="text-xs font-normal text-[hsl(var(--muted-foreground))]">
-            ({items.length})
-          </span>
-        </h3>
+        {!hideHeader && (
+          <h3 className="section-title">
+            <MessageSquare className="section-title-icon" /> Collaboration & Rehearsal
+            <span className="text-xs font-normal text-[hsl(var(--muted-foreground))]">
+              ({items.length})
+            </span>
+          </h3>
+        )}
         {canEdit && (
           <div className="flex flex-wrap gap-2">
             <button onClick={() => openComposer("comment")} className="btn-outline btn-sm border-dashed">

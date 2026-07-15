@@ -15,6 +15,7 @@ import { eventRoutes } from "./features/events/routes.js";
 import { shareRoutes } from "./features/share/routes.js";
 import { stickyNoteRoutes } from "./features/songs/stickyNoteRoutes.js";
 import { collaborationRoutes } from "./features/songs/collaborationRoutes.js";
+import { annotationRoutes } from "./features/songs/annotationRoutes.js";
 import { orgRoutes } from "./features/organizations/routes.js";
 import { artistRoutes } from "./features/artists/routes.js";
 import { notificationRoutes } from "./features/notifications/routes.js";
@@ -26,6 +27,7 @@ import { setlistTemplateRoutes } from "./features/setlists/templateRoutes.js";
 import { rehearsalRoutes } from "./features/rehearsals/routes.js";
 import { availabilityRoutes } from "./features/availability/routes.js";
 import { activityRoutes } from "./features/activity/routes.js";
+import { statsRoutes } from "./features/stats/routes.js";
 
 const app = express();
 
@@ -59,6 +61,7 @@ app.use("/auth", authRoutes);
 app.use("/songs", songRoutes);
 app.use("/songs", stickyNoteRoutes);  // /songs/:songId/notes
 app.use("/songs", collaborationRoutes);  // /songs/:songId/collaboration
+app.use("/songs", annotationRoutes);  // /songs/:songId/annotations
 app.use("/setlists/templates", setlistTemplateRoutes); // before /setlists so "templates" ≠ ":id"
 app.use("/setlists", setlistRoutes);
 app.use("/platform", platformRoutes);
@@ -74,6 +77,7 @@ app.use("/media", mediaRoutes);
 app.use("/rehearsals", rehearsalRoutes);
 app.use("/availability", availabilityRoutes);
 app.use("/activity", activityRoutes);
+app.use("/stats", statsRoutes);
 
 // Uploaded media files (charts, audio, stems)
 app.use("/uploads", express.static(UPLOADS_DIR));

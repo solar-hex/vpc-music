@@ -16,6 +16,10 @@ let mockAuthValue: any = {
 };
 
 vi.mock("@/lib/api-client", () => ({
+  annotationsApi: {
+    get: vi.fn().mockResolvedValue({ annotation: null }),
+    save: vi.fn().mockResolvedValue({ annotation: { id: "a1", data: [] } }),
+  },
   songsApi: {
     get: (...args: any[]) => mockGetSong(...args),
     delete: vi.fn().mockResolvedValue({ message: "ok" }),
@@ -73,6 +77,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
+  parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
   transposeKeyName: (key: string) => key,
   normalizeEnharmonicKey: (key: string | null | undefined) => key,
   composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),

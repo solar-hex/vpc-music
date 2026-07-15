@@ -1492,6 +1492,7 @@ songRoutes.put(
     // Record edit history
     if (edits.length > 0) {
       await db.insert(songEdits).values(edits);
+      await logActivity(req, "song.updated", { type: "song", id: song.id, label: song.title });
     }
 
     res.json({ song });

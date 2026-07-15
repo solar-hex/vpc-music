@@ -67,7 +67,7 @@ export function FlowStrip({
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
         {/* Energy curve */}
         <div className="flex items-center gap-2" title="Energy curve (1–5, BPM-derived unless a song sets its own)">
-          <span className="text-[10px] uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Energy</span>
+          <span className="text-xs uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Energy</span>
           <svg width={width} height={height} className="shrink-0" role="img" aria-label="Set energy curve">
             {points.length > 1 && (
               <polyline
@@ -85,7 +85,7 @@ export function FlowStrip({
 
         {/* Key sequence with transition quality connectors */}
         <div className="flex items-center gap-0.5" title="Key sequence — connector color = transition quality">
-          <span className="mr-1.5 text-[10px] uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Keys</span>
+          <span className="mr-1.5 text-xs uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Keys</span>
           {keys.map((key, index) => (
             <span key={index} className="flex items-center gap-0.5">
               {index > 0 && (
@@ -102,7 +102,7 @@ export function FlowStrip({
 
         {/* Duration bar: music vs gaps vs slot */}
         <div className="flex items-center gap-2 min-w-[180px] flex-1 max-w-[320px]" title="Music vs gaps vs the event's slot">
-          <span className="text-[10px] uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Time</span>
+          <span className="text-xs uppercase tracking-wider text-[hsl(var(--muted-foreground))]">Time</span>
           <div className="relative h-2.5 flex-1 overflow-hidden rounded-full bg-[hsl(var(--muted))]">
             <div className="absolute inset-y-0 left-0 bg-[hsl(var(--secondary))]" style={{ width: `${Math.min(musicPct, 100)}%` }} />
             <div

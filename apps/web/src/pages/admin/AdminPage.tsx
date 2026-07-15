@@ -416,113 +416,112 @@ export function AdminPage() {
               return (
                 <li
                   key={member.id}
-                  className="flex items-center gap-4 px-5 py-3"
+                  className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 sm:px-5"
                 >
-                  {/* Avatar placeholder */}
-                  <div className="h-9 w-9 rounded-full bg-[hsl(var(--muted))] flex items-center justify-center text-sm font-medium text-[hsl(var(--muted-foreground))]">
-                    {(member.displayName || member.email)[0].toUpperCase()}
-                  </div>
-
-                  {/* Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-[hsl(var(--foreground))] truncate">
-                        {member.displayName || member.email}
-                      </span>
-                      {isSelf && (
-                        <span className="text-[10px] text-[hsl(var(--muted-foreground))]">
-                          (you)
-                        </span>
-                      )}
-                      {isOwner && (
-                        <span title="Global owner">
-                          <Crown className="h-3.5 w-3.5 text-amber-500" />
-                        </span>
-                      )}
-                      {!member.hasPassword && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
-                          Invited
-                        </span>
-                      )}
+                  {/* Identity — full width on phones so controls wrap below */}
+                  <div className="flex min-w-0 flex-1 basis-52 items-center gap-3">
+                    <div className="h-9 w-9 shrink-0 rounded-full bg-[hsl(var(--muted))] flex items-center justify-center text-sm font-medium text-[hsl(var(--muted-foreground))]">
+                      {(member.displayName || member.email)[0].toUpperCase()}
                     </div>
-                    <span className="text-xs text-[hsl(var(--muted-foreground))] truncate block">
-                      {member.email}
-                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium text-[hsl(var(--foreground))] truncate">
+                          {member.displayName || member.email}
+                        </span>
+                        {isSelf && (
+                          <span className="text-xs text-[hsl(var(--muted-foreground))]">
+                            (you)
+                          </span>
+                        )}
+                        {isOwner && (
+                          <span title="Global owner">
+                            <Crown className="h-3.5 w-3.5 text-amber-500" />
+                          </span>
+                        )}
+                        {!member.hasPassword && (
+                          <span className="text-xs px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                            Invited
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-xs text-[hsl(var(--muted-foreground))] truncate block">
+                        {member.email}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Role selector */}
-                  <select
-                    value={member.orgRole}
-                    onChange={(e) =>
-                      handleRoleChange(member.id, e.target.value)
-                    }
-                    disabled={isSelf}
-                    className={`rounded-md border border-[hsl(var(--input))] bg-[hsl(var(--background))] px-2 py-1 text-xs text-[hsl(var(--foreground))] ${isSelf ? "opacity-50 cursor-not-allowed" : ""}`}
-                    title={isSelf ? "You cannot change your own role" : "Change role"}
-                  >
-                    {ROLE_OPTIONS.map((r) => (
-                      <option key={r.value} value={r.value}>
-                        {r.label}
-                      </option>
-                    ))}
-                  </select>
-
-                  {/* Custom-role overlay selector */}
-                  {customRoles.length > 0 && (
+                  {/* Controls — second line on phones, inline on sm+ */}
+                  <div className="flex w-full flex-wrap items-center gap-2 pl-12 sm:w-auto sm:pl-0">
                     <select
-                      value={member.customRoleId ?? ""}
-                      onChange={(e) => handleCustomRoleChange(member.id, e.target.value)}
+                      value={member.orgRole}
+                      onChange={(e) =>
+                        handleRoleChange(member.id, e.target.value)
+                      }
                       disabled={isSelf}
                       className={`rounded-md border border-[hsl(var(--input))] bg-[hsl(var(--background))] px-2 py-1 text-xs text-[hsl(var(--foreground))] ${isSelf ? "opacity-50 cursor-not-allowed" : ""}`}
-                      title="Custom role overlay (replaces base permissions)"
-                      aria-label={`Custom role for ${member.displayName || member.email}`}
+                      title={isSelf ? "You cannot change your own role" : "Change role"}
                     >
-                      <option value="">No custom role</option>
-                      {customRoles.map((role) => (
-                        <option key={role.id} value={role.id}>
-                          {role.name}
+                      {ROLE_OPTIONS.map((r) => (
+                        <option key={r.value} value={r.value}>
+                          {r.label}
                         </option>
                       ))}
                     </select>
-                  )}
 
-                  {/* Role badge (visible on smaller contexts) */}
-                  <span
-                    className={`hidden sm:inline-flex text-[10px] font-semibold uppercase px-2 py-0.5 rounded ${roleBadge(member.orgRole)}`}
-                  >
-                    {roleLabel(member.orgRole)}
-                  </span>
+                    {customRoles.length > 0 && (
+                      <select
+                        value={member.customRoleId ?? ""}
+                        onChange={(e) => handleCustomRoleChange(member.id, e.target.value)}
+                        disabled={isSelf}
+                        className={`rounded-md border border-[hsl(var(--input))] bg-[hsl(var(--background))] px-2 py-1 text-xs text-[hsl(var(--foreground))] ${isSelf ? "opacity-50 cursor-not-allowed" : ""}`}
+                        title="Custom role overlay (replaces base permissions)"
+                        aria-label={`Custom role for ${member.displayName || member.email}`}
+                      >
+                        <option value="">No custom role</option>
+                        {customRoles.map((role) => (
+                          <option key={role.id} value={role.id}>
+                            {role.name}
+                          </option>
+                        ))}
+                      </select>
+                    )}
 
-                  {/* Resend invite (pending members only) */}
-                  {!member.hasPassword && !isSelf && (
-                    <button
-                      onClick={() => handleResend(member)}
-                      disabled={resendingId === member.id}
-                      className="p-1.5 rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--secondary))] hover:bg-[hsl(var(--muted))] transition-colors disabled:opacity-50"
-                      title="Resend invite link"
-                      aria-label={`Resend invite to ${member.displayName || member.email}`}
+                    {/* Role badge (desktop only) */}
+                    <span
+                      className={`hidden lg:inline-flex text-xs font-semibold uppercase px-2 py-0.5 rounded ${roleBadge(member.orgRole)}`}
                     >
-                      {resendingId === member.id ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                      ) : (
-                        <Send className="h-4 w-4" />
-                      )}
-                    </button>
-                  )}
+                      {roleLabel(member.orgRole)}
+                    </span>
 
-                  {/* Remove button */}
-                  <button
-                    onClick={() => setPendingRemoveMember(member)}
-                    disabled={isSelf}
-                    className={`p-1.5 rounded-md transition-colors ${
-                      isSelf
-                        ? "text-[hsl(var(--muted-foreground))] opacity-30 cursor-not-allowed"
-                        : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--destructive))] hover:bg-[hsl(var(--muted))]"
-                    }`}
-                    title={isSelf ? "You cannot remove yourself" : "Remove from organization"}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
+                    {!member.hasPassword && !isSelf && (
+                      <button
+                        onClick={() => handleResend(member)}
+                        disabled={resendingId === member.id}
+                        className="p-1.5 rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--secondary))] hover:bg-[hsl(var(--muted))] transition-colors disabled:opacity-50"
+                        title="Resend invite link"
+                        aria-label={`Resend invite to ${member.displayName || member.email}`}
+                      >
+                        {resendingId === member.id ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <Send className="h-4 w-4" />
+                        )}
+                      </button>
+                    )}
+
+                    <button
+                      onClick={() => setPendingRemoveMember(member)}
+                      disabled={isSelf}
+                      className={`p-1.5 rounded-md transition-colors ${
+                        isSelf
+                          ? "text-[hsl(var(--muted-foreground))] opacity-30 cursor-not-allowed"
+                          : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--destructive))] hover:bg-[hsl(var(--muted))]"
+                      }`}
+                      title={isSelf ? "You cannot remove yourself" : "Remove from organization"}
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  </div>
                 </li>
               );
             })}

@@ -510,11 +510,33 @@ export const setlistsApi = {
     }),
   removeSong: (setlistId: string, songItemId: string) =>
     request<{ message: string }>(`/api/setlists/${setlistId}/songs/${songItemId}`, { method: "DELETE" }),
-  markComplete: (setlistId: string, usedAt?: string) =>
+  markComplete: (setlistId: string, usedAt?: string, source?: "perform") =>
     request<{ setlist: Setlist; usagesLogged: number }>(`/api/setlists/${setlistId}/complete`, {
       method: "POST",
-      body: JSON.stringify({ usedAt }),
+      body: JSON.stringify({ usedAt, source }),
     }),
+  share: (setlistId: string, data?: { label?: string; expiresInDays?: number }) =>
+    request<{ shareToken: { token: string }; shareUrl: string }>(`/api/setlists/${setlistId}/share`, {
+      method: "POST",
+      body: JSON.stringify(data ?? {}),
+    }),
+  getShared: (token: string) =>
+    request<{
+      setlist: { id: string; name: string; category?: string | null };
+      songs: Array<{
+        id: string;
+        position: number;
+        keyOverride?: string | null;
+        capo?: number | null;
+        notes?: string | null;
+        songId: string;
+        title: string;
+        artist?: string | null;
+        songKey?: string | null;
+        tempo?: number | null;
+        content: string;
+      }>;
+    }>(`/api/shared/setlist/${token}`),
   reopen: (setlistId: string) =>
     request<{ setlist: Setlist }>(`/api/setlists/${setlistId}/reopen`, { method: "POST" }),
 };
@@ -1105,6 +1127,58 @@ export interface SongUsageReportRow {
 
 export const usageReportApi = {
   get: () => request<{ songs: SongUsageReportRow[] }>("/api/songs/usage-report"),
+};
+
+// ── Statistics ───────────────────────────────────
+export interface MonthPlays {
+  month: string; // "YYYY-MM"
+  plays: number;
+}
+
+export interface StatsOverview {
+  playsByMonth: MonthPlays[];
+  topSongs: Array<{ id: string; title: string; plays: number; lastPlayed?: string | null }>;
+  keyDistribution: Array<{ key: string; count: number }>;
+  tempoDistribution: Array<{ band: string; count: number }>;
+  memberActivity: Array<{ userId: string; name?: string | null; plays: number }>;
+  totals: { totalPlays: number; songsPlayed: number };
+}
+
+export interface SongPerformance {
+  id: string;
+  usedAt: string;
+  source: string;
+  notes?: string | null;
+  eventTitle?: string | null;
+  eventId?: string | null;
+  setlistName?: string | null;
+  setlistId?: string | null;
+}
+
+// ── Ink annotations ──────────────────────────────
+export interface AnnotationStroke {
+  tool: "pen" | "highlighter";
+  color: string;
+  /** Normalized [0..1] coordinates relative to the chart's content box. */
+  points: Array<{ x: number; y: number }>;
+}
+
+export const annotationsApi = {
+  get: (songId: string) =>
+    request<{ annotation: { id: string; data: AnnotationStroke[] } | null }>(`/api/songs/${songId}/annotations`),
+  save: (songId: string, data: AnnotationStroke[]) =>
+    request<{ annotation: { id: string; data: AnnotationStroke[] } }>(`/api/songs/${songId}/annotations`, {
+      method: "PUT",
+      body: JSON.stringify({ data }),
+    }),
+};
+
+export const statsApi = {
+  overview: () => request<StatsOverview>("/api/stats/overview"),
+  song: (id: string) =>
+    request<{ song: { id: string; title: string }; playsByMonth: MonthPlays[]; performances: SongPerformance[] }>(
+      `/api/stats/songs/${id}`,
+    ),
 };
 
 // ── Assistant ────────────────────────────────────

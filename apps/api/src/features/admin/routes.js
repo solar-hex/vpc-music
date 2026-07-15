@@ -15,6 +15,7 @@ import { logger } from "../../utils/logger.js";
 import { sendEmail, buildInviteEmail } from "../../utils/email.js";
 import { notifyUser, notifyOrgMembers } from "../notifications/service.js";
 import { inviteMemberToOrg, resendInvite } from "./service.js";
+import { logActivity } from "../activity/service.js";
 
 export const adminRoutes = Router();
 
@@ -310,6 +311,7 @@ adminRoutes.put(
       organizationId: req.org.id,
     });
 
+    await logActivity(req, "member.role_changed", { type: "member", id, label: role ?? "custom role" });
     res.json({ message: "Role updated" });
   })
 );

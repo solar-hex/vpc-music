@@ -21,6 +21,10 @@ let mockAuthValue: any = {
 };
 
 vi.mock("@/lib/api-client", () => ({
+  annotationsApi: {
+    get: vi.fn().mockResolvedValue({ annotation: null }),
+    save: vi.fn().mockResolvedValue({ annotation: { id: "a1", data: [] } }),
+  },
   songsApi: {
     get: (...args: any[]) => mockGetSong(...args),
     delete: (...args: any[]) => mockDeleteSong(...args),
@@ -139,7 +143,7 @@ describe("Export formats", () => {
     it("renders export dropdown button", async () => {
       renderPage();
       await waitFor(() => {
-        const exportBtn = screen.getByText("Export", { exact: false });
+        const exportBtn = screen.getByRole("button", { name: /more actions/i });
         expect(exportBtn).toBeInTheDocument();
       });
     });
@@ -153,7 +157,7 @@ describe("Export formats", () => {
     it("clicking Export reveals four format options", async () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
-      const exportBtn = screen.getByText("Export", { exact: false });
+      const exportBtn = screen.getByRole("button", { name: /more actions/i });
       fireEvent.click(exportBtn);
       expect(screen.getByText("ChordPro (.cho)")).toBeInTheDocument();
       expect(screen.getByText("OnSong (.onsong)")).toBeInTheDocument();
@@ -164,28 +168,28 @@ describe("Export formats", () => {
     it("dropdown contains ChordPro option", async () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByText("ChordPro (.cho)")).toBeInTheDocument();
     });
 
     it("dropdown contains OnSong option", async () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByText("OnSong (.onsong)")).toBeInTheDocument();
     });
 
     it("dropdown contains PDF option", async () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByText("PDF (print)")).toBeInTheDocument();
     });
 
     it("dropdown contains plain text option", async () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByText("Plain Text (.txt)")).toBeInTheDocument();
     });
   });
@@ -198,7 +202,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("ChordPro (.cho)"));
 
       await waitFor(() => {
@@ -212,7 +216,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("OnSong (.onsong)"));
 
       await waitFor(() => {
@@ -225,7 +229,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("PDF (print)"));
 
       expect(openSpy).toHaveBeenCalledWith(
@@ -241,7 +245,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("Plain Text (.txt)"));
 
       await waitFor(() => {
@@ -256,7 +260,7 @@ describe("Export formats", () => {
       renderPage("song-1", "v1");
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("ChordPro (.cho)"));
 
       await waitFor(() => {
@@ -270,7 +274,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByText("ChordPro (.cho)")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("ChordPro (.cho)"));
@@ -284,7 +288,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("PDF (print)"));
 
       expect(screen.queryByText("OnSong (.onsong)")).not.toBeInTheDocument();
@@ -297,7 +301,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("ChordPro (.cho)"));
 
       await waitFor(() => {
@@ -311,7 +315,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("OnSong (.onsong)"));
 
       await waitFor(() => {
@@ -325,7 +329,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      fireEvent.click(screen.getByText("Export", { exact: false }));
+      fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       fireEvent.click(screen.getByText("Plain Text (.txt)"));
 
       await waitFor(() => {
@@ -337,7 +341,7 @@ describe("Export formats", () => {
       renderPage();
       await waitFor(() => screen.getByText("Amazing Grace"));
 
-      const exportBtn = screen.getByText("Export", { exact: false });
+      const exportBtn = screen.getByRole("button", { name: /more actions/i });
       fireEvent.click(exportBtn); // open
       expect(screen.getByText("ChordPro (.cho)")).toBeInTheDocument();
 

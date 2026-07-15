@@ -1,98 +1,37 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { SongViewPage } from "@/pages/songs/SongViewPage";
+import { SongHistoryTab } from "@/pages/songs/SongHistoryTab";
 
 // ---------- Mocks ----------
 const mockGetSong = vi.fn();
 const mockListHistory = vi.fn();
-
-let mockAuthValue: any = {
-  user: { id: "u1", email: "admin@test.com", displayName: "Admin", role: "owner" },
-  activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-};
+const mockListUsage = vi.fn();
+const mockListSetlists = vi.fn();
+const mockSongStats = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
   songsApi: {
     get: (...args: any[]) => mockGetSong(...args),
-    delete: vi.fn().mockResolvedValue({ message: "ok" }),
-    exportChordPro: vi.fn(),
-  },
-  shareApi: {
-    create: vi.fn().mockResolvedValue({ shareUrl: "/shared/abc", shareToken: {} }),
-    list: vi.fn().mockResolvedValue({ shares: [] }),
-    revoke: vi.fn(),
-    update: vi.fn().mockResolvedValue({ shareToken: {} }),
-    listDirect: vi.fn().mockResolvedValue({ directShares: [] }),
-    createDirect: vi.fn(),
-    removeDirect: vi.fn(),
-    getShared: vi.fn(),
+    listSetlists: (...args: any[]) => mockListSetlists(...args),
   },
   songUsageApi: {
-    log: vi.fn().mockResolvedValue({ usage: { id: "u1", songId: "s1", usedAt: "2025-01-01" } }),
-    list: vi.fn().mockResolvedValue({ usages: [] }),
-    remove: vi.fn().mockResolvedValue({ message: "ok" }),
+    list: (...args: any[]) => mockListUsage(...args),
   },
   songHistoryApi: {
     list: (...args: any[]) => mockListHistory(...args),
   },
-  variationsApi: {
-    create: vi.fn(),
-    update: vi.fn(),
-    setDefault: vi.fn(),
-    delete: vi.fn(),
-  },
-  stickyNotesApi: {
-    list: vi.fn().mockResolvedValue({ notes: [] }),
-    create: vi.fn(),
-    update: vi.fn(),
-    delete: vi.fn(),
-  },
-  songCollaborationApi: {
-    list: vi.fn().mockResolvedValue({ items: [] }),
-    create: vi.fn(),
-    update: vi.fn(),
-    delete: vi.fn(),
+  statsApi: {
+    song: (...args: any[]) => mockSongStats(...args),
   },
 }));
 
-vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual("react-router-dom");
-  return { ...actual, useNavigate: () => vi.fn() };
-});
-
-vi.mock("sonner", () => ({
-  toast: { success: vi.fn(), error: vi.fn() },
-}));
-
-vi.mock("@/contexts/AuthContext", () => ({
-  useAuth: () => mockAuthValue,
-}));
-
-vi.mock("@vpc-music/shared", () => ({
-  transposeKeyName: (key: string) => key,
-  normalizeEnharmonicKey: (key: string | null | undefined) => key,
-  composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
-  spellForTarget: (key: string | null | undefined) =>
-    key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },
-  keyPrefersFlats: () => false,
-  parseBarLine: () => ({ measures: [] }),
-  ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
-}));
-
-vi.mock("@/components/songs/ChordProRenderer", () => ({
-  ChordProRenderer: ({ content }: { content: string }) => (
-    <div data-testid="chordpro-renderer">{content}</div>
-  ),
-  AutoScroll: () => <div data-testid="auto-scroll">AutoScroll</div>,
-}));
-
-function renderPage(songId = "song-1") {
+function renderTab(songId = "song-1") {
   return render(
-    <MemoryRouter initialEntries={[`/songs/${songId}`]}>
+    <MemoryRouter initialEntries={[`/songs/${songId}/history`]}>
       <Routes>
-        <Route path="/songs/:id" element={<SongViewPage />} />
-        <Route path="/songs" element={<div>Songs List</div>} />
+        <Route path="/songs/:id/history" element={<SongHistoryTab />} />
+        <Route path="/songs/:id" element={<div>Song Detail</div>} />
       </Routes>
     </MemoryRouter>,
   );
@@ -108,30 +47,33 @@ const mockSong = {
   content: "[G]Amazing grace",
 };
 
-describe("Song Edit History", () => {
+describe("Song history tab (play log + edit history)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
+    mockListUsage.mockResolvedValue({ usages: [] });
+    mockListSetlists.mockResolvedValue({ setlists: [] });
+    mockListHistory.mockResolvedValue({ history: [] });
+    mockSongStats.mockResolvedValue({ song: { id: "song-1", title: "Amazing Grace" }, playsByMonth: [], performances: [] });
   });
 
   // ===================== POSITIVE =====================
 
   describe("positive", () => {
-    it("renders Edit History button when history exists", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
+    it("renders the Edit history section", async () => {
       mockListHistory.mockResolvedValue({
         history: [
           { id: "e1", songId: "song-1", editedBy: "u1", field: "key", oldValue: "C", newValue: "G", createdAt: "2025-06-01T12:00:00Z" },
         ],
       });
-      renderPage();
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
+        expect(screen.getByText("Edit history")).toBeInTheDocument();
       });
     });
 
-    it("shows change count badge", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
+    it("lists each edit with its field badge", async () => {
       mockListHistory.mockResolvedValue({
         history: [
           { id: "e1", songId: "song-1", editedBy: "u1", field: "key", oldValue: "C", newValue: "G", createdAt: "2025-06-01T12:00:00Z" },
@@ -139,111 +81,52 @@ describe("Song Edit History", () => {
           { id: "e3", songId: "song-1", editedBy: "u1", field: "title", oldValue: "Grace", newValue: "Amazing Grace", createdAt: "2025-06-01T12:02:00Z" },
         ],
       });
-      renderPage();
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("(3 changes)")).toBeInTheDocument();
-      });
-    });
-
-    it("shows singular 'change' for 1 edit", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({
-        history: [
-          { id: "e1", songId: "song-1", editedBy: "u1", field: "key", oldValue: "C", newValue: "G", createdAt: "2025-06-01T12:00:00Z" },
-        ],
-      });
-      renderPage();
-
-      await waitFor(() => {
-        expect(screen.getByText("(1 change)")).toBeInTheDocument();
-      });
-    });
-
-    it("toggles history details on click", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({
-        history: [
-          { id: "e1", songId: "song-1", editedBy: "u1", field: "key", oldValue: "C", newValue: "G", createdAt: "2025-06-01T12:00:00Z" },
-        ],
-      });
-      renderPage();
-
-      await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
-      });
-
-      // Initially collapsed — old/new values not visible
-      expect(screen.queryByText("G")).not.toBeInTheDocument();
-
-      // Click to expand
-      fireEvent.click(screen.getByText("Edit History"));
-
-      await waitFor(() => {
-        // Now field name and values should be visible
         expect(screen.getByText("key")).toBeInTheDocument();
+        expect(screen.getByText("tempo")).toBeInTheDocument();
+        expect(screen.getByText("title")).toBeInTheDocument();
       });
     });
 
-    it("shows old → new values for non-content fields", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
+    it("shows old → new values for field changes", async () => {
       mockListHistory.mockResolvedValue({
         history: [
           { id: "e1", songId: "song-1", editedBy: "u1", field: "tempo", oldValue: "60", newValue: "72", createdAt: "2025-06-01T12:00:00Z" },
         ],
       });
-      renderPage();
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByText("Edit History"));
-
-      await waitFor(() => {
-        expect(screen.getByText("60")).toBeInTheDocument();
-        expect(screen.getByText("72")).toBeInTheDocument();
+        expect(screen.getByText(/60\s*→\s*72/)).toBeInTheDocument();
       });
     });
 
-    it("shows 'Content updated' for content field changes", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({
-        history: [
-          { id: "e1", songId: "song-1", editedBy: "u1", field: "content", oldValue: "[C]Old", newValue: "[G]New", createdAt: "2025-06-01T12:00:00Z" },
+    it("shows the play log and stats from usages", async () => {
+      mockListUsage.mockResolvedValue({
+        usages: [
+          { id: "u1", songId: "song-1", usedAt: "2025-05-04", notes: "Sunday service" },
+          { id: "u2", songId: "song-1", usedAt: "2025-04-20", notes: null },
         ],
       });
-      renderPage();
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByText("Edit History"));
-
-      await waitFor(() => {
-        expect(screen.getByText("Content updated")).toBeInTheDocument();
+        expect(screen.getByText("Times played")).toBeInTheDocument();
+        expect(screen.getByText("2")).toBeInTheDocument();
+        expect(screen.getByText("Sunday service")).toBeInTheDocument();
       });
     });
 
-    it("shows (empty) for empty old/new values", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({
-        history: [
-          { id: "e1", songId: "song-1", editedBy: "u1", field: "artist", oldValue: "", newValue: "John Newton", createdAt: "2025-06-01T12:00:00Z" },
-        ],
+    it("links to setlists the song appears in", async () => {
+      mockListSetlists.mockResolvedValue({
+        setlists: [{ id: "sl-1", name: "Sunday Morning", status: "approved" }],
       });
-      renderPage();
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByText("Edit History"));
-
-      await waitFor(() => {
-        expect(screen.getByText("(empty)")).toBeInTheDocument();
-        expect(screen.getByText("John Newton")).toBeInTheDocument();
+        expect(screen.getByText("Sunday Morning")).toHaveAttribute("href", "/setlists/sl-1");
       });
     });
   });
@@ -251,50 +134,31 @@ describe("Song Edit History", () => {
   // ===================== NEGATIVE =====================
 
   describe("negative", () => {
-    it("hides Edit History section when no history", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({ history: [] });
-      renderPage();
+    it("shows an empty state when there are no edits", async () => {
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
+        expect(screen.getByText("No edits recorded yet.")).toBeInTheDocument();
       });
-
-      expect(screen.queryByText("Edit History")).not.toBeInTheDocument();
     });
 
     it("handles history API failure gracefully", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
       mockListHistory.mockRejectedValue(new Error("Server error"));
-      renderPage();
+      renderTab();
 
-      // Page should still render without crashing
+      // Tab should still render without crashing
       await waitFor(() => {
-        expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
+        expect(screen.getByText("Edit history")).toBeInTheDocument();
+        expect(screen.getByText("No edits recorded yet.")).toBeInTheDocument();
       });
-
-      // No edit history section shown
-      expect(screen.queryByText("Edit History")).not.toBeInTheDocument();
     });
 
-    it("displays formatted timestamp for edits", async () => {
-      mockGetSong.mockResolvedValue({ song: mockSong, variations: [] });
-      mockListHistory.mockResolvedValue({
-        history: [
-          { id: "e1", songId: "song-1", editedBy: "u1", field: "key", oldValue: "C", newValue: "G", createdAt: "2025-06-01T12:00:00Z" },
-        ],
-      });
-      renderPage();
+    it("shows a play-log empty state when never played", async () => {
+      renderTab();
 
       await waitFor(() => {
-        expect(screen.getByText("Edit History")).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByText("Edit History"));
-
-      // Should render a timestamp (locale-dependent, so just check the section renders)
-      await waitFor(() => {
-        expect(screen.getByText("key")).toBeInTheDocument();
+        expect(screen.getByText(/Plays are logged when an event/)).toBeInTheDocument();
+        expect(screen.getByText("Never")).toBeInTheDocument();
       });
     });
   });
