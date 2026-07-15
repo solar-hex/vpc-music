@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LayoutDashboard, ShieldCheck, Music, Layers, MicVocal, Settings, Sun, Moon, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, CalendarDays, Layers, Mic2, Music, MicVocal, Disc3, FolderOpen, ShieldCheck, Settings, Sun, Moon, type LucideIcon } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
@@ -23,21 +23,31 @@ export interface NavSection {
 export const NAV_SECTIONS: NavSection[] = [
   {
     title: "",
+    items: [{ to: "/dashboard", label: "Dashboard", icon: LayoutDashboard }],
+  },
+  {
+    title: "Planning",
     items: [
-      { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-      { to: "/admin", label: "Admin", icon: ShieldCheck, adminOnly: true },
+      { to: "/calendar", label: "Calendar", icon: CalendarDays },
+      { to: "/setlists", label: "Set Lists", icon: Layers },
+      { to: "/rehearsals", label: "Rehearsals", icon: Mic2 },
     ],
   },
   {
     title: "Library",
     items: [
       { to: "/songs", label: "Songs", icon: Music },
-      { to: "/setlists", label: "Set Lists", icon: Layers },
       { to: "/artists", label: "Artists", icon: MicVocal },
+      { to: "/albums", label: "Albums", icon: Disc3 },
+      { to: "/media", label: "Media Library", icon: FolderOpen },
     ],
   },
   {
-    title: "Tools",
+    title: "",
+    items: [{ to: "/admin", label: "Administration", icon: ShieldCheck, adminOnly: true }],
+  },
+  {
+    title: "",
     items: [{ to: "/settings", label: "Settings", icon: Settings }],
   },
 ];

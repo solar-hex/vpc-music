@@ -6,13 +6,13 @@ import { LoginPage } from "@/pages/auth/LoginPage";
 
 // ---------- Mocks ----------
 const mockLogin = vi.fn();
-const mockSetUser = vi.fn();
+const mockRefreshUser = vi.fn();
 const mockNavigate = vi.fn();
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     login: mockLogin,
-    setUser: mockSetUser,
+    refreshUser: mockRefreshUser,
     isAuthenticated: false,
   }),
 }));
@@ -159,7 +159,10 @@ describe("LoginPage", () => {
 
       await waitFor(() => {
         expect(mockOpenOAuthPopup).toHaveBeenCalledWith("google");
-        expect(mockSetUser).toHaveBeenCalledWith(fakeUser);
+        // The OAuth callback payload omits `organizations` — the page must
+        // refetch via /auth/me (refreshUser) instead of setUser()-ing the
+        // partial payload directly.
+        expect(mockRefreshUser).toHaveBeenCalled();
         expect(mockNavigate).toHaveBeenCalledWith("/dashboard");
       });
     });

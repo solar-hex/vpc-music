@@ -196,7 +196,7 @@ export function EventDetailPage() {
           <h3 className="section-title">
             <Mic2 className="section-title-icon" /> Rehearsals
           </h3>
-          <Link to="/setlists/rehearsals" className="link-accent text-sm">
+          <Link to="/rehearsals" className="link-accent text-sm">
             All rehearsals
           </Link>
         </div>

@@ -140,13 +140,13 @@ describe("AppShell", () => {
       expect(screen.getAllByText("Set Lists").length).toBeGreaterThan(0);
       expect(screen.getAllByText("Settings").length).toBeGreaterThan(0);
       // Section headings
+      expect(screen.getAllByText("Planning").length).toBeGreaterThan(0);
       expect(screen.getAllByText("Library").length).toBeGreaterThan(0);
-      expect(screen.getAllByText("Tools").length).toBeGreaterThan(0);
     });
 
-    it("shows Admin link for org admins", () => {
+    it("shows Administration link for org admins", () => {
       renderShell();
-      expect(screen.getAllByText("Admin").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Administration").length).toBeGreaterThan(0);
     });
 
     it("renders outlet for child routes", () => {
@@ -307,7 +307,7 @@ describe("AppShell", () => {
       };
 
       renderShell();
-      expect(screen.queryByText("Admin")).not.toBeInTheDocument();
+      expect(screen.queryByText("Administration")).not.toBeInTheDocument();
       expect(screen.queryByText("Profile")).not.toBeInTheDocument();
     });
   });

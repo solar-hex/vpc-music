@@ -155,17 +155,29 @@ describe("AuthContext", () => {
 
   describe("login", () => {
     it("sets user on successful login", async () => {
-      mockLogin.mockResolvedValue({ user: fakeUser });
+      // The login response itself omits `organizations` — login() must
+      // refetch via /auth/me (mockMe) to get the full user, not just rely
+      // on authApi.login()'s response.
+      mockLogin.mockResolvedValue({ user: { id: fakeUser.id, email: fakeUser.email, displayName: fakeUser.displayName, role: fakeUser.role } });
       renderWithAuth();
+      // Mount-time /auth/me still rejects (default from beforeEach) —
+      // starts unauthenticated.
       await waitFor(() =>
         expect(screen.getByTestId("loading").textContent).toBe("false"),
       );
+      expect(screen.getByTestId("authenticated").textContent).toBe("false");
+
+      // Queue the /auth/me call login() triggers via refreshUser() to
+      // succeed.
+      mockMe.mockResolvedValueOnce({ user: fakeUser });
 
       await act(async () => {
         screen.getByTestId("login").click();
       });
       expect(mockLogin).toHaveBeenCalledWith("a@b.com", "pw");
-      expect(screen.getByTestId("user").textContent).toBe("Test User");
+      await waitFor(() =>
+        expect(screen.getByTestId("user").textContent).toBe("Test User"),
+      );
       expect(screen.getByTestId("authenticated").textContent).toBe("true");
     });
 
@@ -194,17 +206,22 @@ describe("AuthContext", () => {
   describe("register", () => {
     it("sets user on successful registration", async () => {
       const newUser = { ...fakeUser, id: "u-2", displayName: "New" };
-      mockRegister.mockResolvedValue({ user: newUser });
+      mockRegister.mockResolvedValue({ user: { id: newUser.id, email: newUser.email, displayName: newUser.displayName, role: newUser.role } });
       renderWithAuth();
       await waitFor(() =>
         expect(screen.getByTestId("loading").textContent).toBe("false"),
       );
 
+      // Queue the /auth/me call register() triggers via refreshUser().
+      mockMe.mockResolvedValueOnce({ user: newUser });
+
       await act(async () => {
         screen.getByTestId("register").click();
       });
       expect(mockRegister).toHaveBeenCalledWith({ email: "a@b.com", password: "pw", displayName: "New" });
-      expect(screen.getByTestId("user").textContent).toBe("New");
+      await waitFor(() =>
+        expect(screen.getByTestId("user").textContent).toBe("New"),
+      );
     });
   });
 

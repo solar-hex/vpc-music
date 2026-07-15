@@ -6,7 +6,6 @@ import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
 import { openOAuthPopup } from "@/lib/oauth-popup";
 import { authApi } from "@/lib/api-client";
 import { toast } from "sonner";
-import type { User } from "@/contexts/AuthContext";
 
 const IS_SANDBOX = import.meta.env.VITE_SANDBOX === "true";
 
@@ -29,7 +28,7 @@ function GoogleIcon({ className }: { className?: string }) {
 }
 
 export function LoginPage() {
-  const { login, isAuthenticated, setUser } = useAuth();
+  const { login, isAuthenticated, refreshUser } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const inviteEmail = searchParams.get("email") || "";
@@ -65,8 +64,8 @@ export function LoginPage() {
           toast.error("Password must be at least 8 characters");
           return;
         }
-        const { user, token } = await authApi.setPassword(email, password);
-        setUser(user as unknown as User);
+        await authApi.setPassword(email, password);
+        await refreshUser();
         toast.success("Password set. Welcome!");
         navigate("/dashboard");
       } else {
@@ -94,7 +93,7 @@ export function LoginPage() {
     try {
       const result = await openOAuthPopup("google");
       if (result.success && result.user) {
-        setUser(result.user as unknown as User);
+        await refreshUser();
         toast.success("Welcome back!");
         navigate("/dashboard");
       } else if (result.error) {

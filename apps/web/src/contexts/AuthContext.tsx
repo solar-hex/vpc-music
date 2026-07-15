@@ -97,17 +97,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     refreshUser();
   }, [refreshUser]);
 
-  const login = useCallback(async (email: string, password: string) => {
-    const { user: loggedIn } = await authApi.login(email, password);
-    setUser(loggedIn);
-  }, []);
+  const login = useCallback(
+    async (email: string, password: string) => {
+      await authApi.login(email, password);
+      // The login response omits `organizations` (only /auth/me includes
+      // it) — refetch so activeOrg is correct immediately, instead of
+      // showing "No organization yet" until the next reload.
+      await refreshUser();
+    },
+    [refreshUser]
+  );
 
   const register = useCallback(
     async (email: string, password: string, displayName?: string) => {
-      const { user: created } = await authApi.register({ email, password, displayName });
-      setUser(created);
+      await authApi.register({ email, password, displayName });
+      await refreshUser();
     },
-    []
+    [refreshUser]
   );
 
   const logout = useCallback(async () => {

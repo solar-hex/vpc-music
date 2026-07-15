@@ -139,7 +139,7 @@ export function DashboardPage() {
               {daysToNextEvent === null ? "—" : daysToNextEvent === 0 ? "Today" : `${daysToNextEvent}d`}
             </p>
           </div>
-          <Link to="/setlists/rehearsals" className="card-interactive card-body">
+          <Link to="/rehearsals" className="card-interactive card-body">
             <p className="text-xs uppercase font-semibold text-[hsl(var(--muted-foreground))]">Rehearsals this week</p>
             <p className="text-lg font-bold tabular-nums">{rehearsalsThisWeek ?? "—"}</p>
           </Link>

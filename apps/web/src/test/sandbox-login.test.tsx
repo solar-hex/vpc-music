@@ -7,13 +7,13 @@ import path from "node:path";
 
 // ---------- Mocks ----------
 const mockLogin = vi.fn();
-const mockSetUser = vi.fn();
+const mockRefreshUser = vi.fn();
 const mockNavigate = vi.fn();
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     login: mockLogin,
-    setUser: mockSetUser,
+    refreshUser: mockRefreshUser,
     isAuthenticated: false,
   }),
 }));

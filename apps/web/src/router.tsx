@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { RouteErrorPage } from "./components/shared/RouteErrorPage";
 import { ProtectedRoute } from "./components/shared/ProtectedRoute";
@@ -43,8 +43,9 @@ import { AdminRolesTab } from "./pages/admin/AdminRolesTab";
 import { AdminActivityTab } from "./pages/admin/AdminActivityTab";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
-// All feature growth happens inside these sections as nested tab routes —
-// the sidebar stays at six items.
+// Section routes (SectionLayout) hold closely related sub-tabs; standalone
+// top-level routes (Calendar, Rehearsals, Media Library, Albums) get their
+// own sidebar entries under Planning/Library — see Sidebar.tsx NAV_SECTIONS.
 export const router = createBrowserRouter([
   // ── Public routes (no AppShell) ──────────────
   { path: "/", element: <LandingPage />, errorElement: <RouteErrorPage /> },
@@ -103,20 +104,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/songs",
-        element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "All songs" },
-              { to: "media", label: "Media library" },
-            ]}
-          />
-        ),
-        children: [
-          { index: true, element: <SongListPage /> },
-          { path: "media", element: <MediaLibraryPage /> },
-        ],
+        element: <SectionLayout tabs={[{ to: "", label: "All songs" }]} />,
+        children: [{ index: true, element: <SongListPage /> }],
       },
       { path: "/songs/new", element: <SongEditPage /> },
+      { path: "/songs/media", element: <Navigate to="/media" replace /> },
+      { path: "/media", element: <MediaLibraryPage /> },
       {
         path: "/songs/:id",
         element: <SongDetailLayout />,
@@ -135,8 +128,6 @@ export const router = createBrowserRouter([
               { to: "", label: "Set lists" },
               { to: "templates", label: "Templates" },
               { to: "events", label: "Events" },
-              { to: "calendar", label: "Calendar" },
-              { to: "rehearsals", label: "Rehearsals" },
             ]}
           />
         ),
@@ -144,28 +135,22 @@ export const router = createBrowserRouter([
           { index: true, element: <SetlistHubPage /> },
           { path: "templates", element: <TemplatesPage /> },
           { path: "events", element: <EventsPage /> },
-          { path: "calendar", element: <CalendarPage /> },
-          { path: "rehearsals", element: <RehearsalsPage /> },
         ],
       },
       { path: "/setlists/new", element: <SetlistHubPage /> },
       { path: "/setlists/events/:id", element: <EventDetailPage /> },
+      { path: "/setlists/calendar", element: <Navigate to="/calendar" replace /> },
+      { path: "/setlists/rehearsals", element: <Navigate to="/rehearsals" replace /> },
       { path: "/setlists/:id", element: <SetlistViewPage /> },
+      { path: "/calendar", element: <CalendarPage /> },
+      { path: "/rehearsals", element: <RehearsalsPage /> },
       {
         path: "/artists",
-        element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "All artists" },
-              { to: "albums", label: "Albums" },
-            ]}
-          />
-        ),
-        children: [
-          { index: true, element: <ArtistsPage /> },
-          { path: "albums", element: <AlbumsPage /> },
-        ],
+        element: <SectionLayout tabs={[{ to: "", label: "All artists" }]} />,
+        children: [{ index: true, element: <ArtistsPage /> }],
       },
+      { path: "/artists/albums", element: <Navigate to="/albums" replace /> },
+      { path: "/albums", element: <AlbumsPage /> },
       {
         path: "/artists/:id",
         element: <ArtistDetailLayout />,
