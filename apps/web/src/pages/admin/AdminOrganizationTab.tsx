@@ -118,19 +118,28 @@ export function AdminOrganizationTab() {
       </section>
 
       {canDelete && (
-        <section className="space-y-3 rounded-lg border border-[hsl(var(--destructive))]/40 bg-[hsl(var(--card))] p-6">
-          <h3 className="flex items-center gap-2 text-lg font-brand text-[hsl(var(--destructive))]">
-            <ShieldAlert className="h-5 w-5" />
-            Danger Zone
-          </h3>
-          <p className="text-sm text-[hsl(var(--muted-foreground))]">
-            Deleting the organization removes its songs, set lists, events, media, and memberships. There is no undo.
-          </p>
+        <section
+          aria-labelledby="danger-zone-heading"
+          className="mt-12 flex flex-col gap-3 rounded-lg border border-[hsl(var(--destructive))]/40 p-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="space-y-1">
+            <h3
+              id="danger-zone-heading"
+              className="flex items-center gap-1.5 text-sm font-semibold text-[hsl(var(--destructive))]"
+            >
+              <ShieldAlert className="h-4 w-4 shrink-0" />
+              Danger Zone
+            </h3>
+            <p className="text-sm text-[hsl(var(--muted-foreground))]">
+              Deleting this organization permanently removes songs, set lists, events, media, and memberships. This
+              cannot be undone.
+            </p>
+          </div>
           <button
             type="button"
             onClick={() => setShowDeleteConfirm(true)}
             disabled={deleting}
-            className="inline-flex items-center gap-2 rounded-md border border-[hsl(var(--destructive))]/40 px-4 py-2 text-sm font-medium text-[hsl(var(--destructive))] hover:bg-[hsl(var(--destructive))]/10 disabled:opacity-50"
+            className="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-[hsl(var(--destructive))]/40 px-3 py-2 text-sm font-medium text-[hsl(var(--destructive))] hover:bg-[hsl(var(--destructive))]/10 disabled:opacity-50 sm:self-auto"
           >
             <Trash2 className="h-4 w-4" />
             Delete Organization
