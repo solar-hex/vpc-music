@@ -7,7 +7,7 @@ import { SongStatusBadge, SONG_STATUS_CONFIGS } from "@/components/songs/SongSta
 import { SongActionsMenu } from "@/components/songs/SongActionsMenu";
 import { SongFilterToolbar, type FilterChip, type SongSortMode } from "@/components/songs/SongFilterToolbar";
 import { useAuth } from "@/contexts/AuthContext";
-import { Plus, Music, Download, ChevronDown, FolderPlus, Pencil, Share2, Trash2, Star } from "lucide-react";
+import { Plus, Music, Download, ChevronDown, Pencil, Share2, Trash2, Star } from "lucide-react";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { toast } from "sonner";
 
@@ -583,6 +583,7 @@ export function SongListPage() {
         availableTags={availableTags}
         chips={filterChips}
         onClearAll={handleClearAll}
+        onManageGroups={canManageAnyGroup ? () => setShowGroupsModal(true) : undefined}
       />
 
       {/* Results */}
@@ -627,16 +628,6 @@ export function SongListPage() {
                 />
                 Select all
               </label>
-
-              {canManageAnyGroup && (
-                <button
-                  type="button"
-                  onClick={() => setShowGroupsModal(true)}
-                  className="btn-outline btn-sm"
-                >
-                  <FolderPlus className="h-3.5 w-3.5" /> Groups
-                </button>
-              )}
 
               {canBatchShareToOrganizations && !isSharedScope && (
                 <button

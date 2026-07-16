@@ -792,7 +792,8 @@ describe("SongListPage", () => {
       });
 
       await user.click(screen.getByRole("checkbox", { name: /select amazing grace/i }));
-      await user.click(screen.getByRole("button", { name: /groups/i }));
+      await user.click(screen.getByRole("button", { name: /advanced filters/i }));
+      await user.click(screen.getByRole("button", { name: /manage groups/i }));
       await user.type(screen.getByPlaceholderText(/wedding set, youth night, choir rehearsal/i), "Choir Rehearsal");
       await user.click(screen.getByRole("button", { name: /create group/i }));
 
@@ -817,7 +818,8 @@ describe("SongListPage", () => {
         expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
       });
 
-      await user.click(screen.getByRole("button", { name: /groups/i }));
+      await user.click(screen.getByRole("button", { name: /advanced filters/i }));
+      await user.click(screen.getByRole("button", { name: /manage groups/i }));
 
       const managerSelect = screen.getByLabelText(/delegated managers for wedding songs/i);
       await user.selectOptions(managerSelect, "u2");
@@ -840,7 +842,8 @@ describe("SongListPage", () => {
         expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
       });
 
-      await user.click(screen.getByRole("button", { name: /groups/i }));
+      await user.click(screen.getByRole("button", { name: /advanced filters/i }));
+      await user.click(screen.getByRole("button", { name: /manage groups/i }));
       await user.click(screen.getByRole("button", { name: /rename wedding songs/i }));
 
       const renameInput = screen.getByLabelText(/rename wedding songs/i);
@@ -865,7 +868,8 @@ describe("SongListPage", () => {
         expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
       });
 
-      await user.click(screen.getByRole("button", { name: /groups/i }));
+      await user.click(screen.getByRole("button", { name: /advanced filters/i }));
+      await user.click(screen.getByRole("button", { name: /manage groups/i }));
       await user.click(screen.getByRole("button", { name: /delete wedding songs/i }));
       await user.click(screen.getByRole("button", { name: /delete group/i }));
 

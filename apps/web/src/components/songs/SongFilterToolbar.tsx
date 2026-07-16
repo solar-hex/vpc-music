@@ -51,6 +51,8 @@ interface SongFilterToolbarProps {
   availableTags: string[];
   chips: FilterChip[];
   onClearAll: () => void;
+  /** Opens the group management modal (create/rename/delete/delegate). Omit to hide the entry point. */
+  onManageGroups?: () => void;
 }
 
 /**
@@ -90,6 +92,7 @@ export function SongFilterToolbar({
   availableTags,
   chips,
   onClearAll,
+  onManageGroups,
 }: SongFilterToolbarProps) {
   const [advancedOpen, setAdvancedOpen] = useState(false);
   const advancedRef = useRef<HTMLDivElement>(null);
@@ -225,7 +228,18 @@ export function SongFilterToolbar({
                 </div>
 
                 <label className="block space-y-1">
-                  <span className="text-xs font-medium text-[hsl(var(--muted-foreground))]">Group</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-medium text-[hsl(var(--muted-foreground))]">Group</span>
+                    {onManageGroups && (
+                      <button
+                        type="button"
+                        onClick={onManageGroups}
+                        className="text-xs font-medium text-[hsl(var(--secondary))] hover:underline"
+                      >
+                        Manage groups
+                      </button>
+                    )}
+                  </div>
                   <select
                     aria-label="Filter by group"
                     value={groupFilter}
