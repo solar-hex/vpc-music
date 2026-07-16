@@ -227,7 +227,7 @@ export function SongFilterToolbar({
                   </button>
                 </div>
 
-                <label className="block space-y-1">
+                <div className="block space-y-1">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-medium text-[hsl(var(--muted-foreground))]">Group</span>
                     {onManageGroups && (
@@ -254,7 +254,7 @@ export function SongFilterToolbar({
                       </option>
                     ))}
                   </select>
-                </label>
+                </div>
 
                 <label className="block space-y-1">
                   <span className="text-xs font-medium text-[hsl(var(--muted-foreground))]">Category</span>

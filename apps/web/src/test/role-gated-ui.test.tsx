@@ -284,12 +284,13 @@ describe("Role-gated UI", () => {
       expect(screen.queryByRole("button", { name: /groups/i })).not.toBeInTheDocument();
     });
 
-    it("observer sees Groups button when delegated to manage a group", async () => {
+    it("observer sees Manage groups when delegated to manage a group", async () => {
       mockAuthValue = observerAuth;
       mockSongsGetGroups.mockResolvedValue({ groups: [{ id: "group-1", name: "Wedding Songs", songCount: 1, canManage: true, managerUserIds: ["u2"], managerNames: ["Observer"] }] });
       renderSongList();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("button", { name: /groups/i })).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /advanced filters/i }));
+      expect(screen.getByRole("button", { name: /manage groups/i })).toBeInTheDocument();
     });
 
     it("owner sees New Song button", async () => {
@@ -297,7 +298,8 @@ describe("Role-gated UI", () => {
       renderSongList();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       expect(screen.getByRole("link", { name: /new song/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /groups/i })).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: /advanced filters/i }));
+      expect(screen.getByRole("button", { name: /manage groups/i })).toBeInTheDocument();
       expect(screen.getByRole("button", { name: /share to organizations/i })).toBeInTheDocument();
     });
 
