@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LayoutDashboard, CalendarDays, Layers, Mic2, Music, MicVocal, Disc3, FolderOpen, ShieldCheck, Settings, Sun, Moon, Search, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, CalendarDays, Layers, Mic2, Music, MicVocal, Disc3, FolderOpen, ShieldCheck, Settings, Sun, Moon, type LucideIcon } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
@@ -23,7 +23,10 @@ export interface NavSection {
 export const NAV_SECTIONS: NavSection[] = [
   {
     title: "",
-    items: [{ to: "/dashboard", label: "Dashboard", icon: LayoutDashboard }],
+    items: [
+      { to: "/admin", label: "Administration", icon: ShieldCheck, adminOnly: true },
+      { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    ],
   },
   {
     title: "Planning",
@@ -41,10 +44,6 @@ export const NAV_SECTIONS: NavSection[] = [
       { to: "/albums", label: "Albums", icon: Disc3 },
       { to: "/media", label: "Media Library", icon: FolderOpen },
     ],
-  },
-  {
-    title: "",
-    items: [{ to: "/admin", label: "Administration", icon: ShieldCheck, adminOnly: true }],
   },
   {
     title: "",
@@ -127,19 +126,6 @@ export function Sidebar({
           <span className="font-brand text-xl text-[hsl(var(--secondary))]">VPC Music</span>
         </NavLink>
         <OrgSwitcher onRequestCreate={onRequestCreateOrg} />
-      </div>
-
-      {/* Quick song search — opens the global launcher */}
-      <div className="px-3 pt-3">
-        <button
-          onClick={() => window.dispatchEvent(new Event("vpc:open-launcher"))}
-          className="flex w-full items-center gap-2 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--background))] px-3 py-2 text-sm text-[hsl(var(--muted-foreground))] transition-colors hover:text-[hsl(var(--foreground))] hover:border-[hsl(var(--secondary))]"
-          aria-label="Search songs"
-        >
-          <Search className="h-4 w-4 shrink-0" />
-          <span>Search songs…</span>
-          <kbd className="ml-auto rounded border border-[hsl(var(--border))] px-1.5 py-0.5 text-[10px] font-medium">⌘K</kbd>
-        </button>
       </div>
 
       {/* Nav sections */}
