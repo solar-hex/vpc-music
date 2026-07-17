@@ -205,23 +205,17 @@
     color: hsl(var(--foreground));
   }
 
-  /* Scrollbar — themed */
+  /* Scrollbars — hidden everywhere; scrolling stays fully functional
+     via wheel, trackpad, touch, and keyboard. */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* legacy Edge/IE */
+  }
+
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted-foreground));
+    width: 0;
+    height: 0;
+    display: none; /* Chrome, Safari, Edge */
   }
 
   @media (pointer: coarse) {
