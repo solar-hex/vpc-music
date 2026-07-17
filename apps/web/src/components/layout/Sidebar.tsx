@@ -23,8 +23,8 @@ export const NAV_SECTIONS: NavSection[] = [
   {
     title: "",
     items: [
-      { to: "/admin", label: "Administration", icon: ShieldCheck, adminOnly: true },
       { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+      { to: "/admin", label: "Administration", icon: ShieldCheck, adminOnly: true },
     ],
   },
   {
