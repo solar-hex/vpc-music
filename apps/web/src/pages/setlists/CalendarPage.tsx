@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { eventsApi, rehearsalsApi, type Event, type Rehearsal } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
+import { EventDetailsPanel } from "@/components/setlists/EventDetailsPanel";
+import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { RehearsalFormDialog } from "./RehearsalsPage";
 import { CalendarDays, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { toDateKey } from "@/lib/format";
@@ -23,6 +25,12 @@ export function CalendarPage() {
   const [pickerDate, setPickerDate] = useState<string | null>(null); // date chosen for creation
   const [creating, setCreating] = useState<"event" | "rehearsal" | null>(null);
   const [dragOverKey, setDragOverKey] = useState<string | null>(null);
+  // Split-view details panel: which event is open, plus its full detail
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [editingSelected, setEditingSelected] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const refresh = () => {
     eventsApi.list({ upcoming: false }).then((res) => setEvents(res.events)).catch(() => {});
@@ -32,6 +40,82 @@ export function CalendarPage() {
   useEffect(() => {
     refresh();
   }, []);
+
+  // Selecting an event seeds the panel from the list row instantly, then
+  // upgrades to the full detail (joins: prepared-by name, set list, songs).
+  useEffect(() => {
+    if (!selectedId) return;
+    const seed = events.find((ev) => ev.id === selectedId);
+    if (seed) setSelectedEvent((cur) => (cur?.id === selectedId ? cur : seed));
+    let cancelled = false;
+    eventsApi
+      .get(selectedId)
+      .then((res) => {
+        if (!cancelled) setSelectedEvent(res.event);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId]);
+
+  const closePanel = () => {
+    setSelectedId(null);
+    setSelectedEvent(null);
+  };
+
+  // Esc closes the panel — but only when no dialog is layered on top of it.
+  useEffect(() => {
+    if (!selectedId) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !editingSelected && !confirmDelete && !creating && !pickerDate) {
+        closePanel();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selectedId, editingSelected, confirmDelete, creating, pickerDate]);
+
+  const handleDuplicate = async () => {
+    if (!selectedEvent) return;
+    try {
+      const res = await eventsApi.create({
+        title: `${selectedEvent.title} (copy)`,
+        date: selectedEvent.date,
+        location: selectedEvent.location ?? null,
+        theme: selectedEvent.theme ?? null,
+        eventType: selectedEvent.eventType ?? null,
+        targetSeconds: selectedEvent.targetSeconds ?? null,
+        preparedBy: selectedEvent.preparedBy ?? null,
+        setlistId: selectedEvent.setlistId ?? null,
+        notes: selectedEvent.notes ?? null,
+        team: selectedEvent.team ?? [],
+      });
+      refresh();
+      setSelectedId(res.event.id);
+      setSelectedEvent(res.event);
+      toast.success("Event duplicated");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to duplicate event");
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!selectedId) return;
+    setDeleting(true);
+    try {
+      await eventsApi.delete(selectedId);
+      toast.success("Event deleted");
+      setConfirmDelete(false);
+      closePanel();
+      refresh();
+    } catch (err: any) {
+      toast.error(err.message || "Failed to delete event");
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   const byDay = useMemo(() => {
     const map = new Map<string, { events: Event[]; rehearsals: Rehearsal[] }>();
@@ -106,8 +190,32 @@ export function CalendarPage() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <div className="min-w-[720px]">
+      <div className="md:flex md:items-start">
+        {/* Split-view details panel — slides in from the left, pushing the calendar right */}
+        <div
+          aria-hidden={!selectedEvent}
+          className={`hidden md:block shrink-0 self-start overflow-hidden rounded-lg bg-[hsl(var(--card))] transition-all duration-300 ease-in-out md:sticky md:top-4 ${
+            selectedEvent
+              ? "md:mr-4 md:w-[40%] lg:w-[34%] border border-[hsl(var(--border))] opacity-100 shadow-sm"
+              : "w-0 border-0 opacity-0"
+          }`}
+        >
+          <div className="h-[calc(100vh-9rem)] min-w-[280px]" role="complementary" aria-label="Event details">
+            {selectedEvent && (
+              <EventDetailsPanel
+                event={selectedEvent}
+                canEdit={canEdit}
+                onClose={closePanel}
+                onEdit={() => setEditingSelected(true)}
+                onDuplicate={handleDuplicate}
+                onDelete={() => setConfirmDelete(true)}
+              />
+            )}
+          </div>
+        </div>
+
+        <div className="min-w-0 flex-1 overflow-x-auto">
+          <div className="min-w-[720px]">
           <div className="grid grid-cols-7 text-center text-xs font-semibold uppercase tracking-wider text-[hsl(var(--muted-foreground))]">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
               <div key={day} className="py-2">
@@ -168,7 +276,13 @@ export function CalendarPage() {
                       <Link
                         key={event.id}
                         to={`/setlists/events/${event.id}`}
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          // Open the split-view panel; the full page stays reachable from it
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setSelectedId(event.id);
+                        }}
+                        aria-expanded={selectedId === event.id}
                         draggable={canEdit}
                         onDragStart={(e) => {
                           e.dataTransfer.setData(EVENT_DRAG_TYPE, event.id);
@@ -176,6 +290,8 @@ export function CalendarPage() {
                         }}
                         onDragEnd={() => setDragOverKey(null)}
                         className={`block truncate rounded px-1 py-0.5 text-[11px] font-medium ${canEdit ? "cursor-grab active:cursor-grabbing" : ""} ${
+                          selectedId === event.id ? "ring-2 ring-[hsl(var(--secondary))] ring-offset-1 ring-offset-[hsl(var(--background))]" : ""
+                        } ${
                           event.status === "cancelled"
                             ? "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] line-through"
                             : "bg-[hsl(var(--secondary))]/20 text-[hsl(var(--secondary))]"
@@ -198,9 +314,27 @@ export function CalendarPage() {
                 </div>
               );
             })}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile: full event details as a bottom sheet (no split view) */}
+      {selectedEvent && (
+        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Event details">
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" onClick={closePanel} />
+          <div className="absolute inset-x-0 bottom-0 flex max-h-[85vh] flex-col rounded-t-xl border-t border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-2xl">
+            <EventDetailsPanel
+              event={selectedEvent}
+              canEdit={canEdit}
+              onClose={closePanel}
+              onEdit={() => setEditingSelected(true)}
+              onDuplicate={handleDuplicate}
+              onDelete={() => setConfirmDelete(true)}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Day action picker */}
       {pickerDate && !creating && (
@@ -225,6 +359,29 @@ export function CalendarPage() {
           </div>
         </div>
       )}
+
+      {/* Edit the selected event from the details panel */}
+      <EventFormDialog
+        open={editingSelected}
+        event={selectedEvent}
+        onClose={() => setEditingSelected(false)}
+        onSaved={(saved) => {
+          setSelectedEvent(saved);
+          refresh();
+        }}
+      />
+
+      <ConfirmDialog
+        open={confirmDelete}
+        title={`Delete "${selectedEvent?.title ?? "event"}"?`}
+        description="This removes the event from the calendar. Linked set lists and rehearsals are not deleted."
+        confirmLabel="Delete event"
+        busy={deleting}
+        onClose={() => {
+          if (!deleting) setConfirmDelete(false);
+        }}
+        onConfirm={handleDelete}
+      />
 
       <EventFormDialog
         open={creating === "event"}
