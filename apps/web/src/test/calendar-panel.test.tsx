@@ -5,21 +5,25 @@ import { CalendarPage } from "@/pages/setlists/CalendarPage";
 
 const mockListEvents = vi.fn();
 const mockGetEvent = vi.fn();
-const mockCreateEvent = vi.fn();
-const mockDeleteEvent = vi.fn();
 const mockUpdateEvent = vi.fn();
+const mockDeleteEvent = vi.fn();
 const mockListRehearsals = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
   eventsApi: {
     list: (...args: any[]) => mockListEvents(...args),
     get: (...args: any[]) => mockGetEvent(...args),
-    create: (...args: any[]) => mockCreateEvent(...args),
-    delete: (...args: any[]) => mockDeleteEvent(...args),
     update: (...args: any[]) => mockUpdateEvent(...args),
+    delete: (...args: any[]) => mockDeleteEvent(...args),
   },
   rehearsalsApi: {
     list: (...args: any[]) => mockListRehearsals(...args),
+  },
+  orgsApi: {
+    members: () => Promise.resolve({ members: [{ userId: "u2", displayName: "Ana", role: "musician" }] }),
+  },
+  setlistsApi: {
+    list: () => Promise.resolve({ setlists: [{ id: "sl1", name: "Sunday Set" }] }),
   },
 }));
 
@@ -29,16 +33,16 @@ vi.mock("@/contexts/AuthContext", () => ({
 }));
 
 vi.mock("@/components/dashboard/EventFormDialog", () => ({
-  EventFormDialog: ({ open }: any) => (open ? <div data-testid="edit-dialog" /> : null),
+  EventFormDialog: ({ open }: any) => (open ? <div data-testid="create-dialog" /> : null),
 }));
 vi.mock("@/pages/setlists/RehearsalsPage", () => ({
   RehearsalFormDialog: () => null,
 }));
 vi.mock("@/components/shared/ConfirmDialog", () => ({
-  ConfirmDialog: ({ open, onConfirm }: any) =>
+  ConfirmDialog: ({ open, confirmLabel, onConfirm }: any) =>
     open ? (
       <button type="button" onClick={onConfirm}>
-        confirm-delete
+        {confirmLabel}
       </button>
     ) : null,
 }));
@@ -53,9 +57,12 @@ const e2Date = new Date(now.getFullYear(), now.getMonth(), 12, 18, 0).toISOStrin
 const e1 = { id: "e1", title: "Morning worship", date: e1Date, status: "scheduled" };
 const e2 = { id: "e2", title: "Evening prayer", date: e2Date, status: "scheduled" };
 
-/** The split-view panel instance (desktop node; a mobile sheet twin also renders in jsdom). */
 function panel() {
-  return screen.getAllByTestId("event-details-panel")[0];
+  return screen.getByTestId("event-edit-panel");
+}
+
+function titleInput() {
+  return within(panel()).getByLabelText(/Title/) as HTMLInputElement;
 }
 
 function renderCalendar() {
@@ -66,98 +73,122 @@ function renderCalendar() {
   );
 }
 
-describe("calendar split-view event panel", () => {
+describe("calendar split-view edit panel", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockListEvents.mockResolvedValue({ events: [e1, e2] });
     mockListRehearsals.mockResolvedValue({ rehearsals: [] });
     mockGetEvent.mockImplementation((id: string) =>
-      Promise.resolve({
-        event: id === "e1" ? { ...e1, location: "Main Hall", notes: "Bring the banners" } : { ...e2, location: "Chapel" },
-      }),
+      Promise.resolve({ event: id === "e1" ? { ...e1, location: "Main Hall" } : { ...e2, location: "Chapel" } }),
     );
+    mockUpdateEvent.mockImplementation((_id: string, data: any) => Promise.resolve({ event: { ...e1, ...data } }));
     mockDeleteEvent.mockResolvedValue({ message: "ok" });
-    mockCreateEvent.mockResolvedValue({ event: { ...e1, id: "e3", title: "Morning worship (copy)" } });
     mockAuthValue = {
       user: { id: "u1", role: "member" },
       activeOrg: { id: "org1", role: "admin" },
     };
   });
 
-  it("opens the details panel on event click instead of navigating", async () => {
+  it("clicking an event opens the editable form directly — no details page, no modal", async () => {
     renderCalendar();
     fireEvent.click(await screen.findByText("Morning worship"));
 
+    await waitFor(() => expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument());
+    expect(titleInput().value).toBe("Morning worship");
+    // Detail fetch fills in the rest of the form
     await waitFor(() => {
-      expect(screen.getAllByTestId("event-details-panel").length).toBeGreaterThan(0);
+      expect((within(panel()).getByLabelText("Location") as HTMLInputElement).value).toBe("Main Hall");
     });
-    expect(mockGetEvent).toHaveBeenCalledWith("e1");
-    await waitFor(() => {
-      expect(within(panel()).getByText("Main Hall")).toBeInTheDocument();
-    });
-    expect(within(panel()).getByText("Bring the banners")).toBeInTheDocument();
+    // Already in edit mode: Save footer present, no separate Edit button
+    expect(within(panel()).getByText("Save Changes")).toBeInTheDocument();
+    expect(within(panel()).queryByLabelText("Edit event")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("create-dialog")).not.toBeInTheDocument();
   });
 
-  it("clicking another event updates the same panel", async () => {
+  it("selecting another event replaces the form contents in place", async () => {
     renderCalendar();
     fireEvent.click(await screen.findByText("Morning worship"));
-    await waitFor(() => expect(mockGetEvent).toHaveBeenCalledWith("e1"));
+    await waitFor(() => expect(titleInput().value).toBe("Morning worship"));
 
     fireEvent.click(screen.getByText("Evening prayer"));
-    await waitFor(() => expect(mockGetEvent).toHaveBeenCalledWith("e2"));
-    await waitFor(() => {
-      expect(within(panel()).getByText("Chapel")).toBeInTheDocument();
-    });
-    // Same single split-view panel (plus its mobile twin), not stacked panels
-    expect(screen.getAllByTestId("event-details-panel").length).toBeLessThanOrEqual(2);
+    await waitFor(() => expect(titleInput().value).toBe("Evening prayer"));
+    expect(screen.getAllByTestId("event-edit-panel")).toHaveLength(1);
   });
 
-  it("Escape closes the panel", async () => {
+  it("warns before switching events with unsaved changes, then discards on confirm", async () => {
     renderCalendar();
     fireEvent.click(await screen.findByText("Morning worship"));
-    await waitFor(() => expect(screen.getAllByTestId("event-details-panel").length).toBeGreaterThan(0));
+    await waitFor(() => expect(titleInput().value).toBe("Morning worship"));
 
+    fireEvent.change(titleInput(), { target: { value: "Edited title" } });
+    fireEvent.click(screen.getByText("Evening prayer"));
+
+    // Form is NOT replaced yet — the discard confirmation is showing
+    expect(titleInput().value).toBe("Edited title");
+    fireEvent.click(await screen.findByText("Discard changes"));
+    await waitFor(() => expect(titleInput().value).toBe("Evening prayer"));
+  });
+
+  it("saves changes from the footer button", async () => {
+    renderCalendar();
+    fireEvent.click(await screen.findByText("Morning worship"));
+    await waitFor(() => expect(titleInput().value).toBe("Morning worship"));
+
+    fireEvent.change(titleInput(), { target: { value: "Morning worship v2" } });
+    fireEvent.click(within(panel()).getByText("Save Changes"));
+
+    await waitFor(() => expect(mockUpdateEvent).toHaveBeenCalledTimes(1));
+    const [id, payload] = mockUpdateEvent.mock.calls[0];
+    expect(id).toBe("e1");
+    expect(payload.title).toBe("Morning worship v2");
+  });
+
+  it("Ctrl+S saves changes", async () => {
+    renderCalendar();
+    fireEvent.click(await screen.findByText("Morning worship"));
+    await waitFor(() => expect(titleInput().value).toBe("Morning worship"));
+
+    fireEvent.change(titleInput(), { target: { value: "Shortcut save" } });
+    fireEvent.keyDown(window, { key: "s", ctrlKey: true });
+
+    await waitFor(() => expect(mockUpdateEvent).toHaveBeenCalledTimes(1));
+    expect(mockUpdateEvent.mock.calls[0][1].title).toBe("Shortcut save");
+  });
+
+  it("Esc closes a clean panel but asks first when dirty", async () => {
+    renderCalendar();
+    fireEvent.click(await screen.findByText("Morning worship"));
+    await waitFor(() => expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument());
+
+    fireEvent.change(titleInput(), { target: { value: "Dirty" } });
     fireEvent.keyDown(window, { key: "Escape" });
-    await waitFor(() => {
-      expect(screen.queryByTestId("event-details-panel")).not.toBeInTheDocument();
-    });
-  });
-
-  it("duplicates the event from the panel footer", async () => {
-    renderCalendar();
-    fireEvent.click(await screen.findByText("Morning worship"));
-    await waitFor(() => expect(within(panel()).getByText("Duplicate")).toBeInTheDocument());
-
-    fireEvent.click(within(panel()).getByText("Duplicate"));
-    await waitFor(() => expect(mockCreateEvent).toHaveBeenCalledTimes(1));
-    expect(mockCreateEvent.mock.calls[0][0].title).toBe("Morning worship (copy)");
+    expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument();
+    fireEvent.click(await screen.findByText("Discard changes"));
+    await waitFor(() => expect(screen.queryByTestId("event-edit-panel")).not.toBeInTheDocument());
   });
 
   it("deletes the event after confirmation and closes the panel", async () => {
     renderCalendar();
     fireEvent.click(await screen.findByText("Morning worship"));
-    await waitFor(() => expect(within(panel()).getByText("Delete")).toBeInTheDocument());
+    await waitFor(() => expect(within(panel()).getByText("Delete Event")).toBeInTheDocument());
 
-    fireEvent.click(within(panel()).getByText("Delete"));
-    fireEvent.click(await screen.findByText("confirm-delete"));
+    fireEvent.click(within(panel()).getByText("Delete Event"));
+    fireEvent.click(await screen.findByText("Delete event"));
     await waitFor(() => expect(mockDeleteEvent).toHaveBeenCalledWith("e1"));
-    await waitFor(() => {
-      expect(screen.queryByTestId("event-details-panel")).not.toBeInTheDocument();
-    });
+    await waitFor(() => expect(screen.queryByTestId("event-edit-panel")).not.toBeInTheDocument());
   });
 
-  it("hides edit/duplicate/delete for read-only roles", async () => {
+  it("read-only roles get disabled fields and no action footer", async () => {
     mockAuthValue = {
       user: { id: "u1", role: "member" },
       activeOrg: { id: "org1", role: "observer" },
     };
     renderCalendar();
     fireEvent.click(await screen.findByText("Morning worship"));
-    await waitFor(() => expect(screen.getAllByTestId("event-details-panel").length).toBeGreaterThan(0));
+    await waitFor(() => expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument());
 
-    expect(within(panel()).queryByText("Duplicate")).not.toBeInTheDocument();
-    expect(within(panel()).queryByText("Delete")).not.toBeInTheDocument();
-    expect(within(panel()).queryByLabelText("Edit event")).not.toBeInTheDocument();
-    expect(within(panel()).getByLabelText("Close details panel")).toBeInTheDocument();
+    expect(titleInput()).toBeDisabled();
+    expect(within(panel()).queryByText("Save Changes")).not.toBeInTheDocument();
+    expect(within(panel()).queryByText("Delete Event")).not.toBeInTheDocument();
   });
 });

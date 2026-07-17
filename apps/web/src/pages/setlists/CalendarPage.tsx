@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { eventsApi, rehearsalsApi, type Event, type Rehearsal } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
-import { EventDetailsPanel } from "@/components/setlists/EventDetailsPanel";
+import { EventEditPanel } from "@/components/setlists/EventEditPanel";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { RehearsalFormDialog } from "./RehearsalsPage";
 import { CalendarDays, ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -11,6 +11,21 @@ import { toDateKey } from "@/lib/format";
 import { toast } from "sonner";
 
 const EVENT_DRAG_TYPE = "application/x-vpc-event";
+
+/** md breakpoint — used to mount exactly one edit-panel instance (split view or sheet). */
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window.matchMedia === "function" ? window.matchMedia("(min-width: 768px)").matches : true,
+  );
+  useEffect(() => {
+    if (typeof window.matchMedia !== "function") return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  return isDesktop;
+}
 
 /** Set Lists → Calendar: month view combining events and rehearsals. */
 export function CalendarPage() {
@@ -25,12 +40,14 @@ export function CalendarPage() {
   const [pickerDate, setPickerDate] = useState<string | null>(null); // date chosen for creation
   const [creating, setCreating] = useState<"event" | "rehearsal" | null>(null);
   const [dragOverKey, setDragOverKey] = useState<string | null>(null);
-  // Split-view details panel: which event is open, plus its full detail
+  // Split-view edit panel: which event is open, plus its full detail
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [editingSelected, setEditingSelected] = useState(false);
+  const [panelDirty, setPanelDirty] = useState(false);
+  const [pendingAction, setPendingAction] = useState<{ type: "select"; id: string } | { type: "close" } | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const isDesktop = useIsDesktop();
 
   const refresh = () => {
     eventsApi.list({ upcoming: false }).then((res) => setEvents(res.events)).catch(() => {});
@@ -63,43 +80,41 @@ export function CalendarPage() {
   const closePanel = () => {
     setSelectedId(null);
     setSelectedEvent(null);
+    setPanelDirty(false);
+  };
+
+  // Switching events or closing goes through these guards: unsaved edits
+  // prompt a discard confirmation instead of being silently dropped.
+  const requestSelect = (id: string) => {
+    if (id === selectedId) return;
+    if (panelDirty) setPendingAction({ type: "select", id });
+    else setSelectedId(id);
+  };
+
+  const requestClose = () => {
+    if (panelDirty) setPendingAction({ type: "close" });
+    else closePanel();
+  };
+
+  const confirmDiscard = () => {
+    setPanelDirty(false);
+    if (pendingAction?.type === "select") setSelectedId(pendingAction.id);
+    else if (pendingAction?.type === "close") closePanel();
+    setPendingAction(null);
   };
 
   // Esc closes the panel — but only when no dialog is layered on top of it.
   useEffect(() => {
     if (!selectedId) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !editingSelected && !confirmDelete && !creating && !pickerDate) {
-        closePanel();
+      if (e.key === "Escape" && !confirmDelete && !creating && !pickerDate && !pendingAction) {
+        requestClose();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [selectedId, editingSelected, confirmDelete, creating, pickerDate]);
-
-  const handleDuplicate = async () => {
-    if (!selectedEvent) return;
-    try {
-      const res = await eventsApi.create({
-        title: `${selectedEvent.title} (copy)`,
-        date: selectedEvent.date,
-        location: selectedEvent.location ?? null,
-        theme: selectedEvent.theme ?? null,
-        eventType: selectedEvent.eventType ?? null,
-        targetSeconds: selectedEvent.targetSeconds ?? null,
-        preparedBy: selectedEvent.preparedBy ?? null,
-        setlistId: selectedEvent.setlistId ?? null,
-        notes: selectedEvent.notes ?? null,
-        team: selectedEvent.team ?? [],
-      });
-      refresh();
-      setSelectedId(res.event.id);
-      setSelectedEvent(res.event);
-      toast.success("Event duplicated");
-    } catch (err: any) {
-      toast.error(err.message || "Failed to duplicate event");
-    }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId, confirmDelete, creating, pickerDate, pendingAction, panelDirty]);
 
   const handleDelete = async () => {
     if (!selectedId) return;
@@ -200,15 +215,19 @@ export function CalendarPage() {
               : "w-0 border-0 opacity-0"
           }`}
         >
-          <div className="h-[calc(100vh-9rem)] min-w-[280px]" role="complementary" aria-label="Event details">
-            {selectedEvent && (
-              <EventDetailsPanel
+          <div className="h-[calc(100vh-9rem)] min-w-[280px]" role="complementary" aria-label="Edit event">
+            {selectedEvent && isDesktop && (
+              <EventEditPanel
                 event={selectedEvent}
+                rehearsals={rehearsals.filter((r) => r.eventId === selectedEvent.id)}
                 canEdit={canEdit}
-                onClose={closePanel}
-                onEdit={() => setEditingSelected(true)}
-                onDuplicate={handleDuplicate}
-                onDelete={() => setConfirmDelete(true)}
+                onDirtyChange={setPanelDirty}
+                onRequestClose={requestClose}
+                onSaved={(saved) => {
+                  setSelectedEvent(saved);
+                  refresh();
+                }}
+                onRequestDelete={() => setConfirmDelete(true)}
               />
             )}
           </div>
@@ -277,10 +296,10 @@ export function CalendarPage() {
                         key={event.id}
                         to={`/setlists/events/${event.id}`}
                         onClick={(e) => {
-                          // Open the split-view panel; the full page stays reachable from it
+                          // Straight into the split-view editor — no details page, no modal
                           e.preventDefault();
                           e.stopPropagation();
-                          setSelectedId(event.id);
+                          requestSelect(event.id);
                         }}
                         aria-expanded={selectedId === event.id}
                         draggable={canEdit}
@@ -319,18 +338,22 @@ export function CalendarPage() {
         </div>
       </div>
 
-      {/* Mobile: full event details as a bottom sheet (no split view) */}
-      {selectedEvent && (
-        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Event details">
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" onClick={closePanel} />
+      {/* Mobile: the same editable form as a bottom sheet (no split view) */}
+      {selectedEvent && !isDesktop && (
+        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Edit event">
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" onClick={requestClose} />
           <div className="absolute inset-x-0 bottom-0 flex max-h-[85vh] flex-col rounded-t-xl border-t border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-2xl">
-            <EventDetailsPanel
+            <EventEditPanel
               event={selectedEvent}
+              rehearsals={rehearsals.filter((r) => r.eventId === selectedEvent.id)}
               canEdit={canEdit}
-              onClose={closePanel}
-              onEdit={() => setEditingSelected(true)}
-              onDuplicate={handleDuplicate}
-              onDelete={() => setConfirmDelete(true)}
+              onDirtyChange={setPanelDirty}
+              onRequestClose={requestClose}
+              onSaved={(saved) => {
+                setSelectedEvent(saved);
+                refresh();
+              }}
+              onRequestDelete={() => setConfirmDelete(true)}
             />
           </div>
         </div>
@@ -360,15 +383,14 @@ export function CalendarPage() {
         </div>
       )}
 
-      {/* Edit the selected event from the details panel */}
-      <EventFormDialog
-        open={editingSelected}
-        event={selectedEvent}
-        onClose={() => setEditingSelected(false)}
-        onSaved={(saved) => {
-          setSelectedEvent(saved);
-          refresh();
-        }}
+      {/* Unsaved-changes guard for switching events / closing the panel */}
+      <ConfirmDialog
+        open={pendingAction !== null}
+        title="Discard unsaved changes?"
+        description="Your edits to this event haven't been saved."
+        confirmLabel="Discard changes"
+        onClose={() => setPendingAction(null)}
+        onConfirm={confirmDiscard}
       />
 
       <ConfirmDialog

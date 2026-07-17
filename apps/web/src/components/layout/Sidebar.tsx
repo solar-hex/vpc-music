@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LayoutDashboard, CalendarDays, Layers, Mic2, Music, MicVocal, Disc3, FolderOpen, ShieldCheck, Settings, Sun, Moon, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, Layers, Mic2, Music, MicVocal, Disc3, FolderOpen, ShieldCheck, Settings, Sun, Moon, type LucideIcon } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
@@ -31,7 +31,6 @@ export const NAV_SECTIONS: NavSection[] = [
   {
     title: "Planning",
     items: [
-      { to: "/calendar", label: "Calendar", icon: CalendarDays },
       { to: "/setlists", label: "Set Lists", icon: Layers },
       { to: "/rehearsals", label: "Rehearsals", icon: Mic2 },
     ],

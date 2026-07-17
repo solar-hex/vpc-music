@@ -21,7 +21,6 @@ import { SongEditPage } from "./pages/songs/SongEditPage";
 import { SetlistHubPage } from "./pages/setlists/SetlistHubPage";
 import { TemplatesPage } from "./pages/setlists/TemplatesPage";
 import { SchedulePage } from "./pages/setlists/SchedulePage";
-import { CalendarPage } from "./pages/setlists/CalendarPage";
 import { RehearsalsPage } from "./pages/setlists/RehearsalsPage";
 import { EventDetailPage } from "./pages/setlists/EventDetailPage";
 import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
@@ -150,18 +149,18 @@ export const router = createBrowserRouter([
           { path: "templates", element: <TemplatesPage /> },
           { path: "schedule", element: <SchedulePage /> },
           // Old bare Events tab URL → the consolidated Schedule tab
-          // (defaults to the events view). Calendar/Rehearsals redirect
-          // to their own top-level pages below instead of into Schedule's
-          // view= param, matching the Planning nav section.
+          // (defaults to the events view).
           { path: "events", element: <Navigate to="/setlists/schedule" replace /> },
         ],
       },
       { path: "/setlists/new", element: <SetlistHubPage /> },
       { path: "/setlists/events/:id", element: <EventDetailPage /> },
-      { path: "/setlists/calendar", element: <Navigate to="/calendar" replace /> },
+      { path: "/setlists/calendar", element: <Navigate to="/setlists/schedule?view=calendar" replace /> },
       { path: "/setlists/rehearsals", element: <Navigate to="/rehearsals" replace /> },
       { path: "/setlists/:id", element: <SetlistViewPage /> },
-      { path: "/calendar", element: <CalendarPage /> },
+      // The calendar lives only inside Schedule now (?view=calendar); old
+      // bookmarks and links land there.
+      { path: "/calendar", element: <Navigate to="/setlists/schedule?view=calendar" replace /> },
       { path: "/rehearsals", element: <RehearsalsPage /> },
       {
         path: "/artists",
