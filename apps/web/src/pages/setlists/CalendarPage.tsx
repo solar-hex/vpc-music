@@ -6,6 +6,9 @@ import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
 import { RehearsalFormDialog } from "./RehearsalsPage";
 import { CalendarDays, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { toDateKey } from "@/lib/format";
+import { toast } from "sonner";
+
+const EVENT_DRAG_TYPE = "application/x-vpc-event";
 
 /** Set Lists → Calendar: month view combining events and rehearsals. */
 export function CalendarPage() {
@@ -19,6 +22,7 @@ export function CalendarPage() {
   const [rehearsals, setRehearsals] = useState<Rehearsal[]>([]);
   const [pickerDate, setPickerDate] = useState<string | null>(null); // date chosen for creation
   const [creating, setCreating] = useState<"event" | "rehearsal" | null>(null);
+  const [dragOverKey, setDragOverKey] = useState<string | null>(null);
 
   const refresh = () => {
     eventsApi.list({ upcoming: false }).then((res) => setEvents(res.events)).catch(() => {});
@@ -60,6 +64,27 @@ export function CalendarPage() {
 
   const shiftMonth = (delta: number) => {
     setMonthStart((prev) => new Date(prev.getFullYear(), prev.getMonth() + delta, 1));
+  };
+
+  /** Drop an event chip onto a day: same wall-clock time, new date. Optimistic, reverts on failure. */
+  const handleEventDrop = async (eventId: string, targetKey: string) => {
+    const dragged = events.find((ev) => ev.id === eventId);
+    if (!dragged || toDateKey(new Date(dragged.date)) === targetKey) return;
+    const [year, month, day] = targetKey.split("-").map(Number);
+    const moved = new Date(dragged.date);
+    moved.setFullYear(year, month - 1, day);
+    const iso = moved.toISOString();
+    const previous = events;
+    setEvents((cur) => cur.map((ev) => (ev.id === eventId ? { ...ev, date: iso } : ev)));
+    try {
+      await eventsApi.update(eventId, { date: iso });
+      toast.success(
+        `Moved "${dragged.title}" to ${moved.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}`,
+      );
+    } catch (err: any) {
+      setEvents(previous);
+      toast.error(err.message || "Failed to move event");
+    }
   };
 
   const initialDateTime = pickerDate ? `${pickerDate}T10:00:00` : undefined;
@@ -107,9 +132,29 @@ export function CalendarPage() {
                       setPickerDate(key);
                     }
                   }}
+                  onDragOver={(e) => {
+                    if (canEdit && e.dataTransfer.types.includes(EVENT_DRAG_TYPE)) {
+                      e.preventDefault();
+                      e.dataTransfer.dropEffect = "move";
+                      if (dragOverKey !== key) setDragOverKey(key);
+                    }
+                  }}
+                  onDragLeave={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node) && dragOverKey === key) {
+                      setDragOverKey(null);
+                    }
+                  }}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    setDragOverKey(null);
+                    const eventId = e.dataTransfer.getData(EVENT_DRAG_TYPE);
+                    if (canEdit && eventId) void handleEventDrop(eventId, key);
+                  }}
                   className={`min-h-[92px] border-r border-b border-[hsl(var(--border))] p-1.5 text-left align-top ${
                     inMonth ? "" : "opacity-40"
-                  } ${canEdit ? "cursor-pointer hover:bg-[hsl(var(--muted))]/50" : ""}`}
+                  } ${canEdit ? "cursor-pointer hover:bg-[hsl(var(--muted))]/50" : ""} ${
+                    dragOverKey === key ? "bg-[hsl(var(--secondary))]/10 ring-1 ring-inset ring-[hsl(var(--secondary))]" : ""
+                  }`}
                 >
                   <span
                     className={`inline-flex h-5 w-5 items-center justify-center rounded-full text-xs ${
@@ -124,7 +169,13 @@ export function CalendarPage() {
                         key={event.id}
                         to={`/setlists/events/${event.id}`}
                         onClick={(e) => e.stopPropagation()}
-                        className={`block truncate rounded px-1 py-0.5 text-[11px] font-medium ${
+                        draggable={canEdit}
+                        onDragStart={(e) => {
+                          e.dataTransfer.setData(EVENT_DRAG_TYPE, event.id);
+                          e.dataTransfer.effectAllowed = "move";
+                        }}
+                        onDragEnd={() => setDragOverKey(null)}
+                        className={`block truncate rounded px-1 py-0.5 text-[11px] font-medium ${canEdit ? "cursor-grab active:cursor-grabbing" : ""} ${
                           event.status === "cancelled"
                             ? "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] line-through"
                             : "bg-[hsl(var(--secondary))]/20 text-[hsl(var(--secondary))]"
