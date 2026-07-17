@@ -5,7 +5,6 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
 import { OrgSwitcher } from "./OrgSwitcher";
-import { SidebarUserBlock } from "./SidebarUserBlock";
 import { listStagger, prefersReducedMotion } from "@/lib/motion";
 
 export interface NavItem {
@@ -97,11 +96,9 @@ function SidebarNavSection({ section }: { section: NavSection }) {
 
 export function Sidebar({
   onRequestCreateOrg,
-  onLogout,
   bottomExtras,
 }: {
   onRequestCreateOrg: () => void;
-  onLogout: () => void;
   /** Extra controls in the bottom bar (e.g. notification bell). */
   bottomExtras?: React.ReactNode;
 }) {
@@ -133,11 +130,6 @@ export function Sidebar({
           <SidebarNavSection key={section.title || i} section={section} />
         ))}
       </nav>
-
-      {/* User profile */}
-      <div className="border-t border-[hsl(var(--border))] px-2">
-        <SidebarUserBlock onLogout={onLogout} />
-      </div>
 
       {/* Bottom controls */}
       <div className="flex items-center justify-end gap-1 px-4 py-3 border-t border-[hsl(var(--border))]">

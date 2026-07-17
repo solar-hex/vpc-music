@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
-import { Save, Trash2, X, Drum } from "lucide-react";
+import { Save, Trash2, X, Drum, CheckCircle2, Ban } from "lucide-react";
 import {
   eventsApi,
   orgsApi,
@@ -12,6 +12,12 @@ import {
   type Setlist,
 } from "@/lib/api-client";
 import { toLocalInputValue, formatShortDate } from "@/lib/format";
+
+const STATUS_STYLES: Record<string, string> = {
+  scheduled: "bg-[hsl(var(--secondary))]/15 text-[hsl(var(--secondary))]",
+  completed: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
+  cancelled: "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] line-through",
+};
 
 interface FormValues {
   title: string;
@@ -55,6 +61,8 @@ export function EventEditPanel({
   onRequestClose,
   onSaved,
   onRequestDelete,
+  onRequestComplete,
+  onToggleCancelled,
 }: {
   event: Event;
   /** Rehearsals linked to this event (read-only context). */
@@ -64,6 +72,10 @@ export function EventEditPanel({
   onRequestClose: () => void;
   onSaved: (event: Event) => void;
   onRequestDelete: () => void;
+  /** Mark-completed flow (host confirms first — it logs song plays). */
+  onRequestComplete: () => void;
+  /** Toggle cancelled ↔ scheduled. */
+  onToggleCancelled: () => void;
 }) {
   const [values, setValues] = useState<FormValues>(() => toFormValues(event));
   const [dirty, setDirty] = useState(false);
@@ -190,6 +202,28 @@ export function EventEditPanel({
           void handleSave();
         }}
       >
+        {event.status && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium ${STATUS_STYLES[event.status] ?? ""}`}>
+              {event.status}
+            </span>
+            {canEdit && event.status !== "completed" && (
+              <>
+                <button type="button" onClick={onToggleCancelled} className="btn-outline btn-sm inline-flex items-center gap-1.5">
+                  <Ban className="h-3.5 w-3.5" /> {event.status === "cancelled" ? "Restore" : "Cancel event"}
+                </button>
+                <button
+                  type="button"
+                  onClick={onRequestComplete}
+                  className="inline-flex items-center gap-1.5 rounded-md border border-emerald-500/40 px-2.5 py-1.5 text-xs font-medium text-emerald-600 hover:bg-emerald-500/10 dark:text-emerald-400"
+                >
+                  <CheckCircle2 className="h-3.5 w-3.5" /> Mark completed
+                </button>
+              </>
+            )}
+          </div>
+        )}
+
         <label className="block space-y-1.5">
           <span className="text-sm font-medium">Title *</span>
           <input type="text" value={values.title} onChange={(e) => setField("title", e.target.value)} className="input w-full" disabled={disabled} />

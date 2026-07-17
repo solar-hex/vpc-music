@@ -7,6 +7,8 @@ const mockListEvents = vi.fn();
 const mockGetEvent = vi.fn();
 const mockUpdateEvent = vi.fn();
 const mockDeleteEvent = vi.fn();
+const mockCompleteEvent = vi.fn();
+const mockSetStatus = vi.fn();
 const mockListRehearsals = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
@@ -15,6 +17,8 @@ vi.mock("@/lib/api-client", () => ({
     get: (...args: any[]) => mockGetEvent(...args),
     update: (...args: any[]) => mockUpdateEvent(...args),
     delete: (...args: any[]) => mockDeleteEvent(...args),
+    complete: (...args: any[]) => mockCompleteEvent(...args),
+    setStatus: (...args: any[]) => mockSetStatus(...args),
   },
   rehearsalsApi: {
     list: (...args: any[]) => mockListRehearsals(...args),
@@ -42,7 +46,7 @@ vi.mock("@/components/shared/ConfirmDialog", () => ({
   ConfirmDialog: ({ open, confirmLabel, onConfirm }: any) =>
     open ? (
       <button type="button" onClick={onConfirm}>
-        {confirmLabel}
+        {`confirm:${confirmLabel}`}
       </button>
     ) : null,
 }));
@@ -125,7 +129,7 @@ describe("calendar split-view edit panel", () => {
 
     // Form is NOT replaced yet — the discard confirmation is showing
     expect(titleInput().value).toBe("Edited title");
-    fireEvent.click(await screen.findByText("Discard changes"));
+    fireEvent.click(await screen.findByText("confirm:Discard changes"));
     await waitFor(() => expect(titleInput().value).toBe("Evening prayer"));
   });
 
@@ -163,7 +167,7 @@ describe("calendar split-view edit panel", () => {
     fireEvent.change(titleInput(), { target: { value: "Dirty" } });
     fireEvent.keyDown(window, { key: "Escape" });
     expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument();
-    fireEvent.click(await screen.findByText("Discard changes"));
+    fireEvent.click(await screen.findByText("confirm:Discard changes"));
     await waitFor(() => expect(screen.queryByTestId("event-edit-panel")).not.toBeInTheDocument());
   });
 
@@ -173,9 +177,46 @@ describe("calendar split-view edit panel", () => {
     await waitFor(() => expect(within(panel()).getByText("Delete Event")).toBeInTheDocument());
 
     fireEvent.click(within(panel()).getByText("Delete Event"));
-    fireEvent.click(await screen.findByText("Delete event"));
+    fireEvent.click(await screen.findByText("confirm:Delete event"));
     await waitFor(() => expect(mockDeleteEvent).toHaveBeenCalledWith("e1"));
     await waitFor(() => expect(screen.queryByTestId("event-edit-panel")).not.toBeInTheDocument());
+  });
+
+  it("deep link ?event=<id> opens the editor directly (old event-page URLs land here)", async () => {
+    mockCompleteEvent.mockResolvedValue({ event: e2 });
+    render(
+      <MemoryRouter initialEntries={["/setlists/schedule?view=calendar&event=e2"]}>
+        <CalendarPage />
+      </MemoryRouter>,
+    );
+    await waitFor(() => expect(screen.getByTestId("event-edit-panel")).toBeInTheDocument());
+    await waitFor(() => expect(titleInput().value).toBe("Evening prayer"));
+    expect(mockGetEvent).toHaveBeenCalledWith("e2");
+  });
+
+  it("marks the event completed after confirmation", async () => {
+    mockCompleteEvent.mockResolvedValue({ event: { ...e1, status: "completed" }, playsLogged: 4 });
+    renderCalendar();
+    fireEvent.click(await screen.findByText("Morning worship"));
+    await waitFor(() => expect(within(panel()).getByText("Mark completed")).toBeInTheDocument());
+
+    fireEvent.click(within(panel()).getByText("Mark completed"));
+    fireEvent.click(await screen.findByText("confirm:Mark completed"));
+    await waitFor(() => expect(mockCompleteEvent).toHaveBeenCalledWith("e1"));
+    // Completed events lose the status actions
+    await waitFor(() => expect(within(panel()).queryByText("Mark completed")).not.toBeInTheDocument());
+  });
+
+  it("toggles cancelled status from the panel", async () => {
+    mockSetStatus.mockResolvedValue({ event: { ...e1, status: "cancelled" } });
+    renderCalendar();
+    fireEvent.click(await screen.findByText("Morning worship"));
+    await waitFor(() => expect(within(panel()).getByText("Cancel event")).toBeInTheDocument());
+
+    fireEvent.click(within(panel()).getByText("Cancel event"));
+    await waitFor(() => expect(mockSetStatus).toHaveBeenCalledWith("e1", "cancelled"));
+    // Cancelled events offer Restore instead
+    await waitFor(() => expect(within(panel()).getByText("Restore")).toBeInTheDocument());
   });
 
   it("read-only roles get disabled fields and no action footer", async () => {

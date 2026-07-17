@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { CreateOrgDialog } from "@/components/shared/CreateOrgDialog";
 import { Sidebar } from "./Sidebar";
+import { SidebarUserBlock } from "./SidebarUserBlock";
 import { MobileTopBar } from "./MobileTopBar";
 import { NotificationPanel } from "./NotificationPanel";
 import { AiChat } from "@/components/assistant/AiChat";
@@ -38,11 +39,15 @@ export function AppShell() {
     <div className="min-h-screen flex bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       <Sidebar
         onRequestCreateOrg={() => setShowCreateOrgDialog(true)}
-        onLogout={handleLogout}
         bottomExtras={<NotificationPanel />}
       />
 
       <div className="flex-1 flex flex-col min-w-0">
+        {/* Desktop: user profile pinned top right */}
+        <div className="hidden md:flex items-center justify-end px-4 sm:px-6 pt-2">
+          <SidebarUserBlock onLogout={handleLogout} />
+        </div>
+
         <MobileTopBar
           onRequestCreateOrg={() => setShowCreateOrgDialog(true)}
           onLogout={handleLogout}
@@ -74,7 +79,7 @@ export function AppShell() {
           </div>
         )}
 
-        <main className="flex-1 p-4 sm:p-6">
+        <main className="flex-1 p-4 sm:p-6 md:pt-2">
           {showOnboarding ? (
             <div className="card-empty bg-[hsl(var(--muted))]">
               <Building2 className="mx-auto h-10 w-10 text-[hsl(var(--muted-foreground))]" />

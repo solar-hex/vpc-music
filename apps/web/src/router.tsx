@@ -1,8 +1,14 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate, useParams } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { RouteErrorPage } from "./components/shared/RouteErrorPage";
 import { ProtectedRoute } from "./components/shared/ProtectedRoute";
 import { SectionLayout } from "./components/layout/SectionTabs";
+
+/** Old event-page URLs → the calendar's split-view editor, event open. */
+function EventEditRedirect() {
+  const { id } = useParams<{ id: string }>();
+  return <Navigate to={`/setlists/schedule?view=calendar&event=${id}`} replace />;
+}
 
 // ── Pages ────────────────────────────────────────
 import { LandingPage } from "./pages/LandingPage";
@@ -22,7 +28,6 @@ import { SetlistHubPage } from "./pages/setlists/SetlistHubPage";
 import { TemplatesPage } from "./pages/setlists/TemplatesPage";
 import { SchedulePage } from "./pages/setlists/SchedulePage";
 import { RehearsalsPage } from "./pages/setlists/RehearsalsPage";
-import { EventDetailPage } from "./pages/setlists/EventDetailPage";
 import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
 import { PerformPage } from "./pages/setlists/PerformPage";
 import { ArtistsPage } from "./pages/artists/ArtistsPage";
@@ -154,7 +159,9 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "/setlists/new", element: <SetlistHubPage /> },
-      { path: "/setlists/events/:id", element: <EventDetailPage /> },
+      // The event details page is retired — all event links land in the
+      // calendar's split-view editor with the event already open.
+      { path: "/setlists/events/:id", element: <EventEditRedirect /> },
       { path: "/setlists/calendar", element: <Navigate to="/setlists/schedule?view=calendar" replace /> },
       { path: "/setlists/rehearsals", element: <Navigate to="/rehearsals" replace /> },
       { path: "/setlists/:id", element: <SetlistViewPage /> },

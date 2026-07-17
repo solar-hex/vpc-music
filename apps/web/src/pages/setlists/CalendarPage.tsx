@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { eventsApi, rehearsalsApi, type Event, type Rehearsal } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { EventFormDialog } from "@/components/dashboard/EventFormDialog";
@@ -47,7 +47,12 @@ export function CalendarPage() {
   const [pendingAction, setPendingAction] = useState<{ type: "select"; id: string } | { type: "close" } | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [confirmComplete, setConfirmComplete] = useState(false);
+  const [completing, setCompleting] = useState(false);
   const isDesktop = useIsDesktop();
+  const [searchParams, setSearchParams] = useSearchParams();
+  // Deep-link target (?event=<id>) — when it resolves, jump to its month
+  const deepLinkRef = useRef<string | null>(null);
 
   const refresh = () => {
     eventsApi.list({ upcoming: false }).then((res) => setEvents(res.events)).catch(() => {});
@@ -57,6 +62,37 @@ export function CalendarPage() {
   useEffect(() => {
     refresh();
   }, []);
+
+  // URL → selection: ?event=<id> deep-links straight into the editor
+  // (old event-page links, notifications, shared URLs).
+  useEffect(() => {
+    const target = searchParams.get("event");
+    if (target && target !== selectedId && !panelDirty) {
+      deepLinkRef.current = target;
+      setSelectedId(target);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  // Selection → URL, so the open panel is always deep-linkable.
+  useEffect(() => {
+    const current = searchParams.get("event");
+    if ((selectedId ?? null) === current) return;
+    const next = new URLSearchParams(searchParams);
+    if (selectedId) next.set("event", selectedId);
+    else next.delete("event");
+    setSearchParams(next, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedId]);
+
+  // A deep-linked event may live in another month — jump to it once loaded.
+  useEffect(() => {
+    if (selectedEvent && deepLinkRef.current === selectedEvent.id) {
+      deepLinkRef.current = null;
+      const date = new Date(selectedEvent.date);
+      setMonthStart(new Date(date.getFullYear(), date.getMonth(), 1));
+    }
+  }, [selectedEvent]);
 
   // Selecting an event seeds the panel from the list row instantly, then
   // upgrades to the full detail (joins: prepared-by name, set list, songs).
@@ -107,14 +143,47 @@ export function CalendarPage() {
   useEffect(() => {
     if (!selectedId) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !confirmDelete && !creating && !pickerDate && !pendingAction) {
+      if (e.key === "Escape" && !confirmDelete && !confirmComplete && !creating && !pickerDate && !pendingAction) {
         requestClose();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedId, confirmDelete, creating, pickerDate, pendingAction, panelDirty]);
+  }, [selectedId, confirmDelete, confirmComplete, creating, pickerDate, pendingAction, panelDirty]);
+
+  const handleComplete = async () => {
+    if (!selectedId) return;
+    setCompleting(true);
+    try {
+      const res = await eventsApi.complete(selectedId);
+      toast.success(
+        res.playsLogged
+          ? `Event completed — logged ${res.playsLogged} song play${res.playsLogged === 1 ? "" : "s"}`
+          : "Event completed",
+      );
+      setConfirmComplete(false);
+      setSelectedEvent(res.event);
+      refresh();
+    } catch (err: any) {
+      toast.error(err.message || "Failed to complete event");
+    } finally {
+      setCompleting(false);
+    }
+  };
+
+  const handleToggleCancelled = async () => {
+    if (!selectedEvent) return;
+    const next = selectedEvent.status === "cancelled" ? "scheduled" : "cancelled";
+    try {
+      const res = await eventsApi.setStatus(selectedEvent.id, next);
+      setSelectedEvent(res.event);
+      refresh();
+      toast.success(next === "cancelled" ? "Event cancelled" : "Event restored");
+    } catch (err: any) {
+      toast.error(err.message || "Failed to update event status");
+    }
+  };
 
   const handleDelete = async () => {
     if (!selectedId) return;
@@ -228,6 +297,8 @@ export function CalendarPage() {
                   refresh();
                 }}
                 onRequestDelete={() => setConfirmDelete(true)}
+                onRequestComplete={() => setConfirmComplete(true)}
+                onToggleCancelled={handleToggleCancelled}
               />
             )}
           </div>
@@ -354,6 +425,8 @@ export function CalendarPage() {
                 refresh();
               }}
               onRequestDelete={() => setConfirmDelete(true)}
+              onRequestComplete={() => setConfirmComplete(true)}
+              onToggleCancelled={handleToggleCancelled}
             />
           </div>
         </div>
@@ -391,6 +464,23 @@ export function CalendarPage() {
         confirmLabel="Discard changes"
         onClose={() => setPendingAction(null)}
         onConfirm={confirmDiscard}
+      />
+
+      <ConfirmDialog
+        open={confirmComplete}
+        title={`Mark "${selectedEvent?.title ?? "event"}" completed?`}
+        description={
+          selectedEvent?.setlistName
+            ? `This logs a play for every song in "${selectedEvent.setlistName}" and marks the set list complete.`
+            : "This marks the event as completed."
+        }
+        confirmLabel="Mark completed"
+        destructive={false}
+        busy={completing}
+        onClose={() => {
+          if (!completing) setConfirmComplete(false);
+        }}
+        onConfirm={handleComplete}
       />
 
       <ConfirmDialog
