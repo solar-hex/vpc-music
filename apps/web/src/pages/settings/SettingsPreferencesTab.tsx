@@ -10,6 +10,7 @@ import {
   type ThemePreset,
 } from "@/contexts/ThemeContext";
 import { platformApi } from "@/lib/api-client";
+import { contrastingTextColor } from "@/lib/color";
 import { Palette, Music2, Clock3 } from "lucide-react";
 
 type ThemeSetting = "dark" | "light" | "system";
@@ -17,15 +18,6 @@ type ContrastSetting = "normal" | "high";
 type KeyNotation = "sharps" | "flats";
 type DurationDisplay = "minutes" | "clock";
 
-function getPreviewTextColor(background: string) {
-  const hex = background.replace("#", "");
-  if (!/^[0-9a-f]{6}$/i.test(hex)) return "#0f172a";
-  const red = Number.parseInt(hex.slice(0, 2), 16);
-  const green = Number.parseInt(hex.slice(2, 4), 16);
-  const blue = Number.parseInt(hex.slice(4, 6), 16);
-  const luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
-  return luminance > 0.6 ? "#0f172a" : "#ffffff";
-}
 
 /** Settings → Preferences: notation, duration display, time zone, theme. */
 export function SettingsPreferencesTab() {
@@ -137,7 +129,7 @@ export function SettingsPreferencesTab() {
         ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
         : "border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]"
     }`;
-  const previewTextColor = getPreviewTextColor(pageBackground);
+  const previewTextColor = contrastingTextColor(pageBackground);
   const timeZones = typeof Intl.supportedValuesOf === "function" ? Intl.supportedValuesOf("timeZone") : [];
 
   return (

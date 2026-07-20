@@ -1585,7 +1585,7 @@ That [G]saved a [Em]wretch like [D]me`}
                 fontSize={14}
               />
             ) : (
-              <p className="text-sm italic text-[hsl(var(--muted-foreground))]">
+              <p className="text-sm italic opacity-60">
                 Start typing in the editor to see a live preview…
               </p>
             )}

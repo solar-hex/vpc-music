@@ -52,6 +52,7 @@
   --song-chord-color: #ca9762;
   --song-secondary-chord-color: #8b5cf6;
   --page-background-color: hsl(var(--background));
+  --page-foreground-color: hsl(var(--foreground));
   --song-display-font: var(--font-sans);
 
   --background: 210 17% 98%;
@@ -258,6 +259,10 @@
 
   .song-surface {
     background-color: var(--page-background-color, hsl(var(--card)));
+    /* Text on this surface must contrast the surface itself, not the app
+       theme — otherwise dark mode renders near-white text on the (light)
+       user-chosen page background as unreadable ghost text. */
+    color: var(--page-foreground-color, hsl(var(--foreground)));
   }
 
   .song-display-font {

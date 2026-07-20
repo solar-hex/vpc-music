@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
+import { contrastingTextColor } from "@/lib/color";
 
 export type Theme = "dark" | "light" | "system";
 export type ResolvedTheme = "dark" | "light";
@@ -191,6 +192,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     document.documentElement.style.setProperty("--song-chord-color", appearance.chordColor);
     document.documentElement.style.setProperty("--song-secondary-chord-color", appearance.secondaryChordColor);
     document.documentElement.style.setProperty("--page-background-color", appearance.pageBackground);
+    // Paired text color for surfaces painted with the page background —
+    // contrast follows the surface, not the app theme (TASK-034 ghost text).
+    document.documentElement.style.setProperty("--page-foreground-color", contrastingTextColor(appearance.pageBackground));
     document.documentElement.style.setProperty("--song-display-font", SONG_FONT_STACKS[appearance.songFontFamily]);
     document.documentElement.dataset.editorMode = appearance.editorMode;
     localStorage.setItem(THEME_STORAGE_KEY, theme);

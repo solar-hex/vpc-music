@@ -82,19 +82,19 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
       {/* Transpose controls */}
       {showChords && showControls && (
         <div className="flex items-center gap-3 text-sm print-hidden">
-          <span className="text-[hsl(var(--muted-foreground))]">Transpose:</span>
+          <span className="opacity-70">Transpose:</span>
           <button
             onClick={handleDown}
-            className="h-7 w-7 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition-colors"
+            className="h-7 w-7 rounded border border-[hsl(var(--border))] hover:bg-current/10 transition-colors"
           >
             −
           </button>
-          <span className="min-w-[3ch] text-center font-mono text-[hsl(var(--foreground))]">
+          <span className="min-w-[3ch] text-center font-mono">
             {transpose > 0 ? `+${transpose}` : transpose}
           </span>
           <button
             onClick={handleUp}
-            className="h-7 w-7 rounded border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition-colors"
+            className="h-7 w-7 rounded border border-[hsl(var(--border))] hover:bg-current/10 transition-colors"
           >
             +
           </button>
@@ -107,7 +107,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
             </button>
           )}
           {songKey && (
-            <label className="inline-flex items-center gap-1.5 text-xs text-[hsl(var(--muted-foreground))]">
+            <label className="inline-flex items-center gap-1.5 text-xs opacity-70">
               Capo
               <select
                 value={capo}
@@ -125,7 +125,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
             </label>
           )}
           {songKey && (
-            <span className="ml-auto text-xs text-[hsl(var(--muted-foreground))]">
+            <span className="ml-auto text-xs opacity-70">
               Original key: {songKey}
               {transpose !== 0 && targetKey && (
                 <span className="ml-1 font-medium text-[hsl(var(--secondary))]">→ {targetKey}</span>
@@ -137,7 +137,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
 
       {/* Capo banner — active capo, or the chart's {capo:} suggestion */}
       {showChords && capo > 0 && soundingKey && (
-        <div className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--secondary))]/40 bg-[hsl(var(--secondary))]/10 px-2.5 py-1 text-xs font-medium text-[hsl(var(--foreground))]">
+        <div className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--secondary))]/40 bg-[hsl(var(--secondary))]/10 px-2.5 py-1 text-xs font-medium">
           Capo {capo} — play {targetKey ?? "?"}, sounds {soundingKey}
         </div>
       )}
@@ -145,7 +145,7 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
         <button
           type="button"
           onClick={() => setCapo(suggestedCapo)}
-          className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-dashed border-[hsl(var(--border))] px-2.5 py-1 text-xs text-[hsl(var(--muted-foreground))] hover:border-[hsl(var(--secondary))] hover:text-[hsl(var(--foreground))]"
+          className="print-hidden inline-flex items-center gap-1.5 rounded-md border border-dashed border-[hsl(var(--border))] px-2.5 py-1 text-xs opacity-70 hover:border-[hsl(var(--secondary))] hover:opacity-100"
           title="Apply the chart's suggested capo"
         >
           Suggested: Capo {suggestedCapo} — play {transposeKeyName(soundingKey, -suggestedCapo)}
@@ -154,12 +154,12 @@ export const ChordProRenderer = forwardRef<ChordProRendererHandle, ChordProRende
 
       {/* Directives (title, artist, etc.) — hidden in print because SongViewPage has its own print-meta block */}
       {doc.directives.title && (
-        <h2 className="text-xl font-brand text-[hsl(var(--foreground))] print-hidden">
+        <h2 className="text-xl font-brand print-hidden">
           {doc.directives.title}
         </h2>
       )}
       {doc.directives.artist && (
-        <div className="text-sm text-[hsl(var(--muted-foreground))] print-hidden">
+        <div className="text-sm opacity-70 print-hidden">
           {doc.directives.artist}
         </div>
       )}
@@ -255,7 +255,7 @@ function BarGrid({
                           {nashville && songKey ? chordToNashville(token.value, songKey) : token.value}
                         </span>
                       ) : (
-                        <span key={ti} className="text-[hsl(var(--muted-foreground))] mr-2 last:mr-0">
+                        <span key={ti} className="text-current opacity-70 mr-2 last:mr-0">
                           {token.value}
                         </span>
                       ),
@@ -291,7 +291,7 @@ function ChordLine({
   // If no chords, just render lyrics
   if (!chords.length || !showChords) {
     return (
-      <div className="font-mono whitespace-pre-wrap text-[hsl(var(--foreground))]">
+      <div className="font-mono whitespace-pre-wrap">
         {lyrics}
       </div>
     );
@@ -338,7 +338,7 @@ function ChordLine({
   return (
     <div className="font-mono leading-relaxed">
       <div className="song-primary-chord whitespace-pre">{chordSpans}</div>
-      <div className="whitespace-pre-wrap text-[hsl(var(--foreground))]">{lyrics}</div>
+      <div className="whitespace-pre-wrap">{lyrics}</div>
     </div>
   );
 }
