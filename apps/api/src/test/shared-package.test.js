@@ -261,10 +261,10 @@ describe("convertChrdToChordPro", () => {
     expect(result.chordProContent).toContain("{year: 1779}");
     expect(result.chordProContent).toContain("{comment: Verse 1}");
     expect(result.chordProContent).toContain("[G]Amazing [C]grace");
-    expect(result.chordProContent).toContain("{comment: Slowly}");
+    expect(result.chordProContent).toContain("{ci: Slowly}");
   });
 
-  it("preserves secondary chord lines as ChordPro comments", () => {
+  it("emits secondary chord lines as inline [*x] annotation tokens", () => {
     const input = [
       "~Draft Song",
       "C",
@@ -280,7 +280,7 @@ describe("convertChrdToChordPro", () => {
     expect(result.metadata.title).toBe("Draft Song");
     expect(result.metadata.isDraft).toBe(true);
   expect(result.warnings).toHaveLength(0);
-  expect(result.chordProContent).toContain("{comment: Secondary chords: Am     G}");
+  expect(result.chordProContent).toContain("[*Am][C]Sing to[*G][F] the Lord");
     expect(result.chordProContent).toContain("[C]Sing");
     expect(result.chordProContent).toContain("[F]");
     expect(result.chordProContent).toContain("the Lord");

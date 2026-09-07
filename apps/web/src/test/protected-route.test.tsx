@@ -55,7 +55,7 @@ describe("ProtectedRoute", () => {
 
     it("redirects via Navigate (no children visible)", () => {
       mockUseAuth.mockReturnValue({ isAuthenticated: false, isLoading: false });
-      const { container } = renderProtected();
+      renderProtected();
       // Navigate replaces content
       expect(screen.queryByText("Protected Content")).not.toBeInTheDocument();
     });

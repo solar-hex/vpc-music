@@ -169,6 +169,23 @@ describe("AuthContext", () => {
       expect(screen.getByTestId("authenticated").textContent).toBe("true");
     });
 
+    it("takes the team from the login response, without waiting for a reload", async () => {
+      // Regression: POST /auth/login used to answer without `organizations`,
+      // so a seeded member landed on "You're not on the team yet" until the
+      // next GET /auth/me. The API now returns the team from every auth
+      // response; this pins the client half of that contract.
+      mockLogin.mockResolvedValue({ user: fakeUser });
+      renderWithAuth();
+      await waitFor(() => expect(screen.getByTestId("loading").textContent).toBe("false"));
+
+      await act(async () => {
+        screen.getByTestId("login").click();
+      });
+      expect(screen.getByTestId("active-org").textContent).toBe("Test Church");
+      expect(mockSetActiveOrganizationId).toHaveBeenLastCalledWith("org-1");
+      expect(mockMe).toHaveBeenCalledTimes(1); // the mount restore only
+    });
+
     it("does not set user on login failure", async () => {
       mockLogin.mockRejectedValue(new Error("Invalid credentials"));
       renderWithAuth();

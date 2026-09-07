@@ -8,7 +8,6 @@ import {
   Play,
   Eye,
   EyeOff,
-  ArrowUpDown,
   Maximize2,
   Minimize2,
   Music,
@@ -100,7 +99,6 @@ export function PerformanceMode({
   const [timerRunning, setTimerRunning] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const rendererRef = useRef<any>(null);
 
   const currentSong = songs[currentIndex];
   const content = currentSong?.songId
@@ -551,12 +549,10 @@ export function PerformanceMode({
           >
             {content ? (
               <ChordProRenderer
-                ref={rendererRef}
                 content={content.content}
                 songKey={sourceKey}
-                baseTranspose={totalSteps}
+                transpose={totalSteps}
                 showChords={showChords}
-                showControls={false}
                 fontSize={fontSize}
               />
             ) : (

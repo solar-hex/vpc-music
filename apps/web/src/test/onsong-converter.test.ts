@@ -53,7 +53,6 @@ describe("OnSong Converter", () => {
       const result = chordProToOnSong(input);
       const lines = result.split("\n");
       // After metadata lines, there should be a blank line
-      const titleIdx = lines.findIndex((l) => l.startsWith("Title:"));
       const keyIdx = lines.findIndex((l) => l.startsWith("Key:"));
       const contentStart = lines.findIndex((l, i) => i > keyIdx && l.trim() !== "");
       // There should be at least one blank line between metadata and content

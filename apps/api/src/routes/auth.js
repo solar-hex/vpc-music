@@ -11,6 +11,7 @@ import { createError, asyncHandler } from "../middlewares/errorHandler.js";
 import { auth } from "../middlewares/auth.js";
 import { logger } from "../utils/logger.js";
 import { sendEmail, buildResetEmail } from "../utils/email.js";
+import { SESSION_COOKIE, sessionCookieOptions, tokenLifetimeMs, tokenPastHalfLife } from "../utils/sessionCookie.js";
 
 export const authRoutes = Router();
 
@@ -23,12 +24,61 @@ function signToken(user) {
   );
 }
 
+/**
+ * The organizations a user belongs to. Global owners see every organization
+ * and count as an admin in any they have no membership row for.
+ */
+async function loadOrganizations(user) {
+  if (user.role === "owner") {
+    const owned = await db
+      .select({ id: organizations.id, name: organizations.name, role: organizationMembers.role })
+      .from(organizations)
+      .leftJoin(
+        organizationMembers,
+        and(
+          eq(organizationMembers.organizationId, organizations.id),
+          eq(organizationMembers.userId, user.id),
+        ),
+      )
+      .orderBy(organizations.name);
+    return owned.map((org) => ({ ...org, role: org.role || "admin" }));
+  }
+
+  return db
+    .select({ id: organizations.id, name: organizations.name, role: organizationMembers.role })
+    .from(organizationMembers)
+    .innerJoin(organizations, eq(organizationMembers.organizationId, organizations.id))
+    .where(eq(organizationMembers.userId, user.id));
+}
+
+/**
+ * The one user shape every auth response returns: profile plus memberships.
+ * The web app reads the team from here, so a response without it looks to
+ * the client like someone who is not on a team yet.
+ */
+async function loadUserProfile(userId) {
+  const [user] = await db
+    .select({
+      id: users.id,
+      email: users.email,
+      displayName: users.displayName,
+      role: users.role,
+      preferences: users.preferences,
+    })
+    .from(users)
+    .where(eq(users.id, userId))
+    .limit(1);
+
+  if (!user) return null;
+  return { ...user, organizations: await loadOrganizations(user) };
+}
+
 function setTokenCookie(res, token) {
-  res.cookie("token", token, {
-    httpOnly: true,
-    secure: env.NODE_ENV === "production",
-    sameSite: "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  // The cookie lives exactly as long as the token it carries.
+  const maxAge = tokenLifetimeMs(token);
+  res.cookie(SESSION_COOKIE, token, {
+    ...sessionCookieOptions(),
+    ...(maxAge === null ? {} : { maxAge }),
   });
 }
 
@@ -76,10 +126,7 @@ authRoutes.post(
     const token = signToken(user);
     setTokenCookie(res, token);
 
-    res.status(201).json({
-      user: { id: user.id, email: user.email, displayName: user.displayName, role: user.role },
-      token,
-    });
+    res.status(201).json({ user: await loadUserProfile(user.id), token });
   })
 );
 
@@ -128,15 +175,7 @@ authRoutes.post(
     const token = signToken(user);
     setTokenCookie(res, token);
 
-    res.json({
-      user: {
-        id: user.id,
-        email: user.email,
-        displayName: user.displayName,
-        role: user.role,
-      },
-      token,
-    });
+    res.json({ user: await loadUserProfile(user.id), token });
   })
 );
 
@@ -180,21 +219,13 @@ authRoutes.post(
     const token = signToken(updatedUser);
     setTokenCookie(res, token);
 
-    res.json({
-      user: {
-        id: user.id,
-        email: user.email,
-        displayName: user.displayName,
-        role: user.role,
-      },
-      token,
-    });
+    res.json({ user: await loadUserProfile(user.id), token });
   })
 );
 
 // ── POST /api/auth/logout ────────────────────────────────────
 authRoutes.post("/logout", (_req, res) => {
-  res.clearCookie("token").json({ message: "Logged out" });
+  res.clearCookie(SESSION_COOKIE, sessionCookieOptions()).json({ message: "Logged out" });
 });
 
 // ── GET /api/auth/me ─────────────────────────────────────────
@@ -202,60 +233,19 @@ authRoutes.get(
   "/me",
   auth,
   asyncHandler(async (req, res) => {
-    const [user] = await db
-      .select({
-        id: users.id,
-        email: users.email,
-        displayName: users.displayName,
-        role: users.role,
-        preferences: users.preferences,
-      })
-      .from(users)
-      .where(eq(users.id, req.user.id))
-      .limit(1);
+    const user = await loadUserProfile(req.user.id);
 
     if (!user) {
       throw createError(404, "User not found");
     }
 
-    // Include org memberships
-    // Global owners see ALL orgs; regular users see only their memberships
-    let orgs;
-    if (user.role === "owner") {
-      orgs = await db
-        .select({
-          id: organizations.id,
-          name: organizations.name,
-          role: organizationMembers.role,
-        })
-        .from(organizations)
-        .leftJoin(
-          organizationMembers,
-          and(
-            eq(organizationMembers.organizationId, organizations.id),
-            eq(organizationMembers.userId, user.id),
-          ),
-        )
-        .orderBy(organizations.name);
-
-      // Fill in role for orgs the owner isn't a member of
-      orgs = orgs.map((o) => ({
-        ...o,
-        role: o.role || "admin", // treat owner as admin in orgs they don't formally belong to
-      }));
-    } else {
-      orgs = await db
-        .select({
-          id: organizations.id,
-          name: organizations.name,
-          role: organizationMembers.role,
-        })
-        .from(organizationMembers)
-        .innerJoin(organizations, eq(organizationMembers.organizationId, organizations.id))
-        .where(eq(organizationMembers.userId, user.id));
+    // Sliding session: a cookie past half of its life gets a fresh token, so
+    // a device in weekly use never has to sign in again.
+    if (req.cookies?.[SESSION_COOKIE] && tokenPastHalfLife(req.user)) {
+      setTokenCookie(res, signToken(user));
     }
 
-    res.json({ user: { ...user, organizations: orgs } });
+    res.json({ user });
   })
 );
 
@@ -376,11 +366,11 @@ authRoutes.get(
       next();
     })(req, res, next);
   },
-  (req, res) => {
+  asyncHandler(async (req, res) => {
     const token = signToken(req.user);
     setTokenCookie(res, token);
-    res.send(oauthCallbackHtml(token, req.user));
-  },
+    res.send(oauthCallbackHtml(token, (await loadUserProfile(req.user.id)) ?? req.user));
+  }),
 );
 
 /**
@@ -393,6 +383,7 @@ function oauthCallbackHtml(token, user) {
     email: user.email,
     displayName: user.displayName,
     role: user.role,
+    organizations: user.organizations ?? [],
   }).replace(/</g, "\\u003c");
   return `<!DOCTYPE html><html><body><script>
     var payload = {

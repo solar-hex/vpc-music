@@ -271,6 +271,8 @@ export const ChordProRichEditorSurface = forwardRef<ChordProRichEditorHandle, Ch
         view.destroy();
         viewRef.current = null;
       };
+      // The document is seeded once here; later `value` changes are applied by the effect below.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [extensions]);
 
     useEffect(() => {

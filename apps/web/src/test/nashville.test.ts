@@ -198,12 +198,13 @@ describe("Nashville Number System", () => {
       expect(src).toContain("chordToNashville");
     });
 
-    it("SongViewPage has Nashville toggle", async () => {
+    it("SongChartPage toolbar has a Nashville toggle", async () => {
       const fs = await import("fs");
-      const src = fs.readFileSync("src/pages/songs/SongViewPage.tsx", "utf-8");
-      expect(src).toContain("nashville");
-      expect(src).toContain("Nashville");
-      expect(src).toContain("setNashville");
+      const toolbar = fs.readFileSync("src/components/songs/ChartToolbar.tsx", "utf-8");
+      expect(toolbar).toContain("onToggleNashville");
+      expect(toolbar).toContain("Nashville numbers");
+      const page = fs.readFileSync("src/pages/songs/SongChartPage.tsx", "utf-8");
+      expect(page).toContain("nashville");
     });
 
     it("SharedSongPage has Nashville toggle", async () => {

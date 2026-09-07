@@ -1,8 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, act, fireEvent } from "@testing-library/react";
-import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRenderer";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { ChordProRenderer, AutoScroll, chartSections } from "@/components/songs/ChordProRenderer";
 import { createRef } from "react";
-import type { ChordProRendererHandle } from "@/components/songs/ChordProRenderer";
 
 // ---------- Mocks ----------
 const mockParseChordPro = vi.fn();
@@ -16,7 +15,7 @@ vi.mock("@vpc-music/shared", () => ({
   parseChordPro: (...args: any[]) => mockParseChordPro(...args),
   transposeChordPro: (...args: any[]) => mockTransposeChordPro(...args),
   chordToNashville: (...args: any[]) => mockChordToNashville(...args),
-  transposeKeyName: (key: string) => key,
+  isSecondaryToken: (token: string) => token.startsWith("*"),
 }));
 
 // Standard parsed document returned by parseChordPro
@@ -61,20 +60,16 @@ describe("ChordProRenderer", () => {
   // ===================== BASIC RENDERING =====================
 
   describe("basic rendering", () => {
-    it("renders title directive", () => {
-      render(<ChordProRenderer content="{t:Amazing Grace}" />);
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    it("renders artist directive", () => {
-      render(<ChordProRenderer content="{artist:John Newton}" />);
-      expect(screen.getByText("John Newton")).toBeInTheDocument();
-    });
-
     it("renders section names", () => {
       render(<ChordProRenderer content="{sov:Verse 1}" />);
       expect(screen.getByText("Verse 1")).toBeInTheDocument();
       expect(screen.getByText("Chorus")).toBeInTheDocument();
+    });
+
+    it("does not render title or artist directives (the host page owns the title block)", () => {
+      render(<ChordProRenderer content="{t:Amazing Grace}" />);
+      expect(screen.queryByText("Amazing Grace")).not.toBeInTheDocument();
+      expect(screen.queryByText("John Newton")).not.toBeInTheDocument();
     });
 
     it("renders lyric text", () => {
@@ -91,127 +86,103 @@ describe("ChordProRenderer", () => {
     it("hides chords when showChords is false", () => {
       mockParseChordPro.mockReturnValue({
         directives: {},
-        sections: [
-          {
-            name: "",
-            lines: [
-              { chords: [{ chord: "G", position: 0 }], lyrics: "Just lyrics" },
-            ],
-          },
-        ],
+        sections: [{ name: "", lines: [{ chords: [{ chord: "G", position: 0 }], lyrics: "Just lyrics" }] }],
       });
       render(<ChordProRenderer content="test" showChords={false} />);
       expect(screen.queryByText("G")).not.toBeInTheDocument();
       expect(screen.getByText("Just lyrics")).toBeInTheDocument();
     });
+
+    it("renders no controls of its own", () => {
+      render(<ChordProRenderer content="test" songKey="G" />);
+      expect(screen.queryByText("Transpose:")).not.toBeInTheDocument();
+      expect(screen.queryByText(/Capo/)).not.toBeInTheDocument();
+      expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    });
+
+    it("gives every section an id a jump bar can scroll to", () => {
+      const { container } = render(<ChordProRenderer content="test" />);
+      expect(container.querySelector("#section-0")).toHaveTextContent("Verse 1");
+      expect(container.querySelector("#section-1")).toHaveTextContent("Chorus");
+    });
   });
 
-  // ===================== TRANSPOSE CONTROLS =====================
+  // ===================== TRANSPOSE PROP =====================
 
-  describe("transpose controls", () => {
-    it("shows transpose controls when showChords is true", () => {
-      render(<ChordProRenderer content="test" showChords={true} />);
-      expect(screen.getByText("Transpose:")).toBeInTheDocument();
-      expect(screen.getByText("+")).toBeInTheDocument();
-      expect(screen.getByText("−")).toBeInTheDocument();
-    });
-
-    it("hides transpose controls when showChords is false", () => {
-      render(<ChordProRenderer content="test" showChords={false} />);
-      expect(screen.queryByText("Transpose:")).not.toBeInTheDocument();
-    });
-
-    it("shows 0 as default transpose value", () => {
-      render(<ChordProRenderer content="test" />);
-      expect(screen.getByText("0")).toBeInTheDocument();
-    });
-
-    it("increments transpose on + click", () => {
-      render(<ChordProRenderer content="test" />);
-      fireEvent.click(screen.getByText("+"));
-      expect(screen.getByText("+1")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1, undefined);
-    });
-
-    it("decrements transpose on − click", () => {
-      render(<ChordProRenderer content="test" />);
-      fireEvent.click(screen.getByText("−"));
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1, undefined);
-    });
-
-    it("shows Reset button when transposed", () => {
-      render(<ChordProRenderer content="test" />);
-      expect(screen.queryByText("Reset")).not.toBeInTheDocument();
-      fireEvent.click(screen.getByText("+"));
-      expect(screen.getByText("Reset")).toBeInTheDocument();
-    });
-
-    it("resets to 0 on Reset click", () => {
-      render(<ChordProRenderer content="test" />);
-      fireEvent.click(screen.getByText("+"));
-      fireEvent.click(screen.getByText("+"));
-      expect(screen.getByText("+2")).toBeInTheDocument();
-      fireEvent.click(screen.getByText("Reset"));
-      expect(screen.getByText("0")).toBeInTheDocument();
-    });
-
+  describe("transpose prop", () => {
     it("does not call transposeChordPro when transpose is 0", () => {
       render(<ChordProRenderer content="test" />);
       expect(mockTransposeChordPro).not.toHaveBeenCalled();
       expect(mockParseChordPro).toHaveBeenCalledWith("test");
     });
 
-    it("calls transposeChordPro then parseChordPro when transposed", () => {
+    it("transposes the source then parses the result", () => {
       mockTransposeChordPro.mockReturnValue("transposed-content");
-      render(<ChordProRenderer content="test" />);
-      fireEvent.click(screen.getByText("+"));
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 1, undefined);
+      render(<ChordProRenderer content="test" songKey="G" transpose={2} />);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 2, false);
       expect(mockParseChordPro).toHaveBeenCalledWith("transposed-content");
     });
 
-    it("wraps transpose back to 0 after 12 upward clicks", () => {
-      render(<ChordProRenderer content="test" />);
-      for (let i = 0; i < 12; i++) {
-        fireEvent.click(screen.getByText("+"));
-      }
-      expect(screen.getByText("0")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", 11, undefined);
+    it("normalizes shifts to within an octave", () => {
+      render(<ChordProRenderer content="test" transpose={14} />);
+      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 2, undefined);
     });
 
-    it("wraps transpose back to 0 after 12 downward clicks", () => {
-      render(<ChordProRenderer content="test" />);
-      for (let i = 0; i < 12; i++) {
-        fireEvent.click(screen.getByText("−"));
-      }
-      expect(screen.getByText("0")).toBeInTheDocument();
-      expect(mockTransposeChordPro).toHaveBeenLastCalledWith("test", -11, undefined);
+    it("treats a full octave as no transposition", () => {
+      render(<ChordProRenderer content="test" transpose={12} />);
+      expect(mockTransposeChordPro).not.toHaveBeenCalled();
     });
   });
 
-  // ===================== IMPERATIVE HANDLE =====================
+  // ===================== SECONDARY CHORDS AND NOTES =====================
 
-  describe("imperative handle (ref)", () => {
-    it("exposes transposeUp method", () => {
-      const ref = createRef<ChordProRendererHandle>();
-      render(<ChordProRenderer ref={ref} content="test" />);
-      act(() => ref.current!.transposeUp());
-      expect(screen.getByText("+1")).toBeInTheDocument();
+  describe("secondary chords and note lines", () => {
+    it("renders [*x] tokens as a separate row above the primary chords, without the marker", () => {
+      mockParseChordPro.mockReturnValue({
+        directives: {},
+        sections: [
+          {
+            name: "Chorus",
+            lines: [
+              {
+                chords: [
+                  { chord: "*ab", position: 3 },
+                  { chord: "E", position: 3 },
+                  { chord: "*gb", position: 10 },
+                  { chord: "B", position: 10 },
+                ],
+                lyrics: "He is the Truth",
+              },
+            ],
+          },
+        ],
+      });
+      render(<ChordProRenderer content="test" songKey="E" nashville />);
+      const secondaryRow = screen.getByTestId("secondary-chord-row");
+      expect(secondaryRow).toHaveTextContent("ab");
+      expect(secondaryRow).toHaveTextContent("gb");
+      expect(secondaryRow.textContent).not.toContain("*");
+      // Nashville numbers apply to primary chords only
+      expect(mockChordToNashville).toHaveBeenCalledWith("E", "E");
+      expect(mockChordToNashville).not.toHaveBeenCalledWith("*ab", "E");
     });
 
-    it("exposes transposeDown method", () => {
-      const ref = createRef<ChordProRendererHandle>();
-      render(<ChordProRenderer ref={ref} content="test" />);
-      act(() => ref.current!.transposeDown());
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", -1, undefined);
+    it("renders {ci} note lines in italics and hides them when showComments is false", () => {
+      mockParseChordPro.mockReturnValue({
+        directives: {},
+        sections: [{ name: "Verse", lines: [{ chords: [], lyrics: "", note: "staccato chords" }, { chords: [], lyrics: "La la" }] }],
+      });
+      const { rerender } = render(<ChordProRenderer content="test" />);
+      expect(screen.getByText("staccato chords")).toHaveClass("italic");
+      rerender(<ChordProRenderer content="test" showComments={false} />);
+      expect(screen.queryByText("staccato chords")).not.toBeInTheDocument();
+      expect(screen.getByText("La la")).toBeInTheDocument();
     });
 
-    it("exposes transposeReset method", () => {
-      const ref = createRef<ChordProRendererHandle>();
-      render(<ChordProRenderer ref={ref} content="test" />);
-      act(() => ref.current!.transposeUp());
-      act(() => ref.current!.transposeUp());
-      act(() => ref.current!.transposeReset());
-      expect(screen.getByText("0")).toBeInTheDocument();
+    it("keeps lyric lines unwrapped when wrap is false", () => {
+      render(<ChordProRenderer content="test" wrap={false} />);
+      expect(screen.getByText("Amazing grace how sweet the sound").className).toContain("whitespace-pre");
+      expect(screen.getByText("Amazing grace how sweet the sound").className).not.toContain("whitespace-pre-wrap");
     });
   });
 
@@ -248,29 +219,17 @@ describe("ChordProRenderer", () => {
       expect(styled!.getAttribute("style")).toContain("16px");
     });
 
-    it("uses the song display font class on the renderer root", () => {
-      render(<ChordProRenderer content="test" />);
-      expect(screen.getByTestId("chordpro-renderer").className).toContain("song-display-font");
-    });
+
   });
 
-  // ===================== SONG KEY =====================
+  // ===================== CHORD TAP =====================
 
-  describe("songKey display", () => {
-    it("shows original key when songKey provided", () => {
-      render(<ChordProRenderer content="test" songKey="G" />);
-      expect(screen.getByText(/Original key: G/)).toBeInTheDocument();
-    });
-
-    it("applies base transpose before rendering", () => {
-      render(<ChordProRenderer content="test" songKey="G" baseTranspose={2} />);
-      expect(mockTransposeChordPro).toHaveBeenCalledWith("test", 2, false);
-      expect(screen.getByText("+2")).toBeInTheDocument();
-    });
-
-    it("does not show key indicator when songKey is null", () => {
-      render(<ChordProRenderer content="test" />);
-      expect(screen.queryByText(/Original key/)).not.toBeInTheDocument();
+  describe("onChordTap", () => {
+    it("renders chords as buttons that report the raw chord", () => {
+      const onChordTap = vi.fn();
+      render(<ChordProRenderer content="test" onChordTap={onChordTap} />);
+      fireEvent.click(screen.getByTitle("Show C chord diagram"));
+      expect(onChordTap).toHaveBeenCalledWith("C");
     });
   });
 
@@ -278,28 +237,19 @@ describe("ChordProRenderer", () => {
 
   describe("empty content", () => {
     it("handles empty content gracefully", () => {
-      mockParseChordPro.mockReturnValue({
-        directives: {},
-        sections: [],
-      });
-      const { container } = render(<ChordProRenderer content="" />);
-      expect(container.querySelector(".space-y-2")).toBeInTheDocument();
+      mockParseChordPro.mockReturnValue({ directives: {}, sections: [] });
+      render(<ChordProRenderer content="" />);
+      expect(screen.getByTestId("chordpro-renderer")).toBeInTheDocument();
     });
 
     it("skips empty lines", () => {
       mockParseChordPro.mockReturnValue({
         directives: {},
-        sections: [
-          {
-            name: "",
-            lines: [{ chords: [], lyrics: "   " }],
-          },
-        ],
+        sections: [{ name: "", lines: [{ chords: [], lyrics: "   " }] }],
       });
       const { container } = render(<ChordProRenderer content="test" />);
       // ChordLine returns null for empty chords + blank lyrics
-      const leadingRelaxed = container.querySelectorAll(".leading-relaxed");
-      expect(leadingRelaxed.length).toBe(0);
+      expect(container.querySelectorAll(".leading-relaxed").length).toBe(0);
     });
 
     it("renders chord and section semantic color classes", () => {
@@ -307,6 +257,19 @@ describe("ChordProRenderer", () => {
       expect(container.querySelector(".song-primary-chord")).toBeTruthy();
       expect(container.querySelector(".song-secondary-chord")).toBeTruthy();
     });
+  });
+});
+
+describe("chartSections", () => {
+  it("lists named sections with the ids the renderer uses", () => {
+    mockParseChordPro.mockReturnValue({
+      directives: {},
+      sections: [{ name: "Intro", lines: [] }, { name: "", lines: [] }, { name: "Chorus", lines: [] }],
+    });
+    expect(chartSections("x")).toEqual([
+      { id: "section-0", label: "Intro" },
+      { id: "section-2", label: "Chorus" },
+    ]);
   });
 });
 
@@ -342,8 +305,7 @@ describe("AutoScroll", () => {
       </div>,
     );
     expect(screen.getByText("Speed")).toBeInTheDocument();
-    const slider = screen.getByRole("slider");
-    expect(slider).toBeInTheDocument();
+    expect(screen.getByRole("slider")).toBeInTheDocument();
   });
 
   it("toggles button text on click", () => {
@@ -354,8 +316,7 @@ describe("AutoScroll", () => {
         <AutoScroll containerRef={ref} />
       </div>,
     );
-    const btn = screen.getByText("Auto-scroll");
-    fireEvent.click(btn);
+    fireEvent.click(screen.getByText("Auto-scroll"));
     expect(screen.getByText("Stop")).toBeInTheDocument();
     fireEvent.click(screen.getByText("Stop"));
     expect(screen.getByText("Auto-scroll")).toBeInTheDocument();
@@ -369,8 +330,7 @@ describe("AutoScroll", () => {
         <AutoScroll containerRef={ref} defaultSpeed={50} />
       </div>,
     );
-    const slider = screen.getByRole("slider") as HTMLInputElement;
-    expect(slider.value).toBe("50");
+    expect((screen.getByRole("slider") as HTMLInputElement).value).toBe("50");
   });
 
   it("changes speed via slider", () => {

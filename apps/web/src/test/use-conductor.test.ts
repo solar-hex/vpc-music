@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import { useConductor } from "@/hooks/useConductor";
 
@@ -40,8 +40,8 @@ describe("useConductor", () => {
 
   // Helper to capture the event handlers registered via socket.on
   function captureHandlers() {
-    const handlers: Record<string, Function> = {};
-    mockOn.mockImplementation((event: string, handler: Function) => {
+    const handlers: Record<string, (...args: any[]) => void> = {};
+    mockOn.mockImplementation((event: string, handler: (...args: any[]) => void) => {
       handlers[event] = handler;
       return mockSocket;
     });
@@ -52,7 +52,7 @@ describe("useConductor", () => {
 
   describe("initial state", () => {
     it("returns connected=false initially", () => {
-      const handlers = captureHandlers();
+      captureHandlers();
       const { result } = renderHook(() =>
         useConductor({ setlistId: "sl-1", mode: "conductor" }),
       );
@@ -342,7 +342,7 @@ describe("useConductor", () => {
 
   describe("cleanup on unmount", () => {
     it("emits leave and disconnects on unmount", () => {
-      const handlers = captureHandlers();
+      captureHandlers();
       const { unmount } = renderHook(() =>
         useConductor({ setlistId: "sl-1", mode: "conductor" }),
       );

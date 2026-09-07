@@ -72,8 +72,8 @@ describe("migrate-chrd-library", () => {
 
     const nested = await readFile(join(outputDir, "seasonal", "advent-song.chopro"), "utf-8");
     expect(nested).toContain("{title: Advent Song}");
-    expect(nested).toContain("{comment: Secondary chords: Bm     A}");
-    expect(nested).toContain("[D]Lift yo[G]ur eyes");
+    expect(nested).toContain("[*Bm][D]Lift yo[*A][G]ur eyes");
+    expect(nested).not.toContain("Secondary chords");
 
     const jsonReport = JSON.parse(await readFile(join(outputDir, "migration-report.json"), "utf-8"));
     expect(jsonReport.convertedCount).toBe(2);

@@ -44,7 +44,7 @@ Default local URLs:
 - `pnpm build` — build shared router artifacts
 - `pnpm lint` — run web linting
 - `pnpm typecheck` — run web type-checking
-- `pnpm test:all` — run web and script tests
+- `pnpm test:all` — run web, API and script tests (what CI runs)
 - `pnpm test:scripts` — run script tests only
 - `pnpm preflight` — run project preflight checks
 
@@ -75,7 +75,7 @@ Default local URLs:
 
 - Use the current file and folder structure.
 - Reuse shared helpers from `shared/` when behavior is needed in both apps.
-- Keep role-aware and org-aware behavior consistent with `role.md`.
+- Keep role-aware behavior consistent: observers read, musicians edit songs, admins manage the team (see `docs/archive/role.md` for the original role model).
 
 ### 3. Add validation with the change
 
@@ -127,7 +127,7 @@ Before opening a PR, make sure to:
 - [ ] keep the change scoped
 - [ ] run the relevant tests
 - [ ] update docs if behavior changed
-- [ ] update `202603161-tasks.md` if a tracked item is completed
+- [ ] add a line to `CHANGELOG.md` under "Unreleased"
 - [ ] include screenshots or notes for UI changes when helpful
 
 ## Commit guidance

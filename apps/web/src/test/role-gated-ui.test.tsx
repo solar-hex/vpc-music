@@ -2,10 +2,9 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SongListPage } from "@/pages/songs/SongListPage";
-import { SongViewPage } from "@/pages/songs/SongViewPage";
+import { SongChartPage } from "@/pages/songs/SongChartPage";
 import { SetlistHubPage } from "@/pages/setlists/SetlistHubPage";
 import { SetlistViewPage } from "@/pages/setlists/SetlistViewPage";
-import { DashboardPage } from "@/pages/DashboardPage";
 
 // ---------- Shared auth mock ----------
 let mockAuthValue: any;
@@ -116,10 +115,21 @@ vi.mock("sonner", () => ({
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
+vi.mock("@/contexts/ThemeContext", () => ({
+  useTheme: () => ({ resolvedTheme: "light", toggleTheme: vi.fn() }),
+}));
+
+vi.mock("@/contexts/ConnectivityContext", () => ({
+  useConnectivity: () => ({ isOnline: true, pendingOfflineEditCount: 0, syncingOfflineEdits: false }),
+}));
+
 vi.mock("@vpc-music/shared", () => ({
   parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
   transposeKeyName: (key: string) => key,
   normalizeEnharmonicKey: (key: string | null | undefined) => key,
+  parseKeyRoot: (key: string | null | undefined) => (key ? { root: key.replace(/m$/, ""), isMinor: /m$/.test(key) } : null),
+  CHROMATIC_SHARP: ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"],
+  CHROMATIC_FLAT: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
   composeTranspose: ({ sourceKey = null }: any = {}) => ({ semis: 0, preferFlats: false, displayKey: sourceKey }),
   spellForTarget: (key: string | null | undefined) =>
     key ? { preferFlats: false, targetKey: key } : { preferFlats: undefined, targetKey: null },
@@ -153,6 +163,7 @@ vi.mock("@/components/songs/ChordProRenderer", () => ({
     <div data-testid="chordpro-renderer">{content}</div>
   ),
   AutoScroll: () => <div data-testid="auto-scroll">AutoScroll</div>,
+  chartSections: () => [],
 }));
 
 vi.mock("react-router-dom", async () => {
@@ -172,11 +183,6 @@ const musicianAuth = {
 const observerAuth = {
   user: { id: "u2", email: "observer@test.com", displayName: "Observer", role: "member" },
   activeOrg: { id: "org1", name: "Test Church", role: "observer" },
-};
-
-const adminAuth = {
-  user: { id: "u3", email: "admin@test.com", displayName: "Admin", role: "member" },
-  activeOrg: { id: "org1", name: "Test Church", role: "admin" },
 };
 
 const ownerAuth = {
@@ -215,7 +221,7 @@ function renderSongView() {
   return render(
     <MemoryRouter initialEntries={["/songs/song-1"]}>
       <Routes>
-        <Route path="/songs/:id" element={<SongViewPage />} />
+        <Route path="/songs/:id" element={<SongChartPage />} />
       </Routes>
     </MemoryRouter>,
   );
@@ -235,14 +241,6 @@ function renderSetlistView() {
       <Routes>
         <Route path="/setlists/:id" element={<SetlistViewPage />} />
       </Routes>
-    </MemoryRouter>,
-  );
-}
-
-function renderDashboard() {
-  return render(
-    <MemoryRouter>
-      <DashboardPage />
     </MemoryRouter>,
   );
 }
@@ -284,83 +282,54 @@ describe("Role-gated UI", () => {
       expect(screen.queryByRole("button", { name: /groups/i })).not.toBeInTheDocument();
     });
 
-    it("observer sees Groups button when delegated to manage a group", async () => {
-      mockAuthValue = observerAuth;
-      mockSongsGetGroups.mockResolvedValue({ groups: [{ id: "group-1", name: "Wedding Songs", songCount: 1, canManage: true, managerUserIds: ["u2"], managerNames: ["Observer"] }] });
-      renderSongList();
-      await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("button", { name: /groups/i })).toBeInTheDocument();
-    });
-
     it("owner sees New Song button", async () => {
       mockAuthValue = ownerAuth;
       renderSongList();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       expect(screen.getByRole("link", { name: /new song/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /groups/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /share to organizations/i })).toBeInTheDocument();
     });
 
-    it("admin sees Share to Organizations button", async () => {
-      mockAuthValue = adminAuth;
-      renderSongList();
-      await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("button", { name: /share to organizations/i })).toBeInTheDocument();
-    });
   });
 
-  // ── SongViewPage ──────────────────────────────────
-  describe("SongViewPage", () => {
-    it("musician sees Edit link plus Delete, Share, Log Usage in the More menu", async () => {
+  // ── SongChartPage ─────────────────────────────────
+  describe("SongChartPage", () => {
+    it("musician sees Edit, Delete, Copy share link and Log a play in the More menu", async () => {
       mockAuthValue = musicianAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("link", { name: /edit/i })).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByRole("menuitem", { name: "Edit" })).toBeInTheDocument();
       expect(screen.getByRole("menuitem", { name: "Delete" })).toBeInTheDocument();
-      expect(screen.getByRole("menuitem", { name: "Share link" })).toBeInTheDocument();
-      expect(screen.getByRole("menuitem", { name: "Log Usage" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Copy share link" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Log a play" })).toBeInTheDocument();
     });
 
-    it("observer does NOT see Edit, Delete, Share, Log Usage actions", async () => {
+    it("observer does NOT see Edit, Delete, share or play-logging actions", async () => {
       mockAuthValue = observerAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.queryByRole("link", { name: /edit/i })).not.toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.queryByRole("menuitem", { name: "Edit" })).not.toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Delete" })).not.toBeInTheDocument();
-      expect(screen.queryByRole("menuitem", { name: "Share link" })).not.toBeInTheDocument();
-      expect(screen.queryByRole("menuitem", { name: "Log Usage" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Copy share link" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Log a play" })).not.toBeInTheDocument();
     });
 
-    it("observer can still see song content", async () => {
+    it("observer can still see song content and use the toolbar", async () => {
       mockAuthValue = observerAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       expect(screen.getByTestId("chordpro-renderer")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /transpose up/i })).toBeInTheDocument();
     });
 
-    it("observer does NOT see Add Note button", async () => {
-      mockAuthValue = observerAuth;
-      renderSongView();
-      await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.queryByRole("button", { name: /add note/i })).not.toBeInTheDocument();
-    });
-
-    it("musician sees Add Note button", async () => {
-      mockAuthValue = musicianAuth;
-      renderSongView();
-      await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
-      expect(screen.getByRole("button", { name: /add note/i })).toBeInTheDocument();
-    });
-
-    it("observer still sees Print and export actions in the More menu", async () => {
+    it("observer still sees Print and download actions in the More menu", async () => {
       mockAuthValue = observerAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByRole("menuitem", { name: "Print" })).toBeInTheDocument();
-      expect(screen.getByRole("menuitem", { name: "ChordPro (.cho)" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Download ChordPro (.cho)" })).toBeInTheDocument();
     });
   });
 
@@ -444,37 +413,4 @@ describe("Role-gated UI", () => {
     });
   });
 
-  // ── DashboardPage ─────────────────────────────────
-  describe("DashboardPage", () => {
-    it("musician sees New Song and New Setlist quick actions", async () => {
-      mockAuthValue = musicianAuth;
-      renderDashboard();
-      await waitFor(() => expect(screen.getByText(/welcome/i)).toBeInTheDocument());
-      expect(screen.getByRole("link", { name: /new song/i })).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: /new setlist/i })).toBeInTheDocument();
-    });
-
-    it("observer does NOT see New Song and New Setlist quick actions", async () => {
-      mockAuthValue = observerAuth;
-      renderDashboard();
-      await waitFor(() => expect(screen.getByText(/welcome/i)).toBeInTheDocument());
-      expect(screen.queryByRole("link", { name: /new song/i })).not.toBeInTheDocument();
-      expect(screen.queryByRole("link", { name: /new setlist/i })).not.toBeInTheDocument();
-    });
-
-    it("observer still sees Browse Songs link", async () => {
-      mockAuthValue = observerAuth;
-      renderDashboard();
-      await waitFor(() => expect(screen.getByText(/welcome/i)).toBeInTheDocument());
-      expect(screen.getByRole("link", { name: /browse songs/i })).toBeInTheDocument();
-    });
-
-    it("admin sees New Song and New Setlist quick actions", async () => {
-      mockAuthValue = adminAuth;
-      renderDashboard();
-      await waitFor(() => expect(screen.getByText(/welcome/i)).toBeInTheDocument());
-      expect(screen.getByRole("link", { name: /new song/i })).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: /new setlist/i })).toBeInTheDocument();
-    });
-  });
 });

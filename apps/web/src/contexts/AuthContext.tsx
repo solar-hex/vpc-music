@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
 import { authApi, setActiveOrganizationId } from "@/lib/api-client";
 
 const ORG_STORAGE_KEY = "vpc-music-active-org-id";
@@ -28,60 +21,47 @@ interface AuthContextValue {
   user: User | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-  /** The active org (persisted selection, or first org, or null) */
+  /** Single-church mode: the user's first (and only) team, or null. */
   activeOrg: OrgMembership | null;
-  /** Switch the active org by ID */
-  switchOrg: (orgId: string) => void;
   login: (email: string, password: string) => Promise<void>;
   register: (email: string, password: string, displayName?: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
-  setUser: (user: User) => void;
+  setUser: (user: User | null) => void;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
-/** Resolve the active org from localStorage or fall back to the first org */
-function resolveActiveOrg(orgs: OrgMembership[] | undefined): OrgMembership | null {
-  if (!orgs || orgs.length === 0) return null;
+function firstOrg(user: User | null): OrgMembership | null {
+  return user?.organizations?.[0] ?? null;
+}
 
-  const savedId = localStorage.getItem(ORG_STORAGE_KEY);
-  if (savedId) {
-    const match = orgs.find((o) => o.id === savedId);
-    if (match) return match;
+/**
+ * Seed the API client (and the localStorage key it reads on module load)
+ * before React commits the new user, so a page's own mount effect never
+ * fires an org-scoped request without the org header.
+ */
+function applyUser(user: User | null) {
+  const org = firstOrg(user);
+  setActiveOrganizationId(org?.id ?? null);
+  try {
+    if (org) localStorage.setItem(ORG_STORAGE_KEY, org.id);
+    else localStorage.removeItem(ORG_STORAGE_KEY);
+  } catch {
+    // Storage unavailable: the in-memory client state is still set.
   }
-  return orgs[0];
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUserState] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedOrgId, setSelectedOrgId] = useState<string | null>(
-    () => localStorage.getItem(ORG_STORAGE_KEY),
-  );
 
-  // Derive active org
-  const activeOrg: OrgMembership | null = (() => {
-    const orgs = user?.organizations;
-    if (!orgs || orgs.length === 0) return null;
-    if (selectedOrgId) {
-      const match = orgs.find((o) => o.id === selectedOrgId);
-      if (match) return match;
-    }
-    return orgs[0];
-  })();
-
-  // Keep api-client in sync with active org
-  useEffect(() => {
-    setActiveOrganizationId(activeOrg?.id ?? null);
-  }, [activeOrg?.id]);
-
-  const switchOrg = useCallback((orgId: string) => {
-    localStorage.setItem(ORG_STORAGE_KEY, orgId);
-    setSelectedOrgId(orgId);
+  const setUser = useCallback((next: User | null) => {
+    applyUser(next);
+    setUserState(next);
   }, []);
 
-  // On mount, try to restore session from cookie
+  // On mount, try to restore the session from the cookie
   const refreshUser = useCallback(async () => {
     try {
       const { user: me } = await authApi.me();
@@ -91,31 +71,32 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [setUser]);
 
   useEffect(() => {
     refreshUser();
   }, [refreshUser]);
 
-  const login = useCallback(async (email: string, password: string) => {
-    const { user: loggedIn } = await authApi.login(email, password);
-    setUser(loggedIn);
-  }, []);
+  const login = useCallback(
+    async (email: string, password: string) => {
+      const { user: loggedIn } = await authApi.login(email, password);
+      setUser(loggedIn);
+    },
+    [setUser],
+  );
 
   const register = useCallback(
     async (email: string, password: string, displayName?: string) => {
       const { user: created } = await authApi.register({ email, password, displayName });
       setUser(created);
     },
-    []
+    [setUser],
   );
 
   const logout = useCallback(async () => {
     await authApi.logout();
     setUser(null);
-    localStorage.removeItem(ORG_STORAGE_KEY);
-    setSelectedOrgId(null);
-  }, []);
+  }, [setUser]);
 
   return (
     <AuthContext.Provider
@@ -123,8 +104,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         user,
         isAuthenticated: !!user,
         isLoading,
-        activeOrg,
-        switchOrg,
+        activeOrg: firstOrg(user),
         login,
         register,
         logout,

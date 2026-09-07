@@ -9,6 +9,23 @@
  */
 
 import { parseChordPro } from "./chordpro.js";
+import { isSecondaryToken } from "./transpose.js";
+
+/** A chord-only OnSong row ("   [ab]   [gb]") from secondary tokens at their lyric columns. */
+function buildBracketRow(chords) {
+  let row = "";
+  let cursor = 0;
+  for (const { chord, position } of chords) {
+    const label = `[${chord.slice(1)}]`;
+    if (position > cursor) {
+      row += " ".repeat(position - cursor);
+      cursor = position;
+    }
+    row += label;
+    cursor += label.length;
+  }
+  return row.replace(/\s+$/, "");
+}
 
 /**
  * Map of ChordPro directive keys → OnSong metadata labels.
@@ -53,11 +70,19 @@ export function docToOnSong(doc) {
     }
 
     for (const line of section.lines) {
+      if (line.note !== undefined) {
+        parts.push(line.note);
+        continue;
+      }
+
+      const sortedChords = [...line.chords].sort((a, b) => a.position - b.position);
+      const secondaryRow = buildBracketRow(sortedChords.filter((entry) => isSecondaryToken(entry.chord)));
+      if (secondaryRow) parts.push(secondaryRow);
+
       let result = "";
       let lyricPos = 0;
-      const sortedChords = [...line.chords].sort((a, b) => a.position - b.position);
-
       for (const { chord, position } of sortedChords) {
+        if (isSecondaryToken(chord)) continue;
         result += line.lyrics.slice(lyricPos, position);
         result += `[${chord}]`;
         lyricPos = position;

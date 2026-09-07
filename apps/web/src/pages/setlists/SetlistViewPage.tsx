@@ -43,7 +43,6 @@ import {
   Printer,
 } from "lucide-react";
 import { ActionMenu } from "@/components/ui/ActionMenu";
-import { ALL_KEYS } from "@vpc-music/shared";
 import { useConductor } from "@/hooks/useConductor";
 import { PerformanceMode } from "@/components/setlists/PerformanceMode";
 import { SetlistItemTools } from "@/components/setlists/SetlistItemTools";
@@ -86,7 +85,7 @@ export function SetlistViewPage() {
   // ── Performance mode state ─────────────────────
   const [performanceMode, setPerformanceMode] = useState(false);
   const [songContents, setSongContents] = useState<Map<string, { songId: string; content: string; key?: string | null; originalKey?: string | null; tempo?: number | null; durationSeconds?: number | null }>>(new Map());
-  const [loadingContents, setLoadingContents] = useState(false);
+  const [, setLoadingContents] = useState(false);
 
   // ── Live mode state ────────────────────────────
   const [liveMode, setLiveMode] = useState<"off" | "conductor" | "member">("off");
@@ -699,7 +698,7 @@ export function SetlistViewPage() {
 
       <ConfirmDialog
         open={showDeleteConfirm}
-        title={setlist ? `Delete \"${setlist.name}\"?` : "Delete setlist?"}
+        title={setlist ? `Delete "${setlist.name}"?` : "Delete setlist?"}
         description="This permanently removes the setlist from your library."
         confirmLabel="Delete setlist"
         busy={deletingSetlist}

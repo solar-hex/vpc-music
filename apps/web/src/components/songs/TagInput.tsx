@@ -3,6 +3,7 @@ import {
   useRef,
   useEffect,
   useCallback,
+  useMemo,
   type KeyboardEvent,
 } from "react";
 import { X, ChevronDown } from "lucide-react";
@@ -25,12 +26,16 @@ interface TagInputProps {
  */
 export function TagInput({ value, onChange }: TagInputProps) {
   // ── Selected tags derived from comma-separated string ──────
-  const tags = value
-    ? value
-        .split(",")
-        .map((t) => t.trim().toLowerCase())
-        .filter(Boolean)
-    : [];
+  const tags = useMemo(
+    () =>
+      value
+        ? value
+            .split(",")
+            .map((t) => t.trim().toLowerCase())
+            .filter(Boolean)
+        : [],
+    [value],
+  );
 
   // ── Input state ────────────────────────────────────────────
   const [input, setInput] = useState("");

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import fs from "node:fs";
@@ -42,7 +42,6 @@ vi.mock("@/lib/oauth-popup", () => ({
 vi.stubEnv("VITE_SANDBOX", "true");
 
 // Now import LoginPage — it reads IS_SANDBOX at module level
-// eslint-disable-next-line import/first
 import { LoginPage } from "@/pages/auth/LoginPage";
 
 function renderLogin() {
@@ -188,7 +187,6 @@ describe("LoginPage — sandbox mode", () => {
 
     it("all three seed users have a passwordHash", () => {
       // Count occurrences of passwordHash assignment (not null)
-      const lines = seedSrc.split("\n");
       const userBlock = seedSrc.split("Seeding users")[1]?.split("Seeding songs")[0] || "";
       // Should not contain passwordHash: null
       expect(userBlock).not.toContain("passwordHash: null");

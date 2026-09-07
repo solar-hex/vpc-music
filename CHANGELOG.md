@@ -6,7 +6,47 @@ This project follows a simple Keep a Changelog-style format.
 
 ## [Unreleased]
 
-<!-- changelog-cursor: f13d628 — last commit recorded below. Log new commits in the range f13d628..HEAD, then advance this marker to the newest hash. -->
+<!-- changelog-cursor: 47de68f — last commit recorded below. Log new commits in the range 47de68f..HEAD, then advance this marker to the newest hash. -->
+
+### Changed — Simplification tranche 1 (September 2026)
+
+- Legacy `.chrd` conversion (`shared/utils/chrd.js`) now handles the real library: already-bracketed chords are no longer double-bracketed, chord columns follow the chord name (matching the old site's own OnSong export), drafts are detected from the `~` filename prefix, `^` secondary chord lines become inline `[*x]` annotation tokens on the lyric line, `*` comments become `{ci: ...}` note lines, zero-width and non-ASCII characters are cleaned, and unlabeled header lines, bracketed section names, `#[Verse 2]` headers and decorated tokens (`[Ebm]*`) are handled with warnings
+- ChordPro parser: `{ci}` / `{comment_italic}` (and `{cb}`) are in-section note lines rather than section headers, and `toChordProString` round-trips them
+- Transpose engine: compound tokens (`B8-Db8-Eb8`, `e-gb-ab`), starred secondary tokens, optional `(Gbm)` chords, bass-only `/G` tokens, bracketed chords on bar lines, and mixed-case quality words (`Dma7`, `CmAug`) now transpose
+- Plain-text, OnSong and PDF exports print a secondary chord row above the primary row and render note lines
+- New `pnpm import:chrd [env] --dir <path> --org <name|uuid> [--created-by <email>] [--dry-run] [--exclude <glob>]` imports a `.chrd` library directly into an organization's songs with deterministic ids (re-runs update rather than duplicate), a membership guard, and a JSON/text report under `apps/api/import-reports/` (gitignored)
+- Root `pnpm test:api` added; `pnpm test:all` now runs web, API and script suites
+- The song page is now a full-screen lead sheet (`/songs/:id`, outside the app shell) modelled on the old site: a fixed toolbar (search, key picker, transpose down/up, Nashville numbers, comments, text size, keep-awake, theme, More menu with print/downloads/share link/log a play/edit/delete) and a bottom section jump bar. Transposition lives in the URL (`?key=Bb`, or `?t=2` for keyless charts) so links and reloads keep the key; view preferences (text size, comments, Nashville, keep-awake) persist per device
+- The chart renderer is controls-free: hosts pass the net `transpose`; it renders `[*x]` secondary chords as a second row and `{ci}` notes in italics, and gives each section an id for the jump bar
+- Removed from the song page: detail tabs (media, history), focus mode as a separate page, variations UI, instrument-part layers, ink annotations, share-link management, visibility tiers, similar songs, collaboration threads, sticky notes, staff notation and the metronome
+- The app shell is a single header (logo, New song, account menu) instead of a sidebar with six sections; signing in lands on the song list, and a link opened while signed out returns there after sign-in. Single-church mode: the org switcher, org creation and cross-org sharing UI are gone
+- The song list is the old site's search page again: the whole library loads once (and is kept on the device for offline use), one box filters it instantly by title, alternate title, artist and tags, songs are grouped A to Z, drafts stay hidden until "Show drafts", a key carried from the chart opens every song in that key, and lyric matches from the server appear under "Also found in lyrics"
+- The song editor page keeps title, artist, year, key, tempo, tags and draft; category, energy, alternate title, shout, arrangement builder, staff notation and variation editing are gone. Import (single file for review, or many files at once) is available from the song list and the editor; a conflict on save now offers "Reload their version" or "Overwrite with mine"
+- The ChordPro editor is one CodeMirror surface with a small toolbar: Edit/Split/Preview, an Insert menu (sections, a `{ci: }` comment line, a `[*]` secondary chord), Format, section chips, a chord popup on a selection or Ctrl+K, validation with inline fixes and a short cheat sheet. Ctrl+/ toggles a `{ci}` note line and Alt+Up/Down transposes the current line. The beginner/advanced mode switch, the textarea with its syntax overlay, command palette, context menu, smart suggestions, cursor help, section organizer, help panel and arrangement builder are gone
+- Settings is one page with stacked sections: Profile (name, password), Appearance (theme, key spelling as flats or sharps, the two chord colours with a live preview), Team for admins (rename the team, invite one or many, roles, resend, remove), Data (import files, download the whole library as a ChordPro/OnSong/text ZIP) and About (version, what's new, sign out). The key spelling preference now drives the chart's key picker and the editor's key list. Removed: high-contrast mode, theme presets, page background and display font choices, the editor mode switch, duration display, time zone, the integrations placeholder, CSV import, the set list PDF export, and the separate admin pages (organization slug/logo, provisioning, custom roles, the delete-organization danger zone)
+- Removed pages: dashboard and analytics, artists and albums, media library, set list templates, schedule/events/calendar/rehearsals, admin availability, roles and activity tabs, the marketing landing page, the AI assistant and the notification center (set lists and perform mode return in tranche 2, scheduling in tranche 3)
+- Sessions last 180 days instead of 7 (`JWT_EXPIRES_IN`), the cookie lives exactly as long as its token, `GET /auth/me` renews the cookie once it is past half of its life, and the cookie is marked `Secure` on staging as well as production
+- Fixed: signing in left a seeded member looking like someone with no team ("Ask your worship leader for an invite") until the next page load, because `POST /auth/login` answered without the caller's organizations while `GET /auth/me` included them. Login, register, set-password and the Google popup callback now return the same user shape as `/auth/me`, built by one shared loader
+- The API no longer mounts `/assistant` (and drops `ANTHROPIC_API_KEY`), runs the notification reminder cron, or starts the Socket.IO conductor server; the web app drops the Material Icons font, react-query, react-hook-form, zod, class-variance-authority, framer-motion, abcjs and the nine unused Radix packages, and `lib/api-client.ts` keeps only the endpoints the app calls
+- CI and `pnpm preflight` run `pnpm test:all` (web, API and scripts). Docs: README rewritten around the tranche plan, `CLAUDE.md` added, the PRD, role model and editor notes moved to `docs/archive/`, prototypes and stale task/test dumps deleted
+
+### Changed — mobile-first pass, statistics, schedule and ChordPro gaps (`47de68f`)
+
+- Modals render as bottom sheets on phones via `ResponsiveModal` (Escape, backdrop close, focus trap); new `ActionMenu` (dropdown on desktop, sheet on mobile); hover-only controls visible on touch; 44px targets
+- Statistics: `song_usages` gained `setlist_id` and `source`; completing an event or set list logs plays idempotently and reopening removes them; new `/stats` overview and per-song endpoints; dashboard Analytics tab; perform mode "Mark as played"
+- Events, calendar and rehearsals merged into one Schedule tab; set list print view and public set list share links (`/shared/setlist/:token`)
+- ChordPro: `{sov}`/`{sob}` environments, `{sot}` tab sections kept verbatim, `{define:}` chord shapes; capo selector with a "play X, sounds Y" banner; audio metronome in perform mode; tap-a-chord SVG fretboard diagrams; ink annotations saved per user per song
+- Migration `scripts/migrate-2026-07-stats-tiers.mjs` (idempotent) covers every schema change since `e1c6771`
+- Most of this UI was removed again by the simplification tranche above; the engine work (`{define:}`, environments, chord shapes) and the statistics columns remain
+
+### Added — song retrieval, sharing tiers and instrument layers (`30d0903`)
+
+- Song search matches lyrics, not just metadata; global Ctrl+K quick launcher; single-song focus mode at `/songs/:id/focus`
+- "Switch to a similar song" ranked by tempo, shared tags and energy, with key-transition ratings
+- Versioning tiers (personal, organization, global) with variation promotion and a line diff; a global core library visible to every org; residual cross-org IDOR on song update/delete closed
+- Owner-only organization provisioning, bulk invite and resend invite
+- Per-musician instrument layers (`song_instrument_parts`: icon, colour, ChordPro notes, optional ABC staff) that transpose with the base chart
+- Requires the schema migration above (`songs.tier`, `song_instrument_parts`); the quick launcher, focus page, similar-songs panel, tiers UI, provisioning and instrument layers were removed again by the simplification tranche
 
 ### Fixed — cross-org security & data-integrity hardening (July 2026)
 

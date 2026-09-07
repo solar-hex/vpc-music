@@ -145,3 +145,13 @@ Was [G]blind, but [C]now I [G]see`;
     expect(chordWarning?.suggestedFixLabel).toBe("Use [G/B]");
   });
 });
+
+describe("correctChordSpelling", () => {
+  it("suggests conventional spellings for sloppy chords", async () => {
+    const { correctChordSpelling } = await import("@/utils/chordpro-validate");
+    expect(correctChordSpelling(" g / b ")).toBe("G/B");
+    expect(correctChordSpelling("amin")).toBe("Am");
+    expect(correctChordSpelling("G")).toBeNull();
+    expect(correctChordSpelling("???")).toBeNull();
+  });
+});

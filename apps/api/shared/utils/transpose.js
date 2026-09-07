@@ -28,7 +28,9 @@ const SECTION_REGEX = new RegExp(`^(?:${SECTION_WORDS.join("|")})(?:\\s*\\d+[a-z
 
 // Chord grammar: root + optional quality made only of known tokens + optional
 // bass (a note, or digits for chords like C6/9). Every token consumes ≥1 char.
-const CHORD_QUALITY_TOKEN = /(?:maj|min|dim|aug|sus|add|alt|no|[mM])|\d{1,2}|[b#()+°ø\-Δ^]/;
+// Quality words are accepted in either case ("CmAug" and "Dma7" both occur in
+// the old library; "ma" is a common shorthand for "maj").
+const CHORD_QUALITY_TOKEN = /(?:[mM]aj|[mM]a|[mM]in|[dD]im|[aA]ug|[sS]us|[aA]dd|[aA]lt|[nN]o|[mM])|\d{1,2}|[b#()+°ø\-Δ^]/;
 const CHORD_REGEX_STRICT = new RegExp(
   `^([A-G][b#]?)((?:${CHORD_QUALITY_TOKEN.source})*)(?:/(?:[A-G][b#]?|\\d{1,2}))?$`,
 );
@@ -186,11 +188,67 @@ export function transposeChord(chord, steps, preferFlats) {
   return transposeNote(root, steps, preferFlats) + quality;
 }
 
-/** Transpose the chord cells of a bar line: "| G | C/E | D |" */
+// A lowercase melody/bass note as written on the old site's secondary lines
+const LOWERCASE_NOTE = /^[a-g][b#]?$/;
+
+/** Is this bracket token a secondary-chord annotation ("*ab", "*B8-Db8")? */
+export function isSecondaryToken(token) {
+  return String(token).startsWith("*");
+}
+
+function transposeLowercaseNote(note, steps, preferFlats) {
+  const capitalized = note[0].toUpperCase() + note.slice(1);
+  return transposeNote(capitalized, steps, preferFlats).toLowerCase();
+}
+
+/**
+ * Transpose one bracket token. Handles a chord, a lowercase melody note, a
+ * hyphen/plus-joined run of chords or notes ("B8-Db8-Eb8", "e-gb-ab"), and
+ * any of those behind a "*" secondary-chord marker. Anything else (section
+ * labels, annotations like "*staccato") is returned unchanged.
+ * @param {string} token
+ * @param {number} steps
+ * @param {boolean} [preferFlats]
+ * @returns {string}
+ */
+export function transposeToken(token, steps, preferFlats) {
+  const text = String(token);
+  if (isSecondaryToken(text)) return `*${transposeToken(text.slice(1), steps, preferFlats)}`;
+  // "(Gbm)" — an optional chord
+  const wrapped = text.match(/^\((.+)\)$/);
+  if (wrapped) return `(${transposeToken(wrapped[1], steps, preferFlats)})`;
+  // "/G" — a bass-note change under the previous chord
+  const bassOnly = text.match(/^\/([A-G][b#]?)$/);
+  if (bassOnly) return `/${transposeNote(bassOnly[1], steps, preferFlats)}`;
+  if (isChordToken(text)) return transposeChord(text, steps, preferFlats);
+
+  // "-"/"+" separate a run only when a note letter follows ("F+9" is one chord)
+  const parts = text.split(/([-+])(?=[A-Ga-g])/);
+  if (parts.length > 1) {
+    const values = parts.filter((_, index) => index % 2 === 0);
+    if (values.every((part) => isChordToken(part) || LOWERCASE_NOTE.test(part))) {
+      return parts
+        .map((part, index) => {
+          if (index % 2 === 1) return part;
+          return LOWERCASE_NOTE.test(part)
+            ? transposeLowercaseNote(part, steps, preferFlats)
+            : transposeChord(part, steps, preferFlats);
+        })
+        .join("");
+    }
+  }
+
+  if (LOWERCASE_NOTE.test(text)) return transposeLowercaseNote(text, steps, preferFlats);
+  return text;
+}
+
+/** Transpose the chord cells of a bar line: "| G | C/E | D |" (bracketed cells included) */
 function transposeBarLine(line, steps, preferFlats) {
-  return line.replace(/([^|\s]+)/g, (token) =>
-    isChordToken(token) ? transposeChord(token, steps, preferFlats) : token,
-  );
+  return line.replace(/([^|\s]+)/g, (token) => {
+    const bracketed = token.match(/^\[([^\]]+)\]$/);
+    if (bracketed) return `[${transposeToken(bracketed[1], steps, preferFlats)}]`;
+    return isChordToken(token) ? transposeChord(token, steps, preferFlats) : token;
+  });
 }
 
 /**
@@ -212,9 +270,10 @@ export function transposeChordPro(input, steps, preferFlats) {
       if (line.trimStart().startsWith("|")) {
         return transposeBarLine(line, steps, preferFlats);
       }
-      return line.replace(/\[([^\]]+)\]/g, (match, token) =>
-        isChordToken(token) ? `[${transposeChord(token, steps, preferFlats)}]` : match,
-      );
+      return line.replace(/\[([^\]]+)\]/g, (match, token) => {
+        const moved = transposeToken(token, steps, preferFlats);
+        return moved === token ? match : `[${moved}]`;
+      });
     })
     .join("\n");
 }

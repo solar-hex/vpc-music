@@ -1,58 +1,29 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AppShell } from "@/components/layout/AppShell";
 
 // ---------- Mocks ----------
 const mockLogout = vi.fn();
 const mockNavigate = vi.fn();
-const mockToggleTheme = vi.fn();
-const mockSwitchOrg = vi.fn();
-const mockRefreshUser = vi.fn();
-const mockCreateOrg = vi.fn();
-
-let mockAuthValue: any = {
-  user: {
-    displayName: "John",
-    email: "john@test.com",
-    role: "member",
-    organizations: [
-      { id: "org1", name: "Test Church", role: "admin" },
-      { id: "org2", name: "North Campus", role: "musician" },
-    ],
-  },
-  activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-  switchOrg: mockSwitchOrg,
-  refreshUser: mockRefreshUser,
-  logout: mockLogout,
-};
+let mockAuthValue: any;
+let mockConnectivityValue: any;
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockAuthValue,
 }));
 
-vi.mock("@/contexts/ThemeContext", () => ({
-  useTheme: () => ({
-    resolvedTheme: "dark",
-    toggleTheme: mockToggleTheme,
-  }),
-}));
-
-let mockConnectivityValue = {
-  isOnline: true,
-  syncingOfflineEdits: false,
-  pendingOfflineEditCount: 0,
-  refreshPendingOfflineEditCount: vi.fn(),
-};
-
 vi.mock("@/contexts/ConnectivityContext", () => ({
   useConnectivity: () => mockConnectivityValue,
 }));
 
+vi.mock("@/contexts/ThemeContext", () => ({
+  useTheme: () => ({ resolvedTheme: "dark", toggleTheme: vi.fn() }),
+}));
+
 vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual("react-router-dom");
+  const actual = await vi.importActual<typeof import("react-router-dom")>("react-router-dom");
   return {
     ...actual,
     useNavigate: () => mockNavigate,
@@ -64,31 +35,11 @@ vi.mock("sonner", () => ({
   toast: { success: vi.fn(), error: vi.fn() },
 }));
 
-vi.mock("@/lib/api-client", () => ({
-  orgsApi: {
-    create: (...args: any[]) => mockCreateOrg(...args),
-  },
-  notificationsApi: {
-    list: vi.fn().mockResolvedValue({ notifications: [] }),
-    unreadCount: vi.fn().mockResolvedValue({ count: 0 }),
-    markRead: vi.fn(),
-    markAllRead: vi.fn(),
-    delete: vi.fn(),
-    clearAll: vi.fn(),
-  },
-  assistantApi: {
-    chat: vi.fn().mockResolvedValue({ reply: "", actions: [] }),
-  },
-}));
-
-function renderShell() {
-  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+function renderShell(path = "/songs") {
   return render(
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={["/dashboard"]}>
-        <AppShell />
-      </MemoryRouter>
-    </QueryClientProvider>,
+    <MemoryRouter initialEntries={[path]}>
+      <AppShell />
+    </MemoryRouter>,
   );
 }
 
@@ -96,219 +47,65 @@ describe("AppShell", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockLogout.mockResolvedValue(undefined);
-    mockCreateOrg.mockResolvedValue({ organization: { id: "org3", name: "New Org" } });
-    mockRefreshUser.mockResolvedValue(undefined);
     mockAuthValue = {
-      user: {
-        displayName: "John",
-        email: "john@test.com",
-        role: "member",
-        organizations: [
-          { id: "org1", name: "Test Church", role: "admin" },
-          { id: "org2", name: "North Campus", role: "musician" },
-        ],
-      },
-      activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-      switchOrg: mockSwitchOrg,
-      refreshUser: mockRefreshUser,
+      user: { id: "u1", displayName: "John Smith", email: "john@test.com", role: "member", organizations: [{ id: "org1", name: "Test Church", role: "musician" }] },
+      activeOrg: { id: "org1", name: "Test Church", role: "musician" },
       logout: mockLogout,
     };
-    mockConnectivityValue = {
-      isOnline: true,
-      syncingOfflineEdits: false,
-      pendingOfflineEditCount: 0,
-      refreshPendingOfflineEditCount: vi.fn(),
-    };
+    mockConnectivityValue = { isOnline: true, syncingOfflineEdits: false, pendingOfflineEditCount: 0 };
   });
 
-  // ===================== POSITIVE =====================
-
-  describe("positive", () => {
-    // Desktop sidebar and mobile drawer both render in jsdom (visibility is
-    // CSS-only), so shared elements appear twice — query with getAllBy*.
-
-    it("renders logo and brand name", () => {
-      renderShell();
-      expect(screen.getAllByText("VPC Music").length).toBeGreaterThan(0);
-      expect(screen.getAllByAltText("").length).toBeGreaterThan(0); // logo img
-    });
-
-    it("renders nav links in sections", () => {
-      renderShell();
-      expect(screen.getAllByText("Dashboard").length).toBeGreaterThan(0);
-      expect(screen.getAllByText("Songs").length).toBeGreaterThan(0);
-      expect(screen.getAllByText("Set Lists").length).toBeGreaterThan(0);
-      expect(screen.getAllByText("Settings").length).toBeGreaterThan(0);
-      // Section headings
-      expect(screen.getAllByText("Library").length).toBeGreaterThan(0);
-      expect(screen.getAllByText("Tools").length).toBeGreaterThan(0);
-    });
-
-    it("shows Admin link for org admins", () => {
-      renderShell();
-      expect(screen.getAllByText("Admin").length).toBeGreaterThan(0);
-    });
-
-    it("renders outlet for child routes", () => {
-      renderShell();
-      expect(screen.getByTestId("outlet")).toBeInTheDocument();
-    });
-
-    it("shows user display name", () => {
-      renderShell();
-      expect(screen.getAllByText("John").length).toBeGreaterThan(0);
-    });
-
-    it("shows the role badge", () => {
-      renderShell();
-      const badges = screen.getAllByTestId("role-badge");
-      expect(badges.length).toBeGreaterThan(0);
-      expect(badges[0]).toHaveTextContent(/worship leader/i);
-    });
-
-    it("renders theme toggle button", () => {
-      renderShell();
-      expect(screen.getAllByLabelText("Toggle theme").length).toBeGreaterThan(0);
-    });
-
-    it("calls toggleTheme when button clicked", () => {
-      renderShell();
-      fireEvent.click(screen.getAllByLabelText("Toggle theme")[0]);
-      expect(mockToggleTheme).toHaveBeenCalledOnce();
-    });
-
-    it("renders sign out button", () => {
-      renderShell();
-      expect(screen.getAllByTitle("Sign out").length).toBeGreaterThan(0);
-    });
-
-    it("opens the mobile drawer from the hamburger button", async () => {
-      renderShell();
-      const user = userEvent.setup();
-      const drawer = document.getElementById("mobile-nav-drawer");
-      expect(drawer?.className).toContain("-translate-x-full");
-      await user.click(screen.getByLabelText("Open menu"));
-      expect(drawer?.className).toContain("translate-x-0");
-    });
-
-    it("renders the org switcher with the active organization", () => {
-      renderShell();
-      expect(screen.getAllByText("Test Church").length).toBeGreaterThan(0);
-    });
-
-    it("switches organizations from the org switcher menu", async () => {
-      renderShell();
-      const user = userEvent.setup();
-
-      await user.click(screen.getAllByRole("button", { name: /test church/i })[0]);
-      await user.click(screen.getByRole("button", { name: "North Campus" }));
-
-      expect(mockSwitchOrg).toHaveBeenCalledWith("org2");
-    });
-
-    it("creates a new organization from the org switcher", async () => {
-      renderShell();
-      const user = userEvent.setup();
-
-      await user.click(screen.getAllByRole("button", { name: /test church/i })[0]);
-      await user.click(screen.getByRole("button", { name: /new organization/i }));
-      expect(screen.getByRole("dialog", { name: /create organization/i })).toBeInTheDocument();
-      await user.type(screen.getByPlaceholderText(/organization name/i), "New Org");
-      await user.click(screen.getByRole("button", { name: /^create$/i }));
-
-      await waitFor(() => {
-        expect(mockCreateOrg).toHaveBeenCalledWith("New Org");
-        expect(mockSwitchOrg).toHaveBeenCalledWith("org3");
-        expect(mockRefreshUser).toHaveBeenCalled();
-      });
-    });
-
-    it("shows empty-org onboarding when the user has no organizations", () => {
-      mockAuthValue = {
-        user: {
-          displayName: "John",
-          email: "john@test.com",
-          role: "member",
-          organizations: [],
-        },
-        activeOrg: null,
-        switchOrg: mockSwitchOrg,
-        refreshUser: mockRefreshUser,
-        logout: mockLogout,
-      };
-
-      renderShell();
-      expect(screen.getByText(/no organization yet/i)).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /create organization/i })).toBeInTheDocument();
-    });
-
-    it("opens the create organization dialog from empty-org onboarding", async () => {
-      mockAuthValue = {
-        user: {
-          displayName: "John",
-          email: "john@test.com",
-          role: "member",
-          organizations: [],
-        },
-        activeOrg: null,
-        switchOrg: mockSwitchOrg,
-        refreshUser: mockRefreshUser,
-        logout: mockLogout,
-      };
-
-      renderShell();
-      const user = userEvent.setup();
-
-      await user.click(screen.getByRole("button", { name: /create organization/i }));
-
-      expect(screen.getByRole("dialog", { name: /create organization/i })).toBeInTheDocument();
-    });
-
-    it("shows an offline banner when disconnected", () => {
-      mockConnectivityValue.isOnline = false;
-      renderShell();
-
-      expect(screen.getByText(/you’re offline|you're offline/i)).toBeInTheDocument();
-    });
-
-    it("shows queued offline edit count when back online", () => {
-      mockConnectivityValue.pendingOfflineEditCount = 2;
-      renderShell();
-
-      expect(screen.getByText(/2 offline edits waiting to sync/i)).toBeInTheDocument();
-    });
+  it("renders the page inside a header that links home to the song list", () => {
+    renderShell();
+    expect(screen.getByTestId("outlet")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /vpc music home/i })).toHaveAttribute("href", "/songs");
   });
 
-  // ===================== NEGATIVE =====================
+  it("has no sidebar navigation, org switcher or notification bell", () => {
+    renderShell();
+    expect(screen.queryByRole("link", { name: /dashboard/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /set lists/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /artists/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/north campus|new organization/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /notifications/i })).not.toBeInTheDocument();
+  });
 
-  describe("negative", () => {
-    it("calls logout and navigates on sign out", async () => {
-      renderShell();
-      fireEvent.click(screen.getAllByTitle("Sign out")[0]);
+  it("offers New song to musicians and admins but not observers", () => {
+    renderShell();
+    expect(screen.getByRole("link", { name: /new song/i })).toHaveAttribute("href", "/songs/new");
+    mockAuthValue = { ...mockAuthValue, activeOrg: { id: "org1", name: "Test Church", role: "observer" } };
+    renderShell();
+    expect(screen.getAllByRole("link", { name: /new song/i })).toHaveLength(1);
+  });
 
-      await waitFor(() => {
-        expect(mockLogout).toHaveBeenCalled();
-        expect(mockNavigate).toHaveBeenCalledWith("/");
-      });
-    });
+  it("shows the user's initials and an account menu with Settings and Sign out", async () => {
+    const user = userEvent.setup();
+    renderShell();
+    expect(screen.getByText("JS")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: /account menu/i }));
+    await user.click(screen.getByRole("menuitem", { name: "Settings" }));
+    expect(mockNavigate).toHaveBeenCalledWith("/settings");
+    await user.click(screen.getByRole("button", { name: /account menu/i }));
+    await user.click(screen.getByRole("menuitem", { name: "Sign out" }));
+    await waitFor(() => expect(mockLogout).toHaveBeenCalled());
+    expect(mockNavigate).toHaveBeenCalledWith("/login");
+  });
 
-    it("does not show nav links that don't exist", () => {
-      mockAuthValue = {
-        user: {
-          displayName: "John",
-          email: "john@test.com",
-          role: "member",
-          organizations: [{ id: "org1", name: "Test Church", role: "observer" }],
-        },
-        activeOrg: { id: "org1", name: "Test Church", role: "observer" },
-        switchOrg: mockSwitchOrg,
-        refreshUser: mockRefreshUser,
-        logout: mockLogout,
-      };
+  it("shows the offline banner when offline and the pending-sync banner when edits are queued", () => {
+    mockConnectivityValue = { isOnline: false, syncingOfflineEdits: false, pendingOfflineEditCount: 0 };
+    renderShell();
+    expect(screen.getByRole("status")).toHaveTextContent(/offline/i);
+    mockConnectivityValue = { isOnline: true, syncingOfflineEdits: false, pendingOfflineEditCount: 2 };
+    renderShell();
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent("2 offline edits waiting to sync.");
+  });
 
-      renderShell();
-      expect(screen.queryByText("Admin")).not.toBeInTheDocument();
-      expect(screen.queryByText("Profile")).not.toBeInTheDocument();
-    });
+  it("tells a user with no team to ask for an invite, but still shows settings", () => {
+    mockAuthValue = { ...mockAuthValue, user: { ...mockAuthValue.user, organizations: [] }, activeOrg: null };
+    renderShell("/songs");
+    expect(screen.getByText(/ask your worship leader for an invite/i)).toBeInTheDocument();
+    expect(screen.queryByTestId("outlet")).not.toBeInTheDocument();
+    renderShell("/settings");
+    expect(screen.getByTestId("outlet")).toBeInTheDocument();
   });
 });

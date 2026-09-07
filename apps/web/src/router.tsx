@@ -1,79 +1,73 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, Navigate, useParams } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { RouteErrorPage } from "./components/shared/RouteErrorPage";
 import { ProtectedRoute } from "./components/shared/ProtectedRoute";
-import { SectionLayout } from "./components/layout/SectionTabs";
 
 // ── Pages ────────────────────────────────────────
-import { LandingPage } from "./pages/LandingPage";
 import { SharedSongPage } from "./pages/SharedSongPage";
 import { SharedSetlistPage } from "./pages/SharedSetlistPage";
-import { DashboardPage } from "./pages/DashboardPage";
-import { DashboardAnalyticsTab } from "./pages/dashboard/DashboardAnalyticsTab";
 import { SongListPage } from "./pages/songs/SongListPage";
-import { MediaLibraryPage } from "./pages/songs/MediaLibraryPage";
-import { SongViewPage } from "./pages/songs/SongViewPage";
-import { SongFocusPage } from "./pages/songs/SongFocusPage";
-import { SongDetailLayout } from "./pages/songs/SongDetailLayout";
-import { SongMediaTab } from "./pages/songs/SongMediaTab";
-import { SongHistoryTab } from "./pages/songs/SongHistoryTab";
-import { SongEditPage } from "./pages/songs/SongEditPage";
-import { SetlistHubPage } from "./pages/setlists/SetlistHubPage";
-import { TemplatesPage } from "./pages/setlists/TemplatesPage";
-import { SchedulePage } from "./pages/setlists/SchedulePage";
-import { EventDetailPage } from "./pages/setlists/EventDetailPage";
-import { SetlistViewPage } from "./pages/setlists/SetlistViewPage";
-import { PerformPage } from "./pages/setlists/PerformPage";
-import { ArtistsPage } from "./pages/artists/ArtistsPage";
-import { AlbumsPage } from "./pages/artists/AlbumsPage";
-import { ArtistDetailLayout, ArtistProfileTab, ArtistSongsTab, ArtistAlbumsTab } from "./pages/artists/ArtistDetailPage";
+import { SongChartPage } from "./pages/songs/SongChartPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { ForgotPasswordPage } from "./pages/auth/ForgotPasswordPage";
 import { ResetPasswordPage } from "./pages/auth/ResetPasswordPage";
-import { SettingsProfileTab } from "./pages/settings/SettingsProfileTab";
-import { SettingsPreferencesTab } from "./pages/settings/SettingsPreferencesTab";
-import { SettingsIntegrationsTab } from "./pages/settings/SettingsIntegrationsTab";
-import { SettingsDataTab } from "./pages/settings/SettingsDataTab";
-import { AdminLayout } from "./pages/admin/AdminLayout";
-import { AdminOrganizationTab } from "./pages/admin/AdminOrganizationTab";
-import { AdminPage } from "./pages/admin/AdminPage";
-import { AdminAvailabilityTab } from "./pages/admin/AdminAvailabilityTab";
-import { AdminRolesTab } from "./pages/admin/AdminRolesTab";
-import { AdminActivityTab } from "./pages/admin/AdminActivityTab";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
-// All feature growth happens inside these sections as nested tab routes —
-// the sidebar stays at six items.
+// The editor pulls in CodeMirror; keep it out of the list/chart bundle.
+const SongEditPage = lazy(() => import("./pages/songs/SongEditPage").then((module) => ({ default: module.SongEditPage })));
+const SettingsPage = lazy(() => import("./pages/settings/SettingsPage").then((module) => ({ default: module.SettingsPage })));
+
+/*
+ * Tranche 1 is deliberately small: songs, one chart, one editor, one settings
+ * page. Set-list code (pages/setlists/{SetlistHubPage,SetlistViewPage,PerformPage},
+ * components/setlists/*, hooks/useConductor, hooks/useApiList,
+ * components/shared/{CardGrid,StatusBadge}, components/songs/MetronomeWidget,
+ * utils/{capo,key-compat}) stays in the tree, compiled and tested but
+ * unrouted, until tranche 2 mounts it again.
+ */
+
+function Loading() {
+  return (
+    <div className="flex min-h-[50vh] items-center justify-center">
+      <div className="spinner" />
+    </div>
+  );
+}
+
+function RedirectToChart() {
+  const { id } = useParams<{ id: string }>();
+  return <Navigate to={`/songs/${id}`} replace />;
+}
+
 export const router = createBrowserRouter([
   // ── Public routes (no AppShell) ──────────────
-  { path: "/", element: <LandingPage />, errorElement: <RouteErrorPage /> },
+  {
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <Navigate to="/songs" replace />
+      </ProtectedRoute>
+    ),
+    errorElement: <RouteErrorPage />,
+  },
   { path: "/login", element: <LoginPage /> },
   { path: "/forgot-password", element: <ForgotPasswordPage /> },
   { path: "/reset-password", element: <ResetPasswordPage /> },
   { path: "/shared/:token", element: <SharedSongPage /> },
   { path: "/shared/setlist/:token", element: <SharedSetlistPage /> },
 
-  // Rehearsal mode — full-bleed, no shell. The only screen used under pressure.
+  // The chart itself — full-bleed, no shell: the screen on the music stand.
   {
-    path: "/setlists/:id/perform",
+    path: "/songs/:id",
     element: (
       <ProtectedRoute>
-        <PerformPage />
+        <SongChartPage />
       </ProtectedRoute>
     ),
     errorElement: <RouteErrorPage />,
   },
-
-  // Single-song focus mode — full-bleed reader, no shell (story 3).
-  {
-    path: "/songs/:id/focus",
-    element: (
-      <ProtectedRoute>
-        <SongFocusPage />
-      </ProtectedRoute>
-    ),
-    errorElement: <RouteErrorPage />,
-  },
+  { path: "/songs/:id/focus", element: <RedirectToChart /> },
 
   // ── Authenticated routes (inside AppShell) ───
   {
@@ -84,128 +78,35 @@ export const router = createBrowserRouter([
     ),
     errorElement: <RouteErrorPage />,
     children: [
+      { path: "/songs", element: <SongListPage /> },
       {
-        path: "/dashboard",
+        path: "/songs/new",
         element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "Overview" },
-              { to: "analytics", label: "Analytics" },
-            ]}
-          />
+          <Suspense fallback={<Loading />}>
+            <SongEditPage />
+          </Suspense>
         ),
-        children: [
-          { index: true, element: <DashboardPage /> },
-          { path: "analytics", element: <DashboardAnalyticsTab /> },
-          // Old tab URLs → the consolidated Analytics views
-          { path: "usage", element: <Navigate to="/dashboard/analytics?view=usage" replace /> },
-          { path: "history", element: <Navigate to="/dashboard/analytics?view=history" replace /> },
-        ],
       },
       {
-        path: "/admin",
-        element: <AdminLayout />,
-        children: [
-          { index: true, element: <AdminOrganizationTab /> },
-          { path: "members", element: <AdminPage /> },
-          { path: "availability", element: <AdminAvailabilityTab /> },
-          { path: "roles", element: <AdminRolesTab /> },
-          { path: "activity", element: <AdminActivityTab /> },
-        ],
-      },
-      {
-        path: "/songs",
+        path: "/songs/:id/edit",
         element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "All songs" },
-              { to: "media", label: "Media library" },
-            ]}
-          />
+          <Suspense fallback={<Loading />}>
+            <SongEditPage />
+          </Suspense>
         ),
-        children: [
-          { index: true, element: <SongListPage /> },
-          { path: "media", element: <MediaLibraryPage /> },
-        ],
-      },
-      { path: "/songs/new", element: <SongEditPage /> },
-      {
-        path: "/songs/:id",
-        element: <SongDetailLayout />,
-        children: [
-          { index: true, element: <SongViewPage /> },
-          { path: "media", element: <SongMediaTab /> },
-          { path: "history", element: <SongHistoryTab /> },
-        ],
-      },
-      { path: "/songs/:id/edit", element: <SongEditPage /> },
-      {
-        path: "/setlists",
-        element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "Set lists" },
-              { to: "templates", label: "Templates" },
-              { to: "schedule", label: "Schedule" },
-            ]}
-          />
-        ),
-        children: [
-          { index: true, element: <SetlistHubPage /> },
-          { path: "templates", element: <TemplatesPage /> },
-          { path: "schedule", element: <SchedulePage /> },
-          // Old schedule tab URLs → consolidated Schedule views
-          { path: "events", element: <Navigate to="/setlists/schedule" replace /> },
-          { path: "calendar", element: <Navigate to="/setlists/schedule?view=calendar" replace /> },
-          { path: "rehearsals", element: <Navigate to="/setlists/schedule?view=rehearsals" replace /> },
-        ],
-      },
-      { path: "/setlists/new", element: <SetlistHubPage /> },
-      { path: "/setlists/events/:id", element: <EventDetailPage /> },
-      { path: "/setlists/:id", element: <SetlistViewPage /> },
-      {
-        path: "/artists",
-        element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "All artists" },
-              { to: "albums", label: "Albums" },
-            ]}
-          />
-        ),
-        children: [
-          { index: true, element: <ArtistsPage /> },
-          { path: "albums", element: <AlbumsPage /> },
-        ],
-      },
-      {
-        path: "/artists/:id",
-        element: <ArtistDetailLayout />,
-        children: [
-          { index: true, element: <ArtistProfileTab /> },
-          { path: "songs", element: <ArtistSongsTab /> },
-          { path: "albums", element: <ArtistAlbumsTab /> },
-        ],
       },
       {
         path: "/settings",
         element: (
-          <SectionLayout
-            tabs={[
-              { to: "", label: "Profile" },
-              { to: "preferences", label: "Preferences" },
-              { to: "integrations", label: "Integrations" },
-              { to: "data", label: "Import & export" },
-            ]}
-          />
+          <Suspense fallback={<Loading />}>
+            <SettingsPage />
+          </Suspense>
         ),
-        children: [
-          { index: true, element: <SettingsProfileTab /> },
-          { path: "preferences", element: <SettingsPreferencesTab /> },
-          { path: "integrations", element: <SettingsIntegrationsTab /> },
-          { path: "data", element: <SettingsDataTab /> },
-        ],
       },
+      // Bookmarks from the previous layout land somewhere sensible.
+      { path: "/settings/*", element: <Navigate to="/settings" replace /> },
+      { path: "/dashboard/*", element: <Navigate to="/songs" replace /> },
+      { path: "/admin/*", element: <Navigate to="/settings#team" replace /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },

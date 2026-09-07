@@ -5,7 +5,7 @@
  * with line numbers, severity, and human-readable messages.
  */
 
-import { correctChordSpelling } from "./chordpro-smart-tools";
+import { CHORD_REGEX } from "@vpc-music/shared";
 
 export type IssueSeverity = "error" | "warning";
 
@@ -193,4 +193,30 @@ export function validateChordPro(source: string): ValidationIssue[] {
   }
 
   return issues;
+}
+
+/**
+ * Suggest a conventional spelling for a chord the grammar rejects
+ * (" g / b " -> "G/B", "amin" -> "Am"), or null when no fix is obvious.
+ */
+export function correctChordSpelling(chord: string) {
+  const trimmed = chord.trim();
+  if (!trimmed || CHORD_REGEX.test(trimmed)) {
+    return null;
+  }
+
+  let corrected = trimmed.replace(/\s*\/\s*/g, "/").replace(/\s+/g, "");
+
+  corrected = corrected.replace(/^([a-g])([b#]?)/, (_match, note: string, accidental: string) => `${note.toUpperCase()}${accidental}`);
+  corrected = corrected.replace(/\/([a-g])([b#]?)/g, (_match, note: string, accidental: string) => `/${note.toUpperCase()}${accidental}`);
+  corrected = corrected.replace(/minor/gi, "m");
+  corrected = corrected.replace(/min/gi, "m");
+  corrected = corrected.replace(/major/gi, "maj");
+  corrected = corrected.replace(/maj/gi, "maj");
+  corrected = corrected.replace(/sus/gi, "sus");
+  corrected = corrected.replace(/add/gi, "add");
+  corrected = corrected.replace(/dim/gi, "dim");
+  corrected = corrected.replace(/aug/gi, "aug");
+
+  return CHORD_REGEX.test(corrected) ? corrected : null;
 }

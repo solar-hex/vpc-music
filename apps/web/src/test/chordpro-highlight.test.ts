@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { tokenizeLine, tokenizeChordPro, type Token } from "@/utils/chordpro-highlight";
+import { tokenizeLine, tokenizeChordPro } from "@/utils/chordpro-highlight";
 
 describe("chordpro-highlight", () => {
   // ── tokenizeLine ──

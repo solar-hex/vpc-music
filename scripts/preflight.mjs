@@ -20,7 +20,7 @@ function run(label, cmd) {
 console.log("\n🛫 VPC Music Preflight\n");
 
 run("TypeScript", "pnpm typecheck");
-run("Tests", "pnpm test");
+run("Tests", "pnpm test:all");
 run("Shared sync", "node scripts/check-shared-drift.mjs");
 
 console.log("\n── Summary ──");

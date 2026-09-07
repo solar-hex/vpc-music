@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen, fireEvent, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { ChordProRenderer } from "@/components/songs/ChordProRenderer";
 
 // Uses the REAL @vpc-music/shared engine (no mocks) — this is an integration
@@ -29,11 +29,8 @@ describe("bar grid rendering", () => {
   });
 
   it("transposes bar cells with target-key spelling", () => {
-    render(<ChordProRenderer content={CHART} songKey="G" />);
-    const plus = screen.getByText("+");
-    fireEvent.click(plus);
-    fireEvent.click(plus);
-    fireEvent.click(plus); // +3: G → Bb, a flat key
+    // +3: G -> Bb, a flat key (the host passes the net shift in)
+    render(<ChordProRenderer content={CHART} songKey="G" transpose={3} />);
     const grid = screen.getByTestId("bar-grid");
     expect(within(grid).getByText("Bb")).toBeInTheDocument(); // G → Bb
     expect(within(grid).getByText("Eb/G")).toBeInTheDocument(); // C/E → Eb/G

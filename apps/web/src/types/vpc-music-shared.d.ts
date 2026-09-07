@@ -48,6 +48,8 @@ declare module "@vpc-music/shared" {
   export interface ChordProLine {
     chords: ChordPosition[];
     lyrics: string;
+    /** An in-section note line ({ci: ...}); `chords` is empty and `lyrics` blank when set. */
+    note?: string;
   }
 
   export interface ChordProSection {
@@ -98,6 +100,7 @@ declare module "@vpc-music/shared" {
   export function parseChordPro(input: string): ChordProDocument;
   export function toChordProString(doc: ChordProDocument): string;
   export function convertChrdToChordPro(filename: string, input: string): LegacyChrdConversionResult;
+  export function normalizeLegacyText(input: string, warnings?: string[]): string;
 
   // ── Structured chart AST (lossless) ────────────
   export interface BarToken {
@@ -131,6 +134,9 @@ declare module "@vpc-music/shared" {
   export function transposeChordPro(input: string, semitones: number, preferFlats?: boolean): string;
   export function isChordToken(token: string): boolean;
   export function isSectionToken(token: string): boolean;
+  /** "*ab" style secondary-chord annotation tokens */
+  export function isSecondaryToken(token: string): boolean;
+  export function transposeToken(token: string, semitones: number, preferFlats?: boolean): string;
   export function interval(fromKey: string, toKey: string): number;
   export function keyPrefersFlats(key: string): boolean;
   export function normalizeEnharmonicKey(key: string | null | undefined): string;

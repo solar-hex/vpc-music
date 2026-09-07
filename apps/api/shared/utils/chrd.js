@@ -1,18 +1,32 @@
 /**
- * Legacy `.chrd` → ChordPro conversion helpers.
+ * Legacy `.chrd` -> ChordPro conversion.
  *
- * The legacy format is documented in README.md and uses:
- * - first line: title
- * - second line: key (optional)
- * - header metadata lines: author/year/notes
- * - `#` primary chord lines
- * - `^` secondary chord lines
- * - `@` lyric lines
- * - `*` comments/annotations
- * - blank line + first line of next block as a section header
+ * The legacy format (the old "Lead Sheets" PHP site):
+ * - line 1: title. A leading `~` marks a draft; the real library marks drafts
+ *   with a `~` filename prefix instead, so both are honoured.
+ * - line 2: key (optional)
+ * - further header lines: "Author: ...", "Year: ...", or unlabeled notes
+ * - blank-line separated blocks; the first unprefixed line of a block is its
+ *   section name ("Verse 1", "[Chorus]")
+ * - `#` primary chord line: bracketed chords positioned above the lyric
+ * - `^` secondary chord line: melody/bass notes (lowercase) or an alternate
+ *   voicing, shown in a second colour above the primary chords
+ * - `@` lyric line
+ * - `*` comment/annotation (italic in the old site, toggleable)
+ *
+ * Output conventions:
+ * - primary chords become inline `[G]` tokens at their lyric column
+ * - secondary chords become inline `[*ab]` annotation tokens at their column,
+ *   emitted before the primary token when both share a column
+ * - `*` lines become `{ci: ...}` (comment_italic) note lines
+ * - section names become `{comment: ...}` headers
  */
+import { isSectionToken, transposeToken } from "./transpose.js";
 
 const KEY_PATTERN = /^[A-G](?:b|#)?(?:m|min)?$/i;
+const PREFIX_PATTERN = /^\s*[#@^*]/;
+// Tokens the old library used on chord lines that are deliberately not chords
+const NON_CHORD_MARKERS = new Set(["|", "x", "X", "N.C.", "n.c.", "NC"]);
 
 const HEADER_DIRECTIVE_MAP = {
   artist: "artist",
@@ -32,12 +46,56 @@ const HEADER_DIRECTIVE_MAP = {
   time: "time",
 };
 
-function stripBom(input) {
-  return String(input || "").replace(/^\uFEFF/, "");
-}
+// Zero-width characters, non-ASCII spaces and typographic punctuation seen in
+// the old library (written as escapes so the source stays visible).
+const ZERO_WIDTH_CHARS = /[\u200B\u200C\u200D\uFEFF]/g;
+const NON_ASCII_SPACES = /[\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000]/g;
+const TYPOGRAPHIC_CHARS = /[\u2018\u2019\u201A\u201C\u201D\u201E\u2013\u2014\u2026]/g;
+const APOSTROPHE = String.fromCharCode(39);
+const QUOTE = String.fromCharCode(34);
+const TYPOGRAPHIC_MAP = {
+  "\u2018": APOSTROPHE,
+  "\u2019": APOSTROPHE,
+  "\u201A": APOSTROPHE,
+  "\u201C": QUOTE,
+  "\u201D": QUOTE,
+  "\u201E": QUOTE,
+  "\u2013": "-",
+  "\u2014": "-",
+  "\u2026": "...",
+};
 
-function normalizeLineEndings(input) {
-  return stripBom(input).replace(/\r\n?/g, "\n");
+/**
+ * Normalize the raw text of a legacy file: line endings, BOM, zero-width
+ * characters (which sat inside chord tokens in the old library), non-ASCII
+ * spaces (mapped one-for-one so columns still line up) and typographic
+ * quotes/dashes. Every replacement is reported as a warning.
+ * @param {string} input
+ * @param {string[]} [warnings]
+ * @returns {string}
+ */
+export function normalizeLegacyText(input, warnings = []) {
+  let text = String(input || "").replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
+
+  const zeroWidth = text.match(ZERO_WIDTH_CHARS);
+  if (zeroWidth) {
+    text = text.replace(ZERO_WIDTH_CHARS, "");
+    warnings.push(`Removed ${zeroWidth.length} zero-width character(s)`);
+  }
+
+  const spaces = text.match(NON_ASCII_SPACES);
+  if (spaces) {
+    text = text.replace(NON_ASCII_SPACES, " ");
+    warnings.push(`Replaced ${spaces.length} non-ASCII space character(s)`);
+  }
+
+  const typographic = text.match(TYPOGRAPHIC_CHARS);
+  if (typographic) {
+    text = text.replace(TYPOGRAPHIC_CHARS, (ch) => TYPOGRAPHIC_MAP[ch]);
+    warnings.push(`Replaced ${typographic.length} typographic quote(s)/dash(es) with ASCII`);
+  }
+
+  return text;
 }
 
 function sanitizeDirectiveValue(value) {
@@ -45,34 +103,26 @@ function sanitizeDirectiveValue(value) {
 }
 
 function isPrefixedLine(line) {
-  return /^\s*[#@^*]/.test(line);
+  return PREFIX_PATTERN.test(String(line || ""));
 }
 
 function stripLinePrefix(line, prefix) {
   return line.replace(new RegExp(`^\\s*\\${prefix}`), "");
 }
 
-function deriveTitleFromFilename(filename) {
-  return String(filename || "")
-    .split(/[\\/]/)
-    .pop()
-    ?.replace(/\.chrd$/i, "")
-    ?.trim() || "Untitled";
+function baseName(filename) {
+  return String(filename || "").split(/[\\/]/).pop() || "";
 }
 
-function normalizeDraftTitle(rawTitle) {
-  const trimmed = String(rawTitle || "Untitled").trim();
-  if (trimmed.startsWith("~")) {
-    return {
-      title: trimmed.slice(1).trim() || "Untitled",
-      isDraft: true,
-    };
-  }
+function deriveTitleFromFilename(filename) {
+  return baseName(filename).replace(/\.chrd$/i, "").replace(/^~/, "").trim() || "Untitled";
+}
 
-  return {
-    title: trimmed || "Untitled",
-    isDraft: false,
-  };
+function normalizeDraftTitle(rawTitle, filename) {
+  const trimmed = String(rawTitle || "").trim();
+  const titleDraft = trimmed.startsWith("~");
+  const title = (titleDraft ? trimmed.slice(1) : trimmed).trim() || deriveTitleFromFilename(filename);
+  return { title, isDraft: titleDraft || baseName(filename).startsWith("~") };
 }
 
 function isLikelySongKey(value) {
@@ -84,14 +134,10 @@ function parseHeaderLine(line) {
   if (!match) return null;
 
   const [, rawKey, rawValue] = match;
-  const normalizedKey = rawKey.trim().toLowerCase();
-  const directive = HEADER_DIRECTIVE_MAP[normalizedKey];
+  const directive = HEADER_DIRECTIVE_MAP[rawKey.trim().toLowerCase()];
   if (!directive) return null;
 
-  return {
-    key: directive,
-    value: sanitizeDirectiveValue(rawValue),
-  };
+  return { key: directive, value: sanitizeDirectiveValue(rawValue) };
 }
 
 function parseTempo(value) {
@@ -99,128 +145,141 @@ function parseTempo(value) {
   return /^\d+$/.test(String(value).trim()) ? Number(value) : null;
 }
 
-function mergeChordLineWithLyrics(chordLine, lyricLine) {
-  const positions = [];
-  for (const match of chordLine.matchAll(/\S+/g)) {
-    positions.push({ chord: match[0], col: match.index || 0 });
-  }
+function truncate(text, max = 40) {
+  const value = String(text);
+  return value.length > max ? `${value.slice(0, max - 3)}...` : value;
+}
 
-  let lyric = lyricLine;
+function stripBrackets(token) {
+  return token.replace(/^\[+/, "").replace(/\]+$/, "");
+}
+
+/** A primary-line token the transposer understands (it changes when moved a semitone), or a known marker. */
+function isChordLike(raw) {
+  return NON_CHORD_MARKERS.has(raw) || transposeToken(raw, 1) !== raw;
+}
+
+/**
+ * Chord tokens with their columns from a `#` or `^` line body (prefix
+ * removed). The column is that of the chord NAME, not its bracket: in the old
+ * library "[G]" over "Amazing" puts the G on the "m" (the downbeat syllable),
+ * which is also how the old site's own OnSong export placed chords.
+ */
+function tokenizeChordLine(body) {
+  const tokens = [];
+  for (const match of body.matchAll(/\S+/g)) {
+    // "[Ebm]*" — anything after the closing bracket is a decoration we drop
+    const bracketed = match[0].match(/^(\[+)([^\]]*)\](.*)$/);
+    const raw = bracketed ? bracketed[2] : stripBrackets(match[0]);
+    const leading = bracketed ? bracketed[1].length : 0;
+    const decoration = bracketed ? bracketed[3] : "";
+    if (raw) tokens.push({ raw, col: match.index + leading, decoration });
+  }
+  return tokens;
+}
+
+/** Insert bracket tokens into a lyric at their columns (earlier columns first, lower rank first on ties). */
+function insertTokens(lyric, tokens) {
+  const sorted = [...tokens].sort((a, b) => a.col - b.col || a.rank - b.rank);
+  let result = lyric;
   let offset = 0;
-  for (const { chord, col } of positions) {
-    const insertAt = Math.min(col + offset, lyric.length);
-    lyric = lyric.slice(0, insertAt) + `[${chord}]` + lyric.slice(insertAt);
-    offset += chord.length + 2;
+  for (const { col, text } of sorted) {
+    const insertAt = Math.min(col + offset, result.length);
+    result = result.slice(0, insertAt) + text + result.slice(insertAt);
+    offset += text.length;
   }
-
-  return lyric.trimEnd();
+  return result;
 }
 
-function convertChordOnlyLine(chordLine) {
-  return chordLine
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((token) => (token === "|" ? token : `[${token}]`))
-    .join(" ");
+function cleanSectionName(line) {
+  return sanitizeDirectiveValue(String(line).trim().replace(/^\[(.*)\]$/, "$1"));
 }
 
-function buildSecondaryChordComment(line) {
-  const content = stripLinePrefix(line, "^").trimEnd();
-  if (!content.trim()) return "";
-  return `{comment: Secondary chords: ${sanitizeDirectiveValue(content)}}`;
-}
-
-function flushBlock(blockLines, convertedLines, warnings) {
+function flushBlock(blockLines, out, warnings) {
   if (blockLines.length === 0) return;
 
   let index = 0;
-  const hasPrefixedContent = blockLines.some((line) => isPrefixedLine(line));
-
-  if (hasPrefixedContent && !isPrefixedLine(blockLines[0])) {
-    const sectionHeader = blockLines[0].trim();
-    if (sectionHeader) {
-      convertedLines.push(`{comment: ${sanitizeDirectiveValue(sectionHeader)}}`);
-    }
+  const hasPrefixed = blockLines.some(isPrefixedLine);
+  if (!isPrefixedLine(blockLines[0]) && (hasPrefixed || isSectionToken(cleanSectionName(blockLines[0])))) {
+    const header = cleanSectionName(blockLines[0]);
+    if (header) out.push(`{comment: ${header}}`);
     index = 1;
   }
+  if (!hasPrefixed && index < blockLines.length) {
+    warnings.push(`Block without line prefixes kept as plain text: "${truncate(blockLines[index].trim())}"`);
+  }
+
+  // Chord tokens from `#`/`^` lines waiting for the `@` lyric they sit above.
+  let pending = [];
+  let sequence = 0;
+  const pendingHas = (secondary) => pending.some((token) => token.secondary === secondary);
+  const flushPending = () => {
+    if (pending.length === 0) return;
+    const width = Math.max(...pending.map((token) => token.col));
+    out.push(insertTokens(" ".repeat(width), pending).trim());
+    pending = [];
+  };
 
   while (index < blockLines.length) {
     const rawLine = blockLines[index];
+    index += 1;
     const trimmed = rawLine.trim();
-
-    if (!trimmed) {
-      index += 1;
-      continue;
-    }
+    if (!trimmed) continue;
 
     if (!isPrefixedLine(rawLine)) {
-      convertedLines.push(trimmed);
-      index += 1;
+      flushPending();
+      out.push(trimmed);
+      if (hasPrefixed) warnings.push(`Unprefixed line kept as plain text: "${truncate(trimmed)}"`);
       continue;
     }
 
     const prefix = trimmed[0];
+    const body = stripLinePrefix(rawLine, prefix);
 
     if (prefix === "*") {
-      const comment = sanitizeDirectiveValue(stripLinePrefix(rawLine, "*"));
-      if (comment) {
-        convertedLines.push(`{comment: ${comment}}`);
-      }
-      index += 1;
+      flushPending();
+      const note = sanitizeDirectiveValue(body);
+      if (note) out.push(`{ci: ${note}}`);
       continue;
     }
 
-    if (prefix === "^") {
-      const secondaryComment = buildSecondaryChordComment(rawLine);
-      if (secondaryComment) {
-        convertedLines.push(secondaryComment);
-      }
-      index += 1;
+    // "#[Verse 2]" — a section header written on a chord line
+    const headerOnChordLine = prefix === "#" ? body.trim().match(/^\[([^\]]+)\]$/) : null;
+    if (headerOnChordLine && isSectionToken(headerOnChordLine[1])) {
+      flushPending();
+      out.push(`{comment: ${sanitizeDirectiveValue(headerOnChordLine[1])}}`);
       continue;
     }
 
-    if (prefix === "@") {
-      convertedLines.push(stripLinePrefix(rawLine, "@").trimEnd());
-      index += 1;
-      continue;
-    }
-
-    if (prefix === "#") {
-      const primaryChordLine = stripLinePrefix(rawLine, "#");
-      let lookahead = index + 1;
-      const secondaryComments = [];
-
-      while (lookahead < blockLines.length && blockLines[lookahead].trim().startsWith("^")) {
-        const secondaryComment = buildSecondaryChordComment(blockLines[lookahead]);
-        if (secondaryComment) {
-          secondaryComments.push(secondaryComment);
+    if (prefix === "#" || prefix === "^") {
+      const secondary = prefix === "^";
+      // Two primary (or two secondary) lines in a row means the earlier one
+      // had no lyric of its own: emit it as a chord-only line.
+      if (pendingHas(secondary)) flushPending();
+      sequence += 1;
+      for (const token of tokenizeChordLine(body)) {
+        if (!secondary && !isChordLike(token.raw)) {
+          warnings.push(`Unrecognized chord "${token.raw}"`);
         }
-        lookahead += 1;
+        if (token.decoration) {
+          warnings.push(`Dropped "${token.decoration}" after chord "${token.raw}"`);
+        }
+        pending.push({
+          col: token.col,
+          secondary,
+          rank: (secondary ? 0 : 1) * 1000 + sequence,
+          text: token.raw === "|" ? "|" : `[${secondary ? "*" : ""}${token.raw}]`,
+        });
       }
-
-      if (secondaryComments.length > 0) {
-        convertedLines.push(...secondaryComments);
-      }
-
-      if (lookahead < blockLines.length && blockLines[lookahead].trim().startsWith("@")) {
-        const lyricLine = stripLinePrefix(blockLines[lookahead], "@");
-        convertedLines.push(mergeChordLineWithLyrics(primaryChordLine, lyricLine));
-        index = lookahead + 1;
-        continue;
-      }
-
-      const chordOnlyLine = convertChordOnlyLine(primaryChordLine);
-      if (chordOnlyLine) {
-        convertedLines.push(chordOnlyLine);
-      }
-      index = lookahead;
       continue;
     }
 
-    convertedLines.push(trimmed);
-    index += 1;
+    // `@` lyric line: merge every pending chord token into it by column.
+    out.push(insertTokens(body, pending).trim());
+    pending = [];
   }
+
+  flushPending();
 }
 
 /**
@@ -230,29 +289,24 @@ function flushBlock(blockLines, convertedLines, warnings) {
  * @returns {{ title: string, chordProContent: string, metadata: { title: string, artist: string | null, key: string | null, tempo: number | null, year: string | null, isDraft: boolean }, warnings: string[] }}
  */
 export function convertChrdToChordPro(filename, rawContent) {
-  const normalized = normalizeLineEndings(rawContent);
-  const sourceLines = normalized.split("\n");
   const warnings = [];
+  const sourceLines = normalizeLegacyText(rawContent, warnings).split("\n");
 
-  const rawTitle = sourceLines[0]?.trim() || deriveTitleFromFilename(filename);
-  const { title, isDraft } = normalizeDraftTitle(rawTitle || deriveTitleFromFilename(filename));
-  const directives = new Map();
-  directives.set("title", title);
+  const rawTitle = sourceLines[0]?.trim() || "";
+  const { title, isDraft } = normalizeDraftTitle(rawTitle, filename);
+  const directives = new Map([["title", title]]);
+  let index = rawTitle ? 1 : 0;
 
-  const metadataComments = [];
-  let index = sourceLines[0]?.trim() ? 1 : 0;
-
+  // Header: key, "Label: value" metadata, and unlabeled notes, up to the
+  // first blank line or the first prefixed line.
   while (index < sourceLines.length) {
-    const trimmed = sourceLines[index].trim();
-
+    const line = sourceLines[index];
+    const trimmed = line.trim();
     if (!trimmed) {
       index += 1;
       break;
     }
-
-    if (isPrefixedLine(sourceLines[index])) {
-      break;
-    }
+    if (isPrefixedLine(line)) break;
 
     if (!directives.has("key") && isLikelySongKey(trimmed)) {
       directives.set("key", trimmed);
@@ -260,44 +314,47 @@ export function convertChrdToChordPro(filename, rawContent) {
       continue;
     }
 
-    const parsedHeader = parseHeaderLine(trimmed);
-    if (parsedHeader) {
-      if (!directives.has(parsedHeader.key) && parsedHeader.value) {
-        directives.set(parsedHeader.key, parsedHeader.value);
-      }
-    } else {
-      metadataComments.push(trimmed);
-    }
-
-    index += 1;
-  }
-
-  const convertedLines = [];
-  for (const comment of metadataComments) {
-    convertedLines.push(`{comment: ${sanitizeDirectiveValue(comment)}}`);
-  }
-
-  const currentBlock = [];
-  const remainingLines = sourceLines.slice(index);
-  for (const line of [...remainingLines, ""]) {
-    if (line.trim() === "") {
-      flushBlock(currentBlock, convertedLines, warnings);
-      if (currentBlock.length > 0 && convertedLines.at(-1) !== "") {
-        convertedLines.push("");
-      }
-      currentBlock.length = 0;
+    const header = parseHeaderLine(trimmed);
+    if (header) {
+      if (header.value && !directives.has(header.key)) directives.set(header.key, header.value);
+      index += 1;
       continue;
     }
 
-    currentBlock.push(line);
+    // An unlabeled line directly followed by prefixed content (or that reads
+    // like a section name) is the first section's name, not metadata.
+    if (isPrefixedLine(sourceLines[index + 1] ?? "") || isSectionToken(trimmed)) break;
+
+    const value = sanitizeDirectiveValue(trimmed);
+    if (!directives.has("artist")) {
+      directives.set("artist", value);
+      warnings.push(`Unlabeled header line used as artist: "${truncate(trimmed)}"`);
+    } else {
+      directives.set("subtitle", [directives.get("subtitle"), value].filter(Boolean).join(" - "));
+      warnings.push(`Unlabeled header line kept as subtitle: "${truncate(trimmed)}"`);
+    }
+    index += 1;
   }
 
-  while (convertedLines[convertedLines.length - 1] === "") {
-    convertedLines.pop();
+  if (!directives.has("key")) warnings.push("No key line found");
+
+  const out = [];
+  const block = [];
+  for (const line of [...sourceLines.slice(index), ""]) {
+    if (line.trim() === "") {
+      if (block.length > 0) {
+        flushBlock(block, out, warnings);
+        out.push("");
+        block.length = 0;
+      }
+      continue;
+    }
+    block.push(line);
   }
+  while (out.at(-1) === "") out.pop();
 
   const directiveLines = [...directives.entries()].map(([key, value]) => `{${key}: ${sanitizeDirectiveValue(value)}}`);
-  const chordProContent = [...directiveLines, "", ...convertedLines].join("\n").trim();
+  const chordProContent = [...directiveLines, "", ...out].join("\n").trim();
 
   return {
     title,

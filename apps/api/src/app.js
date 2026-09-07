@@ -19,7 +19,7 @@ import { annotationRoutes } from "./features/songs/annotationRoutes.js";
 import { orgRoutes } from "./features/organizations/routes.js";
 import { artistRoutes } from "./features/artists/routes.js";
 import { notificationRoutes } from "./features/notifications/routes.js";
-import { assistantRoutes } from "./features/assistant/routes.js";
+
 import { roleRoutes } from "./features/roles/routes.js";
 import { albumRoutes } from "./features/albums/routes.js";
 import { mediaRoutes, UPLOADS_DIR } from "./features/media/routes.js";
@@ -70,7 +70,7 @@ app.use("/events", eventRoutes);
 app.use("/organizations", orgRoutes);
 app.use("/artists", artistRoutes);
 app.use("/notifications", notificationRoutes);
-app.use("/assistant", assistantRoutes);
+
 app.use("/roles", roleRoutes);
 app.use("/albums", albumRoutes);
 app.use("/media", mediaRoutes);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
 import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
@@ -44,12 +44,16 @@ export function LoginPage() {
   const [needsPassword, setNeedsPassword] = useState(false);
   const [displayName, setDisplayName] = useState("");
 
+  // Where to go after sign-in: the page that bounced us here, else the songs
+  const location = useLocation();
+  const from = (location.state as { from?: string } | null)?.from || "/songs";
+
   // Redirect if already logged in
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/dashboard", { replace: true });
+      navigate(from, { replace: true });
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate, from]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,15 +69,15 @@ export function LoginPage() {
           toast.error("Password must be at least 8 characters");
           return;
         }
-        const { user, token } = await authApi.setPassword(email, password);
+        const { user } = await authApi.setPassword(email, password);
         setUser(user as unknown as User);
         toast.success("Password set. Welcome!");
-        navigate("/dashboard");
+        navigate(from);
       } else {
         // Normal login - first send email only to check needsPassword
         await login(email, password);
         toast.success("Welcome back!");
-        navigate("/dashboard");
+        navigate(from);
       }
     } catch (err: any) {
       const body = err?.body;
@@ -96,7 +100,7 @@ export function LoginPage() {
       if (result.success && result.user) {
         setUser(result.user as unknown as User);
         toast.success("Welcome back!");
-        navigate("/dashboard");
+        navigate(from);
       } else if (result.error) {
         setModalMessage(result.error);
       } else {
@@ -258,14 +262,6 @@ export function LoginPage() {
           </form>
         )}
 
-        <p className="text-center text-sm text-[hsl(var(--muted-foreground))]">
-          <Link
-            to="/"
-            className="text-[hsl(var(--secondary))] hover:underline"
-          >
-            ← Back to home
-          </Link>
-        </p>
 
         {/* Sandbox quick-login buttons */}
         {IS_SANDBOX && (

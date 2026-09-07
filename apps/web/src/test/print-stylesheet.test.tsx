@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import fs from "node:fs";
@@ -82,12 +82,17 @@ vi.mock("@/contexts/ThemeContext", () => ({
   useTheme: () => ({ resolvedTheme: "dark", toggleTheme: vi.fn() }),
 }));
 
+vi.mock("@/contexts/ConnectivityContext", () => ({
+  useConnectivity: () => ({ isOnline: true, pendingOfflineEditCount: 0, syncingOfflineEdits: false }),
+}));
+
 // Minimal mock for ChordProRenderer
 vi.mock("@/components/songs/ChordProRenderer", () => ({
   ChordProRenderer: ({ content }: { content: string }) => (
     <div data-testid="chordpro-renderer">{content}</div>
   ),
   AutoScroll: () => <div data-testid="auto-scroll">AutoScroll</div>,
+  chartSections: () => [{ id: "section-0", label: "Verse 1" }],
 }));
 
 const mockSong = {
@@ -102,7 +107,7 @@ const mockSong = {
 
 // ---------- Imports ----------
 
-import { SongViewPage } from "@/pages/songs/SongViewPage";
+import { SongChartPage } from "@/pages/songs/SongChartPage";
 import { SharedSongPage } from "@/pages/SharedSongPage";
 
 // ---------- Helpers ----------
@@ -111,7 +116,7 @@ function renderSongView() {
   return render(
     <MemoryRouter initialEntries={["/songs/s1"]}>
       <Routes>
-        <Route path="/songs/:id" element={<SongViewPage />} />
+        <Route path="/songs/:id" element={<SongChartPage />} />
       </Routes>
     </MemoryRouter>,
   );
@@ -135,9 +140,9 @@ describe("Print stylesheet feature", () => {
     mockGet.mockResolvedValue({ song: mockSong, variations: [] });
   });
 
-  // ===================== SongViewPage =====================
+  // ===================== SongChartPage =====================
 
-  describe("SongViewPage — print action", () => {
+  describe("SongChartPage — print action", () => {
     it("offers Print inside the More actions menu", async () => {
       renderSongView();
       const user = userEvent.setup();
@@ -157,13 +162,11 @@ describe("Print stylesheet feature", () => {
       printSpy.mockRestore();
     });
 
-    it("toolbar has print-hidden class for print media", async () => {
+    it("toolbar and section bar have print-hidden class for print media", async () => {
       renderSongView();
-      const user = userEvent.setup();
-      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
-      await user.click(screen.getByRole("button", { name: /more actions/i }));
-      const toolbar = screen.getByRole("menuitem", { name: "Print" }).closest("div.print-hidden");
-      expect(toolbar).toBeInTheDocument();
+      await waitFor(() => screen.getByRole("toolbar", { name: /chart controls/i }));
+      expect(screen.getByRole("toolbar", { name: /chart controls/i })).toHaveClass("print-hidden");
+      expect(screen.getByRole("navigation", { name: /song sections/i })).toHaveClass("print-hidden");
     });
 
     it("song content area has print-sheet class", async () => {

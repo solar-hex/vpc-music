@@ -94,12 +94,7 @@ export function SharedSetlistPage() {
                 </span>
               </div>
               {item.notes && <p className="text-xs italic text-[hsl(var(--muted-foreground))]">{item.notes}</p>}
-              <ChordProRenderer
-                content={item.content}
-                songKey={item.songKey}
-                baseTranspose={baseTranspose}
-                showControls={false}
-              />
+              <ChordProRenderer content={item.content} songKey={item.songKey} transpose={baseTranspose} />
             </section>
           );
         })}

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { openOAuthPopup, type OAuthResult } from "@/lib/oauth-popup";
+import { openOAuthPopup } from "@/lib/oauth-popup";
 
 describe("openOAuthPopup", () => {
   let originalOpen: typeof window.open;

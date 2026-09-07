@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { SongEditPage } from "@/pages/songs/SongEditPage";
@@ -8,16 +8,13 @@ import { SongEditPage } from "@/pages/songs/SongEditPage";
 const mockGet = vi.fn();
 const mockCreate = vi.fn();
 const mockUpdate = vi.fn();
-const mockVariationCreate = vi.fn();
-const mockVariationUpdate = vi.fn();
 const mockNavigate = vi.fn();
 const mockImportChrd = vi.fn();
 const mockPreviewImportChrd = vi.fn();
 const mockImportOnSong = vi.fn();
 const mockPreviewImportOnSong = vi.fn();
-const mockImportPdf = vi.fn();
-const mockPreviewImportPdf = vi.fn();
 const mockFindDuplicates = vi.fn();
+const mockInvalidateLibrary = vi.fn();
 
 vi.mock("@/lib/api-client", () => ({
   songsApi: {
@@ -30,29 +27,25 @@ vi.mock("@/lib/api-client", () => ({
     previewImportChrd: (...args: any[]) => mockPreviewImportChrd(...args),
     importOnSong: (...args: any[]) => mockImportOnSong(...args),
     previewImportOnSong: (...args: any[]) => mockPreviewImportOnSong(...args),
-    importPdf: (...args: any[]) => mockImportPdf(...args),
-    previewImportPdf: (...args: any[]) => mockPreviewImportPdf(...args),
-  },
-  variationsApi: {
-    create: (...args: any[]) => mockVariationCreate(...args),
-    update: (...args: any[]) => mockVariationUpdate(...args),
+    importPdf: vi.fn(),
+    previewImportPdf: vi.fn(),
   },
 }));
 
-vi.mock("@/components/songs/ChordProRenderer", () => ({
-  ChordProRenderer: ({ content, songKey }: { content: string; songKey?: string }) => (
-    <div data-testid="import-preview-renderer">
-      preview:{content}::{songKey || ""}
-    </div>
+vi.mock("@/hooks/useSongLibrary", () => ({
+  invalidateSongLibrary: (...args: any[]) => mockInvalidateLibrary(...args),
+}));
+
+// The editor has its own tests; a textarea stands in for it here.
+vi.mock("@/components/songs/ChordProEditor", () => ({
+  ChordProEditor: ({ value, onChange }: { value: string; onChange: (value: string) => void }) => (
+    <textarea aria-label="ChordPro" value={value} onChange={(event) => onChange(event.target.value)} />
   ),
 }));
 
 vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual("react-router-dom");
-  return {
-    ...actual,
-    useNavigate: () => mockNavigate,
-  };
+  const actual = await vi.importActual<typeof import("react-router-dom")>("react-router-dom");
+  return { ...actual, useNavigate: () => mockNavigate };
 });
 
 vi.mock("sonner", () => ({
@@ -60,39 +53,30 @@ vi.mock("sonner", () => ({
 }));
 
 vi.mock("@vpc-music/shared", () => ({
-  transposeKeyName: (key: string) => key,
-  keyPrefersFlats: () => false,
-  parseBarLine: () => ({ measures: [] }),
-  ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
-  CHORD_REGEX: /^[A-G][b#]?(?:m|min|maj|dim|aug|sus[24]?|add)?[0-9]?(?:\/[A-G][b#]?)?$/,
-  PRESET_TAGS: ["worship", "praise", "hymn", "classic", "contemporary"],
+  CHROMATIC_SHARP: ["C", "D", "E", "F", "G", "A", "B"],
+  CHROMATIC_FLAT: ["C", "D", "E", "F", "G", "A", "B"],
+  PRESET_TAGS: ["worship", "praise", "hymn"],
   parseChordPro: (input: string) => ({
     directives: {
       ...(input.match(/\{title:\s*(.*?)\}/i)?.[1] ? { title: input.match(/\{title:\s*(.*?)\}/i)?.[1] } : {}),
       ...(input.match(/\{key:\s*(.*?)\}/i)?.[1] ? { key: input.match(/\{key:\s*(.*?)\}/i)?.[1] } : {}),
-      ...(input.match(/\{artist:\s*(.*?)\}/i)?.[1] ? { artist: input.match(/\{artist:\s*(.*?)\}/i)?.[1] } : {}),
-      ...(input.match(/\{tempo:\s*(.*?)\}/i)?.[1] ? { tempo: input.match(/\{tempo:\s*(.*?)\}/i)?.[1] } : {}),
     },
     sections: [],
+    chordDefinitions: {},
   }),
 }));
 
-let mockAuthValue: any = {
-  user: { id: "u1", email: "test@test.com", displayName: "Test", role: "owner" },
-  activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-};
+let mockAuthValue: any;
+vi.mock("@/contexts/ThemeContext", () => ({
+  useTheme: () => ({ keyNotation: "flats" }),
+}));
+
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockAuthValue,
 }));
 
 const mockRefreshPendingOfflineEditCount = vi.fn();
-let mockConnectivityValue = {
-  isOnline: true,
-  syncingOfflineEdits: false,
-  pendingOfflineEditCount: 0,
-  refreshPendingOfflineEditCount: mockRefreshPendingOfflineEditCount,
-};
-
+let mockConnectivityValue: any;
 vi.mock("@/contexts/ConnectivityContext", () => ({
   useConnectivity: () => mockConnectivityValue,
 }));
@@ -101,7 +85,6 @@ const mockEnqueueOfflineSongEdit = vi.fn();
 const mockSaveCachedSong = vi.fn();
 const mockLoadCachedSong = vi.fn();
 const mockIsOfflineRequestError = vi.fn();
-
 vi.mock("@/lib/offline-cache", () => ({
   enqueueOfflineSongEdit: (...args: any[]) => mockEnqueueOfflineSongEdit(...args),
   saveCachedSong: (...args: any[]) => mockSaveCachedSong(...args),
@@ -109,688 +92,256 @@ vi.mock("@/lib/offline-cache", () => ({
   isOfflineRequestError: (...args: any[]) => mockIsOfflineRequestError(...args),
 }));
 
-function renderNewSong() {
+const existingSong = {
+  id: "song-1",
+  title: "Amazing Grace",
+  key: "G",
+  tempo: 72,
+  artist: "John Newton",
+  year: "1779",
+  tags: "hymn",
+  content: "{title: Amazing Grace}\n[G]Amazing grace",
+  isDraft: false,
+  updatedAt: "2026-01-01T00:00:00.000Z",
+};
+
+function renderAt(initialEntry: string | { pathname: string; state?: unknown }) {
   const router = createMemoryRouter(
     [
       { path: "/songs/new", element: <SongEditPage /> },
-      { path: "/songs", element: <div>Songs List</div> },
-    ],
-    { initialEntries: ["/songs/new"] },
-  );
-
-  return render(
-    <RouterProvider router={router} />,
-  );
-}
-
-function renderEditSong(id = "song-1") {
-  const router = createMemoryRouter(
-    [
       { path: "/songs/:id/edit", element: <SongEditPage /> },
       { path: "/songs/:id", element: <div>Song View</div> },
       { path: "/songs", element: <div>Songs List</div> },
     ],
-    { initialEntries: [`/songs/${id}/edit`] },
+    { initialEntries: [initialEntry as any] },
   );
-
-  return render(
-    <RouterProvider router={router} />,
-  );
+  return render(<RouterProvider router={router} />);
 }
 
-function renderEditSongVariation(id = "song-1", variationId = "v1") {
-  const router = createMemoryRouter(
-    [
-      { path: "/songs/:id/edit", element: <SongEditPage /> },
-      { path: "/songs/:id", element: <div>Song View</div> },
-      { path: "/songs", element: <div>Songs List</div> },
-    ],
-    { initialEntries: [`/songs/${id}/edit?variation=${variationId}`] },
-  );
+const renderNew = () => renderAt("/songs/new");
+const renderEdit = () => renderAt("/songs/song-1/edit");
 
-  return render(
-    <RouterProvider router={router} />,
-  );
+function chooseFiles(input: HTMLElement, files: File[]) {
+  Object.defineProperty(input, "files", { value: files, configurable: true });
+  fireEvent.change(input);
 }
 
 describe("SongEditPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockImportChrd.mockResolvedValue({ song: { id: "imported-chrd" } });
-    mockPreviewImportChrd.mockResolvedValue({
-      chordPro: "{title: Test}\n{key: G}\n\n[G]Hello",
-      metadata: { title: "Test", key: "G", artist: null, tempo: null },
-    });
-    mockImportOnSong.mockResolvedValue({ song: { id: "imported-onsong" }, chordPro: "{title: Test}" });
-    mockPreviewImportOnSong.mockResolvedValue({
-      chordPro: "{title: Test Song}\n{key: C}\n\n[C]Hello",
-      metadata: { title: "Test Song", key: "C", artist: null, tempo: null },
-    });
-    mockImportPdf.mockResolvedValue({ song: { id: "imported-pdf" }, chordPro: "{title: Test}" });
-    mockPreviewImportPdf.mockResolvedValue({
-      chordPro: "{title: PDF Song}\n{tempo: 88}\n\n[C]Hello",
-      metadata: { title: "PDF Song", key: null, artist: null, tempo: 88 },
-    });
-    mockVariationCreate.mockResolvedValue({ variation: { id: "arr-1", name: "Sunday arrangement", content: "{comment: Chorus}" } });
-    mockFindDuplicates.mockResolvedValue({ matches: [] });
-    mockConnectivityValue = {
-      isOnline: true,
-      syncingOfflineEdits: false,
-      pendingOfflineEditCount: 0,
-      refreshPendingOfflineEditCount: mockRefreshPendingOfflineEditCount,
+    mockAuthValue = {
+      user: { id: "u1", email: "test@test.com", displayName: "Test", role: "member" },
+      activeOrg: { id: "org1", name: "Test Church", role: "musician" },
     };
+    mockConnectivityValue = { isOnline: true, syncingOfflineEdits: false, pendingOfflineEditCount: 0, refreshPendingOfflineEditCount: mockRefreshPendingOfflineEditCount };
+    mockGet.mockResolvedValue({ song: existingSong, variations: [] });
+    mockCreate.mockResolvedValue({ song: { id: "new-1" } });
+    mockUpdate.mockResolvedValue({ song: existingSong });
+    mockFindDuplicates.mockResolvedValue({ matches: [] });
+    mockPreviewImportChrd.mockResolvedValue({
+      chordPro: "{title: Imported}\n{key: D}\n\n[D]Hello",
+      metadata: { title: "Imported", key: "D", artist: "Someone", tempo: 90 },
+    });
+    mockImportChrd.mockResolvedValue({ song: { id: "imported-1", title: "First" } });
+    mockImportOnSong.mockResolvedValue({ song: { id: "imported-2", title: "Second" } });
     mockLoadCachedSong.mockReturnValue(null);
     mockIsOfflineRequestError.mockReturnValue(false);
   });
 
-  // ===================== POSITIVE — New Song =====================
-
-  describe("positive — create new song", () => {
-    it("renders New Song heading", () => {
-      renderNewSong();
-      expect(screen.getByText("New Song")).toBeInTheDocument();
-    });
-
-    it("renders all form fields", () => {
-      renderNewSong();
-      expect(screen.getByPlaceholderText("Song title")).toBeInTheDocument();
-      expect(screen.getByPlaceholderText("Wedding, Church, Special Event")).toBeInTheDocument();
-      expect(screen.getByText("Select key")).toBeInTheDocument();
-      expect(screen.getByPlaceholderText("120")).toBeInTheDocument();
-      expect(screen.getByPlaceholderText("Artist or composer")).toBeInTheDocument();
-      expect(screen.getByPlaceholderText("Optional alternate names, comma separated")).toBeInTheDocument();
-      expect(screen.getByPlaceholderText("Optional spoken cue or callout")).toBeInTheDocument();
-      expect(screen.getByText("Tags")).toBeInTheDocument();
-    });
-
-    it("renders Create Song button", () => {
-      renderNewSong();
-      expect(screen.getByRole("button", { name: /create song/i })).toBeInTheDocument();
-    });
-
-    it("has cancel link back to songs", () => {
-      renderNewSong();
-      expect(screen.getByRole("link", { name: /cancel/i })).toHaveAttribute("href", "/songs");
-    });
-
-    it("creates song and navigates on success", async () => {
-      mockCreate.mockResolvedValue({ song: { id: "new-1" } });
-      renderNewSong();
-      const user = userEvent.setup();
-      await user.type(screen.getByPlaceholderText("Song title"), "New Song Title");
-      await user.type(screen.getByPlaceholderText("Wedding, Church, Special Event"), "Church");
-      await user.type(screen.getByPlaceholderText("Optional alternate names, comma separated"), "Grace Song, Old Hymn");
-      await user.type(screen.getByPlaceholderText("Optional spoken cue or callout"), "Band comes in loud");
-      await user.click(screen.getByRole("button", { name: /create song/i }));
-
-      await waitFor(() => {
-        expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({
-          title: "New Song Title",
-          category: "Church",
-          aka: "Grace Song, Old Hymn",
-          shout: "Band comes in loud",
-        }));
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/new-1");
-      });
-    });
-
-    it("creates song with tags added through the tag input", async () => {
-      mockCreate.mockResolvedValue({ song: { id: "new-2" } });
-      renderNewSong();
-      const user = userEvent.setup();
-
-      await user.type(screen.getByPlaceholderText("Song title"), "Tagged Song");
-      await user.type(screen.getByTestId("tag-text-input"), "worship");
-      await user.keyboard("{Enter}");
-      await user.type(screen.getByTestId("tag-text-input"), "Choir");
-      await user.keyboard("{Enter}");
-      await user.click(screen.getByRole("button", { name: /create song/i }));
-
-      await waitFor(() => {
-        expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({
-          title: "Tagged Song",
-          tags: "worship,choir",
-        }));
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/new-2");
-      });
-    });
-
-    it("has file import label", () => {
-      renderNewSong();
+  describe("new song", () => {
+    it("renders the short form: title, artist, year, key, tempo, tags, draft, import", () => {
+      renderNew();
+      expect(screen.getByRole("heading", { name: "New Song" })).toBeInTheDocument();
+      for (const label of ["Title", "Artist", "Year", "Key", "Tempo", "ChordPro"]) {
+        expect(screen.getByLabelText(label)).toBeInTheDocument();
+      }
+      expect(screen.getAllByText("Tags").length).toBeGreaterThan(0);
+      expect(screen.getByRole("checkbox", { name: /save as draft/i })).not.toBeChecked();
       expect(screen.getByText("Import file")).toBeInTheDocument();
+      expect(screen.getByText(/\.chrd, \.txt, \.pdf/)).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Create Song" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Cancel" })).toHaveAttribute("href", "/songs");
+      // trimmed fields are gone
+      expect(screen.queryByLabelText(/category|energy|aka|shout/i)).not.toBeInTheDocument();
     });
 
-    it("renders draft checkbox", () => {
-      renderNewSong();
-      expect(screen.getByText(/save as draft/i)).toBeInTheDocument();
-    });
-  });
-
-  // ===================== POSITIVE — Edit Song =====================
-
-  describe("positive — edit existing song", () => {
-    const existingSong = {
-      id: "song-1",
-      title: "Amazing Grace",
-      aka: "Grace Song, Old Hymn",
-      category: "Church",
-      key: "G",
-      tempo: 72,
-      artist: "Newton",
-      shout: "Choir echoes",
-      tags: "hymn",
-      content: "[G]Amazing",
-      isDraft: false,
-    };
-    const existingVariation = {
-      id: "v1",
-      songId: "song-1",
-      name: "Acoustic",
-      key: "C",
-      content: "[C]Amazing",
-    };
-
-    it("renders Edit Song heading", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      renderEditSong();
-      await waitFor(() => {
-        expect(screen.getByText("Edit Song")).toBeInTheDocument();
-      });
-    });
-
-    it("populates form with existing data", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      renderEditSong();
-      await waitFor(() => {
-        expect(screen.getByDisplayValue("Amazing Grace")).toBeInTheDocument();
-        expect(screen.getByDisplayValue("Church")).toBeInTheDocument();
-        expect(screen.getByDisplayValue("Newton")).toBeInTheDocument();
-        expect(screen.getByDisplayValue("Grace Song, Old Hymn")).toBeInTheDocument();
-        expect(screen.getByDisplayValue("Choir echoes")).toBeInTheDocument();
-        // Tags render as pills in TagInput, not plain input values
-        expect(screen.getByText("hymn")).toBeInTheDocument();
-      });
-    });
-
-    it("renders Update Song button", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      renderEditSong();
-      await waitFor(() => {
-        expect(screen.getByRole("button", { name: /update song/i })).toBeInTheDocument();
-      });
-    });
-
-    it("shows the selected variation clearly when editing a variation", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [existingVariation] });
-      renderEditSongVariation();
-
-      await waitFor(() => {
-        expect(screen.getByText("Variation: Acoustic")).toBeInTheDocument();
-        expect(screen.getByDisplayValue("Acoustic (C)")).toBeInTheDocument();
-        expect(screen.getByTestId("chordpro-editor")).toHaveValue("[C]Amazing");
-      });
-    });
-
-    it("saves variation content separately from the base song", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [existingVariation] });
-      mockUpdate.mockResolvedValue({ song: existingSong });
-      mockVariationUpdate.mockResolvedValue({ variation: existingVariation });
-      renderEditSongVariation();
-      const user = userEvent.setup();
-
-      const editor = await screen.findByTestId("chordpro-editor");
-      await user.clear(editor);
-      await user.type(editor, "[C]Grace");
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(mockUpdate).toHaveBeenCalledWith("song-1", {
-          title: "Amazing Grace",
-          aka: "Grace Song, Old Hymn",
-          category: "Church",
-          tempo: 72,
-          artist: "Newton",
-          shout: "Choir echoes",
-          tags: "hymn",
-          energy: null,
-          isDraft: false,
-        });
-        expect(mockVariationUpdate).toHaveBeenCalledWith("song-1", "v1", {
-          content: expect.stringContaining("Grace"),
-          key: "C",
-        });
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1?variation=v1");
-      });
-    });
-
-    it("updates tags when adding another tag to an existing song", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      mockUpdate.mockResolvedValue({ song: { ...existingSong, tags: "hymn,choir" } });
-      renderEditSong();
-      const user = userEvent.setup();
-
-      await screen.findByText("hymn");
-      await user.type(screen.getByTestId("tag-text-input"), "choir");
-      await user.keyboard("{Enter}");
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(mockUpdate).toHaveBeenCalledWith("song-1", expect.objectContaining({
-          tags: "hymn,choir",
-        }));
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
-      });
-    });
-
-    it("updates the song category", async () => {
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      mockUpdate.mockResolvedValue({ song: { ...existingSong, category: "Special Event" } });
-      renderEditSong();
-      const user = userEvent.setup();
-
-      await screen.findByDisplayValue("Church");
-      await user.clear(screen.getByPlaceholderText("Wedding, Church, Special Event"));
-      await user.type(screen.getByPlaceholderText("Wedding, Church, Special Event"), "Special Event");
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(mockUpdate).toHaveBeenCalledWith("song-1", expect.objectContaining({
-          category: "Special Event",
-        }));
-      });
-    });
-
-    it("clears tags when all existing tag pills are removed", async () => {
-      mockGet.mockResolvedValue({ song: { ...existingSong, tags: "hymn,worship" }, variations: [] });
-      mockUpdate.mockResolvedValue({ song: { ...existingSong, tags: null } });
-      renderEditSong();
-      const user = userEvent.setup();
-
-      await screen.findByText("hymn");
-      await user.click(screen.getByTestId("tag-remove-hymn"));
-      await user.click(screen.getByTestId("tag-remove-worship"));
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(mockUpdate).toHaveBeenCalledWith("song-1", expect.objectContaining({
-          tags: undefined,
-        }));
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
-      });
-    });
-
-    it("renders the arrangement builder for existing songs with named sections", async () => {
-      mockGet.mockResolvedValue({
-        song: {
-          ...existingSong,
-          content: `{title: Amazing Grace}\n{artist: Newton}\n{key: G}\n\n{comment: Verse 1}\n[G]Amazing grace\n\n{comment: Chorus}\n[C]I once was lost`,
-        },
-        variations: [],
-      });
-      renderEditSong();
-
-      await waitFor(() => {
-        const builder = screen.getByTestId("arrangement-builder");
-        expect(builder).toBeInTheDocument();
-        expect(within(builder).getByRole("button", { name: /^verse 1$/i })).toBeInTheDocument();
-        expect(within(builder).getByRole("button", { name: /^chorus$/i })).toBeInTheDocument();
-      });
-    });
-
-    it("saves an arrangement as a new variation with repeat markers", async () => {
-      mockGet.mockResolvedValue({
-        song: {
-          ...existingSong,
-          content: `{title: Amazing Grace}\n{artist: Newton}\n{key: G}\n\n{comment: Verse 1}\n[G]Amazing grace\n\n{comment: Chorus}\n[C]I once was lost`,
-        },
-        variations: [],
-      });
-      mockVariationCreate.mockResolvedValue({ variation: { id: "arr-1", name: "Sunday arrangement", content: "{comment: Chorus ×2}" } });
-      renderEditSong();
-      const user = userEvent.setup();
-
-      const builder = await screen.findByTestId("arrangement-builder");
-      await user.click(within(builder).getByRole("button", { name: /^verse 1$/i }));
-      await user.click(within(builder).getByRole("button", { name: /^chorus$/i }));
-      await user.click(within(builder).getByRole("button", { name: /increase repeats for chorus/i }));
-      await user.clear(within(builder).getByPlaceholderText("Sunday arrangement"));
-      await user.type(within(builder).getByPlaceholderText("Sunday arrangement"), "Sunday arrangement");
-      await user.click(within(builder).getByRole("button", { name: /save arrangement as variation/i }));
-
-      await waitFor(() => {
-        expect(mockVariationCreate).toHaveBeenCalledWith("song-1", expect.objectContaining({
-          key: "G",
-          content: expect.stringContaining("{comment: Chorus ×2}"),
-        }));
-        expect(mockVariationCreate.mock.calls[0][1].name).toContain("Sunday arrangement");
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1?variation=arr-1");
-      });
-    });
-  });
-
-  // ===================== NEGATIVE =====================
-
-  describe("negative", () => {
-    it("shows error when title is empty on create", async () => {
+    it("requires a title", async () => {
+      renderNew();
+      fireEvent.click(screen.getByRole("button", { name: "Create Song" }));
       const { toast } = await import("sonner");
-      renderNewSong();
-      const user = userEvent.setup();
-      // Submit without filling title — HTML required validation may prevent,
-      // but the component also checks title.trim()
-      // Force by directly submitting with empty title (button should have required on input)
-      const titleInput = screen.getByPlaceholderText("Song title");
-      await user.clear(titleInput);
-      // Type and clear to trigger state
-      await user.type(titleInput, " ");
-      await user.click(screen.getByRole("button", { name: /create song/i }));
-
-      // The form has HTML required attribute, but if it submits with whitespace,
-      // the component checks title.trim()
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Title is required");
-      });
+      expect(toast.error).toHaveBeenCalledWith("Title is required");
+      expect(mockCreate).not.toHaveBeenCalled();
     });
 
-    it("shows error toast on create failure", async () => {
+    it("creates the song, refreshes the list and opens the chart", async () => {
+      const user = userEvent.setup();
+      renderNew();
+      await user.type(screen.getByLabelText("Title"), "New Hymn");
+      await user.type(screen.getByLabelText("Year"), "1901");
+      await user.selectOptions(screen.getByLabelText("Key"), "D");
+      fireEvent.change(screen.getByLabelText("ChordPro"), { target: { value: "[D]La" } });
+      await user.click(screen.getByRole("checkbox", { name: /save as draft/i }));
+      await user.click(screen.getByRole("button", { name: "Create Song" }));
+      await waitFor(() => expect(mockCreate).toHaveBeenCalled());
+      expect(mockCreate.mock.calls[0][0]).toMatchObject({ title: "New Hymn", key: "D", year: "1901", content: "[D]La", isDraft: true });
+      expect(mockInvalidateLibrary).toHaveBeenCalled();
+      expect(mockNavigate).toHaveBeenCalledWith("/songs/new-1");
+    });
+
+    it("shows an error toast when creating fails", async () => {
+      mockCreate.mockRejectedValue(new Error("Server exploded"));
+      const user = userEvent.setup();
+      renderNew();
+      await user.type(screen.getByLabelText("Title"), "Boom");
+      await user.click(screen.getByRole("button", { name: "Create Song" }));
       const { toast } = await import("sonner");
-      mockCreate.mockRejectedValue(new Error("Validation failed"));
-      renderNewSong();
-      const user = userEvent.setup();
-      await user.type(screen.getByPlaceholderText("Song title"), "Valid Title");
-      await user.click(screen.getByRole("button", { name: /create song/i }));
+      await waitFor(() => expect(toast.error).toHaveBeenCalledWith("Server exploded"));
+    });
 
-      await waitFor(() => {
-        expect(toast.error).toHaveBeenCalledWith("Validation failed");
+    it("prefills from an import preview passed in navigation state", () => {
+      renderAt({
+        pathname: "/songs/new",
+        state: { importPreview: { filename: "grace.chrd", sourceLabel: ".chrd", chordPro: "[G]Hello", metadata: { title: "Grace", key: "G", artist: "Newton", tempo: 72, year: "1779" } } },
       });
+      expect(screen.getByLabelText("Title")).toHaveValue("Grace");
+      expect(screen.getByLabelText("Artist")).toHaveValue("Newton");
+      expect(screen.getByLabelText("Year")).toHaveValue("1779");
+      expect(screen.getByLabelText("Key")).toHaveValue("G");
+      expect(screen.getByLabelText("Tempo")).toHaveValue(72);
+      expect(screen.getByLabelText("ChordPro")).toHaveValue("[G]Hello");
+      expect(screen.getByTestId("import-preview-card")).toHaveTextContent("grace.chrd");
     });
 
-    it("shows loading spinner when editing and loading data", () => {
-      mockGet.mockReturnValue(new Promise(() => {}));
-      renderEditSong();
-      expect(document.querySelector(".spinner")).toBeInTheDocument();
-    });
-
-    it("disables save button while saving", async () => {
-      mockCreate.mockReturnValue(new Promise(() => {}));
-      renderNewSong();
+    it("looks for duplicates while typing a title", async () => {
+      mockFindDuplicates.mockResolvedValue({ matches: [{ id: "s2", title: "Amazing Grace", artist: "John Newton" }] });
       const user = userEvent.setup();
-      await user.type(screen.getByPlaceholderText("Song title"), "Test");
-      await user.click(screen.getByRole("button", { name: /create song/i }));
-
-      await waitFor(() => {
-        expect(screen.getByRole("button", { name: /saving/i })).toBeDisabled();
-      });
+      renderNew();
+      await user.type(screen.getByLabelText("Title"), "Amazing");
+      await waitFor(() => expect(mockFindDuplicates).toHaveBeenCalledWith(expect.objectContaining({ title: "Amazing" })));
+      await waitFor(() => expect(screen.getByTestId("duplicate-detection-card")).toHaveTextContent("Amazing Grace"));
+      expect(screen.getByRole("link", { name: "Amazing Grace" })).toHaveAttribute("href", "/songs/s2");
     });
 
-    it("warns before leaving with unsaved changes via browser unload", async () => {
-      renderNewSong();
-      const user = userEvent.setup();
-
-      await user.type(screen.getByPlaceholderText("Song title"), "Unsaved title");
-
-      const event = new Event("beforeunload", { cancelable: true });
-      window.dispatchEvent(event);
-
-      expect(event.defaultPrevented).toBe(true);
+    it("loads a single imported file into the form", async () => {
+      renderNew();
+      chooseFiles(screen.getByTestId("song-import-input"), [new File(["x"], "grace.chrd", { type: "text/plain" })]);
+      await waitFor(() => expect(mockPreviewImportChrd).toHaveBeenCalledWith({ filename: "grace.chrd", content: "x" }));
+      await waitFor(() => expect(screen.getByLabelText("Title")).toHaveValue("Imported"));
+      expect(screen.getByLabelText("Key")).toHaveValue("D");
+      expect(screen.getByLabelText("Tempo")).toHaveValue(90);
+      expect(screen.getByLabelText("ChordPro")).toHaveValue("{title: Imported}\n{key: D}\n\n[D]Hello");
+      expect(screen.getByTestId("import-preview-card")).toHaveTextContent(".chrd");
     });
 
-    it("prompts before cancel navigation when there are unsaved changes", async () => {
-      renderNewSong();
+    it("asks before an import replaces what was typed", async () => {
       const user = userEvent.setup();
-
-      await user.type(screen.getByPlaceholderText("Song title"), "Unsaved title");
-      await user.click(screen.getByRole("link", { name: /cancel/i }));
-
-      expect(screen.getByRole("dialog", { name: /discard unsaved changes/i })).toBeInTheDocument();
-      expect(screen.queryByText("Songs List")).not.toBeInTheDocument();
-      expect(screen.getByText("New Song")).toBeInTheDocument();
+      renderNew();
+      await user.type(screen.getByLabelText("Title"), "Typed");
+      chooseFiles(screen.getByTestId("song-import-input"), [new File(["x"], "grace.chrd", { type: "text/plain" })]);
+      expect(await screen.findByText("Replace what you have typed?")).toBeInTheDocument();
+      expect(mockPreviewImportChrd).not.toHaveBeenCalled();
+      await user.click(screen.getByRole("button", { name: "Replace" }));
+      await waitFor(() => expect(screen.getByLabelText("Title")).toHaveValue("Imported"));
     });
 
-    it("prompts before switching variation targets when there are unsaved changes", async () => {
-      const existingSong = {
-        id: "song-1",
-        title: "Amazing Grace",
-        key: "G",
-        tempo: 72,
-        artist: "Newton",
-        tags: "hymn",
-        content: "[G]Amazing",
-        isDraft: false,
-      };
-      const existingVariation = {
-        id: "v1",
-        songId: "song-1",
-        name: "Acoustic",
-        key: "C",
-        content: "[C]Amazing",
-      };
-
-      mockGet.mockResolvedValue({ song: existingSong, variations: [existingVariation] });
-      renderEditSongVariation();
-      const user = userEvent.setup();
-
-      const editor = await screen.findByTestId("chordpro-editor");
-      await user.type(editor, " changed");
-      await user.selectOptions(screen.getByLabelText(/working on/i), "");
-
-      expect(screen.getByRole("dialog", { name: /switch editing targets/i })).toBeInTheDocument();
-      expect(screen.getByDisplayValue("Acoustic (C)")).toBeInTheDocument();
-    });
-
-    it("shows possible duplicate matches while editing", async () => {
-      mockFindDuplicates.mockResolvedValue({
-        matches: [
-          {
-            id: "song-2",
-            title: "Amazing Grace",
-            aka: "Grace Song",
-            artist: "Newton",
-            key: "G",
-            overallScore: 0.92,
-            titleScore: 0.92,
-            lyricScore: 0.4,
-            matchedOn: ["title", "lyrics"],
-          },
-        ],
-      });
-
-      renderNewSong();
-      const user = userEvent.setup();
-
-      await user.type(screen.getByPlaceholderText("Song title"), "Amazing Grace");
-      await user.type(screen.getByTestId("chordpro-editor"), "Amazing grace how sweet the sound that saved a wretch like me");
-
-      await waitFor(() => {
-        expect(mockFindDuplicates).toHaveBeenCalled();
-        expect(screen.getByTestId("duplicate-detection-card")).toBeInTheDocument();
-        expect(screen.getByText(/92% match/i)).toBeInTheDocument();
-      });
-    });
-
-    it("queues an existing song edit when offline", async () => {
-      const existingSong = {
-        id: "song-1",
-        title: "Amazing Grace",
-        key: "G",
-        tempo: 72,
-        artist: "Newton",
-        tags: "hymn",
-        content: "[G]Amazing",
-        isDraft: false,
-        updatedAt: "2026-03-16T10:00:00.000Z",
-      };
-
-      mockConnectivityValue.isOnline = false;
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      renderEditSong();
-      const user = userEvent.setup();
-
-      await screen.findByDisplayValue("Amazing Grace");
-      await user.clear(screen.getByPlaceholderText("Song title"));
-      await user.type(screen.getByPlaceholderText("Song title"), "Amazing Grace Updated");
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(mockEnqueueOfflineSongEdit).toHaveBeenCalledWith(expect.objectContaining({
-          songId: "song-1",
-          organizationId: "org1",
-        }));
-        expect(mockRefreshPendingOfflineEditCount).toHaveBeenCalled();
-        expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
-      });
-    });
-
-    it("shows a merge dialog when the server reports a conflict", async () => {
-      const existingSong = {
-        id: "song-1",
-        title: "Amazing Grace",
-        key: "G",
-        tempo: 72,
-        artist: "Newton",
-        tags: "hymn",
-        content: "[G]Amazing",
-        isDraft: false,
-        updatedAt: "2026-03-16T10:00:00.000Z",
-      };
-
-      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
-      mockUpdate.mockRejectedValue({
-        status: 409,
-        message: "Conflict",
-        body: {
-          currentSong: {
-            ...existingSong,
-            title: "Amazing Grace Server",
-            updatedAt: "2026-03-16T11:00:00.000Z",
-          },
-        },
-      });
-
-      renderEditSong();
-      const user = userEvent.setup();
-
-      await screen.findByDisplayValue("Amazing Grace");
-      await user.clear(screen.getByPlaceholderText("Song title"));
-      await user.type(screen.getByPlaceholderText("Song title"), "Amazing Grace Local");
-      await user.click(screen.getByRole("button", { name: /update song/i }));
-
-      await waitFor(() => {
-        expect(screen.getByRole("dialog", { name: /resolve song edit conflict/i })).toBeInTheDocument();
-        expect(screen.getByText("Amazing Grace Local")).toBeInTheDocument();
-        expect(screen.getByText("Amazing Grace Server")).toBeInTheDocument();
-      });
+    it("bulk imports several files and links to each song", async () => {
+      renderNew();
+      chooseFiles(screen.getByTestId("song-import-input"), [
+        new File(["a"], "first.chrd", { type: "text/plain" }),
+        new File(["b"], "second.onsong", { type: "text/plain" }),
+      ]);
+      await waitFor(() => expect(screen.getByTestId("bulk-import-status")).toHaveTextContent("2 of 2 done"));
+      expect(mockImportChrd).toHaveBeenCalledWith({ filename: "first.chrd", content: "a" });
+      expect(mockImportOnSong).toHaveBeenCalledWith({ filename: "second.onsong", content: "b" });
+      expect(screen.getAllByRole("link", { name: "Open song" })).toHaveLength(2);
+      expect(mockInvalidateLibrary).toHaveBeenCalled();
     });
   });
 
-  describe("PDF import", () => {
-    it("accepts .pdf files in the import input", () => {
-      renderNewSong();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-      expect(fileInput).toBeInTheDocument();
-      expect(fileInput.accept).toContain(".pdf");
+  describe("existing song", () => {
+    it("loads the song into the form and saves changes", async () => {
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Edit Song" })).toBeInTheDocument());
+      expect(screen.getByLabelText("Title")).toHaveValue("Amazing Grace");
+      expect(screen.getByLabelText("Year")).toHaveValue("1779");
+      expect(screen.getByLabelText("Key")).toHaveValue("G");
+      expect(screen.getByRole("link", { name: "Cancel" })).toHaveAttribute("href", "/songs/song-1");
+      await user.clear(screen.getByLabelText("Year"));
+      await user.type(screen.getByLabelText("Year"), "1780");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalled());
+      expect(mockUpdate.mock.calls[0][0]).toBe("song-1");
+      expect(mockUpdate.mock.calls[0][1]).toMatchObject({ title: "Amazing Grace", year: "1780", lastKnownUpdatedAt: existingSong.updatedAt });
+      expect(mockInvalidateLibrary).toHaveBeenCalled();
+      expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
     });
 
-    it("shows supported formats including .pdf in the label", () => {
-      renderNewSong();
-      expect(screen.getByText(/\.pdf/i)).toBeInTheDocument();
+    it("warns before leaving with unsaved changes", async () => {
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => screen.getByRole("heading", { name: "Edit Song" }));
+      await user.type(screen.getByLabelText("Title"), "!");
+      await user.click(screen.getByRole("link", { name: "Cancel" }));
+      expect(await screen.findByText("Discard unsaved changes?")).toBeInTheDocument();
+      await user.click(screen.getByRole("button", { name: "Leave without saving" }));
+      await waitFor(() => expect(screen.getByText("Song View")).toBeInTheDocument());
     });
 
-    it("loads a PDF into the form preview instead of navigating immediately", async () => {
-      renderNewSong();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-      const file = new File(["fake-pdf-content"], "preview.pdf", { type: "application/pdf" });
-
-      await userEvent.upload(fileInput, file);
-
-      await waitFor(() => {
-        expect(mockPreviewImportPdf).toHaveBeenCalled();
-      });
-
-      expect(mockNavigate).not.toHaveBeenCalled();
-      expect(screen.getByDisplayValue("PDF Song")).toBeInTheDocument();
-      expect(screen.getByDisplayValue("88")).toBeInTheDocument();
-      expect(screen.getByTestId("import-preview-card")).toBeInTheDocument();
-      expect(screen.getByText(/Loaded from preview\.pdf via PDF/i)).toBeInTheDocument();
-    });
-  });
-
-  describe("OnSong/OpenSong import", () => {
-    it("accepts .onsong and .xml files in the import input", () => {
-      renderNewSong();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-      expect(fileInput.multiple).toBe(true);
-      expect(fileInput.accept).toContain(".onsong");
-      expect(fileInput.accept).toContain(".xml");
+    it("queues the edit on this device when offline", async () => {
+      mockConnectivityValue = { ...mockConnectivityValue, isOnline: false };
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => screen.getByRole("heading", { name: "Edit Song" }));
+      await user.type(screen.getByLabelText("Title"), "!");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await waitFor(() => expect(mockEnqueueOfflineSongEdit).toHaveBeenCalled());
+      expect(mockEnqueueOfflineSongEdit.mock.calls[0][0]).toMatchObject({ songId: "song-1", organizationId: "org1", songData: expect.objectContaining({ title: "Amazing Grace!" }) });
+      expect(mockUpdate).not.toHaveBeenCalled();
+      expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
     });
 
-    it("shows supported formats including .onsong and .xml in the label", () => {
-      renderNewSong();
-      expect(screen.getByText(/\.onsong/i)).toBeInTheDocument();
-      expect(screen.getByText(/\.xml/i)).toBeInTheDocument();
+    it("offers reload or overwrite when the server reports a conflict", async () => {
+      const serverSong = { ...existingSong, title: "Amazing Grace (theirs)", updatedAt: "2026-02-01T00:00:00.000Z" };
+      mockUpdate.mockRejectedValueOnce(Object.assign(new Error("Conflict"), { status: 409, body: { currentSong: serverSong } }));
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => screen.getByRole("heading", { name: "Edit Song" }));
+      await user.type(screen.getByLabelText("Title"), "!");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      expect(await screen.findByText("This song changed while you were editing")).toBeInTheDocument();
+
+      await user.click(screen.getByRole("button", { name: "Overwrite with mine" }));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalledTimes(2));
+      expect(mockUpdate.mock.calls[1][1]).toMatchObject({ title: "Amazing Grace!", forceOverwrite: true });
+      expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
     });
 
-    it("imports .onsong files into the preview flow and keeps the user on the form", async () => {
-      renderNewSong();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-      const file = new File(["Title: Test Song\n\nVerse 1:\n[C]Hello"], "test.onsong", { type: "text/plain" });
-
-      await userEvent.upload(fileInput, file);
-
-      await waitFor(() => {
-        expect(mockPreviewImportOnSong).toHaveBeenCalledWith({
-          filename: "test.onsong",
-          content: "Title: Test Song\n\nVerse 1:\n[C]Hello",
-        });
-      });
-
-      expect(mockNavigate).not.toHaveBeenCalled();
-      expect(screen.getByDisplayValue("Test Song")).toBeInTheDocument();
-      expect(screen.getByDisplayValue("C")).toBeInTheDocument();
-      expect(screen.getByTestId("import-preview-card")).toBeInTheDocument();
-      expect(screen.getByText(/Loaded from test\.onsong via OnSong/i)).toBeInTheDocument();
-      expect(screen.getByTestId("import-preview-renderer")).toHaveTextContent("{title: Test Song}");
+    it("can reload the server's version instead", async () => {
+      const serverSong = { ...existingSong, title: "Amazing Grace (theirs)" };
+      mockUpdate.mockRejectedValueOnce(Object.assign(new Error("Conflict"), { status: 409, body: { currentSong: serverSong } }));
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => screen.getByRole("heading", { name: "Edit Song" }));
+      await user.type(screen.getByLabelText("Title"), "!");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await user.click(await screen.findByRole("button", { name: "Reload their version" }));
+      expect(screen.getByLabelText("Title")).toHaveValue("Amazing Grace (theirs)");
+      expect(mockUpdate).toHaveBeenCalledTimes(1);
     });
 
-    it("bulk imports multiple files and shows progress results", async () => {
-      mockCreate.mockResolvedValue({ song: { id: "bulk-chopro", title: "Alpha Song" } });
-      mockImportOnSong.mockResolvedValue({ song: { id: "bulk-onsong", title: "Beta Song" }, chordPro: "{title: Beta Song}" });
-      mockImportChrd.mockResolvedValue({ song: { id: "bulk-chrd", title: "Gamma Song" } });
+    it("uses the cached song when offline", async () => {
+      mockGet.mockRejectedValue(new Error("Failed to fetch"));
+      mockIsOfflineRequestError.mockReturnValue(true);
+      mockLoadCachedSong.mockReturnValue({ response: { song: { ...existingSong, title: "Cached Grace" }, variations: [] } });
+      renderEdit();
+      await waitFor(() => expect(screen.getByLabelText("Title")).toHaveValue("Cached Grace"));
+    });
 
-      renderNewSong();
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-
-      const chordProFile = new File(["{title: Alpha Song}\n{key: G}\n\n[G]Hello"], "alpha.chopro", { type: "text/plain" });
-      const onSongFile = new File(["Title: Beta Song\n\nVerse 1:\n[C]World"], "beta.onsong", { type: "text/plain" });
-      const chrdFile = new File(["Gamma Song\nG D\nAmazing grace"], "gamma.chrd", { type: "text/plain" });
-
-      await userEvent.upload(fileInput, [chordProFile, onSongFile, chrdFile]);
-
-      await waitFor(() => {
-        expect(mockCreate).toHaveBeenCalledWith({
-          title: "Alpha Song",
-          artist: undefined,
-          key: "G",
-          tempo: undefined,
-          content: "{title: Alpha Song}\n{key: G}\n\n[G]Hello",
-        });
-        expect(mockImportOnSong).toHaveBeenCalledWith({
-          filename: "beta.onsong",
-          content: "Title: Beta Song\n\nVerse 1:\n[C]World",
-        });
-        expect(mockImportChrd).toHaveBeenCalledWith({
-          filename: "gamma.chrd",
-          content: "Gamma Song\nG D\nAmazing grace",
-        });
-      });
-
-      expect(mockNavigate).not.toHaveBeenCalled();
-      expect(screen.getByTestId("bulk-import-status")).toBeInTheDocument();
-      expect(screen.getByText("Bulk import progress")).toBeInTheDocument();
-      expect(screen.getByText("3 of 3 completed")).toBeInTheDocument();
-      expect(screen.getByText("Imported as Alpha Song")).toBeInTheDocument();
-      expect(screen.getByText("Imported as Beta Song")).toBeInTheDocument();
-      expect(screen.getByText("Imported as Gamma Song")).toBeInTheDocument();
-      expect(screen.getAllByText("Open song")).toHaveLength(3);
+    it("sends observers back to the chart", async () => {
+      mockAuthValue = { ...mockAuthValue, activeOrg: { id: "org1", name: "Test Church", role: "observer" } };
+      renderEdit();
+      await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1", { replace: true }));
     });
   });
 });

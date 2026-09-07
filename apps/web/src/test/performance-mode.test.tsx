@@ -6,7 +6,7 @@ import type { SetlistSongItem } from "@/lib/api-client";
 
 // ---------- Mocks ----------
 vi.mock("@/components/songs/ChordProRenderer", () => ({
-  ChordProRenderer: ({ content, showChords, fontSize, baseTranspose }: any) => (
+  ChordProRenderer: ({ content, showChords, fontSize, transpose: baseTranspose }: any) => (
     <div
       data-testid="chordpro-renderer"
       data-show-chords={showChords}

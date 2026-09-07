@@ -21,6 +21,9 @@ const ENVIRONMENT_ENDS = new Set([
 ]);
 // Environments whose body is preformatted — no chord extraction, no trimming.
 const RAW_ENVIRONMENTS = new Set(["sot", "start_of_tab"]);
+// Comment directives that render as italic note lines inside the current
+// section (the old site's `*` annotations) rather than as section headers.
+const NOTE_DIRECTIVES = new Set(["ci", "comment_italic", "cb", "comment_box"]);
 
 /**
  * Parse a `{define: Name base-fret N frets f f f f f f [fingers …]}` value
@@ -41,7 +44,7 @@ function parseDefineValue(value) {
 /**
  * Parse a ChordPro string into sections of directives and lyric/chord lines.
  * @param {string} input — raw ChordPro source text
- * @returns {{ directives: Record<string, string>, sections: Array<{ name: string, raw?: boolean, lines: Array<{ chords: Array<{chord: string, position: number}>, lyrics: string }> }>, chordDefinitions: Record<string, {name: string, baseFret: number, frets: number[], fingers: number[]|null}> }}
+ * @returns {{ directives: Record<string, string>, sections: Array<{ name: string, raw?: boolean, lines: Array<{ chords: Array<{chord: string, position: number}>, lyrics: string, note?: string }> }>, chordDefinitions: Record<string, {name: string, baseFret: number, frets: number[], fingers: number[]|null}> }}
  */
 export function parseChordPro(input) {
   const lines = input.split("\n");
@@ -90,6 +93,8 @@ export function parseChordPro(input) {
       if (key === "comment" || key === "c") {
         pushSection();
         currentSection = { name: value, lines: [] };
+      } else if (NOTE_DIRECTIVES.has(key)) {
+        currentSection.lines.push({ chords: [], lyrics: "", note: value });
       } else if (key in ENVIRONMENT_STARTS) {
         pushSection();
         currentSection = { name: value || ENVIRONMENT_STARTS[key], lines: [] };
@@ -172,6 +177,10 @@ export function toChordProString(doc) {
       parts.push(`{comment: ${section.name}}`);
     }
     for (const line of section.lines) {
+      if (line.note !== undefined) {
+        parts.push(`{ci: ${line.note}}`);
+        continue;
+      }
       let result = "";
       let lyricPos = 0;
       const sortedChords = [...line.chords].sort((a, b) => a.position - b.position);

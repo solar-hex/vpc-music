@@ -224,50 +224,7 @@ export const songsApi = {
     const query = qs.toString();
     return request<{ songs: Song[]; total: number }>(`/api/songs${query ? `?${query}` : ""}`);
   },
-  listSetlists: (id: string) =>
-    request<{ setlists: { id: string; name: string; status?: string; updatedAt?: string }[] }>(`/api/songs/${id}/setlists`),
-  setStatus: (id: string, status: SongStatus | null) =>
-    request<{ song: Song }>(`/api/songs/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
-  setTier: (id: string, tier: SongTier) =>
-    request<{ song: Song }>(`/api/songs/${id}/tier`, { method: "PATCH", body: JSON.stringify({ tier }) }),
-  archive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/archive`, { method: "POST" }),
-  unarchive: (id: string) => request<{ song: Song }>(`/api/songs/${id}/unarchive`, { method: "POST" }),
-  restore: (id: string) => request<{ song: Song }>(`/api/songs/${id}/restore`, { method: "POST" }),
-  permanentDelete: (id: string) =>
-    request<{ message: string }>(`/api/songs/${id}/permanent`, { method: "DELETE" }),
-  favorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "POST" }),
-  unfavorite: (id: string) => request<{ message: string }>(`/api/songs/${id}/favorite`, { method: "DELETE" }),
   get: (id: string) => request<{ song: Song; variations: SongVariation[] }>(`/api/songs/${id}`),
-  similar: (id: string, params?: { tempoTolerance?: number; limit?: number }) => {
-    const qs = new URLSearchParams();
-    if (params?.tempoTolerance) qs.set("tempoTolerance", String(params.tempoTolerance));
-    if (params?.limit) qs.set("limit", String(params.limit));
-    const query = qs.toString();
-    return request<{
-      source: { id: string; key?: string | null; tempo?: number | null; tags?: string | null };
-      songs: SimilarSong[];
-    }>(`/api/songs/${id}/similar${query ? `?${query}` : ""}`);
-  },
-  getGroups: () => request<{ groups: SongGroup[] }>("/api/songs/groups"),
-  createGroup: (data: { name: string }) =>
-    request<{ group: SongGroup }>("/api/songs/groups", { method: "POST", body: JSON.stringify(data) }),
-  updateGroup: (groupId: string, data: { name: string }) =>
-    request<{ group: SongGroup }>(`/api/songs/groups/${groupId}`, { method: "PUT", body: JSON.stringify(data) }),
-  deleteGroup: (groupId: string) =>
-    request<{ message: string }>(`/api/songs/groups/${groupId}`, { method: "DELETE" }),
-  updateGroupManagers: (groupId: string, userIds: string[]) =>
-    request<{ groupId: string; managerUserIds: string[]; managerNames: string[] }>(`/api/songs/groups/${groupId}/managers`, {
-      method: "PUT",
-      body: JSON.stringify({ userIds }),
-    }),
-  addSongsToGroup: (groupId: string, songIds: string[]) =>
-    request<{ addedSongIds: string[]; skippedSongIds: string[] }>(`/api/songs/groups/${groupId}/songs`, {
-      method: "POST",
-      body: JSON.stringify({ songIds }),
-    }),
-  removeSongFromGroup: (groupId: string, songId: string) =>
-    request<{ message: string }>(`/api/songs/groups/${groupId}/songs/${songId}`, { method: "DELETE" }),
-  getCategories: () => request<{ categories: string[] }>("/api/songs/categories"),
   getTags: () => request<{ tags: string[] }>("/api/songs/tags"),
   findDuplicates: (data: { title?: string; content?: string; excludeSongId?: string }) =>
     request<{ matches: DuplicateSongMatch[] }>("/api/songs/duplicates/check", {
@@ -339,34 +296,6 @@ export const songsApi = {
 };
 
 // ── Song Variations ──────────────────────────────
-export const variationsApi = {
-  create: (songId: string, data: { name: string; content: string; key?: string }) =>
-    request<{ variation: SongVariation }>(`/api/songs/${songId}/variations`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  update: (songId: string, varId: string, data: Partial<Pick<SongVariation, "name" | "content" | "key">>) =>
-    request<{ variation: SongVariation }>(`/api/songs/${songId}/variations/${varId}`, {
-      method: "PUT",
-      body: JSON.stringify(data),
-    }),
-  setDefault: (songId: string, variationId: string | null) =>
-    request<{ song: Song }>(`/api/songs/${songId}/default-variation`, {
-      method: "PATCH",
-      body: JSON.stringify({ variationId }),
-    }),
-  delete: (songId: string, varId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/variations/${varId}`, { method: "DELETE" }),
-  promote: (
-    songId: string,
-    varId: string,
-    data?: { lastKnownUpdatedAt?: string; forceOverwrite?: boolean; promoteKey?: boolean },
-  ) =>
-    request<{ song: Song; variation: SongVariation }>(
-      `/api/songs/${songId}/variations/${varId}/promote`,
-      { method: "POST", body: JSON.stringify(data ?? {}) },
-    ),
-};
 
 // ── Instrument parts (per-musician layers) ───────
 export interface InstrumentPart {
@@ -391,28 +320,6 @@ export type InstrumentPartInput = {
   color?: string | null;
   content?: string | null;
   abcNotation?: string | null;
-};
-
-export const instrumentPartsApi = {
-  list: (songId: string) =>
-    request<{ parts: InstrumentPart[] }>(`/api/songs/${songId}/instrument-parts`),
-  create: (songId: string, data: InstrumentPartInput) =>
-    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  update: (songId: string, partId: string, data: InstrumentPartInput) =>
-    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts/${partId}`, {
-      method: "PUT",
-      body: JSON.stringify(data),
-    }),
-  delete: (songId: string, partId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/instrument-parts/${partId}`, { method: "DELETE" }),
-  setTier: (songId: string, partId: string, tier: SongTier) =>
-    request<{ part: InstrumentPart }>(`/api/songs/${songId}/instrument-parts/${partId}/tier`, {
-      method: "PATCH",
-      body: JSON.stringify({ tier }),
-    }),
 };
 
 // ── Setlists ─────────────────────────────────────
@@ -648,11 +555,6 @@ export interface SongEdit {
   createdAt?: string;
 }
 
-export const songHistoryApi = {
-  list: (songId: string) =>
-    request<{ history: SongEdit[] }>(`/api/songs/${songId}/history`),
-};
-
 // ── Sticky Notes ─────────────────────────────────
 export interface StickyNote {
   id: string;
@@ -663,23 +565,6 @@ export interface StickyNote {
   createdAt?: string;
   updatedAt?: string;
 }
-
-export const stickyNotesApi = {
-  list: (songId: string) =>
-    request<{ notes: StickyNote[] }>(`/api/songs/${songId}/notes`),
-  create: (songId: string, data: { content: string; color?: string }) =>
-    request<{ note: StickyNote }>(`/api/songs/${songId}/notes`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  update: (songId: string, noteId: string, data: { content?: string; color?: string }) =>
-    request<{ note: StickyNote }>(`/api/songs/${songId}/notes/${noteId}`, {
-      method: "PUT",
-      body: JSON.stringify(data),
-    }),
-  delete: (songId: string, noteId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/notes/${noteId}`, { method: "DELETE" }),
-};
 
 // ── Song Collaboration ──────────────────────────
 export interface SongCollaborationItem {
@@ -697,34 +582,6 @@ export interface SongCollaborationItem {
   createdAt?: string;
   updatedAt?: string;
 }
-
-export const songCollaborationApi = {
-  list: (songId: string) =>
-    request<{ items: SongCollaborationItem[] }>(`/api/songs/${songId}/collaboration`),
-  create: (songId: string, data: {
-    type: SongCollaborationItem["type"];
-    anchor?: string;
-    title?: string;
-    content: string;
-    parentId?: string;
-  }) =>
-    request<{ item: SongCollaborationItem }>(`/api/songs/${songId}/collaboration`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  update: (songId: string, itemId: string, data: {
-    anchor?: string;
-    title?: string;
-    content?: string;
-    status?: SongCollaborationItem["status"];
-  }) =>
-    request<{ item: SongCollaborationItem }>(`/api/songs/${songId}/collaboration/${itemId}`, {
-      method: "PATCH",
-      body: JSON.stringify(data),
-    }),
-  delete: (songId: string, itemId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/collaboration/${itemId}`, { method: "DELETE" }),
-};
 
 // ── Share (read-only links) ──────────────────────
 export interface ShareToken {
@@ -788,77 +645,6 @@ export const shareApi = {
       method: "POST",
       body: JSON.stringify(data ?? {}),
     }),
-  /** List all share tokens for a song */
-  list: (songId: string) =>
-    request<{ shares: ShareToken[] }>(`/api/songs/${songId}/shares`),
-  /** Revoke a share token */
-  revoke: (songId: string, tokenId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/shares/${tokenId}`, { method: "DELETE" }),
-  /** Update a share token (label) */
-  update: (songId: string, tokenId: string, data: { label?: string | null }) =>
-    request<{ shareToken: ShareToken }>(`/api/songs/${songId}/shares/${tokenId}`, {
-      method: "PATCH",
-      body: JSON.stringify(data),
-    }),
-  /** List direct authenticated user shares for a song */
-  listDirect: (songId: string) =>
-    request<{ directShares: DirectSongShare[] }>(`/api/songs/${songId}/direct-shares`),
-  /** Share a song directly with an existing user by email */
-  createDirect: (songId: string, data: { email: string }) =>
-    request<{ directShare: DirectSongShare }>(`/api/songs/${songId}/direct-shares`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  /** Remove a direct authenticated user share */
-  removeDirect: (songId: string, shareId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/direct-shares/${shareId}`, { method: "DELETE" }),
-  /** List reusable share teams for the active organization */
-  listTeams: () => request<{ teams: ShareTeam[] }>("/api/share-teams"),
-  /** Create a reusable share team */
-  createTeam: (data: { name: string; userIds: string[] }) =>
-    request<{ team: ShareTeam }>("/api/share-teams", {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  /** Delete a reusable share team */
-  deleteTeam: (teamId: string) =>
-    request<{ message: string }>(`/api/share-teams/${teamId}`, { method: "DELETE" }),
-  /** List team shares for a song */
-  listTeamShares: (songId: string) =>
-    request<{ teamShares: SongTeamShare[] }>(`/api/songs/${songId}/team-shares`),
-  /** Share a song with a reusable team */
-  createTeamShare: (songId: string, data: { teamId: string }) =>
-    request<{ teamShare: SongTeamShare }>(`/api/songs/${songId}/team-shares`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  /** Remove a team share from a song */
-  removeTeamShare: (songId: string, shareId: string) =>
-    request<{ message: string }>(`/api/songs/${songId}/team-shares/${shareId}`, { method: "DELETE" }),
-  /** List other organizations that can receive shared songs */
-  listOrganizationTargets: () =>
-    request<{ organizations: OrganizationShareTarget[] }>("/api/share-organizations"),
-  /** List current organization share assignments for selected songs */
-  listBatchOrganizationShares: (songIds: string[]) => {
-    const query = new URLSearchParams();
-    for (const songId of songIds) {
-      query.append("songId", songId);
-    }
-
-    return request<{ shares: OrganizationShareAssignment[] }>(`/api/songs/batch/organization-shares?${query.toString()}`);
-  },
-  /** Batch share songs with one or more organizations */
-  batchShareToOrganizations: (data: { songIds: string[]; organizationIds: string[] }) =>
-    request<BatchOrganizationShareResult>("/api/songs/batch/organization-shares", {
-      method: "POST",
-      body: JSON.stringify(data),
-    }),
-  /** Edit batch organization sharing by adding and removing target orgs */
-  updateBatchOrganizationShares: (data: { songIds: string[]; addOrganizationIds?: string[]; removeOrganizationIds?: string[] }) =>
-    request<BatchOrganizationShareResult>("/api/songs/batch/organization-shares", {
-      method: "PATCH",
-      body: JSON.stringify(data),
-    }),
   /** Public: fetch a shared song by token (no auth needed) */
   getShared: (token: string) =>
     request<{ song: Song; shared: true }>(`/api/shared/${token}`),
@@ -902,12 +688,6 @@ export const adminApi = {
       method: "PUT",
       body: JSON.stringify({ role }),
     }),
-  /** Assign or clear a member's custom-role overlay */
-  updateCustomRole: (userId: string, customRoleId: string | null) =>
-    request<{ message: string }>(`/api/admin/users/${userId}/role`, {
-      method: "PUT",
-      body: JSON.stringify({ customRoleId }),
-    }),
   /** Remove a member from the org */
   removeMember: (userId: string) =>
     request<{ message: string }>(`/api/admin/users/${userId}`, {
@@ -925,15 +705,6 @@ export interface OrgRole {
   isSystem: boolean;
   memberCount?: number;
 }
-
-export const rolesApi = {
-  list: () => request<{ roles: OrgRole[] }>("/api/roles"),
-  create: (data: { name: string; description?: string; color?: string; permissions: string[] }) =>
-    request<{ role: OrgRole }>("/api/roles", { method: "POST", body: JSON.stringify(data) }),
-  update: (id: string, data: Partial<{ name: string; description: string; color: string; permissions: string[] }>) =>
-    request<{ role: OrgRole }>(`/api/roles/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/roles/${id}`, { method: "DELETE" }),
-};
 
 // ── Organizations ────────────────────────────────
 export interface Organization {
@@ -962,21 +733,6 @@ export interface Album {
   createdAt?: string;
 }
 
-export const albumsApi = {
-  list: (params?: { artistId?: string }) => {
-    const qs = new URLSearchParams();
-    if (params?.artistId) qs.set("artistId", params.artistId);
-    const query = qs.toString();
-    return request<{ albums: Album[] }>(`/api/albums${query ? `?${query}` : ""}`);
-  },
-  get: (id: string) => request<{ album: Album; songs: Song[] }>(`/api/albums/${id}`),
-  create: (data: Partial<Album>) =>
-    request<{ album: Album }>("/api/albums", { method: "POST", body: JSON.stringify(data) }),
-  update: (id: string, data: Partial<Album>) =>
-    request<{ album: Album }>(`/api/albums/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/albums/${id}`, { method: "DELETE" }),
-};
-
 // ── Media ────────────────────────────────────────
 export type MediaType = "chart" | "lyrics" | "audio" | "backing_track" | "stem" | "other";
 
@@ -993,35 +749,6 @@ export interface MediaFile {
   createdAt?: string;
 }
 
-export const mediaApi = {
-  list: (params?: { type?: MediaType; songId?: string; unattached?: boolean }) => {
-    const qs = new URLSearchParams();
-    if (params?.type) qs.set("type", params.type);
-    if (params?.songId) qs.set("songId", params.songId);
-    if (params?.unattached) qs.set("unattached", "true");
-    const query = qs.toString();
-    return request<{ media: MediaFile[] }>(`/api/media${query ? `?${query}` : ""}`);
-  },
-  upload: (file: File, options?: { type?: MediaType; songId?: string }) => {
-    const form = new FormData();
-    form.append("file", file);
-    if (options?.type) form.append("type", options.type);
-    if (options?.songId) form.append("songId", options.songId);
-    return fetchWithOrganization("/api/media", { method: "POST", body: form }).then(async (res) => {
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        const error: any = new Error(body?.error?.message || "Upload failed");
-        error.status = res.status;
-        throw error;
-      }
-      return res.json() as Promise<{ media: MediaFile }>;
-    });
-  },
-  update: (id: string, data: { type?: MediaType; songId?: string | null }) =>
-    request<{ media: MediaFile }>(`/api/media/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/media/${id}`, { method: "DELETE" }),
-};
-
 // ── Set list templates ───────────────────────────
 export interface SetlistTemplate {
   id: string;
@@ -1030,20 +757,6 @@ export interface SetlistTemplate {
   structure: { label: string }[];
   createdAt?: string;
 }
-
-export const templatesApi = {
-  list: () => request<{ templates: SetlistTemplate[] }>("/api/setlists/templates"),
-  create: (data: { title: string; description?: string; structure: { label: string }[] }) =>
-    request<{ template: SetlistTemplate }>("/api/setlists/templates", { method: "POST", body: JSON.stringify(data) }),
-  update: (id: string, data: Partial<{ title: string; description: string; structure: { label: string }[] }>) =>
-    request<{ template: SetlistTemplate }>(`/api/setlists/templates/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/setlists/templates/${id}`, { method: "DELETE" }),
-  apply: (id: string, name?: string) =>
-    request<{ setlist: Setlist; slotCount: number }>(`/api/setlists/templates/${id}/apply`, {
-      method: "POST",
-      body: JSON.stringify({ name }),
-    }),
-};
 
 // ── Rehearsals ───────────────────────────────────
 export interface Rehearsal {
@@ -1058,20 +771,6 @@ export interface Rehearsal {
   createdAt?: string;
 }
 
-export const rehearsalsApi = {
-  list: (params?: { upcoming?: boolean }) => {
-    const qs = new URLSearchParams();
-    if (params?.upcoming) qs.set("upcoming", "true");
-    const query = qs.toString();
-    return request<{ rehearsals: Rehearsal[] }>(`/api/rehearsals${query ? `?${query}` : ""}`);
-  },
-  create: (data: Partial<Rehearsal>) =>
-    request<{ rehearsal: Rehearsal }>("/api/rehearsals", { method: "POST", body: JSON.stringify(data) }),
-  update: (id: string, data: Partial<Rehearsal>) =>
-    request<{ rehearsal: Rehearsal }>(`/api/rehearsals/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/rehearsals/${id}`, { method: "DELETE" }),
-};
-
 // ── Availability ─────────────────────────────────
 export type AvailabilityStatus = "available" | "tentative" | "unavailable";
 
@@ -1080,15 +779,6 @@ export interface AvailabilityEntry {
   date: string;
   status: AvailabilityStatus;
 }
-
-export const availabilityApi = {
-  list: (params: { from: string; to: string }) =>
-    request<{ entries: AvailabilityEntry[] }>(`/api/availability?from=${params.from}&to=${params.to}`),
-  set: (data: { userId?: string; date: string; status: AvailabilityStatus }) =>
-    request<{ entry: AvailabilityEntry }>("/api/availability", { method: "PUT", body: JSON.stringify(data) }),
-  clear: (data: { userId?: string; date: string }) =>
-    request<{ message: string }>("/api/availability", { method: "DELETE", body: JSON.stringify(data) }),
-};
 
 // ── Activity log ─────────────────────────────────
 export interface ActivityEntry {
@@ -1102,17 +792,6 @@ export interface ActivityEntry {
   createdAt: string;
 }
 
-export const activityApi = {
-  list: (params?: { actorId?: string; action?: string; limit?: number }) => {
-    const qs = new URLSearchParams();
-    if (params?.actorId) qs.set("actorId", params.actorId);
-    if (params?.action) qs.set("action", params.action);
-    if (params?.limit) qs.set("limit", String(params.limit));
-    const query = qs.toString();
-    return request<{ entries: ActivityEntry[] }>(`/api/activity${query ? `?${query}` : ""}`);
-  },
-};
-
 // ── Usage report ─────────────────────────────────
 export interface SongUsageReportRow {
   id: string;
@@ -1124,10 +803,6 @@ export interface SongUsageReportRow {
   lastPlayed?: string | null;
   setlistNames?: string | null;
 }
-
-export const usageReportApi = {
-  get: () => request<{ songs: SongUsageReportRow[] }>("/api/songs/usage-report"),
-};
 
 // ── Statistics ───────────────────────────────────
 export interface MonthPlays {
@@ -1163,24 +838,6 @@ export interface AnnotationStroke {
   points: Array<{ x: number; y: number }>;
 }
 
-export const annotationsApi = {
-  get: (songId: string) =>
-    request<{ annotation: { id: string; data: AnnotationStroke[] } | null }>(`/api/songs/${songId}/annotations`),
-  save: (songId: string, data: AnnotationStroke[]) =>
-    request<{ annotation: { id: string; data: AnnotationStroke[] } }>(`/api/songs/${songId}/annotations`, {
-      method: "PUT",
-      body: JSON.stringify({ data }),
-    }),
-};
-
-export const statsApi = {
-  overview: () => request<StatsOverview>("/api/stats/overview"),
-  song: (id: string) =>
-    request<{ song: { id: string; title: string }; playsByMonth: MonthPlays[]; performances: SongPerformance[] }>(
-      `/api/stats/songs/${id}`,
-    ),
-};
-
 // ── Assistant ────────────────────────────────────
 export interface AssistantMessage {
   role: "user" | "assistant";
@@ -1192,14 +849,6 @@ export interface AssistantAction {
   linkPath: string;
 }
 
-export const assistantApi = {
-  chat: (messages: AssistantMessage[]) =>
-    request<{ reply: string; actions: AssistantAction[] }>("/api/assistant/chat", {
-      method: "POST",
-      body: JSON.stringify({ messages }),
-    }),
-};
-
 // ── Notifications ────────────────────────────────
 export interface AppNotification {
   id: string;
@@ -1210,22 +859,6 @@ export interface AppNotification {
   readAt?: string | null;
   createdAt?: string;
 }
-
-export const notificationsApi = {
-  list: (params?: { unread?: boolean; limit?: number }) => {
-    const qs = new URLSearchParams();
-    if (params?.unread) qs.set("unread", "true");
-    if (params?.limit) qs.set("limit", String(params.limit));
-    const query = qs.toString();
-    return request<{ notifications: AppNotification[] }>(`/api/notifications${query ? `?${query}` : ""}`);
-  },
-  unreadCount: () => request<{ count: number }>("/api/notifications/unread-count"),
-  markRead: (id: string) =>
-    request<{ notification: AppNotification }>(`/api/notifications/${id}/read`, { method: "POST" }),
-  markAllRead: () => request<{ message: string }>("/api/notifications/read-all", { method: "POST" }),
-  delete: (id: string) => request<{ message: string }>(`/api/notifications/${id}`, { method: "DELETE" }),
-  clearAll: () => request<{ message: string }>("/api/notifications", { method: "DELETE" }),
-};
 
 // ── Artists ──────────────────────────────────────
 export interface Artist {
@@ -1249,53 +882,11 @@ export interface ArtistSong {
   useCount?: number;
 }
 
-export const artistsApi = {
-  list: (params?: { q?: string; genre?: string }) => {
-    const qs = new URLSearchParams();
-    if (params?.q) qs.set("q", params.q);
-    if (params?.genre) qs.set("genre", params.genre);
-    const query = qs.toString();
-    return request<{ artists: Artist[] }>(`/api/artists${query ? `?${query}` : ""}`);
-  },
-  get: (id: string) => request<{ artist: Artist; songs: ArtistSong[] }>(`/api/artists/${id}`),
-  create: (data: Partial<Artist>) =>
-    request<{ artist: Artist }>("/api/artists", { method: "POST", body: JSON.stringify(data) }),
-  resolve: (name: string) =>
-    request<{ artist: Artist; created: boolean }>("/api/artists/resolve", {
-      method: "POST",
-      body: JSON.stringify({ name }),
-    }),
-  update: (id: string, data: Partial<Artist>) =>
-    request<{ artist: Artist }>(`/api/artists/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  delete: (id: string) => request<{ message: string }>(`/api/artists/${id}`, { method: "DELETE" }),
-};
-
 export const orgsApi = {
-  /** List organizations the user belongs to (owners see all) */
-  list: () => request<{ organizations: Organization[] }>("/api/organizations"),
-  /** List members of the active organization (readable by all org roles) */
-  members: () => request<{ members: OrgMember[] }>("/api/organizations/current/members"),
-  /** Create a new organization */
-  create: (name: string) =>
-    request<{ organization: Organization }>("/api/organizations", {
-      method: "POST",
-      body: JSON.stringify({ name }),
-    }),
-  /** Owner-only: stand up an org for someone else and make them its admin */
-  provision: (data: { name: string; adminEmail: string; adminDisplayName?: string; joinAsMember?: boolean }) =>
-    request<{ organization: Organization; admin: { email: string; alreadyMember: boolean; inviteUrl: string | null } }>(
-      "/api/organizations/provision",
-      { method: "POST", body: JSON.stringify(data) },
-    ),
   /** Update an organization (name, slug, logo) */
   update: (id: string, data: string | { name?: string; slug?: string | null; logoUrl?: string | null }) =>
     request<{ organization: Organization }>(`/api/organizations/${id}`, {
       method: "PUT",
       body: JSON.stringify(typeof data === "string" ? { name: data } : data),
-    }),
-  /** Delete an organization (owner only) */
-  remove: (id: string) =>
-    request<{ message: string }>(`/api/organizations/${id}`, {
-      method: "DELETE",
     }),
 };

@@ -51,8 +51,6 @@
 :root {
   --song-chord-color: #ca9762;
   --song-secondary-chord-color: #8b5cf6;
-  --page-background-color: hsl(var(--background));
-  --song-display-font: var(--font-sans);
 
   --background: 210 17% 98%;
   --foreground: 235 100% 10%;
@@ -126,37 +124,6 @@
   --chart-5: 210 58% 17%;
 }
 
-/* ── High contrast mode ─────────────────────────────────────── */
-.high-contrast {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 100%;
-
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 100%;
-
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
-
-  --secondary: 56 100% 50%;
-  --secondary-foreground: 0 0% 0%;
-
-  --muted: 0 0% 10%;
-  --muted-foreground: 0 0% 88%;
-
-  --accent: 190 100% 50%;
-  --accent-foreground: 0 0% 0%;
-
-  --destructive: 0 100% 55%;
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 0 0% 100%;
-  --input: 0 0% 100%;
-  --ring: 56 100% 50%;
-}
-
 /* ── Base layer ────────────────────────────────────────────────── */
 @layer base {
   * {
@@ -173,7 +140,7 @@
 
   body {
     @apply text-[hsl(var(--foreground))];
-    background-color: var(--page-background-color, hsl(var(--background)));
+    background-color: hsl(var(--background));
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -262,13 +229,6 @@
     color: var(--song-secondary-chord-color, hsl(var(--accent)));
   }
 
-  .song-surface {
-    background-color: var(--page-background-color, hsl(var(--card)));
-  }
-
-  .song-display-font {
-    font-family: var(--song-display-font, var(--font-sans));
-  }
 
   .bg-dark-blue {
     background-color: hsl(235 100% 10%);
@@ -674,5 +634,48 @@
   /* Margin for clean output */
   @page {
     margin: 1.5cm;
+  }
+}
+
+/* ── Chart page (full-screen lead sheet) ─────────────────────── */
+@keyframes section-flash {
+  0% {
+    background-color: hsl(var(--secondary) / 0.35);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.section-flash {
+  animation: section-flash 1.2s ease-out;
+  border-radius: 0.375rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-flash {
+    animation: none;
+  }
+}
+
+@media print {
+  /* The chart page is a fixed, internally scrolling layout on screen; on
+     paper it must be a plain document so every section prints. */
+  .chart-page {
+    position: static !important;
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .chart-page .chart-scroll {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .chart-page .chart-sheet {
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
   }
 }

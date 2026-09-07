@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { LoginPage } from "@/pages/auth/LoginPage";
@@ -103,9 +103,9 @@ describe("LoginPage", () => {
       expect(screen.queryByRole("link", { name: /sign up/i })).not.toBeInTheDocument();
     });
 
-    it("has a link back to the home page", () => {
+    it("has no link back to a marketing page", () => {
       renderLogin();
-      expect(screen.getByRole("link", { name: /back to home/i })).toHaveAttribute("href", "/");
+      expect(screen.queryByRole("link", { name: /back to home/i })).not.toBeInTheDocument();
     });
 
     it("calls login on email form submit", async () => {
@@ -122,7 +122,7 @@ describe("LoginPage", () => {
       });
     });
 
-    it("navigates to dashboard on email login success", async () => {
+    it("navigates to the song list on email login success", async () => {
       mockLogin.mockResolvedValue(undefined);
       renderLogin();
       const user = userEvent.setup();
@@ -132,7 +132,7 @@ describe("LoginPage", () => {
       await user.click(screen.getByRole("button", { name: /^sign in$/i }));
 
       await waitFor(() => {
-        expect(mockNavigate).toHaveBeenCalledWith("/dashboard");
+        expect(mockNavigate).toHaveBeenCalledWith("/songs");
       });
     });
 
@@ -160,7 +160,7 @@ describe("LoginPage", () => {
       await waitFor(() => {
         expect(mockOpenOAuthPopup).toHaveBeenCalledWith("google");
         expect(mockSetUser).toHaveBeenCalledWith(fakeUser);
-        expect(mockNavigate).toHaveBeenCalledWith("/dashboard");
+        expect(mockNavigate).toHaveBeenCalledWith("/songs");
       });
     });
   });

@@ -61,7 +61,7 @@ vi.mock("@vpc-music/shared", () => ({
   ALL_KEYS: ["C", "D", "E", "F", "G", "A", "B"],
 }));
 
-let mockAuthValue: any = {
+const mockAuthValue: any = {
   user: { id: "u1", email: "test@test.com", displayName: "Test", role: "owner" },
   activeOrg: { id: "org1", name: "Test Church", role: "admin" },
 };

@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { shareApi, type Song } from "@/lib/api-client";
-import { ChordProRenderer, AutoScroll, type ChordProRendererHandle } from "@/components/songs/ChordProRenderer";
+import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRenderer";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
-import { Eye, EyeOff, Music, Printer, Hash } from "lucide-react";
+import { Eye, EyeOff, Music, Printer, Hash, Minus, Plus } from "lucide-react";
+import { spellForTarget } from "@vpc-music/shared";
 
 /**
  * Public read-only song viewer — accessed via a share token.
@@ -23,14 +24,14 @@ export function SharedSongPage() {
   const [showChords, setShowChords] = useState(true);
   const [nashville, setNashville] = useState(false);
   const [fontSize, setFontSize] = useState(16);
+  const [transpose, setTranspose] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const chordProRef = useRef<ChordProRendererHandle>(null);
 
   // Keyboard shortcuts & foot pedal support
   useKeyboardShortcuts({
     scrollRef,
-    onTransposeUp: () => chordProRef.current?.transposeUp(),
-    onTransposeDown: () => chordProRef.current?.transposeDown(),
+    onTransposeUp: () => setTranspose((steps) => (steps + 1) % 12),
+    onTransposeDown: () => setTranspose((steps) => (steps + 11) % 12),
   });
 
   useEffect(() => {
@@ -103,6 +104,27 @@ export function SharedSongPage() {
 
         {/* Toolbar — view-only controls */}
         <div className="flex flex-wrap items-center gap-3 print-hidden">
+          <div className="inline-flex items-center gap-1 text-xs" role="group" aria-label="Transpose">
+            <button
+              type="button"
+              onClick={() => setTranspose((steps) => (steps + 11) % 12)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
+              aria-label="Transpose down"
+            >
+              <Minus className="h-3.5 w-3.5" />
+            </button>
+            <span className="min-w-[3ch] text-center font-mono">
+              {transpose === 0 ? song.key ?? "0" : spellForTarget(song.key, transpose).targetKey ?? `+${transpose}`}
+            </span>
+            <button
+              type="button"
+              onClick={() => setTranspose((steps) => (steps + 1) % 12)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
+              aria-label="Transpose up"
+            >
+              <Plus className="h-3.5 w-3.5" />
+            </button>
+          </div>
           <AutoScroll containerRef={scrollRef} />
           <button
             onClick={() => setShowChords((v) => !v)}
@@ -158,9 +180,9 @@ export function SharedSongPage() {
           style={{ maxHeight: "max(320px, calc(100dvh - 280px))" }}
         >
           <ChordProRenderer
-            ref={chordProRef}
             content={song.content}
             songKey={song.key}
+            transpose={transpose}
             showChords={showChords}
             nashville={nashville}
             fontSize={fontSize}

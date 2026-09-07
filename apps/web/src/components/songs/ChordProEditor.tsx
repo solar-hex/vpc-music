@@ -1,558 +1,349 @@
-import {
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
-  useMemo,
-  type ChangeEvent,
-  type KeyboardEvent,
-  type MouseEvent,
-} from "react";
-import { ChevronDown, Music, Columns, Eye, Pencil, MapPin, Wand2 } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
+import { ChevronDown, Columns, Eye, Music, Pencil, Wand2 } from "lucide-react";
 import { CHORD_REGEX, transposeChord } from "@vpc-music/shared";
-import { SyntaxHighlightOverlay } from "./SyntaxHighlightOverlay";
 import { ValidationPanel } from "./ValidationPanel";
-import { EditorHelpSection } from "./EditorHelpSection";
-import { CommandPalette, type CommandItem } from "./CommandPalette";
 import { ChordProRenderer } from "./ChordProRenderer";
 import { ChordProRichEditorSurface, type ChordProRichEditorHandle } from "./ChordProRichEditorSurface";
-import { EditorContextMenu, detectContext, type ContextMenuPosition } from "./EditorContextMenu";
-import { SmartSuggestionsPanel } from "./SmartSuggestionsPanel";
-import { CursorContextHelp } from "./CursorContextHelp";
-import { SectionOrganizer } from "./SectionOrganizer";
 import { formatChordPro } from "../../utils/chordpro-format";
-import { applySmartSuggestion, getSmartSuggestions } from "../../utils/chordpro-smart-tools";
-import { buildCollapsedChordProView, duplicateChordProSection, getOrganizedSections, reorderChordProSections } from "../../utils/chordpro-section-organizer";
 import type { ValidationIssue } from "../../utils/chordpro-validate";
 
-// ── Section choices for the insert dropdown ──────
-const SECTION_INSERTS = [
-  { label: "Verse 1", value: "{comment: Verse 1}" },
-  { label: "Verse 2", value: "{comment: Verse 2}" },
-  { label: "Verse 3", value: "{comment: Verse 3}" },
-  { label: "Verse 4", value: "{comment: Verse 4}" },
-  { label: "Chorus", value: "{comment: Chorus}" },
-  { label: "Pre-Chorus", value: "{comment: Pre-Chorus}" },
-  { label: "Bridge", value: "{comment: Bridge}" },
-  { label: "Intro", value: "{comment: Intro}" },
-  { label: "Outro", value: "{comment: Outro}" },
-  { label: "Interlude", value: "{comment: Interlude}" },
-  { label: "Instrumental", value: "{comment: Instrumental}" },
-  { label: "Tag", value: "{comment: Tag}" },
-  { label: "Ending", value: "{comment: Ending}" },
-  { label: "Solo", value: "{comment: Solo}" },
-  { label: "Turnaround", value: "{comment: Turnaround}" },
-  { label: "Vamp", value: "{comment: Vamp}" },
-  { label: "Coda", value: "{comment: Coda}" },
-  // ── Expanded inserts ──
-  { label: "Metadata Block", value: "{title: Song Title}\n{artist: Artist Name}\n{key: G}\n{tempo: 120}" },
-  { label: "Song Skeleton", value: "{title: Song Title}\n{artist: Artist Name}\n{key: G}\n{tempo: 120}\n\n{comment: Verse 1}\n\n\n{comment: Chorus}\n\n\n{comment: Verse 2}\n\n\n{comment: Bridge}\n" },
+// ── Insert menu ──────────────────────────────────
+const SECTION_INSERTS = ["Intro", "Verse 1", "Verse 2", "Verse 3", "Verse 4", "Pre-Chorus", "Chorus", "Bridge", "Interlude", "Tag", "Outro"].map(
+  (label) => ({ label, value: `{comment: ${label}}` }),
+);
+
+interface LineInsert {
+  label: string;
+  value: string;
+  /** Insert at the cursor on the current line instead of as a new block. */
+  inline?: boolean;
+  /** Where to leave the cursor, relative to the start of the inserted text. */
+  cursorOffset: number;
+}
+
+const LINE_INSERTS: LineInsert[] = [
+  { label: "Comment line", value: "{ci: }", cursorOffset: 5 },
+  { label: "Secondary chord", value: "[*]", inline: true, cursorOffset: 2 },
 ];
 
 interface ChordProEditorProps {
   value: string;
   onChange: (value: string) => void;
-  /** Song metadata — used to sync directives at the top of content */
+  /** Song metadata: kept in sync with the directives at the top of the content. */
   metadata?: {
     title?: string;
     artist?: string;
     key?: string;
     tempo?: string;
   };
-  /** Called when Ctrl+S is pressed inside the editor */
+  /** Called on Ctrl+S inside the editor. */
   onSave?: () => void;
 }
 
 type ViewMode = "edit" | "split" | "preview";
-type EditorMode = "beginner" | "advanced";
 
-const EDITOR_MODE_STORAGE_KEY = "vpc-editor-mode";
+const SECTION_LINE = /^\{comment:\s*(.*?)\}\s*$/;
+const NOTE_LINE = /^\{ci:\s*(.*)\}$/;
 
-const BEGINNER_EXAMPLES = [
-  { label: "Full Song Example", value: SECTION_INSERTS[18].value },
-  { label: "Metadata Block", value: SECTION_INSERTS[17].value },
-  { label: "Verse", value: "{comment: Verse 1}" },
-  { label: "Chorus", value: "{comment: Chorus}" },
-];
-
-function getStoredEditorMode(): EditorMode {
-  if (typeof document !== "undefined") {
-    const datasetMode = document.documentElement.dataset.editorMode;
-    if (datasetMode === "beginner" || datasetMode === "advanced") {
-      return datasetMode;
-    }
+function charOffsetOfLine(text: string, lineIndex: number) {
+  const lines = text.split("\n");
+  let offset = 0;
+  for (let index = 0; index < lineIndex && index < lines.length; index += 1) {
+    offset += lines[index].length + 1;
   }
-
-  if (typeof window !== "undefined") {
-    const storedMode = localStorage.getItem(EDITOR_MODE_STORAGE_KEY);
-    if (storedMode === "beginner" || storedMode === "advanced") {
-      return storedMode;
-    }
-  }
-
-  return "advanced";
-}
-
-function shouldUseRichEditor() {
-  if (typeof navigator === "undefined") {
-    return false;
-  }
-
-  return !/jsdom/i.test(navigator.userAgent);
+  return offset;
 }
 
 /**
- * Rich ChordPro editor with:
- * 1) Metadata → directive sync (pre-fill)
- * 2) Section insert dropdown (17 sections + metadata block + song skeleton)
- * 3) Chord insertion via text selection popup
- * 4) Syntax highlighting overlay
- * 5) Inline validation panel
- * 6) Keyboard shortcuts (Ctrl+S, Ctrl+/, Ctrl+K, Ctrl+Shift+V/C/B, Alt+Up/Down)
- * 7) Collapsible help section with tips, shortcuts, directives, and templates
+ * One ChordPro editor (CodeMirror) with the handful of tools a worship team
+ * uses: edit/split/preview, insert a section or note, a chord popup on a
+ * selection, keyboard shortcuts, formatting, validation, and a cheat sheet.
  */
 export function ChordProEditor({ value, onChange, metadata, onSave }: ChordProEditorProps) {
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const richEditorRef = useRef<ChordProRichEditorHandle>(null);
-  const [editorMode, setEditorMode] = useState<EditorMode>(getStoredEditorMode);
-  const [helpOpen, setHelpOpen] = useState<boolean | undefined>(undefined);
-  const [sectionDropdownOpen, setSectionDropdownOpen] = useState(false);
-  const sectionBtnRef = useRef<HTMLButtonElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // ── Chord popup state ──────────────────────────
-  const [chordPopup, setChordPopup] = useState<{
-    open: boolean;
-    x: number;
-    y: number;
-    selStart: number;
-    selEnd: number;
-  }>({ open: false, x: 0, y: 0, selStart: 0, selEnd: 0 });
-  const [chordInput, setChordInput] = useState("");
-  const chordInputRef = useRef<HTMLInputElement>(null);
-  const popupRef = useRef<HTMLDivElement>(null);
-
-  // ── Command palette state ──────────────────────
-  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
-  const [commandPaletteQuery, setCommandPaletteQuery] = useState("");
-  /** Track slash-command "/" position so we can remove the slash on insert */
-  const slashPosRef = useRef<number | null>(null);
-
-  // ── View mode state (edit / split / preview) ──
-  const [viewMode, setViewMode] = useState<ViewMode>("edit");
+  const editorRef = useRef<ChordProRichEditorHandle>(null);
   const previewRef = useRef<HTMLDivElement>(null);
-  const [selectionRange, setSelectionRange] = useState({ start: 0, end: 0 });
+  const insertRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
+  const chordInputRef = useRef<HTMLInputElement>(null);
   const pendingSelectionRef = useRef<{ start: number; end: number } | null>(null);
 
-  // ── Line numbers & current line tracking ──────
-  const [currentLine, setCurrentLine] = useState(0);
-  const [cursorPosition, setCursorPosition] = useState(0);
-  const gutterRef = useRef<HTMLDivElement>(null);
+  const [viewMode, setViewMode] = useState<ViewMode>("edit");
+  const [selection, setSelection] = useState({ start: 0, end: 0 });
+  const [insertOpen, setInsertOpen] = useState(false);
+  const [chordPopup, setChordPopup] = useState({ open: false, x: 0, y: 0, selStart: 0, selEnd: 0 });
+  const [chordInput, setChordInput] = useState("");
 
-  // Sections detected from content for the section-nav dropdown
   const sections = useMemo(() => {
     const result: { name: string; line: number }[] = [];
-    value.split("\n").forEach((line, i) => {
-      const m = line.match(/^\{comment:\s*(.*?)\}\s*$/);
-      if (m) result.push({ name: m[1], line: i });
+    value.split("\n").forEach((line, index) => {
+      const match = line.match(SECTION_LINE);
+      if (match) result.push({ name: match[1], line: index });
     });
     return result;
   }, [value]);
 
-  const organizedSections = useMemo(() => getOrganizedSections(value), [value]);
-
-  const [sectionNavOpen, setSectionNavOpen] = useState(false);
-  const sectionNavBtnRef = useRef<HTMLButtonElement>(null);
-  const sectionNavDropdownRef = useRef<HTMLDivElement>(null);
-  const [draggedSectionId, setDraggedSectionId] = useState<string | null>(null);
-  const [collapsedSectionIds, setCollapsedSectionIds] = useState<string[]>([]);
-
-  // ── Context menu state ────────────────────────
-  const [contextMenu, setContextMenu] = useState<{
-    open: boolean;
-    position: ContextMenuPosition;
-    groups: { label: string; actions: { label: string; action: () => void; shortcut?: string }[] }[];
-  }>({ open: false, position: { x: 0, y: 0 }, groups: [] });
-
-  // ── Format on save toggle ─────────────────────
-  const [formatOnSave, setFormatOnSave] = useState(() => {
-    try {
-      return localStorage.getItem("chordpro-format-on-save") === "true";
-    } catch {
-      return false;
-    }
-  });
-
-  useEffect(() => {
-    try { localStorage.setItem("chordpro-format-on-save", String(formatOnSave)); }
-    catch { /* ignore */ }
-  }, [formatOnSave]);
-
-  useEffect(() => {
-    setHelpOpen(editorMode === "beginner");
-    if (editorMode === "beginner" && viewMode === "split") {
-      setViewMode("edit");
-    }
-  }, [editorMode, viewMode]);
-
-  useEffect(() => {
-    const syncEditorMode = () => setEditorMode(getStoredEditorMode());
-    window.addEventListener("storage", syncEditorMode);
-    window.addEventListener("vpc-appearance-change", syncEditorMode as EventListener);
-    return () => {
-      window.removeEventListener("storage", syncEditorMode);
-      window.removeEventListener("vpc-appearance-change", syncEditorMode as EventListener);
-    };
-  }, []);
-
-  const handleFormat = useCallback(() => {
-    const formatted = formatChordPro(value);
-    if (formatted !== value) {
-      onChange(formatted);
-    }
-  }, [value, onChange]);
-
-  const findSectionLine = useCallback((matcher: RegExp) => {
-    const match = sections.find((section) => matcher.test(section.name));
-    return match?.line ?? null;
-  }, [sections]);
-
-  const smartSuggestions = useMemo(() => getSmartSuggestions(value), [value]);
-  const isRichEditorEnabled = editorMode === "advanced" && shouldUseRichEditor();
-  const editorSurfaceValue = useMemo(
-    () => buildCollapsedChordProView(value, collapsedSectionIds),
-    [collapsedSectionIds, value],
-  );
-  const lineCount = editorSurfaceValue.split("\n").length;
-
-  const cursorContext = useMemo(() => detectContext(value, cursorPosition), [value, cursorPosition]);
-
-  const cursorHelp = useMemo(() => {
-    const trimmedLine = cursorContext.lineText.trim();
-
-    if (/^\{\w+(?::.*)?\}$/.test(trimmedLine)) {
-      return {
-        title: "Directive help",
-        body: "Keep song metadata near the top so exports, search, and previews stay accurate.",
-        tips: [
-          "Use {title}, {artist}, {key}, and {tempo} before the first lyric section.",
-          "Ctrl+Shift+F normalizes directive spacing and ordering.",
-          "The smart suggestions panel can insert missing metadata with one click.",
-        ],
-      };
-    }
-
-    if (cursorContext.type === "section") {
-      return {
-        title: "Section tools",
-        body: "Section labels power quick navigation, performance mode jumps, and arrangement suggestions.",
-        tips: [
-          "Right-click a section header to duplicate or move it.",
-          "Use consistent labels like Verse 1, Chorus, and Bridge.",
-          "The smart suggestions panel can label unlabeled sections for you.",
-        ],
-      };
-    }
-
-    if (cursorContext.type === "chord") {
-      return {
-        title: "Chord at cursor",
-        body: "You are on a chord token. Quick transpose and cleanup tools are available here.",
-        tips: [
-          "Alt+↑ and Alt+↓ transpose the selected chord or current line.",
-          "Right-click a chord to transpose or remove it.",
-          "Malformed chord spellings will show fix suggestions below the editor.",
-        ],
-      };
-    }
-
-    if (cursorContext.type === "lyrics") {
-      return {
-        title: "Lyric line help",
-        body: "Select a lyric word first, then add a chord exactly where the singer will see it.",
-        tips: [
-          "Ctrl+K inserts chord brackets or opens the chord popup for a selection.",
-          "Ctrl+/ wraps a line in {comment: ...} when you need rehearsal notes or labels.",
-          "Blank lines help separate verses, choruses, and bridges visually.",
-        ],
-      };
-    }
-
-    return {
-      title: "Editor guidance",
-      body: "Move the cursor onto metadata, section headers, chords, or lyrics to see context-aware help.",
-      tips: [
-        "Ctrl+Space opens the command palette.",
-        "F1 toggles the help/reference panel.",
-        "Smart suggestions appear when the editor notices likely improvements.",
-      ],
-    };
-  }, [cursorContext]);
-
-  // Update current line on cursor movement
-  const handleSelectionChange = useCallback((start: number, end: number) => {
-    setSelectionRange({ start, end });
-    setCursorPosition(start);
-    setCurrentLine(editorSurfaceValue.slice(0, start).split("\n").length - 1);
-  }, [editorSurfaceValue]);
-
-  const updateCurrentLine = useCallback(() => {
-    const ta = textareaRef.current;
-    if (!ta) return;
-    handleSelectionChange(ta.selectionStart, ta.selectionEnd);
-  }, [handleSelectionChange]);
-
-  const getActiveSelection = useCallback(() => {
-    if (isRichEditorEnabled) {
-      return richEditorRef.current?.getSelection() ?? selectionRange;
-    }
-
-    return {
-      start: textareaRef.current?.selectionStart ?? selectionRange.start,
-      end: textareaRef.current?.selectionEnd ?? selectionRange.end,
-    };
-  }, [isRichEditorEnabled, selectionRange]);
-
-  const focusActiveEditor = useCallback(() => {
-    if (isRichEditorEnabled) {
-      richEditorRef.current?.focus();
-      return;
-    }
-
-    textareaRef.current?.focus();
-  }, [isRichEditorEnabled]);
+  // ── Selection helpers ─────────────────────────
+  const getSelection = useCallback(() => editorRef.current?.getSelection() ?? selection, [selection]);
 
   const applySelection = useCallback((start: number, end: number) => {
-    if (isRichEditorEnabled) {
-      if (!richEditorRef.current) {
-        return false;
-      }
-      richEditorRef.current.setSelection(start, end);
-      handleSelectionChange(start, end);
-      return true;
-    }
-
-    const ta = textareaRef.current;
-    if (!ta) {
-      return false;
-    }
-
-    ta.focus();
-    ta.setSelectionRange(start, end);
-    handleSelectionChange(start, end);
+    if (!editorRef.current) return false;
+    editorRef.current.setSelection(start, end);
+    setSelection({ start, end });
     return true;
-  }, [handleSelectionChange, isRichEditorEnabled]);
+  }, []);
 
   const flushPendingSelection = useCallback(() => {
-    if (!pendingSelectionRef.current) {
-      return;
-    }
-
     const pending = pendingSelectionRef.current;
-    if (applySelection(pending.start, pending.end)) {
-      pendingSelectionRef.current = null;
-    }
+    if (pending && applySelection(pending.start, pending.end)) pendingSelectionRef.current = null;
   }, [applySelection]);
 
-  const scheduleSelection = useCallback((start: number, end: number) => {
-    pendingSelectionRef.current = { start, end };
-    requestAnimationFrame(() => {
-      flushPendingSelection();
-    });
-  }, [flushPendingSelection]);
+  const scheduleSelection = useCallback(
+    (start: number, end: number) => {
+      pendingSelectionRef.current = { start, end };
+      requestAnimationFrame(flushPendingSelection);
+    },
+    [flushPendingSelection],
+  );
 
   useEffect(() => {
     flushPendingSelection();
-  }, [flushPendingSelection, value, isRichEditorEnabled]);
+  }, [flushPendingSelection, value]);
 
-  // Sync gutter scroll with textarea
-  const syncGutterScroll = useCallback(() => {
-    const ta = textareaRef.current;
-    const gutter = gutterRef.current;
-    if (ta && gutter) {
-      gutter.scrollTop = ta.scrollTop;
-    }
-  }, []);
+  const focusEditor = useCallback(() => editorRef.current?.focus(), []);
 
-  // ── Close dropdowns when clicking outside ──────
-  useEffect(() => {
-    function handleClickOutside(e: globalThis.MouseEvent) {
-      if (
-        sectionDropdownOpen &&
-        dropdownRef.current &&
-        sectionBtnRef.current &&
-        !dropdownRef.current.contains(e.target as Node) &&
-        !sectionBtnRef.current.contains(e.target as Node)
-      ) {
-        setSectionDropdownOpen(false);
-      }
-      if (
-        chordPopup.open &&
-        popupRef.current &&
-        !popupRef.current.contains(e.target as Node)
-      ) {
-        setChordPopup((p) => ({ ...p, open: false }));
-      }
-      if (
-        sectionNavOpen &&
-        sectionNavDropdownRef.current &&
-        sectionNavBtnRef.current &&
-        !sectionNavDropdownRef.current.contains(e.target as Node) &&
-        !sectionNavBtnRef.current.contains(e.target as Node)
-      ) {
-        setSectionNavOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [sectionDropdownOpen, chordPopup.open, sectionNavOpen]);
-
-  // ── 1) Metadata → directive sync ──────────────
-  // When metadata fields change, update/insert matching directives at
-  // the top of the content so the user doesn't have to type them twice.
+  // ── Metadata -> directive sync ────────────────
   const prevMetaRef = useRef(metadata);
   useEffect(() => {
     if (!metadata) return;
     const prev = prevMetaRef.current ?? {};
     prevMetaRef.current = metadata;
-
-    // Only act when a metadata field actually changed
-    const titleChanged = metadata.title !== prev.title;
-    const artistChanged = metadata.artist !== prev.artist;
-    const keyChanged = metadata.key !== prev.key;
-    const tempoChanged = metadata.tempo !== prev.tempo;
-    if (!titleChanged && !artistChanged && !keyChanged && !tempoChanged) return;
+    const changed = (["title", "artist", "key", "tempo"] as const).filter((field) => metadata[field] !== prev[field]);
+    if (changed.length === 0) return;
 
     let updated = value;
-
-    const syncDirective = (tag: string, val: string | undefined) => {
-      const re = new RegExp(`^\\{${tag}:\\s*.*\\}\\s*$`, "m");
-      if (val?.trim()) {
-        const directive = `{${tag}: ${val.trim()}}`;
-        if (re.test(updated)) {
-          updated = updated.replace(re, directive);
-        } else {
-          // Insert at top — after any existing directives block
-          const lines = updated.split("\n");
-          // Find last directive line at the top
-          let insertIdx = 0;
-          for (let i = 0; i < lines.length; i++) {
-            if (/^\{[a-z_]+:/.test(lines[i].trim())) {
-              insertIdx = i + 1;
-            } else {
-              break;
-            }
-          }
-          lines.splice(insertIdx, 0, directive);
-          updated = lines.join("\n");
-        }
+    for (const field of changed) {
+      const next = metadata[field]?.trim();
+      if (!next) continue;
+      const directive = `{${field}: ${next}}`;
+      const existing = new RegExp(`^\\{${field}:\\s*.*\\}\\s*$`, "m");
+      if (existing.test(updated)) {
+        updated = updated.replace(existing, directive);
+      } else {
+        const lines = updated.split("\n");
+        let insertAt = 0;
+        while (insertAt < lines.length && /^\{[a-z_]+:/.test(lines[insertAt].trim())) insertAt += 1;
+        lines.splice(insertAt, 0, directive);
+        updated = lines.join("\n");
       }
-    };
-
-    if (titleChanged) syncDirective("title", metadata.title);
-    if (artistChanged) syncDirective("artist", metadata.artist);
-    if (keyChanged) syncDirective("key", metadata.key);
-    if (tempoChanged) syncDirective("tempo", metadata.tempo);
-
-    if (updated !== value) {
-      onChange(updated);
     }
-    // We intentionally only depend on metadata — value changes are driven
-    // by the parent's onChange and we read `value` inside the effect.
+    if (updated !== value) onChange(updated);
+    // Only metadata changes drive this; `value` is read at that moment.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [metadata?.title, metadata?.artist, metadata?.key, metadata?.tempo, onChange]);
 
-  // ── 2) Insert text at cursor ──────────────────
-  const insertAtCursor = useCallback(
-    (text: string) => {
-      const start = getActiveSelection().start;
+  // ── Editing commands ──────────────────────────
+  const insertBlock = useCallback(
+    (text: string, cursorOffset?: number) => {
+      const { start } = getSelection();
       const before = value.slice(0, start);
       const after = value.slice(start);
-
-      // Ensure blank line before section header for readability
-      const prefix = before.length > 0 && !before.endsWith("\n\n") && !before.endsWith("\n")
-        ? "\n\n"
-        : before.length > 0 && before.endsWith("\n") && !before.endsWith("\n\n")
-          ? "\n"
-          : "";
+      const prefix = before.length === 0 || before.endsWith("\n\n") ? "" : before.endsWith("\n") ? "\n" : "\n\n";
       const inserted = `${prefix}${text}\n`;
-      const newValue = before + inserted + after;
-      onChange(newValue);
-      setSectionDropdownOpen(false);
-
-      scheduleSelection(start + inserted.length, start + inserted.length);
+      onChange(before + inserted + after);
+      setInsertOpen(false);
+      const cursor = cursorOffset === undefined ? start + inserted.length : start + prefix.length + cursorOffset;
+      scheduleSelection(cursor, cursor);
     },
-    [getActiveSelection, onChange, scheduleSelection, value],
+    [getSelection, onChange, scheduleSelection, value],
   );
 
-  // ── Command palette select handler ────────────
-  const handleCommandSelect = useCallback(
-    (item: CommandItem) => {
-      // If triggered via slash command, remove the "/" (and any typed filter text)
-      if (slashPosRef.current !== null) {
-        const slashStart = slashPosRef.current;
-        const cursorPos = getActiveSelection().start;
-        // Remove everything from the slash to current cursor
-        const before = value.slice(0, slashStart);
-        const after = value.slice(cursorPos);
-        const newValue = before + after;
-        onChange(newValue);
+  const insertInline = useCallback(
+    (text: string, cursorOffset: number) => {
+      const { start } = getSelection();
+      onChange(value.slice(0, start) + text + value.slice(start));
+      setInsertOpen(false);
+      scheduleSelection(start + cursorOffset, start + cursorOffset);
+    },
+    [getSelection, onChange, scheduleSelection, value],
+  );
 
-        requestAnimationFrame(() => {
-          focusActiveEditor();
-          scheduleSelection(slashStart, slashStart);
-          requestAnimationFrame(() => {
-            insertAtCursor(item.value);
-          });
-        });
-        slashPosRef.current = null;
-      } else {
-        insertAtCursor(item.value);
+  const handleFormat = useCallback(() => {
+    const formatted = formatChordPro(value);
+    if (formatted !== value) onChange(formatted);
+  }, [value, onChange]);
+
+  const jumpToLine = useCallback(
+    (lineIndex: number) => {
+      const position = charOffsetOfLine(value, lineIndex);
+      applySelection(position, position);
+      focusEditor();
+    },
+    [applySelection, focusEditor, value],
+  );
+
+  /** Ctrl+/ : wrap the selected line(s) in {ci: ...} notes, or unwrap them. */
+  const toggleNoteLines = useCallback(() => {
+    const { start, end } = getSelection();
+    const lines = value.split("\n");
+    let offset = 0;
+    let startLine = 0;
+    let endLine = 0;
+    lines.forEach((line, index) => {
+      const lineEnd = offset + line.length;
+      if (offset <= start && start <= lineEnd + 1) startLine = index;
+      if (offset <= end && end <= lineEnd + 1) endLine = index;
+      offset = lineEnd + 1;
+    });
+    const targets = lines.slice(startLine, endLine + 1);
+    const allNotes = targets.every((line) => NOTE_LINE.test(line.trim()));
+    const next = [...lines];
+    for (let index = startLine; index <= endLine; index += 1) {
+      const trimmed = next[index].trim();
+      if (allNotes) {
+        next[index] = trimmed.match(NOTE_LINE)?.[1] ?? trimmed;
+      } else if (trimmed && !trimmed.startsWith("{")) {
+        next[index] = `{ci: ${trimmed}}`;
+      }
+    }
+    onChange(next.join("\n"));
+  }, [getSelection, onChange, value]);
+
+  const transposeSelection = useCallback(
+    (steps: number) => {
+      const { start, end } = getSelection();
+      let from = start;
+      let to = end;
+      if (from === to) {
+        from = value.lastIndexOf("\n", from - 1) + 1;
+        const lineEnd = value.indexOf("\n", to);
+        to = lineEnd === -1 ? value.length : lineEnd;
+      }
+      const selected = value.slice(from, to);
+      const transposed = selected.replace(/\[([^\]]+)\]/g, (_match: string, chord: string) => `[${transposeChord(chord, steps)}]`);
+      if (transposed !== selected) {
+        onChange(value.slice(0, from) + transposed + value.slice(to));
+        scheduleSelection(from, from + transposed.length);
       }
     },
-    [focusActiveEditor, getActiveSelection, insertAtCursor, onChange, scheduleSelection, value],
+    [getSelection, onChange, scheduleSelection, value],
   );
 
-  const handleCommandPaletteClose = useCallback(() => {
-    setCommandPaletteOpen(false);
-    setCommandPaletteQuery("");
-    slashPosRef.current = null;
-    focusActiveEditor();
-  }, [focusActiveEditor]);
+  // ── Chord popup on a selection ────────────────
+  const openChordPopup = useCallback(() => {
+    const { start, end } = getSelection();
+    if (start === end) return;
+    const rect = editorRef.current?.getDomRect();
+    if (!rect) return;
+    const scrollTop = editorRef.current?.getScrollMetrics().top ?? 0;
+    const linesBefore = value.slice(0, start).split("\n");
+    const row = linesBefore.length - 1;
+    const col = linesBefore[linesBefore.length - 1].length;
+    setChordPopup({
+      open: true,
+      x: Math.min(Math.max(rect.width - 190, 0), Math.max(0, col * 8)),
+      y: Math.max(0, Math.min(rect.height - 40, (row + 1) * 20 - scrollTop)),
+      selStart: start,
+      selEnd: end,
+    });
+    setChordInput("");
+    requestAnimationFrame(() => chordInputRef.current?.focus());
+  }, [getSelection, value]);
 
-  const handleApplyValidationFix = useCallback(
+  const closeChordPopup = useCallback(() => setChordPopup((popup) => ({ ...popup, open: false })), []);
+
+  const applyChord = useCallback(() => {
+    const chord = chordInput.trim();
+    if (!chord) {
+      closeChordPopup();
+      return;
+    }
+    const { selStart, selEnd } = chordPopup;
+    const selected = value.slice(selStart, selEnd);
+    onChange(`${value.slice(0, selStart)}[${chord}]${selected}${value.slice(selEnd)}`);
+    closeChordPopup();
+    const cursor = selStart + chord.length + 2 + selected.length;
+    requestAnimationFrame(() => {
+      focusEditor();
+      scheduleSelection(cursor, cursor);
+    });
+  }, [chordInput, chordPopup, closeChordPopup, focusEditor, onChange, scheduleSelection, value]);
+
+  const insertEmptyChord = useCallback(() => {
+    const { start } = getSelection();
+    onChange(`${value.slice(0, start)}[]${value.slice(start)}`);
+    scheduleSelection(start + 1, start + 1);
+  }, [getSelection, onChange, scheduleSelection, value]);
+
+  // ── Keyboard shortcuts ────────────────────────
+  const handleKeyDown = useCallback(
+    (event: globalThis.KeyboardEvent) => {
+      const mod = event.ctrlKey || event.metaKey;
+      if (mod && event.key === "s") {
+        event.preventDefault();
+        onSave?.();
+      } else if (mod && event.shiftKey && event.key.toLowerCase() === "f") {
+        event.preventDefault();
+        handleFormat();
+      } else if (mod && event.key === "/") {
+        event.preventDefault();
+        toggleNoteLines();
+      } else if (mod && event.key === "k") {
+        event.preventDefault();
+        const { start, end } = getSelection();
+        if (start !== end) openChordPopup();
+        else insertEmptyChord();
+      } else if (mod && event.shiftKey && event.key === "V") {
+        event.preventDefault();
+        insertBlock("{comment: Verse}");
+      } else if (mod && event.shiftKey && event.key === "C") {
+        event.preventDefault();
+        insertBlock("{comment: Chorus}");
+      } else if (mod && event.shiftKey && event.key === "B") {
+        event.preventDefault();
+        insertBlock("{comment: Bridge}");
+      } else if (event.altKey && (event.key === "ArrowUp" || event.key === "ArrowDown")) {
+        event.preventDefault();
+        transposeSelection(event.key === "ArrowUp" ? 1 : -1);
+      }
+    },
+    [getSelection, handleFormat, insertBlock, insertEmptyChord, onSave, openChordPopup, toggleNoteLines, transposeSelection],
+  );
+
+  const handleChordInputKeyDown = useCallback(
+    (event: ReactKeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        applyChord();
+      } else if (event.key === "Escape") {
+        closeChordPopup();
+        focusEditor();
+      }
+    },
+    [applyChord, closeChordPopup, focusEditor],
+  );
+
+  // ── Validation quick fixes ────────────────────
+  const applyValidationFix = useCallback(
     (issue: ValidationIssue) => {
       const lines = value.split("\n");
       const lineIndex = Math.max(0, issue.line - 1);
       const next = [...lines];
-
       switch (issue.code) {
         case "duplicate-directive":
           next.splice(lineIndex, 1);
           onChange(next.join("\n"));
           return;
-        case "missing-metadata":
-          onChange(applySmartSuggestion(value, {
-            id: `fix-${issue.directiveName ?? "title"}`,
-            type: "missing-metadata",
-            line: 1,
-            title: "",
-            description: "",
-            directiveName: (issue.directiveName === "artist" || issue.directiveName === "key" || issue.directiveName === "title")
-              ? issue.directiveName
-              : "title",
-          }, metadata));
+        case "missing-metadata": {
+          const name = issue.directiveName === "artist" || issue.directiveName === "key" ? issue.directiveName : "title";
+          const fallback = metadata?.[name]?.trim() || (name === "title" ? "Untitled" : "");
+          onChange(`{${name}: ${fallback}}\n${value}`);
           return;
+        }
         case "malformed-chord":
-          onChange(applySmartSuggestion(value, {
-            id: `fix-${issue.line}-${issue.chordText ?? "chord"}`,
-            type: "chord-correction",
-            line: issue.line,
-            title: "",
-            description: "",
-            originalChord: issue.chordText,
-            suggestedChord: issue.suggestedValue,
-          }, metadata));
+          if (issue.chordText && issue.suggestedValue) {
+            next[lineIndex] = (next[lineIndex] ?? "").replace(`[${issue.chordText}]`, `[${issue.suggestedValue}]`);
+            onChange(next.join("\n"));
+          }
           return;
         case "unclosed-bracket":
           next[lineIndex] = `${next[lineIndex] ?? ""}]`;
@@ -577,1043 +368,179 @@ export function ChordProEditor({ value, onChange, metadata, onSave }: ChordProEd
     [metadata, onChange, value],
   );
 
-  const handleApplySmartSuggestion = useCallback(
-    (suggestion: ReturnType<typeof getSmartSuggestions>[number]) => {
-      onChange(applySmartSuggestion(value, suggestion, metadata));
+  // ── Split view scroll sync ────────────────────
+  const handleScroll = useCallback(
+    (metrics: { top: number; scrollHeight: number; clientHeight: number }) => {
+      if (viewMode !== "split" || !previewRef.current) return;
+      const ratio = metrics.top / (metrics.scrollHeight - metrics.clientHeight || 1);
+      previewRef.current.scrollTop = ratio * (previewRef.current.scrollHeight - previewRef.current.clientHeight);
     },
-    [metadata, onChange, value],
+    [viewMode],
   );
 
-  const handleSectionDrop = useCallback(
-    (targetSectionId: string) => {
-      if (!draggedSectionId || draggedSectionId === targetSectionId) {
-        setDraggedSectionId(null);
-        return;
-      }
+  // ── Close the insert menu and chord popup on outside clicks ──
+  useEffect(() => {
+    if (!insertOpen && !chordPopup.open) return;
+    const onMouseDown = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (insertOpen && insertRef.current && !insertRef.current.contains(target)) setInsertOpen(false);
+      if (chordPopup.open && popupRef.current && !popupRef.current.contains(target)) closeChordPopup();
+    };
+    document.addEventListener("mousedown", onMouseDown);
+    return () => document.removeEventListener("mousedown", onMouseDown);
+  }, [insertOpen, chordPopup.open, closeChordPopup]);
 
-      onChange(reorderChordProSections(value, draggedSectionId, targetSectionId));
-      setDraggedSectionId(null);
-    },
-    [draggedSectionId, onChange, value],
-  );
-
-  const handleSectionDuplicate = useCallback(
-    (sectionId: string) => {
-      onChange(duplicateChordProSection(value, sectionId));
-    },
-    [onChange, value],
-  );
-
-  const handleToggleSectionCollapse = useCallback((sectionId: string) => {
-    setCollapsedSectionIds((current) => (
-      current.includes(sectionId)
-        ? current.filter((id) => id !== sectionId)
-        : [...current, sectionId]
-    ));
-  }, []);
-
-  // ── Jump to a specific line (for section nav) ──
-  const jumpToLine = useCallback(
-    (lineIndex: number) => {
-      const lines = value.split("\n");
-      let charPos = 0;
-      for (let i = 0; i < lineIndex && i < lines.length; i++) {
-        charPos += lines[i].length + 1; // +1 for \n
-      }
-
-      applySelection(charPos, charPos);
-      if (!isRichEditorEnabled) {
-        const ta = textareaRef.current;
-        if (ta) {
-          const lineHeight = 20;
-          ta.scrollTop = Math.max(0, lineIndex * lineHeight - ta.clientHeight / 3);
-        }
-      }
-
-      focusActiveEditor();
-      setSectionNavOpen(false);
-    },
-    [applySelection, focusActiveEditor, isRichEditorEnabled, value],
-  );
-
-  // ── Context menu handler ──────────────────────
-  const handleContextMenu = useCallback(
-    (e: Pick<globalThis.MouseEvent, "preventDefault" | "clientX" | "clientY">) => {
-      e.preventDefault();
-      const cursorPos = getActiveSelection().start;
-      const ctx = detectContext(value, cursorPos);
-      const lines = value.split("\n");
-
-      // Helper: get char offset of line start
-      const lineOffset = (li: number) => {
-        let off = 0;
-        for (let i = 0; i < li && i < lines.length; i++) off += lines[i].length + 1;
-        return off;
-      };
-
-      const groups: typeof contextMenu.groups = [];
-
-      // ── Chord context actions ──
-      if (ctx.type === "chord" && ctx.chord != null && ctx.chordStart != null && ctx.chordEnd != null) {
-        const { chord, chordStart, chordEnd } = ctx;
-        groups.push({
-          label: "Chord",
-          actions: [
-            {
-              label: "Transpose Up",
-              shortcut: "Alt+↑",
-              action: () => {
-                const transposed = value.slice(chordStart, chordEnd).replace(
-                  /\[([^\]]+)\]/g, (_m: string, c: string) => `[${transposeChord(c, 1)}]`
-                );
-                onChange(value.slice(0, chordStart) + transposed + value.slice(chordEnd));
-              },
-            },
-            {
-              label: "Transpose Down",
-              shortcut: "Alt+↓",
-              action: () => {
-                const transposed = value.slice(chordStart, chordEnd).replace(
-                  /\[([^\]]+)\]/g, (_m: string, c: string) => `[${transposeChord(c, -1)}]`
-                );
-                onChange(value.slice(0, chordStart) + transposed + value.slice(chordEnd));
-              },
-            },
-            {
-              label: "Remove Chord",
-              action: () => {
-                // Remove the [chord] brackets — keep any text after
-                onChange(value.slice(0, chordStart) + value.slice(chordEnd));
-              },
-            },
-          ],
-        });
-      }
-
-      // ── Section header context actions ──
-      if (ctx.type === "section") {
-        const li = ctx.lineIndex;
-        groups.push({
-          label: "Section",
-          actions: [
-            {
-              label: "Duplicate Section",
-              action: () => {
-                // Find the section block: from this line to the next section header (or end)
-                let endLine = li + 1;
-                while (endLine < lines.length) {
-                  if (/^\{comment:\s*.*\}\s*$/.test(lines[endLine].trim()) && endLine > li + 1) break;
-                  endLine++;
-                }
-                const sectionBlock = lines.slice(li, endLine).join("\n");
-                const insertPos = lineOffset(endLine);
-                onChange(value.slice(0, insertPos) + sectionBlock + "\n" + value.slice(insertPos));
-              },
-            },
-            {
-              label: "Move Section Up",
-              action: () => {
-                if (li === 0) return;
-                // Find previous section start
-                let prevStart = li - 1;
-                while (prevStart > 0 && !/^\{comment:\s*.*\}\s*$/.test(lines[prevStart].trim())) {
-                  prevStart--;
-                }
-                const newLines = [...lines];
-                // Find current section block end
-                let endLine = li + 1;
-                while (endLine < lines.length && !/^\{comment:\s*.*\}\s*$/.test(lines[endLine].trim())) {
-                  endLine++;
-                }
-                const block = newLines.splice(li, endLine - li);
-                newLines.splice(prevStart, 0, ...block);
-                onChange(newLines.join("\n"));
-              },
-            },
-            {
-              label: "Move Section Down",
-              action: () => {
-                // Find current section block end
-                let endLine = li + 1;
-                while (endLine < lines.length && !/^\{comment:\s*.*\}\s*$/.test(lines[endLine].trim())) {
-                  endLine++;
-                }
-                if (endLine >= lines.length) return;
-                // Find next section block end
-                let nextEnd = endLine + 1;
-                while (nextEnd < lines.length && !/^\{comment:\s*.*\}\s*$/.test(lines[nextEnd].trim())) {
-                  nextEnd++;
-                }
-                const newLines = [...lines];
-                const block = newLines.splice(li, endLine - li);
-                const insertAt = Math.min(nextEnd - block.length, newLines.length);
-                newLines.splice(insertAt < 0 ? 0 : insertAt, 0, ...block);
-                onChange(newLines.join("\n"));
-              },
-            },
-          ],
-        });
-      }
-
-      // ── Lyrics context actions ──
-      if (ctx.type === "lyrics") {
-        groups.push({
-          label: "Lyrics",
-          actions: [
-            {
-              label: "Insert Chord",
-              shortcut: "Ctrl+K",
-              action: () => {
-                const newValue = value.slice(0, cursorPos) + "[]" + value.slice(cursorPos);
-                onChange(newValue);
-                scheduleSelection(cursorPos + 1, cursorPos + 1);
-              },
-            },
-            {
-              label: "Convert to Comment",
-              shortcut: "Ctrl+/",
-              action: () => {
-                const li = ctx.lineIndex;
-                const trimmed = lines[li].trim();
-                if (!/^\{comment:/.test(trimmed)) {
-                  const newLines = [...lines];
-                  newLines[li] = `{comment: ${trimmed}}`;
-                  onChange(newLines.join("\n"));
-                }
-              },
-            },
-          ],
-        });
-      }
-
-      // ── General line actions (always shown) ──
-      groups.push({
-        label: "Line",
-        actions: [
-          {
-            label: "Insert Line Above",
-            action: () => {
-              const pos = lineOffset(ctx.lineIndex);
-              onChange(value.slice(0, pos) + "\n" + value.slice(pos));
-              scheduleSelection(pos, pos);
-            },
-          },
-          {
-            label: "Insert Line Below",
-            action: () => {
-              const pos = lineOffset(ctx.lineIndex) + lines[ctx.lineIndex].length;
-              onChange(value.slice(0, pos) + "\n" + value.slice(pos));
-              scheduleSelection(pos + 1, pos + 1);
-            },
-          },
-          {
-            label: "Duplicate Line",
-            action: () => {
-              const pos = lineOffset(ctx.lineIndex) + lines[ctx.lineIndex].length;
-              onChange(value.slice(0, pos) + "\n" + lines[ctx.lineIndex] + value.slice(pos));
-            },
-          },
-          {
-            label: "Delete Line",
-            action: () => {
-              const newLines = [...lines];
-              newLines.splice(ctx.lineIndex, 1);
-              onChange(newLines.join("\n"));
-            },
-          },
-        ],
-      });
-
-      setContextMenu({
-        open: true,
-        position: { x: e.clientX, y: e.clientY },
-        groups,
-      });
-    },
-    [getActiveSelection, onChange, scheduleSelection, value],
-  );
-
-  // ── 3) Chord popup on text selection ──────────
-  const handleMouseUp = useCallback(() => {
-    const { start: selectionStart, end: selectionEnd } = getActiveSelection();
-    if (selectionStart === selectionEnd) return; // no selection
-
-    const rect = isRichEditorEnabled
-      ? richEditorRef.current?.getDomRect()
-      : textareaRef.current?.getBoundingClientRect();
-    if (!rect) return;
-
-    const scrollTop = isRichEditorEnabled
-      ? richEditorRef.current?.getScrollMetrics().top ?? 0
-      : textareaRef.current?.scrollTop ?? 0;
-
-    // Use a rough approximation: character position → pixel offset
-    const linesBefore = value.slice(0, selectionStart).split("\n");
-    const lineHeight = 20; // approximation for font-mono text-sm
-    const charWidth = 8;
-    const row = linesBefore.length - 1;
-    const col = linesBefore[linesBefore.length - 1].length;
-
-    const x = Math.min(rect.width - 180, Math.max(0, col * charWidth));
-    const y = Math.min(rect.height - 40, Math.max(0, (row + 1) * lineHeight - scrollTop));
-
-    setChordPopup({
-      open: true,
-      x,
-      y,
-      selStart: selectionStart,
-      selEnd: selectionEnd,
-    });
-    setChordInput("");
-    requestAnimationFrame(() => chordInputRef.current?.focus());
-  }, [getActiveSelection, isRichEditorEnabled, value]);
-
-  const applyChord = useCallback(() => {
-    const chord = chordInput.trim();
-    if (!chord) {
-      setChordPopup((p) => ({ ...p, open: false }));
-      return;
-    }
-    const { selStart, selEnd } = chordPopup;
-    const selectedText = value.slice(selStart, selEnd);
-    const newValue =
-      value.slice(0, selStart) + `[${chord}]${selectedText}` + value.slice(selEnd);
-    onChange(newValue);
-    setChordPopup((p) => ({ ...p, open: false }));
-
-    // Restore cursor after the inserted chord+text
-    requestAnimationFrame(() => {
-      const pos = selStart + chord.length + 2 + selectedText.length;
-      focusActiveEditor();
-      scheduleSelection(pos, pos);
-    });
-  }, [chordInput, chordPopup, focusActiveEditor, onChange, scheduleSelection, value]);
-
-  const handleChordKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        applyChord();
-      } else if (e.key === "Escape") {
-        setChordPopup((p) => ({ ...p, open: false }));
-        focusActiveEditor();
-      }
-    },
-    [applyChord, focusActiveEditor],
-  );
-
-  const toggleCommentSelection = useCallback(() => {
-    const { start: selectionStart, end: selectionEnd } = getActiveSelection();
-    const lines = value.split("\n");
-    let charIdx = 0;
-    let startLine = 0;
-    let endLine = 0;
-
-    for (let i = 0; i < lines.length; i++) {
-      const lineEnd = charIdx + lines[i].length;
-      if (charIdx <= selectionStart && selectionStart <= lineEnd + 1) startLine = i;
-      if (charIdx <= selectionEnd && selectionEnd <= lineEnd + 1) endLine = i;
-      charIdx = lineEnd + 1;
-    }
-
-    const allComments = lines.slice(startLine, endLine + 1).every((line) =>
-      /^\{comment:\s*.*\}$/.test(line.trim()),
-    );
-    const newLines = [...lines];
-    for (let i = startLine; i <= endLine; i++) {
-      const trimmed = newLines[i].trim();
-      if (allComments) {
-        const match = trimmed.match(/^\{comment:\s*(.*)\}$/);
-        newLines[i] = match ? match[1] : trimmed;
-      } else if (trimmed && !/^\{comment:/.test(trimmed)) {
-        newLines[i] = `{comment: ${trimmed}}`;
-      }
-    }
-
-    onChange(newLines.join("\n"));
-  }, [getActiveSelection, onChange, value]);
-
-  const insertEmptyChordAtCursor = useCallback(() => {
-    const { start: selectionStart } = getActiveSelection();
-    const newValue = value.slice(0, selectionStart) + "[]" + value.slice(selectionStart);
-    onChange(newValue);
-    scheduleSelection(selectionStart + 1, selectionStart + 1);
-  }, [getActiveSelection, onChange, scheduleSelection, value]);
-
-  const transposeSelection = useCallback((steps: number) => {
-    const { start, end } = getActiveSelection();
-    let rangeStart = start;
-    let rangeEnd = end;
-
-    if (rangeStart === rangeEnd) {
-      const lineStart = value.lastIndexOf("\n", rangeStart - 1) + 1;
-      const lineEnd = value.indexOf("\n", rangeStart);
-      rangeStart = lineStart;
-      rangeEnd = lineEnd === -1 ? value.length : lineEnd;
-    }
-
-    const selectedText = value.slice(rangeStart, rangeEnd);
-    const transposed = selectedText.replace(/\[([^\]]+)\]/g, (_m: string, chord: string) => {
-      return `[${transposeChord(chord, steps)}]`;
-    });
-
-    if (transposed !== selectedText) {
-      const newValue = value.slice(0, rangeStart) + transposed + value.slice(rangeEnd);
-      onChange(newValue);
-      scheduleSelection(rangeStart, rangeStart + transposed.length);
-    }
-  }, [getActiveSelection, onChange, scheduleSelection, value]);
-
-  // ── 4) Keyboard shortcuts on the textarea ─────
-  const handleEditorKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLTextAreaElement> | globalThis.KeyboardEvent) => {
-      // Ctrl+S — save (with optional format-on-save)
-      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
-        e.preventDefault();
-        if (formatOnSave) {
-          const formatted = formatChordPro(value);
-          if (formatted !== value) onChange(formatted);
-        }
-        onSave?.();
-        return;
-      }
-
-      // Ctrl+Space — open command palette
-      if ((e.ctrlKey || e.metaKey) && e.key === " ") {
-        e.preventDefault();
-        slashPosRef.current = null;
-        setCommandPaletteQuery("");
-        setCommandPaletteOpen(true);
-        return;
-      }
-
-      // F1 — toggle help panel
-      if (e.key === "F1") {
-        e.preventDefault();
-        setHelpOpen((prev) => !(prev ?? false));
-        return;
-      }
-
-      // Ctrl+Shift+F — format document
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "f") {
-        e.preventDefault();
-        handleFormat();
-        return;
-      }
-
-      // Ctrl+P — open section navigator
-      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "p") {
-        if (sections.length > 0) {
-          e.preventDefault();
-          setSectionNavOpen(true);
-        }
-        return;
-      }
-
-      // Ctrl+1 / Ctrl+2 / Ctrl+3 — jump to common sections
-      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && ["1", "2", "3"].includes(e.key)) {
-        e.preventDefault();
-        const line = e.key === "1"
-          ? findSectionLine(/^verse/i)
-          : e.key === "2"
-            ? findSectionLine(/^chorus/i)
-            : findSectionLine(/^bridge/i);
-        if (line !== null) {
-          jumpToLine(line);
-        }
-        return;
-      }
-
-      // Ctrl+/ — toggle comment on selected line(s)
-      if ((e.ctrlKey || e.metaKey) && e.key === "/") {
-        e.preventDefault();
-        toggleCommentSelection();
-        return;
-      }
-
-      // Ctrl+K — insert chord at cursor / on selection
-      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-        e.preventDefault();
-        const { start: selectionStart, end: selectionEnd } = getActiveSelection();
-        if (selectionStart !== selectionEnd) {
-          // Trigger chord popup at selection
-          handleMouseUp();
-        } else {
-          insertEmptyChordAtCursor();
-        }
-        return;
-      }
-
-      // Ctrl+Shift+V — insert Verse header
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "V") {
-        e.preventDefault();
-        insertAtCursor("{comment: Verse}");
-        return;
-      }
-
-      // Ctrl+Shift+C — insert Chorus header
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "C") {
-        e.preventDefault();
-        insertAtCursor("{comment: Chorus}");
-        return;
-      }
-
-      // Ctrl+Shift+B — insert Bridge header
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "B") {
-        e.preventDefault();
-        insertAtCursor("{comment: Bridge}");
-        return;
-      }
-
-      // Alt+Up / Alt+Down — transpose selected chord(s) up/down one semitone
-      if (e.altKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
-        e.preventDefault();
-        transposeSelection(e.key === "ArrowUp" ? 1 : -1);
-        return;
-      }
-    },
-    [findSectionLine, formatOnSave, getActiveSelection, handleFormat, handleMouseUp, insertAtCursor, insertEmptyChordAtCursor, jumpToLine, onSave, sections.length, toggleCommentSelection, transposeSelection],
-  );
-
-  // ── Sync overlay scroll with textarea (and optionally preview) ──
-  const overlayRef = useRef<HTMLPreElement | null>(null);
-  const handleScroll = useCallback(() => {
-    const ta = textareaRef.current;
-    const overlay = overlayRef.current;
-    if (ta && overlay) {
-      overlay.scrollTop = ta.scrollTop;
-      overlay.scrollLeft = ta.scrollLeft;
-    }
-    syncGutterScroll();
-    // Optionally sync preview in split mode
-    if (viewMode === "split" && ta && previewRef.current) {
-      const scrollRatio = ta.scrollTop / (ta.scrollHeight - ta.clientHeight || 1);
-      const previewEl = previewRef.current;
-      previewEl.scrollTop = scrollRatio * (previewEl.scrollHeight - previewEl.clientHeight);
-    }
-  }, [viewMode, syncGutterScroll]);
-
-  const handleRichEditorScroll = useCallback((metrics: {
-    top: number;
-    left: number;
-    scrollHeight: number;
-    clientHeight: number;
-  }) => {
-    if (viewMode === "split" && previewRef.current) {
-      const scrollRatio = metrics.top / (metrics.scrollHeight - metrics.clientHeight || 1);
-      const previewEl = previewRef.current;
-      previewEl.scrollTop = scrollRatio * (previewEl.scrollHeight - previewEl.clientHeight);
-    }
-  }, [viewMode]);
-
-  // Quick chord validation for the visual indicator
-  const isValidChord = chordInput.trim()
-    ? CHORD_REGEX.test(chordInput.trim()) || /^[A-G]/.test(chordInput.trim())
-    : null;
-  const isBeginnerMode = editorMode === "beginner";
-  const showPowerTools = !isBeginnerMode;
-
-  // ── Slash-command detection on change ─────────
-  const handleEditorValueChange = useCallback((newValue: string, cursor: number) => {
-      onChange(newValue);
-
-      // Detect "/" typed at line start → open command palette
-      if (cursor > 0 && newValue[cursor - 1] === "/") {
-        const lineStart = newValue.lastIndexOf("\n", cursor - 2) + 1;
-        const textBefore = newValue.slice(lineStart, cursor - 1).trim();
-        if (textBefore === "") {
-          slashPosRef.current = cursor - 1; // position of the "/"
-          setCommandPaletteQuery("");
-          setCommandPaletteOpen(true);
-        }
-      }
-  },
-    [onChange],
-  );
-
-  const handleChange = useCallback(
-    (e: ChangeEvent<HTMLTextAreaElement>) => {
-      handleEditorValueChange(e.target.value, e.target.selectionStart);
-    },
-    [handleEditorValueChange],
+  const chordLooksValid = chordInput.trim() ? CHORD_REGEX.test(chordInput.trim()) || /^[A-G]/.test(chordInput.trim()) : null;
+  const viewButton = (mode: ViewMode, label: string, icon: React.ReactNode, extra = "") => (
+    <button
+      type="button"
+      onClick={() => setViewMode(mode)}
+      aria-pressed={viewMode === mode}
+      className={`inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-colors ${extra} ${
+        viewMode === mode
+          ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+          : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
+      }`}
+      data-testid={`view-mode-${mode}`}
+    >
+      {icon}
+      {label}
+    </button>
   );
 
   return (
     <div className="space-y-2" role="region" aria-label="ChordPro editor">
-      {/* Toolbar */}
-      <div className="sticky top-16 z-20 -mx-2 rounded-lg border border-transparent bg-[hsl(var(--background))/0.95] px-2 py-2 backdrop-blur supports-backdrop-filter:bg-[hsl(var(--background))/0.85] md:mx-0" data-testid="editor-toolbar">
-      <div className="flex flex-wrap items-center gap-2">
-        <label className="text-sm font-medium text-[hsl(var(--foreground))]">
-          Content (ChordPro format)
-        </label>
-
-        <div className="ml-auto flex items-center gap-2">
-          {/* View mode toggle */}
-          <div className="flex items-center rounded-md border border-[hsl(var(--border))]" data-testid="view-mode-toggle">
-            <button
-              type="button"
-              onClick={() => setViewMode("edit")}
-              className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium transition-colors rounded-l-md ${
-                viewMode === "edit"
-                  ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                  : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-              }`}
-              title="Editor only"
-              data-testid="view-mode-edit"
-              aria-label="Switch to editor-only mode"
-            >
-              <Pencil className="h-3 w-3" />
-              Edit
-            </button>
-            {showPowerTools && (
-              <button
-                type="button"
-                onClick={() => setViewMode("split")}
-                className={`inline-flex items-center gap-1 border-x border-[hsl(var(--border))] px-2 py-1 text-xs font-medium transition-colors ${
-                  viewMode === "split"
-                    ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                    : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-                }`}
-                title="Split view"
-                data-testid="view-mode-split"
-                aria-label="Switch to split editor and preview mode"
-              >
-                <Columns className="h-3 w-3" />
-                Split
-              </button>
-            )}
-            <button
-              type="button"
-              onClick={() => setViewMode("preview")}
-              className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium transition-colors ${
-                viewMode === "preview"
-                  ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                  : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
-              } ${showPowerTools ? "rounded-r-md" : "border-l border-[hsl(var(--border))] rounded-r-md"}`}
-              title="Preview only"
-              data-testid="view-mode-preview"
-              aria-label="Switch to preview-only mode"
-            >
-              <Eye className="h-3 w-3" />
-              Preview
-            </button>
+      <div className="flex flex-wrap items-center gap-2" data-testid="editor-toolbar">
+        <span className="text-sm font-medium text-[hsl(var(--foreground))]">Chart (ChordPro)</span>
+        <div className="ml-auto flex flex-wrap items-center gap-2">
+          <div className="flex items-center overflow-hidden rounded-md border border-[hsl(var(--border))]" data-testid="view-mode-toggle">
+            {viewButton("edit", "Edit", <Pencil className="h-3 w-3" />)}
+            {viewButton("split", "Split", <Columns className="h-3 w-3" />, "hidden border-x border-[hsl(var(--border))] sm:inline-flex")}
+            {viewButton("preview", "Preview", <Eye className="h-3 w-3" />, "border-l border-[hsl(var(--border))] sm:border-l-0")}
           </div>
 
-          {/* Section insert dropdown (hidden in preview-only mode) */}
           {viewMode !== "preview" && (
             <>
-              {showPowerTools && (
-                <>
-                  {/* Format button */}
-                  <button
-                    type="button"
-                    onClick={handleFormat}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 py-1.5 text-xs font-medium text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition-colors"
-                    title="Format document (normalize directives, spacing, etc.)"
-                    data-testid="format-btn"
-                    aria-label="Format ChordPro document"
-                  >
-                    <Wand2 className="h-3.5 w-3.5" />
-                    Format
-                  </button>
-
-                  {/* Format on save toggle */}
-                  <label
-                    className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-[hsl(var(--muted-foreground))]"
-                    title="Auto-format when saving"
-                    data-testid="format-on-save-label"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={formatOnSave}
-                      onChange={(e) => setFormatOnSave(e.target.checked)}
-                      className="h-3.5 w-3.5 accent-[hsl(var(--secondary))]"
-                      data-testid="format-on-save-checkbox"
-                      aria-label="Auto-format document on save"
-                    />
-                    Auto
-                  </label>
-
-                  {/* Section navigation dropdown */}
-                  {sections.length > 0 && (
-                    <div className="relative">
-                      <button
-                        ref={sectionNavBtnRef}
-                        type="button"
-                        onClick={() => setSectionNavOpen((o) => !o)}
-                        className="inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 py-1.5 text-xs font-medium text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition-colors"
-                        data-testid="section-nav-btn"
-                        aria-label="Open section navigation menu"
-                        aria-expanded={sectionNavOpen}
-                      >
-                        <MapPin className="h-3.5 w-3.5" />
-                        Go to Section
-                        <ChevronDown className="h-3 w-3" />
-                      </button>
-                      {sectionNavOpen && (
-                        <div
-                          ref={sectionNavDropdownRef}
-                          className="fixed inset-x-4 bottom-4 z-50 max-h-[45vh] overflow-y-auto rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--popover))] py-1 shadow-lg md:absolute md:right-0 md:inset-x-auto md:bottom-auto md:mt-1 md:max-h-64 md:w-48"
-                          data-testid="section-nav-dropdown"
-                          role="dialog"
-                          aria-label="Section navigation"
-                        >
-                          {sections.map((sec) => (
-                            <button
-                              key={`${sec.name}-${sec.line}`}
-                              type="button"
-                              onClick={() => jumpToLine(sec.line)}
-                              className="flex w-full items-center justify-between px-3 py-1.5 text-left text-sm text-[hsl(var(--popover-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] transition-colors"
-                            >
-                              <span>{sec.name}</span>
-                              <span className="text-[10px] text-[hsl(var(--muted-foreground))]">
-                                Ln {sec.line + 1}
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
-
-              <div className="relative">
-              <button
-                ref={sectionBtnRef}
-                type="button"
-                onClick={() => setSectionDropdownOpen((o) => !o)}
-                className="inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 py-1.5 text-xs font-medium text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))] transition-colors"
-                data-testid="section-insert-btn"
-                aria-label="Open insert section menu"
-                aria-expanded={sectionDropdownOpen}
-              >
-                <Music className="h-3.5 w-3.5" />
-                {isBeginnerMode ? "Insert" : "Insert Section"}
-                <ChevronDown className="h-3 w-3" />
-              </button>
-              {sectionDropdownOpen && (
-                <div className="relative">
+              <div className="relative" ref={insertRef}>
+                <button
+                  type="button"
+                  onClick={() => setInsertOpen((open) => !open)}
+                  className="btn-outline btn-sm gap-1.5"
+                  aria-haspopup="menu"
+                  aria-expanded={insertOpen}
+                  data-testid="section-insert-btn"
+                >
+                  <Music className="h-3.5 w-3.5" />
+                  Insert
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+                {insertOpen && (
                   <div
-                    ref={dropdownRef}
-                    className="fixed inset-x-4 bottom-4 z-50 max-h-[45vh] overflow-y-auto rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--popover))] py-1 shadow-lg md:absolute md:right-0 md:inset-x-auto md:bottom-auto md:mt-1 md:max-h-64 md:w-48"
+                    role="menu"
+                    aria-label="Insert"
+                    className="fixed inset-x-4 bottom-4 z-40 max-h-[50vh] overflow-y-auto rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--popover))] py-1 shadow-lg sm:absolute sm:inset-x-auto sm:bottom-auto sm:right-0 sm:mt-1 sm:max-h-72 sm:w-52"
                     data-testid="section-dropdown"
-                    role="dialog"
-                    aria-label="Insert section options"
                   >
-                    {SECTION_INSERTS.map(({ label, value: v }) => (
+                    {SECTION_INSERTS.map((item) => (
+                      <button key={item.label} type="button" role="menuitem" onClick={() => insertBlock(item.value)} className="block w-full px-3 py-2 text-left text-sm hover:bg-[hsl(var(--muted))]">
+                        {item.label}
+                      </button>
+                    ))}
+                    <div className="my-1 border-t border-[hsl(var(--border))]" role="separator" />
+                    {LINE_INSERTS.map((item) => (
                       <button
-                        key={label}
+                        key={item.label}
                         type="button"
-                        onClick={() => insertAtCursor(v)}
-                        className="w-full px-3 py-1.5 text-left text-sm text-[hsl(var(--popover-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] transition-colors"
+                        role="menuitem"
+                        onClick={() => (item.inline ? insertInline(item.value, item.cursorOffset) : insertBlock(item.value, item.cursorOffset))}
+                        className="block w-full px-3 py-2 text-left text-sm hover:bg-[hsl(var(--muted))]"
                       >
-                        {label}
+                        {item.label}
                       </button>
                     ))}
                   </div>
-                </div>
-              )}
-            </div>
-            </>
-          )}
-        </div>
-      </div>
-      </div>
-
-      {/* Hint (hidden in preview-only mode) */}
-      {viewMode !== "preview" && (
-        <p className="text-xs text-[hsl(var(--muted-foreground))]">
-          {isBeginnerMode ? (
-            <>
-              Start with an example below, keep the help panel open while you learn, and use the Insert menu for common song sections.
-            </>
-          ) : (
-            <>
-              Select any word and type a chord to insert it • Use the dropdown to add section markers • <kbd className="rounded border border-[hsl(var(--border))] bg-[hsl(var(--muted))] px-1 py-0.5 text-[10px] font-mono">Ctrl+Space</kbd> command palette • <kbd className="rounded border border-[hsl(var(--border))] bg-[hsl(var(--muted))] px-1 py-0.5 text-[10px] font-mono">/</kbd> slash commands • <kbd className="rounded border border-[hsl(var(--border))] bg-[hsl(var(--muted))] px-1 py-0.5 text-[10px] font-mono">Ctrl+Shift+F</kbd> format • <kbd className="rounded border border-[hsl(var(--border))] bg-[hsl(var(--muted))] px-1 py-0.5 text-[10px] font-mono">F1</kbd> help • <kbd className="rounded border border-[hsl(var(--border))] bg-[hsl(var(--muted))] px-1 py-0.5 text-[10px] font-mono">Ctrl+S</kbd> to save
-            </>
-          )}
-        </p>
-      )}
-
-      {viewMode !== "preview" && isBeginnerMode && (
-        <div
-          className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/60 p-3"
-          data-testid="beginner-example-panel"
-        >
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="text-sm font-medium text-[hsl(var(--foreground))]">Beginner tools</p>
-              <p className="mt-1 text-xs text-[hsl(var(--muted-foreground))]">
-                Examples stay visible by default so you can build a song without memorizing directives first.
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => setHelpOpen(true)}
-              className="btn-outline btn-sm"
-            >
-              Open Help
-            </button>
-          </div>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {BEGINNER_EXAMPLES.map((example) => (
-              <button
-                key={example.label}
-                type="button"
-                onClick={() => insertAtCursor(example.value)}
-                className="btn-outline btn-sm"
-              >
-                {example.label}
+                )}
+              </div>
+              <button type="button" onClick={handleFormat} className="btn-outline btn-sm gap-1.5" title="Tidy directives and spacing (Ctrl+Shift+F)" data-testid="format-btn">
+                <Wand2 className="h-3.5 w-3.5" />
+                Format
               </button>
-            ))}
-          </div>
+            </>
+          )}
         </div>
-      )}
-
-      {viewMode !== "preview" && showPowerTools && (
-        <div
-          className="flex flex-wrap gap-2 text-xs text-[hsl(var(--muted-foreground))]"
-          data-testid="advanced-shortcuts"
-        >
-          <span className="rounded-full border border-[hsl(var(--border))] px-2 py-1">Ctrl+Space palette</span>
-          <span className="rounded-full border border-[hsl(var(--border))] px-2 py-1">/ slash commands</span>
-          <span className="rounded-full border border-[hsl(var(--border))] px-2 py-1">Ctrl+Shift+F format</span>
-          <span className="rounded-full border border-[hsl(var(--border))] px-2 py-1">Alt+↑/↓ transpose</span>
-        </div>
-      )}
-
-      {viewMode !== "preview" && showPowerTools && (
-        <CursorContextHelp
-          title={cursorHelp.title}
-          body={cursorHelp.body}
-          tips={cursorHelp.tips}
-        />
-      )}
-
-      <SmartSuggestionsPanel
-        suggestions={smartSuggestions}
-        onApplySuggestion={handleApplySmartSuggestion}
-      />
-
-      {viewMode !== "preview" && showPowerTools && organizedSections.length > 0 && (
-        <SectionOrganizer
-          sections={organizedSections}
-          draggedSectionId={draggedSectionId}
-          collapsedSectionIds={collapsedSectionIds}
-          onDragStart={setDraggedSectionId}
-          onDrop={handleSectionDrop}
-          onDuplicate={handleSectionDuplicate}
-          onToggleCollapse={handleToggleSectionCollapse}
-          onJumpToLine={jumpToLine}
-        />
-      )}
-
-      {collapsedSectionIds.length > 0 && viewMode !== "preview" && (
-        <div
-          className="rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/70 px-3 py-2 text-xs text-[hsl(var(--muted-foreground))]"
-          data-testid="collapsed-sections-banner"
-        >
-          {collapsedSectionIds.length} section{collapsedSectionIds.length === 1 ? " is" : "s are"} folded in the editor view. Expand them from the section organizer to resume direct source editing.
-        </div>
-      )}
+      </div>
 
       {viewMode !== "preview" && sections.length > 0 && (
-        <div className="flex gap-2 overflow-x-auto pb-1" data-testid="section-chip-bar" aria-label="Quick section navigation">
+        <div className="flex flex-wrap gap-1.5" data-testid="section-chips" aria-label="Jump to section">
           {sections.map((section) => (
-            <button
-              key={`${section.name}-${section.line}`}
-              type="button"
-              onClick={() => jumpToLine(section.line)}
-              className="btn-outline btn-sm whitespace-nowrap"
-              aria-label={`Jump to section ${section.name}`}
-            >
+            <button key={`${section.name}-${section.line}`} type="button" onClick={() => jumpToLine(section.line)} className="badge-muted hover:bg-[hsl(var(--muted))]">
               {section.name}
             </button>
           ))}
         </div>
       )}
 
-      {/* Editor / Preview content area */}
-      <div className={viewMode === "split" ? "grid grid-cols-2 gap-4" : ""}>
-        {/* ── Editor pane (hidden in preview-only mode) ── */}
+      <div className={viewMode === "split" ? "grid gap-4 sm:grid-cols-2" : ""}>
         {viewMode !== "preview" && (
           <div className="relative">
-            {isRichEditorEnabled ? (
-              <ChordProRichEditorSurface
-                ref={richEditorRef}
-                value={editorSurfaceValue}
-                onValueChange={handleEditorValueChange}
-                onSelectionChange={handleSelectionChange}
-                onScrollChange={handleRichEditorScroll}
-                onKeyDown={handleEditorKeyDown}
-                onMouseUp={handleMouseUp}
-                onContextMenu={handleContextMenu}
-                readOnly={collapsedSectionIds.length > 0}
-                placeholderText={`{title: Amazing Grace}
-{key: G}
-
-{comment: Verse 1}
-[G]Amazing [G/B]grace, how [C]sweet the [G]sound
-That [G]saved a [Em]wretch like [D]me`}
-              />
-            ) : (
-              <div className="relative flex">
-                {/* Line number gutter */}
-                <div
-                  ref={gutterRef}
-                  className="pointer-events-none select-none overflow-hidden rounded-l-md border-r border-[hsl(var(--border))] bg-[hsl(var(--muted))] py-2 pr-2 text-right font-mono text-xs leading-5 text-[hsl(var(--muted-foreground))]"
-                  style={{ minWidth: `${Math.max(2, String(lineCount).length) * 0.75 + 0.75}rem` }}
-                  aria-hidden="true"
-                  data-testid="line-number-gutter"
-                >
-                  {Array.from({ length: lineCount }, (_, i) => (
-                    <div
-                      key={i}
-                      className={`px-1 ${i === currentLine ? "text-[hsl(var(--foreground))] font-medium" : ""}`}
-                    >
-                      {i + 1}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Editor area (overlay + textarea) */}
-                <div className="relative flex-1">
-                  {/* Current line highlight */}
-                  <div
-                    className="pointer-events-none absolute left-0 right-0 z-5 bg-[hsl(var(--accent))]/10"
-                    style={{
-                      top: `${currentLine * 20 + 8 - (textareaRef.current?.scrollTop ?? 0)}px`,
-                      height: "20px",
-                    }}
-                    data-testid="current-line-highlight"
-                  />
-
-                  {/* Syntax highlight overlay */}
-                  <SyntaxHighlightOverlay value={editorSurfaceValue} ref={overlayRef} />
-
-                  <textarea
-                    ref={textareaRef}
-                    value={editorSurfaceValue}
-                    onChange={handleChange}
-                    onMouseUp={() => { handleMouseUp(); updateCurrentLine(); }}
-                    onKeyDown={handleEditorKeyDown}
-                    onKeyUp={updateCurrentLine}
-                    onClick={updateCurrentLine}
-                    onContextMenu={handleContextMenu}
-                    onScroll={handleScroll}
-                    rows={20}
-                    spellCheck={false}
-                    readOnly={collapsedSectionIds.length > 0}
-                    className="relative z-10 w-full rounded-r-md border border-l-0 border-[hsl(var(--input))] bg-transparent px-3 py-2 font-mono text-sm leading-5 text-transparent caret-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]"
-                    placeholder={`{title: Amazing Grace}
-{key: G}
-
-{comment: Verse 1}
-[G]Amazing [G/B]grace, how [C]sweet the [G]sound
-That [G]saved a [Em]wretch like [D]me`}
-                    data-testid="chordpro-editor"
-                    aria-label="ChordPro song content editor"
-                  />
-                </div>
+            <ChordProRichEditorSurface
+              ref={editorRef}
+              value={value}
+              onValueChange={(next, start, end) => {
+                onChange(next);
+                setSelection({ start, end });
+              }}
+              onSelectionChange={(start, end) => setSelection({ start, end })}
+              onScrollChange={handleScroll}
+              onKeyDown={handleKeyDown}
+              onMouseUp={openChordPopup}
+              placeholderText={"{title: Song title}\n{key: G}\n\n{comment: Verse 1}\n[G]Lyrics with [C]chords in [D]brackets"}
+            />
+            {chordPopup.open && (
+              <div
+                ref={popupRef}
+                className="absolute z-30 flex items-center gap-2 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--popover))] p-2 shadow-lg"
+                style={{ left: chordPopup.x, top: chordPopup.y }}
+                data-testid="chord-popup"
+              >
+                <input
+                  ref={chordInputRef}
+                  value={chordInput}
+                  onChange={(event) => setChordInput(event.target.value)}
+                  onKeyDown={handleChordInputKeyDown}
+                  placeholder="Chord, e.g. G/B"
+                  aria-label="Chord to insert"
+                  className={`input h-9 w-32 text-sm ${chordLooksValid === false ? "border-[hsl(var(--destructive))]" : ""}`}
+                />
+                <button type="button" onClick={applyChord} className="btn-primary btn-sm">
+                  Add
+                </button>
               </div>
             )}
-
-              {/* ── Chord popup ────────────────────────── */}
-              {chordPopup.open && (
-                <div
-                  ref={popupRef}
-                  className="absolute z-50 flex items-center gap-1.5 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--popover))] p-2 shadow-xl"
-                  style={{ left: chordPopup.x, top: chordPopup.y }}
-                  data-testid="chord-popup"
-                  role="dialog"
-                  aria-modal="false"
-                  aria-label="Insert chord"
-                >
-                  <span className="text-xs text-[hsl(var(--muted-foreground))]">Chord:</span>
-                  <input
-                    ref={chordInputRef}
-                    type="text"
-                    value={chordInput}
-                    onChange={(e) => setChordInput(e.target.value)}
-                    onKeyDown={handleChordKeyDown}
-                    placeholder="e.g. Am7, C/G"
-                    className={`w-28 rounded border px-2 py-1 font-mono text-sm text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))] focus-visible:outline-none focus-visible:ring-1 ${
-                      isValidChord === null
-                        ? "border-[hsl(var(--input))] bg-[hsl(var(--background))]"
-                        : isValidChord
-                          ? "border-green-500 bg-green-500/10"
-                          : "border-amber-500 bg-amber-500/10"
-                    }`}
-                    data-testid="chord-input"
-                    aria-label="Chord name"
-                  />
-                  <button
-                    type="button"
-                    onClick={applyChord}
-                    disabled={!chordInput.trim()}
-                    className="rounded-md bg-[hsl(var(--secondary))] px-2.5 py-1 text-xs font-medium text-[hsl(var(--secondary-foreground))] hover:opacity-90 disabled:opacity-40 transition-opacity"
-                    data-testid="chord-apply-btn"
-                    aria-label="Apply chord insertion"
-                  >
-                    Apply
-                  </button>
-                  <span className="text-[10px] text-[hsl(var(--muted-foreground))]">
-                    Enter ↵
-                  </span>
-                </div>
-              )}
-
           </div>
         )}
-
-        {/* ── Preview pane (visible in split and preview modes) ── */}
         {viewMode !== "edit" && (
-          <div
-            ref={previewRef}
-            className={`song-surface overflow-y-auto rounded-md border border-[hsl(var(--border))] p-4 ${
-              viewMode === "split" ? "max-h-[calc(20*20px+1rem)]" : ""
-            }`}
-            style={viewMode === "split" ? { maxHeight: "calc(20 * 20px + 1rem)" } : undefined}
-            data-testid="split-preview-pane"
-          >
-            {value.trim() ? (
-              <ChordProRenderer
-                content={value}
-                songKey={metadata?.key}
-                showChords
-                fontSize={14}
-              />
-            ) : (
-              <p className="text-sm italic text-[hsl(var(--muted-foreground))]">
-                Start typing in the editor to see a live preview…
-              </p>
-            )}
+          <div ref={previewRef} className="card card-body max-h-[70vh] overflow-y-auto" data-testid="editor-preview">
+            <ChordProRenderer content={value} songKey={metadata?.key} fontSize={14} />
           </div>
         )}
       </div>
 
-      {/* Validation panel */}
-      <ValidationPanel source={value} onApplyFix={handleApplyValidationFix} />
+      <ValidationPanel source={value} onApplyFix={applyValidationFix} />
 
-      {/* Collapsible help section */}
-      <EditorHelpSection onInsertTemplate={insertAtCursor} open={helpOpen} onOpenChange={setHelpOpen} />
-
-      {/* Context menu */}
-      <EditorContextMenu
-        open={contextMenu.open}
-        position={contextMenu.position}
-        groups={contextMenu.groups}
-        onClose={() => setContextMenu((m) => ({ ...m, open: false }))}
-      />
-
-      {/* Command palette */}
-      <CommandPalette
-        open={commandPaletteOpen}
-        onClose={handleCommandPaletteClose}
-        onSelect={handleCommandSelect}
-        initialQuery={commandPaletteQuery}
-      />
+      <details className="text-xs text-[hsl(var(--muted-foreground))]">
+        <summary className="cursor-pointer select-none">ChordPro cheat sheet</summary>
+        <ul className="mt-2 space-y-1 font-mono">
+          <li>[G]Lyrics — a chord goes in brackets right before the syllable it lands on</li>
+          <li>{"{comment: Chorus}"} — a section header (use the Insert menu)</li>
+          <li>{"{ci: play softly}"} — an italic note the chart can hide (Ctrl+/ toggles)</li>
+          <li>[*ab] — a secondary chord or bass note shown in a second row</li>
+          <li>| G | C/E | D | — a bar line with one chord per measure</li>
+          <li>Select a word and press Ctrl+K to add a chord to it; Ctrl+K alone inserts []</li>
+          <li>Alt+Up / Alt+Down transposes the selection or the current line</li>
+          <li>Ctrl+S saves, Ctrl+Shift+F tidies the whole chart</li>
+        </ul>
+      </details>
     </div>
   );
 }

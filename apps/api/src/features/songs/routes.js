@@ -2073,23 +2073,29 @@ songRoutes.get(
         bodyHtml += `<h3 style="font-weight:700;margin:16px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:0.5px">${escapeHtml(section.name)}</h3>`;
       }
       for (const line of section.lines) {
+        if (line.note !== undefined) {
+          bodyHtml += `<div style="font-family:monospace;line-height:1.6;font-style:italic;color:#666">${escapeHtml(line.note) || "&nbsp;"}</div>`;
+          continue;
+        }
         if (line.chords.length > 0) {
-          // Build chord line and lyric line
-          let chordLine = "";
-          let lyricLine = "";
-          let lyricPos = 0;
-          const sorted = [...line.chords].sort((a, b) => a.position - b.position);
-          for (const { chord, position } of sorted) {
-            const gap = position - lyricPos;
-            if (gap > 0) {
-              chordLine += "\u00A0".repeat(gap);
-              lyricLine += escapeHtml(line.lyrics.slice(lyricPos, position));
+          // Chord rows padded to their lyric columns: an optional secondary
+          // (annotation) row above the primary row, then the lyric.
+          const chordRow = (chords) => {
+            let row = "";
+            let cursor = 0;
+            for (const { chord, position } of chords) {
+              const label = chord.startsWith("*") ? chord.slice(1) : chord;
+              if (position > cursor) row += "\u00A0".repeat(position - cursor);
+              row += `<b>${escapeHtml(label)}</b>`;
+              cursor = Math.max(cursor, position) + label.length;
             }
-            chordLine += `<b>${escapeHtml(chord)}</b>`;
-            lyricPos = position;
-          }
-          lyricLine += escapeHtml(line.lyrics.slice(lyricPos));
-          bodyHtml += `<div style="font-family:monospace;line-height:1.2"><div style="color:#ca9762">${chordLine || "&nbsp;"}</div><div>${lyricLine || "&nbsp;"}</div></div>`;
+            return row;
+          };
+          const sorted = [...line.chords].sort((a, b) => a.position - b.position);
+          const secondaryRow = chordRow(sorted.filter((entry) => entry.chord.startsWith("*")));
+          const primaryRow = chordRow(sorted.filter((entry) => !entry.chord.startsWith("*")));
+          const lyricLine = escapeHtml(line.lyrics);
+          bodyHtml += `<div style="font-family:monospace;line-height:1.2">${secondaryRow ? `<div style="color:#8b5cf6">${secondaryRow}</div>` : ""}<div style="color:#ca9762">${primaryRow || "&nbsp;"}</div><div>${lyricLine || "&nbsp;"}</div></div>`;
         } else {
           bodyHtml += `<div style="font-family:monospace;line-height:1.6">${escapeHtml(line.lyrics) || "&nbsp;"}</div>`;
         }

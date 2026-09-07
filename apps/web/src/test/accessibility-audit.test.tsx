@@ -1,10 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { MemoryRouter } from "react-router-dom";
-import { SettingsProfileTab } from "@/pages/settings/SettingsProfileTab";
-import { SettingsPreferencesTab } from "@/pages/settings/SettingsPreferencesTab";
+import { ChordProEditor } from "@/components/songs/ChordProEditor";
+import { SettingsPage } from "@/pages/settings/SettingsPage";
 
 expect.extend(toHaveNoViolations as Parameters<typeof expect.extend>[0]);
 
@@ -21,17 +20,21 @@ vi.mock("@vpc-music/shared", () => ({
   transposeChordPro: (content: string) => content,
   chordToNashville: (chord: string) => chord,
   roleLabel: (role: string) => (role === "admin" ? "Worship Leader" : role),
+  ROLE_DESCRIPTIONS: {
+    admin: "Runs the team.",
+    musician: "Edits songs.",
+    observer: "Reads charts.",
+  },
 }));
 
-const mockRefreshUser = vi.fn();
-const mockGetSettings = vi.fn();
 const mockListUsers = vi.fn();
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => ({
     user: { id: "u1", displayName: "John", email: "john@test.com", role: "member", organizations: [{ id: "org1", name: "Test Church", role: "admin" }] },
     activeOrg: { id: "org1", name: "Test Church", role: "admin" },
-    refreshUser: mockRefreshUser,
+    refreshUser: vi.fn(),
+    logout: vi.fn(),
   }),
 }));
 
@@ -39,79 +42,44 @@ vi.mock("@/contexts/ThemeContext", () => ({
   useTheme: () => ({
     theme: "dark",
     resolvedTheme: "dark",
-    contrastMode: "normal",
-    editorMode: "advanced",
-    themePreset: "custom",
+    keyNotation: "flats",
     chordColor: "#ca9762",
     secondaryChordColor: "#8b5cf6",
-    pageBackground: "#f8f9fa",
-    songFontFamily: "mono",
     setTheme: vi.fn(),
     toggleTheme: vi.fn(),
-    setContrastMode: vi.fn(),
-    toggleContrastMode: vi.fn(),
-    setEditorMode: vi.fn(),
-    setThemePreset: vi.fn(),
+    setKeyNotation: vi.fn(),
     setChordColor: vi.fn(),
     setSecondaryChordColor: vi.fn(),
-    setPageBackground: vi.fn(),
-    setSongFontFamily: vi.fn(),
+    resetChordColors: vi.fn(),
   }),
-  EDITOR_MODE_OPTIONS: [
-    { value: "beginner", label: "Beginner", description: "Beginner description" },
-    { value: "advanced", label: "Advanced", description: "Advanced description" },
-  ],
-  SONG_FONT_OPTIONS: [
-    { value: "mono", label: "Monospace", description: "Mono description" },
-  ],
-  THEME_PRESETS: {
-    "stage-dark": {
-      theme: "dark",
-      contrastMode: "normal",
-      chordColor: "#7dd3fc",
-      secondaryChordColor: "#c084fc",
-      pageBackground: "#000435",
-      songFontFamily: "mono",
-    },
-    "print-light": {
-      theme: "light",
-      contrastMode: "normal",
-      chordColor: "#b91c1c",
-      secondaryChordColor: "#7c3aed",
-      pageBackground: "#ffffff",
-      songFontFamily: "mono",
-    },
-    classic: {
-      theme: "light",
-      contrastMode: "normal",
-      chordColor: "#ca9762",
-      secondaryChordColor: "#8b5cf6",
-      pageBackground: "#f8f9fa",
-      songFontFamily: "mono",
-    },
-  },
-  THEME_PRESET_OPTIONS: [
-    { value: "custom", label: "Custom", description: "Custom description" },
-    { value: "stage-dark", label: "Stage Dark", description: "Stage dark description" },
-    { value: "print-light", label: "Print Light", description: "Print light description" },
-    { value: "classic", label: "Classic", description: "Classic description" },
-  ],
 }));
 
 vi.mock("@/lib/api-client", () => ({
   adminApi: {
     listUsers: (...args: any[]) => mockListUsers(...args),
+    invite: vi.fn(),
+    inviteBulk: vi.fn(),
+    resendInvite: vi.fn(),
+    updateRole: vi.fn(),
+    removeMember: vi.fn(),
   },
-  orgsApi: {
-    update: vi.fn(),
-    remove: vi.fn(),
-  },
+  orgsApi: { update: vi.fn() },
   platformApi: {
-    getSettings: (...args: any[]) => mockGetSettings(...args),
+    getSettings: vi.fn().mockResolvedValue({ settings: {} }),
     updateSettings: vi.fn(),
     updateProfile: vi.fn(),
     changePassword: vi.fn(),
   },
+  songsApi: { exportZip: vi.fn() },
+}));
+
+vi.mock("@/hooks/useSongLibrary", () => ({
+  useSongLibrary: () => ({ songs: [{ id: "s1", title: "Amazing Grace", content: "" }], loading: false, error: null, offline: false, refresh: vi.fn() }),
+  invalidateSongLibrary: vi.fn(),
+}));
+
+vi.mock("@/components/songs/ImportSongsDialog", () => ({
+  ImportSongsDialog: () => null,
 }));
 
 vi.mock("sonner", () => ({
@@ -121,8 +89,12 @@ vi.mock("sonner", () => ({
 describe("Accessibility audit", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockGetSettings.mockResolvedValue({ settings: {} });
-    mockListUsers.mockResolvedValue({ users: [{ id: "u1" }, { id: "u2" }] });
+    mockListUsers.mockResolvedValue({
+      users: [
+        { id: "u1", email: "john@test.com", displayName: "John", globalRole: "member", orgRole: "admin", hasPassword: true, createdAt: "" },
+        { id: "u2", email: "pat@test.com", displayName: "Pat", globalRole: "member", orgRole: "musician", hasPassword: false, createdAt: "" },
+      ],
+    });
   });
 
   it("ChordProEditor has no obvious accessibility violations", async () => {
@@ -138,25 +110,15 @@ describe("Accessibility audit", () => {
     expect(results).toHaveNoViolations();
   });
 
-  it("Settings profile tab has no obvious accessibility violations", async () => {
-    const { container } = render(
-      <MemoryRouter>
-        <SettingsProfileTab />
+  it("Settings page has no obvious accessibility violations", async () => {
+    const { container, getByText } = render(
+      <MemoryRouter initialEntries={["/settings"]}>
+        <SettingsPage />
       </MemoryRouter>,
     );
+    await waitFor(() => expect(getByText("Pat")).toBeInTheDocument());
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  });
-
-  it("Settings preferences tab has no obvious accessibility violations", async () => {
-    const { container } = render(
-      <MemoryRouter>
-        <SettingsPreferencesTab />
-      </MemoryRouter>,
-    );
-
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  }, 30_000); // axe crawls the large time-zone select
+  }, 30_000);
 });
