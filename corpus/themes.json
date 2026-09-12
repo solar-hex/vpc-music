@@ -1,0 +1,555 @@
+{
+  "$comment": "Theme lexicon for deriving song labels from lyrics. Committed and hand-editable on purpose: it is reviewable, deterministic, offline, and identical on every run. strongTerms assert the theme on a single hit; terms need `threshold` distinct matches. `exclude` phrases veto. Edit freely — re-running only ever ADDS themes, and never overrides a human's `!theme:x` decision.",
+  "version": 1,
+  "defaultThreshold": 2,
+  "themes": [
+    {
+      "id": "blood",
+      "label": "The Blood",
+      "strongTerms": [
+        "blood",
+        "crimson",
+        "calvary",
+        "crucified",
+        "nail scarred",
+        "purple robe"
+      ],
+      "terms": [
+        "cleansed",
+        "washed",
+        "stain",
+        "ransom",
+        "atone",
+        "atonement",
+        "redeemed",
+        "redeeming",
+        "fountain",
+        "pardon",
+        "slain",
+        "sacrifice",
+        "plea",
+        "applied"
+      ],
+      "exclude": [
+        "blood moon",
+        "blood bought brother"
+      ]
+    },
+    {
+      "id": "cross",
+      "label": "The Cross",
+      "strongTerms": [
+        "the cross",
+        "old rugged",
+        "calvary",
+        "crucified",
+        "golgotha",
+        "nailed"
+      ],
+      "terms": [
+        "hill",
+        "tree",
+        "thorns",
+        "veil",
+        "torn",
+        "suffered",
+        "died for me",
+        "gave his life",
+        "bore",
+        "burden"
+      ],
+      "exclude": [
+        "cross the river",
+        "cross over",
+        "crossroads"
+      ]
+    },
+    {
+      "id": "holy-spirit",
+      "label": "Holy Ghost",
+      "strongTerms": [
+        "holy ghost",
+        "holy spirit",
+        "pentecost",
+        "upper room",
+        "tongues of fire",
+        "rushing mighty"
+      ],
+      "terms": [
+        "spirit",
+        "fire",
+        "wind",
+        "anoint",
+        "anointing",
+        "outpouring",
+        "latter rain",
+        "comforter",
+        "fill me",
+        "power from on high",
+        "fall fresh",
+        "move"
+      ],
+      "exclude": [
+        "spirit of the age"
+      ]
+    },
+    {
+      "id": "baptism",
+      "label": "Baptism",
+      "strongTerms": [
+        "baptize",
+        "baptized",
+        "baptism",
+        "buried with him",
+        "in jesus name"
+      ],
+      "terms": [
+        "water",
+        "born again",
+        "new birth",
+        "remission",
+        "immersed",
+        "acts two",
+        "repent",
+        "obey"
+      ]
+    },
+    {
+      "id": "name-of-jesus",
+      "label": "The Name",
+      "strongTerms": [
+        "name of jesus",
+        "jesus name",
+        "the name",
+        "wonderful counselor",
+        "emmanuel",
+        "alpha and omega"
+      ],
+      "terms": [
+        "mighty god",
+        "everlasting father",
+        "prince of peace",
+        "i am",
+        "jehovah",
+        "lily of the valley",
+        "bright and morning star",
+        "rose of sharon",
+        "wonderful",
+        "precious name"
+      ]
+    },
+    {
+      "id": "healing",
+      "label": "Healing",
+      "strongTerms": [
+        "heal",
+        "healed",
+        "healer",
+        "healing",
+        "miracle",
+        "made whole"
+      ],
+      "terms": [
+        "sick",
+        "whole",
+        "restore",
+        "touch",
+        "balm",
+        "gilead",
+        "mend",
+        "broken",
+        "deliverance",
+        "set free",
+        "chains",
+        "stronghold",
+        "burden lifted"
+      ]
+    },
+    {
+      "id": "praise",
+      "label": "Praise",
+      "strongTerms": [
+        "praise",
+        "hallelujah",
+        "alleluia",
+        "shout",
+        "hosanna"
+      ],
+      "terms": [
+        "sing",
+        "clap",
+        "dance",
+        "glory",
+        "magnify",
+        "exalt",
+        "rejoice",
+        "joyful noise",
+        "lift",
+        "celebrate",
+        "thanksgiving",
+        "bless his name"
+      ]
+    },
+    {
+      "id": "worship",
+      "label": "Worship",
+      "strongTerms": [
+        "worship",
+        "adore",
+        "holy holy holy",
+        "we bow"
+      ],
+      "terms": [
+        "bow",
+        "kneel",
+        "reverence",
+        "awe",
+        "throne",
+        "majesty",
+        "hallowed",
+        "sanctuary",
+        "presence",
+        "worthy",
+        "honor"
+      ]
+    },
+    {
+      "id": "jubilee",
+      "label": "Jubilee",
+      "strongTerms": [
+        "jubilee",
+        "year of jubilee",
+        "set the captives free",
+        "debt is paid"
+      ],
+      "terms": [
+        "liberty",
+        "released",
+        "freedom",
+        "proclaim",
+        "acceptable year",
+        "restored",
+        "no more chains",
+        "free indeed"
+      ]
+    },
+    {
+      "id": "communion",
+      "label": "The Lord's Supper",
+      "strongTerms": [
+        "communion",
+        "lords supper",
+        "broken body",
+        "this do in remembrance"
+      ],
+      "terms": [
+        "bread",
+        "cup",
+        "table",
+        "remembrance",
+        "wine",
+        "feast",
+        "body and blood"
+      ]
+    },
+    {
+      "id": "altar",
+      "label": "Altar / Consecration",
+      "strongTerms": [
+        "altar",
+        "consecrate",
+        "here i am",
+        "have your way"
+      ],
+      "terms": [
+        "surrender",
+        "yield",
+        "search me",
+        "empty me",
+        "potter",
+        "clay",
+        "mold me",
+        "refiner",
+        "all to jesus",
+        "lay it down",
+        "broken vessel"
+      ]
+    },
+    {
+      "id": "victory",
+      "label": "Victory",
+      "strongTerms": [
+        "victory",
+        "overcomer",
+        "more than conquerors",
+        "no weapon",
+        "battle is the lords"
+      ],
+      "terms": [
+        "battle",
+        "war",
+        "army",
+        "banner",
+        "giant",
+        "walls",
+        "jericho",
+        "enemy",
+        "triumph",
+        "fight",
+        "won",
+        "defeat"
+      ]
+    },
+    {
+      "id": "second-coming",
+      "label": "His Return",
+      "strongTerms": [
+        "second coming",
+        "rapture",
+        "caught up",
+        "trumpet shall sound",
+        "coming again",
+        "catching away"
+      ],
+      "terms": [
+        "clouds",
+        "eastern sky",
+        "meet him in the air",
+        "that great day",
+        "twinkling",
+        "soon and very soon",
+        "watch and pray",
+        "midnight cry"
+      ]
+    },
+    {
+      "id": "heaven",
+      "label": "Heaven",
+      "strongTerms": [
+        "heaven",
+        "glory land",
+        "streets of gold",
+        "new jerusalem",
+        "beulah land",
+        "mansion"
+      ],
+      "terms": [
+        "promised land",
+        "canaan",
+        "jordan",
+        "no more tears",
+        "eternal",
+        "crown",
+        "gates",
+        "river",
+        "home at last",
+        "over yonder",
+        "by and by"
+      ]
+    },
+    {
+      "id": "testimony",
+      "label": "Testimony",
+      "strongTerms": [
+        "testimony",
+        "he brought me",
+        "delivered me",
+        "look what the lord has done",
+        "i once was"
+      ],
+      "terms": [
+        "found me",
+        "picked me up",
+        "changed my life",
+        "i was lost",
+        "rescued",
+        "turned my life",
+        "used to be",
+        "since i met"
+      ]
+    },
+    {
+      "id": "faith-trust",
+      "label": "Faith & Trust",
+      "strongTerms": [
+        "faith",
+        "trust",
+        "anchor holds",
+        "hiding place",
+        "faithfulness",
+        "faithful"
+      ],
+      "terms": [
+        "believe",
+        "hold on",
+        "stand",
+        "anchor",
+        "rock",
+        "refuge",
+        "fortress",
+        "shelter",
+        "lean",
+        "promise",
+        "wait",
+        "never fail",
+        "hold my hand",
+        "provided",
+        "provide",
+        "supply",
+        "need",
+        "unchanging",
+        "compassion",
+        "shadow of turning"
+      ]
+    },
+    {
+      "id": "grace-mercy",
+      "label": "Grace & Mercy",
+      "strongTerms": [
+        "grace",
+        "mercy",
+        "amazing grace",
+        "unmerited"
+      ],
+      "terms": [
+        "forgiven",
+        "undeserved",
+        "favor",
+        "kindness",
+        "compassion",
+        "unworthy",
+        "gift",
+        "wretch",
+        "spared"
+      ]
+    },
+    {
+      "id": "prayer",
+      "label": "Prayer",
+      "strongTerms": [
+        "pray",
+        "prayer",
+        "intercede",
+        "sweet hour of prayer"
+      ],
+      "terms": [
+        "cry out",
+        "call on",
+        "knees",
+        "petition",
+        "seek",
+        "hear my",
+        "talk with jesus",
+        "ask",
+        "supplication"
+      ]
+    },
+    {
+      "id": "salvation",
+      "label": "Salvation",
+      "strongTerms": [
+        "saved",
+        "salvation",
+        "born again",
+        "redeemed",
+        "whosoever"
+      ],
+      "terms": [
+        "sinner",
+        "repent",
+        "lost",
+        "found",
+        "invitation",
+        "believe on",
+        "come to jesus",
+        "door",
+        "accept"
+      ]
+    },
+    {
+      "id": "joy",
+      "label": "Joy",
+      "strongTerms": [
+        "joy",
+        "joyful",
+        "unspeakable joy",
+        "joy of the lord"
+      ],
+      "terms": [
+        "glad",
+        "gladness",
+        "happy",
+        "smile",
+        "laugh",
+        "singing",
+        "strength",
+        "rejoice"
+      ]
+    },
+    {
+      "id": "revival",
+      "label": "Revival",
+      "strongTerms": [
+        "revival",
+        "revive",
+        "send the rain",
+        "latter rain",
+        "shake this house"
+      ],
+      "terms": [
+        "pour out",
+        "fresh",
+        "awaken",
+        "stir",
+        "flood",
+        "fill this place",
+        "move in this place",
+        "outpouring"
+      ]
+    },
+    {
+      "id": "christmas",
+      "label": "Christmas",
+      "strongTerms": [
+        "christmas",
+        "manger",
+        "bethlehem",
+        "noel",
+        "silent night",
+        "nativity"
+      ],
+      "terms": [
+        "star",
+        "wise men",
+        "shepherds",
+        "swaddling",
+        "virgin",
+        "joy to the world",
+        "emmanuel",
+        "born this day",
+        "angels sing"
+      ]
+    },
+    {
+      "id": "easter",
+      "label": "Easter / Resurrection",
+      "strongTerms": [
+        "risen",
+        "resurrection",
+        "empty tomb",
+        "he arose",
+        "up from the grave"
+      ],
+      "terms": [
+        "third day",
+        "grave",
+        "stone rolled",
+        "death could not",
+        "alive",
+        "living saviour",
+        "conquered death",
+        "he lives"
+      ]
+    }
+  ]
+}

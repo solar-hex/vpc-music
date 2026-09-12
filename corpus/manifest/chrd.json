@@ -13,6 +13,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -41,6 +42,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -69,6 +73,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -97,6 +104,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -125,6 +136,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -153,6 +168,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -181,6 +197,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -209,6 +231,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -237,6 +263,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -265,6 +292,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "heaven",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -293,6 +325,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -321,6 +356,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -349,6 +387,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -377,6 +419,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -405,6 +452,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "holy-spirit",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -433,6 +485,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "joy",
+        "name-of-jesus",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -461,6 +519,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -489,6 +550,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -517,6 +579,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "faith-trust",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -545,6 +611,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -573,6 +643,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -601,6 +675,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -629,6 +706,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -657,6 +739,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -685,6 +770,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "worship",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -713,6 +803,15 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "healing",
+        "baptism",
+        "joy",
+        "name-of-jesus",
+        "testimony",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -741,6 +840,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -769,6 +872,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -797,6 +905,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -825,6 +934,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -853,6 +965,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -881,6 +997,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -909,6 +1028,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "faith-trust",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -937,6 +1061,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -965,6 +1092,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -993,6 +1123,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1021,6 +1154,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1049,6 +1185,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1077,6 +1216,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "healing",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1105,6 +1249,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1133,6 +1280,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1161,6 +1309,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1189,6 +1340,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1217,6 +1372,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1245,6 +1404,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1273,6 +1433,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1301,6 +1465,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1329,6 +1497,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1357,6 +1526,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1385,6 +1557,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1413,6 +1589,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1441,6 +1620,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "holy-spirit",
+        "praise",
+        "joy",
+        "revival"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1469,6 +1655,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1497,6 +1687,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise",
+        "heaven",
+        "holy-spirit",
+        "jubilee"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1525,6 +1722,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "name-of-jesus",
+        "christmas"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1553,6 +1755,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1581,6 +1784,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1609,6 +1816,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1637,6 +1848,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "victory",
+        "praise",
+        "baptism",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1665,6 +1882,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1693,6 +1914,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1721,6 +1943,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1749,6 +1974,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1777,6 +2005,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "baptism",
+        "name-of-jesus",
+        "heaven",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1805,6 +2039,13 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "name-of-jesus",
+        "baptism",
+        "holy-spirit",
+        "praise",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1833,6 +2074,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1861,6 +2105,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1889,6 +2137,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1917,6 +2168,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "salvation",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1945,6 +2201,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "revival"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -1977,6 +2238,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "baptism",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2005,6 +2270,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2033,6 +2299,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "jubilee"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2061,6 +2331,11 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2089,6 +2364,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2117,6 +2395,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "salvation",
+        "praise",
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2145,6 +2429,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2173,6 +2458,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2201,6 +2489,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2229,6 +2518,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2257,6 +2549,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2285,6 +2580,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "baptism",
+        "name-of-jesus",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2313,6 +2614,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2345,6 +2649,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "holy-spirit",
+        "prayer",
+        "salvation",
+        "healing",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2373,6 +2685,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "grace-mercy",
+        "praise",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2401,6 +2719,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2429,6 +2748,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2457,6 +2780,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2485,6 +2811,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "faith-trust",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2513,6 +2843,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "salvation",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2545,6 +2880,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2573,6 +2912,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2601,6 +2945,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2629,6 +2976,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise",
+        "altar",
+        "heaven",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2657,6 +3010,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "faith-trust",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2692,6 +3051,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2724,6 +3086,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "baptism"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2752,6 +3118,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2780,6 +3151,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2808,6 +3183,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2836,6 +3215,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2864,6 +3246,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2892,6 +3278,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2920,6 +3309,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "joy",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2948,6 +3342,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "healing",
+        "joy",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -2976,6 +3376,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3004,6 +3407,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "holy-spirit",
+        "salvation",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3032,6 +3441,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3060,6 +3473,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3088,6 +3504,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "prayer",
+        "blood",
+        "healing",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3116,6 +3539,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "cross",
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3144,6 +3573,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "blood",
+        "cross",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3172,6 +3607,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3200,6 +3638,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3228,6 +3669,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3256,6 +3700,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3284,6 +3731,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3312,6 +3764,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "altar",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3340,6 +3797,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3368,6 +3828,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "communion",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3396,6 +3861,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3424,6 +3893,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3452,6 +3924,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3480,6 +3955,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3508,6 +3986,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3536,6 +4018,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3564,6 +4050,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3592,6 +4081,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "holy-spirit",
+        "name-of-jesus",
+        "testimony",
+        "baptism",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3625,6 +4122,13 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "cross",
+        "healing",
+        "blood",
+        "grace-mercy",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3653,6 +4157,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "heaven",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3681,6 +4190,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3709,6 +4222,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "praise",
+        "prayer",
+        "second-coming",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3737,6 +4257,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3765,6 +4290,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3793,6 +4322,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3821,6 +4353,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "grace-mercy",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3849,6 +4387,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3877,6 +4416,15 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "heaven",
+        "joy",
+        "praise",
+        "communion",
+        "salvation",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3905,6 +4453,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3937,6 +4486,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy",
+        "salvation",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3965,6 +4520,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "grace-mercy",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -3993,6 +4553,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4021,6 +4582,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "faith-trust",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4049,6 +4615,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4077,6 +4646,11 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise",
+        "heaven",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4105,6 +4679,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4133,6 +4711,15 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "testimony",
+        "blood",
+        "victory",
+        "grace-mercy",
+        "healing",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4161,6 +4748,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4189,6 +4777,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4217,6 +4809,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4245,6 +4838,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "joy",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4273,6 +4871,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4301,6 +4902,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "revival"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4329,6 +4933,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "healing",
+        "joy",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4357,6 +4967,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "prayer",
+        "worship",
+        "name-of-jesus",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4385,6 +5001,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "joy",
+        "grace-mercy",
+        "salvation",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4413,6 +5035,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4441,6 +5066,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4469,6 +5098,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4497,6 +5127,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4525,6 +5158,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "faith-trust",
+        "healing",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4553,6 +5192,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4581,6 +5221,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "blood",
+        "grace-mercy",
+        "easter",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4614,6 +5260,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4642,6 +5289,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4670,6 +5318,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4698,6 +5349,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4726,6 +5381,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4754,6 +5410,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "heaven",
+        "name-of-jesus",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4782,6 +5444,11 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "holy-spirit",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4810,6 +5477,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "name-of-jesus",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4838,6 +5510,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4866,6 +5539,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "healing",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4894,6 +5571,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise",
+        "prayer",
+        "revival",
+        "altar",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4922,6 +5607,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4950,6 +5639,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -4978,6 +5670,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5006,6 +5701,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "heaven",
+        "joy",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5034,6 +5735,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5062,6 +5766,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5090,6 +5798,9 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5118,6 +5829,14 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "holy-spirit",
+        "revival",
+        "baptism",
+        "healing",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5150,6 +5869,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5178,6 +5901,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "praise",
+        "blood",
+        "cross",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5206,6 +5936,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "praise",
+        "baptism",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5234,6 +5970,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5262,6 +6001,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5290,6 +6030,9 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5322,6 +6065,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5350,6 +6097,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5378,6 +6130,15 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "praise",
+        "salvation",
+        "cross",
+        "grace-mercy",
+        "heaven",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5406,6 +6167,9 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5448,6 +6212,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5476,6 +6245,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "name-of-jesus",
+        "heaven",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5504,6 +6279,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "christmas",
+        "heaven",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5532,6 +6312,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise",
+        "faith-trust",
+        "victory",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5560,6 +6347,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5588,6 +6378,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5616,6 +6409,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5644,6 +6441,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5672,6 +6472,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5700,6 +6503,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5728,6 +6535,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood",
+        "faith-trust",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5756,6 +6569,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5788,6 +6602,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5816,6 +6631,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5844,6 +6660,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5872,6 +6689,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "altar",
+        "heaven",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5900,6 +6723,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "blood",
+        "faith-trust",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5928,6 +6757,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5956,6 +6790,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -5984,6 +6819,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6012,6 +6848,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6040,6 +6880,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "healing",
+        "cross",
+        "heaven",
+        "victory",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6068,6 +6916,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "prayer",
+        "worship",
+        "communion",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6096,6 +6951,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "baptism",
+        "salvation",
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6124,6 +6985,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship",
+        "name-of-jesus",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6152,6 +7019,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6180,6 +7051,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "baptism",
+        "name-of-jesus",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6208,6 +7085,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "salvation",
+        "grace-mercy",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6236,6 +7119,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6264,6 +7148,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6292,6 +7181,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "worship",
+        "name-of-jesus",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6320,6 +7215,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6348,6 +7247,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6376,6 +7278,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6404,6 +7310,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6437,6 +7344,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6465,6 +7375,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "salvation",
+        "cross",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6493,6 +7409,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6521,6 +7440,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship",
+        "name-of-jesus",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6549,6 +7474,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6577,6 +7506,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "prayer",
+        "altar",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6609,6 +7545,15 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "altar",
+        "cross",
+        "faith-trust",
+        "grace-mercy",
+        "joy",
+        "prayer",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6637,6 +7582,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6665,6 +7614,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "joy",
+        "victory",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6693,6 +7648,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6721,6 +7679,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "christmas",
+        "cross",
+        "blood",
+        "healing",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6749,6 +7714,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "cross",
+        "grace-mercy",
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6777,6 +7748,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6805,6 +7777,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6833,6 +7809,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6861,6 +7840,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "victory",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6893,6 +7877,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "heaven",
+        "joy",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6921,6 +7911,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6949,6 +7943,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -6977,6 +7972,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7005,6 +8003,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7037,6 +8038,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7065,6 +8070,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7093,6 +8102,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7121,6 +8134,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7149,6 +8165,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "baptism",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7177,6 +8198,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "heaven",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7205,6 +8230,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7233,6 +8262,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7261,6 +8293,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "heaven",
+        "healing",
+        "holy-spirit",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7289,6 +8328,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7317,6 +8360,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7345,6 +8391,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7373,6 +8420,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7401,6 +8453,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7429,6 +8485,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "revival"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7457,6 +8517,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7489,6 +8553,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "praise",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7517,6 +8586,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "salvation",
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7545,6 +8619,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7573,6 +8651,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "easter",
+        "name-of-jesus",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7607,6 +8691,16 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "name-of-jesus",
+        "prayer",
+        "faith-trust",
+        "healing",
+        "baptism",
+        "heaven",
+        "revival",
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7635,6 +8729,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7663,6 +8758,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7691,6 +8789,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7719,6 +8822,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7747,6 +8854,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "prayer",
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7775,6 +8887,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "grace-mercy",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7807,6 +8924,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "healing",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7835,6 +8957,13 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "blood",
+        "grace-mercy",
+        "praise",
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7863,6 +8992,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7891,6 +9023,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7919,6 +9054,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "easter",
+        "praise",
+        "blood",
+        "cross",
+        "heaven",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7947,6 +9090,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "salvation",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -7975,6 +9123,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8003,6 +9154,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "praise",
+        "salvation",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8031,6 +9188,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8059,6 +9219,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8087,6 +9250,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8115,6 +9281,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "jubilee",
+        "praise",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8143,6 +9314,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8171,6 +9345,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8199,6 +9377,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "salvation",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8227,6 +9410,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8255,6 +9441,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8283,6 +9473,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8311,6 +9506,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8339,6 +9537,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8367,6 +9566,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8395,6 +9595,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8423,6 +9626,9 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8458,6 +9664,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8486,6 +9696,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8514,6 +9728,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "grace-mercy",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8542,6 +9762,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "praise",
+        "salvation",
+        "testimony"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8570,6 +9796,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8598,6 +9828,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8626,6 +9860,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8654,6 +9893,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8682,6 +9925,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8710,6 +9956,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8738,6 +9987,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8766,6 +10016,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "baptism",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8794,6 +10049,11 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "worship",
+        "praise",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8822,6 +10082,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "heaven",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8854,6 +10120,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "praise",
+        "salvation",
+        "victory",
+        "blood",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8882,6 +10156,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "victory",
+        "worship",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8910,6 +10190,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "praise",
+        "grace-mercy",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8938,6 +10224,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "blood",
+        "holy-spirit",
+        "salvation",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8966,6 +10258,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "heaven",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -8994,6 +10291,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9027,6 +10327,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "prayer",
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9055,6 +10359,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "healing",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9083,6 +10392,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9111,6 +10423,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9139,6 +10455,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9167,6 +10486,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "prayer",
+        "cross",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9195,6 +10520,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9223,6 +10551,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9251,6 +10582,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "grace-mercy",
+        "praise",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9279,6 +10616,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9307,6 +10647,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9335,6 +10676,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9363,6 +10705,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9391,6 +10736,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9419,6 +10768,10 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9447,6 +10800,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "healing",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9475,6 +10833,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9503,6 +10865,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9531,6 +10897,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9559,6 +10930,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "faith-trust",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9591,6 +10967,13 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "healing",
+        "praise",
+        "blood",
+        "cross",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9619,6 +11002,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "altar",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9647,6 +11035,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9675,6 +11064,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9703,6 +11096,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "prayer",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9731,6 +11130,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9759,6 +11162,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9787,6 +11191,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9815,6 +11220,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9843,6 +11253,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9871,6 +11285,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9899,6 +11317,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9927,6 +11349,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9955,6 +11378,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -9983,6 +11409,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10011,6 +11440,12 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "praise",
+        "faith-trust",
+        "healing",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10039,6 +11474,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "grace-mercy",
+        "salvation",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10067,6 +11508,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "easter",
+        "praise",
+        "salvation",
+        "blood",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10095,6 +11544,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10123,6 +11573,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10151,6 +11604,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise",
+        "salvation",
+        "blood"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10179,6 +11637,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10211,6 +11672,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "christmas",
+        "cross",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10239,6 +11706,14 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "heaven",
+        "blood",
+        "joy",
+        "second-coming",
+        "victory",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10267,6 +11742,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10295,6 +11773,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10323,6 +11802,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "prayer",
+        "communion"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10351,6 +11835,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10379,6 +11866,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "faith-trust",
+        "joy",
+        "salvation",
+        "altar",
+        "worship"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10407,6 +11902,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10439,6 +11938,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "grace-mercy",
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10467,6 +11972,9 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [
+        "christmas"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10495,6 +12003,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10523,6 +12032,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10551,6 +12061,7 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10579,6 +12090,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10607,6 +12122,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10635,6 +12153,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10663,6 +12184,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "cross",
+        "blood",
+        "grace-mercy",
+        "heaven"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10691,6 +12218,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10719,6 +12250,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "revival",
+        "baptism",
+        "healing",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10747,6 +12286,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10775,6 +12319,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "prayer",
+        "altar"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10803,6 +12352,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "joy",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10831,6 +12385,7 @@
         "tempo": null,
         "isDraft": true
       },
+      "themes": [],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10859,6 +12414,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10887,6 +12446,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "praise",
+        "victory"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10915,6 +12479,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10943,6 +12510,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "prayer"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10971,6 +12543,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "blood",
+        "cross"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -10999,6 +12575,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "healing",
+        "revival"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11027,6 +12607,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11055,6 +12639,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "victory",
+        "easter"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11083,6 +12671,12 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "baptism",
+        "name-of-jesus",
+        "heaven",
+        "salvation"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11111,6 +12705,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "worship",
+        "praise"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11139,6 +12737,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "heaven",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11167,6 +12769,9 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11195,6 +12800,11 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "salvation",
+        "grace-mercy",
+        "joy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11223,6 +12833,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "holy-spirit",
+        "baptism"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11251,6 +12865,14 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "joy",
+        "baptism",
+        "holy-spirit",
+        "jubilee",
+        "name-of-jesus",
+        "healing"
+      ],
       "sourceType": "chrd",
       "sources": [
         {
@@ -11279,6 +12901,10 @@
         "tempo": null,
         "isDraft": false
       },
+      "themes": [
+        "faith-trust",
+        "grace-mercy"
+      ],
       "sourceType": "chrd",
       "sources": [
         {

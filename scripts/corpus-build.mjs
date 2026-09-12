@@ -20,6 +20,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { convertChrdToChordPro } from "../shared/index.js";
 import { extractDocxParagraphs } from "../apps/api/src/corpus/docxText.js";
 import { convertLyricSheetToChordPro } from "../apps/api/src/corpus/lyricSheet.js";
+import { detectThemes } from "../apps/api/src/corpus/themes.js";
 import {
   corpusFileName,
   deterministicSongId,
@@ -267,6 +268,10 @@ export async function buildCorpus({
           tempo: nullable(conversion.metadata.tempo),
           isDraft: Boolean(conversion.metadata.isDraft),
         },
+        // Derived from the lyrics, deterministically, so the corpus carries the
+        // labels a musician actually searches by. The loader writes these into
+        // songs.tags additively; a human rejection (!theme:x) always wins.
+        themes: detectThemes(content).map((t) => t.id),
         sourceType: source,
         sources: [{ role: "primary", path: relativePath, sha256: contentHash }],
         confidence,
