@@ -10,7 +10,6 @@
  *                    [--created-by <email>] [--dry-run] [--exclude <glob>]... [--report <dir>]
  */
 import "dotenv/config";
-import { createHash } from "node:crypto";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { basename, join, relative, resolve } from "node:path";
@@ -19,37 +18,22 @@ import { and, asc, eq } from "drizzle-orm";
 import { convertChrdToChordPro } from "@vpc-music/shared";
 import { db, pool } from "./db.js";
 import { organizations, organizationMembers, users, songs } from "./schema/index.js";
+import {
+  UUID_PATTERN,
+  deterministicSongId,
+  globToRegExp,
+  normalizeRelativePath,
+  normalizeTitle,
+  nullable,
+  songFingerprint,
+} from "./corpus/identity.js";
 
-// Fixed namespace for the path -> id derivation. Never change it: ids must stay
-// stable across runs and machines.
-const ID_NAMESPACE = Buffer.from("6f1d2c1e0d0b4c1a9c6a3e2f8b7a5d41", "hex");
-const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// Identity lives in ./corpus/identity.js so the corpus scripts can share one
+// definition without importing the database. Re-exported here to keep this
+// module's public surface unchanged.
+export { deterministicSongId, normalizeRelativePath, normalizeTitle };
+
 const BATCH_SIZE = 50;
-
-export function normalizeRelativePath(value) {
-  return String(value || "").replace(/\\/g, "/");
-}
-
-/** UUID v5-style id from a file's relative path (forward slashes, lowercased). */
-export function deterministicSongId(relativePath) {
-  const digest = createHash("sha1")
-    .update(ID_NAMESPACE)
-    .update(`chrd:${normalizeRelativePath(relativePath).toLowerCase()}`)
-    .digest();
-  digest[6] = (digest[6] & 0x0f) | 0x50;
-  digest[8] = (digest[8] & 0x3f) | 0x80;
-  const hex = digest.subarray(0, 16).toString("hex");
-  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20, 32)}`;
-}
-
-export function normalizeTitle(title) {
-  return String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-}
-
-function globToRegExp(glob) {
-  const escaped = String(glob).replace(/[.+^${}()|[\]\\]/g, (ch) => `\\${ch}`).replace(/\*/g, "[^/]*").replace(/\?/g, ".");
-  return new RegExp(`^${escaped}$`, "i");
-}
 
 export function parseArgs(argv) {
   const options = { dir: null, org: null, createdBy: null, dryRun: false, exclude: [], report: null };
@@ -85,23 +69,6 @@ export async function findChrdFiles(inputDir) {
     }
   }
   return files;
-}
-
-function nullable(value) {
-  return value === undefined || value === null || value === "" ? null : value;
-}
-
-/** Fields the importer owns; a song is "unchanged" when all of them match. */
-function songFingerprint(row) {
-  return JSON.stringify({
-    title: row.title,
-    key: nullable(row.key),
-    artist: nullable(row.artist),
-    year: nullable(row.year),
-    tempo: nullable(row.tempo),
-    isDraft: Boolean(row.isDraft),
-    content: row.content,
-  });
 }
 
 /**

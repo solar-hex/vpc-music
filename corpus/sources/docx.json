@@ -1,0 +1,5640 @@
+{
+  "sourceType": "docx",
+  "files": [
+    {
+      "path": "1. Incomplete/_Tis so sweet to trust in Jesus.docx",
+      "size": 8953,
+      "mtimeMs": 1658122815501,
+      "sha256": "2fd7f52b35a65082b16268aeb662638edb0fb3d03c659629fce8fd40631d6f55",
+      "type": "docx",
+      "decision": "song",
+      "songId": "cfc28e12-fd05-5ac8-84f6-29b26cdd30c8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/All hale King Jesus.docx",
+      "size": 12280,
+      "mtimeMs": 1658122827463,
+      "sha256": "c0cc79eeabf51a6bdeafc8f363e24fbd0331eb80449ba064fb22d4ffe9b9a42a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "702a823e-33dc-5f4c-8b4c-98b9c4ab9ceb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Anointing, fall on me.docx",
+      "size": 12483,
+      "mtimeMs": 1658122827707,
+      "sha256": "8a4f0c05e07c53f739596b02b8d35a61b57a21f213460f76b7699848a2b50180",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2eea5bec-e12e-5485-b13c-9bc91aeb373a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Anointing, fall on me(1).docx",
+      "size": 12483,
+      "mtimeMs": 1658122827498,
+      "sha256": "8a4f0c05e07c53f739596b02b8d35a61b57a21f213460f76b7699848a2b50180",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6adb6ef9-f505-5c3a-8f0d-cde09c7b1b57",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Are you ready.docx",
+      "size": 12145,
+      "mtimeMs": 1658122824545,
+      "sha256": "e7edb8f0c761a49c882d7274131aefdc5f27e1a581d15b332c823b62dd286985",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f8c15a96-b49e-55b3-bfd3-b58b3d265171",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/At Calvary.docx",
+      "size": 13572,
+      "mtimeMs": 1658122825088,
+      "sha256": "f46843f116f13bf1f212d2f3448e7f26f341b092b79adc5122726dc5ed0497ee",
+      "type": "docx",
+      "decision": "song",
+      "songId": "77c769fe-e4e4-5a30-a203-a1294f7b3f35",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/At the cross.docx",
+      "size": 13467,
+      "mtimeMs": 1658122825159,
+      "sha256": "471b6ef6b0e91c6088e7687fd4529422385c2102571ddc310f79f9d4ffec12a1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "916e51f4-cc5f-58d3-a421-6a0c116d0ce0",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Because He lives.docx",
+      "size": 13360,
+      "mtimeMs": 1658122824617,
+      "sha256": "3cc8e48111e33439e7e3cb5e386227fb99d651e101e95be9a5a1e3064294f5a6",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5dbcf8ac-78e3-508f-af13-b4478fc5362f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Because of who You are.docx",
+      "size": 12619,
+      "mtimeMs": 1658122825239,
+      "sha256": "5d184f4121b765c76bb43d535943cc8b63e8a9626f0e2ef3db638cef70de0f5b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4e7c59a6-109f-5b14-8cb6-5026cc847bd4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Beyond the open door.docx",
+      "size": 13106,
+      "mtimeMs": 1658122825421,
+      "sha256": "79c2f18c9ed542a4ba10f153c7ee4fb14e96bb12afce4ddcf4244c01a18688c9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "40f91947-c7a1-51b4-ad90-49b525078ce0",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Bind us together.docx",
+      "size": 12469,
+      "mtimeMs": 1658122825199,
+      "sha256": "370ffedca57f47b5cad7ac568f50ccf97d224e3e56e6adb7c660bcc5545ecfdf",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2d4b4464-6a15-5ae4-8e2f-7dae5682d06c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Bless the Lord, Oh my soul.docx",
+      "size": 8251,
+      "mtimeMs": 1658122815287,
+      "sha256": "898fb501fd8c9177b27aefb89e3893a01f4664edf91605ea2897832d39cc12ed",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f73593b6-1515-56d1-9c2b-02a02c99a2ab",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Bless the Lord, Oh my soul(1).docx",
+      "size": 12478,
+      "mtimeMs": 1658122827811,
+      "sha256": "03dcd24b56c2ddd5b9c0a0763cf9a7434358d93bab74325820be8486de38f3a5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "401909e0-0508-5548-b68c-dc9663de6872",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Blessed assurance.docx",
+      "size": 14682,
+      "mtimeMs": 1658122824509,
+      "sha256": "1428405039e6654d6d9c8193459bbb7a1e550352a9a18ad9a76b43a8cc1fd44c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "20fcd25a-5ffc-56fd-ae9b-bbde74d900dc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Blessed be the name of the Lord.docx",
+      "size": 12731,
+      "mtimeMs": 1658122824978,
+      "sha256": "18bb41083b586211e4009e105ef2c7abf1bd56bf5d0eccfe4726624ee667e887",
+      "type": "docx",
+      "decision": "song",
+      "songId": "27ae5ee2-1e97-5a24-bbd5-fbb122e4170e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Celebrate.docx",
+      "size": 12354,
+      "mtimeMs": 1658122824400,
+      "sha256": "c726ac2533a340552605e27374309e0f74a5260ca1c3cc791544f48ce38ff52a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f819573d-09aa-5158-ba69-f1f16f7f4e0b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Change me Lord.docx",
+      "size": 12636,
+      "mtimeMs": 1658122824867,
+      "sha256": "3d93a09d972079f09951a321eb62dd520e16fbe11ace4775d750e8fe4b8c6155",
+      "type": "docx",
+      "decision": "song",
+      "songId": "635f5d52-aa6a-55b4-81a1-f28e0fbb7d1e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come and Dine.docx",
+      "size": 15038,
+      "mtimeMs": 1658122825123,
+      "sha256": "7352ce5f860978207e216c832082aa2168a338bed89e67e7aca9eab3cce8e137",
+      "type": "docx",
+      "decision": "song",
+      "songId": "fa15f382-b345-5790-ae77-6e2e63fd88c1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come into my heart, O Lord Jesus.docx",
+      "size": 13201,
+      "mtimeMs": 1658122827955,
+      "sha256": "65cb2a5f229135438545ae9f9c1fae40cd2519bc9fdba502c4f2b9da233900f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ec2f525b-cdd4-5c38-81e3-33d205858932",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come into my heart, O Lord Jesus(1).docx",
+      "size": 13201,
+      "mtimeMs": 1658122828028,
+      "sha256": "65cb2a5f229135438545ae9f9c1fae40cd2519bc9fdba502c4f2b9da233900f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9c46f7b1-4dab-5560-861e-bab94e0ed94b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come on everybody let us praise God.docx",
+      "size": 12497,
+      "mtimeMs": 1658122824907,
+      "sha256": "3572625d676a0448a9923bc98342c0c6553d06b36aaf0a2c06a454c5a67836a1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "549c85e1-50f4-52e1-8973-82b2fe7ae54f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come, let us sing.docx",
+      "size": 12475,
+      "mtimeMs": 1658122827391,
+      "sha256": "8ec434568ffa068c6f59bf0ef2dc80729e2479db592f3df668131ca89246dd33",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0c199728-c9d4-5afc-965c-c02f240dbd5c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Come, let us sing(1).docx",
+      "size": 12475,
+      "mtimeMs": 1658122827741,
+      "sha256": "8ec434568ffa068c6f59bf0ef2dc80729e2479db592f3df668131ca89246dd33",
+      "type": "docx",
+      "decision": "song",
+      "songId": "62eb9866-b323-5f8d-900a-f54315643961",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Coming down.docx",
+      "size": 12221,
+      "mtimeMs": 1658122824653,
+      "sha256": "0d054036ab4143823b8e7b1a49d96fc12046b547a3d91228ef8fe69528d15de2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "07b5e3db-8e36-59b2-8cae-2c4905ab2dc6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Consecrate me.docx",
+      "size": 12477,
+      "mtimeMs": 1658122824689,
+      "sha256": "00ff86b5aa066bde6f991ca6ee15a6e5263e52d9d831a1047579c8f595d45471",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dded1547-f693-5000-8f52-0a86a0f06df5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Dancing around the throne.docx",
+      "size": 12518,
+      "mtimeMs": 1658122824764,
+      "sha256": "41e0eed8a33037f3652f3e0ea96cd63b83d5ad719421c9eb8757a0f99be555ba",
+      "type": "docx",
+      "decision": "song",
+      "songId": "cd318b85-c01a-56f1-b7a7-740a2264182f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Do it again, Lord do it again.docx",
+      "size": 12354,
+      "mtimeMs": 1658122827427,
+      "sha256": "e76ef02546bbffa998087e77a51d8733cde3f4b51da05784f543423fefa0a578",
+      "type": "docx",
+      "decision": "song",
+      "songId": "795b488f-66b6-5fa3-adb1-c1af4cbab986",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Do it again, Lord do it again(1).docx",
+      "size": 12354,
+      "mtimeMs": 1658122827074,
+      "sha256": "e76ef02546bbffa998087e77a51d8733cde3f4b51da05784f543423fefa0a578",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bcbc968e-2ae7-5136-b12a-fdb69f105cf4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Down from His glory.docx",
+      "size": 14288,
+      "mtimeMs": 1658122824437,
+      "sha256": "3dd99e915a874d2a81f738230bc3332eb0842fadea920af7ca8649826138e298",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bd3b929e-35fa-5c83-bfd2-e554fdf1a311",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Evermore.docx",
+      "size": 12787,
+      "mtimeMs": 1658122827993,
+      "sha256": "ceca142494c3c8adf21660ab5b8126fbf8b81b1a2a485a292f35af1bbd7be5f9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ef3d9bf9-2f80-54ca-a471-394217c846d0",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Everybody will be happy of there.docx",
+      "size": 13624,
+      "mtimeMs": 1658122827883,
+      "sha256": "72cf4e7490febc8217fe7865177ecd74430c7042a45e1d8faf2ae70370cb7089",
+      "type": "docx",
+      "decision": "song",
+      "songId": "91bcd592-eaee-5428-968e-fbd9cc4ceac1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Falling in love with Jesus.docx",
+      "size": 12375,
+      "mtimeMs": 1658122824367,
+      "sha256": "607ef171d833262035ae7d1cef3277c937206bab8cb76ecd82ea970110556da3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b26b8736-50df-50f6-ba56-865763d1b624",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/For above all else.docx",
+      "size": 13162,
+      "mtimeMs": 1658122824942,
+      "sha256": "678ce8a47ecb36b9806eab7176d2c9486737b368932b952f7228955618a8ae26",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9ab957fc-787f-5b61-b03d-788386cf1994",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/For I’m sheltered in the arms of God..docx",
+      "size": 12996,
+      "mtimeMs": 1658122824118,
+      "sha256": "e3adc18284b17a95f11f5365815dd34125c8099f53113554383656df4ee0566d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5c9e9e68-d0e9-5096-8fbc-a391cc29f5a2",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Get your mind on Jesus.docx",
+      "size": 12759,
+      "mtimeMs": 1658122824728,
+      "sha256": "54d605aff530f4fcbcb98c8f219085c70b48fd133433691147241cdd3efedb3f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "af3893b5-859d-5020-9113-1c0fa0f5409d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Give God the glory.docx",
+      "size": 12896,
+      "mtimeMs": 1658122825772,
+      "sha256": "7a32ee712c806f261cc8566c11441f063b704403b784aa2438f83a4013fc1e0f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4f232576-bd3b-5c82-ada0-a96771bbb4a0",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Give the Lord the highest praise.docx",
+      "size": 12374,
+      "mtimeMs": 1658122824578,
+      "sha256": "0c699f2acef2042abe3f9d3b70714a8862914442dca24006dbb547dc7040ef4c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0ab4718d-fcac-5926-92d6-08662bd98fdf",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory and Honor to Jesus.docx",
+      "size": 12261,
+      "mtimeMs": 1658122825051,
+      "sha256": "9e6e195cca97f5f8eaa147335c78e6c7028427cb64f81d020c54a701e0d3d7a1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "952ef178-974b-5e1a-ad38-ee718235d1fb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory Glory, Hallelujah.docx",
+      "size": 12407,
+      "mtimeMs": 1658122827238,
+      "sha256": "b7bb005f99fc778942d7c17e2ea159c2986cb08fa880f5d15580dfaada112d39",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9d4c5719-15b6-5677-b513-c2ec13a5439f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory Glory, Hallelujah(1).docx",
+      "size": 12407,
+      "mtimeMs": 1658122827118,
+      "sha256": "b7bb005f99fc778942d7c17e2ea159c2986cb08fa880f5d15580dfaada112d39",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a1311817-83b8-5356-b132-548d5d2244a1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory, Halleluj.docx",
+      "size": 12670,
+      "mtimeMs": 1658122826955,
+      "sha256": "999e06dff1250a4ea92e87a83a980d5741feb922af7181a20f39e5df1e0556d7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c95429d9-81ca-5fc2-b369-152ca1daeb08",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory, Halleluj(1).docx",
+      "size": 12670,
+      "mtimeMs": 1658122826991,
+      "sha256": "999e06dff1250a4ea92e87a83a980d5741feb922af7181a20f39e5df1e0556d7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a1cb83a2-1dd7-5eb7-930d-ecf6fb93cf63",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory, Somebody touched me.docx",
+      "size": 12539,
+      "mtimeMs": 1658122827320,
+      "sha256": "8bbdfad6a3ec408be2552c52bf1bf7fc81c16cea2718f6c69dbbeea59c139235",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4858927b-6ca9-54ff-b053-9a0a4e55acb4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Glory, Somebody touched me(1).docx",
+      "size": 12539,
+      "mtimeMs": 1658122827626,
+      "sha256": "8bbdfad6a3ec408be2552c52bf1bf7fc81c16cea2718f6c69dbbeea59c139235",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6c6d3c51-eeb4-5fd9-a73c-6854c2179d95",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/God is good.docx",
+      "size": 13627,
+      "mtimeMs": 1658122816009,
+      "sha256": "ab13b90d678ab1652857449f4298b5b195ede8863b35c601a82dbec361b826b0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f4a802e5-6905-59bb-be98-c81fe5d69c38",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/God is great in my soul.docx",
+      "size": 13593,
+      "mtimeMs": 1658122825015,
+      "sha256": "bfbbd8900e872a0b317423c57d0a7108cc5384bec762948732740f7985df04f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1ab6aa4c-db92-5ecd-9741-725055db1010",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/God’s not dead.docx",
+      "size": 12274,
+      "mtimeMs": 1658122825272,
+      "sha256": "acaa3f976136e752a0b712bf432a62ada56a7955238b5bdb6861c0b66ded405f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5d17acfe-43c9-5102-8c47-4def1fc7ae85",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Gonna be gone.docx",
+      "size": 13295,
+      "mtimeMs": 1658122824833,
+      "sha256": "2e8aa0a2bf73d40ebfe8c87471d30b83b3ccf162372429a502af547261a3ddc5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c9933bd6-ddbd-5837-9019-625945171b9b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Goodbye world goodbye.docx",
+      "size": 13343,
+      "mtimeMs": 1658122824298,
+      "sha256": "7b2b2c6011a23ea8092c168bf1780d71941446b31450338a1682677ff669f693",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b72fa5dd-4072-5fa6-bd87-ca258f26fb1e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Grace, Grace, God’s grace.docx",
+      "size": 12278,
+      "mtimeMs": 1658122823977,
+      "sha256": "62cbbbb7c4742aa4147bd60626df786569e8a4042ee8b8dc51918ee808f5732f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "682cc1f1-a73a-5872-8136-7ec794596326",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Greater is He that is in me.docx",
+      "size": 14273,
+      "mtimeMs": 1658122824187,
+      "sha256": "993718416eda6cfcf97a0b2ad34ac20c21abb6137e80bb4e7463f81b1d5da3f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c3a0a832-75da-59e9-93ca-af978408642a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Have thine own way Lord.docx",
+      "size": 13371,
+      "mtimeMs": 1658122824047,
+      "sha256": "54ef7036fb87fbf708886678fb6a492fa87e6b8d3236795a218369b1ccd36009",
+      "type": "docx",
+      "decision": "song",
+      "songId": "fb56f026-439e-53f6-bf62-af163a200009",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He brought me out.docx",
+      "size": 14069,
+      "mtimeMs": 1658122823940,
+      "sha256": "1fd880227b0398fb34c9c1c6e87e950f36b8f4e1bb10b303eb09878485402fe6",
+      "type": "docx",
+      "decision": "song",
+      "songId": "293ed2ad-c183-5115-8f06-d7d99abd98df",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He hath made me glad.docx",
+      "size": 13195,
+      "mtimeMs": 1658122815681,
+      "sha256": "0bd7c552f87891001fbdd3aa62f5a9fb6715ac0b6457d3684f33b982415df361",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bab7ad0f-ac86-5f11-a69b-6a2b47688f1c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He is all I need.docx",
+      "size": 12589,
+      "mtimeMs": 1658122815753,
+      "sha256": "75fb8777844a8927945a4c1c4c8e3ff5e37aba172a44b5453168412341edc237",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a9394a63-3ce8-5986-819a-c34a0515f64b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He is fairer then the lily.docx",
+      "size": 12647,
+      "mtimeMs": 1658122823795,
+      "sha256": "c753a7b315bfb77548c13ab3625684665da3c22ec67383156ff1564f9aad0fa9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6b1d5e3c-3719-5399-b6ce-6ec2bec0a71c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He is Lord.docx",
+      "size": 13866,
+      "mtimeMs": 1658122824151,
+      "sha256": "4037fd8acc04d4d67466d057da593827177bcb916e806247b2e20732995de3e7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a09fed4c-7e60-5875-9811-529e58288e1a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He looked beyond my fault.docx",
+      "size": 12838,
+      "mtimeMs": 1658122824223,
+      "sha256": "d7aa3d9d750bdda2eb15260c4fb4d60a579cb73173a5c27a9a6c66dcf10833ff",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ea6354db-daf1-56c6-838f-4ab7afca518f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He set me free.docx",
+      "size": 13158,
+      "mtimeMs": 1658122824011,
+      "sha256": "d2998446512c241a769868c38e21b68dae162ac187b9801445f20ab46c123289",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7d028721-93d7-515b-a328-eeece731c39f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He took my sins away.docx",
+      "size": 13564,
+      "mtimeMs": 1658122823759,
+      "sha256": "4b522ea637aa38f096dd0cf9ce8111a3476c192e3dc5267a286073c6b9953856",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e0a700a3-7133-53b5-b634-7c692cffdbf3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He took the shackles off my feet.docx",
+      "size": 12556,
+      "mtimeMs": 1658122823907,
+      "sha256": "e33088243a214afd15982ce4bc4f9617ceed63635482b90df0d8781008d0593c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b66d3a04-addd-5937-be77-b4c232c81bd8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He touched me.docx",
+      "size": 12911,
+      "mtimeMs": 1658122823866,
+      "sha256": "8f0612a79787de0b96066f31027d6ecc660745bdc7c00b9cc6e733fcfb228857",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d533c3c2-49b4-58e2-9ab3-b5e29a07c599",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/He_s the only reason.docx",
+      "size": 12539,
+      "mtimeMs": 1658122823723,
+      "sha256": "cbae4377ea5a1bc17335fc2df70d164ea9f61a3f4d292fb9a00395d988350295",
+      "type": "docx",
+      "decision": "song",
+      "songId": "74750f26-bda8-52b8-bf06-8fdfa0aed767",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Heaven_s jubilee.docx",
+      "size": 13451,
+      "mtimeMs": 1658122823683,
+      "sha256": "065e125b571ce1b235946a210983eb1246a390c0e7d2c962700f865c17253d62",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a5231312-cde4-52ad-a76c-47c174a08d0a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Heavenly Father I appreciate You.docx",
+      "size": 12352,
+      "mtimeMs": 1658122824259,
+      "sha256": "30de4b2ff84a621f5f0b540687a64bc8154294d228614e353bb9144db92bd9c4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f5272550-9673-5623-8e5e-0db36670885a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Here_s my cup Lord.docx",
+      "size": 12457,
+      "mtimeMs": 1658122824079,
+      "sha256": "1034b21d0443420806982c3b8b14ce717af1fd78747d8b992f5078f98c7c55b1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c8db1c37-c364-587b-ad0f-5c7c25e59a81",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/His grace is still amazing to me.docx",
+      "size": 12405,
+      "mtimeMs": 1658122824332,
+      "sha256": "8b35e0d3d590b55f0f8cf7ab676c2794cf51ae7c749dff21ce2ffa3cfec38f17",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7bf5bc86-3493-5f31-b81d-c22d569d60d3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/His name is Wonderful.docx",
+      "size": 12469,
+      "mtimeMs": 1658122823354,
+      "sha256": "f6b64075b98d19b692c65d6d92facad6c1644b6403eca9d7c5e66c15b1b6115c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ebaa619c-9e11-504d-b6f3-851346be70e6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/His truth shall triumph.docx",
+      "size": 12452,
+      "mtimeMs": 1658122823612,
+      "sha256": "9797fcd743e91885e4c1dd62627a36d43d6152ce0e3a22305547a4a63fc3b45b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "77a2af6f-a48f-5729-8980-bb333e1769ad",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Hold to Gods unchanging hand.docx",
+      "size": 14839,
+      "mtimeMs": 1658122823503,
+      "sha256": "92a3a968839c1b233bdc7a8b2efb3f881cd38527be5c92af1e49071f9bac8ed8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ead9e4d0-2030-541f-acab-48889807b08f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy ghost revival.docx",
+      "size": 13323,
+      "mtimeMs": 1658122823389,
+      "sha256": "f5c8219f4cba272e13c11436aedec32ac5a2c5ae066945049b015df90e1bfac4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4e7b99a2-2e67-59da-ad40-740834cdc552",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy Spirit come and fill this place.docx",
+      "size": 12552,
+      "mtimeMs": 1658122823142,
+      "sha256": "c018f6578bca791eee5d10b7c2466d1ce67a70a1f656b373a3fd9ee7f77869a9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "93631004-dc71-5240-a90f-cafaa8e1a1ff",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy Spirit rain down.docx",
+      "size": 12578,
+      "mtimeMs": 1658122823070,
+      "sha256": "293ce00a08e0011256bf294d62b3932d9b0903d46f5a4b5bddf4787df0ecf435",
+      "type": "docx",
+      "decision": "song",
+      "songId": "08444f24-8c27-57a8-a6bf-06defb1389e7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy, holy, holy.docx",
+      "size": 12443,
+      "mtimeMs": 1658122825737,
+      "sha256": "ce7e1ae905e6b6ef60a964ea522338f6c9ae54276287f0ddcbfbcfb8836c54a9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7266e2e1-1395-5773-98c8-bddc1b9e2286",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy, holy, holy(1).docx",
+      "size": 12443,
+      "mtimeMs": 1658122825349,
+      "sha256": "ce7e1ae905e6b6ef60a964ea522338f6c9ae54276287f0ddcbfbcfb8836c54a9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8265334e-a5b4-576b-a901-36452695fd18",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Holy, holy, holy(2).docx",
+      "size": 11593,
+      "mtimeMs": 1658122827670,
+      "sha256": "03a83b190f2dff1e797f6143476864f09d51aec268960fba74337dd7fe579559",
+      "type": "docx",
+      "decision": "song",
+      "songId": "742f0c49-08ee-5481-bfc6-1bb852290ca1",
+      "confidence": 0.2,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source",
+        "No section labels found"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/How did you feel.docx",
+      "size": 12725,
+      "mtimeMs": 1658122823575,
+      "sha256": "5abe0835db075c5ae69285c1ae3b991afece7e168df5c69330d93645a8ddb52e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dcd897bc-00b5-5a46-a260-02b56fe8dab6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/How great is our God.docx",
+      "size": 12959,
+      "mtimeMs": 1658122823035,
+      "sha256": "ac34efd4707147f503be79a660c746c0006e5ba6828322ba6037f21f74099a45",
+      "type": "docx",
+      "decision": "song",
+      "songId": "88c48d78-b463-52b1-ace3-643f7133c480",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/How great thou art.docx",
+      "size": 12871,
+      "mtimeMs": 1658122823536,
+      "sha256": "d5055de369e478295a6ec9a0dbee51e91746458c41c0591c82609b84afff24f4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9ab8ff85-316c-5754-b756-ae0fd8c13a9f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/How I love the Name.docx",
+      "size": 12123,
+      "mtimeMs": 1658122823213,
+      "sha256": "4bfaa0869020f8cdcee39850b13665c7180927375f5ccd1adabbd49b0e867d20",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8d8b4d6a-57e0-558a-aa98-7baf071e1b5c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I adore You.docx",
+      "size": 12482,
+      "mtimeMs": 1658122823318,
+      "sha256": "e8069fc8924ac9cb964f1ffc797884d03590ea93da34d6d6c488d5fc49efaff8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0cd2b128-0d47-541a-bad3-5ac585817597",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I am determined, I’ve made up my mind.docx",
+      "size": 12665,
+      "mtimeMs": 1658122821209,
+      "sha256": "dc2cad31916031d60c70752b8173368ea75f21a9452e974303287bffda2d9d21",
+      "type": "docx",
+      "decision": "song",
+      "songId": "44f6d630-aeac-5521-ba00-1d4402ab78f3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I am determined.docx",
+      "size": 13686,
+      "mtimeMs": 1658122823648,
+      "sha256": "63899add7ce5d0e3d038880d86d485a93f94ce16ec3bfa698cf227dd49b359a2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bc8edffa-ed7a-5ce2-be47-0f711bcc9e39",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I call Him Jesus my rock.docx",
+      "size": 12969,
+      "mtimeMs": 1658122823246,
+      "sha256": "728e052a40ed7c653d4338d8f9b2afd1510f4152a2bb9e75c755af9a25886492",
+      "type": "docx",
+      "decision": "song",
+      "songId": "abc392f9-378b-5224-9364-3aa3c7ae84bd",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I call You Holy.docx",
+      "size": 12362,
+      "mtimeMs": 1658122822999,
+      "sha256": "5c822076cab83ca8b7532f62de1e1793744010d3c659075203441cc06a73753c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "884535f7-1ecb-58bf-a050-35c7286112cb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I came to praise the Lord.docx",
+      "size": 13969,
+      "mtimeMs": 1658122823428,
+      "sha256": "96ecff5828a445317aa0e6b047077b19a48c76689da9a0b46a5f8a7721baffc1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "06b8f987-2851-55b4-8a5e-197efd709559",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I can go into the Holy of Holies.docx",
+      "size": 12414,
+      "mtimeMs": 1658122822853,
+      "sha256": "a143175e426c5253645e378638a2e322dc2f38737bf627eb1b2b20a702b3b04b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dec36901-637e-58b5-ba1a-1000d17ef853",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I could never outlove the Lord.docx",
+      "size": 13093,
+      "mtimeMs": 1658122822780,
+      "sha256": "c1f1f55622df01b0d2571d5489088732c4e3f6f1d574996f360542be1fa88278",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0bd14cbe-ddda-5d18-b277-c87b6b45a8b7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I don_t know what you came to do.docx",
+      "size": 12680,
+      "mtimeMs": 1658122823105,
+      "sha256": "bc93cee1b119ecbd96f2aa7c18af95f0b96a2cd25a86a085cd9b3d078cc5f9e9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3b9fb199-2719-5c5b-bd7c-cbc9be16f942",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I exalt Thee.docx",
+      "size": 12545,
+      "mtimeMs": 1658122823465,
+      "sha256": "4f357c3323e593d1e7e2b76b076ac1598e2548f2cc1297073aee386d026c12f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d497a9c7-2be7-50d9-b509-a456e0ecff4f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel Jesus.docx",
+      "size": 12590,
+      "mtimeMs": 1658122823177,
+      "sha256": "dd266b642665ee6d5d780c340e5dcdf69ff7c7efb31e225022de89d1e209620e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d8d92aee-8517-5c8b-bffe-21f74057a08e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel like praising, praising Him.docx",
+      "size": 13831,
+      "mtimeMs": 1658122827029,
+      "sha256": "5f3a17eec860948888aba47e387207b1b392a155cfb9baf4f8c962034099d7f8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8933d4f7-c767-514e-ab29-899c0db5c2ac",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel like praising, praising Him(1).docx",
+      "size": 13831,
+      "mtimeMs": 1658122827164,
+      "sha256": "5f3a17eec860948888aba47e387207b1b392a155cfb9baf4f8c962034099d7f8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3c706da3-0c03-5d3f-acd8-714eb8e3a2e8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel like traveling on.docx",
+      "size": 13240,
+      "mtimeMs": 1658122822677,
+      "sha256": "217561925411e0e977338f87dcc148b9e202412d68ab6ca47a4d2a3487dfd774",
+      "type": "docx",
+      "decision": "song",
+      "songId": "de1b89c1-35c0-561b-afef-527d6083b418",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel the Joy of the Lord.docx",
+      "size": 13302,
+      "mtimeMs": 1658122823827,
+      "sha256": "3ebe3b832b563a906cdfa84f91e54dfb4270ef545c8bb3e7417b05dd3219d956",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0801dcb7-cad0-526c-bab5-cc8e63d37059",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I feel the rain.docx",
+      "size": 13621,
+      "mtimeMs": 1658122822457,
+      "sha256": "ae0a47063ade2229cd991ffc1b99d4b7af53eb37168e85a8e44c038c6960da19",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d8c20d55-9517-53e6-8896-f50690d37788",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I give myself to You.docx",
+      "size": 12311,
+      "mtimeMs": 1658122822493,
+      "sha256": "a2bac26c2636e889328285929090a5b6dc295001202ad20cd1b0bc601e8bd2ec",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bc5d3a0f-870d-5da8-ad9f-7d0dbaabb738",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I give you Jesus.docx",
+      "size": 12499,
+      "mtimeMs": 1658122822886,
+      "sha256": "d15d6c3c9f2d759e867acfb821a75e63226a23ad3b0b78640a812e671a45ab85",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dad5a1af-3aa8-5e43-ade7-903b8f21e737",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I go to the rock.docx",
+      "size": 13272,
+      "mtimeMs": 1658122822815,
+      "sha256": "c7b92bc1f508035f7990b8a79faf4d8e3856bd877b40712a9a0fd9675b010120",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1897b6e7-eada-5fcb-9dc1-b5fd02fa839f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I got a right to praise the Lord.docx",
+      "size": 12443,
+      "mtimeMs": 1658122822962,
+      "sha256": "3ca0abb16539d42a7f6121604e9b9c6e7f7072da71bec8159c5ce587a57ff6d1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3b59192d-2ade-50a6-8727-ad2edebce9f7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I have a God.docx",
+      "size": 12560,
+      "mtimeMs": 1658122822527,
+      "sha256": "72769b20ab0c7e1314cca5554bd615a6e219499b530a9c55c28370da6c95efc1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8556cac1-629d-5f0d-a422-652d548c3900",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I have been redeemed.docx",
+      "size": 12441,
+      "mtimeMs": 1658122822746,
+      "sha256": "7d6d6963a7beb29516bd20541654a43f8b3bbcd158cef54800abe7fb8c4f8bc5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8b106039-b493-5a82-b1fa-36e10158b6da",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I have decided.docx",
+      "size": 12746,
+      "mtimeMs": 1658122822711,
+      "sha256": "05fc636e8a2b465dea6f6191ca22dae14713d168356210d97c3d44c1d6c5030f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "23f6677d-7165-59ba-9d13-40758a820112",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I have found the way.docx",
+      "size": 13123,
+      "mtimeMs": 1658122822638,
+      "sha256": "9522a210d76981a01648994726939b87218c2e18634e56f27921ceebaa791b46",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8f255d17-f5bc-5378-8846-c907e7fdf716",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I have made my decision.docx",
+      "size": 12503,
+      "mtimeMs": 1658122822563,
+      "sha256": "21a3a7bc332df1a3cf5af6edccd021af9dd8d348f73efd63cbf6cb7fa4ad0fbc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b519a648-eeb4-53c4-9caa-a43d4ca29adc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know God is God.docx",
+      "size": 13124,
+      "mtimeMs": 1658122822277,
+      "sha256": "d32da8a33d255d835652b7ea0304084e1395efbb63d4cb62aa27f6c0e20596fe",
+      "type": "docx",
+      "decision": "song",
+      "songId": "14f5c590-f100-5379-abef-0e633320b08a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know I_m saved.docx",
+      "size": 14510,
+      "mtimeMs": 1658122822313,
+      "sha256": "db40bdc980376bed0a8b846f4700d002781b659ad49727b42068d6cfa6323fb5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3c166876-cb0a-50d3-b0ae-13c6c412d5fb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know it was the Blood.docx",
+      "size": 12739,
+      "mtimeMs": 1658122822926,
+      "sha256": "7450715b6e621ccd2d6e8048af9f9950b05ee688fd5034f14148f4221bda785f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5971bf3d-ef63-5a02-8c58-a66ef2707ba7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know that God can do it.docx",
+      "size": 12375,
+      "mtimeMs": 1658122822066,
+      "sha256": "1cd6086de344eaa16f80868b7919fcc7f36af9d93cf2f419446c21fbc54c3a04",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5f8717fd-c89f-558d-abbc-1b4dcfcc934d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know the peace speaker.docx",
+      "size": 12557,
+      "mtimeMs": 1658122822387,
+      "sha256": "5ee6f33eddaf8332d800a83c1851d42220de8cb9f954d62b0cdf675363076b2e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e8a16e14-91ef-59c9-b1b4-d613bec80b54",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I know who holds tomorrow.docx",
+      "size": 13415,
+      "mtimeMs": 1658122822134,
+      "sha256": "40b3e1fb5dcc01f6daa2efdd9001f708e7962e038dfdb8b51e69270887111d69",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7882da0e-a37c-524f-89ac-9b90bb28bf04",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I love my Savior too.docx",
+      "size": 13336,
+      "mtimeMs": 1658122822422,
+      "sha256": "d7e44db3b600ed97522b5e0a297e92dbd8fe11acfd7bca3c7e5bb29e13b79b3e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "20c32505-f629-5779-bda9-21ce6ae99735",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I love the Lord_ Jesus Medley.docx",
+      "size": 12791,
+      "mtimeMs": 1658122825564,
+      "sha256": "9f00fe852b71531e054eb60c27de50903b96f6b2d92f799fa24443c6705f87a8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ff3be265-2786-52c4-96b6-619893a6d09b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I love you, Lord today.docx",
+      "size": 12397,
+      "mtimeMs": 1658122825807,
+      "sha256": "e5e706445727f479fd7c233b3e5d4515b1eddc59810bcdf23dbb633d0e45922b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a254e918-b939-5f57-a1d6-0b3a3b0b4c44",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I love you, Lord today(1).docx",
+      "size": 11650,
+      "mtimeMs": 1658122827539,
+      "sha256": "0e7594b1b2ee7e2be503782c0235a54385d920d6a82abdb9dd12f52462339c97",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c75a8c7f-6f5f-51e8-823a-dbc11908fb97",
+      "confidence": 0.2,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source",
+        "No section labels found"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I must be saved.docx",
+      "size": 12993,
+      "mtimeMs": 1658122822170,
+      "sha256": "bae96a2a4e6817f4f81e01873b946a908b1ad0fe68e45b2e385da700fa2f2663",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1173d19d-7a0b-591c-922e-9fc813bc51b8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I need Thee every hour.docx",
+      "size": 13219,
+      "mtimeMs": 1658122822599,
+      "sha256": "272e07568e958629ecd0a0b9fdf7b3cb5bbfbefbbe304470b68fadd7ebb3ee11",
+      "type": "docx",
+      "decision": "song",
+      "songId": "09a77db0-d0b2-59f1-b488-bc760ad642b1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I need You more.docx",
+      "size": 12269,
+      "mtimeMs": 1658122822028,
+      "sha256": "7200f5807a619811402184f1f611f700db8167edd432f836089a5c5d8969fa6b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5ee592c4-dbb1-5fba-ae8c-cbc5b8b3ca26",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I never shall forget the day.docx",
+      "size": 13307,
+      "mtimeMs": 1658122821814,
+      "sha256": "ce679ba6aa393d6f1f8db13904060c6485f0cf76129941f9f0fc8d8c4fa1e9d7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "62fd85c1-9217-5f00-89f9-53724e79186e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I see a crimson stream.docx",
+      "size": 13372,
+      "mtimeMs": 1658122822101,
+      "sha256": "0968c1da507bc85a9fd1ee26f2d5137721cc6c87a4b227a3b6eab8874963c6f1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f90f9879-f7dd-5e1c-b332-6db8df3657b7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I shall know Him.docx",
+      "size": 12315,
+      "mtimeMs": 1658122821422,
+      "sha256": "ccd44403022258fc65ee359f4bcc9a3fb6cb3bd827d48bf80d8e9170253ea975",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b405fe9b-4264-5402-8ec8-a4ca474da9e4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I sing praises to your name.docx",
+      "size": 12595,
+      "mtimeMs": 1658122821458,
+      "sha256": "7dfd10cba889b60352d86c13dc6e3298987347be3acb6fdb878cecc6e6e70482",
+      "type": "docx",
+      "decision": "song",
+      "songId": "202807e3-ca29-56e3-bdf3-6d92da848289",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I surrender all.docx",
+      "size": 13436,
+      "mtimeMs": 1658122821633,
+      "sha256": "7b005a84163ebb4deb854b27b362b4aef14a7fc79200f48df0cef64abbd3f83d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "765b6898-9297-5317-88b4-657609e07da2",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I thank You.docx",
+      "size": 12633,
+      "mtimeMs": 1658122821741,
+      "sha256": "f49be7c9d628f6be1e23507bb799a5a29b4ecaf5cd42c91474a21c038804097c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2e3ae06c-927e-5c4f-b07a-4a2318d38148",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I wanna be washed.docx",
+      "size": 12471,
+      "mtimeMs": 1658122821996,
+      "sha256": "2339ba8598db60d2e390e87fe46c0eb4d2945ad702cb5f7c0643daeba0f57054",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7a000174-3656-521c-9f3c-5b2ccc741513",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I want that Pentecostal fire.docx",
+      "size": 12531,
+      "mtimeMs": 1658122822206,
+      "sha256": "f4be454049400becbc6eea6dde87b8bb8fe4e1c6f0cc4597353c4ecef92e5b49",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5bc42084-7d50-5fb3-aff8-7ae1e7ad4310",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I want to be Holy, Holy like You.docx",
+      "size": 12354,
+      "mtimeMs": 1658122826110,
+      "sha256": "38bfd390a5ff74910f3a31741bace0fd65be1dc863cfae4bd25ad64632797f7f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4f3ae622-1a3b-547b-91c8-4cc1afc853ae",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I want to be more like You.docx",
+      "size": 12463,
+      "mtimeMs": 1658122821926,
+      "sha256": "2d800a893fd00bcc04b3da8510bc5c5bc566749dce7d4c9b801f7c87e75a56c3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "11ae6434-73b3-5200-b92e-1caf33c430ec",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I want to live the way He wants me to live.docx",
+      "size": 12363,
+      "mtimeMs": 1658122828065,
+      "sha256": "d8d150281f0255e3fea058e85ec54a516e3568a1fb3f4e4717c150574a22680f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d183e9ec-70c6-5baf-8ed6-3c77c7894a59",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I will give You all.docx",
+      "size": 12470,
+      "mtimeMs": 1658122821705,
+      "sha256": "e0b9b01228f36cd9f608cf4551459ec4fb0cb0e8a1dd8ca9ea43f6f52d95b32d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4028717f-2bd8-5b8c-b36a-df97fbcbbb9f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I woke up this morning with my mind.docx",
+      "size": 12476,
+      "mtimeMs": 1658122821599,
+      "sha256": "f67be84619cdb17083b2adca9de3d05ad65114a608940421e573de845aec5a78",
+      "type": "docx",
+      "decision": "song",
+      "songId": "def517b8-50de-5783-adf1-2daf19a85921",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I won_t turn back.docx",
+      "size": 13652,
+      "mtimeMs": 1658122823281,
+      "sha256": "fdbbe2c6b7d36ef9739964e20a72051bf1efa91619d6c4385fef1d03d8cb19db",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8eea749c-bed9-5ab4-b032-95607b2e712b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I would not be denied.docx",
+      "size": 13108,
+      "mtimeMs": 1658122821961,
+      "sha256": "bcf9b9db38edeb448ba5429583e2fc524c443437c6051d08900c8e0c0f63aeca",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ea341d60-ab54-50c1-a2c3-6feae600884d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ll be listening.docx",
+      "size": 13079,
+      "mtimeMs": 1658122822350,
+      "sha256": "063a9f6e7d45038a497a55e98c81ce0500fe5ca8ac3397954387a8e0844a6936",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9cecc27b-a206-53d1-acf5-5e3c1984f02e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ll be up again.docx",
+      "size": 12729,
+      "mtimeMs": 1658122821669,
+      "sha256": "f38b4f9cc00a35a185582484365802c855239c1fe5e69ed699b9f0399ed64f6c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3a5b97f9-3adf-5918-9746-793968cbea9d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_m going through.docx",
+      "size": 14804,
+      "mtimeMs": 1658122821492,
+      "sha256": "2642728da88a6058d45d515073bee0c8d885d977d10e7bd1fb9501b87c4b0258",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9361cb96-1037-5bb8-9d11-15b1d1cca3f5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_m just warming up.docx",
+      "size": 13255,
+      "mtimeMs": 1658122821138,
+      "sha256": "8341ec1aca0254ddbb79ece7cc75fe472ade75a522076948332a4f52643df5fc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b9590f8a-0902-5ef4-b216-d156f032686a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ve already been to the water.docx",
+      "size": 12241,
+      "mtimeMs": 1658122821387,
+      "sha256": "f0f1749e4d31fe6524c2c448fb320ca9b93f1595103048db8ae386b971ba2502",
+      "type": "docx",
+      "decision": "song",
+      "songId": "07d65f16-fabd-58a7-aa28-bcb26f65560e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ve been changed.docx",
+      "size": 12515,
+      "mtimeMs": 1658122821104,
+      "sha256": "629e7ce23a26f1f50121b562a1a789d219d9c92dd919384872ab487bea634d81",
+      "type": "docx",
+      "decision": "song",
+      "songId": "05845cde-ed53-5eaf-962f-10ad70406042",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ve been delivered.docx",
+      "size": 13196,
+      "mtimeMs": 1658122821776,
+      "sha256": "6a775c10b5444a47e1101e89d2ddaa484bf97d5807887917b97266c60505e2b8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bd7294a0-9171-5b34-85a6-0168200c3232",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ve got a feeling.docx",
+      "size": 12755,
+      "mtimeMs": 1658122815716,
+      "sha256": "e10bbe9b9dea048fcbce5b612564114daa5c7e28fad55fc01ca55b9337580718",
+      "type": "docx",
+      "decision": "song",
+      "songId": "94b6ca24-c6db-5ee2-ab5f-ed3a8c0d87ae",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I_ve got joy.docx",
+      "size": 13857,
+      "mtimeMs": 1658122815863,
+      "sha256": "8402ed26adbc844b14e8117ad76fe386521db4dbe2c76267549435df51842d46",
+      "type": "docx",
+      "decision": "song",
+      "songId": "33b36579-a9d3-566a-9c74-6ca461f8d54d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’ll fly away.docx",
+      "size": 13180,
+      "mtimeMs": 1658122821317,
+      "sha256": "f4c90040f29793104d7208ff2087e7391303e82212b338f760f29c151e98584e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2ba5f166-4a5d-5ad1-b3b2-1e10f857a500",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’ll never be the same again.docx",
+      "size": 12577,
+      "mtimeMs": 1658122820628,
+      "sha256": "3580c3c840bb66b1cb27787f42809684b9870223ea8e37e999fad4bae5d8e549",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2caa06b5-4a0f-5118-baf3-f3f6f6386408",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’m cryin Holy unto the Lord.docx",
+      "size": 12705,
+      "mtimeMs": 1658122820487,
+      "sha256": "33955c1228713021cda0ddaf0f03eb16ed0fc88f05bc3441995e838469ca1a84",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9674f28a-eefa-5acf-a8f3-37b7aa33df22",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’m depending on you.docx",
+      "size": 12545,
+      "mtimeMs": 1658122820449,
+      "sha256": "fc66a804ef17201e7f8ec521169e90708ab262681601b702ba4582494dc6dc77",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8600d9e1-3b0a-50dd-b9ac-a2a0579a2e86",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’m so glad that the Lord saved me.docx",
+      "size": 12399,
+      "mtimeMs": 1658122819102,
+      "sha256": "fb770d9268fb84206f3116c72e53af022905bfb13ac8c2ee5406f7a177133dd8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f6ffd378-df05-5767-aea2-b541fa02d325",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’ve got a feeling.docx",
+      "size": 8467,
+      "mtimeMs": 1658122825526,
+      "sha256": "44846cc16c2d7e09b4523f5ae95a0de7841852e20bda4a0e6be7f924fbf452bc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "06e4c264-f580-5125-9afd-7715d1ef8884",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’ve got it.docx",
+      "size": 12172,
+      "mtimeMs": 1658122819290,
+      "sha256": "49f27cc5350e98a2db7d4849c5b83ab34651eb255abc3ff47acd062477ce4b47",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ad96635f-b4f1-5fd2-b871-25968eecc915",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/I’ve got the Holy Ghost (1).docx",
+      "size": 8731,
+      "mtimeMs": 1658122825660,
+      "sha256": "c6ee05be577e5138831cb4c3fee33976c6ca86246b454ed97f0c0b66d6703eee",
+      "type": "docx",
+      "decision": "song",
+      "songId": "34afaaad-06aa-548a-af88-c4933ab3fee9",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/If Jesus said it, I believe it.docx",
+      "size": 13353,
+      "mtimeMs": 1658122825955,
+      "sha256": "688a8f4d0b2522fa2912778c0246e6803713615d5c003d9904baeda44f675ccc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8d1b3584-8749-5fd0-89d4-beaec314106d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/If you had known me.docx",
+      "size": 13378,
+      "mtimeMs": 1658122821852,
+      "sha256": "c34687b2f55ba0e56416f50f896620003d7a590576094071676fdf9ba0798fbd",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7cb1599d-8711-52f4-b688-fca9146014ab",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/In His presence, there’s fullness of joy.docx",
+      "size": 12644,
+      "mtimeMs": 1658122818451,
+      "sha256": "fe4ba71a3369cbd79ef70ea08c5fbdb9f7a96d70ae23906c0222dffca467ae4f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5a21ce3c-a9c1-5926-9b2c-c39acd7bbd3e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/In the city.docx",
+      "size": 13966,
+      "mtimeMs": 1658122825385,
+      "sha256": "912bf588760bd4d6126ff9c0692c12f3a5d865ce557278a067f0a6f9a32c8088",
+      "type": "docx",
+      "decision": "song",
+      "songId": "23ecb477-e688-5cfb-ab00-817ffd21d3a6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/In the name of Jesus.docx",
+      "size": 12404,
+      "mtimeMs": 1658122821527,
+      "sha256": "4b614c8eb162f87f7be7b4dda83c17a99a2d26958c0b396edf695ca8462b4569",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f76605db-6b75-5fa7-b9d7-a57c87e78383",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/In the presence of Jehovah.docx",
+      "size": 12547,
+      "mtimeMs": 1658122821026,
+      "sha256": "0f6ba148c8d580d594890eda362e6f3acb3a51e84d09c221047deb2be7fba75d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dda6b8c7-49ff-57bb-8378-9346e3bc340f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/In this house.docx",
+      "size": 12350,
+      "mtimeMs": 1658122826619,
+      "sha256": "25fe3be1e6e841d4637876621b2776a602f187873a8981f21bf88a0aa93120a7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3ce1c86b-c0e7-58d3-85f4-88cad816ea35",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/It feels so good to be free.docx",
+      "size": 12752,
+      "mtimeMs": 1658122822240,
+      "sha256": "0e904cadc6573fc8b3cb4b52fdedfbd0c601d445fa92fab72eb2fa87710cbb61",
+      "type": "docx",
+      "decision": "song",
+      "songId": "30acd742-146f-568d-a3e8-610a7e884214",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/It_s gonna be worth it all.docx",
+      "size": 12891,
+      "mtimeMs": 1658122821174,
+      "sha256": "9cd92c5b6d4a7693efaf3655f638fcfde71dd8fbfbcba963b9bea1a6a6d1697e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "85ba3a16-3a04-52a7-9eba-1cebe5b7e39f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/It_s my desire.docx",
+      "size": 14292,
+      "mtimeMs": 1658122821353,
+      "sha256": "e5429359ee16278539c276e4b94e3a88767678516ee3dcc11b735e98ef0b5ce2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0d00bebb-14f6-5402-b73a-f2cc6bf85d98",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/It’s a good life living for the Lord.docx",
+      "size": 12445,
+      "mtimeMs": 1658122817396,
+      "sha256": "f2263891f5c7ac40c11a164b23f712026f1069277ff90e60d6e5ae9e41964657",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b5efa8f0-92d0-5e8e-9108-eb31fb615106",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus hold my hand.docx",
+      "size": 13708,
+      "mtimeMs": 1658122820956,
+      "sha256": "83ab2f3b6242878e7117a8024d221b0a43af5d7e4c683c8cd52759cd6cfaf258",
+      "type": "docx",
+      "decision": "song",
+      "songId": "992e7cc2-0d6d-5d5b-aadc-707b8d1c92ad",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus I’ll never forget.docx",
+      "size": 12925,
+      "mtimeMs": 1658122817994,
+      "sha256": "c62be49bbbc22f1b347a5bd3f058297ad7f46a85ebafabc76b0830dcb5208309",
+      "type": "docx",
+      "decision": "song",
+      "songId": "81d5e603-8321-531d-87d3-f3107d165f02",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus is hear right now.docx",
+      "size": 12648,
+      "mtimeMs": 1658122820559,
+      "sha256": "1403cdfb435a966ffcede34f616bddcf36f93f2c4d2fbba17d1ed92e30f6e8ff",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ed4566b4-44c1-537c-8f67-881882531b57",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus is keeping me alive.docx",
+      "size": 12406,
+      "mtimeMs": 1658122820773,
+      "sha256": "3a7756ff84f53686283f85a3b9daeae726ed95a16496a2de34d447730efdd923",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c8c9f39b-df45-5207-ad10-8c4cad7e0b1f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus is the answer.docx",
+      "size": 13102,
+      "mtimeMs": 1658122821283,
+      "sha256": "ed02c138be5e432d62bc3be998ed2bd82cfdb2f633ab9e7331d48106f7c0622f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5f2004f2-68f3-54ec-8a5c-74b2868324a9",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus is the sweetest name I know.docx",
+      "size": 12197,
+      "mtimeMs": 1658122820920,
+      "sha256": "012537ae1e989eac5b6a29d1a752b0bdd4025683459691687668ff8b39b7fa62",
+      "type": "docx",
+      "decision": "song",
+      "songId": "503b39ac-d881-5cb0-96e0-e78adc628dde",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus never fails.docx",
+      "size": 14879,
+      "mtimeMs": 1658122820845,
+      "sha256": "b9a72f7d61225b43fd22905219b10b88ff3c602dd4e8f704c4eb9a56f1bbbc46",
+      "type": "docx",
+      "decision": "song",
+      "songId": "78f12183-ca8a-5bf6-b2d7-a3b7a042fed1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus on the mainline.docx",
+      "size": 12909,
+      "mtimeMs": 1658122820992,
+      "sha256": "3121e4f140e81c59a4277373003241b8cbe601b826613ceebcea7a062385514b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "45604da1-11d5-5b67-a044-b05bec73c163",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus you are welcomed here.docx",
+      "size": 12612,
+      "mtimeMs": 1658122820665,
+      "sha256": "97e6e3d5a87e9b2776a8a6873c995ae85b1de294e05e3a19afdcce4b3f9787da",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bb46b22f-1d8d-594d-8eba-7f0dc5cdde93",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, lover of my soul.docx",
+      "size": 12819,
+      "mtimeMs": 1658122827203,
+      "sha256": "43ec7a506eafbace1c99b4361cc56b0e2fb372fd29dc36b889c4df0b416701e1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f609afda-3894-5139-8b33-2f4108a741ef",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, lover of my soul(1).docx",
+      "size": 12819,
+      "mtimeMs": 1658122827919,
+      "sha256": "43ec7a506eafbace1c99b4361cc56b0e2fb372fd29dc36b889c4df0b416701e1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dfa09b6a-8a56-5303-a667-fa13a2b649bb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, no other name.docx",
+      "size": 12092,
+      "mtimeMs": 1658122826548,
+      "sha256": "632eb94a452c5e0f005d35300f50ab52f40a686fcf45ddd3389f30d9c1ba92f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e15e6eb0-e770-5e04-988a-b65b20418b96",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, no other name(1).docx",
+      "size": 12092,
+      "mtimeMs": 1658122826881,
+      "sha256": "632eb94a452c5e0f005d35300f50ab52f40a686fcf45ddd3389f30d9c1ba92f2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4b8e5cb8-1857-5947-8e44-6944080533ba",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, there_s just something about that name.docx",
+      "size": 12271,
+      "mtimeMs": 1658122826806,
+      "sha256": "ddc38c3f2c17b4736ad4a159f89237ff55702aba219d73922295f35541ee1987",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e9e01783-ca64-57bf-bad9-d17369c7984c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, there_s just something about that name(1).docx",
+      "size": 12271,
+      "mtimeMs": 1658122826731,
+      "sha256": "ddc38c3f2c17b4736ad4a159f89237ff55702aba219d73922295f35541ee1987",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7c0b70c2-e3d1-555b-a984-96cb97a5f960",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, use me.docx",
+      "size": 13509,
+      "mtimeMs": 1658122826658,
+      "sha256": "209409842bcc266d93f6f91daf9a0f48f6ed6fe8fe2a3b5264ce1c47f50821d7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d70dd140-76b7-51d8-8a4e-c603800dd8c8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, use me(1).docx",
+      "size": 13509,
+      "mtimeMs": 1658122826766,
+      "sha256": "209409842bcc266d93f6f91daf9a0f48f6ed6fe8fe2a3b5264ce1c47f50821d7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3cde0d03-1bfb-5e00-ab80-0fac658fdaa2",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, what a wander.docx",
+      "size": 12397,
+      "mtimeMs": 1658122827356,
+      "sha256": "d18e9930059d4e9ad0cc3e631adf5e197461cd32162572249ba022cda18d6e47",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d1310a07-fa60-5a4e-aa0d-daaf36a4da5b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Jesus, what a wander(1).docx",
+      "size": 12397,
+      "mtimeMs": 1658122826844,
+      "sha256": "d18e9930059d4e9ad0cc3e631adf5e197461cd32162572249ba022cda18d6e47",
+      "type": "docx",
+      "decision": "song",
+      "songId": "36bd7fc5-e9d7-561a-a3ed-a407c7453238",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Joy unspeakable joy.docx",
+      "size": 12690,
+      "mtimeMs": 1658122820736,
+      "sha256": "bdd3dcbb921300a2fea093bba55e757cc8ee275afb27442189221b3c61a28a15",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6e7c5cf9-e727-5ba6-9826-e8bd0a945ee0",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Joy unspeakable.docx",
+      "size": 14794,
+      "mtimeMs": 1658122820592,
+      "sha256": "166f15906b80fa453f8cae27ddad7baddb1657a8c35a2e5e1e6fb3afec51f03c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "25d00625-9b00-56cd-9ebd-f8a404a3fdad",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Just a closer walk with Thee.docx",
+      "size": 14686,
+      "mtimeMs": 1658122821065,
+      "sha256": "ff7e7375aa13c912f2bf4804d9229ce2991b87487b9ed81725abb41cc5a92184",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8d0213b5-78c5-51d1-922a-ead6818931cb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Just a little talk with Jesus.docx",
+      "size": 14683,
+      "mtimeMs": 1658122820806,
+      "sha256": "7f17683b414b34f5df57fd034961da6b26a58fdbf409ba84d9aeb52a8909e0c8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "048164ba-6cfb-59b8-ab2a-a09f0d194e62",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Just a little while.docx",
+      "size": 14729,
+      "mtimeMs": 1658122820409,
+      "sha256": "f1d419de5724ed9f666366f01117a859d088c6ba2b5d8bcf2c0cf8b56a1d577c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "244fd281-3f65-5ec2-a94b-05c818b073e8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Just over in the glory land.docx",
+      "size": 13521,
+      "mtimeMs": 1658122820525,
+      "sha256": "cc6de7ee669610842faa9d66d543cc515293104a91b2c781739881b22ee00af3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "48ce3d3c-7254-5f87-8cf3-93618c6f831c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lead me Lord- I will follow.docx",
+      "size": 12599,
+      "mtimeMs": 1658122820883,
+      "sha256": "32cd7b345c77269265fc5083e6ad875f14593fd90400eb90ef3594ccf6ba894f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8380c0a1-0670-5951-9f48-83b2bd5f9eab",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lead me Lord- I_ll follow.docx",
+      "size": 12858,
+      "mtimeMs": 1658122821562,
+      "sha256": "5fc6c1816103131074b60aa08e287db36cc506a518b761843079672d75340837",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8e13d830-872f-58b7-876e-51308b90b809",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Leaning on the everlasting arms.docx",
+      "size": 14657,
+      "mtimeMs": 1658122821888,
+      "sha256": "e97422487a5cd3f461525fe565dcecae3ad680aacfa3989f864e5c06ff8f6fce",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bd4a6ea4-b500-5d2e-81eb-6de54456658f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Learning to lean.docx",
+      "size": 13811,
+      "mtimeMs": 1658122819972,
+      "sha256": "0932bdb68dad84a236528707648548888c13b9d6647954f73d2b1797d5bbe337",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ee811376-9a0f-581b-a4a8-fbdcbde2d607",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Let me walk with you Jesus.docx",
+      "size": 13219,
+      "mtimeMs": 1658122820047,
+      "sha256": "16c181043ff3d15b3fe70150e5a1b88375a77ba6846928790c65f455ad4fcd46",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dd5ec93a-b925-5ec8-917b-4115ce7a2ba6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Let Your glory fill this place.docx",
+      "size": 13908,
+      "mtimeMs": 1658122820699,
+      "sha256": "f446661043bef54666dff9c33846e86139b0ce3b010e3e72e6c9a3dcaf44a931",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d63538c3-b288-5ca7-bf5d-0ce3e128b71f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Let_s have a revival.docx",
+      "size": 12830,
+      "mtimeMs": 1658122820266,
+      "sha256": "5407f61331e66023ca66bb3f38f463120d60d89336f6875417a0e55946e6f9fb",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0593661d-826d-5035-a8d0-f399dfd911f6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lift up the name of Jesus (songbook).docx",
+      "size": 13301,
+      "mtimeMs": 1658122826919,
+      "sha256": "667590f8edf6e5cb79e1ff74f0b23b695ba8f73e040f02094d24563b22e88d5f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0ff52a82-4bd0-52ca-a186-69a0bbf3d533",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lift up the name of Jesus (songbook)(1).docx",
+      "size": 13301,
+      "mtimeMs": 1658122826693,
+      "sha256": "667590f8edf6e5cb79e1ff74f0b23b695ba8f73e040f02094d24563b22e88d5f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b2762517-f5a4-562f-be1c-d38985351ebc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lift up the name of Jesus.docx",
+      "size": 13186,
+      "mtimeMs": 1658122819902,
+      "sha256": "1ced2afd007f1310ce8f2b82228fd2a626c38f7561916132a8c6b699c139a447",
+      "type": "docx",
+      "decision": "song",
+      "songId": "15614a83-7a39-571f-b23c-fa58793c7328",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lift your praises to the Lord.docx",
+      "size": 12632,
+      "mtimeMs": 1658122821247,
+      "sha256": "316ffb37e807b59dde75965a81f63a2f44fe20ee539778b3b543fe7e58edb858",
+      "type": "docx",
+      "decision": "song",
+      "songId": "84be38cb-28d6-5c3c-8548-6a846cf3be63",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Look out satan, look out.docx",
+      "size": 12470,
+      "mtimeMs": 1658122826289,
+      "sha256": "e44b8420adac10d7861d44dd28d27e5224fd4fc0979ce22fbdb9d229ea788f58",
+      "type": "docx",
+      "decision": "song",
+      "songId": "86e505b6-1766-52d9-93b9-42aef386f04c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Look out satan, look out(1).docx",
+      "size": 12470,
+      "mtimeMs": 1658122826400,
+      "sha256": "e44b8420adac10d7861d44dd28d27e5224fd4fc0979ce22fbdb9d229ea788f58",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b1646fc1-03fe-55c3-b2bf-890e3fc9e43a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lord prepare me.docx",
+      "size": 12595,
+      "mtimeMs": 1658122820190,
+      "sha256": "6a31f0c51ba148ebf43959e4a67b5c266b5cf917c912831c08d7cbae6c05f901",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1c62f66b-d998-5bb8-9273-ecf736819a75",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lord we need a fresh anointing.docx",
+      "size": 12494,
+      "mtimeMs": 1658122820340,
+      "sha256": "6aa4ddad7ac19bdb6f9310b3ad47e8c6abd1275ad72ae00ae09f37752116ac23",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7118cc15-69e4-5a61-aaaf-a22d79a4a4cb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lord, we give You glory.docx",
+      "size": 12870,
+      "mtimeMs": 1658122826254,
+      "sha256": "05208dbbb719a50604eedade8659fd7c58e0e68aedfd1035ca868ae9963983c8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6de493a6-68d9-506a-98e1-fc100e4a93ab",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Lord, we give You glory(1).docx",
+      "size": 12870,
+      "mtimeMs": 1658122826147,
+      "sha256": "05208dbbb719a50604eedade8659fd7c58e0e68aedfd1035ca868ae9963983c8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "cfaa3356-13d8-5702-8fdb-f04d1ac584ef",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Love lifted me.docx",
+      "size": 14581,
+      "mtimeMs": 1658122819866,
+      "sha256": "c16f58c3ed3f5cc7afb2c90d9f5c9bea4c3583ec525eefb6ddb1c512143c2903",
+      "type": "docx",
+      "decision": "song",
+      "songId": "429e4d0b-4108-5489-ad31-62d1f1131c0d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Made me glad.docx",
+      "size": 12492,
+      "mtimeMs": 1658122819721,
+      "sha256": "3f34c8d15b6486387e6072484daf8870aef5467ca820801b149f0c0048bcdf9d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "464143bb-de8b-5c32-ac30-99445a8fc3c8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Make me a vessel of honor to Thee.docx",
+      "size": 12305,
+      "mtimeMs": 1658122820009,
+      "sha256": "40717fd0ba3819d6ffc2ec8446e3c16e9fd22fd619844ac7dac4fa3ee452226b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a72da495-1606-54a9-918e-a26f323b0e95",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Make me in Your image.docx",
+      "size": 12537,
+      "mtimeMs": 1658122820374,
+      "sha256": "c10a4569df9e9ef089504c1de5480e7d3238b4035c5c7e81a9e8c772c63c2aa6",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1e6e64b1-bc2e-51f6-b4e6-4d4c7d52876c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Meeting in the air.docx",
+      "size": 12354,
+      "mtimeMs": 1658122820300,
+      "sha256": "95a07d2b0fbff4be78a2b55ab27fd54129adbe9abbac1a424467ee5114e89fbf",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ebf428e3-0050-5edf-a73c-f22d7577297f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/More of You.docx",
+      "size": 12654,
+      "mtimeMs": 1658122819468,
+      "sha256": "95e3dc8aa4ca0b030e33a576fe7dc4d90b722e3524165b6bf9679f36b489b0aa",
+      "type": "docx",
+      "decision": "song",
+      "songId": "94f1217e-7c1d-52f2-81f0-2c3b77dacbb6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/More than anything.docx",
+      "size": 12349,
+      "mtimeMs": 1658122820084,
+      "sha256": "59c63485a9cef5da43a0c65e7d436c0da8d3f07ee3bfaa991d054345bf3d088e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0533bf97-2762-5d79-af3b-bbe08e17ec65",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Move me with Your message.docx",
+      "size": 12384,
+      "mtimeMs": 1658122819582,
+      "sha256": "8a5717496205a76f5aaff3e7ba5e149d2aa7c1a0b08f77b5db158a3deb3ec56c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0ed94e67-174e-5242-a692-9448cd645c0a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/My soul says yes.docx",
+      "size": 13388,
+      "mtimeMs": 1658122820119,
+      "sha256": "31b51929156ceaa244855b51a3d4c47598029b55723bdcb2e1f79ee494aa461f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1f93b2c9-de93-552b-aaf8-b006539d74c3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/My thanks to Him.docx",
+      "size": 14779,
+      "mtimeMs": 1658122819937,
+      "sha256": "cc3636594003d4543860aa559559c0b9c3d95950652a4675e769f2603f6b44ca",
+      "type": "docx",
+      "decision": "song",
+      "songId": "eed85da1-7b10-55f3-a8a4-183ee2ed018e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/No one can touch you like Jesus can.docx",
+      "size": 12551,
+      "mtimeMs": 1658122820226,
+      "sha256": "a79ffb7b8d51f94542cd5bd4854919203ee697a4c6637b5cbc0ed727ae1e3976",
+      "type": "docx",
+      "decision": "song",
+      "songId": "501028b1-72aa-5d8c-b911-a20b1e46d8b5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Nothing but the blood.docx",
+      "size": 14316,
+      "mtimeMs": 1658122819617,
+      "sha256": "7d440b02b491b5c294199991304cde49ff388c646d8f77abc18f76e898f01058",
+      "type": "docx",
+      "decision": "song",
+      "songId": "fb2f8481-0db4-506b-8ad4-a459ec9eaffa",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/O Glorious Day.docx",
+      "size": 13637,
+      "mtimeMs": 1658122819653,
+      "sha256": "4fcb0946550ed8099188d2266b4333003910a32d4f8d55d2a53edfce6adabd7a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f8d8588b-70e3-5e58-b39e-d178b744d84c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/O I want to see Him.docx",
+      "size": 13641,
+      "mtimeMs": 1658122819827,
+      "sha256": "bed6a7464e0f79195d27793105b4ebc7cf052d674d2a828e6cf4e3d0efe57ed0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "96df7a83-700b-5a2b-9fdd-509c80d685dd",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Oh the blood of Jesus.docx",
+      "size": 12766,
+      "mtimeMs": 1658122819434,
+      "sha256": "8936d050fe2202f7a05153956751f2c99e106cdfbbce14f5ec4a5314758a3cd0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b7db07af-fcaa-5008-9e2c-35d832e91dc3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Oh, how I love Jesus.docx",
+      "size": 12758,
+      "mtimeMs": 1658122825312,
+      "sha256": "b3ac685de8cc6aa24c40da15c232eb2ccfcf8301ce5ea943004f2f47e95ae722",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2ff775e0-4c96-5f44-8f7b-13b880ba750a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Oh, how I love Jesus(1).docx",
+      "size": 12648,
+      "mtimeMs": 1658122825997,
+      "sha256": "4dcd52a408b0253ba78365e2ada99c58703361d09e87b192ee596fbdf4c00cd5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dd60795c-cf3b-554f-b9ba-42fb27b8d277",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/One, way to God.docx",
+      "size": 12340,
+      "mtimeMs": 1658122826586,
+      "sha256": "99bfbdba8621e62c03043b1c8023040cfcf4496bde6c6a3539ece43dc6393ea0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9841fad5-b16f-55c7-af7e-6658de79c0ed",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/One, way to God(1).docx",
+      "size": 12340,
+      "mtimeMs": 1658122826071,
+      "sha256": "99bfbdba8621e62c03043b1c8023040cfcf4496bde6c6a3539ece43dc6393ea0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2b00c3e4-75f8-5d29-a864-99ef11af7929",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Only Jesus can satisfy you soul.docx",
+      "size": 13297,
+      "mtimeMs": 1658122819504,
+      "sha256": "c86de970310d536ae7df1af48e80e82df340dda116fd79acceccf34e0b065574",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8dcfceba-8b11-5e87-974c-f595616b70dc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Pass me not, O gentle Savior.docx",
+      "size": 12623,
+      "mtimeMs": 1658122827581,
+      "sha256": "69076cbb621aacb852d5ccd99cfb7d87943deaf0a5940a6c4233175fb5a17b53",
+      "type": "docx",
+      "decision": "song",
+      "songId": "acb7d8c5-e8c4-56f5-81a0-d2ce2a3c7b53",
+      "confidence": 0.2,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source",
+        "No section labels found"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Pass me not.docx",
+      "size": 13257,
+      "mtimeMs": 1658122824471,
+      "sha256": "bc70c94d0b6525f2fc5bc0885598bf287c3b5de281f54cc7cb67e5eb5abe2034",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7f79f44c-66ed-5e9c-9da9-883e18a264db",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Peace, peace, wonderful peace.docx",
+      "size": 15012,
+      "mtimeMs": 1658122826477,
+      "sha256": "d08a6f948f25d83a7507c86a78e6e204a38e76a7495224d5defc1df57808e2ac",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ffb0f78c-3766-513a-a425-99247bea2cc6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Peace, peace, wonderful peace(1).docx",
+      "size": 15012,
+      "mtimeMs": 1658122826325,
+      "sha256": "d08a6f948f25d83a7507c86a78e6e204a38e76a7495224d5defc1df57808e2ac",
+      "type": "docx",
+      "decision": "song",
+      "songId": "47166966-4e73-54ee-ac1c-6b9b883ea76e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Praise Him, -let all the earth.docx",
+      "size": 12557,
+      "mtimeMs": 1658122815574,
+      "sha256": "058d82cfe975107602e1f5a9f8040ada25466fc4d802bdb3204e7b78420f0ba4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "35e488da-4a10-5437-a802-59c4ec613637",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Praise Him, -let all the earth(1).docx",
+      "size": 12458,
+      "mtimeMs": 1658122826362,
+      "sha256": "7dcd1a00f4dc9cfd3900dff9433778ac447bbd20547b4aa5c647c663115c5498",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d10e0f48-cf59-5293-82a6-f0b0972d9738",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Praise Him, In the morning.docx",
+      "size": 12274,
+      "mtimeMs": 1658122826182,
+      "sha256": "01f3dc4dd6e0f4045399444976fd3ca712914e4d6ca424840f9dd84b4dc66e36",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6c43e2fd-5d3f-51fc-b269-48cc98c65e47",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Praise Him, In the morning(1).docx",
+      "size": 12274,
+      "mtimeMs": 1658122826216,
+      "sha256": "01f3dc4dd6e0f4045399444976fd3ca712914e4d6ca424840f9dd84b4dc66e36",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2865aef8-eac4-514e-8f3c-68a5c1e193f6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Preacher, preach to me.docx",
+      "size": 13981,
+      "mtimeMs": 1658122825846,
+      "sha256": "c233852cad7a1e4e338cc8f2fe260a85de1e2ef8dda93d955a18bd448b65cf77",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c323d18d-6b4c-59f2-849e-156665175240",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Preacher, preach to me(1).docx",
+      "size": 13981,
+      "mtimeMs": 1658122825919,
+      "sha256": "c233852cad7a1e4e338cc8f2fe260a85de1e2ef8dda93d955a18bd448b65cf77",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e305de52-0bc4-5b80-bd9a-210fcd7de154",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Reach out and touch the Lord.docx",
+      "size": 12164,
+      "mtimeMs": 1658122819065,
+      "sha256": "5ee97d2a1c158a6e08e879065559dbc2c9e4dd447c0f8d2d3ccdf559eaf15f60",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9a7b202f-c738-5222-a7e0-7bd73180dd45",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Revival in the land.docx",
+      "size": 14707,
+      "mtimeMs": 1658122819148,
+      "sha256": "8f3992797f139cda779f90483c67df9c4964c71e46310710690799e2f2d255fd",
+      "type": "docx",
+      "decision": "song",
+      "songId": "675db7fa-fb30-5d46-b275-b062730dab7a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Room at the Cross for you.docx",
+      "size": 13317,
+      "mtimeMs": 1658122819689,
+      "sha256": "a65a9cb161063216a5d657f82f2846f20055d5fc9527567912e60548b6fc02ea",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b7bf7fc1-4d4b-5ebc-a156-e7b95acea88e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Sanctuary.docx",
+      "size": 13366,
+      "mtimeMs": 1658122819361,
+      "sha256": "a5311ed2c011c7115d1d0c8246b3f51f45964ae7004d45921361156141793981",
+      "type": "docx",
+      "decision": "song",
+      "songId": "60d83292-f6e3-5d58-91ca-48fac402449d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Satan your kingdom_s coming down.docx",
+      "size": 12140,
+      "mtimeMs": 1658122818594,
+      "sha256": "c7a0aa3745d5606929835c1779328302cc9b7a15a0ff75a987b2a1bd49b5dc72",
+      "type": "docx",
+      "decision": "song",
+      "songId": "875af087-b6a2-50e0-ab9d-2eb7c204dd8a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Search me Oh God.docx",
+      "size": 12385,
+      "mtimeMs": 1658122819255,
+      "sha256": "e85a3a4a92325b61a8b68d5d71002d98e734eb767d123ba857b60104e8c6b1d3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "36ddf912-c300-55b2-bd44-c799a42e6407",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Send it on down.docx",
+      "size": 13511,
+      "mtimeMs": 1658122819184,
+      "sha256": "a72e9529534257c2faccbf371be26ae5e69a41b09833d0748d0566759113147b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "10c37672-2afc-5a94-aaf2-41695f7f72cb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Serving God is beautiful.docx",
+      "size": 12278,
+      "mtimeMs": 1658122819756,
+      "sha256": "c43d4a5fd3c9d14711a7934b5c90525b418e793acc29b7f26a4e25e9e403518c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6b9afe80-34cd-5a1c-bbf7-7bc932a4d6ae",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Shake this house.docx",
+      "size": 12300,
+      "mtimeMs": 1658122819324,
+      "sha256": "7c2a5ff1837834bb8ed39c0e54602eb57119b34ecd41728dfebf0769a811fe09",
+      "type": "docx",
+      "decision": "song",
+      "songId": "72357767-a40a-5e71-9c6b-7255b9022252",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Show me Your glory.docx",
+      "size": 12747,
+      "mtimeMs": 1658122819219,
+      "sha256": "72a0840f769093a2432bd3ebb7dd4620a34c7ce81655e282db31e1f3f0808be2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "748e0ec7-e174-5c23-8dcc-a655fef9906c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Shut in with God.docx",
+      "size": 12366,
+      "mtimeMs": 1658122818704,
+      "sha256": "04887d9bfaea2ff603e2874146bb611fdb15b14e09fa4438d45f0609ebd63836",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f3f3f114-8a4a-527e-81ef-39192ba29f09",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Since Jesus came into my heart.docx",
+      "size": 14848,
+      "mtimeMs": 1658122819029,
+      "sha256": "369680ab1decf854228da1028789987316b2aff7bce2e4bfdb1e3ca197c572f1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "780180cc-5483-507f-8787-95e806b8763a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Since Jesus passed by.docx",
+      "size": 12301,
+      "mtimeMs": 1658122818957,
+      "sha256": "cb0c0f3347b00b2bc96a8cd242cbe16cbd46134e3ea2d98e0b1e9016d925bece",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2870c630-4d4e-5163-b35f-4db3da8ef127",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Sing until the power of the Lord comes down.docx",
+      "size": 14108,
+      "mtimeMs": 1658122819398,
+      "sha256": "55147f039a383271d36f635f7b46a07c1623b705ebf2d2dbe5f08c6f1fc677cd",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0f67117a-3782-5320-86f2-9c849f5b63c6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Sing unto the Lord.docx",
+      "size": 12356,
+      "mtimeMs": 1658122819791,
+      "sha256": "e271d9a27cbbb26dbc7e68c961b941cc87ff866e2f230436f142316e0a686f4e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "70229db3-0b26-5033-9129-998a8144bf87",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Something good.docx",
+      "size": 12756,
+      "mtimeMs": 1658122818416,
+      "sha256": "838446135a6ab898afc3f8da36f642eedbb9cec413e6d2a8d9cb642bfc20bfe7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ca3daaac-b131-5f8d-a788-ef1b01bffc73",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Somethings start moving.docx",
+      "size": 12321,
+      "mtimeMs": 1658122818922,
+      "sha256": "01e6480376c9a19062938f181cd45080aebbeb3256a53255ecf2f630bf060171",
+      "type": "docx",
+      "decision": "song",
+      "songId": "677f1c5a-0131-52b5-a471-a74eec91db3d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Soon and very soon.docx",
+      "size": 12564,
+      "mtimeMs": 1658122818884,
+      "sha256": "ffb0b13be8284772c9a3a863d26078551e49d3fd6157c87b7aa5688e6d761c6e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "507ac617-2d52-5146-a49d-8d2bc2ce0e2d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Spirit of the Living God.docx",
+      "size": 12345,
+      "mtimeMs": 1658122818524,
+      "sha256": "c23aa20d8b0c566b8d9e0be2a79dfae92ef6d87cf1904b12b63beb7d41d8418e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bd49926c-afbd-5cf0-91b2-cfb886262a05",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Standing on the promises.docx",
+      "size": 14809,
+      "mtimeMs": 1658122818850,
+      "sha256": "5394cc4abc98311b9ae46c9f443f938ef5fec1f68fdeb0290fc850117877fd6e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e92207f8-031e-5daa-bc02-118e36b3c78e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Surely the presence.docx",
+      "size": 12434,
+      "mtimeMs": 1658122818666,
+      "sha256": "34d5c4143d29e783d4337dceed6bb8d46b1422b060a3edee7fbab1c5ae0cb779",
+      "type": "docx",
+      "decision": "song",
+      "songId": "69a52559-e5f7-5d86-864f-aa6149b7ef30",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Surround me.docx",
+      "size": 12320,
+      "mtimeMs": 1658122818380,
+      "sha256": "1a1e9f2dedf2ed3710fe07225be1c6114398a3c63c2193f78b322b715afa6bd8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "23d52e14-32fc-51ad-ad1d-160dbfae83c8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Sweep over my soul.docx",
+      "size": 12323,
+      "mtimeMs": 1658122819540,
+      "sha256": "e3f4ce3182c16e9744a3c66dbc43d447bf763da8b055733dafe8140290fab637",
+      "type": "docx",
+      "decision": "song",
+      "songId": "39d0d420-5cc1-529d-8bf3-0163eab3ab0d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Sweet by and by.docx",
+      "size": 13164,
+      "mtimeMs": 1658122818808,
+      "sha256": "468ffafedab45f9c4792a5d6d2e31a42969cc4de01554b2bc4559e9b1388f4e2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5965becc-5dc2-5281-8e2b-58e220e9f0bc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Take me back.docx",
+      "size": 12287,
+      "mtimeMs": 1658122818487,
+      "sha256": "67aaf96d83c13ac3b498942868c0ff03c95a40081e7a817a63c591dd34981b03",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d49c96a0-3b21-59f9-9008-191e1e17c1f3",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thank God for saving me.docx",
+      "size": 12469,
+      "mtimeMs": 1658122818741,
+      "sha256": "380cf3f9790cc820ac3a0d5737c5a0ca0d8a45201477e8d26932538a8337d69e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "0492ffdb-af87-54f7-bfcc-6ead0e38e86a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thank God for the blood.docx",
+      "size": 13781,
+      "mtimeMs": 1658122818776,
+      "sha256": "b4a7cf2474c4dbfb9260d9380b61bae4d690f598e5850da4caca96dd2d01acb4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "065be5ac-0d5a-5c2f-8920-a106432e3ffd",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thank God I am free.docx",
+      "size": 12474,
+      "mtimeMs": 1658122820152,
+      "sha256": "ad4b34bf7df787338041b46d77c80d25aa37eaf1dc7a55ac43cca25f085b9006",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bcfd1a71-7c38-540c-9993-2bfac67a2f95",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thank You Lord.docx",
+      "size": 12368,
+      "mtimeMs": 1658122818561,
+      "sha256": "a00cd340d764aa97307198893c40382d4f7a5a985ef7c1c360fdad3e36c7f09d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9f0473d8-a5f8-5b6b-a228-9aaac3977dcb",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thanks, thanks, I give You thanks (1).docx",
+      "size": 12424,
+      "mtimeMs": 1658122826032,
+      "sha256": "0b8304265bf33429754fffab046ad875c3fe8c516ca051fbde2c458a17f5ae4d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f815a17a-fe88-56b9-8bf4-af967ea9b94f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Thanks, thanks, I give You thanks.docx",
+      "size": 12424,
+      "mtimeMs": 1658122825883,
+      "sha256": "0b8304265bf33429754fffab046ad875c3fe8c516ca051fbde2c458a17f5ae4d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1fd6e574-abea-5df1-a80e-d03ff3028484",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The blood will never lose its power.docx",
+      "size": 13065,
+      "mtimeMs": 1658122818631,
+      "sha256": "f004255ab20ce1d908abf41794b1f3aeaa2b2260259326168311d3d2aa674b05",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4d4395f5-7ac3-5e81-9282-877f953df2c5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The church triumphant.docx",
+      "size": 13147,
+      "mtimeMs": 1658122818275,
+      "sha256": "64089868732c154702aa08eaf32df544b1128b067ca09e0bc61321b7b6bb0e59",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8cfffec3-fab3-5191-a2e5-a7048edfccf6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The glory land way.docx",
+      "size": 13142,
+      "mtimeMs": 1658122818201,
+      "sha256": "fcb99a5027006b929d68cc19e7d1f19aa34184f39784b4ca9f424602fd7e4f61",
+      "type": "docx",
+      "decision": "song",
+      "songId": "810653ee-7436-5a86-88f9-611eda1f9ea6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The great I Am.docx",
+      "size": 13288,
+      "mtimeMs": 1658122818991,
+      "sha256": "66d41578646ad5fe8bc1ac186e7677d51a9b09789d1ea3caa925974a2c7a9086",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6ea332ca-d012-5420-9aa7-51266d83b7db",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The Holy Ghost Jesus is giving away.docx",
+      "size": 13988,
+      "mtimeMs": 1658122818062,
+      "sha256": "29abf88f19934006889247e4124a689559dd5a7c5990e0c809027422dbd330c0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The old account was settled.docx",
+      "size": 14162,
+      "mtimeMs": 1658122818237,
+      "sha256": "37aa4b694c1b03e6107d3ff6f86a4e0e4f1d413a2456b3258d68320ac69d73e2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "feb95590-ec2c-5fa2-8e20-f997575b1ac5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The old gospel ship.docx",
+      "size": 13273,
+      "mtimeMs": 1658122817835,
+      "sha256": "04ccc69ccbc3487f5b05d977f6599f58e94c2081b7bc99899db721c252fd55c7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "caba17e9-12a3-56b0-8a1d-0ce3f6be4fe5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The old rugged cross.docx",
+      "size": 13502,
+      "mtimeMs": 1658122818026,
+      "sha256": "85cd34894c8319ad492326351fdc296163a19676f22f1c96f048e8eda93a4e24",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d7f4951e-f427-546b-bf17-0ce0b1858669",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The old time religion.docx",
+      "size": 13880,
+      "mtimeMs": 1658122817690,
+      "sha256": "4b47aafb73ed2b26b1fd21038c72505068c183a88477614741ff314f760ae39d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "98495d17-7c74-5969-a833-b36f44a7dd00",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/The water way.docx",
+      "size": 13988,
+      "mtimeMs": 1658122817762,
+      "sha256": "06e3f03ff8a94ee236726418c6d4b6a380f0a73d4e242c40b2da560643bfbec8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ca4ba708-64de-5fc8-a030-7f78309d7c5e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/There is a fountain filled with blood.docx",
+      "size": 13808,
+      "mtimeMs": 1658122818308,
+      "sha256": "498fce8abb7c278a3603a266ecb6db50a56ad1a5cf4510ed4ba520a3f34b6b2d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5488db3a-c1f3-58dd-a6a0-0a7306de6a32",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/There is a river.docx",
+      "size": 13235,
+      "mtimeMs": 1658122817509,
+      "sha256": "fb3d208d6b75d5973a956684fa8b7b1cb603d44678476990649f94b6d0886d7c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "be7c477b-ae31-5934-9399-8ec2a0fd7ab8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/There is power in the blood.docx",
+      "size": 13543,
+      "mtimeMs": 1658122817873,
+      "sha256": "a6683a587c3e9d1586c29606f7eac842771f48c3625821e113e9e77ca872aa9d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "aaf89cea-08f1-5544-af62-9931754f9788",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/There is strength name.docx",
+      "size": 12173,
+      "mtimeMs": 1658122817544,
+      "sha256": "f4427e5fff1394df5e7b5368e326f85da58d0badf238570f9da7ac25b0e086c5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1e74c251-2e23-55b7-82f2-bdb5bb0fd963",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/There is strength.docx",
+      "size": 12282,
+      "mtimeMs": 1658122818168,
+      "sha256": "ecb0f2ac492fc5ae0058802ccad4aaf0ecc84012d08b577b8dca062e0016c113",
+      "type": "docx",
+      "decision": "song",
+      "songId": "451fafc2-aab2-530e-ab5e-8d58afc21ae5",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/They that wait upon the Lord.docx",
+      "size": 12390,
+      "mtimeMs": 1658122817323,
+      "sha256": "891a0afe8ec7beb79a4063a110eee9023ff4416a8845534e9cd8a97f62609639",
+      "type": "docx",
+      "decision": "song",
+      "songId": "43d95745-9763-59fd-91b3-14ed356a10ea",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Think about His love.docx",
+      "size": 12531,
+      "mtimeMs": 1658122817798,
+      "sha256": "9c68aad95a69a65948fc4dc97878910186996537593d1b8218d58dd1bf1309fc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3edd6be4-9a99-54ca-ab8e-2019f064e927",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/This train.docx",
+      "size": 12501,
+      "mtimeMs": 1658122817724,
+      "sha256": "62e3596e892faea551cedacbd1d205b1130faa1bf0ff41e6aa60aad1d354ce85",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3b504be5-fd19-5023-80b9-2bfada5f4e27",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/This world is not my home.docx",
+      "size": 13729,
+      "mtimeMs": 1658122817617,
+      "sha256": "1817a08910c543f83ebcda98a5221b3b307c36810b242acbc307b3791b03d3bb",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dcd81414-92e9-5c2e-9cca-1a15a56afaec",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Though your sins be as scarlet.docx",
+      "size": 12284,
+      "mtimeMs": 1658122817651,
+      "sha256": "80fdbe0c6331f3280429fc15507bd4a11379284c2aa73771fc006d3a320d3e0b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4788b475-f4e1-5bae-998b-0203cef9b9de",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/To be like Jesus.docx",
+      "size": 13903,
+      "mtimeMs": 1658122818346,
+      "sha256": "34d9e428b6475d61388e2827f2d8bd79d87aacbf1dc8bc25c90848ff1bb7fdec",
+      "type": "docx",
+      "decision": "song",
+      "songId": "616a0f74-ba05-5edd-badc-1d204e069fec",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/To God be the glory.docx",
+      "size": 12769,
+      "mtimeMs": 1658122817581,
+      "sha256": "7b6fbf637f3af3785320e7a66b8ac2f18175707c843cbe860c424467c3e3f6a0",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d58db1ac-1806-554e-a8dd-820d291d76d4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Touching Jesus.docx",
+      "size": 12561,
+      "mtimeMs": 1658122817289,
+      "sha256": "6c63e8e13e4f820a5444d26b28ec00f3d3ddbc5bed067e53e3e484433f2a5fb8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5c99a5c6-2dc7-5f65-a301-ebd54c68538e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Turn your eyes upon Jesus.docx",
+      "size": 13340,
+      "mtimeMs": 1658122817065,
+      "sha256": "c404d204ec84989d2597880936096dd68853b69447f67b9ce37c3902007bdc4b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4ba247ba-8a8d-5f3d-9de8-aef01ed1c831",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory in Jesus.docx",
+      "size": 15341,
+      "mtimeMs": 1658122817909,
+      "sha256": "91176817213fbe3a2b2f20639a60040b6f2b2aa4199601b0bbc2fddafa951eee",
+      "type": "docx",
+      "decision": "song",
+      "songId": "dc4d2cc3-f140-5130-bc4d-f5b3d98d2311",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory is mine.docx",
+      "size": 12974,
+      "mtimeMs": 1658122816842,
+      "sha256": "2243ef86e9f031ee45f122a62817c1c38c6930ed30b8e6a41661fe0a4d6659c5",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6d24ea93-2bef-5cd1-b012-b376b461c294",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory, victory shall be mine.docx",
+      "size": 12479,
+      "mtimeMs": 1658122826512,
+      "sha256": "b9e5ab6b5426c8b91b63c03a85ff8aa9b80c905cce8139a9e27676d2ae137ecb",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5077210d-359e-5b5b-a12e-81388e270b1d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory, victory shall be mine(1).docx",
+      "size": 12479,
+      "mtimeMs": 1658122825699,
+      "sha256": "b9e5ab6b5426c8b91b63c03a85ff8aa9b80c905cce8139a9e27676d2ae137ecb",
+      "type": "docx",
+      "decision": "song",
+      "songId": "94ce5e44-9eac-57ca-bb2b-1e3d8d36e787",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory, yes victory.docx",
+      "size": 13660,
+      "mtimeMs": 1658122824797,
+      "sha256": "5ccc2998a93b3ca484185cd6c89bbc4203ec8fba06d2b3a30665cf1465e8af4c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9adbf4b6-afe3-5daf-ac66-ab259c6da641",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Victory, yes victory(1).docx",
+      "size": 13680,
+      "mtimeMs": 1658122826437,
+      "sha256": "af3bb09ced3d6a70020085c21aa58a5ca7165e6fa1cdd8edc59f5e5cb6a520ec",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3e471a37-8978-5e97-9c12-d5d33b30a518",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Walking up the Kings highway.docx",
+      "size": 13338,
+      "mtimeMs": 1658122817959,
+      "sha256": "b83473eb23d1f8151415873172216cfcdcae7552a4557b23e51ebbb1956cb27f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "676c67fc-e011-544d-8578-4f27d7b221ef",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We are standing on Holy ground.docx",
+      "size": 12345,
+      "mtimeMs": 1658122817254,
+      "sha256": "44acd6dff1a92ee24606b89a6bfd8430c044bbbaf84c67b135655bf6997a1bb3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "88fe3b87-40e9-5fc1-9f7f-e7b93cf01e8f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We bring the sacrifice of praise.docx",
+      "size": 12464,
+      "mtimeMs": 1658122817140,
+      "sha256": "7d09dee309e4fc8bb69c2fad9de076956408f4c3af779962a92ccad81efd8098",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e1d07c81-eb3b-5f97-b258-fe7c81622001",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We declare Your glory.docx",
+      "size": 12260,
+      "mtimeMs": 1658122816775,
+      "sha256": "80db1baea42758f276a262d76e2fb3ba934f85947b0bc4cc4cabc5d691e074dc",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6821ae66-cbf9-504d-bdb5-07caff3e576b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We magnify.docx",
+      "size": 12337,
+      "mtimeMs": 1658122816879,
+      "sha256": "29132392add18f294c4003b526a136a800c5e88f1cbce87cfc4003244796ab42",
+      "type": "docx",
+      "decision": "song",
+      "songId": "98900c95-c25a-5190-85f9-6ee80b3e0873",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We need you Lord.docx",
+      "size": 12409,
+      "mtimeMs": 1658122817435,
+      "sha256": "059543657cb079fc1b3beab3cf76e8f2fc24e58a3a71693dbdeb15dd4732fa30",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1f80a617-c21b-5761-b743-2cf10d26a90d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We press on.docx",
+      "size": 12294,
+      "mtimeMs": 1658122817472,
+      "sha256": "88b0818488cab259156df496aac4e30b2a43942de23af57055731f1412b06789",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f0681ae8-802d-5ec1-82ca-e488f315eae4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We shall see the King.docx",
+      "size": 13284,
+      "mtimeMs": 1658122816530,
+      "sha256": "9a8822f082fe68e5798a0de4490c0f19f87469d7bffc2cb8339032a3325a4fc9",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3c9d82f9-f102-5b9f-a39c-12b88067640f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We welcome Your presence.docx",
+      "size": 12562,
+      "mtimeMs": 1658122817177,
+      "sha256": "afa6e3b07d899030523075e638d816d1e8f3a35146dc82ca9236ce0bfecb5640",
+      "type": "docx",
+      "decision": "song",
+      "songId": "95d24488-ea06-5477-a0ac-187e546debd8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We worship You.docx",
+      "size": 13826,
+      "mtimeMs": 1658122816992,
+      "sha256": "4184827530c513144f1072d1da6cb4ced00709408d02ea7f2856f690516d6699",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d08dd86a-1af6-57e1-8dd4-83c106b0b650",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We’re a happy people yes we are.docx",
+      "size": 12542,
+      "mtimeMs": 1658122816917,
+      "sha256": "42434c9c0015c4776ab6d2f57219a95276a45521e2b8d1d991df575db7da7b56",
+      "type": "docx",
+      "decision": "song",
+      "songId": "43187cda-7ffe-57a2-9548-5b3103af597f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We’ve come to praise Him.docx",
+      "size": 12668,
+      "mtimeMs": 1658122816150,
+      "sha256": "ca9ddb4f4c6d411a6cf657a05b5c1a88c0d245fbc3f075f308ab76cfc6bd2a15",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7535bc90-ff96-5cd7-bec5-7a75a124e039",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/We’ve got the power.docx",
+      "size": 12815,
+      "mtimeMs": 1658122815324,
+      "sha256": "356ce7c323881564d5cb62e6cb6f4a6b78f3c5eaf0fafccbcd007be08551f5b2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c77db875-6a46-5b86-9da2-2a94e14546fa",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Welcome everybody.docx",
+      "size": 14310,
+      "mtimeMs": 1658122818135,
+      "sha256": "04d48e145022892bef022dcf2196f46d46a8b0260a46a09d26298628340ecce8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "067dedbf-353b-520d-b06b-8ce69adef9ca",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Welcome into this place.docx",
+      "size": 12688,
+      "mtimeMs": 1658122816668,
+      "sha256": "6d9973f9087389d050d4a4680ac2aaba03ee0ea811512ddba793e6f9c977b299",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1b0bc345-9994-5110-bf5b-f1a5a9165f2f",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/What a day that will be.docx",
+      "size": 13159,
+      "mtimeMs": 1658122817360,
+      "sha256": "577f8b63393d2af7a1705317e5b462fee2e9fa9cef571850dddc44407a100de3",
+      "type": "docx",
+      "decision": "song",
+      "songId": "e1d90b20-a96e-5b53-9d39-cbb69159623a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/What a friend.docx",
+      "size": 14493,
+      "mtimeMs": 1658122816808,
+      "sha256": "27393413da727493de39425f3f494ed2c029eb8218eb0f6277ca4bbaf4494da7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "5576b969-ecf0-58c2-8be3-ae50beb007bc",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/What kind of church is this.docx",
+      "size": 12406,
+      "mtimeMs": 1658122816705,
+      "sha256": "2c490ab7a468810c4e750118eae13891a45f82ac9fc315bdd79849fb0dcc6904",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9654b048-64ad-5f1c-8ee4-3c0e420427fa",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Whatever it takes.docx",
+      "size": 13607,
+      "mtimeMs": 1658122816493,
+      "sha256": "7084abf1d8feb34acbb1d0e241bdec344749bf3434a46109a5847c97b0895aa1",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9ffe2a12-78a7-59af-9369-8113021c540c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When He was on the cross.docx",
+      "size": 13136,
+      "mtimeMs": 1658122816739,
+      "sha256": "2a8d1e4bd7e7a18894ecaad2303eb36972644d992221b8e684db19a0d50cc740",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a310860c-7e4a-57e6-be0e-072608398d72",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When I come into the presence of the Lord.docx",
+      "size": 12451,
+      "mtimeMs": 1658122816633,
+      "sha256": "3ca5cadf642249d15c2b2db89ad1eee240e0a8f2d38644afe906f36601ee694f",
+      "type": "docx",
+      "decision": "song",
+      "songId": "770b9816-d09d-5c15-8e22-8bc953494081",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When I think about the Lord.docx",
+      "size": 12882,
+      "mtimeMs": 1658122817213,
+      "sha256": "63b152a6307d0b88c9ec0bcb01ffbe7edf980dda4fb5823c4ac0e32230ccb8ec",
+      "type": "docx",
+      "decision": "song",
+      "songId": "342e6750-b66c-58f4-b8a8-0c55e5e458e1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When I think how He brought me through.docx",
+      "size": 12732,
+      "mtimeMs": 1658122817028,
+      "sha256": "dea9362f3c86eb8a07e709cf6120d1b17f4251dceb44cdd516f84169c8bb35e7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "906f88e7-3b36-5508-934d-ef78b1336091",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When I think of His goodness.docx",
+      "size": 12585,
+      "mtimeMs": 1658122816367,
+      "sha256": "5a549805732d8ec78e4a6f7eb61734186be5b5d69a1c1f5bf9c5a8e23aaed196",
+      "type": "docx",
+      "decision": "song",
+      "songId": "58cc60d0-6a21-54ee-aa41-fb13d8cbc471",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When I think of the goodness of Jesus.docx",
+      "size": 12466,
+      "mtimeMs": 1658122816599,
+      "sha256": "a17ee7bd9f5978d17340c11dd30bc36c3aba0d78bdbb050122840805a3e49b49",
+      "type": "docx",
+      "decision": "song",
+      "songId": "d911cb31-afa7-580c-aeee-8f4abc420ec1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When the redeemed.docx",
+      "size": 13574,
+      "mtimeMs": 1658122818097,
+      "sha256": "087f11d5c4e04e06ab5303ea607d56bf59e37fee086719ba6bae35ec5ea73bc8",
+      "type": "docx",
+      "decision": "song",
+      "songId": "4bae90ec-ce58-502b-bff8-71f05921a1f7",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When the roll is called up yonder.docx",
+      "size": 14521,
+      "mtimeMs": 1658122817101,
+      "sha256": "7f7df43a6354b24a8e5034dd0f2a2498e1368de0d8baad88fdbfcd94f32ff4ba",
+      "type": "docx",
+      "decision": "song",
+      "songId": "6458e7af-7489-50ae-98e6-5d01ce312475",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When the saints go marching in.docx",
+      "size": 13040,
+      "mtimeMs": 1658122816407,
+      "sha256": "659fc0b7633e4fde8abbdfe6358ca084c4e15b94c01617df31b882334d0e0315",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b361a63b-4484-5265-95eb-da0235cd1187",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When we all get to heaven.docx",
+      "size": 13296,
+      "mtimeMs": 1658122815824,
+      "sha256": "8697e0fd0cc699145f4b581f578124e6603325b1a9b1c43768b1a261344fb045",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2e0f8206-5ff4-56b6-ac50-1aa5d6fea22a",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When we see Christ.docx",
+      "size": 13557,
+      "mtimeMs": 1658122815787,
+      "sha256": "9d7766a42a2f584a669aa7792d5836913eb4f8f46d9110197196a9462dfebe1b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "75eeba79-aaff-5d46-912e-0581086e391e",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/When you’ve tried everything.docx",
+      "size": 12460,
+      "mtimeMs": 1658122816564,
+      "sha256": "4924d0a5ea046894bd4cfacd2d000fd769344114e2975b6dcba7f068ca17852c",
+      "type": "docx",
+      "decision": "song",
+      "songId": "75933b31-56a0-541b-9ea8-eac8be59d866",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Where could I go.docx",
+      "size": 12778,
+      "mtimeMs": 1658122815645,
+      "sha256": "78fede1cba55d18d4e853bd1189b89e567fff952ea636b4d08e45e7020366709",
+      "type": "docx",
+      "decision": "song",
+      "songId": "9171dc48-341b-5dd1-a61b-f7ecce28748b",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Where would I be.docx",
+      "size": 13129,
+      "mtimeMs": 1658122816955,
+      "sha256": "956bf7a192678a104b807444c077a2b4c90a466233284cc76bb29106c7cb587a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1338ed2b-adb0-5bf6-81b8-4cc9446880ff",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Who am I.docx",
+      "size": 13310,
+      "mtimeMs": 1658122815972,
+      "sha256": "cb6680d8f289998d8fb0e42dfc726214afbc55eaa30bfe5b0024f966e2569b4d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7bd21b2b-0128-5114-b54b-c9a4f377bc38",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Whose report will you believe.docx",
+      "size": 12427,
+      "mtimeMs": 1658122816043,
+      "sha256": "0ebb0732a1262c9b000ab15c4eb69e435fc4d22235f583c3d72eb4784c2d1355",
+      "type": "docx",
+      "decision": "song",
+      "songId": "1c0faef5-94f9-5994-a278-e22920c5a1dd",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Why don’t you come on in this house.docx",
+      "size": 13979,
+      "mtimeMs": 1658122815899,
+      "sha256": "e8cc6dd2e14cd868b24e8a54470a429d3201bcc2399d2e4c5ab70365cccf40b4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "7b16c61f-3fdf-59a4-b839-fd581c41f444",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Why should I be bound.docx",
+      "size": 12545,
+      "mtimeMs": 1658122815362,
+      "sha256": "73d3ed0150d789b14b9c1a9c96a1ef345830b1525fd103a0f80c33b2b0b4344a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "02819ee9-a7ca-5b2b-ba56-c6fce0a1bcf9",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/With a heart of thanksgiving.docx",
+      "size": 12503,
+      "mtimeMs": 1658122816259,
+      "sha256": "a13220b1db40eaf334f47f05062c3d6213d3c97bcce66bb86f1373cd7c2a225a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "c848d572-6033-5717-a7c5-6a5b0c449ce6",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/With my whole heart.docx",
+      "size": 12722,
+      "mtimeMs": 1658122816296,
+      "sha256": "f1fa627bb0e11028256950851b5c32556ee01f9cf0a6d2bd57a3b529a0e70932",
+      "type": "docx",
+      "decision": "song",
+      "songId": "bd0780eb-eefc-5e92-a4dc-ac015c8491f1",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Won_t we have a time.docx",
+      "size": 12586,
+      "mtimeMs": 1658122816459,
+      "sha256": "fd066f99fa40a49bd03f8863a777285ad7db2f6888ac7a51ed08dcb5d7d4fd00",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ed027614-8483-5d81-a93b-3d47371eb383",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Wonderful, wonderful, Jesus is to me.docx",
+      "size": 12625,
+      "mtimeMs": 1658122816113,
+      "sha256": "777ab073476e2f0e7a1589f9876595e19bea1e9a9f5e2f801ba02e8edb023a53",
+      "type": "docx",
+      "decision": "song",
+      "songId": "28d8f260-3d2f-5359-9d36-0baea3442866",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Word of God speak.docx",
+      "size": 12699,
+      "mtimeMs": 1658122815936,
+      "sha256": "1e7ae750c34f7a19d1071e1e9d7ad82f656442f3c3da65eb769f4b17e6c386a7",
+      "type": "docx",
+      "decision": "song",
+      "songId": "8ae03896-be43-5a9e-b2e1-6a25496a900d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Yes Lord yes.docx",
+      "size": 12443,
+      "mtimeMs": 1658122816223,
+      "sha256": "cf4d6868b5d645a0dc78e53fa4ca063dbb7e717ad67d86e49ebb3dd314af6b2e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "44163842-65c9-5d86-ab76-4e0f9a9080b4",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/Yes Lord.docx",
+      "size": 12608,
+      "mtimeMs": 1658122816079,
+      "sha256": "1fea081480bc6ff3d57614317f00afd9166279ff28e66fb5791d1e464988b7a6",
+      "type": "docx",
+      "decision": "song",
+      "songId": "2d02564e-b69d-5765-905f-85d4c2972b6c",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/You are the love of my life.docx",
+      "size": 12526,
+      "mtimeMs": 1658122816332,
+      "sha256": "57500c201665cf39370f6074e927094365373bcd5a25f28a49c6697f2f0dad70",
+      "type": "docx",
+      "decision": "song",
+      "songId": "ba6c298b-cd11-55ef-ae1f-0e58c6e84e9d",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/You deserve the glory.docx",
+      "size": 12809,
+      "mtimeMs": 1658122815609,
+      "sha256": "72f1b48d3b90d3b08cfb666b0dfbfc0e6e282bdf633e9cadee1ecbac5dac3612",
+      "type": "docx",
+      "decision": "song",
+      "songId": "98c3949d-f44b-57f3-ba4d-20a08b0889ed",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/You don_t know like I know.docx",
+      "size": 12790,
+      "mtimeMs": 1658122815402,
+      "sha256": "1e50eb59c0a7484d99424481af0e5d9df61e55bf26a70a77d3a524223425680d",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3206b91a-8d03-5467-b352-2cb7ca90bda8",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/You_re my brother.docx",
+      "size": 12632,
+      "mtimeMs": 1658122816188,
+      "sha256": "1c3456e6dca5baaee802f374c16eee3a25b838f471c1932758ef79507e268c9b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "06aedf01-6537-5553-b44b-210b8efa0822",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "1. Incomplete/You’re gonna make it.docx",
+      "size": 13032,
+      "mtimeMs": 1658122815537,
+      "sha256": "64a46e259358e2e15552092ac0b369899d7ab4b826a0b3f1e1ecad8362a9924a",
+      "type": "docx",
+      "decision": "song",
+      "songId": "f82ab33c-6cc5-570f-b550-ce39d9282b93",
+      "confidence": 0.4,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Ain_t God good.docx",
+      "size": 8374,
+      "mtimeMs": 1658122814665,
+      "sha256": "580acca3076369000d40d0284edc45e61d4a51470f632ecd24d7bbd148bc2df2",
+      "type": "docx",
+      "decision": "song",
+      "songId": "854890a1-c51b-5162-b7a8-5ed0e30f18f5",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/All in Him.docx",
+      "size": 9500,
+      "mtimeMs": 1658122814754,
+      "sha256": "923f31f99ab745314353050730b481676d4542b845a98fc860e348b1aa3d9833",
+      "type": "docx",
+      "decision": "song",
+      "songId": "734a613b-3960-573b-8b3a-1a1b4c42bc25",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Amazing grace.docx",
+      "size": 9305,
+      "mtimeMs": 1658122815136,
+      "sha256": "3057fe20293482731d9579d3a9aa42d5e7c15681de64b39df55718cb6519a42b",
+      "type": "docx",
+      "decision": "song",
+      "songId": "aa6ce3b5-1f49-5daf-acc6-2cf70f278ba1",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Are you washed.docx",
+      "size": 9051,
+      "mtimeMs": 1658122814576,
+      "sha256": "4fda32fa1bc9a6ae8d3aed1384f1d3475241e8f31ef293fe8644e55ba8c71206",
+      "type": "docx",
+      "decision": "song",
+      "songId": "3983096d-d44a-5fce-b59f-1bee9078e303",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Breath on me.docx",
+      "size": 8527,
+      "mtimeMs": 1658122814474,
+      "sha256": "b4df08b0246c92f404cdc875b789f9ac18b180259f9f4da02ea9391791e6de31",
+      "type": "docx",
+      "decision": "song",
+      "songId": "13fd78c2-d091-5ff4-b67f-32f79ffbcdce",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Glory to His name.docx",
+      "size": 9226,
+      "mtimeMs": 1658122814942,
+      "sha256": "8d3b5c747de07bc951d4d2521657c29d12df2e10c52279516f3eb64eb95543f4",
+      "type": "docx",
+      "decision": "song",
+      "songId": "a5f63e55-bdb1-50ef-87d4-b8ce5e8cbcda",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Here I am.docx",
+      "size": 8394,
+      "mtimeMs": 1658122814846,
+      "sha256": "83e4d7f30fc616a13dcacccc0f26e66f6f9f596672f40fc8c797d73ec02e3179",
+      "type": "docx",
+      "decision": "song",
+      "songId": "b5fa4486-b3a2-5b27-9b9c-76905c0f03c1",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/I got the Lord.docx",
+      "size": 14823,
+      "mtimeMs": 1658122815175,
+      "sha256": "4254d94463d54d8316c3061ae38ec51f8fd3bc6febe39b4cf91d57e11f680a3e",
+      "type": "docx",
+      "decision": "song",
+      "songId": "05720f5d-8949-53d7-b58a-0f7efc33af85",
+      "confidence": 0.5,
+      "band": "low",
+      "warnings": [
+        "Lyrics only — no chords in the source"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/Worship the King.docx",
+      "size": 6648,
+      "mtimeMs": 1658122815021,
+      "sha256": "b26ede6abaa8eaba810639748ed251f7c5114a6ce38de7e9b8b6c4f5d5627fb6",
+      "type": "docx",
+      "decision": "song",
+      "songId": "368d9c07-fad2-557a-beb5-bed74540ae22",
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [
+        "No section labels found"
+      ],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "5. Imported/You are awesome in this place.docx",
+      "size": 8538,
+      "mtimeMs": 1658122814373,
+      "sha256": "cb234f7d39e5e9e9f683c91b92badca83c4f85460731d96b151c1ee7d354e5ea",
+      "type": "docx",
+      "decision": "song",
+      "songId": "384d0917-8ac7-5d31-988c-6ec18ab678ae",
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    }
+  ]
+}

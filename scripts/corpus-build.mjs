@@ -1,0 +1,463 @@
+/**
+ * corpus:build — convert source song files into the committed ChordPro corpus.
+ *
+ * Phase 1 of the two-phase pipeline. It NEVER touches a database:
+ *
+ *   build:  sources → corpus/songs/*.chopro     (this script)
+ *   load:   corpus  → songs table               (corpus-load, the only writer)
+ *
+ * Output is deterministic: an unchanged source tree produces a byte-identical
+ * corpus, so `git diff` shows real content changes and nothing else. That is
+ * why no run timestamp is written to any committed file.
+ *
+ *   pnpm corpus:build --source chrd --tree <path> [--corpus <dir>] [--dry-run]
+ *                     [--exclude <glob>]... [--report <dir>]
+ */
+import { existsSync } from "node:fs";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { basename, dirname, join, relative, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { convertChrdToChordPro } from "../shared/index.js";
+import { extractDocxParagraphs } from "../apps/api/src/corpus/docxText.js";
+import { convertLyricSheetToChordPro } from "../apps/api/src/corpus/lyricSheet.js";
+import {
+  corpusFileName,
+  deterministicSongId,
+  globToRegExp,
+  normalizeRelativePath,
+  normalizeTitle,
+  nullable,
+  sha256,
+} from "../apps/api/src/corpus/identity.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+export const repoRoot = resolve(__dirname, "..");
+
+export const SOURCE_TYPES = ["chrd", "docx"];
+
+/**
+ * One entry per source format. Each supplies how to find its files and how to
+ * turn one into ChordPro, so the build plumbing below stays format-agnostic.
+ * `convert` is always async and always receives the raw bytes.
+ */
+export const SOURCES = {
+  chrd: {
+    pattern: /\.chrd$/i,
+    async convert(filename, buffer) {
+      const conversion = convertChrdToChordPro(filename, buffer.toString("utf8"));
+      return { ...conversion, confidence: scoreChrdConversion(conversion) };
+    },
+  },
+  docx: {
+    // The `(1)` duplicates and the two legacy `.doc` binaries are excluded by
+    // the walker; only real Word XML documents convert.
+    pattern: /\.docx$/i,
+    async convert(filename, buffer) {
+      const paragraphs = await extractDocxParagraphs(buffer);
+      return convertLyricSheetToChordPro(filename, paragraphs);
+    },
+  },
+};
+
+/* ─── confidence ──────────────────────────────────────────────────────────── */
+
+/**
+ * Deterministic confidence for a `.chrd` conversion.
+ *
+ * A clean `.chrd` is the only thing in the whole corpus trusted enough to land
+ * as a non-draft; everything else imports as a draft for review.
+ *
+ * @returns {{ score: number, band: "high"|"medium"|"low", reasons: string[] }}
+ */
+export function scoreChrdConversion(conversion) {
+  const reasons = [];
+  let score = 1;
+
+  const warnings = conversion.warnings || [];
+  const unrecognized = warnings.filter((w) => /unrecognized chord/i.test(w)).length;
+  const rawBlocks = warnings.filter((w) => /kept as plain text/i.test(w)).length;
+  const otherWarnings = warnings.length - unrecognized - rawBlocks;
+
+  if (unrecognized > 0) {
+    score -= Math.min(0.3, unrecognized * 0.05);
+    reasons.push(`${unrecognized} unrecognized chord token(s)`);
+  }
+  if (rawBlocks > 0) {
+    score -= Math.min(0.4, rawBlocks * 0.2);
+    reasons.push(`${rawBlocks} block(s) kept as plain text`);
+  }
+  if (otherWarnings > 0) {
+    score -= Math.min(0.1, otherWarnings * 0.02);
+    reasons.push(`${otherWarnings} other converter warning(s)`);
+  }
+  if (!conversion.metadata.key) {
+    score -= 0.1;
+    reasons.push("no key");
+  }
+  if (!/\{comment:/.test(conversion.chordProContent)) {
+    score -= 0.1;
+    reasons.push("no sections detected");
+  }
+
+  score = Math.max(0, Math.round(score * 100) / 100);
+  const band = score >= 0.85 ? "high" : score >= 0.6 ? "medium" : "low";
+  return { score, band, reasons };
+}
+
+/* ─── source discovery ────────────────────────────────────────────────────── */
+
+export async function findSourceFiles(inputDir, pattern = /\.chrd$/i) {
+  const entries = await readdir(inputDir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+    const fullPath = join(inputDir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name === ".vs" || entry.name === ".vscode" || entry.name === "node_modules") continue;
+      files.push(...(await findSourceFiles(fullPath, pattern)));
+    } else if (pattern.test(entry.name)) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+/* ─── ledger ──────────────────────────────────────────────────────────────── */
+
+/** Read a committed JSON file, or a default when it does not exist yet. */
+export async function readJsonIfPresent(path, fallback) {
+  if (!existsSync(path)) return fallback;
+  return JSON.parse(await readFile(path, "utf8"));
+}
+
+/** Stable JSON: 2-space indent, trailing newline, no run metadata. */
+export function stableJson(value) {
+  return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+export function todayStamp(now = new Date()) {
+  return now.toISOString().slice(0, 10);
+}
+
+/**
+ * Decide each source file's identity against the previous ledger.
+ *
+ * Rules, first hit wins:
+ *   1. same path                          -> same song
+ *   2. sha256 matches a record elsewhere   -> `moved`, reuse the id
+ *   3. otherwise                           -> `new`, mint an id from the path
+ *
+ * Rule 2 is what stops a Dropbox rename orphaning a database row, and it costs
+ * nothing because the hashes already exist.
+ */
+export function resolveIdentity({ relativePath, contentHash, previousByPath, previousByHash }) {
+  const samePath = previousByPath.get(relativePath);
+  if (samePath) {
+    return { songId: samePath.songId, status: "covered", firstSeen: samePath.firstSeen, decision: samePath.decision };
+  }
+  const moved = previousByHash.get(contentHash);
+  if (moved && !moved.__claimed) {
+    moved.__claimed = true;
+    return { songId: moved.songId, status: "moved", from: moved.path, firstSeen: moved.firstSeen, decision: moved.decision };
+  }
+  return { songId: deterministicSongId(relativePath), status: "new", firstSeen: null, decision: "song" };
+}
+
+/* ─── build ───────────────────────────────────────────────────────────────── */
+
+export function parseArgs(argv) {
+  const options = { source: "chrd", tree: null, corpus: null, dryRun: false, exclude: [], report: null };
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    const next = () => {
+      index += 1;
+      if (index >= argv.length) throw new Error(`Missing value after ${arg}`);
+      return argv[index];
+    };
+    if (arg === "--source") options.source = next();
+    else if (arg === "--tree" || arg === "--dir") options.tree = next();
+    else if (arg === "--corpus") options.corpus = next();
+    else if (arg === "--dry-run") options.dryRun = true;
+    else if (arg === "--exclude") options.exclude.push(next());
+    else if (arg === "--report") options.report = next();
+    else throw new Error(`Unknown argument: ${arg}`);
+  }
+  if (!options.tree) throw new Error("--tree <path> is required");
+  if (!SOURCE_TYPES.includes(options.source)) {
+    throw new Error(`--source must be one of: ${SOURCE_TYPES.join(", ")}`);
+  }
+  return options;
+}
+
+/**
+ * Convert a `.chrd` tree into corpus files, manifest and coverage ledger.
+ * Pure apart from reading the tree and (unless dryRun) writing the corpus.
+ */
+export async function buildCorpus({
+  source = "chrd",
+  tree,
+  corpusDir,
+  dryRun = false,
+  exclude = [],
+  now = new Date(),
+} = {}) {
+  const inputDir = resolve(tree);
+  if (!existsSync(inputDir)) throw new Error(`Source tree does not exist: ${inputDir}`);
+  const corpusRoot = resolve(corpusDir || join(repoRoot, "corpus"));
+
+  const spec = SOURCES[source];
+  if (!spec) throw new Error(`Unknown source: ${source}`);
+
+  const manifestPath = join(corpusRoot, "manifest", `${source}.json`);
+  const ledgerPath = join(corpusRoot, "sources", `${source}.json`);
+  const songsDir = join(corpusRoot, "songs", source);
+
+  const previousLedger = await readJsonIfPresent(ledgerPath, { sourceType: source, files: [] });
+  const previousByPath = new Map(previousLedger.files.map((f) => [f.path, { ...f }]));
+  const previousByHash = new Map();
+  for (const record of previousByPath.values()) {
+    if (record.sha256) previousByHash.set(record.sha256, record);
+  }
+
+  const excludePatterns = exclude.map(globToRegExp);
+  const files = await findSourceFiles(inputDir, spec.pattern);
+  const stamp = todayStamp(now);
+
+  const manifestEntries = [];
+  const ledgerEntries = [];
+  const failures = [];
+  const skipped = [];
+  const moved = [];
+  /** songId -> the exact bytes to write, so nothing is converted twice. */
+  const contents = new Map();
+
+  for (const sourcePath of files) {
+    const relativePath = normalizeRelativePath(relative(inputDir, sourcePath));
+    if (excludePatterns.some((p) => p.test(relativePath) || p.test(basename(relativePath)))) {
+      skipped.push(relativePath);
+      continue;
+    }
+
+    try {
+      const rawBuffer = await readFile(sourcePath);
+      const info = await stat(sourcePath);
+      const contentHash = sha256(rawBuffer);
+      const raw = rawBuffer.toString("utf8");
+
+      const conversion = await spec.convert(basename(sourcePath), rawBuffer);
+      const identity = resolveIdentity({ relativePath, contentHash, previousByPath, previousByHash });
+      if (identity.status === "moved") moved.push({ from: identity.from, to: relativePath });
+
+      const confidence = conversion.confidence;
+      // Match migrate:chrd byte-for-byte so the corpus can be diffed against it.
+      const content = `${conversion.chordProContent.trim()}\n`;
+      const file = normalizeRelativePath(
+        join("songs", source, corpusFileName(conversion.metadata.title, identity.songId)),
+      );
+      contents.set(identity.songId, content);
+
+      manifestEntries.push({
+        songId: identity.songId,
+        title: conversion.metadata.title,
+        file,
+        contentSha256: sha256(content),
+        metadata: {
+          key: nullable(conversion.metadata.key),
+          artist: nullable(conversion.metadata.artist),
+          year: nullable(conversion.metadata.year),
+          tempo: nullable(conversion.metadata.tempo),
+          isDraft: Boolean(conversion.metadata.isDraft),
+        },
+        sourceType: source,
+        sources: [{ role: "primary", path: relativePath, sha256: contentHash }],
+        confidence,
+        warnings: conversion.warnings,
+        decision: identity.decision || "song",
+      });
+
+      ledgerEntries.push({
+        path: relativePath,
+        size: info.size,
+        mtimeMs: Math.round(info.mtimeMs),
+        sha256: contentHash,
+        type: source,
+        decision: identity.decision || "song",
+        songId: identity.songId,
+        confidence: confidence.score,
+        band: confidence.band,
+        warnings: conversion.warnings,
+        firstSeen: identity.firstSeen || stamp,
+        missingSince: null,
+      });
+    } catch (error) {
+      // Tolerate per-file failure here; the LOADER is all-or-nothing, not the
+      // build. One bad file must never block the whole library.
+      failures.push({ path: relativePath, error: error instanceof Error ? error.message : String(error) });
+    }
+  }
+
+  // Records with no file on disk are retained and marked, never deleted.
+  const seenPaths = new Set(ledgerEntries.map((e) => e.path));
+  const gone = [];
+  for (const record of previousByPath.values()) {
+    if (seenPaths.has(record.path) || record.__claimed) continue;
+    delete record.__claimed;
+    gone.push(record.path);
+    ledgerEntries.push({ ...record, missingSince: record.missingSince || stamp });
+  }
+
+  manifestEntries.sort((a, b) => a.songId.localeCompare(b.songId));
+  ledgerEntries.sort((a, b) => a.path.localeCompare(b.path));
+
+  const duplicateTitles = collectDuplicateTitles(manifestEntries);
+  const duplicateFiles = collectDuplicateFiles(manifestEntries);
+
+  const counts = {
+    files: files.length,
+    skipped: skipped.length,
+    converted: manifestEntries.length,
+    failed: failures.length,
+    moved: moved.length,
+    gone: gone.length,
+    drafts: manifestEntries.filter((e) => e.metadata.isDraft).length,
+    high: manifestEntries.filter((e) => e.confidence.band === "high").length,
+    medium: manifestEntries.filter((e) => e.confidence.band === "medium").length,
+    low: manifestEntries.filter((e) => e.confidence.band === "low").length,
+  };
+
+  const manifest = { sourceType: source, songs: manifestEntries };
+  const ledger = { sourceType: source, files: ledgerEntries };
+
+  if (!dryRun) {
+    await mkdir(songsDir, { recursive: true });
+    await mkdir(dirname(manifestPath), { recursive: true });
+    await mkdir(dirname(ledgerPath), { recursive: true });
+    for (const entry of manifestEntries) {
+      await writeFile(join(corpusRoot, entry.file), contents.get(entry.songId), "utf8");
+    }
+    await writeFile(manifestPath, stableJson(manifest), "utf8");
+    await writeFile(ledgerPath, stableJson(ledger), "utf8");
+  }
+
+  return {
+    inputDir,
+    corpusRoot,
+    dryRun,
+    manifest,
+    ledger,
+    counts,
+    failures,
+    skipped,
+    moved,
+    gone,
+    duplicateTitles,
+    duplicateFiles,
+    paths: { manifest: manifestPath, ledger: ledgerPath, songs: songsDir },
+  };
+}
+
+/** Back-compat alias: the original chrd-only entry point. */
+export const buildChrdCorpus = (options) => buildCorpus({ ...options, source: "chrd" });
+
+/** Titles duplicated inside the corpus (the `~`draft / final pairs). */
+export function collectDuplicateTitles(entries) {
+  const byTitle = new Map();
+  for (const entry of entries) {
+    const key = normalizeTitle(entry.title);
+    if (!byTitle.has(key)) byTitle.set(key, []);
+    byTitle.get(key).push(entry.sources[0].path);
+  }
+  return [...byTitle.entries()]
+    .filter(([, paths]) => paths.length > 1)
+    .map(([title, paths]) => ({ title, files: paths.sort() }))
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+/** Two songs resolving to the same corpus filename would silently overwrite. */
+export function collectDuplicateFiles(entries) {
+  const byFile = new Map();
+  for (const entry of entries) {
+    if (!byFile.has(entry.file)) byFile.set(entry.file, []);
+    byFile.get(entry.file).push(entry.songId);
+  }
+  return [...byFile.entries()]
+    .filter(([, ids]) => ids.length > 1)
+    .map(([file, songIds]) => ({ file, songIds }));
+}
+
+export function formatCorpusBuildReportText(summary) {
+  const lines = [
+    "VPC Music Corpus Build Report",
+    "=============================",
+    `Mode: ${summary.dryRun ? "DRY RUN (nothing written)" : "APPLIED"}`,
+    `Source tree: ${summary.inputDir}`,
+    `Corpus: ${summary.corpusRoot}`,
+    "",
+    "Summary",
+    `- Files: ${summary.counts.files} (skipped: ${summary.counts.skipped})`,
+    `- Converted: ${summary.counts.converted}, failed: ${summary.counts.failed}`,
+    `- Drafts: ${summary.counts.drafts}`,
+    `- Confidence: high ${summary.counts.high}, medium ${summary.counts.medium}, low ${summary.counts.low}`,
+    `- Moved: ${summary.counts.moved}, gone: ${summary.counts.gone}`,
+    "",
+    `Moved sources (${summary.moved.length})`,
+  ];
+  for (const move of summary.moved) lines.push(`- ${move.from} -> ${move.to}`);
+  lines.push("", `Sources no longer on disk (${summary.gone.length})`);
+  for (const path of summary.gone) lines.push(`- ${path}`);
+  lines.push("", `Duplicate titles inside the corpus (${summary.duplicateTitles.length})`);
+  for (const dup of summary.duplicateTitles) lines.push(`- "${dup.title}": ${dup.files.join(", ")}`);
+  lines.push("", `Filename collisions (${summary.duplicateFiles.length})`);
+  for (const dup of summary.duplicateFiles) lines.push(`- ${dup.file}: ${dup.songIds.join(", ")}`);
+
+  const withWarnings = summary.manifest.songs.filter((s) => s.warnings.length > 0);
+  lines.push("", `Converter warnings (${withWarnings.length} songs)`);
+  for (const song of withWarnings) {
+    for (const warning of song.warnings) lines.push(`- ${song.sources[0].path}: ${warning}`);
+  }
+  const notHigh = summary.manifest.songs.filter((s) => s.confidence.band !== "high");
+  lines.push("", `Below high confidence (${notHigh.length})`);
+  for (const song of notHigh) {
+    lines.push(`- ${song.sources[0].path} [${song.confidence.band} ${song.confidence.score}]: ${song.confidence.reasons.join("; ")}`);
+  }
+  lines.push("", `Failures (${summary.failures.length})`);
+  for (const failure of summary.failures) lines.push(`- ${failure.path}: ${failure.error}`);
+  return `${lines.join("\n")}\n`;
+}
+
+async function runCli() {
+  const options = parseArgs(process.argv.slice(2));
+  const summary = await buildCorpus({
+    source: options.source,
+    tree: resolve(process.cwd(), options.tree),
+    corpusDir: options.corpus ? resolve(process.cwd(), options.corpus) : undefined,
+    dryRun: options.dryRun,
+    exclude: options.exclude,
+  });
+
+  // The run report carries the timestamp; committed corpus files never do.
+  const reportDir = resolve(process.cwd(), options.report || join(repoRoot, "apps", "api", "import-reports"));
+  await mkdir(reportDir, { recursive: true });
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const base = join(reportDir, `corpus-build-${options.source}-${stamp}`);
+  await writeFile(`${base}.txt`, formatCorpusBuildReportText(summary), "utf8");
+  await writeFile(`${base}.json`, stableJson({ generatedAt: new Date().toISOString(), ...summary }), "utf8");
+
+  const { counts } = summary;
+  console.log(
+    `Files ${counts.files} | converted ${counts.converted} | failed ${counts.failed} | drafts ${counts.drafts} | ` +
+      `high ${counts.high} | medium ${counts.medium} | low ${counts.low} | moved ${counts.moved} | gone ${counts.gone}`,
+  );
+  console.log(`Report: ${base}.txt`);
+  if (counts.failed > 0) process.exitCode = 1;
+  if (summary.duplicateFiles.length > 0) {
+    console.error(`${summary.duplicateFiles.length} filename collision(s) — corpus would lose songs.`);
+    process.exitCode = 1;
+  }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  runCli().catch((error) => {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exit(1);
+  });
+}

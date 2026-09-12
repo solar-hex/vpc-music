@@ -20,6 +20,8 @@
         "lint": "pnpm --filter @vpc-music/web lint",
         "migrate:chrd": "node scripts/migrate-chrd-library.mjs",
         "import:chrd": "node scripts/import-chrd-library.mjs",
+        "corpus:build": "node scripts/corpus-build.mjs",
+        "corpus:scan": "node scripts/corpus-scan.mjs",
         "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-router.ps1",
         "db:push": "node scripts/db-push.mjs",
         "db:studio": "pnpm --filter @vpc-music/api db:studio",
@@ -30,7 +32,9 @@
         "docker:down": "docker compose down",
         "docker:stg": "docker compose -f compose.yml -f compose.stg.yml up -d --build",
         "preflight": "node scripts/preflight.mjs",
-        "sync:shared": "powershell -ExecutionPolicy Bypass -File scripts/sync-shared.ps1"
+        "sync:shared": "powershell -ExecutionPolicy Bypass -File scripts/sync-shared.ps1",
+        "corpus:media": "node scripts/corpus-media.mjs",
+        "corpus:reader": "node scripts/corpus-reader.mjs"
     },
     "devDependencies": {
         "concurrently": "^8.2.2",
