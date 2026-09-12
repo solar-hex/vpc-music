@@ -37,7 +37,8 @@
         "corpus:reader": "node scripts/corpus-reader.mjs",
         "corpus:stats": "node scripts/corpus-stats.mjs",
         "intake": "node scripts/intake.mjs",
-        "corpus:verify": "node scripts/corpus-verify.mjs"
+        "corpus:verify": "node scripts/corpus-verify.mjs",
+        "corpus:dedupe": "node scripts/corpus-dedupe.mjs"
     },
     "devDependencies": {
         "concurrently": "^8.2.2",

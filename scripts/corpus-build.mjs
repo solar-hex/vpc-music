@@ -248,6 +248,19 @@ export async function buildCorpus({
   const songsDir = join(corpusRoot, "songs", source);
 
   const previousLedger = await readJsonIfPresent(ledgerPath, { sourceType: source, files: [] });
+
+  /*
+   * Decisions about a song — which copy supersedes which — live in the
+   * manifest, and are made by corpus:dedupe or by a person editing it. A
+   * rebuild regenerates the manifest, so those decisions must be carried
+   * across or every rebuild silently discards them.
+   */
+  const previousManifest = await readJsonIfPresent(manifestPath, { songs: [] });
+  const decisionsById = new Map(
+    previousManifest.songs
+      .filter((s) => s.decision && s.decision !== "song")
+      .map((s) => [s.songId, { decision: s.decision, supersededBy: s.supersededBy, supersedeReason: s.supersedeReason }]),
+  );
   const previousByPath = new Map(previousLedger.files.map((f) => [f.path, { ...f }]));
   const previousByHash = new Map();
   for (const record of previousByPath.values()) {
@@ -329,7 +342,7 @@ export async function buildCorpus({
         sources: [{ role: "primary", path: relativePath, sha256: contentHash }],
         confidence,
         warnings: conversion.warnings,
-        decision: identity.decision || "song",
+        ...(decisionsById.get(identity.songId) ?? { decision: identity.decision || "song" }),
       });
 
       ledgerEntries.push({

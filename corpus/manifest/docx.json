@@ -35,7 +35,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0dca8efb-b885-576f-acd8-07b421428ba9",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "048164ba-6cfb-59b8-ab2a-a09f0d194e62",
@@ -73,7 +75,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0492ffdb-af87-54f7-bfcc-6ead0e38e86a",
@@ -292,7 +296,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "8d12e6bb-eb2a-50ab-a4a8-ed7336584c43",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "067dedbf-353b-520d-b06b-8ce69adef9ca",
@@ -399,7 +405,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "18aec97e-da94-57d5-b055-5ec9aa2e0083",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "06e4c264-f580-5125-9afd-7715d1ef8884",
@@ -433,7 +441,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "33776057-176a-5daf-a257-28d5783aa36d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "07b5e3db-8e36-59b2-8cae-2c4905ab2dc6",
@@ -548,7 +558,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "fbf380d3-a401-5041-8dea-b92809509ed3",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "08444f24-8c27-57a8-a6bf-06defb1389e7",
@@ -584,7 +596,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "cd3c54e9-3346-547c-b2e4-34ed1ba20d2f",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "09a77db0-d0b2-59f1-b488-bc760ad642b1",
@@ -620,7 +634,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "85046c0c-c148-5091-87f5-9e973ba021cd",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0ab4718d-fcac-5926-92d6-08662bd98fdf",
@@ -656,7 +672,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "55bd8938-34d6-5d71-b9c8-c478b0158c69",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0bd14cbe-ddda-5d18-b277-c87b6b45a8b7",
@@ -729,7 +747,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "49cbb309-2c3a-5b48-b7a8-10b476625135",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0cd2b128-0d47-541a-bad3-5ac585817597",
@@ -765,7 +785,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4dae1842-16db-56d9-8f32-a9985ff6f1e1",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0d00bebb-14f6-5402-b73a-f2cc6bf85d98",
@@ -801,7 +823,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f652958a-35ae-5137-8594-75743d5db08f",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "0ed94e67-174e-5242-a692-9448cd645c0a",
@@ -1021,7 +1045,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e8f5d57b-775c-523e-ac9f-b4878b1fce20",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1338ed2b-adb0-5bf6-81b8-4cc9446880ff",
@@ -1202,7 +1228,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e0423ccf-a31d-5b48-be85-360737bbaae2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1ab6aa4c-db92-5ecd-9741-725055db1010",
@@ -1279,7 +1307,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "bd83f559-047f-5786-9972-2d7ec65b20a1",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1c0faef5-94f9-5994-a278-e22920c5a1dd",
@@ -1316,7 +1346,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e158c930-ca53-570d-88e0-76b59abd944d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1c62f66b-d998-5bb8-9273-ecf736819a75",
@@ -1456,7 +1488,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "cf658ecf-1733-5e3d-98d4-943078186e9a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1f93b2c9-de93-552b-aaf8-b006539d74c3",
@@ -1495,7 +1529,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9175b9ef-20f9-5d91-a63f-9e3a28328664",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "1fd6e574-abea-5df1-a80e-d03ff3028484",
@@ -1565,7 +1601,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "153078dc-5381-5c54-b98a-99458d29b9de",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "20c32505-f629-5779-bda9-21ce6ae99735",
@@ -1642,7 +1680,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "2e82be84-73ea-55c0-bf5b-272c20716289",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "23d52e14-32fc-51ad-ad1d-160dbfae83c8",
@@ -1747,7 +1787,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "244fd281-3f65-5ec2-a94b-05c818b073e8",
@@ -1822,7 +1864,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "fb54fb44-4398-5f09-8f2d-48b9e670f809",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "27ae5ee2-1e97-5a24-bbd5-fbb122e4170e",
@@ -1858,7 +1902,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a2089352-b024-5989-b1f1-7b7bee549473",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "2865aef8-eac4-514e-8f3c-68a5c1e193f6",
@@ -2007,7 +2053,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "56dc09d9-0fc8-5c30-a1a2-b1081db321fe",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "2b00c3e4-75f8-5d29-a864-99ef11af7929",
@@ -2183,7 +2231,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "02fe509d-dd6b-5c55-9df7-47bea76de513",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "2e0f8206-5ff4-56b6-ac50-1aa5d6fea22a",
@@ -2259,7 +2309,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "fa64f6b0-b0ca-5151-895e-88991350c3da",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "2eea5bec-e12e-5485-b13c-9bc91aeb373a",
@@ -2295,7 +2347,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c76eff39-1ca6-5f46-a841-6adedc1ffb74",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "2ff775e0-4c96-5f44-8f7b-13b880ba750a",
@@ -3021,7 +3075,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c9011865-bcd3-5a0b-b473-000af6954214",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "3cde0d03-1bfb-5e00-ab80-0fac658fdaa2",
@@ -3175,7 +3231,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5630962d-090a-5bd1-be90-7c800d58dfe2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "401909e0-0508-5548-b68c-dc9663de6872",
@@ -3209,7 +3267,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6691d239-eccd-591c-be7d-685838ae3b63",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "4028717f-2bd8-5b8c-b36a-df97fbcbbb9f",
@@ -3246,7 +3306,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "19e464fd-246c-5c7a-92c0-a44b1ac84394",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "40f91947-c7a1-51b4-ad90-49b525078ce0",
@@ -3282,7 +3344,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "7148eb5e-3c3d-570f-9fd0-0e7039c8d8bc",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "429e4d0b-4108-5489-ad31-62d1f1131c0d",
@@ -3499,7 +3563,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "1e74c251-2e23-55b7-82f2-bdb5bb0fd963",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "45604da1-11d5-5b67-a044-b05bec73c163",
@@ -3870,7 +3936,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "57d247f3-b432-56cf-9aaa-812fb8892132",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "4e7b99a2-2e67-59da-ad40-740834cdc552",
@@ -3949,7 +4017,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0f45741a-4185-5ea1-a3de-56e0ff8de142",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "4f232576-bd3b-5c82-ada0-a96771bbb4a0",
@@ -3987,7 +4057,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f5a68210-cccd-592e-867b-884cea9ac771",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "4f3ae622-1a3b-547b-91c8-4cc1afc853ae",
@@ -4386,7 +4458,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c4226c77-740f-5812-ae46-f05ab9de006c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "5a21ce3c-a9c1-5926-9b2c-c39acd7bbd3e",
@@ -4422,7 +4496,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "b81d0c7e-fd40-5387-ad93-6d0997d42c90",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "5bc42084-7d50-5fb3-aff8-7ae1e7ad4310",
@@ -4560,7 +4636,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "73571dce-8eb2-5b8a-bd00-a6515394716d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "5dbcf8ac-78e3-508f-af13-b4478fc5362f",
@@ -4599,7 +4677,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4cfdda6b-0c23-5584-8398-394838568766",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "5ee592c4-dbb1-5fba-ae8c-cbc5b8b3ca26",
@@ -4633,7 +4713,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "36a78155-fadd-54e4-bb0e-5295b7f84840",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "5f2004f2-68f3-54ec-8a5c-74b2868324a9",
@@ -4810,7 +4892,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "49cbb309-2c3a-5b48-b7a8-10b476625135",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "62fd85c1-9217-5f00-89f9-53724e79186e",
@@ -4849,7 +4933,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "8317ccca-aab4-58a7-b606-e9792b57adb2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "635f5d52-aa6a-55b4-81a1-f28e0fbb7d1e",
@@ -5137,7 +5223,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "54923034-5674-54a5-90f6-af243b128c4a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "6adb6ef9-f505-5c3a-8f0d-cde09c7b1b57",
@@ -5173,7 +5261,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c76eff39-1ca6-5f46-a841-6adedc1ffb74",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "6b1d5e3c-3719-5399-b6ce-6ec2bec0a71c",
@@ -5241,7 +5331,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a60dffeb-e0cf-5bc5-a217-9afc833a099b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "6c43e2fd-5d3f-51fc-b269-48cc98c65e47",
@@ -5277,7 +5369,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "2865aef8-eac4-514e-8f3c-68a5c1e193f6",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "6c6d3c51-eeb4-5fd9-a73c-6854c2179d95",
@@ -5311,7 +5405,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4858927b-6ca9-54ff-b053-9a0a4e55acb4",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "6d24ea93-2bef-5cd1-b012-b376b461c294",
@@ -5348,7 +5444,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9a8a19c0-c255-5929-8669-d1418ed604c2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "6de493a6-68d9-506a-98e1-fc100e4a93ab",
@@ -5386,7 +5484,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "91a0a150-4320-539b-af17-3f1eaa8d8770",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "6e7c5cf9-e727-5ba6-9826-e8bd0a945ee0",
@@ -5463,7 +5563,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a787ad35-66fe-53b0-8749-deeda8a57419",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "70229db3-0b26-5033-9129-998a8144bf87",
@@ -5606,7 +5708,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f7825bfe-d275-5913-b409-df08f3842c5a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "7266e2e1-1395-5773-98c8-bddc1b9e2286",
@@ -5643,7 +5747,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "bebd49d5-ab58-52b7-b422-b50d2652ea9b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "734a613b-3960-573b-8b3a-1a1b4c42bc25",
@@ -5713,7 +5819,9 @@
         "Lyrics only — no chords in the source",
         "No section labels found"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "bebd49d5-ab58-52b7-b422-b50d2652ea9b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "74750f26-bda8-52b8-bf06-8fdfa0aed767",
@@ -5781,7 +5889,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "706f8960-9046-50f1-a180-872bb2249049",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "7535bc90-ff96-5cd7-bec5-7a75a124e039",
@@ -5930,7 +6040,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e9aab61e-a39d-551c-aea2-984a4ae5895c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "770b9816-d09d-5c15-8e22-8bc953494081",
@@ -6042,7 +6154,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e688a393-49d9-5d87-a7e7-4f19bc00697e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "780180cc-5483-507f-8787-95e806b8763a",
@@ -6114,7 +6228,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6791957f-081c-558c-8e4f-9afb90858a51",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "78f12183-ca8a-5bf6-b2d7-a3b7a042fed1",
@@ -6257,7 +6373,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e76f8c28-3873-5556-be8e-0e51a5369bd3",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "7bd21b2b-0128-5114-b54b-c9a4f377bc38",
@@ -6434,7 +6552,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "107eea25-8904-5529-a8a5-6a4eb0607ddc",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "7f79f44c-66ed-5e9c-9da9-883e18a264db",
@@ -6509,7 +6629,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "37835ace-7ee8-5fca-968b-65b9b6c869ea",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "81d5e603-8321-531d-87d3-f3107d165f02",
@@ -6543,7 +6665,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9f31ba29-20e1-573e-adee-a279f2b4387c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8265334e-a5b4-576b-a901-36452695fd18",
@@ -6580,7 +6704,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "bebd49d5-ab58-52b7-b422-b50d2652ea9b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8380c0a1-0670-5951-9f48-83b2bd5f9eab",
@@ -6650,7 +6776,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "00e2bec0-7cb6-58f3-abbb-c9187cb4ab5a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "854890a1-c51b-5162-b7a8-5ed0e30f18f5",
@@ -6753,7 +6881,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3ac7453c-8c7a-5d21-98b5-f35e7d7f971f",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8600d9e1-3b0a-50dd-b9ac-a2a0579a2e86",
@@ -6928,7 +7058,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "19fc26c9-556c-5768-9b87-9e63472f4946",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "88fe3b87-40e9-5fc1-9f7f-e7b93cf01e8f",
@@ -7000,7 +7132,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3c706da3-0c03-5d3f-acd8-714eb8e3a2e8",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "8ae03896-be43-5a9e-b2e1-6a25496a900d",
@@ -7034,7 +7168,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "8e42fa92-5680-526c-bcda-f09dbf7e4792",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8b106039-b493-5a82-b1fa-36e10158b6da",
@@ -7107,7 +7243,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4a80f6f9-13bc-550f-a876-02849c958130",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8d0213b5-78c5-51d1-922a-ead6818931cb",
@@ -7141,7 +7279,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "728484ed-bfb4-59ea-a318-9d234f17e8fa",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8d1b3584-8749-5fd0-89d4-beaec314106d",
@@ -7252,7 +7392,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4c2f50c5-9ef9-57b6-b78e-95bc38d0df72",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8e13d830-872f-58b7-876e-51308b90b809",
@@ -7323,7 +7465,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d5f558e5-1617-5fdd-b0be-3a4d77608737",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "8f255d17-f5bc-5378-8846-c907e7fdf716",
@@ -7361,7 +7505,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5763fcd2-1348-5b0b-a83c-938e7c0828a3",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "906f88e7-3b36-5508-934d-ef78b1336091",
@@ -7545,7 +7691,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "06e29013-b6df-589b-9f58-1659766fb42a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "93631004-dc71-5240-a90f-cafaa8e1a1ff",
@@ -7616,7 +7764,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "33776057-176a-5daf-a257-28d5783aa36d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "94ce5e44-9eac-57ca-bb2b-1e3d8d36e787",
@@ -7652,7 +7802,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5077210d-359e-5b5b-a12e-81388e270b1d",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "94f1217e-7c1d-52f2-81f0-2c3b77dacbb6",
@@ -7905,7 +8057,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "2b00c3e4-75f8-5d29-a864-99ef11af7929",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "98495d17-7c74-5969-a833-b36f44a7dd00",
@@ -7941,7 +8095,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0e26615a-a982-5833-ac6d-f946478a2f72",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "98900c95-c25a-5190-85f9-6ee80b3e0873",
@@ -8015,7 +8171,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c4e7dfd7-c156-5f96-93c6-8ace9e8f86cf",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "992e7cc2-0d6d-5d5b-aadc-707b8d1c92ad",
@@ -8089,7 +8247,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "37bdb2de-1ecd-5cab-aa88-a952b84d7d1d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "9ab8ff85-316c-5754-b756-ae0fd8c13a9f",
@@ -8126,7 +8286,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "58ea11e9-cf96-5c6d-bb5c-4be41edb8f81",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "9ab957fc-787f-5b61-b03d-788386cf1994",
@@ -8416,7 +8578,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "42791f03-6649-52d7-a8e1-37dc3474aa69",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "a1311817-83b8-5356-b132-548d5d2244a1",
@@ -8452,7 +8616,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9d4c5719-15b6-5677-b513-c2ec13a5439f",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "a1cb83a2-1dd7-5eb7-930d-ecf6fb93cf63",
@@ -8527,7 +8693,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e50ce4c2-6395-5e5c-961b-5043b857773b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "a310860c-7e4a-57e6-be0e-072608398d72",
@@ -8566,7 +8734,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f0bb3917-1b86-505a-a428-01c220002bdb",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "a5231312-cde4-52ad-a76c-47c174a08d0a",
@@ -8606,7 +8776,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "23c0a2e7-dd29-5abc-bf95-9070d4670921",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "a5f63e55-bdb1-50ef-87d4-b8ce5e8cbcda",
@@ -8817,7 +8989,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6351451d-122f-5ba3-beb6-98d38f7c6b1c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "acb7d8c5-e8c4-56f5-81a0-d2ce2a3c7b53",
@@ -8894,7 +9068,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "ba987d1c-93c7-55ff-ba86-329f8c2e759a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "af3893b5-859d-5020-9113-1c0fa0f5409d",
@@ -8931,7 +9107,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "40e9215b-5a15-5118-8b97-942b341574eb",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "b1646fc1-03fe-55c3-b2bf-890e3fc9e43a",
@@ -8967,7 +9145,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "86e505b6-1766-52d9-93b9-42aef386f04c",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "b26b8736-50df-50f6-ba56-865763d1b624",
@@ -9001,7 +9181,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a0e51b99-f48e-54d7-b299-dc7a1421d54e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "b2762517-f5a4-562f-be1c-d38985351ebc",
@@ -9039,7 +9221,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0ff52a82-4bd0-52ca-a186-69a0bbf3d533",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "b361a63b-4484-5265-95eb-da0235cd1187",
@@ -9289,7 +9473,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "595070f0-659c-50a6-ac7f-c0601aeee133",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "b7bf7fc1-4d4b-5ebc-a156-e7b95acea88e",
@@ -9365,7 +9551,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c2edc308-9dac-58d3-92ed-b014094c5c06",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "b9590f8a-0902-5ef4-b216-d156f032686a",
@@ -9402,7 +9590,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a7935b46-bb50-5a02-bd3d-9e23a5176836",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "ba6c298b-cd11-55ef-ae1f-0e58c6e84e9d",
@@ -9583,7 +9773,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "b9df7259-f74c-54e5-b2e6-b9a03331dd41",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "bcbc968e-2ae7-5136-b12a-fdb69f105cf4",
@@ -9619,7 +9811,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "795b488f-66b6-5fa3-adb1-c1af4cbab986",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "bcfd1a71-7c38-540c-9993-2bfac67a2f95",
@@ -9659,7 +9853,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "b5b437e4-9af3-501e-b1ed-acc7665f32b4",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "bd0780eb-eefc-5e92-a4dc-ac015c8491f1",
@@ -9730,7 +9926,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e817a551-5f8f-5ee0-8e0a-3ded4c6b03b6",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "bd49926c-afbd-5cf0-91b2-cfb886262a05",
@@ -9802,7 +10000,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4e263018-3da8-57ba-b557-7d73a286d87e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "bd7294a0-9171-5b34-85a6-0168200c3232",
@@ -9839,7 +10039,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "776e4449-20e8-5727-a01f-4579b4cb0939",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "be7c477b-ae31-5934-9399-8ec2a0fd7ab8",
@@ -9950,7 +10152,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "fbbd29a9-3216-5c66-9311-02ecc6fbc4d2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "c75a8c7f-6f5f-51e8-823a-dbc11908fb97",
@@ -9988,7 +10192,9 @@
         "Lyrics only — no chords in the source",
         "No section labels found"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e50ce4c2-6395-5e5c-961b-5043b857773b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "c77db875-6a46-5b86-9da2-2a94e14546fa",
@@ -10026,7 +10232,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "080496f4-319d-5e79-a25b-0f300754146e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "c848d572-6033-5717-a7c5-6a5b0c449ce6",
@@ -10172,7 +10380,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a1cb83a2-1dd7-5eb7-930d-ecf6fb93cf63",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "c9933bd6-ddbd-5837-9019-625945171b9b",
@@ -10323,7 +10533,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a08a804d-9f90-5fb8-93f3-2fe7ad0948af",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "cd318b85-c01a-56f1-b7a7-740a2264182f",
@@ -10398,7 +10610,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "91a0a150-4320-539b-af17-3f1eaa8d8770",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "cfc28e12-fd05-5ac8-84f6-29b26cdd30c8",
@@ -10511,7 +10725,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "35e488da-4a10-5437-a802-59c4ec613637",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "d1310a07-fa60-5a4e-aa0d-daaf36a4da5b",
@@ -10547,7 +10763,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "36bd7fc5-e9d7-561a-a3ed-a407c7453238",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "d183e9ec-70c6-5baf-8ed6-3c77c7894a59",
@@ -10581,7 +10799,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "12ff5393-d917-5069-9877-79099fcd6e1c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d497a9c7-2be7-50d9-b509-a456e0ecff4f",
@@ -10617,7 +10837,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9ab77593-1200-595a-9972-007114f3dc0e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d49c96a0-3b21-59f9-9008-191e1e17c1f3",
@@ -10688,7 +10910,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5644b58b-8031-5115-8042-e44743994ec4",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d58db1ac-1806-554e-a8dd-820d291d76d4",
@@ -10763,7 +10987,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e99ba077-c65e-58a3-88dc-f0beb0d09dec",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d70dd140-76b7-51d8-8a4e-c603800dd8c8",
@@ -10802,7 +11028,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3cde0d03-1bfb-5e00-ab80-0fac658fdaa2",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "d7f4951e-f427-546b-bf17-0ce0b1858669",
@@ -10877,7 +11105,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a9c48cac-39d1-5c8d-b40b-f38a2c679c36",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d8d92aee-8517-5c8b-bffe-21f74057a08e",
@@ -10911,7 +11141,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0341899f-c222-573f-802a-bc2dcc783319",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d911cb31-afa7-580c-aeee-8f4abc420ec1",
@@ -10981,7 +11213,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5648b0d5-0644-5a0c-b9ea-b9ed26a03eac",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "dc4d2cc3-f140-5130-bc4d-f5b3d98d2311",
@@ -11022,7 +11256,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "90ae9067-98bf-568e-b77f-1f8cd3cd17c9",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "dcd81414-92e9-5c2e-9cca-1a15a56afaec",
@@ -11130,7 +11366,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "dd60795c-cf3b-554f-b9ba-42fb27b8d277",
@@ -11200,7 +11438,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "8b6b790e-7786-5e47-b508-d78fa83ba3e0",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "dded1547-f693-5000-8f52-0a86a0f06df5",
@@ -11272,7 +11512,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0f3ffa0f-e349-5d97-89f1-8e9cbd9dc06e",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "dec36901-637e-58b5-ba1a-1000d17ef853",
@@ -11382,7 +11624,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "cebad9a1-9e99-5367-a797-75dc2e512d20",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "e0a700a3-7133-53b5-b634-7c692cffdbf3",
@@ -11418,7 +11662,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9bd835d7-7771-51fd-9fe5-9a2af3d38908",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "e15e6eb0-e770-5e04-988a-b65b20418b96",
@@ -11454,7 +11700,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4b8e5cb8-1857-5947-8e44-6944080533ba",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "e1d07c81-eb3b-5f97-b258-fe7c81622001",
@@ -11490,7 +11738,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "dcfa8dd4-5491-5fd7-bca9-96ab14a9d7d3",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "e1d90b20-a96e-5b53-9d39-cbb69159623a",
@@ -11528,7 +11778,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9ab98dde-2caf-5714-a33c-6c52e1b0f85c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "e305de52-0bc4-5b80-bd9a-210fcd7de154",
@@ -11564,7 +11816,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c323d18d-6b4c-59f2-849e-156665175240",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "e8a16e14-91ef-59c9-b1b4-d613bec80b54",
@@ -11669,7 +11923,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "7c0b70c2-e3d1-555b-a984-96cb97a5f960",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "ea341d60-ab54-50c1-a2c3-6feae600884d",
@@ -11781,7 +12037,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0b710c06-558d-5a38-8a56-0525311fe91f",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "ebaa619c-9e11-504d-b6f3-851346be70e6",
@@ -11815,7 +12073,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "10a3bca2-4d2f-5998-ae04-69f5791902cf",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "ebf428e3-0050-5edf-a73c-f22d7577297f",
@@ -11886,7 +12146,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9c46f7b1-4dab-5560-861e-bab94e0ed94b",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "ed027614-8483-5d81-a93b-3d47371eb383",
@@ -11922,7 +12184,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "29f450fd-3c2b-5397-a95d-fede87abc27d",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "ed4566b4-44c1-537c-8f67-881882531b57",
@@ -11994,7 +12258,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f26a0d1c-a509-5bea-83f2-2813ce9c35e8",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "eed85da1-7b10-55f3-a8a4-183ee2ed018e",
@@ -12032,7 +12298,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5e48e317-3f2b-54b4-878e-0e3e1e34445a",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "ef3d9bf9-2f80-54ca-a471-394217c846d0",
@@ -12071,7 +12339,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9c5be3c3-bb0f-5052-a2a9-f328fdce1524",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f0681ae8-802d-5ec1-82ca-e488f315eae4",
@@ -12142,7 +12412,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a83fc8f8-8722-536c-8535-2a335c3447fb",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f4a802e5-6905-59bb-be98-c81fe5d69c38",
@@ -12212,7 +12484,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "2cc84ac9-5978-5118-be93-c0fe263b95b9",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f609afda-3894-5139-8b33-2f4108a741ef",
@@ -12250,7 +12524,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "cebad9a1-9e99-5367-a797-75dc2e512d20",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
@@ -12323,7 +12599,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c8aa5bfd-4623-59d4-94f1-4dcd0f7a25de",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f73593b6-1515-56d1-9c2b-02a02c99a2ab",
@@ -12357,7 +12635,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6691d239-eccd-591c-be7d-685838ae3b63",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f76605db-6b75-5fa7-b9d7-a57c87e78383",
@@ -12394,7 +12674,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "908a34fb-3d9c-5915-96b4-dec60a2ac3ca",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "f815a17a-fe88-56b9-8bf4-af967ea9b94f",
@@ -12428,7 +12710,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "1fd6e574-abea-5df1-a80e-d03ff3028484",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "f819573d-09aa-5158-ba69-f1f16f7f4e0b",
@@ -12613,7 +12897,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "fa15f382-b345-5790-ae77-6e2e63fd88c1",
@@ -12651,7 +12937,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "531b7ec0-9aa9-595b-b71b-cfe1238cf2d6",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "fb2f8481-0db4-506b-8ad4-a459ec9eaffa",
@@ -12687,7 +12975,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "974fd7c8-ab42-582b-be3b-6b71ef1d0a45",
+      "supersedeReason": "lyrics only, superseded by the pdf chart"
     },
     {
       "songId": "fb56f026-439e-53f6-bf62-af163a200009",
@@ -12726,7 +13016,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f221af9a-e263-554b-b9e0-9f58c0ac0e7b",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "feb95590-ec2c-5fa2-8e20-f997575b1ac5",
@@ -12838,7 +13130,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "47166966-4e73-54ee-ac1c-6b9b883ea76e",
+      "supersedeReason": "identical copy"
     }
   ]
 }

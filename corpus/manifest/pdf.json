@@ -8610,7 +8610,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "e29db252-131d-561b-98a9-ec07c570dd41",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "f02077aa-50fa-591e-843e-6bcd938bfac9",
@@ -8645,7 +8647,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3e67e089-9d6e-5d55-8f2b-681108e631cf",
+      "supersedeReason": "identical copy"
     },
     {
       "songId": "f2aa5a36-ba4b-5d04-b32f-183632b78dd5",
