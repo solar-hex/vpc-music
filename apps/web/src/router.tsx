@@ -9,6 +9,7 @@ import { SharedSongPage } from "./pages/SharedSongPage";
 import { SharedSetlistPage } from "./pages/SharedSetlistPage";
 import { SongListPage } from "./pages/songs/SongListPage";
 import { SongChartPage } from "./pages/songs/SongChartPage";
+import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { ForgotPasswordPage } from "./pages/auth/ForgotPasswordPage";
 import { ResetPasswordPage } from "./pages/auth/ResetPasswordPage";
@@ -43,12 +44,10 @@ function RedirectToChart() {
 export const router = createBrowserRouter([
   // ── Public routes (no AppShell) ──────────────
   {
+    // The bare domain is the front door: the landing page for a signed-out
+    // visitor, and a straight bounce to the song list for everyone else.
     path: "/",
-    element: (
-      <ProtectedRoute>
-        <Navigate to="/songs" replace />
-      </ProtectedRoute>
-    ),
+    element: <LandingPage />,
     errorElement: <RouteErrorPage />,
   },
   { path: "/login", element: <LoginPage /> },
