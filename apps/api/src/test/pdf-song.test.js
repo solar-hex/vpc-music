@@ -132,3 +132,40 @@ describe("readChartHeader", () => {
     expect(readChartHeader([], { filename: "Way-Maker-Chord-Chart.pdf" }).title).toBeNull();
   });
 });
+
+describe("run reconstruction", () => {
+  const run = (text, x, width, fontSize = 10) => ({ text, x, width, fontSize });
+
+  it("joins runs pdf.js split mid-chord", async () => {
+    const { coalesceRuns } = await import("../corpus/pdfSong.js");
+    // "Bm7" arrives as "Bm" + "7"; "A/C#" as "A/C" + "#".
+    const out = coalesceRuns([run("Bm", 0, 10), run("7", 10, 5), run("A/C", 60, 15), run("#", 75, 5)]);
+    expect(out.map((t) => t.text)).toEqual(["Bm7", "A/C#"]);
+  });
+
+  it("splits a run that carries a whole chord line inside it", async () => {
+    const { coalesceRuns } = await import("../corpus/pdfSong.js");
+    // The other direction: one run holding "D    A/C#   Bm7".
+    const out = coalesceRuns([run("D    A/C#   Bm7", 0, 150)]);
+    expect(out.map((t) => t.text)).toEqual(["D", "A/C#", "Bm7"]);
+    expect(out[0].x).toBeLessThan(out[1].x);
+    expect(out[1].x).toBeLessThan(out[2].x);
+  });
+
+  it("does not insert a space where there is only kerning", async () => {
+    const { renderLine } = await import("../corpus/pdfSong.js");
+    // This is the bug that cost most of the chords: "Bm7" must not read "Bm 7".
+    expect(renderLine([run("Bm", 0, 10), run("7", 10, 5)]).text).toBe("Bm7");
+  });
+
+  it("keeps a real gap as a space", async () => {
+    const { renderLine } = await import("../corpus/pdfSong.js");
+    expect(renderLine([run("D", 0, 8), run("G", 60, 8)]).text).toMatch(/^D\s+G$/);
+  });
+
+  it("reports an x for every character it emits", async () => {
+    const { renderLine } = await import("../corpus/pdfSong.js");
+    const r = renderLine([run("abc", 0, 30), run("def", 60, 30)]);
+    expect(r.xs).toHaveLength(r.text.length);
+  });
+});

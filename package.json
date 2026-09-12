@@ -36,7 +36,8 @@
         "corpus:media": "node scripts/corpus-media.mjs",
         "corpus:reader": "node scripts/corpus-reader.mjs",
         "corpus:stats": "node scripts/corpus-stats.mjs",
-        "intake": "node scripts/intake.mjs"
+        "intake": "node scripts/intake.mjs",
+        "corpus:verify": "node scripts/corpus-verify.mjs"
     },
     "devDependencies": {
         "concurrently": "^8.2.2",

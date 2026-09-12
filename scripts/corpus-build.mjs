@@ -21,6 +21,8 @@ import { convertChrdToChordPro } from "../shared/index.js";
 import { extractDocxParagraphs } from "../apps/api/src/corpus/docxText.js";
 import { convertLyricSheetToChordPro } from "../apps/api/src/corpus/lyricSheet.js";
 import { convertPdfChartToChordPro } from "../apps/api/src/corpus/pdfSong.js";
+import { convertTextChartToChordPro } from "../apps/api/src/corpus/textChart.js";
+import { onSongToChordPro } from "../shared/index.js";
 import { detectThemes } from "../apps/api/src/corpus/themes.js";
 import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
 import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
@@ -38,7 +40,7 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
 
-export const SOURCE_TYPES = ["chrd", "docx", "pdf"];
+export const SOURCE_TYPES = ["chrd", "docx", "pdf", "text", "onsong"];
 
 /**
  * One entry per source format. Each supplies how to find its files and how to
@@ -67,6 +69,29 @@ export const SOURCES = {
     // with no text layer at all — they are media, not songs.
     pattern: /chord.?chart.*\.pdf$/i,
     convert: convertPdfChartToChordPro,
+  },
+  text: {
+    // Plain-text chord charts, often UTF-16LE. Columns were typed by a person,
+    // so these need no geometry at all.
+    pattern: /\.txt$/i,
+    async convert(filename, buffer) {
+      return convertTextChartToChordPro(filename, buffer);
+    },
+  },
+  onsong: {
+    pattern: /\.onsong$/i,
+    async convert(filename, buffer) {
+      const content = onSongToChordPro(buffer.toString("utf8"));
+      const title = (content.match(/\{title:\s*([^}]+)\}/i) || [, filename.replace(/\.[^.]+$/, "")])[1].trim();
+      const key = (content.match(/\{key:\s*([^}]+)\}/i) || [, null])[1];
+      return {
+        title,
+        chordProContent: content,
+        metadata: { title, artist: null, key: key ? key.trim() : null, tempo: null, year: null, isDraft: true },
+        warnings: [],
+        confidence: { score: 0.85, band: "high", reasons: [] },
+      };
+    },
   },
 };
 

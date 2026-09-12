@@ -1,42 +1,44 @@
 {
   "totals": {
-    "songs": 1034,
-    "withChords": 666,
-    "lyricsOnly": 368,
-    "drafts": 674,
-    "themed": 881,
-    "labels": 2292,
-    "withMedia": 249,
+    "songs": 1058,
+    "withChords": 712,
+    "lyricsOnly": 346,
+    "drafts": 698,
+    "themed": 904,
+    "labels": 2362,
+    "withMedia": 251,
     "mediaFiles": 2535,
     "mediaBytes": 19563955564,
-    "duplicateTitles": 198
+    "duplicateTitles": 215
   },
   "bySource": {
     "chrd": 399,
     "docx": 353,
-    "pdf": 282
+    "onsong": 2,
+    "pdf": 282,
+    "text": 22
   },
   "fields": {
-    "title": 1034,
-    "key": 691,
-    "artist": 266,
+    "title": 1058,
+    "key": 701,
+    "artist": 284,
     "tempo": 263,
     "tempoDerived": 46,
-    "themes": 881,
+    "themes": 904,
     "year": 1
   },
   "completeness": {
-    "30-49": 395,
-    "50-69": 373,
-    "90-100": 222,
-    "70-89": 44
+    "30-49": 400,
+    "50-69": 374,
+    "90-100": 221,
+    "70-89": 63
   },
   "missingCounts": {
-    "artist": 768,
-    "tempo": 771,
-    "tags": 153,
-    "year": 1033,
-    "key": 343
+    "artist": 774,
+    "tempo": 795,
+    "tags": 154,
+    "year": 1057,
+    "key": 357
   },
   "tempoBands": {
     "medium": 86,
@@ -45,34 +47,34 @@
     "shout": 37
   },
   "themes": {
-    "blood": 122,
-    "cross": 95,
-    "holy-spirit": 115,
+    "blood": 124,
+    "cross": 96,
+    "holy-spirit": 116,
     "baptism": 41,
-    "name-of-jesus": 136,
-    "healing": 154,
-    "praise": 385,
-    "worship": 143,
+    "name-of-jesus": 141,
+    "healing": 160,
+    "praise": 397,
+    "worship": 148,
     "jubilee": 9,
     "communion": 7,
-    "altar": 26,
-    "victory": 107,
+    "altar": 27,
+    "victory": 109,
     "second-coming": 5,
-    "heaven": 164,
+    "heaven": 170,
     "testimony": 27,
-    "faith-trust": 168,
-    "grace-mercy": 124,
-    "prayer": 79,
-    "salvation": 160,
-    "joy": 138,
-    "revival": 34,
-    "christmas": 18,
-    "easter": 35
+    "faith-trust": 171,
+    "grace-mercy": 128,
+    "prayer": 80,
+    "salvation": 169,
+    "joy": 145,
+    "revival": 35,
+    "christmas": 20,
+    "easter": 37
   },
   "confidence": {
-    "high": 402,
-    "medium": 262,
-    "low": 370
+    "high": 414,
+    "medium": 295,
+    "low": 349
   },
   "rows": [
     {
@@ -21434,6 +21436,66 @@
       "hasEssentials": false
     },
     {
+      "songId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
+      "title": "Burdens Rolled Away",
+      "slug": "burdens-rolled-away",
+      "source": "onsong",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "joy",
+        "salvation",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 2,
+      "lines": 33,
+      "percent": 40,
+      "missing": [
+        "artist",
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "f774f571-acfd-56d0-8f40-62c0ce7b819f",
+      "title": "One God",
+      "slug": "one-god",
+      "source": "onsong",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": 150,
+      "tempoDerived": true,
+      "band": "shout",
+      "themes": [
+        "faith-trust",
+        "salvation",
+        "name-of-jesus",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 12,
+      "lines": 23,
+      "percent": 50,
+      "missing": [
+        "artist",
+        "key",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
       "songId": "03bd213a-4782-553a-bbb0-3fdc8e6d68ec",
       "title": "Hosanna",
       "slug": "hosanna",
@@ -21535,11 +21597,11 @@
         "joy",
         "name-of-jesus"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 24,
+      "lines": 15,
       "percent": 55,
       "missing": [
         "artist",
@@ -21622,7 +21684,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 31,
+      "lines": 28,
       "percent": 95,
       "missing": [
         "year"
@@ -21645,11 +21707,11 @@
         "blood",
         "joy"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 30,
+      "lines": 18,
       "percent": 85,
       "missing": [
         "tempo",
@@ -21673,7 +21735,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 35,
+      "lines": 26,
       "percent": 85,
       "missing": [
         "tags",
@@ -21701,7 +21763,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 71,
+      "lines": 63,
       "percent": 95,
       "missing": [
         "year"
@@ -21726,7 +21788,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 47,
+      "lines": 32,
       "percent": 95,
       "missing": [
         "year"
@@ -21753,7 +21815,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 54,
+      "lines": 31,
       "percent": 95,
       "missing": [
         "year"
@@ -21780,7 +21842,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 85,
+      "lines": 61,
       "percent": 85,
       "missing": [
         "tempo",
@@ -21812,7 +21874,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 51,
+      "lines": 50,
       "percent": 95,
       "missing": [
         "year"
@@ -21839,7 +21901,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 66,
+      "lines": 60,
       "percent": 95,
       "missing": [
         "year"
@@ -21858,11 +21920,11 @@
       "tempoDerived": false,
       "band": "slow",
       "themes": [],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 8,
-      "lines": 37,
+      "lines": 29,
       "percent": 55,
       "missing": [
         "artist",
@@ -21889,7 +21951,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 62,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -21916,7 +21978,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 51,
+      "lines": 50,
       "percent": 95,
       "missing": [
         "year"
@@ -21931,9 +21993,9 @@
       "key": "C",
       "artist": "Calah Rhodes",
       "year": null,
-      "tempo": 150,
-      "tempoDerived": true,
-      "band": "shout",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "faith-trust",
         "salvation",
@@ -21943,10 +22005,11 @@
       "chords": true,
       "isDraft": true,
       "confidence": "medium",
-      "mediaCount": 12,
-      "lines": 23,
-      "percent": 95,
+      "mediaCount": 0,
+      "lines": 14,
+      "percent": 85,
       "missing": [
+        "tempo",
         "year"
       ],
       "hasEssentials": true
@@ -21995,7 +22058,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 53,
+      "lines": 42,
       "percent": 95,
       "missing": [
         "year"
@@ -22022,7 +22085,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 21,
+      "lines": 19,
       "percent": 95,
       "missing": [
         "year"
@@ -22052,7 +22115,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 15,
-      "lines": 73,
+      "lines": 71,
       "percent": 95,
       "missing": [
         "year"
@@ -22079,7 +22142,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 7,
-      "lines": 42,
+      "lines": 30,
       "percent": 95,
       "missing": [
         "year"
@@ -22155,7 +22218,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 69,
+      "lines": 58,
       "percent": 95,
       "missing": [
         "year"
@@ -22238,7 +22301,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 43,
+      "lines": 26,
       "percent": 85,
       "missing": [
         "tempo",
@@ -22295,7 +22358,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 21,
+      "lines": 15,
       "percent": 95,
       "missing": [
         "year"
@@ -22323,7 +22386,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 53,
+      "lines": 52,
       "percent": 95,
       "missing": [
         "year"
@@ -22395,11 +22458,11 @@
       "themes": [
         "worship"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 9,
-      "lines": 31,
+      "lines": 20,
       "percent": 95,
       "missing": [
         "year"
@@ -22428,7 +22491,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 34,
+      "lines": 28,
       "percent": 95,
       "missing": [
         "year"
@@ -22483,7 +22546,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 28,
+      "lines": 27,
       "percent": 95,
       "missing": [
         "year"
@@ -22510,7 +22573,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 65,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -22564,7 +22627,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 18,
+      "lines": 17,
       "percent": 95,
       "missing": [
         "year"
@@ -22590,7 +22653,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 32,
+      "lines": 29,
       "percent": 95,
       "missing": [
         "year"
@@ -22643,7 +22706,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 45,
+      "lines": 41,
       "percent": 95,
       "missing": [
         "year"
@@ -22719,11 +22782,11 @@
         "name-of-jesus",
         "worship"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 9,
-      "lines": 62,
+      "lines": 55,
       "percent": 95,
       "missing": [
         "year"
@@ -22748,7 +22811,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 19,
+      "lines": 13,
       "percent": 85,
       "missing": [
         "tempo",
@@ -22779,7 +22842,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 16,
+      "lines": 12,
       "percent": 85,
       "missing": [
         "tempo",
@@ -22861,7 +22924,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 69,
+      "lines": 63,
       "percent": 85,
       "missing": [
         "tempo",
@@ -22887,7 +22950,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 80,
+      "lines": 60,
       "percent": 65,
       "missing": [
         "artist",
@@ -22941,11 +23004,11 @@
         "revival",
         "victory"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 8,
-      "lines": 42,
+      "lines": 23,
       "percent": 65,
       "missing": [
         "artist",
@@ -22967,11 +23030,11 @@
       "themes": [
         "holy-spirit"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 19,
+      "lines": 12,
       "percent": 95,
       "missing": [
         "year"
@@ -22999,7 +23062,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 34,
+      "lines": 25,
       "percent": 95,
       "missing": [
         "year"
@@ -23027,7 +23090,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 21,
-      "lines": 36,
+      "lines": 32,
       "percent": 65,
       "missing": [
         "artist",
@@ -23083,7 +23146,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 73,
+      "lines": 65,
       "percent": 95,
       "missing": [
         "year"
@@ -23107,11 +23170,11 @@
         "prayer",
         "worship"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 5,
-      "lines": 49,
+      "lines": 26,
       "percent": 85,
       "missing": [
         "tempo",
@@ -23135,7 +23198,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 6,
+      "lines": 4,
       "percent": 75,
       "missing": [
         "tempo",
@@ -23220,7 +23283,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 64,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -23273,7 +23336,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 79,
+      "lines": 68,
       "percent": 95,
       "missing": [
         "year"
@@ -23306,7 +23369,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 84,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -23357,7 +23420,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 19,
-      "lines": 25,
+      "lines": 22,
       "percent": 95,
       "missing": [
         "year"
@@ -23382,7 +23445,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 7,
-      "lines": 44,
+      "lines": 34,
       "percent": 95,
       "missing": [
         "year"
@@ -23407,7 +23470,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 35,
+      "lines": 33,
       "percent": 95,
       "missing": [
         "year"
@@ -23433,7 +23496,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 79,
+      "lines": 57,
       "percent": 95,
       "missing": [
         "year"
@@ -23460,7 +23523,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 22,
+      "lines": 15,
       "percent": 85,
       "missing": [
         "tempo",
@@ -23507,11 +23570,11 @@
       "themes": [
         "praise"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 2,
-      "lines": 26,
+      "lines": 17,
       "percent": 85,
       "missing": [
         "tempo",
@@ -23562,11 +23625,11 @@
         "joy",
         "holy-spirit"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 8,
-      "lines": 36,
+      "lines": 22,
       "percent": 95,
       "missing": [
         "year"
@@ -23589,11 +23652,11 @@
         "healing",
         "faith-trust"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 9,
-      "lines": 54,
+      "lines": 33,
       "percent": 95,
       "missing": [
         "year"
@@ -23620,7 +23683,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 74,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -23641,11 +23704,11 @@
       "themes": [
         "heaven"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 7,
-      "lines": 21,
+      "lines": 12,
       "percent": 95,
       "missing": [
         "year"
@@ -23673,7 +23736,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 41,
+      "lines": 38,
       "percent": 95,
       "missing": [
         "year"
@@ -23700,7 +23763,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 41,
+      "lines": 36,
       "percent": 95,
       "missing": [
         "year"
@@ -23779,7 +23842,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 62,
+      "lines": 47,
       "percent": 95,
       "missing": [
         "year"
@@ -23805,7 +23868,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 56,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -23859,7 +23922,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 19,
+      "lines": 13,
       "percent": 85,
       "missing": [
         "tempo",
@@ -23885,7 +23948,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 73,
+      "lines": 61,
       "percent": 95,
       "missing": [
         "year"
@@ -23915,7 +23978,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 46,
+      "lines": 41,
       "percent": 95,
       "missing": [
         "year"
@@ -23942,7 +24005,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 55,
+      "lines": 44,
       "percent": 95,
       "missing": [
         "year"
@@ -23971,7 +24034,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 26,
+      "lines": 19,
       "percent": 95,
       "missing": [
         "year"
@@ -23998,7 +24061,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 40,
+      "lines": 25,
       "percent": 95,
       "missing": [
         "year"
@@ -24057,7 +24120,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 75,
+      "lines": 61,
       "percent": 95,
       "missing": [
         "year"
@@ -24080,11 +24143,11 @@
         "prayer",
         "faith-trust"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 44,
+      "lines": 31,
       "percent": 85,
       "missing": [
         "tempo",
@@ -24112,7 +24175,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 31,
-      "lines": 32,
+      "lines": 22,
       "percent": 85,
       "missing": [
         "tempo",
@@ -24141,7 +24204,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 93,
+      "lines": 79,
       "percent": 95,
       "missing": [
         "year"
@@ -24168,7 +24231,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 16,
-      "lines": 95,
+      "lines": 88,
       "percent": 95,
       "missing": [
         "year"
@@ -24193,7 +24256,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 30,
+      "lines": 25,
       "percent": 95,
       "missing": [
         "year"
@@ -24222,7 +24285,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 56,
+      "lines": 36,
       "percent": 95,
       "missing": [
         "year"
@@ -24272,7 +24335,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 60,
+      "lines": 57,
       "percent": 95,
       "missing": [
         "year"
@@ -24294,11 +24357,11 @@
         "healing",
         "praise"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 8,
-      "lines": 39,
+      "lines": 21,
       "percent": 95,
       "missing": [
         "year"
@@ -24327,7 +24390,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 155,
+      "lines": 138,
       "percent": 95,
       "missing": [
         "year"
@@ -24354,7 +24417,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 76,
+      "lines": 55,
       "percent": 95,
       "missing": [
         "year"
@@ -24384,7 +24447,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 75,
+      "lines": 65,
       "percent": 95,
       "missing": [
         "year"
@@ -24434,7 +24497,7 @@
       "isDraft": true,
       "confidence": "low",
       "mediaCount": 9,
-      "lines": 24,
+      "lines": 23,
       "percent": 95,
       "missing": [
         "year"
@@ -24462,7 +24525,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 62,
+      "lines": 42,
       "percent": 95,
       "missing": [
         "year"
@@ -24492,7 +24555,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 30,
-      "lines": 43,
+      "lines": 37,
       "percent": 95,
       "missing": [
         "year"
@@ -24543,7 +24606,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 48,
+      "lines": 33,
       "percent": 85,
       "missing": [
         "tags",
@@ -24626,7 +24689,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 62,
+      "lines": 51,
       "percent": 95,
       "missing": [
         "year"
@@ -24679,7 +24742,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 104,
+      "lines": 96,
       "percent": 95,
       "missing": [
         "year"
@@ -24736,7 +24799,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 95,
+      "lines": 92,
       "percent": 65,
       "missing": [
         "artist",
@@ -24787,11 +24850,11 @@
         "praise",
         "victory"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 17,
-      "lines": 52,
+      "lines": 36,
       "percent": 95,
       "missing": [
         "year"
@@ -24812,11 +24875,11 @@
       "themes": [
         "grace-mercy"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 8,
-      "lines": 19,
+      "lines": 13,
       "percent": 95,
       "missing": [
         "year"
@@ -24861,11 +24924,11 @@
       "tempoDerived": false,
       "band": "medium",
       "themes": [],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 0,
-      "lines": 137,
+      "lines": 126,
       "percent": 85,
       "missing": [
         "tags",
@@ -24894,7 +24957,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 22,
+      "lines": 18,
       "percent": 85,
       "missing": [
         "tempo",
@@ -24921,7 +24984,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 37,
+      "lines": 24,
       "percent": 95,
       "missing": [
         "year"
@@ -24948,7 +25011,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 107,
+      "lines": 101,
       "percent": 95,
       "missing": [
         "year"
@@ -24973,7 +25036,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 54,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -25026,7 +25089,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 34,
+      "lines": 29,
       "percent": 95,
       "missing": [
         "year"
@@ -25051,7 +25114,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 80,
+      "lines": 73,
       "percent": 95,
       "missing": [
         "year"
@@ -25078,7 +25141,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 35,
+      "lines": 31,
       "percent": 95,
       "missing": [
         "year"
@@ -25101,7 +25164,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 54,
+      "lines": 45,
       "percent": 85,
       "missing": [
         "tags",
@@ -25183,7 +25246,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 11,
-      "lines": 58,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -25209,7 +25272,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 41,
+      "lines": 29,
       "percent": 95,
       "missing": [
         "year"
@@ -25238,7 +25301,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 34,
+      "lines": 29,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25262,7 +25325,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 65,
+      "lines": 52,
       "percent": 85,
       "missing": [
         "tags",
@@ -25293,7 +25356,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 18,
-      "lines": 19,
+      "lines": 12,
       "percent": 95,
       "missing": [
         "year"
@@ -25322,7 +25385,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 21,
-      "lines": 54,
+      "lines": 47,
       "percent": 95,
       "missing": [
         "year"
@@ -25349,7 +25412,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 49,
+      "lines": 37,
       "percent": 55,
       "missing": [
         "artist",
@@ -25377,7 +25440,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 40,
+      "lines": 26,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25406,7 +25469,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 7,
-      "lines": 48,
+      "lines": 31,
       "percent": 95,
       "missing": [
         "year"
@@ -25458,7 +25521,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 29,
+      "lines": 26,
       "percent": 65,
       "missing": [
         "artist",
@@ -25486,7 +25549,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 53,
+      "lines": 48,
       "percent": 95,
       "missing": [
         "year"
@@ -25514,7 +25577,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 29,
+      "lines": 17,
       "percent": 95,
       "missing": [
         "year"
@@ -25539,7 +25602,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 38,
+      "lines": 33,
       "percent": 95,
       "missing": [
         "year"
@@ -25566,7 +25629,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 34,
+      "lines": 33,
       "percent": 95,
       "missing": [
         "year"
@@ -25591,7 +25654,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 60,
+      "lines": 44,
       "percent": 95,
       "missing": [
         "year"
@@ -25642,7 +25705,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 21,
+      "lines": 14,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25777,7 +25840,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 38,
+      "lines": 28,
       "percent": 95,
       "missing": [
         "year"
@@ -25802,7 +25865,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 12,
+      "lines": 9,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25881,11 +25944,11 @@
       "themes": [
         "praise"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 17,
+      "lines": 11,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25965,7 +26028,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 5,
-      "lines": 18,
+      "lines": 13,
       "percent": 85,
       "missing": [
         "tempo",
@@ -25991,7 +26054,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 25,
-      "lines": 19,
+      "lines": 11,
       "percent": 85,
       "missing": [
         "tempo",
@@ -26018,7 +26081,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 47,
+      "lines": 44,
       "percent": 95,
       "missing": [
         "year"
@@ -26047,7 +26110,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 98,
+      "lines": 65,
       "percent": 95,
       "missing": [
         "year"
@@ -26070,7 +26133,7 @@
       "isDraft": true,
       "confidence": "low",
       "mediaCount": 0,
-      "lines": 30,
+      "lines": 28,
       "percent": 85,
       "missing": [
         "tags",
@@ -26157,7 +26220,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 62,
+      "lines": 58,
       "percent": 95,
       "missing": [
         "year"
@@ -26186,7 +26249,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 108,
+      "lines": 94,
       "percent": 95,
       "missing": [
         "year"
@@ -26212,7 +26275,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 18,
-      "lines": 45,
+      "lines": 39,
       "percent": 95,
       "missing": [
         "year"
@@ -26313,11 +26376,11 @@
         "praise",
         "worship"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 0,
-      "lines": 44,
+      "lines": 23,
       "percent": 85,
       "missing": [
         "tempo",
@@ -26450,7 +26513,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 85,
+      "lines": 74,
       "percent": 95,
       "missing": [
         "year"
@@ -26554,7 +26617,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 33,
+      "lines": 31,
       "percent": 95,
       "missing": [
         "year"
@@ -26606,7 +26669,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 28,
+      "lines": 26,
       "percent": 95,
       "missing": [
         "year"
@@ -26663,7 +26726,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 86,
+      "lines": 68,
       "percent": 95,
       "missing": [
         "year"
@@ -26688,7 +26751,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 55,
+      "lines": 42,
       "percent": 95,
       "missing": [
         "year"
@@ -26743,7 +26806,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 37,
+      "lines": 25,
       "percent": 85,
       "missing": [
         "tempo",
@@ -26770,7 +26833,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 80,
+      "lines": 71,
       "percent": 95,
       "missing": [
         "year"
@@ -26798,7 +26861,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 34,
+      "lines": 32,
       "percent": 95,
       "missing": [
         "year"
@@ -26856,7 +26919,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 64,
+      "lines": 63,
       "percent": 95,
       "missing": [
         "year"
@@ -26936,7 +26999,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 7,
-      "lines": 44,
+      "lines": 34,
       "percent": 85,
       "missing": [
         "tempo",
@@ -26993,7 +27056,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 28,
+      "lines": 26,
       "percent": 95,
       "missing": [
         "year"
@@ -27069,11 +27132,11 @@
       "themes": [
         "salvation"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 7,
-      "lines": 24,
+      "lines": 17,
       "percent": 95,
       "missing": [
         "year"
@@ -27101,7 +27164,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 71,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -27157,7 +27220,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 57,
+      "lines": 41,
       "percent": 95,
       "missing": [
         "year"
@@ -27300,7 +27363,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 58,
+      "lines": 51,
       "percent": 95,
       "missing": [
         "year"
@@ -27378,7 +27441,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 9,
+      "lines": 5,
       "percent": 45,
       "missing": [
         "artist",
@@ -27458,7 +27521,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 59,
+      "lines": 54,
       "percent": 95,
       "missing": [
         "year"
@@ -27484,7 +27547,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 32,
+      "lines": 29,
       "percent": 95,
       "missing": [
         "year"
@@ -27535,7 +27598,7 @@
       "isDraft": true,
       "confidence": "low",
       "mediaCount": 8,
-      "lines": 44,
+      "lines": 33,
       "percent": 95,
       "missing": [
         "year"
@@ -27562,7 +27625,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 65,
+      "lines": 62,
       "percent": 95,
       "missing": [
         "year"
@@ -27698,7 +27761,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 5,
-      "lines": 46,
+      "lines": 27,
       "percent": 85,
       "missing": [
         "tempo",
@@ -27781,7 +27844,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 15,
+      "lines": 11,
       "percent": 85,
       "missing": [
         "tempo",
@@ -27811,7 +27874,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 130,
+      "lines": 113,
       "percent": 95,
       "missing": [
         "year"
@@ -27863,7 +27926,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 57,
+      "lines": 47,
       "percent": 95,
       "missing": [
         "year"
@@ -27912,11 +27975,11 @@
       "themes": [
         "praise"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 9,
-      "lines": 65,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -27998,7 +28061,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 103,
+      "lines": 82,
       "percent": 95,
       "missing": [
         "year"
@@ -28055,7 +28118,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 109,
+      "lines": 87,
       "percent": 95,
       "missing": [
         "year"
@@ -28138,7 +28201,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 32,
+      "lines": 25,
       "percent": 95,
       "missing": [
         "year"
@@ -28246,7 +28309,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 46,
+      "lines": 37,
       "percent": 95,
       "missing": [
         "year"
@@ -28269,11 +28332,11 @@
         "praise",
         "worship"
       ],
-      "chords": false,
+      "chords": true,
       "isDraft": true,
-      "confidence": "low",
+      "confidence": "medium",
       "mediaCount": 6,
-      "lines": 32,
+      "lines": 24,
       "percent": 85,
       "missing": [
         "tempo",
@@ -28330,7 +28393,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 47,
+      "lines": 44,
       "percent": 95,
       "missing": [
         "year"
@@ -28357,7 +28420,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 36,
+      "lines": 31,
       "percent": 95,
       "missing": [
         "year"
@@ -28442,7 +28505,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 30,
+      "lines": 23,
       "percent": 95,
       "missing": [
         "year"
@@ -28522,7 +28585,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 92,
+      "lines": 82,
       "percent": 95,
       "missing": [
         "year"
@@ -28549,7 +28612,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 7,
-      "lines": 59,
+      "lines": 49,
       "percent": 95,
       "missing": [
         "year"
@@ -28633,7 +28696,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 5,
-      "lines": 44,
+      "lines": 34,
       "percent": 55,
       "missing": [
         "artist",
@@ -28687,7 +28750,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 5,
-      "lines": 25,
+      "lines": 15,
       "percent": 85,
       "missing": [
         "tempo",
@@ -28715,7 +28778,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 49,
+      "lines": 37,
       "percent": 55,
       "missing": [
         "artist",
@@ -28768,7 +28831,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 39,
+      "lines": 26,
       "percent": 95,
       "missing": [
         "year"
@@ -28847,7 +28910,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 49,
+      "lines": 44,
       "percent": 95,
       "missing": [
         "year"
@@ -28873,7 +28936,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 74,
+      "lines": 49,
       "percent": 95,
       "missing": [
         "year"
@@ -28900,7 +28963,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 40,
+      "lines": 34,
       "percent": 95,
       "missing": [
         "year"
@@ -28923,7 +28986,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 81,
+      "lines": 76,
       "percent": 85,
       "missing": [
         "tags",
@@ -28950,7 +29013,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 11,
-      "lines": 30,
+      "lines": 25,
       "percent": 95,
       "missing": [
         "year"
@@ -28978,7 +29041,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 16,
+      "lines": 10,
       "percent": 85,
       "missing": [
         "tempo",
@@ -29033,7 +29096,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 65,
+      "lines": 50,
       "percent": 95,
       "missing": [
         "year"
@@ -29056,10 +29119,639 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 112,
+      "lines": 88,
       "percent": 85,
       "missing": [
         "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "096508fc-f7b2-599d-9674-0e7cafb011c0",
+      "title": "Never Go A Day",
+      "slug": "never-go-a-day",
+      "source": "text",
+      "key": null,
+      "artist": "Shawn Bigby",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 13,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1d560e84-1cc8-5352-aa1f-77b785636efe",
+      "title": "He is More",
+      "slug": "he-is-more",
+      "source": "text",
+      "key": null,
+      "artist": "Lori Green",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 21,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "289089b7-5193-5668-a363-4481f704befe",
+      "title": "My Help",
+      "slug": "my-help",
+      "source": "text",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "heaven",
+        "joy",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 12,
+      "percent": 40,
+      "missing": [
+        "artist",
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "2d94ecac-7757-56fe-9538-fcdbb3f27c6c",
+      "title": "Breakthrough",
+      "slug": "breakthrough",
+      "source": "text",
+      "key": null,
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "victory",
+        "prayer",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 27,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "2fcb47d7-5e03-56f1-a5ce-78c4b656cfbe",
+      "title": "Let’s Dance",
+      "slug": "let-s-dance",
+      "source": "text",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "healing",
+        "joy",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 24,
+      "percent": 40,
+      "missing": [
+        "artist",
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "3137824b-6321-5c48-881d-803a6315ef10",
+      "title": "Mighty",
+      "slug": "mighty",
+      "source": "text",
+      "key": null,
+      "artist": "Phase 2",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "blood",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 0,
+      "lines": 33,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "36855a3d-e5b3-5ec5-bb20-f44dce726ece",
+      "title": "We Worship You",
+      "slug": "we-worship-you",
+      "source": "text",
+      "key": "Bb",
+      "artist": "Bridgett Kern",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "worship",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 11,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5121fa9e-b0d7-5cfb-9f21-a768244d0484",
+      "title": "Jesus",
+      "slug": "jesus",
+      "source": "text",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "grace-mercy",
+        "easter",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 25,
+      "percent": 40,
+      "missing": [
+        "artist",
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "6401850d-ec4f-5e9f-91bb-873f8b1ef688",
+      "title": "Hallelujah He is Here",
+      "slug": "hallelujah-he-is-here",
+      "source": "text",
+      "key": null,
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "christmas",
+        "joy",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 15,
+      "percent": 40,
+      "missing": [
+        "artist",
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "64f4344b-404b-52b2-8336-591fe72b2a99",
+      "title": "Lord, You Reign",
+      "slug": "lord-you-reign",
+      "source": "text",
+      "key": "Ab",
+      "artist": "Bishop Leonard Scott",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 10,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "74c79ec1-c0d5-5a6b-86cf-943797b26e6c",
+      "title": "Isnt the Name",
+      "slug": "isnt-the-name",
+      "source": "text",
+      "key": null,
+      "artist": "Covenant Worship",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "salvation",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 16,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "75049d26-c323-5186-ab47-7d8b8c946918",
+      "title": "Complete Surrender",
+      "slug": "complete-surrender",
+      "source": "text",
+      "key": "Bb",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "faith-trust",
+        "altar",
+        "revival",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 22,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "896be5c4-73e4-5e6b-a4a3-e22c87e5c794",
+      "title": "God Is Here",
+      "slug": "god-is-here",
+      "source": "text",
+      "key": null,
+      "artist": "Keith Pace",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "faith-trust",
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 15,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8e8b4084-92d6-5e7b-a7f3-6a9e2145c66a",
+      "title": "One Name",
+      "slug": "one-name",
+      "source": "text",
+      "key": "C",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "name-of-jesus",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 10,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "941b07cf-3a67-5438-b53e-886bf1a15834",
+      "title": "Free Indeed",
+      "slug": "free-indeed",
+      "source": "text",
+      "key": "E",
+      "artist": "Timothy Reddick",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 6,
+      "percent": 75,
+      "missing": [
+        "tempo",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "98d26729-0684-54b3-8a59-0dab27af185d",
+      "title": "How Great",
+      "slug": "how-great",
+      "source": "text",
+      "key": "E",
+      "artist": "Covenant Worship",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 11,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9c9bf4ba-287a-5f8a-b559-116e10520dab",
+      "title": "Im Here to Worship",
+      "slug": "im-here-to-worship",
+      "source": "text",
+      "key": "G",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 10,
+      "lines": 9,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b25b33db-d245-53ae-aa74-b7a29ab4301e",
+      "title": "Not The Same",
+      "slug": "not-the-same",
+      "source": "text",
+      "key": "C",
+      "artist": "Jeff Walthall",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "cross",
+        "joy",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 31,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b5241dfd-f6b5-5b8e-a52b-cb2136b2414a",
+      "title": "Somebody Give Him Some Praise",
+      "slug": "somebody-give-him-some-praise",
+      "source": "text",
+      "key": "F",
+      "artist": "The Chandlers",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "blood",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 21,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d217fb51-fbe4-5b02-89ae-964fd4dccc61",
+      "title": "Noel, Christ is Born",
+      "slug": "noel-christ-is-born",
+      "source": "text",
+      "key": null,
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "christmas",
+        "joy",
+        "salvation",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 31,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f645a7f1-9293-5ddf-b61a-c385775d52fc",
+      "title": "A Place of Healing",
+      "slug": "a-place-of-healing",
+      "source": "text",
+      "key": "D",
+      "artist": "Jina McCool",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "grace-mercy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "high",
+      "mediaCount": 0,
+      "lines": 21,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fb1562ec-a677-5478-b94e-be48eb041b0c",
+      "title": "What a Beautiful Name",
+      "slug": "what-a-beautiful-name",
+      "source": "text",
+      "key": null,
+      "artist": "Hillsong Worship",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "heaven",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 28,
+      "percent": 70,
+      "missing": [
+        "key",
+        "tempo",
         "year"
       ],
       "hasEssentials": true

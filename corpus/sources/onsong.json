@@ -1,0 +1,33 @@
+{
+  "sourceType": "onsong",
+  "files": [
+    {
+      "path": "UPCI Song Parts TG/UPCI Music/2016/One God/One God/One God.onsong",
+      "size": 836,
+      "mtimeMs": 1719419398669,
+      "sha256": "de2ff5529e18f936db9dfdcdf57be60ac94173bbf84fa40a32ed17ce478c0d1e",
+      "type": "onsong",
+      "decision": "song",
+      "songId": "f774f571-acfd-56d0-8f40-62c0ce7b819f",
+      "confidence": 0.85,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    },
+    {
+      "path": "VPC Choir/Burdens Rolled Away/Burdens Rolled Away.onsong",
+      "size": 1484,
+      "mtimeMs": 1719419741327,
+      "sha256": "5a8852ecee7afc2fdc8684fb68167342fa920c055ceb9c8604b9afd133873e4c",
+      "type": "onsong",
+      "decision": "song",
+      "songId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
+      "confidence": 0.85,
+      "band": "high",
+      "warnings": [],
+      "firstSeen": "2026-09-12",
+      "missingSince": null
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "sourceType": "onsong",
+  "songs": [
+    {
+      "songId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
+      "title": "Burdens Rolled Away",
+      "file": "songs/onsong/burdens-rolled-away--8ef3dd2f.chopro",
+      "contentSha256": "2070bcdeb2825269c87b52f4f421abd250b5abdd57e62386464960b3a72a2c61",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "joy",
+        "salvation",
+        "healing"
+      ],
+      "sourceType": "onsong",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "VPC Choir/Burdens Rolled Away/Burdens Rolled Away.onsong",
+          "sha256": "5a8852ecee7afc2fdc8684fb68167342fa920c055ceb9c8604b9afd133873e4c"
+        }
+      ],
+      "confidence": {
+        "score": 0.85,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "f774f571-acfd-56d0-8f40-62c0ce7b819f",
+      "title": "One God",
+      "file": "songs/onsong/one-god--f774f571.chopro",
+      "contentSha256": "2f407c02bbf793c37dc2080296536bfb611894aa89d0cb3324cd6891a8c4ab66",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "faith-trust",
+        "salvation",
+        "name-of-jesus",
+        "praise"
+      ],
+      "sourceType": "onsong",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Song Parts TG/UPCI Music/2016/One God/One God/One God.onsong",
+          "sha256": "de2ff5529e18f936db9dfdcdf57be60ac94173bbf84fa40a32ed17ce478c0d1e"
+        }
+      ],
+      "confidence": {
+        "score": 0.85,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    }
+  ]
+}

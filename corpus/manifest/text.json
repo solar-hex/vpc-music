@@ -1,0 +1,756 @@
+{
+  "sourceType": "text",
+  "songs": [
+    {
+      "songId": "096508fc-f7b2-599d-9674-0e7cafb011c0",
+      "title": "Never Go A Day",
+      "file": "songs/text/never-go-a-day--096508fc.chopro",
+      "contentSha256": "a715a9bc2af47c9687dd6664c0178d9a595854203b6ef03e2195caa7a8276577",
+      "metadata": {
+        "key": null,
+        "artist": "Shawn Bigby",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "grace-mercy"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Never Go a Day/Never-Go-A-Day-Chord-Chart-TXT.txt",
+          "sha256": "bf3fa9836195a698cdd18bdb98e7146ed13903aae1cd686ea9b686c156f9d6a7"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "1d560e84-1cc8-5352-aa1f-77b785636efe",
+      "title": "He is More",
+      "file": "songs/text/he-is-more--1d560e84.chopro",
+      "contentSha256": "dbad75d5cdb784bacb74b3afa68343109397380b78b72ffb62e90b951057935e",
+      "metadata": {
+        "key": null,
+        "artist": "Lori Green",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "salvation"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/He is More/He-is-More-Chord-Charttxt.txt",
+          "sha256": "6176b54633dcdbd50ec16cebce54db78a8549896739fff3ef868689a3c5fad4d"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "289089b7-5193-5668-a363-4481f704befe",
+      "title": "My Help",
+      "file": "songs/text/my-help--289089b7.chopro",
+      "contentSha256": "7a397812034ca3786503ac9aa5d81e43b3fc3fcd3acf3d9d9034474825cf842d",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "healing",
+        "heaven",
+        "joy",
+        "salvation",
+        "worship"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/My Help/My-Help-Chord-Chart-TXT.txt",
+          "sha256": "c04532ed70c69d324459ecc2204903e80f35de479ad05a1517010d7036468cbb"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "2d94ecac-7757-56fe-9538-fcdbb3f27c6c",
+      "title": "Breakthrough",
+      "file": "songs/text/breakthrough--2d94ecac.chopro",
+      "contentSha256": "5552191de6929c1781225b097654263fa4b4df9d7dba27507c24778270140b19",
+      "metadata": {
+        "key": null,
+        "artist": "Eddie James",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "victory",
+        "prayer",
+        "salvation",
+        "worship"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Breakthrough/Breakthrough.txt",
+          "sha256": "c091d4ddf8b8bfc1f7f67ccbdf175abab7082c6d7bcc47a48dc802887ec6b23a"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "2fcb47d7-5e03-56f1-a5ce-78c4b656cfbe",
+      "title": "Let’s Dance",
+      "file": "songs/text/let-s-dance--2fcb47d7.chopro",
+      "contentSha256": "c5a0ad66f0e1b489d8bba9ed28018cef7127d14296024b86340be9f51fcc4415",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "healing",
+        "joy",
+        "holy-spirit"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Let's Dance/Let’s-Dance-Chord-Chart-TXT.txt",
+          "sha256": "61bc2597270568ac27db898ac44673aa85a3df7cf67575ad328ba4f0732526b2"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "3137824b-6321-5c48-881d-803a6315ef10",
+      "title": "Mighty",
+      "file": "songs/text/mighty--3137824b.chopro",
+      "contentSha256": "8a9f85e9b9995a6689b155d716848e54af0dee92096aa4647c301391cef2f279",
+      "metadata": {
+        "key": null,
+        "artist": "Phase 2",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "blood",
+        "worship"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/Mighty/Mighty       (OnSong Format)  copy.txt",
+          "sha256": "bb48777c65246a45445293ac24c19457a81be3cf76cf522e5950cc69b7298082"
+        }
+      ],
+      "confidence": {
+        "score": 0.2,
+        "band": "low",
+        "reasons": [
+          "no chords",
+          "no sections",
+          "no key"
+        ]
+      },
+      "warnings": [
+        "No chord lines found",
+        "No sections detected"
+      ],
+      "decision": "song"
+    },
+    {
+      "songId": "36855a3d-e5b3-5ec5-bb20-f44dce726ece",
+      "title": "We Worship You",
+      "file": "songs/text/we-worship-you--36855a3d.chopro",
+      "contentSha256": "ef1ed14c89223840699079a5626bbd126c7056e5eda87911cf37780c906a8fc4",
+      "metadata": {
+        "key": "Bb",
+        "artist": "Bridgett Kern",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "worship",
+        "heaven"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/We Worship You/We-Worship-You-Chord-Chart-TXT.txt",
+          "sha256": "a87df0c61cc4f97a39da8e506fb5b0737fee92049b04ebaa1187363ba1ed8aeb"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "5121fa9e-b0d7-5cfb-9f21-a768244d0484",
+      "title": "Jesus",
+      "file": "songs/text/jesus--5121fa9e.chopro",
+      "contentSha256": "f99257f85315aaa7090a81950d09313253e8517e89948c730a8643c78ed6579e",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "grace-mercy",
+        "easter",
+        "healing"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Jesus/Jesus-Chord-Chart-TXT.txt",
+          "sha256": "d7bc20d9f549eff50c1351df28b3ba579c93be317fe5dfdf1bcc63daa52e72e6"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "6401850d-ec4f-5e9f-91bb-873f8b1ef688",
+      "title": "Hallelujah He is Here",
+      "file": "songs/text/hallelujah-he-is-here--6401850d.chopro",
+      "contentSha256": "9b26c0b3d2c200988b345b0c6fa80ba6ee634aaaf782c7492afa18f9016f020c",
+      "metadata": {
+        "key": null,
+        "artist": null,
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "christmas",
+        "joy",
+        "name-of-jesus"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Hallelujah, He is Here/Hallelujah-He-is-Here-chord-charttxt.txt",
+          "sha256": "9f1a9da4a7f083ebb6be6818b90ab06d5fef994b72c3a9dcac482e2d57fdbc37"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "64f4344b-404b-52b2-8336-591fe72b2a99",
+      "title": "Lord, You Reign",
+      "file": "songs/text/lord-you-reign--64f4344b.chopro",
+      "contentSha256": "1bec8e510853c10d57e0279aa0ccfb5e97710f66688eb731276640f8495a8d67",
+      "metadata": {
+        "key": "Ab",
+        "artist": "Bishop Leonard Scott",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Lord You Reign/Lord-You-Reign.txt",
+          "sha256": "f361ea5838ab2eda0589ac0b790298da8812d4dab7b647f5cb529e0656206532"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "74c79ec1-c0d5-5a6b-86cf-943797b26e6c",
+      "title": "Isnt the Name",
+      "file": "songs/text/isnt-the-name--74c79ec1.chopro",
+      "contentSha256": "034deb234f00979c995e60e1ef5aa9fc035dd55d7e829c67041ec6d38a7e999b",
+      "metadata": {
+        "key": null,
+        "artist": "Covenant Worship",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "salvation",
+        "praise"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Isn't the Name/Isnt-the-Name-Chord-Chart-TXT.txt",
+          "sha256": "2f34290d2cd73d5d77cc670c138652aebd51b4ffdbc3fab9c41e02b688e12a9e"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "75049d26-c323-5186-ab47-7d8b8c946918",
+      "title": "Complete Surrender",
+      "file": "songs/text/complete-surrender--75049d26.chopro",
+      "contentSha256": "c7d19fd8397f116a5c4a87d1cfe88c3cf70f8a139415abf82675f57433fee382",
+      "metadata": {
+        "key": "Bb",
+        "artist": "Indiana Bible College (IBC)",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "faith-trust",
+        "altar",
+        "revival",
+        "victory"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Complete Surrender/Complete-Surrender-Chord-Chart-TXT.txt",
+          "sha256": "91fc48f660e0a64d5e22c47e6a2525b7bf2859be6c9f4b83ba89a4c9c3ae5a32"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "896be5c4-73e4-5e6b-a4a3-e22c87e5c794",
+      "title": "God Is Here",
+      "file": "songs/text/god-is-here--896be5c4.chopro",
+      "contentSha256": "21e01bb9a896597816671e6f7a0406edb6a8fcf0d7194709c0dad707e6a48cf2",
+      "metadata": {
+        "key": null,
+        "artist": "Keith Pace",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "faith-trust",
+        "heaven",
+        "praise"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/God is Here/God-Is-Here-Chord-Chart-TXT.txt",
+          "sha256": "a2ff2d699fd1c799b3cf10e0fa6a1d971f29178e552920dac34406d7b4fc664f"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "8e8b4084-92d6-5e7b-a7f3-6a9e2145c66a",
+      "title": "One Name",
+      "file": "songs/text/one-name--8e8b4084.chopro",
+      "contentSha256": "9d3b1377851e12d6fe4f52f56c29f03693518e932b7eb3d22893ae3b9f6dffdf",
+      "metadata": {
+        "key": "C",
+        "artist": "Anthony Trimble",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "name-of-jesus",
+        "salvation"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/One Name/One-Name-Chord-Chart-TXT.txt",
+          "sha256": "7d4daaeabd8fdded09c7510c30904e784eb3a6d6b93a214e4c25280f07e05553"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "941b07cf-3a67-5438-b53e-886bf1a15834",
+      "title": "Free Indeed",
+      "file": "songs/text/free-indeed--941b07cf.chopro",
+      "contentSha256": "7fe540218440a5d12625b95f023e5bc73a9bf46cca0647baa0b7d89b433c0325",
+      "metadata": {
+        "key": "E",
+        "artist": "Timothy Reddick",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/Free Indeed/Free Indeed - Chord Chart(txt).txt",
+          "sha256": "665784d866eb0b13dc8ceaa2d85c4adbfeedbd8c52f77a97c770a54b279c214a"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "98d26729-0684-54b3-8a59-0dab27af185d",
+      "title": "How Great",
+      "file": "songs/text/how-great--98d26729.chopro",
+      "contentSha256": "df53d7d61c16837aa32cf7d31a15f9b0528a8e6e2e6f212e9e1d006f64c4f356",
+      "metadata": {
+        "key": "E",
+        "artist": "Covenant Worship",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "heaven"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/How Great/How Great - Chord Chart(txt).txt",
+          "sha256": "2345646c357fe89ace1832d6da1ffba87468f7be13f058c01465881382e8f156"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "9c9bf4ba-287a-5f8a-b559-116e10520dab",
+      "title": "Im Here to Worship",
+      "file": "songs/text/im-here-to-worship--9c9bf4ba.chopro",
+      "contentSha256": "3f0ce07b4ba504396df9f900bcfccac315803cb7e0e26a4f24b2bd13b47a8071",
+      "metadata": {
+        "key": "G",
+        "artist": "Anthony Trimble",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "worship"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/I'm Here to Worship/Im Here to Worship - Chord  Chart(txt).txt",
+          "sha256": "b9b8b3ac73f3a6ef64798052d642662d1f8d3fd6cc57bf8397c72270daacb670"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "b25b33db-d245-53ae-aa74-b7a29ab4301e",
+      "title": "Not The Same",
+      "file": "songs/text/not-the-same--b25b33db.chopro",
+      "contentSha256": "3c95339bf92df1470a25dc7e00237630f84d80438e457771f4a92826f2834eab",
+      "metadata": {
+        "key": "C",
+        "artist": "Jeff Walthall",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "cross",
+        "joy",
+        "salvation"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Not the Same/Not-The-Same-Chord-Chart-TXT.txt",
+          "sha256": "5c65908ae63d52b72458a01e882a7e83f7203aff0b285c010e648e9cebba417b"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "b5241dfd-f6b5-5b8e-a52b-cb2136b2414a",
+      "title": "Somebody Give Him Some Praise",
+      "file": "songs/text/somebody-give-him-some-praise--b5241dfd.chopro",
+      "contentSha256": "d50fa22819e43a3696a4031cf36419194d2721c6e610a85c3c3c588de3044b3d",
+      "metadata": {
+        "key": "F",
+        "artist": "The Chandlers",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "praise",
+        "blood",
+        "joy"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Somebody Give Him Some Praise/Somebody-Give-Him-Some-Praise-Chord-Chart-TXT.txt",
+          "sha256": "55260aba4e132b1dee9f64703dae2674edea584e428b080b9574cbdbeeb6db70"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "d217fb51-fbe4-5b02-89ae-964fd4dccc61",
+      "title": "Noel, Christ is Born",
+      "file": "songs/text/noel-christ-is-born--d217fb51.chopro",
+      "contentSha256": "21629fffeaa24fe55a7f6d902d4398fa6bd9ed4d9c6540eca243dba9758458a6",
+      "metadata": {
+        "key": null,
+        "artist": "Mark Yandris",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "christmas",
+        "joy",
+        "salvation",
+        "heaven"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/Noel Christ is Born/Noel-Christ-is-Born-chord-charttxt.txt",
+          "sha256": "5bbebac8cfd562289e8fa1e7ae6e1e72e90b361ec730a64a04ba042f760766cc"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "f645a7f1-9293-5ddf-b61a-c385775d52fc",
+      "title": "A Place of Healing",
+      "file": "songs/text/a-place-of-healing--f645a7f1.chopro",
+      "contentSha256": "2e137a7856ef515343c2ec079395df0be9d858401035292f9f466c8a969c9716",
+      "metadata": {
+        "key": "D",
+        "artist": "Jina McCool",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "healing",
+        "grace-mercy",
+        "praise"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/2016/A Place of Healing/A-PLACE-FOR-HEALING-Chord-Chart-TXT-File.txt",
+          "sha256": "e548b3223681e3e4ce9650f36c25368eac1b8d0a80b82f1e37cbba04a7528c24"
+        }
+      ],
+      "confidence": {
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
+      },
+      "warnings": [],
+      "decision": "song"
+    },
+    {
+      "songId": "fb1562ec-a677-5478-b94e-be48eb041b0c",
+      "title": "What a Beautiful Name",
+      "file": "songs/text/what-a-beautiful-name--fb1562ec.chopro",
+      "contentSha256": "c0c515a11eb52405ae6c3d2f0be1bcb7dafb25102fdaae699aa919d18829dc93",
+      "metadata": {
+        "key": null,
+        "artist": "Hillsong Worship",
+        "year": null,
+        "tempo": null,
+        "isDraft": true
+      },
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "heaven",
+        "easter"
+      ],
+      "sourceType": "text",
+      "sources": [
+        {
+          "role": "primary",
+          "path": "UPCI Music/What a Beautiful Name/What a Beautiful Name (OnSong  Format) copy.txt",
+          "sha256": "61b6cfd93739b776f8cdca4093daaf46bb6ae01ab3981e7302297d947d4b19c7"
+        }
+      ],
+      "confidence": {
+        "score": 0.8,
+        "band": "medium",
+        "reasons": [
+          "no key"
+        ]
+      },
+      "warnings": [],
+      "decision": "song"
+    }
+  ]
+}

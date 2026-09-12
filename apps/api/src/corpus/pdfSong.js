@@ -61,27 +61,90 @@ export function classifyChartLine(text) {
 }
 
 /**
+ * Rebuild a line's text from its runs, honouring the gaps between them.
+ *
+ * pdf.js splits a line into glyph runs wherever the font or kerning changes,
+ * so a chord arrives as several pieces. Joining them with a space unconditionally
+ * turns "Bm7" into "Bm 7" and "A/C#" into "A/C #", which stops them reading as
+ * chords at all — that single mistake cost most of the chords on every chart.
+ *
+ * @returns {{ text: string, xs: number[] }} xs[i] is the x of text[i]
+ */
+/**
+ * Join runs that sit adjacent on the page into one token.
+ *
+ * A chord is frequently three runs — "Bm", "7" — and each must become one
+ * token or the merge emits `[Bm][7]` instead of `[Bm7]`.
+ */
+export function coalesceRuns(elements) {
+  // pdf.js splits in both directions: a chord can arrive as several runs
+  // ("Bm" + "7"), and a whole chord line can arrive as ONE run with the
+  // spacing inside it ("D        A/C#   Bm7"). Split first, then join, or the
+  // second case becomes a single nonsense token.
+  const pieces = [];
+  for (const el of [...(elements || [])].sort((a, b) => a.x - b.x)) {
+    const per = el.width / Math.max(el.text.length, 1);
+    for (const m of String(el.text).matchAll(/\S+/g)) {
+      pieces.push({
+        ...el,
+        text: m[0],
+        x: el.x + m.index * per,
+        width: m[0].length * per,
+      });
+    }
+  }
+
+  const runs = pieces;
+  const out = [];
+  for (const el of runs) {
+    const last = out[out.length - 1];
+    const gap = last ? el.x - (last.x + last.width) : Infinity;
+    const threshold = Math.max(el.fontSize, last?.fontSize ?? 0, 1) * 0.25;
+    if (last && gap <= threshold) {
+      last.text += el.text;
+      last.width = el.x + el.width - last.x;
+    } else {
+      out.push({ ...el, text: el.text });
+    }
+  }
+  return out;
+}
+
+export function renderLine(elements) {
+  let text = "";
+  const xs = [];
+  const runs = [...(elements || [])].sort((a, b) => a.x - b.x);
+  for (let i = 0; i < runs.length; i += 1) {
+    const el = runs[i];
+    if (i > 0) {
+      const prev = runs[i - 1];
+      const gap = el.x - (prev.x + prev.width);
+      // Anything under a quarter of the type size is kerning, not a space.
+      const threshold = Math.max(el.fontSize, prev.fontSize, 1) * 0.25;
+      if (gap > threshold) {
+        // Wide gaps are real layout: keep enough of them to preserve columns.
+        const spaces = Math.max(1, Math.round(gap / Math.max(el.fontSize * 0.5, 1)));
+        for (let s = 0; s < spaces; s += 1) { text += " "; xs.push(prev.x + prev.width); }
+      }
+    }
+    const per = el.width / Math.max(el.text.length, 1);
+    for (let c = 0; c < el.text.length; c += 1) { text += el.text[c]; xs.push(el.x + c * per); }
+  }
+  return { text, xs };
+}
+
+/**
  * Put each chord at the lyric character nearest its x position — the same rule
  * the `.chrd` converter uses, because alignment is meaning.
  */
 export function mergeByPosition(chordLine, lyricLine) {
-  const lyricElements = lyricLine.elements || [];
-  const text = lyricElements.map((e) => e.text).join(" ");
+  const rendered = renderLine(lyricLine.elements || []);
+  const text = rendered.text;
   if (!text.trim()) return null;
 
-  // Character index -> x, walking the lyric's own elements.
-  const positions = [];
-  let idx = 0;
-  for (let i = 0; i < lyricElements.length; i += 1) {
-    const el = lyricElements[i];
-    const per = el.width / Math.max(el.text.length, 1);
-    for (let c = 0; c < el.text.length; c += 1) positions.push({ idx: idx++, x: el.x + c * per });
-    if (i < lyricElements.length - 1) positions.push({ idx: idx++, x: el.x + el.width });
-  }
+  const positions = rendered.xs.map((x, idx) => ({ idx, x }));
 
-  const chords = (chordLine.elements || [])
-    .filter((e) => e.text.trim())
-    .sort((a, b) => a.x - b.x);
+  const chords = coalesceRuns(chordLine.elements || []).filter((e) => e.text.trim());
 
   let out = text;
   let shift = 0;
@@ -157,7 +220,7 @@ export async function convertPdfChartToChordPro(filename, buffer) {
   const kept = [];
   let dropped = 0;
   for (const line of assembled) {
-    const text = line.elements.map((e) => e.text).join(" ").replace(/\s+/g, " ").trim();
+    const text = renderLine(line.elements).text.replace(/\s+/g, " ").trim();
     if (!text) continue;
     if (CHROME.test(text) || CREDIT.test(text)) { dropped += 1; continue; }
     if (titleLower && text.toLowerCase() === titleLower) { dropped += 1; continue; }
@@ -189,7 +252,7 @@ export async function convertPdfChartToChordPro(filename, buffer) {
         const merged = mergeByPosition(line, next);
         if (merged) { body.push(merged); i += 1; continue; }
       }
-      body.push(line.text.split(/\s+/).map((t) => `[${t}]`).join(" "));
+      body.push(coalesceRuns(line.elements).map((t) => `[${t.text}]`).join(" "));
       continue;
     }
 
