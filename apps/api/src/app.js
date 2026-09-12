@@ -32,8 +32,17 @@ import { statsRoutes } from "./features/stats/routes.js";
 const app = express();
 
 // ── Middleware ────────────────────────────────────
+// CORS_ORIGIN takes a comma-separated list, because the site answers on both
+// the bare domain and www and a browser sends whichever one it is on. Keep
+// FRONTEND_URL a single canonical address: it builds invite and reset links
+// and is the target origin for the Google sign-in popup.
+const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:5176")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:5176",
+  origin: allowedOrigins,
   credentials: true,
 }));
 app.use(express.json({ limit: "5mb" }));

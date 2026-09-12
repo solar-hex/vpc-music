@@ -57,9 +57,9 @@ services:
       - key: JWT_EXPIRES_IN
         value: "180d"
       - key: CORS_ORIGIN
-        value: https://app.vpcmusic.life
+        value: https://vpcmusic.life
       - key: FRONTEND_URL
-        value: https://app.vpcmusic.life
+        value: https://vpcmusic.life
       - key: PDF_CO_API_KEY
         type: SECRET
         value: REPLACE_ME
