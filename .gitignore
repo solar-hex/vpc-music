@@ -63,3 +63,6 @@ apps/api/import-reports/
 
 # local design-review database (see apps/api/.env.docker)
 apps/api/.env.docker
+
+# uploaded files are runtime data, not source
+apps/api/uploads/
