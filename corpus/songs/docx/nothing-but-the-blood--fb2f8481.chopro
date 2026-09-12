@@ -1,5 +1,22 @@
 {title: Nothing but the blood}
 {subtitle: Hymnal 245}
+{x_theme: blood}
+{x_source: docx:1. Incomplete/Nothing but the blood.docx}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FNothing%20But%20the%20Blood}
+{x_audio_bass: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/bass.wav}
+{x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/loop.wav}
+{x_audio_stem_drums: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-drums.wav}
+{x_audio_stem_guitars: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-guitars.wav}
+{x_audio_stem_keyboard: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-keyboard.wav}
+{x_audio_stem_lead_vocal: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-lead-vocal.wav}
+{x_audio_stem_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-vocals.wav}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/audio/full-mix.mp3}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/number-chart.pdf}
+{x_chart_other: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/other.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-but-the-blood/charts/vocals.pdf}
 
 {comment: Chorus}
 Oh, precious is that flow That makes me white as snow

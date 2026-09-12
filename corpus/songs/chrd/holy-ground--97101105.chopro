@@ -1,5 +1,19 @@
 {title: Holy Ground}
 {key: D}
+{tempo: 144}
+{x_tempo_source: derived from media filename}
+{x_theme: joy, praise, salvation}
+{x_source: chrd:holy_ground.chrd}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FHoly%20Ground}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/audio/alto.m4a}
+{x_audio_loop_144bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/audio/loop-144bpm.mp3}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/audio/soprano.m4a}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/audio/tenor.m4a}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/number-chart.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/vocals.pdf}
 
 {comment: Verse 1}
 As I [D]walked through the door, I sensed His [A]presence

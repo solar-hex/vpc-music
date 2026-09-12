@@ -1,5 +1,7 @@
 {title: Shake This House}
 {key: F}
+{x_theme: healing, revival}
+{x_source: chrd:shake_this_house.chrd}
 
 {comment: Chorus}
 [F7]Shake this house, shake this house,

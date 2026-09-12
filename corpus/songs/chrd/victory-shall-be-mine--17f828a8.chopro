@@ -1,5 +1,7 @@
 {title: Victory Shall Be Mine}
 {key: G}
+{x_theme: victory}
+{x_source: chrd:victory_shall_be_mine.chrd}
 
 {comment: Verse 1}
 [G]Victory, victory shall be [G]mine,

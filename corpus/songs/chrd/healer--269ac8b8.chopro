@@ -1,5 +1,7 @@
 {title: Healer}
 {key: Gb}
+{x_theme: faith-trust, healing}
+{x_source: chrd:healer.chrd}
 
 {comment: Verse}
 You [Gb]hold my every moment

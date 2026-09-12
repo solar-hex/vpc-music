@@ -1,5 +1,7 @@
 {title: Holy Of Holies}
 {key: D}
+{x_theme: worship}
+{x_source: chrd:holy_of_holies.chrd}
 
 {comment: Chorus}
 [Asus4]Now I can [D]go   [Bm]into  [D/A]the     [D/G]Holy of [Em7]Holies

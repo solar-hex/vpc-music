@@ -21,6 +21,9 @@ import { convertChrdToChordPro } from "../shared/index.js";
 import { extractDocxParagraphs } from "../apps/api/src/corpus/docxText.js";
 import { convertLyricSheetToChordPro } from "../apps/api/src/corpus/lyricSheet.js";
 import { detectThemes } from "../apps/api/src/corpus/themes.js";
+import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
+import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
+import { loadMediaIndex, DROPBOX_ROOTS } from "../apps/api/src/corpus/mediaIndex.js";
 import {
   corpusFileName,
   deterministicSongId,
@@ -221,6 +224,10 @@ export async function buildCorpus({
 
   const excludePatterns = exclude.map(globToRegExp);
   const files = await findSourceFiles(inputDir, spec.pattern);
+
+  // Media links live in the chart file itself, so load whatever the media
+  // ledgers know. Absent ledgers simply mean no links yet.
+  const mediaIndex = await loadMediaIndex(corpusRoot);
   const stamp = todayStamp(now);
 
   const manifestEntries = [];
@@ -249,8 +256,22 @@ export async function buildCorpus({
       if (identity.status === "moved") moved.push({ from: identity.from, to: relativePath });
 
       const confidence = conversion.confidence;
-      // Match migrate:chrd byte-for-byte so the corpus can be diffed against it.
-      const content = `${conversion.chordProContent.trim()}\n`;
+      const baseContent = `${conversion.chordProContent.trim()}\n`;
+      const themes = detectThemes(baseContent).map((t) => t.id);
+
+      // The chart file is the complete record: artist, tempo, themes, where it
+      // came from, and one link per media file all travel with the chart.
+      const linked = mediaIndex.forTitle(conversion.metadata.title);
+      const content = enrichChordPro({
+        content: baseContent,
+        metadata: conversion.metadata,
+        themes,
+        media: linked.media,
+        derivedTempo: linked.tempo,
+        sourceType: source,
+        sourcePath: relativePath,
+        dropboxUrl: linked.dropboxUrl,
+      });
       const file = normalizeRelativePath(
         join("songs", source, corpusFileName(conversion.metadata.title, identity.songId)),
       );
@@ -271,7 +292,7 @@ export async function buildCorpus({
         // Derived from the lyrics, deterministically, so the corpus carries the
         // labels a musician actually searches by. The loader writes these into
         // songs.tags additively; a human rejection (!theme:x) always wins.
-        themes: detectThemes(content).map((t) => t.id),
+        themes,
         sourceType: source,
         sources: [{ role: "primary", path: relativePath, sha256: contentHash }],
         confidence,
@@ -331,6 +352,17 @@ export async function buildCorpus({
 
   const manifest = { sourceType: source, songs: manifestEntries };
   const ledger = { sourceType: source, files: ledgerEntries };
+
+  // Per-file failure is tolerated on purpose — one bad source must never block
+  // the whole library. Total failure is different: it means the converter is
+  // broken, and writing an empty manifest over a good one would destroy the
+  // index. Refuse, and say so.
+  if (files.length > 0 && manifestEntries.length === 0) {
+    throw new Error(
+      `Every one of the ${files.length} file(s) failed to convert; refusing to write an empty corpus.\n` +
+        `First error: ${failures[0]?.error ?? "unknown"}`,
+    );
+  }
 
   if (!dryRun) {
     await mkdir(songsDir, { recursive: true });

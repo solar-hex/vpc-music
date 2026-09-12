@@ -1,4 +1,21 @@
 {title: Welcome into this place}
+{tempo: 128}
+{x_tempo_source: derived from media filename}
+{x_theme: praise}
+{x_source: docx:1. Incomplete/Welcome into this place.docx}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FThis%20Place}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/charts/number-chart.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/charts/vocals.pdf}
+{x_source_this_place_loop_78_bpm_mp3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/source/This-Place-Loop-78-BPM.mp3.zip}
+{x_source_this_place_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/source/This-Place-Vocal-Parts.zip}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/audio/alto.m4a}
+{x_audio_loop_128bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/audio/loop-128bpm.mp3}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/audio/soprano.m4a}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/audio/tenor.mp3}
+{x_chart_other: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/charts/other.pdf}
 
 {comment: Chorus}
 Welcome into this place

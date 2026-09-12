@@ -5,7 +5,7 @@
       "songId": "0008df55-24c8-5210-b81d-6ff5406600a5",
       "title": "The Way That I Take",
       "file": "songs/chrd/the-way-that-i-take--0008df55.chopro",
-      "contentSha256": "be11f2ece4036dfc0a2339623d76266f60354857f809e274f71262252c08c36d",
+      "contentSha256": "4ef2a729aca09e29b18909aeae65f8d2d16e23aec5b70f467100a2928e0a8c2e",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -34,7 +34,7 @@
       "songId": "00e2bec0-7cb6-58f3-abbb-c9187cb4ab5a",
       "title": "Lift Your Praises To The Lord",
       "file": "songs/chrd/lift-your-praises-to-the-lord--00e2bec0.chopro",
-      "contentSha256": "e7708b74a2bf01a0770c23a4f0d8afcd502e9007c1cfbaf8929b259b63ad0ec8",
+      "contentSha256": "aeda163810affbd098a13e6aefde0c51b45789aab6d6a62c02f521d3c5a780d9",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -65,7 +65,7 @@
       "songId": "010021ea-9cd1-5809-93ab-f7d9ede7b544",
       "title": "I Will Bless Thee O Lord",
       "file": "songs/chrd/i-will-bless-thee-o-lord--010021ea.chopro",
-      "contentSha256": "ab126cf00a9c37f50ea02fef1f73bd351342446470e8dbc443376369ad9f482c",
+      "contentSha256": "0693701baeeade5fdd632b0f00709e8c06e3f5b01dca89046656de426b0fbef3",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -96,7 +96,7 @@
       "songId": "01df53f8-4a84-5688-9e41-c6c661273fce",
       "title": "God Has Been So Good",
       "file": "songs/chrd/god-has-been-so-good--01df53f8.chopro",
-      "contentSha256": "a0ab39cb5efa4fb56cdad190b3ffadd1021a341437b8858f66b7fd02615e0a83",
+      "contentSha256": "18f39fffaf877eaf753551aaa94a37873a7b6eeeb0e814430956f20eb6e74d7a",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -128,7 +128,7 @@
       "songId": "02fe509d-dd6b-5c55-9df7-47bea76de513",
       "title": "Bind Us Together",
       "file": "songs/chrd/bind-us-together--02fe509d.chopro",
-      "contentSha256": "58435bfce92f2f02111dae8f67e6d81e6e016d0e745e4a3f7f11beaed3fefe82",
+      "contentSha256": "4a002e5bc9a0e18dc1a22d67d3752d05de1ebf564e60c7e502c10e051947089b",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -160,7 +160,7 @@
       "songId": "0341899f-c222-573f-802a-bc2dcc783319",
       "title": "I Feel Jesus",
       "file": "songs/chrd/i-feel-jesus--0341899f.chopro",
-      "contentSha256": "ba94404f07318511fa1dad4b8f8b7e641564a863ea39684247438a5688a380a1",
+      "contentSha256": "709d4be6044db6f92715b738f251ed4cdef35be13d7363b704950e8fc88703f2",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -189,7 +189,7 @@
       "songId": "0421b2a6-c083-5bd6-9e30-f51b66dbfd46",
       "title": "Power In The Blood",
       "file": "songs/chrd/power-in-the-blood--0421b2a6.chopro",
-      "contentSha256": "6a75c50ef2a1f9c0e7f73ad091c74c1a7dddfd202212f75e7f7791849a96b530",
+      "contentSha256": "06cd9c3a6108e175597108b17ed9c51b188d39e764f4a2b4bc2d63c64574e8d4",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -223,7 +223,7 @@
       "songId": "06e29013-b6df-589b-9f58-1659766fb42a",
       "title": "Im Going Through",
       "file": "songs/chrd/im-going-through--06e29013.chopro",
-      "contentSha256": "5c2b79d76412a9b2cf0fe5763bbb47862e057c51a84a92a3e84dba47a4116875",
+      "contentSha256": "e7a17735d5a1d2248ad1c1521c472142dbb4d63a5974fe0b1a0b1777d1d8873f",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -255,7 +255,7 @@
       "songId": "0716265e-7375-51e3-b92f-46cef802fbe5",
       "title": "You Are",
       "file": "songs/chrd/you-are--0716265e.chopro",
-      "contentSha256": "67f04895ef2930e7a96841c45f4c16091528185bf365c75fc3033cabce94d6a8",
+      "contentSha256": "620e9b9bcdee371fac52391939a50dc22c87d749aa0081211c4d64c8b0c9e83f",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -284,7 +284,7 @@
       "songId": "080496f4-319d-5e79-a25b-0f300754146e",
       "title": "Weve Got The Power",
       "file": "songs/chrd/weve-got-the-power--080496f4.chopro",
-      "contentSha256": "50f8dca908f4063f2f9e20ef11c5c66e5444c9cef029a77e3093e713241eb08f",
+      "contentSha256": "0482d838cda1df690487b13a94a8e951d872509a0bbb4a60f6375b36410bd428",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -317,7 +317,7 @@
       "songId": "08d7fc23-5f4b-551e-a359-9e881dcbf6b8",
       "title": "Its All In Him",
       "file": "songs/chrd/its-all-in-him--08d7fc23.chopro",
-      "contentSha256": "767ca844994a3b3d1af8ad339166a65270b7b8d378357adc16134ccf9e1165f0",
+      "contentSha256": "7f62acb81aae18b5a30fc82b875c5c26d0944ce9f8235c35042feb6d6e96eaf5",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -348,7 +348,7 @@
       "songId": "08e51c6c-3c09-5d54-9b2c-2a4b535f9cc9",
       "title": "Praise Him Praise Him",
       "file": "songs/chrd/praise-him-praise-him--08e51c6c.chopro",
-      "contentSha256": "6a1039eb2b813bd061ad0700e36d65b4c57f3c6b5bbfc487083d5605fddd7064",
+      "contentSha256": "fc70937e4726c9293f9a4bafb6fd16b9198a2d614032233fd2de7716890748d1",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -379,7 +379,7 @@
       "songId": "09ba7024-8fe9-5274-b52c-cc71f587e9a4",
       "title": "Weve Come To Praise Him",
       "file": "songs/chrd/weve-come-to-praise-him--09ba7024.chopro",
-      "contentSha256": "31d8f2dad7878b1c206650e9645b0eed680616aa62807f45aace116fc3aa8587",
+      "contentSha256": "365d5b9d34cd74262a35b5daf916b3a8b3a0637dca4c1d47a0f88c193c6cc461",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -411,7 +411,7 @@
       "songId": "0a95c034-88c7-5100-901c-0f1f51e93517",
       "title": "I Came To Worship",
       "file": "songs/chrd/i-came-to-worship--0a95c034.chopro",
-      "contentSha256": "ab7c8e17e2f5bc062c9186b549143a982d07c35f505a21ad3460b4e2e076a920",
+      "contentSha256": "77f41ad14e0f640bc26ca3f20dfb57a4d13907a6b8abefd691542fca7555262f",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -444,7 +444,7 @@
       "songId": "0aa9c2eb-77fc-56a1-8f04-d29b5799159b",
       "title": "Can't Nobody Do Me Like Jesus",
       "file": "songs/chrd/can-t-nobody-do-me-like-jesus--0aa9c2eb.chopro",
-      "contentSha256": "15c0ce0ff2aa95eff7665aa0b0459a5efada747de30520b6f99c74599f62ba36",
+      "contentSha256": "c7065c3e12ae141a7a48db283b2e578bdb0c188c6ff102c579db937090e0d43e",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -477,7 +477,7 @@
       "songId": "0b684673-6496-541c-8013-b007692f25da",
       "title": "Jesus I Love You",
       "file": "songs/chrd/jesus-i-love-you--0b684673.chopro",
-      "contentSha256": "e679a2da6440392dce98a70b75258b77af654df66a36c260fa1f4675e23cfcd4",
+      "contentSha256": "5aeeea974a692b929eed1549c33c9b4aed064a8508630410d57bf7d833cd631c",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -511,7 +511,7 @@
       "songId": "0b710c06-558d-5a38-8a56-0525311fe91f",
       "title": "Hold To Gods Unchanging Hand",
       "file": "songs/chrd/hold-to-gods-unchanging-hand--0b710c06.chopro",
-      "contentSha256": "8baa95a0049db8a2d3fd6f2f3fdd83971da7b75b89f08e5815b8014121afdfb8",
+      "contentSha256": "b204c6279bd2ed70263a060da9b6bf540ffc7ddd1accf718a44612144a5a7197",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -542,7 +542,7 @@
       "songId": "0c071864-83a1-5a64-9a65-23e2f0deed89",
       "title": "Enemys Camp",
       "file": "songs/chrd/enemys-camp--0c071864.chopro",
-      "contentSha256": "ec8aff8c11e86409cb165e9ffd67f9b49c651143b8b2525a388156b3405b7d82",
+      "contentSha256": "76830a9b59ba3817f46e3eb4fd1f2df193523953c9c32425ae85d676882472de",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -571,7 +571,7 @@
       "songId": "0d0ddeb9-a4b5-54d6-a414-e95f538563ce",
       "title": "A Mother Like You",
       "file": "songs/chrd/a-mother-like-you--0d0ddeb9.chopro",
-      "contentSha256": "0d629a33f88fa71497e615b45ad376ac66d2e1480e33304b44ed3168fb4fd92f",
+      "contentSha256": "043fdba0fc602b1823de4c776817a85cf6931e8ef6ea9f06e329f1c3e44a5071",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -603,7 +603,7 @@
       "songId": "0d692f8a-3514-5e22-87e1-56d34d457bd7",
       "title": "Great Is Thy Faithfulness",
       "file": "songs/chrd/great-is-thy-faithfulness--0d692f8a.chopro",
-      "contentSha256": "c3ff2600b6aa66bcf742bb742177b195f1fbbd333c054f9c713bd821f2878af8",
+      "contentSha256": "a82624606e5d671f3821c539ce2fa2e70884985bc91cc608531014b15e6dbb41",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -635,7 +635,7 @@
       "songId": "0dca8efb-b885-576f-acd8-07b421428ba9",
       "title": "Why Should I Be Bound",
       "file": "songs/chrd/why-should-i-be-bound--0dca8efb.chopro",
-      "contentSha256": "ac2825680d1a740f13d510b8a05d857e651b9d8fd7316dc56778351db43ce66d",
+      "contentSha256": "192e326c83a2facd42683349ea0f616760b0cdb7f7b4c7ff383a763bb6b609cf",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -667,7 +667,7 @@
       "songId": "0e26615a-a982-5833-ac6d-f946478a2f72",
       "title": "Old Time Religion",
       "file": "songs/chrd/old-time-religion--0e26615a.chopro",
-      "contentSha256": "97a6c49b41a573447b03cfb340d72ed357712b61441df279edd6c807bf94ed21",
+      "contentSha256": "686fdde9e67a5749f1f4a61824103c343d9f631dafbe991deec09a3de39d20ab",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -698,7 +698,7 @@
       "songId": "0f1ea368-7899-57be-9be3-515e7b813501",
       "title": "Glory, Honor, Power",
       "file": "songs/chrd/glory-honor-power--0f1ea368.chopro",
-      "contentSha256": "02fd9addcf882dd7491ebeb8a81a2a6436645e18da72d8ac8f6d4b7d596c167f",
+      "contentSha256": "cf0bf89f08449c57bd2d43ddb0cb3807d51d81b903bf382edb355b693920ba3b",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -731,7 +731,7 @@
       "songId": "0f3ffa0f-e349-5d97-89f1-8e9cbd9dc06e",
       "title": "I Feel Like Traveling On",
       "file": "songs/chrd/i-feel-like-traveling-on--0f3ffa0f.chopro",
-      "contentSha256": "138441a8d987927190d797e9a9ad5efb0807967d05b3402806a4e5f8eb51b193",
+      "contentSha256": "31ede009e9f3d85aa844c298025dfd5dee4227c8f901bf25a927ed412e1ad021",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -762,7 +762,7 @@
       "songId": "0f45741a-4185-5ea1-a3de-56e0ff8de142",
       "title": "Because Of Who You Are",
       "file": "songs/chrd/because-of-who-you-are--0f45741a.chopro",
-      "contentSha256": "8cfe0ecf8f42aaa9a54c5967e9d140bc1d4f6bee203dacc5dce8ee76dfe30c2c",
+      "contentSha256": "6b845a66f51dedf0c551602c87b1701a12d57f6aec846da6ee511d765f9f4379",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -795,7 +795,7 @@
       "songId": "0f652f8e-8fa1-568a-b8d8-f2811f25e45c",
       "title": "There's Deliverance In His Name",
       "file": "songs/chrd/there-s-deliverance-in-his-name--0f652f8e.chopro",
-      "contentSha256": "17470944c3f37610d93ebb4484c29a1d25506f64c1504b308f6caf803d48035d",
+      "contentSha256": "1ce7dd0e3fc060c9ce1071eab43af9ed1baae19167be32546d376ae87d266fde",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -832,7 +832,7 @@
       "songId": "0fe077c7-811c-509e-971f-2d340f0477d4",
       "title": "I Know What Prayer Can Do",
       "file": "songs/chrd/i-know-what-prayer-can-do--0fe077c7.chopro",
-      "contentSha256": "901007d59a471565d691f2c5a220810aa85de8b7d5482ebaf662d0216e1d55e5",
+      "contentSha256": "1c3d50faffd8c0dfdfcfdd9044b276745a17935e8679b0ed00822dea5685ab26",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -864,7 +864,7 @@
       "songId": "10154161-5b70-53d5-809a-ce42ee9cae4b",
       "title": "I Speak Jesus",
       "file": "songs/chrd/i-speak-jesus--10154161.chopro",
-      "contentSha256": "69148b208c7d4ed1ea3357ef6de4d77dc86a61c9c1faa7db730962bc01c7bdd6",
+      "contentSha256": "fb38cb94404c2298d60fe150308fd871a22184c2f087364149da6c65629fe2ef",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -897,7 +897,7 @@
       "songId": "107eea25-8904-5529-a8a5-6a4eb0607ddc",
       "title": "He Set Me Free",
       "file": "songs/chrd/he-set-me-free--107eea25.chopro",
-      "contentSha256": "d4237595ad8b82d6aaf543f8c64e8a43441aef8cb4f32d8d69a314e3bda0d570",
+      "contentSha256": "1b083bd0ab7da8ddaf42feaeeed5faf060ad3c36d89a3efcd9fff0565a8822f8",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -926,7 +926,7 @@
       "songId": "10a3bca2-4d2f-5998-ae04-69f5791902cf",
       "title": "His Name Is Wonderful",
       "file": "songs/chrd/his-name-is-wonderful--10a3bca2.chopro",
-      "contentSha256": "444f80fb35b019ed5bfbad3aa2edfe0abd701a1201c27878345b053a5cd412ce",
+      "contentSha256": "fccf7f8b411d900807535f83cf0a584727835c3e42bfa9c05e867d2a4b577cb4",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -957,7 +957,7 @@
       "songId": "12a3b46e-dc51-50ed-9108-ae97adfcd071",
       "title": "In The Sanctuary",
       "file": "songs/chrd/in-the-sanctuary--12a3b46e.chopro",
-      "contentSha256": "6a006cdfaa7acf3c89b014c6a39a59752e017e0b5a89c7908ff9d0e53bb265c7",
+      "contentSha256": "1b813e4cb15ccecc88ce10c45da8f81b4c1189c778362f6799a471bf70d87543",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -989,7 +989,7 @@
       "songId": "12b615ad-55be-5a52-8b5a-d9adca40c36c",
       "title": "Our God",
       "file": "songs/chrd/our-god--12b615ad.chopro",
-      "contentSha256": "a9656691b72cd75c171ae62a0722dbf83a4136d996eef4067f3e0a7645a272fc",
+      "contentSha256": "d50525f93aca7dd876a2a86282ff76449f1d70c066af86785656301a9c1cda3e",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -1020,7 +1020,7 @@
       "songId": "12d8a12a-f9af-5b52-9131-b8c4ea6a1540",
       "title": "At The Cross",
       "file": "songs/chrd/at-the-cross--12d8a12a.chopro",
-      "contentSha256": "81a08e4cbc1e3b120d1372066ae487e8ed07ee1109a144ff2f86add776e7b162",
+      "contentSha256": "75eafd634f320da815002d51f4e8880f75a105be89c6daeb0a514c2ab82241b2",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1053,7 +1053,7 @@
       "songId": "12ff5393-d917-5069-9877-79099fcd6e1c",
       "title": "I Want To Live The Way He Wants Me To Live",
       "file": "songs/chrd/i-want-to-live-the-way-he-wants-me-to-live--12ff5393.chopro",
-      "contentSha256": "eb1219427bc834bd425d6ebd386b4a8fe6b4e69e1f5968c15d19188072c269ea",
+      "contentSha256": "1a72e45261153512316b37631e44eb6ada390d739401df0e164978a78384a7dc",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -1084,7 +1084,7 @@
       "songId": "153078dc-5381-5c54-b98a-99458d29b9de",
       "title": "I Sing Praises To Your Name",
       "file": "songs/chrd/i-sing-praises-to-your-name--153078dc.chopro",
-      "contentSha256": "b696f05237c673550f981613405e47b28abcaa28ab4bc90e9d24414b9e5f963c",
+      "contentSha256": "a097956fef338b719b3586712f7e1c9efd2453b57fb32ba51911c911f7c2ef9f",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1115,7 +1115,7 @@
       "songId": "17f828a8-689f-5e91-b346-395f14d64dc2",
       "title": "Victory Shall Be Mine",
       "file": "songs/chrd/victory-shall-be-mine--17f828a8.chopro",
-      "contentSha256": "6a2ff1d30c42c4137e885e5debf573fd89fe56758a52d4ba051cbdcf73e852a8",
+      "contentSha256": "daabb2e5d862ebb9a3a0e2c3985ed52ec7bbc858f8456993b114ef3430ce68f5",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1146,7 +1146,7 @@
       "songId": "1862c2ca-ea31-591e-a662-998b7d277fd0",
       "title": "I Just Want To Thank You Lord",
       "file": "songs/chrd/i-just-want-to-thank-you-lord--1862c2ca.chopro",
-      "contentSha256": "9a78bb269d422001b52ead7b45698878425c92dba5d99dab9e8f7c354acad625",
+      "contentSha256": "2404aad167144bcff93cf3316a6a6b30a5c810e31a454182c8f628a709cb601f",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -1177,7 +1177,7 @@
       "songId": "187c1777-99e6-5d20-8ef0-01a024d69c76",
       "title": "Use Me",
       "file": "songs/chrd/use-me--187c1777.chopro",
-      "contentSha256": "41d090f4cc77f50c06d0749e274a0540cd8848aa13b26e7a575b71850d2be25e",
+      "contentSha256": "abe8f8f215e6084126820d272eceaf1cf79ea172f28ac40c4aa9a30a9f908fa9",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -1208,7 +1208,7 @@
       "songId": "189b3737-29c5-511c-ad3a-2bd100be8f7e",
       "title": "Let It Rain",
       "file": "songs/chrd/let-it-rain--189b3737.chopro",
-      "contentSha256": "4c3786520f12c781ebb79f3cc92fd5111483b9a5e1de0e35c29e78a9ba6c6dec",
+      "contentSha256": "368a7d38837d382f029266a53ef3731f941fa78a2fd2140c40312498fc33cd9a",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -1241,7 +1241,7 @@
       "songId": "18aec97e-da94-57d5-b055-5ec9aa2e0083",
       "title": "I Came To Praise The Lord",
       "file": "songs/chrd/i-came-to-praise-the-lord--18aec97e.chopro",
-      "contentSha256": "3286848eb08e86de0fd20f87138d3d90fc499e4f51ea424b6885ed87a038d1ae",
+      "contentSha256": "edd29826b7c0285b6ab12298b63271945f04f07b944aef5737b1896a3a027704",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1272,7 +1272,7 @@
       "songId": "1927e21a-1af8-550a-8034-5adda30bf845",
       "title": "Wait On The Lord",
       "file": "songs/chrd/wait-on-the-lord--1927e21a.chopro",
-      "contentSha256": "d9f94f93048a81dae537ef1ee247fbf98d6f0b488059fe1f5a4abd6554f56187",
+      "contentSha256": "0a414e5b037900c5fcea44ef7e9ba77bcd77199bd77c7c03c66c6fa4e427d035",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1301,7 +1301,7 @@
       "songId": "196a2992-5ff3-52aa-9473-743623f16d9e",
       "title": "This Is The Day",
       "file": "songs/chrd/this-is-the-day--196a2992.chopro",
-      "contentSha256": "5e7878d9fe0a555eb34e54d94272715fcbed6df915037d4a422392a2ab0dd775",
+      "contentSha256": "b8c80381e8bd9c47f623c78fd4bc1cc1f15dcfe69920905eae329a971c6b021a",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -1332,7 +1332,7 @@
       "songId": "19e464fd-246c-5c7a-92c0-a44b1ac84394",
       "title": "I Will Give You All",
       "file": "songs/chrd/i-will-give-you-all--19e464fd.chopro",
-      "contentSha256": "7924fae6232dbc0f475f50501968405cce4ed703be938ec2cc7003700aa0be0e",
+      "contentSha256": "60e663da20b3ea8647af29f588bee7f352b8b2a90c8bf4f1e9ed4dc48ebbb983",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1364,7 +1364,7 @@
       "songId": "19fc26c9-556c-5768-9b87-9e63472f4946",
       "title": "How Great Is Our God",
       "file": "songs/chrd/how-great-is-our-god--19fc26c9.chopro",
-      "contentSha256": "d84693b563cb88c9d869a7bb5a1be6305ae25059ed3bdcdff4ab0f281ec0fb7e",
+      "contentSha256": "1416d0d6e3d9c54ab42bdee3ed76829f9050a6ee634f80257b95f2d2006c89c0",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -1396,7 +1396,7 @@
       "songId": "1d2c142a-7511-5658-a51c-7a227abc3369",
       "title": "Worth",
       "file": "songs/chrd/worth--1d2c142a.chopro",
-      "contentSha256": "d9e9c60fa6d97b18a376e0dc13202a79508dd00a33346a8ba4d74392ee628f0c",
+      "contentSha256": "8ba4f19fef3678aed1c43db55b52682a4d6813436e8cbb84b7991370779176e1",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1425,7 +1425,7 @@
       "songId": "1ec62cdf-85d6-5e5b-85cf-253a7d803563",
       "title": "We Worship You",
       "file": "songs/chrd/we-worship-you--1ec62cdf.chopro",
-      "contentSha256": "ae5634b3d77b95e0ed9c7d9ea31c1380a46022e20427a9531c98445d3b725eb4",
+      "contentSha256": "f3f6b9378872575fed155fcad84c63c404da085ea7dd1c97aa64435b3eb24197",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -1457,7 +1457,7 @@
       "songId": "1f896b58-3400-54be-afcc-80bef59a03b6",
       "title": "God is God",
       "file": "songs/chrd/god-is-god--1f896b58.chopro",
-      "contentSha256": "261cba4ea6808a28ab120a284dbb19e8b4810f0d0cec7a640bb608c158465cdd",
+      "contentSha256": "f2867dc51d634168d393f5a329c6256c64aa73188ec343a9d4cca5db5f06c3d9",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1489,7 +1489,7 @@
       "songId": "1fe144f0-3985-5f73-b95a-a719a7275451",
       "title": "Beauty And The Beast Chords by Celine Dion",
       "file": "songs/chrd/beauty-and-the-beast-chords-by-celine-dion--1fe144f0.chopro",
-      "contentSha256": "16c7e789fc6f63a2ba2fab9f1c7f381203209ce5dc378825435247abc22f9c35",
+      "contentSha256": "c9c2575cd695f61da0637ab89baca2f0fb5accca9d0d25f59610408ed4600078",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -1518,7 +1518,7 @@
       "songId": "1fe1ee31-a552-52a1-b6ab-d0586aeec43e",
       "title": "After All",
       "file": "songs/chrd/after-all--1fe1ee31.chopro",
-      "contentSha256": "0a49389f28b3cfbc21bc33a329f06b128b3ca524a8094f543e0cf91cff3f462a",
+      "contentSha256": "e51a697d3a30481d96c1ac543822a4e2e1b8fb978b22e88bd79e5d4d54767fe3",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1549,7 +1549,7 @@
       "songId": "205936cc-3d9d-5b36-a83e-3abd2bd6047a",
       "title": "I Lift Up My Hands",
       "file": "songs/chrd/i-lift-up-my-hands--205936cc.chopro",
-      "contentSha256": "866529a48d783c17a86f8c2483677ddfab5924cdb095016fca3422db70318625",
+      "contentSha256": "3e7893851c8d14803fa684657ce13add9fe5fa38bd10c3e17066377f927ad53f",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1581,7 +1581,7 @@
       "songId": "20a3b6a8-253a-58d7-b8e4-6ae2be23c741",
       "title": "Available",
       "file": "songs/chrd/available--20a3b6a8.chopro",
-      "contentSha256": "a653b1a1903017ce6f97512d66d985cc2f24d6361754614ad3b85cb42a803b26",
+      "contentSha256": "0a6ba3a76ed1a13a26202dedb4695de9409c299f9c53c6e555a6ab03dad66bc2",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -1612,7 +1612,7 @@
       "songId": "21a41c98-b190-5657-87e1-9786c3cbcd5e",
       "title": "Holy Spirit Come Fill This Place",
       "file": "songs/chrd/holy-spirit-come-fill-this-place--21a41c98.chopro",
-      "contentSha256": "dd44020d8d85196eb5f757b0afbb8e5ab5d7a48469d9134fa6adb77a08da9b8f",
+      "contentSha256": "b0f71ea8ae0132cd25d3597c6e8dd98ea835b2685bf903e1d16c4ea3e5d83981",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1647,7 +1647,7 @@
       "songId": "228d1b56-60ce-5ee6-b13b-a109e7881d53",
       "title": "Great Is Your Mercy",
       "file": "songs/chrd/great-is-your-mercy--228d1b56.chopro",
-      "contentSha256": "2bac397dedd4b0502f885b810c66d39ae8fa53f879f79e674feb937714787987",
+      "contentSha256": "47561d0bbf08f4290d2e8dad3c54ec87b6c89006495983ee24e2c451a86b049d",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1679,7 +1679,7 @@
       "songId": "23c0a2e7-dd29-5abc-bf95-9070d4670921",
       "title": "Heavens Jubilee",
       "file": "songs/chrd/heavens-jubilee--23c0a2e7.chopro",
-      "contentSha256": "3623ba80f1849b4256fed3d946fed78f04e39f98511b6e3f72882fd9424c9db2",
+      "contentSha256": "9938d6328f15d9fa082a96dbe8dae22cb2be0baa8f41a70f229dff4e3997fcc0",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1714,7 +1714,7 @@
       "songId": "241d1519-ce12-5180-b637-da2d2e9a0f78",
       "title": "All Hail King Jesus",
       "file": "songs/chrd/all-hail-king-jesus--241d1519.chopro",
-      "contentSha256": "7088de4d98e7dd79a11dbad65902b62652062f3c1efd6041be85eafbaa447989",
+      "contentSha256": "785209802b80599f61d75b053518ea4156240fbd87c0e52e092eca0487b4f9a7",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1747,7 +1747,7 @@
       "songId": "25222106-aac2-5215-b2b2-1aa04e387570",
       "title": "Can You Feel the Love Tonight",
       "file": "songs/chrd/can-you-feel-the-love-tonight--25222106.chopro",
-      "contentSha256": "1dcb06ab955750726ee7a35c1b12e42eaf086ad72a4c06658229af75cb05ae8a",
+      "contentSha256": "905716a1a4b2f5b0e44a20ab10075a405c0dd62ef68e6877c33b83e48f491368",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1776,7 +1776,7 @@
       "songId": "25dd36e0-349c-54a9-90b7-60baf232b0e0",
       "title": "If You Believe And I Believe",
       "file": "songs/chrd/if-you-believe-and-i-believe--25dd36e0.chopro",
-      "contentSha256": "fa7415f710ade3283c85c74ebfa6406845ecfe4894149144431db84229b3682d",
+      "contentSha256": "fa535d48766deb8db80d7879bc720c89cc9f8f4288000ecd42792dc7ea33e098",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -1808,7 +1808,7 @@
       "songId": "269ac8b8-710a-5a11-8b83-4ca2f4925e73",
       "title": "Healer",
       "file": "songs/chrd/healer--269ac8b8.chopro",
-      "contentSha256": "41e9a1d971e1222c8b881211ea32e74c92d25a6fb6bb7170f8be7159266bae17",
+      "contentSha256": "8f56f3e05ccdc3a06dc221edc353925f7523521e11359084fc029e3856dca31c",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -1840,7 +1840,7 @@
       "songId": "273adaa5-80fe-520c-ab09-895614b0fa80",
       "title": "I'm Gonna Dance",
       "file": "songs/chrd/i-m-gonna-dance--273adaa5.chopro",
-      "contentSha256": "914185ffc554baa3fe784f98df8557d8d7b51fbbe2aa51c552707ea2922a2946",
+      "contentSha256": "187f0ee135c6d284dcbeaaaeb845939169242f7420cdf7bfd3ec5491a7169622",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -1874,7 +1874,7 @@
       "songId": "27570bbb-5658-5cc5-9301-c830ba05c5ed",
       "title": "I Will Sing Hallelujah",
       "file": "songs/chrd/i-will-sing-hallelujah--27570bbb.chopro",
-      "contentSha256": "ed238e60e53ddff582b6ae914e900e9563aad5646d9a3679d045b382cc3ede48",
+      "contentSha256": "95c0a57c8d5266de5df2d51f75fd93ce4767dd6df721908a4b50fb91b45af783",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -1906,7 +1906,7 @@
       "songId": "28482490-c364-5fee-9749-f765657ea452",
       "title": "Ain't God Good",
       "file": "songs/chrd/ain-t-god-good--28482490.chopro",
-      "contentSha256": "2e81c154769dbb14a6a7b011bfaaf2e2a26937001ddce1e42fb06b35a109ac9d",
+      "contentSha256": "f9e44f0300088278903f7d4f0ee93ebc1e33bf3a1c757a6d2df8c0ba3bdcd491",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1935,7 +1935,7 @@
       "songId": "29745aa3-651c-59b4-858a-92a6b2f8b2ad",
       "title": "I'm Gonna Be Gone",
       "file": "songs/chrd/i-m-gonna-be-gone--29745aa3.chopro",
-      "contentSha256": "a74f9ab0abd94540a91c1537f3fbc8fcd9b1b5c39c715861731a857d1f2d11a6",
+      "contentSha256": "6024dbe5a6a84c961422d7a108918c7c1eded9984ebc2bc9981c837c3c3a215a",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1966,7 +1966,7 @@
       "songId": "29f450fd-3c2b-5397-a95d-fede87abc27d",
       "title": "Wont We Have A Time",
       "file": "songs/chrd/wont-we-have-a-time--29f450fd.chopro",
-      "contentSha256": "d60b2d18ec5c51ed8c6e6385498a79f0fe78912eefe59d6f218d1f8eee2eec67",
+      "contentSha256": "e36ee656433e95a0517d1c831a696ac0fa3fba3f6257478ac4b7f486064fe63c",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -1997,7 +1997,7 @@
       "songId": "2a563f1c-2edd-58e4-a71d-b6970592eeaf",
       "title": "No Other Name (Mark Yandris)",
       "file": "songs/chrd/no-other-name-mark-yandris--2a563f1c.chopro",
-      "contentSha256": "1efb95075b59d3948dbc8a4b284b4995b7a0c34de41f941c6c59095ad43eb7d4",
+      "contentSha256": "f4151bc1915b491960d29705890931ddd1e62b69faf33f525cc56c4cccced15e",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -2031,7 +2031,7 @@
       "songId": "2b8772f2-6783-592d-8cd9-27088d5b4f25",
       "title": "Celebration Medley (First Pentecostal Church of North Little Rock)",
       "file": "songs/chrd/celebration-medley-first-pentecostal-church-of-north-little--2b8772f2.chopro",
-      "contentSha256": "3a78ab27f5dcc6320a60f8283bbb029f70c904489abb3f0400d6393e1721ad16",
+      "contentSha256": "c37821a6ae2826d815e763c6154d5a1fdfc5ff96e02ae1b7e77d1d092f5ee2a8",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -2066,7 +2066,7 @@
       "songId": "2b90c1f5-b1a9-5981-864a-920f478d5439",
       "title": "I've Got a Testimony",
       "file": "songs/chrd/i-ve-got-a-testimony--2b90c1f5.chopro",
-      "contentSha256": "dba5062c4d6490aec25f26534ff0617ef039d1954f9f5e4b261ec6cffed45220",
+      "contentSha256": "9368b65ebc0d817fce1726623244c0a5124f63941b0b7c407e659b56c9f1ab44",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -2097,7 +2097,7 @@
       "songId": "2cc84ac9-5978-5118-be93-c0fe263b95b9",
       "title": "Heavenly Father I Appreciate You",
       "file": "songs/chrd/heavenly-father-i-appreciate-you--2cc84ac9.chopro",
-      "contentSha256": "b80d0a797aca52c70dc5fb7408db84843ad74346e7cf75fb52686fa893226bf6",
+      "contentSha256": "6e5ed16c4da737f1cf369a2cb642a6e23b05829272a66ede4c664fe24ebe77f8",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2129,7 +2129,7 @@
       "songId": "2dfb00c2-b9da-51a7-a32d-4423a4393408",
       "title": "Peace Speaker",
       "file": "songs/chrd/peace-speaker--2dfb00c2.chopro",
-      "contentSha256": "32ebe1c8baf6f7c3f93102440203031d445790c17e3db30b7ebfbd274055a257",
+      "contentSha256": "773292c5ae5d448497db3825ad6b53350779392af9347bcf650f31fb0cbb8ec3",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -2160,7 +2160,7 @@
       "songId": "2e82be84-73ea-55c0-bf5b-272c20716289",
       "title": "Blessed Assurance",
       "file": "songs/chrd/blessed-assurance--2e82be84.chopro",
-      "contentSha256": "3d13ba944981a27685bef8f85b1e9879cee963331ccdd2dad0d719dd244634d1",
+      "contentSha256": "0082317a9d208dba66228362021ad5d496b4052e6d4d0a6952e7744de3bda348",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2193,7 +2193,7 @@
       "songId": "2fdf17fb-f201-575d-b914-7df24fe340a4",
       "title": "You Are Good",
       "file": "songs/chrd/you-are-good--2fdf17fb.chopro",
-      "contentSha256": "05fb26b0172ceb9def5ae2f3868c1e89991715ec32f0211fd5bd4168bc59b308",
+      "contentSha256": "ba978e0d8577c88ecdb9153e6ad03e0fd36cd0067d1a0ce0496a2bae4222c3e5",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -2230,7 +2230,7 @@
       "songId": "326118eb-eb2b-51c6-a4aa-62fc1bf7a3c1",
       "title": "Press On",
       "file": "songs/chrd/press-on--326118eb.chopro",
-      "contentSha256": "d408c3b9c59096085602c7b9c0e63034c4e1f66802ae92633d5ec28514528246",
+      "contentSha256": "9333b2862c1dee2e1f08ffa6ca0464b83e5ec0efb2366d8da27ea26c73524e8d",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -2262,7 +2262,7 @@
       "songId": "33776057-176a-5daf-a257-28d5783aa36d",
       "title": "Ive Got A Feeling",
       "file": "songs/chrd/ive-got-a-feeling--33776057.chopro",
-      "contentSha256": "cb938209195af7bbc61101f4bfd968d60bd9ec8670ed1bf1d01cba88da64709e",
+      "contentSha256": "9013e957faa8c58185134c1d41aaafcb3efac98bae1abccb74c524b73e82f4a1",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2291,7 +2291,7 @@
       "songId": "3443b4a0-74d4-5af0-adcd-808195c7c473",
       "title": "America The Beautiful",
       "file": "songs/chrd/america-the-beautiful--3443b4a0.chopro",
-      "contentSha256": "bf288b9c725d9fbd4e7005fbb0bbb1a2e093727df2f6ae8c9642e90529b4fdae",
+      "contentSha256": "5a802d5c914137b042e8fd71abd67072e67f2cc247907f7258546e42f4f94e0e",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2323,7 +2323,7 @@
       "songId": "34dc4909-916d-53d2-af0a-f5bb20f993e9",
       "title": "I Speak Jesus",
       "file": "songs/chrd/i-speak-jesus--34dc4909.chopro",
-      "contentSha256": "6ccfd82852791db8c2a6f43e19154aed8a8e7c502658140e443b4557e0853cf9",
+      "contentSha256": "93e06ed2b01cba5371770fd3ff7c9aa9589488821f813b5189f70c69edcb22fe",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -2356,7 +2356,7 @@
       "songId": "352f28d8-8899-5981-a17f-38cc66fcc262",
       "title": "Mercy And Grace",
       "file": "songs/chrd/mercy-and-grace--352f28d8.chopro",
-      "contentSha256": "2d0946ab46bde3ccb5269965eed8c6fd62b39a9afcd69add376007df77c3dc73",
+      "contentSha256": "cd3fc318b15892d5376fbdc187ef72bd73f76fb2fdcbca3626b4bbc2f3bb900e",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2387,7 +2387,7 @@
       "songId": "35515dad-726f-5526-8f2b-3b3ec364f63a",
       "title": "Amazing Grace",
       "file": "songs/chrd/amazing-grace--35515dad.chopro",
-      "contentSha256": "31d72f2afccebbd130880d0167b957a3be345d191f78146bb9636997564c758d",
+      "contentSha256": "fdb7c10d921295adb8cf138331d546df2a3b6b9aaee8e2073b795c150aeaed80",
       "metadata": {
         "key": "G",
         "artist": "John Newton",
@@ -2421,7 +2421,7 @@
       "songId": "35716681-24ce-5661-966a-144a5c5015a3",
       "title": "Completely Yes",
       "file": "songs/chrd/completely-yes--35716681.chopro",
-      "contentSha256": "d8622aceec76ccc9ac7abf15d5cf191942b3a1452ad2dd6d2f19db0d04796c83",
+      "contentSha256": "15048b9d0b9d4899b89d60b66f79da4b50ed62e53d1c96d99f8ad12bc9d2230e",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2450,7 +2450,7 @@
       "songId": "36a78155-fadd-54e4-bb0e-5295b7f84840",
       "title": "I Need You More",
       "file": "songs/chrd/i-need-you-more--36a78155.chopro",
-      "contentSha256": "399c808822b2912b6972b10ba8d0012517099fc76cb5aefbdfa23eea155e65b5",
+      "contentSha256": "02f76f1b3c224318015a89f8249499aabcd7359572b679064af87b109e7a32f1",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2481,7 +2481,7 @@
       "songId": "370bd379-6518-5dcb-a2b7-14e01202f51d",
       "title": "Be Glorified",
       "file": "songs/chrd/be-glorified--370bd379.chopro",
-      "contentSha256": "0c16f1fdb1e9d679d65960c29d9f45a3c0d4d8d6de013be18ce71383f66aaa31",
+      "contentSha256": "4a8dfb1dffbdbb9a3f7a8b14ccc32aef37e94c4fd981aae6038a1d443b6ff981",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2510,7 +2510,7 @@
       "songId": "37835ace-7ee8-5fca-968b-65b9b6c869ea",
       "title": "The Glory Land Way",
       "file": "songs/chrd/the-glory-land-way--37835ace.chopro",
-      "contentSha256": "52d5aee3f67fc02dd74607bc8fd422be86bfc28979db13eea4f77240af90bc66",
+      "contentSha256": "ef9b614892e444c384931cde939ee5930d38af066e4677855488f916bb5303bb",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2541,7 +2541,7 @@
       "songId": "37bdb2de-1ecd-5cab-aa88-a952b84d7d1d",
       "title": "Reach Out And Touch The Lord",
       "file": "songs/chrd/reach-out-and-touch-the-lord--37bdb2de.chopro",
-      "contentSha256": "903477134580ebaa78eafa56bfe07ea4661af0a38c703ad6434ff3953afac82f",
+      "contentSha256": "28e11d56722c017d4581da5e506ffa4063d51cf4b6143f4ea514d32fc9ac16d5",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2572,7 +2572,7 @@
       "songId": "37e629b6-64f5-5c1d-a73c-3a7bc359b797",
       "title": "Shake the Foundation",
       "file": "songs/chrd/shake-the-foundation--37e629b6.chopro",
-      "contentSha256": "ba97db20b98b73472348ae59e2d662c2cf5cc24611d41284a99222371564ee6d",
+      "contentSha256": "95fd4ecc8465bde20c6db3f8dd2d8430fc4ced3d977818a02ee453b3c333f870",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -2606,7 +2606,7 @@
       "songId": "39774917-8e4d-5ed3-b0e4-8104b11e603d",
       "title": "He Made The Difference",
       "file": "songs/chrd/he-made-the-difference--39774917.chopro",
-      "contentSha256": "8beab31f5be4f0fb72746fb10fc4e2f9f9029ba940068395a3b61233a0b7745a",
+      "contentSha256": "1df28105d4408a4d6f64622e919f9fd5780e42412c07aaec1b7df0019c657b14",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -2641,7 +2641,7 @@
       "songId": "3a074791-ae03-5be6-a979-c6a284799892",
       "title": "Breathe On Me - (Power Of God)",
       "file": "songs/chrd/breathe-on-me-power-of-god--3a074791.chopro",
-      "contentSha256": "54c65b59cc158462c6b7fb449036493f170cccb98244a23c66ae904068b85aaa",
+      "contentSha256": "c9a8c1bd5bc8972d7a0e5ac84f7e833f24de8a2868979237d872f1060b5d5c79",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -2677,7 +2677,7 @@
       "songId": "3a5fb23e-4949-53d1-9ea3-d597a472e0d0",
       "title": "Awesome",
       "file": "songs/chrd/awesome--3a5fb23e.chopro",
-      "contentSha256": "a915ec7e20c960c3690baace4b0db07936b53836625443210c3cadb583591085",
+      "contentSha256": "5c3ddeca4cdc61d9c2c3b7e7e0411db1d84cec70ac15d41f6087e27f91f944e0",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -2711,7 +2711,7 @@
       "songId": "3ac7453c-8c7a-5d21-98b5-f35e7d7f971f",
       "title": "Its Gonna Be Worth It All",
       "file": "songs/chrd/its-gonna-be-worth-it-all--3ac7453c.chopro",
-      "contentSha256": "912c0754bcbc8d30a42c3e77e788d1fe628a33234e42b0925a5594f1ea653e15",
+      "contentSha256": "df9e8b8a58566b48ee2533346c982a6b239a7312e5359a2461f0a110d2a4d407",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -2740,7 +2740,7 @@
       "songId": "3b32a463-c0c5-5698-bc5e-e49cbba13c64",
       "title": "Satan Your Kingdom Must Come Down",
       "file": "songs/chrd/satan-your-kingdom-must-come-down--3b32a463.chopro",
-      "contentSha256": "29048a233def2c431b5afe22f5bd892c41390584308c53d55b49dbf13100c0fc",
+      "contentSha256": "afdf97d65773de06f0b13493590f44025e65f3cb1512de9afc5a5509d6d808e1",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -2772,7 +2772,7 @@
       "songId": "3c9264b4-056f-52e0-9b6a-6c7c3ba1f87b",
       "title": "I Call You Faithful",
       "file": "songs/chrd/i-call-you-faithful--3c9264b4.chopro",
-      "contentSha256": "823c5a14a4d44df55ab0b345c919ea92281714266d7995684705696d149f3628",
+      "contentSha256": "e73b1c5f96d5d5b3bb829c502b0b4f364429c99c6bb81bcfac9d968a7305fd82",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -2803,7 +2803,7 @@
       "songId": "3f18a2c9-e1c0-51e7-8dc9-8517f9684334",
       "title": "Same God",
       "file": "songs/chrd/same-god--3f18a2c9.chopro",
-      "contentSha256": "81c4b5e2fa8a3783855fa79dcde467b841ec69be0f2fc5a74a556a3f9a46abdb",
+      "contentSha256": "d67f8c4c371abefb30a2fc6ad6cc85a57487c4ded44ddf211ad184367e560f14",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -2835,7 +2835,7 @@
       "songId": "40e7b943-e019-5962-9215-ea4c24834fba",
       "title": "I Remember",
       "file": "songs/chrd/i-remember--40e7b943.chopro",
-      "contentSha256": "8830167d054abc67617766c7edffe72a4b318dce0144450efbead90af962bbea",
+      "contentSha256": "2349347ac2f98914f16c6e37c12ebbbb6896ffeb32d0639a9b4b5a9bdec15511",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -2872,7 +2872,7 @@
       "songId": "40e9215b-5a15-5118-8b97-942b341574eb",
       "title": "Get Your Mind On Jesus",
       "file": "songs/chrd/get-your-mind-on-jesus--40e9215b.chopro",
-      "contentSha256": "8bbfe2011a980ac9dbafc755af8308960162aaebb0f8f2fcb3df36ee24131e3b",
+      "contentSha256": "53ea3297c13bd0be1b3247e6615b3a303c7b6eaba4a5cb8b1ac94b4b22e8182c",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -2904,7 +2904,7 @@
       "songId": "423bee59-c2b9-5b19-bd66-eb19fb5f6f1c",
       "title": "The Old Rugged Cross",
       "file": "songs/chrd/the-old-rugged-cross--423bee59.chopro",
-      "contentSha256": "90522566d9ea51b87b3d8c816b6aacf1165a32809b746eb58a279a9e7abea2e5",
+      "contentSha256": "e8a9003bbfe14f8336e0b64c4bc6141970e50c7721361b261a09882b7673363b",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -2937,7 +2937,7 @@
       "songId": "42791f03-6649-52d7-a8e1-37dc3474aa69",
       "title": "He Is Lord",
       "file": "songs/chrd/he-is-lord--42791f03.chopro",
-      "contentSha256": "2e82459e9708711cd62d105d30344a3db772978108c65b9eb8ee495f10e3b376",
+      "contentSha256": "3aacaf5f3fa82eef525fa0617ed52721b0a588cecea52e5193111104f66a5fd3",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -2968,7 +2968,7 @@
       "songId": "4306f174-6a5c-5164-b5c2-9b6429e4313d",
       "title": "Overflowing",
       "file": "songs/chrd/overflowing--4306f174.chopro",
-      "contentSha256": "268f09699d43b08d241de8d9985c969174968c2e45eebc06604855c01f912417",
+      "contentSha256": "6be99f553eed2dbe338accf1f248bff9c6efe5760db5dc39c2730f302e7c9b3e",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -3002,7 +3002,7 @@
       "songId": "431313ae-402c-56f3-bfa9-d8caab2967df",
       "title": "Lift Up the Name of Jesus",
       "file": "songs/chrd/lift-up-the-name-of-jesus--431313ae.chopro",
-      "contentSha256": "c76bcf53c7c83a4c4687162351fd53df8e93e84a7e29914421c14e8c1517fd1b",
+      "contentSha256": "0c4d7ac3ad0a3c11a963521c628c29b9f8172db8f1ffce8d87a6bbb881390876",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -3043,7 +3043,7 @@
       "songId": "4498b597-532d-5b8a-847b-a649a6a607f0",
       "title": "Whatever It Takes",
       "file": "songs/chrd/whatever-it-takes--4498b597.chopro",
-      "contentSha256": "4f6647fa8da5a785b7c6a14c9254ea7f12147bceb20ec35029c3eab4aa146d99",
+      "contentSha256": "786169cb2b75dc1ae7dd6481d8a98afb6fb5a8382dac54470091a8e8e174130b",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3078,7 +3078,7 @@
       "songId": "4611c368-2d1d-5063-91a3-0f311a79baf3",
       "title": "Crying Holy",
       "file": "songs/chrd/crying-holy--4611c368.chopro",
-      "contentSha256": "d38113488d1b3173f5ce82c853ac463199bf8ce2c4bc8fc446b6b693d4e23415",
+      "contentSha256": "de1592e83bd9e967d24e3068e63773297c505f00f8629f3c8255b597a83cf243",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3110,7 +3110,7 @@
       "songId": "477782c1-5f5b-50f0-ae5f-9af44312ff62",
       "title": "Hes An Awesome God",
       "file": "songs/chrd/hes-an-awesome-god--477782c1.chopro",
-      "contentSha256": "fd6d19a71fb2d445cde9bf5bde8645e6bc660025f06bda6281777bc6b59b1d71",
+      "contentSha256": "69a60d189349e043cf91497242eceac73d7eb64a8907fe6394fc65dd1dcb544b",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -3143,7 +3143,7 @@
       "songId": "47ac33e3-bb29-5184-98b6-5bca8c4cdb12",
       "title": "Hallelujah Lord We Praise Your Name",
       "file": "songs/chrd/hallelujah-lord-we-praise-your-name--47ac33e3.chopro",
-      "contentSha256": "0d0041ac4c07e38941ccad8fccc48a786fa3a776557ae8d7a8dd708e955dd367",
+      "contentSha256": "c4cb44746f1b409931c35590ee4627532942018dc343923ce7cb56a262d716f5",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -3175,7 +3175,7 @@
       "songId": "49cbb309-2c3a-5b48-b7a8-10b476625135",
       "title": "Come Let Us Sing",
       "file": "songs/chrd/come-let-us-sing--49cbb309.chopro",
-      "contentSha256": "91c3a2cfa0f8af1b03d74b7e562deda1aaf7fca2ef464f8d96f9d51bf96bf173",
+      "contentSha256": "81e7406c009458da404a22953a741fdfb00a9bbf550065fbe238ec95bfadb876",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3207,7 +3207,7 @@
       "songId": "49d59a94-b77a-5b4c-b099-2605a6a12502",
       "title": "Keep Your Eyes On Jesus",
       "file": "songs/chrd/keep-your-eyes-on-jesus--49d59a94.chopro",
-      "contentSha256": "3f497f56ef44802570c20807bcf8b24b979eb11dd0ce1e745f6abdc9f268f315",
+      "contentSha256": "a0867172e2942954a560679ef0fe8d812c10b1a17e0b278d3532ebc29f840d94",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3238,7 +3238,7 @@
       "songId": "4a80f6f9-13bc-550f-a876-02849c958130",
       "title": "The Church Triumphant",
       "file": "songs/chrd/the-church-triumphant--4a80f6f9.chopro",
-      "contentSha256": "18aadf712e4c2b6cef976aef6681205ca9b0bf0438cc1bd67916f9c29e1cd204",
+      "contentSha256": "d671f313de3ba696177891f858378e0f600c792ee99811f1e5aa9bcc9b1e496e",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -3270,7 +3270,7 @@
       "songId": "4b0c5e0a-e7d7-5c2f-83e8-b7aec2c0e41e",
       "title": "I Cant Even Walk Without You Holding My Hand",
       "file": "songs/chrd/i-cant-even-walk-without-you-holding-my-hand--4b0c5e0a.chopro",
-      "contentSha256": "84d84a9f6ded888c8685a64b984433fc16d20652ef01b90ec4983ff6fe4f281a",
+      "contentSha256": "35ebdf7c657e28a3f6ebaf33dcef0a20ca19b486c864a2b1c65e0a7107814606",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3301,7 +3301,7 @@
       "songId": "4c2f50c5-9ef9-57b6-b78e-95bc38d0df72",
       "title": "Only Jesus Can Satisfy Your Soul",
       "file": "songs/chrd/only-jesus-can-satisfy-your-soul--4c2f50c5.chopro",
-      "contentSha256": "eecc19b79c77e42581790af1e29be8e8337ff7aaa4825a8bef8420678b23235a",
+      "contentSha256": "061714eec7b08d7e0347b35a64df16de7348c173733f31ce6f78382f70060d71",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -3334,7 +3334,7 @@
       "songId": "4cfdda6b-0c23-5584-8398-394838568766",
       "title": "Because He Lives",
       "file": "songs/chrd/because-he-lives--4cfdda6b.chopro",
-      "contentSha256": "34613248b3669635845dfa5aebafa8422b1b058a43d88364332958a1db3d3379",
+      "contentSha256": "13a2baf2f0e0c5bbe159cbf6dceb122dbbb74d299fc3ae8005a2f5abe696166c",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3368,7 +3368,7 @@
       "songId": "4d1d3d68-89ee-57e7-8f09-9d04861fdda7",
       "title": "Amazing Love",
       "file": "songs/chrd/amazing-love--4d1d3d68.chopro",
-      "contentSha256": "d0d9310d29ac0470a8e68ce8fb7fecc13b878a89de539981e634e7cec8064026",
+      "contentSha256": "b537fb62cd6955d0a924496b0a28533dc6ae7cfa54cdf1a53ed3b87699fad2d4",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3399,7 +3399,7 @@
       "songId": "4d2d2422-e5a6-598a-929d-24bef4fd1dc6",
       "title": "God Gave Me A Song",
       "file": "songs/chrd/god-gave-me-a-song--4d2d2422.chopro",
-      "contentSha256": "4ea97779d6e826830cb3ab49fe7c45a0b5cf501dce4f8a7f1696a44ca96b26ec",
+      "contentSha256": "8052f619591d91b3a8ef94af7c84fd8f519c30e7da9876db7576bfbfcab225f4",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -3433,7 +3433,7 @@
       "songId": "4dae1842-16db-56d9-8f32-a9985ff6f1e1",
       "title": "I Adore You",
       "file": "songs/chrd/i-adore-you--4dae1842.chopro",
-      "contentSha256": "3b671346dd99966166e99a80d2f54bc3c3e27572a30291020c2e76d23dcb4bd6",
+      "contentSha256": "08066d2d3b590bca7fb64743cc6e22a314839d1d0bb7a6b3751be5234e3c18ed",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3465,7 +3465,7 @@
       "songId": "4e263018-3da8-57ba-b557-7d73a286d87e",
       "title": "Leaning On The Everlasting Arms",
       "file": "songs/chrd/leaning-on-the-everlasting-arms--4e263018.chopro",
-      "contentSha256": "c9044f47acdfd00f416da5a6a2e3f3dc2513316f0e77efd947899956902bd2c8",
+      "contentSha256": "f3fb99a66910ed4a340328c49888c2153637c6de13cae41e431f8cc1f3e230a2",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -3496,7 +3496,7 @@
       "songId": "4e3501dd-8a80-5bb1-ac9a-aae28644d158",
       "title": "War",
       "file": "songs/chrd/war--4e3501dd.chopro",
-      "contentSha256": "d4ae38f4b86665dc7c763a28ca3c41c13d2cf27de4c2d9e641f3791705c0ef1e",
+      "contentSha256": "23bda4d429e1a6525e8e53e4f67c5aa03347ba487bd1dc3731c1e6f03280ee41",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -3531,7 +3531,7 @@
       "songId": "4e85030c-e5c6-58fe-b466-29944aadb816",
       "title": "Jesus We Crown You With Praise",
       "file": "songs/chrd/jesus-we-crown-you-with-praise--4e85030c.chopro",
-      "contentSha256": "ebe3c876cb2d79f6610c672bded751bd12ae0688fd80bb12b7badb0f46905bc7",
+      "contentSha256": "72a4b17b0309258e9874a726607a91175ff2b84989d61a74cb0cf3b47f527852",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -3565,7 +3565,7 @@
       "songId": "4f86b48b-35c8-51af-bb35-59195345a040",
       "title": "Awesome God",
       "file": "songs/chrd/awesome-god--4f86b48b.chopro",
-      "contentSha256": "adaa9c0f7cfc4bea84feb1119782ec6da31b09a0e199c0e0ea7d4e9c8adbab4b",
+      "contentSha256": "460bf007eb9794a237bae99a6ba84fb774947e7b137a1b7d6010d5fa3248fe80",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3599,7 +3599,7 @@
       "songId": "4f926a65-c9dd-5db5-b02f-f748160a599a",
       "title": "Thats Enough",
       "file": "songs/chrd/thats-enough--4f926a65.chopro",
-      "contentSha256": "5cd6c8795607980e2b4d854c5c902fc058c2b822e25cc11ea7169791934bfc10",
+      "contentSha256": "c58c30d4e785c43a4c0eec1cf6bb8797fc1ddb68d3e787a6bcaa80f2a7ee0893",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -3630,7 +3630,7 @@
       "songId": "4fa2ef29-6340-52ab-90b4-6865a5ac4056",
       "title": "When I Speak Your Name",
       "file": "songs/chrd/when-i-speak-your-name--4fa2ef29.chopro",
-      "contentSha256": "88646ac055b4076a4f3e59e8ec4eaf587ec0696cc10745646248c2f0e48505e9",
+      "contentSha256": "3a4bd2c79bbd4efd5da4a23905cc3026eb56f818203f0005fdb5af33f630eedc",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -3661,7 +3661,7 @@
       "songId": "50cdbb8e-2aea-593b-97e0-7f8857a59bed",
       "title": "I Feel Like Praising Him",
       "file": "songs/chrd/i-feel-like-praising-him--50cdbb8e.chopro",
-      "contentSha256": "c17eb345752d0410501f9b525cbc980b30c24ce646bfbcb8643f89179a7ab285",
+      "contentSha256": "ca4d132863f1f4154ab4ffc0b971824cc26e9517a963a70fdfbbb67fec2c8043",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -3692,7 +3692,7 @@
       "songId": "512307e6-fed7-5d4b-b190-009aaf95db09",
       "title": "I Will Stand",
       "file": "songs/chrd/i-will-stand--512307e6.chopro",
-      "contentSha256": "64a5878fa4fc4cfb560b237f2e6d4080d43ca6b7e832ff4e894778ed07938b31",
+      "contentSha256": "8968d8878d457a2c77674e74f9d87d33fa495a96e1ad5ad0af7f29d3c3fbb311",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -3723,7 +3723,7 @@
       "songId": "518d3872-8a64-57e5-888c-6d222a7992d9",
       "title": "Awesome In This Place",
       "file": "songs/chrd/awesome-in-this-place--518d3872.chopro",
-      "contentSha256": "e9f1734cb47c26df6bdca0c4e809266ed4e3ae2d2c578427c00d399ec31eff8e",
+      "contentSha256": "9ac30683af69e60a6dd30b88c7f8d7589cb74f4cda4126f67dd36a40f09d93eb",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3756,7 +3756,7 @@
       "songId": "51e210d6-d924-5608-b912-0de02417a1e2",
       "title": "Ive Been To The Potters House",
       "file": "songs/chrd/ive-been-to-the-potters-house--51e210d6.chopro",
-      "contentSha256": "058c8e35a4b12028edaa7d0e0a5a4f903114179e048855d41c6bbcd5a0afa225",
+      "contentSha256": "900b730dc1f8c4d62c01b6c0573902385c87a188773214ed0002e08e9d00940b",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3789,7 +3789,7 @@
       "songId": "53098d57-4818-50e6-9253-29d731c838af",
       "title": "O How I Love Jesus",
       "file": "songs/chrd/o-how-i-love-jesus--53098d57.chopro",
-      "contentSha256": "2ed775e06fb2324e7e371c3aacdab8b4c94fef75109d69201db4cd1be448b534",
+      "contentSha256": "653f45fa32460e0e62031f702fef07dd71a57580ffcd07e3fec3714be6fa2938",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3820,7 +3820,7 @@
       "songId": "531b7ec0-9aa9-595b-b71b-cfe1238cf2d6",
       "title": "Come And Dine",
       "file": "songs/chrd/come-and-dine--531b7ec0.chopro",
-      "contentSha256": "11c625ad565a62a95690f8ff8125b127ebf5b23dc7f796fc4b2b66bf9ebe98ac",
+      "contentSha256": "6f43032bbd4f9799350af83b20a27cb89c15be8a82d330fcc958aebbd2544c26",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3853,7 +3853,7 @@
       "songId": "536a9f5f-4609-59ee-9a03-d82c35fcb32f",
       "title": "All Hail The Power Of Jesus Name",
       "file": "songs/chrd/all-hail-the-power-of-jesus-name--536a9f5f.chopro",
-      "contentSha256": "8f55701e7edc68d229f858a24282ee7517eaebf273c3c2f7569c9861eff9fa72",
+      "contentSha256": "31b6795505d7764a4fac4a93fa736cf64b6588563a4db494a6049b2e3b1d292e",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -3885,7 +3885,7 @@
       "songId": "54923034-5674-54a5-90f6-af243b128c4a",
       "title": "Surely The Presence",
       "file": "songs/chrd/surely-the-presence--54923034.chopro",
-      "contentSha256": "cbbecc06e1cf890b7338565c27ee30114c5853976c554fd10463fe1d4fe6d4a7",
+      "contentSha256": "c85318bdd5fda07a76b2932feee0fc97be7fcb69925479061dc9a77b95a83c9a",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -3916,7 +3916,7 @@
       "songId": "552868d5-f57c-5c08-8896-80d7e4e1a1d2",
       "title": "I Know My God Can Do It",
       "file": "songs/chrd/i-know-my-god-can-do-it--552868d5.chopro",
-      "contentSha256": "b1fbf8ca530cfe016296ee8ac13920d9ddbc05478e2e00902b09b16cb06d4ac1",
+      "contentSha256": "2443a4b17fe3d8c14854380f1f70b20d8db48cf96350a3eac64a00f118196454",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -3947,7 +3947,7 @@
       "songId": "55bd8938-34d6-5d71-b9c8-c478b0158c69",
       "title": "Give The Lord The Highest Praise",
       "file": "songs/chrd/give-the-lord-the-highest-praise--55bd8938.chopro",
-      "contentSha256": "d06fa60c431c2344107f8f249e70e4974a1b0cb56aee354775043cd1ccfc36ca",
+      "contentSha256": "bb700eb02f19f2c32551e335c667a2cb4d2caef7941d23f3ef4d06ced566ee83",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -3978,7 +3978,7 @@
       "songId": "5630962d-090a-5bd1-be90-7c800d58dfe2",
       "title": "Think About His Love",
       "file": "songs/chrd/think-about-his-love--5630962d.chopro",
-      "contentSha256": "928eedffe8804371810d2dd773cfe93a2d36204a34af3659f4d218215f09206e",
+      "contentSha256": "31b9377d41339908c6912bc3b32305c59abfa124a7c6849b3580d7560153d669",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -4010,7 +4010,7 @@
       "songId": "5644b58b-8031-5115-8042-e44743994ec4",
       "title": "He Touched Me",
       "file": "songs/chrd/he-touched-me--5644b58b.chopro",
-      "contentSha256": "46ba9865ea4948b1a84ac8f7c979fa1fce6607fb8445878c227cb72940cffa12",
+      "contentSha256": "ea80f43c66ad7816f4fb8a3c6d53df0e8492f745b6afaa3c411502daf931a6ac",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4042,7 +4042,7 @@
       "songId": "5648b0d5-0644-5a0c-b9ea-b9ed26a03eac",
       "title": "I Give You Jesus",
       "file": "songs/chrd/i-give-you-jesus--5648b0d5.chopro",
-      "contentSha256": "8678a29ab14b2787ac90be58cd137567625599ac297d0715ce73a3db04a6971e",
+      "contentSha256": "911f58f78fdb4911568c3c4e35564f2f1cfbdc2e9af1323bb7b6519e68f94e4f",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -4073,7 +4073,7 @@
       "songId": "56dc09d9-0fc8-5c30-a1a2-b1081db321fe",
       "title": "He Brought Me Out",
       "file": "songs/chrd/he-brought-me-out--56dc09d9.chopro",
-      "contentSha256": "7952041ac5b36d66e2c910181d82a525dabd032957bcc237c5cd92335281c514",
+      "contentSha256": "55e54f8ca3daedfa21114255f6feb6eaf18dbea2ab26cba38e0d0e28ef618f68",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4114,7 +4114,7 @@
       "songId": "571b8ad9-8e3f-5043-97be-493353c7747e",
       "title": "My Jesus",
       "file": "songs/chrd/my-jesus--571b8ad9.chopro",
-      "contentSha256": "cb0c8f7ad403b70f08ae70d48f958c2985d2f2ca4d5e7dc2104341af303b43b1",
+      "contentSha256": "2ad0d1c6553d9a425c7559aabb6239a5b374725228bc078a024a41bb75a9044c",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -4149,7 +4149,7 @@
       "songId": "5763fcd2-1348-5b0b-a83c-938e7c0828a3",
       "title": "I Have Found The Way",
       "file": "songs/chrd/i-have-found-the-way--5763fcd2.chopro",
-      "contentSha256": "b44be072fe94d778a01d073a28ee012a9fa1cfc6bb14f4b524350225efc842da",
+      "contentSha256": "4c0194192ffe57c84338548ddb2b169457cae1efe8a1b5e4325ea7a0b8dfd59a",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4182,7 +4182,7 @@
       "songId": "57d247f3-b432-56cf-9aaa-812fb8892132",
       "title": "The Blood Will Never Lose Its Power",
       "file": "songs/chrd/the-blood-will-never-lose-its-power--57d247f3.chopro",
-      "contentSha256": "7e11e4dce92e256f0601dab7920a503482d10f67145fe4276e7028b5244ad581",
+      "contentSha256": "833235f75d4308666b4035d78cd86ca3db1b70389e00340bf09f3816d784b964",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4214,7 +4214,7 @@
       "songId": "58cd00c8-301d-5266-bab0-693a02ecf55f",
       "title": "What A Friend We Have In Jesus",
       "file": "songs/chrd/what-a-friend-we-have-in-jesus--58cd00c8.chopro",
-      "contentSha256": "4a0a640a72404a47e15b6b15afe2d2d188ec4c690f7fe038cd5574283adfb67a",
+      "contentSha256": "21f016b96a06f4539d2fe9a6f190db1b4a307d0ff5028fad1695ef8d14945d1c",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -4249,7 +4249,7 @@
       "songId": "58ea11e9-cf96-5c6d-bb5c-4be41edb8f81",
       "title": "How Great Thou Art",
       "file": "songs/chrd/how-great-thou-art--58ea11e9.chopro",
-      "contentSha256": "1c2aa53ee73a460a39d8ef3e25fdba570d836859d2a616416a6a3651abddf27e",
+      "contentSha256": "bb06e741347fa39c8cf2e2aeb58889e7ab2b8d687af8b00f7f0e46b496645601",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -4282,7 +4282,7 @@
       "songId": "595070f0-659c-50a6-ac7f-c0601aeee133",
       "title": "Goodbye World Goodbye",
       "file": "songs/chrd/goodbye-world-goodbye--595070f0.chopro",
-      "contentSha256": "b55eb5c3ae179a474aeb6074a63278be631948b6f368e2bda11e84cb77875c16",
+      "contentSha256": "5c5fdc83b22ca7cedd3395e3ca9762306f4994607cd2ec0b5b5229bbb69db356",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -4314,7 +4314,7 @@
       "songId": "59b02167-b69b-531a-bb4c-273a3edb7782",
       "title": "I Came To Magnify The Lord",
       "file": "songs/chrd/i-came-to-magnify-the-lord--59b02167.chopro",
-      "contentSha256": "a0a1f6511d2dbf41502bbec2929fedb61e3d43d173239d6db15d8b2d767cbc21",
+      "contentSha256": "653a189b032d8b8a123f2505fee6525eab8585be538feeffe45cd441816386b1",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -4345,7 +4345,7 @@
       "songId": "5a2498df-eb2d-5d91-908a-795f376d6839",
       "title": "Are You Washed In The Blood",
       "file": "songs/chrd/are-you-washed-in-the-blood--5a2498df.chopro",
-      "contentSha256": "5cba7e6e8e183ec4b9a021880af275542cfa3eef28642df8efeeb5b3d6980e47",
+      "contentSha256": "3647693e799a7207002b30f4f8b3dee3586bb6b6a85457b5e322a208f8f57958",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4379,7 +4379,7 @@
       "songId": "5b046b26-5c04-5aec-acad-f210f6a789ae",
       "title": "Still Moving",
       "file": "songs/chrd/still-moving--5b046b26.chopro",
-      "contentSha256": "b5b7d9551dc4bbe118dfd20b238030667516997f2aa519bbdbec78a4ecfde2df",
+      "contentSha256": "ceed65ecb8518981a3ca52e43d85e81e45a433d4dd93a6addce2eb7fbc1f5538",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -4408,7 +4408,7 @@
       "songId": "5b08e785-1817-5a77-9bc5-ba9e4e6e8b1b",
       "title": "Wonderful",
       "file": "songs/chrd/wonderful--5b08e785.chopro",
-      "contentSha256": "efdeaf3c601df3c2bcffd2bdd8329c00165da838880f36484257fc3bfbe8091a",
+      "contentSha256": "141215b7de48474d777438517be240a3a609e0f65a0edb40f97cec2f903cdaf2",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4445,7 +4445,7 @@
       "songId": "5b83acb3-df2e-5ff6-9a29-488cb4520f54",
       "title": "There's A Great Day Coming",
       "file": "songs/chrd/there-s-a-great-day-coming--5b83acb3.chopro",
-      "contentSha256": "9cc3a671e8c95e05422a5b7962647ee234fe0f95364ff15def94c0917a414e67",
+      "contentSha256": "8b02430afb8137c144af6e1f9ef09c40fb059071ad01265842a1da543b2d3e24",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4478,7 +4478,7 @@
       "songId": "5df8db11-f299-54e8-a2d6-1632950483b5",
       "title": "Happy Day",
       "file": "songs/chrd/happy-day--5df8db11.chopro",
-      "contentSha256": "24f49ab947c0062a540fa8fd91aa7270b4373c8db3c21b74533114d4486be3c1",
+      "contentSha256": "c48105952d1e3d93a1fd52ccda5865d91a6704f765b3beb2d64b9f081ba9bc01",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -4512,7 +4512,7 @@
       "songId": "5e48e317-3f2b-54b4-878e-0e3e1e34445a",
       "title": "My Thanks To Him",
       "file": "songs/chrd/my-thanks-to-him--5e48e317.chopro",
-      "contentSha256": "8af21614e736f4aafc5f99d97118a234e65bfb4bb6032178876af6758efb6b34",
+      "contentSha256": "182ffd4adcf6309d4aa18e39efba2a3eff50f0e7929d45823d4ca4bdd0a5e9d8",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -4545,7 +4545,7 @@
       "songId": "5e805bac-09bc-552c-bd5c-42c3dbfaac63",
       "title": "Let There Be Glory And Honor And Praises",
       "file": "songs/chrd/let-there-be-glory-and-honor-and-praises--5e805bac.chopro",
-      "contentSha256": "fdb3952c56fc569431a89916364634707aaab984e2cfa197f27ecc5f0fcde8df",
+      "contentSha256": "ab0980652647765345734393dd42e10e75c464aba66902e3edfb120673cac116",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4574,7 +4574,7 @@
       "songId": "5f6d5254-9858-5772-8a8e-da0858502c98",
       "title": "The Old Account",
       "file": "songs/chrd/the-old-account--5f6d5254.chopro",
-      "contentSha256": "23349665dc22c3b2fa9d6fedef7000f056c261a9071362ceb77dc5c6ffb1e7c1",
+      "contentSha256": "cb549bfacdc8954aecfb31529f5994419ab918b8aaeca99084f11383a8ccc82d",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -4607,7 +4607,7 @@
       "songId": "5f83022c-6710-5540-9cff-b87e2c742789",
       "title": "How Can It Be",
       "file": "songs/chrd/how-can-it-be--5f83022c.chopro",
-      "contentSha256": "28b31b025072db386668f19048715951cfd082e4f22f3426e346bb24716883f5",
+      "contentSha256": "968abbd00db1dad27648fbdd079a770e4480b86b2f3fdd86ec82371f9d617d28",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4638,7 +4638,7 @@
       "songId": "60463ac0-b0af-5476-9b96-6196c104dbb1",
       "title": "Mary Did You Know",
       "file": "songs/chrd/mary-did-you-know--60463ac0.chopro",
-      "contentSha256": "c7983997ed1c3c38947f20b4f6bb5e04a74418b280525ca8f10a4c9e9254107e",
+      "contentSha256": "0cde9dde76bd1a1ebdcd71094f164931e614653b30d33db1cd4df04df1a96ef7",
       "metadata": {
         "key": "Gbm",
         "artist": null,
@@ -4671,7 +4671,7 @@
       "songId": "609a6b11-7c12-5f12-ae5d-4d07cf8fdafc",
       "title": "Goodness Of God",
       "file": "songs/chrd/goodness-of-god--609a6b11.chopro",
-      "contentSha256": "e5f76f9fe85eacea66cd627535a491d6992f9033b613b3ee383adbb2ecf19a5e",
+      "contentSha256": "89af8063ebba1ab257b5491813d01ab90ab45ed5c8564f338fd79c85234bf1c2",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4703,7 +4703,7 @@
       "songId": "62ce556b-ed75-57b6-add0-c1dab09ebe56",
       "title": "Overcomer",
       "file": "songs/chrd/overcomer--62ce556b.chopro",
-      "contentSha256": "35e11a0dfbde740ce21c937dc7f36aadf250ee01f19d64e8498af8b7db02ae50",
+      "contentSha256": "328044d7fb9214766919824963070d7947df2280055dce6b764de32d6367d7f9",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -4740,7 +4740,7 @@
       "songId": "6351451d-122f-5ba3-beb6-98d38f7c6b1c",
       "title": "I Call Him Jesus My Rock",
       "file": "songs/chrd/i-call-him-jesus-my-rock--6351451d.chopro",
-      "contentSha256": "9b55f11a58277d5ff986ec41aaf0d08a18df9faee53e5690f1d1ee3ea3d8b0fd",
+      "contentSha256": "c8e01636d6953924a05667e0c0ffa3bf4049816be418ddffdaccbe2b63f32f24",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4769,7 +4769,7 @@
       "songId": "65bcc3f8-02b4-5e7b-89a3-43c53c1487b1",
       "title": "Rejoice",
       "file": "songs/chrd/rejoice--65bcc3f8.chopro",
-      "contentSha256": "351dbbbe6bd5b5a64db01323cf3da31dba8cdf7872ee5911138713d5d0026fae",
+      "contentSha256": "a87c84bcd50a276a229b0f626ae77c74167e19d173d043c0079a1861505b44de",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4801,7 +4801,7 @@
       "songId": "6691d239-eccd-591c-be7d-685838ae3b63",
       "title": "Bless The Lord Oh My Soul",
       "file": "songs/chrd/bless-the-lord-oh-my-soul--6691d239.chopro",
-      "contentSha256": "06e5bf8c1db31fac8b075a204b08e7d6a3bdbd8340e9c0793dc1d6b21b887e4f",
+      "contentSha256": "103eaf91645e193eecb7949d3a202c82294bb6198709479bc10bbb857d2d767a",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -4830,7 +4830,7 @@
       "songId": "671cdaee-c063-52e8-856c-9bc21e079eb8",
       "title": "That Other Shore",
       "file": "songs/chrd/that-other-shore--671cdaee.chopro",
-      "contentSha256": "2460912a1f468692d3a51921d063d561b9d8872d5055ce2ebf231c8e2fb5bdd8",
+      "contentSha256": "3cad4c2eccfd14b355fee810ce4e896287b494bbd91277446293077c0231b435",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -4863,7 +4863,7 @@
       "songId": "6791957f-081c-558c-8e4f-9afb90858a51",
       "title": "I Know Who Holds Tomorrow",
       "file": "songs/chrd/i-know-who-holds-tomorrow--6791957f.chopro",
-      "contentSha256": "7513950c1f1a669f97264ea2cbffd00d89f12be92cea7dc5345931a4dbde55c2",
+      "contentSha256": "d8442b7132acd1e604da45b1979e92aef8348883adf5fbf4fa97f9a3ceb9ff4c",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4894,7 +4894,7 @@
       "songId": "686c773b-e5da-5325-9d7b-9dd5b449cf8c",
       "title": "Theres Gonna Be A Revival In The Land",
       "file": "songs/chrd/theres-gonna-be-a-revival-in-the-land--686c773b.chopro",
-      "contentSha256": "082eddb80c07c7799493bd7912cf4d1a2cf51fac9a1bba1bf22853d0d2a5093e",
+      "contentSha256": "722cbb2b1ebe7a867774f49a122a68583cfefd21dbdda2cb3de48cbd8f3b49a1",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -4925,7 +4925,7 @@
       "songId": "6971e83a-0510-56bc-adc8-c892068565f8",
       "title": "King of Glory",
       "file": "songs/chrd/king-of-glory--6971e83a.chopro",
-      "contentSha256": "3038f585c8f2ec379a1b77e522a683ce9b21640f2a3add03220d5616430eece2",
+      "contentSha256": "5379e3b6ecf1b0bac0d7cee7d1d18bddd0f2dccdd83024831e1a70d4ba1e9eb5",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -4959,7 +4959,7 @@
       "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
       "title": "Jesus Is",
       "file": "songs/chrd/jesus-is--6a2f8538.chopro",
-      "contentSha256": "0d13786226dbe2294514d226e6555e143ae5572fef0400841c04ec312e0c2e61",
+      "contentSha256": "da81fb5fcb760b55b4d8b84570f7292dd1a4ef6ed5bb6338aae22837be991c5e",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -4993,7 +4993,7 @@
       "songId": "6d3f7364-cba4-57e2-b844-3c836943b5ad",
       "title": "I Found It All In The Word OF God",
       "file": "songs/chrd/i-found-it-all-in-the-word-of-god--6d3f7364.chopro",
-      "contentSha256": "55823b290aa589381496190dc0e97f27d7d9139bf9c65f766a479a3d7c98f1d8",
+      "contentSha256": "ecaa36eced06b3ee76a57db793e0c9d6ef5df0796c8b8bf3fd36c3f875bc4d13",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -5027,7 +5027,7 @@
       "songId": "6e5f6ffa-400a-584c-927e-acc4cf28308a",
       "title": "Above All Else I Must Be Saved",
       "file": "songs/chrd/above-all-else-i-must-be-saved--6e5f6ffa.chopro",
-      "contentSha256": "eb9b57914893cb89d35cfad4c6a4f3e79ebf2f23bc88e83a904ff0cc9cfd2d03",
+      "contentSha256": "6ab05d1d375fcf84cba01215f2619df2ca9a2be18d25e98abb37782cf8d51ed7",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5058,7 +5058,7 @@
       "songId": "7056ea79-c124-5d94-9ca0-b2855d3baf0b",
       "title": "New Anointing",
       "file": "songs/chrd/new-anointing--7056ea79.chopro",
-      "contentSha256": "9e2b7fd055edcefa51f199d6e31d929bcebeb2057783691820e03b62ee741c01",
+      "contentSha256": "11f17928e71d54bfbd4b90f1d96113219fe1d14e2379b38a08d0e037014212da",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5090,7 +5090,7 @@
       "songId": "706f8960-9046-50f1-a180-872bb2249049",
       "title": "Show Me Your Glory",
       "file": "songs/chrd/show-me-your-glory--706f8960.chopro",
-      "contentSha256": "adb8f6b280448576f8ae05ccefc8d5b87bf9d5183897eee67dcab9934be34219",
+      "contentSha256": "2b0b670b070b7acb6abd221561fb62e385cd5c46cb5c491349c01596f7c67e9c",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5119,7 +5119,7 @@
       "songId": "7148eb5e-3c3d-570f-9fd0-0e7039c8d8bc",
       "title": "Beyond The Open Door",
       "file": "songs/chrd/beyond-the-open-door--7148eb5e.chopro",
-      "contentSha256": "3adc24cfa801d3c9e00cdc622416ea2ae2012435b804b6e177d89a4bbc37901b",
+      "contentSha256": "8d1f8f0cbd5184a26f96d17bbafe04f17b280310774620484a8cfd61dcf2826a",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5150,7 +5150,7 @@
       "songId": "71997a3f-5001-54d1-831d-d0d8d899c99f",
       "title": "Still Everything",
       "file": "songs/chrd/still-everything--71997a3f.chopro",
-      "contentSha256": "15a9d9f0e79713faca22255d342e93102ba7f2543bf805b5c40ccf33aa24aadb",
+      "contentSha256": "43d0521e908712f0513bb3ed7d5064fa6b082f8f65bd707256e23ef0de323a06",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -5184,7 +5184,7 @@
       "songId": "728484ed-bfb4-59ea-a318-9d234f17e8fa",
       "title": "Just A Closer Walk With Thee",
       "file": "songs/chrd/just-a-closer-walk-with-thee--728484ed.chopro",
-      "contentSha256": "6ebaafb753d03bd4c9e1cc8a05ecf6536b7b9aafaa06cb17e26a4018ce404fb2",
+      "contentSha256": "f4e7dc7d112dd1e41e44812f843179101454c5cbd4751810d3f400529a05e63a",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -5213,7 +5213,7 @@
       "songId": "729a6022-0654-5cf1-a252-bfdf228534f3",
       "title": "Love Letter",
       "file": "songs/chrd/love-letter--729a6022.chopro",
-      "contentSha256": "ec627fb17c35260f7d62b082714aaab107d75667debdab0272d1f7855874f2dc",
+      "contentSha256": "51b1ce877b7aff3565c44116a408f2e90b6f8a077b1b587cb1c23a7e618ec7f3",
       "metadata": {
         "key": "D",
         "artist": "Kevin Duncan",
@@ -5252,7 +5252,7 @@
       "songId": "73571dce-8eb2-5b8a-bd00-a6515394716d",
       "title": "Gods Not Dead",
       "file": "songs/chrd/gods-not-dead--73571dce.chopro",
-      "contentSha256": "7437d4a6b970fbe61a79a050a4dff366385a2d2cd300fc4b7f5bbfd077914d28",
+      "contentSha256": "fe2dd6d10e036082588635dd8c5e02fb106e04f615853178ee860df4fde0896f",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -5281,7 +5281,7 @@
       "songId": "735d6b97-ffab-5fc4-8364-97a82737547e",
       "title": "Friend of God",
       "file": "songs/chrd/friend-of-god--735d6b97.chopro",
-      "contentSha256": "479a72ac897445e237c6fceb27c560f7826dfeaecb4e16c29e7a1f578452b5cd",
+      "contentSha256": "a24ec599671ad6462210108a617afb676902f5b6bd374a60db35fa132b577ead",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -5310,7 +5310,7 @@
       "songId": "73e96803-a878-5ce7-9ce9-de230e3d3431",
       "title": "Something About The Name Jesus",
       "file": "songs/chrd/something-about-the-name-jesus--73e96803.chopro",
-      "contentSha256": "84b4357fac2ade4cf2e820ab9557c2676a049caf47f682b80c44ce12d83c6507",
+      "contentSha256": "cb7ea271d942e761978fd382f4dc2ad48269a3644471ab0af3f5dfc3e30ea798",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5341,7 +5341,7 @@
       "songId": "745b7509-6321-53c3-8463-3d07dcf456f9",
       "title": "Daystar - Shine Down On Me",
       "file": "songs/chrd/daystar-shine-down-on-me--745b7509.chopro",
-      "contentSha256": "dde01510898c8de8efcacae689a63ad11744a090982cbae5c1c90b9ddb9ca5b5",
+      "contentSha256": "c30cb9f335be9cc11f346eb30a87f898a7668038dcffd45b1710904b4fb686b0",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5373,7 +5373,7 @@
       "songId": "74b3ccdd-78af-5e46-8600-84631284a790",
       "title": "Out Of The Wilderness",
       "file": "songs/chrd/out-of-the-wilderness--74b3ccdd.chopro",
-      "contentSha256": "6081d72c9999755bb867ec7900839e82a3e063a4a5387ca93fc3f861c1426fe6",
+      "contentSha256": "61dfc1b7d517707d4f114b21dbfaa7d3e4557a0b4cd3a5280036946b7a426256",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5402,7 +5402,7 @@
       "songId": "752e28cb-ef91-5972-8e62-e8121fa4381d",
       "title": "Hes My Rock My Sword My Shield",
       "file": "songs/chrd/hes-my-rock-my-sword-my-shield--752e28cb.chopro",
-      "contentSha256": "d372b602f037a324d5a66873a027d3dfa7e19a4a46c53d89c90343c01e6bbeba",
+      "contentSha256": "e38cfa61cae19aabff618ab6bb39abff2c8b59e5491137137f4ed2821128d957",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -5436,7 +5436,7 @@
       "songId": "760ea597-66d9-58d0-b284-1aa4cc2495d8",
       "title": "Ive Got A Reason",
       "file": "songs/chrd/ive-got-a-reason--760ea597.chopro",
-      "contentSha256": "d1828ea2a1ad68a385f790b978da67615d4e60aa0f0f513750c73e6198cff2f2",
+      "contentSha256": "a5c033baf98f04769681caf293066be2d4769a225c68bc6d64d5326cc104d92c",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -5469,7 +5469,7 @@
       "songId": "765ecbb1-411d-53b0-b054-05bbc7363839",
       "title": "Wonderful Peace",
       "file": "songs/chrd/wonderful-peace--765ecbb1.chopro",
-      "contentSha256": "113a84d0b1668c4bfd4c64ded81b2517496e0036e6776848d63746833122d995",
+      "contentSha256": "751ee894acb246e66d042b2f3e59a7f663f634f5cbcbd9a99c528a5748d41264",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -5502,7 +5502,7 @@
       "songId": "76725e4c-9437-5d86-a1c0-7b00244227c9",
       "title": "He Knows My Name",
       "file": "songs/chrd/he-knows-my-name--76725e4c.chopro",
-      "contentSha256": "d48e365dccb15bb4d41e2445c6a6b6af1c1d6e26c7dada2555a171bf9bbb15b3",
+      "contentSha256": "e230adabaf3d06ad46d6811b4175b4c82af7bd346009875a0ba41163ac00f75e",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5531,7 +5531,7 @@
       "songId": "768cb222-2c9d-5a4f-86c1-89493df40b29",
       "title": "Anything Can Happen",
       "file": "songs/chrd/anything-can-happen--768cb222.chopro",
-      "contentSha256": "ccfe38ea64dabff4d0794be907e644fed3299a4357e0cc83b76a2b2ff760389e",
+      "contentSha256": "bdc06bc6aa40a1db073d947d94220d01fcc0ac943414dcebb3a1050085e00ed3",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -5563,7 +5563,7 @@
       "songId": "76f84c71-ecad-56fa-88aa-ba284caadad6",
       "title": "Search Me O God",
       "file": "songs/chrd/search-me-o-god--76f84c71.chopro",
-      "contentSha256": "60203b885da76651253e4eb0c5f64d61eab1b0bdcc694448a5fcea3ac1f7c0d9",
+      "contentSha256": "8bd5028b834f9a510e0a7d0fe95d07369df073b0af1b3d2b0715f0d67135be32",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5599,7 +5599,7 @@
       "songId": "776e4449-20e8-5727-a01f-4579b4cb0939",
       "title": "Ive Been Delivered",
       "file": "songs/chrd/ive-been-delivered--776e4449.chopro",
-      "contentSha256": "f257bb645a99f1fef2f6a88eb26d58e298b597e45046ef729878d9848bffbd47",
+      "contentSha256": "ce3467e04ad3a0b122bfbab1233e5384cf5dde3a08fc3dc4296fdf47fc869015",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5631,7 +5631,7 @@
       "songId": "77ab2099-39dd-517e-aeb5-07901f9da4df",
       "title": "Here I Am Lord",
       "file": "songs/chrd/here-i-am-lord--77ab2099.chopro",
-      "contentSha256": "65293d1d04aa3dad728a82bbe649a4a0ad928b1a7f328763b9fc6419a1f1e87a",
+      "contentSha256": "b99a0b42bc4cf7c56bd1f11521d88e328cf4972ad52ae456d88243d6cf907929",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -5662,7 +5662,7 @@
       "songId": "77cd7c5d-daf8-5a1c-91c1-f3001120af11",
       "title": "Change Me Dear Lord",
       "file": "songs/chrd/change-me-dear-lord--77cd7c5d.chopro",
-      "contentSha256": "7f5067f6e83156bd33168e7ba9ea7ab80dbfcad00ac30a221fc58c36976fa296",
+      "contentSha256": "f0549ec7238d8a8a6c9c192f456e1f77af2ed6097e7f162a8b09eceb87666e89",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -5693,7 +5693,7 @@
       "songId": "78714be8-7ac5-5836-90b5-0ab227141e06",
       "title": "Over In The Glory Land",
       "file": "songs/chrd/over-in-the-glory-land--78714be8.chopro",
-      "contentSha256": "a053dc5841da97f3e524141901507381bf12ae641de9e77ffa3d230d0e0913cf",
+      "contentSha256": "57aa274183d76db3b0f3ad96096de9cec34ef36f1f71c38feb0ca500c791a905",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5727,7 +5727,7 @@
       "songId": "792c108a-fc3f-52cf-9f2e-e4c71cd65966",
       "title": "Cover Me",
       "file": "songs/chrd/cover-me--792c108a.chopro",
-      "contentSha256": "cf8ea728e0b1ff47809eb56046e24e7d2a24a4a04c828e0736cb3f0311c27145",
+      "contentSha256": "80d3ce7cb610b230afec9b3a9f8e629c99d27641966dcaf7013e28fa73105ad1",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5758,7 +5758,7 @@
       "songId": "797df19f-21eb-5bfb-b2fe-62eee321541a",
       "title": "Fire Shut Up In My Bones",
       "file": "songs/chrd/fire-shut-up-in-my-bones--797df19f.chopro",
-      "contentSha256": "2d2e218879c59dd36bab9996bb24c07acedcab4c0c6fa415e82afa0c80fc7db5",
+      "contentSha256": "6ff8f2f83a29bb0dab16a894e75315005f97bb1f7559439bc6067c9582d506c6",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -5790,7 +5790,7 @@
       "songId": "798b6f7f-8da9-5323-9826-20ae43a8ebae",
       "title": "Believe For It",
       "file": "songs/chrd/believe-for-it--798b6f7f.chopro",
-      "contentSha256": "c3c6ac9afdca9a7e0d994dea69bad4a52b708a6a99be2e831dc309d27612b768",
+      "contentSha256": "555bfedf63f8a92354e04833ec528440c7326f2f78de7922a95b45146c04ed20",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5821,7 +5821,7 @@
       "songId": "7bbd5b2a-80da-551f-9feb-1d1fe9c2b8bb",
       "title": "Holy Ghost",
       "file": "songs/chrd/holy-ghost--7bbd5b2a.chopro",
-      "contentSha256": "173af9698f38542af3f98bcb04741d9f8e01006f1482d1379a58d246d4560510",
+      "contentSha256": "a8361491e7cdb2fb0dd9329340d154d2e630ece5c2df403b16b3731947aca5aa",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -5861,7 +5861,7 @@
       "songId": "7ca09651-fbde-5da0-8116-389a970f27d3",
       "title": "I Can Pray",
       "file": "songs/chrd/i-can-pray--7ca09651.chopro",
-      "contentSha256": "494075bc0fc895543fd5041ea27d1a4eaeaa1cb679bff0818aa9f90ca233db66",
+      "contentSha256": "3812b6dda3649e73e1f3cecd54ade45c52f797b990028baf4b96ce0fcea35423",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -5893,7 +5893,7 @@
       "songId": "7e208619-3376-525f-979e-045d4452fec1",
       "title": "This Blood",
       "file": "songs/chrd/this-blood--7e208619.chopro",
-      "contentSha256": "55b2cb2fe1f1f47348c3a94498f155fde1f081f1906c0354d5c60a2b297a4e79",
+      "contentSha256": "26ba8236b03d64f8bc527f99fd1711c410b02ffda6fd997a527b0610ce6c6b9a",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -5928,7 +5928,7 @@
       "songId": "7e639ef5-08be-5ce7-b715-e6a0f6925343",
       "title": "I'm Gonna Dance",
       "file": "songs/chrd/i-m-gonna-dance--7e639ef5.chopro",
-      "contentSha256": "5bb1f8e71b737ec2a5d21496c9290de81c32fcdadd64cc3eeac67a4cd81a9437",
+      "contentSha256": "94625b07b406779945f21e19be7f830b504503a678a838b4a66dc001ccb5f08d",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -5962,7 +5962,7 @@
       "songId": "7f32954e-11c9-5898-af40-cb6fe58412e1",
       "title": "Zion Is Calling Me",
       "file": "songs/chrd/zion-is-calling-me--7f32954e.chopro",
-      "contentSha256": "80f888456ba1ff7d22dc2d1e274fb65c5ea2c551d0d93abbde2739712bd4c37c",
+      "contentSha256": "b025d435f12bdec7cbb72e10ef5aaf1b331ad05f445041b55994bca5788e8eb5",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -5993,7 +5993,7 @@
       "songId": "807f3077-f44c-5f51-ae81-e451a25deebf",
       "title": "God Bless America",
       "file": "songs/chrd/god-bless-america--807f3077.chopro",
-      "contentSha256": "7447d543d900035672073b7610895433a7b8260a5ac7209bf5c2a50a52e08fc1",
+      "contentSha256": "680483256c2f7d5c0cb163e927e0fb0dbeaf1e6b126c1cddd5f0577ea8b16686",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -6022,7 +6022,7 @@
       "songId": "80a8c7a1-ec82-5d55-b693-ea8e23b8aebb",
       "title": "John 1",
       "file": "songs/chrd/john-1--80a8c7a1.chopro",
-      "contentSha256": "424090235c915dd68668ea481fe78c113d45c745c4cb3168d9faef9fa7ff0a67",
+      "contentSha256": "31ed4b60da644c54f146a9c6f93a9053722b152809070a73454aee67419242c6",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -6057,7 +6057,7 @@
       "songId": "8128b381-b0da-51fa-a602-3d11ae61027e",
       "title": "You are Holy Lord",
       "file": "songs/chrd/you-are-holy-lord--8128b381.chopro",
-      "contentSha256": "89a326468be2db2a18331228c3bab8172ca0368e216f4217b6f1cfe42c18849f",
+      "contentSha256": "162350c67cc9f75ff9ef107e366429002361be28058a215296a27ad77ae0b002",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -6089,7 +6089,7 @@
       "songId": "81293667-19a1-58db-aa70-99d9938c8d6a",
       "title": "Celebrate In The Presence Of The Lord",
       "file": "songs/chrd/celebrate-in-the-presence-of-the-lord--81293667.chopro",
-      "contentSha256": "a6568dd143faeb87e913578d2658bd533a9308a77efcbf5daefbd37d23173f59",
+      "contentSha256": "13f1baa540b509684b82b31fd61804f7ef4ba403d1e58c2c5b7cbcb43c9da95e",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6122,7 +6122,7 @@
       "songId": "81a75e24-327b-5c17-b646-d532bc88fd12",
       "title": "Favorite Song Of All",
       "file": "songs/chrd/favorite-song-of-all--81a75e24.chopro",
-      "contentSha256": "d025d59d29ee6ea74f5acf9e32a2e1aaf478ba7113e3145b28fa6ff2ea799fee",
+      "contentSha256": "de853ea449196a0d1c9388c237f8004730dbbd76c15c63553acfb2f0aa950d8c",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6159,7 +6159,7 @@
       "songId": "826f0b19-914d-5923-91a9-f801654cc235",
       "title": "John 1",
       "file": "songs/chrd/john-1--826f0b19.chopro",
-      "contentSha256": "041910a2bdd8434bc263918f684b76b6f68bceea4f3e63734f7eab90159aed05",
+      "contentSha256": "066694607a722f82ef5adbe932ecbbc3d64ffa44dcc71a5690ade564e3dd45f3",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -6204,7 +6204,7 @@
       "songId": "826fbbfa-d6ad-5d5e-8a42-26310cf35859",
       "title": "Valley",
       "file": "songs/chrd/valley--826fbbfa.chopro",
-      "contentSha256": "8cd6a92ef6fb9312001c077663c42b64fb3d9fe5db619868d9442cb0ead98e11",
+      "contentSha256": "d721a1c8d1ec88fdaefaf07805aed1b00ebc1ff03ae067044159c63f4d89cef0",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -6237,7 +6237,7 @@
       "songId": "82a83739-edfd-5d31-b4a7-71cd1ca66ede",
       "title": "Let's Just Praise The Lord",
       "file": "songs/chrd/let-s-just-praise-the-lord--82a83739.chopro",
-      "contentSha256": "1eeade1139189a860cd490bb528837e6bf58fdcd0a68ab4c3f0827ff96b40233",
+      "contentSha256": "83c8f7411eb283beacb8b74954e047bbe570d0ad7330f820ef1165e3da18ed41",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -6271,7 +6271,7 @@
       "songId": "82dbe5f1-7fe1-5031-a1c2-2889f093eb41",
       "title": "He Came",
       "file": "songs/chrd/he-came--82dbe5f1.chopro",
-      "contentSha256": "2f70335c7ab979e5dc818c54417423845607ce0b8ecdc48c318edf46597cb158",
+      "contentSha256": "80e8c989fd97db0ebacf6713c14d663e8313d3c572ed44e0dbde261ce1d7023a",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -6304,7 +6304,7 @@
       "songId": "8317ccca-aab4-58a7-b606-e9792b57adb2",
       "title": "I Never Shall Forget The Day",
       "file": "songs/chrd/i-never-shall-forget-the-day--8317ccca.chopro",
-      "contentSha256": "b9ee1e3d82262ba567374af8fb1c3fb9ff949177ee855b6a1f4143ed4fe09497",
+      "contentSha256": "50bd3c8ac3018a1ebc39987997565046f845b619feb547b58dfc32eaff037770",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -6339,7 +6339,7 @@
       "songId": "84797455-47da-50f2-8b2d-886338054b1e",
       "title": "His Eye Is On The Sparrow",
       "file": "songs/chrd/his-eye-is-on-the-sparrow--84797455.chopro",
-      "contentSha256": "7c70d0a52b490cb139376077c43a6969ee41c2731b82ddc921a21dea5f4d0025",
+      "contentSha256": "ba053d425ebc781a911ace2ed1cffb6e74782044abdecabafb7614f9227b3b88",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6370,7 +6370,7 @@
       "songId": "85046c0c-c148-5091-87f5-9e973ba021cd",
       "title": "I Need Thee Every Hour",
       "file": "songs/chrd/i-need-thee-every-hour--85046c0c.chopro",
-      "contentSha256": "6c98c49ca2f95dec82102dfbe679efc93745a9a2f20b1b8f240f0c6a8268dcb5",
+      "contentSha256": "a2ce873756aa36b7c7028abd2f5eca75a6a24adad8cc0e656886937ad0b2515a",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6401,7 +6401,7 @@
       "songId": "852391f3-f8b6-557f-830a-26e01f6a05ba",
       "title": "I Need You To Survive",
       "file": "songs/chrd/i-need-you-to-survive--852391f3.chopro",
-      "contentSha256": "704907673785a7ba20a978003b3354c7ad3c65da243e1df53773ec6baee87a38",
+      "contentSha256": "52858409503b7b110eaa534b53c2fd1f0b24e2c862051a224685e3ef022751f1",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6433,7 +6433,7 @@
       "songId": "8662926f-6e77-582d-9ea0-0a499fa0ce79",
       "title": "I Got My Foot On The Rock",
       "file": "songs/chrd/i-got-my-foot-on-the-rock--8662926f.chopro",
-      "contentSha256": "e54004cb1db89aa7393baf151cb726f5e98a5c5913c1de9f65a89a6c10ce83de",
+      "contentSha256": "83eaf51faf507e611e046f5312bf5ba3c271a4492befb86faae6c7444f2e1dbd",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -6464,7 +6464,7 @@
       "songId": "869801fc-5f8b-531f-9d9d-7fb72ea77685",
       "title": "Catch On Fire",
       "file": "songs/chrd/catch-on-fire--869801fc.chopro",
-      "contentSha256": "b6cafc19c868960e468094423f37fb26ba947a316aae153bb272d8fa2814be71",
+      "contentSha256": "962ee64829b819a865755a03f6c9e1e20f1a2b0557b56e7804ad9379cf15c7d2",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -6495,7 +6495,7 @@
       "songId": "8804d893-e82e-56ab-8440-d634b5017995",
       "title": "Jesus You Are Welcome Here",
       "file": "songs/chrd/jesus-you-are-welcome-here--8804d893.chopro",
-      "contentSha256": "f89a8fd6ca7046786aa5934e647490e9feac7d0ddcab23832f759718b58fcc0c",
+      "contentSha256": "078588a933ad959c4211c3f409cb34e2d9b967ce8e656628e978155184b5c1a5",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -6527,7 +6527,7 @@
       "songId": "88592fb5-5a97-566a-8f5f-350411a87cf8",
       "title": "It Is Well With My Soul",
       "file": "songs/chrd/it-is-well-with-my-soul--88592fb5.chopro",
-      "contentSha256": "9dbb9a7ca2a72bd7d157f518e769686dbf6acdc2a92b5d6a4772e41c41244e88",
+      "contentSha256": "48d565c5d4860b2b83d81b2cab484ce1cd51421bb8f3a390609a98667aadda12",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6561,7 +6561,7 @@
       "songId": "889973bc-c3c1-5665-be52-a6c5a5f7b23a",
       "title": "The Shepherds Point Of View",
       "file": "songs/chrd/the-shepherds-point-of-view--889973bc.chopro",
-      "contentSha256": "39e24aab23a3d9dc644284ae237dcb6f55757cbb62254a413bc4b313f8e1b85e",
+      "contentSha256": "7ffed43ea60c1914a3ae2096fff093f069c2534a88191b38f1c51dae901fe70d",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -6594,7 +6594,7 @@
       "songId": "889e9a0a-7388-5bce-a78e-bcd4d2d4b4f4",
       "title": "God is Great",
       "file": "songs/chrd/god-is-great--889e9a0a.chopro",
-      "contentSha256": "fe126405fdca9ddc0d3b4320199174ef666ca4ae2325861f34520d2ff448cee5",
+      "contentSha256": "b3008c8336f602c688cdd55a7de5fe5036eba153ad10cfc80f5b9c5f66e3bcc8",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -6623,7 +6623,7 @@
       "songId": "8a769e94-26d2-545d-ad39-ca161b476995",
       "title": "I Need Your Glory",
       "file": "songs/chrd/i-need-your-glory--8a769e94.chopro",
-      "contentSha256": "2bca105992b283a8955ccf176a4ff1714cd08851f6330b2b736089b84fca07c9",
+      "contentSha256": "3560faaf395826aacaa40f4a18fd5af90caa184ab06950b72360ef642bde4126",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -6652,7 +6652,7 @@
       "songId": "8b6b790e-7786-5e47-b508-d78fa83ba3e0",
       "title": "In The Presence Of Jehovah",
       "file": "songs/chrd/in-the-presence-of-jehovah--8b6b790e.chopro",
-      "contentSha256": "23b14eafc017716a9ddddef479ab4750502c7bfdf1377c604786ff8224d87701",
+      "contentSha256": "71f40022b23685b13b56916087f51b061bc77955d929db907ced97056fc42c72",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -6681,7 +6681,7 @@
       "songId": "8cf794a2-e8db-50f0-b478-650d1bd92fdf",
       "title": "Here I Am To Worship",
       "file": "songs/chrd/here-i-am-to-worship--8cf794a2.chopro",
-      "contentSha256": "41e61fd88d1117563af942e0b2fb0b8a06cd1ae5d210c60a5eb2e46a435525af",
+      "contentSha256": "ec3ff96d56c83aef22a147d77fb710207372fb55401a1f094732956145e5637f",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -6715,7 +6715,7 @@
       "songId": "8d12e6bb-eb2a-50ab-a4a8-ed7336584c43",
       "title": "Thank God For The Blood",
       "file": "songs/chrd/thank-god-for-the-blood--8d12e6bb.chopro",
-      "contentSha256": "8dacd7d8cb82dade0a29d5a4fc49fdb7f3a4f270163934a4097bf5f35faedf2e",
+      "contentSha256": "b29bbeccaa28a63c1a9aa8d9392a2efe4b6f32fc453b767653c3da4d701eacf7",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -6749,7 +6749,7 @@
       "songId": "8d4bfd2a-aecc-5295-a69c-e39a5cba10e5",
       "title": "Let Me Tell You Who Jesus Is",
       "file": "songs/chrd/let-me-tell-you-who-jesus-is--8d4bfd2a.chopro",
-      "contentSha256": "a1320d9c1486d9608d7aea0efeb2b83f4fb28015a25bfa3a718ec29b694190de",
+      "contentSha256": "6c5f385f48695c06022d20010c5d9a9221fb4849434d818ba93fd90b835165f8",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -6782,7 +6782,7 @@
       "songId": "8e42fa92-5680-526c-bcda-f09dbf7e4792",
       "title": "Word Of God Speak",
       "file": "songs/chrd/word-of-god-speak--8e42fa92.chopro",
-      "contentSha256": "c5d8de9d6605034ccaaecfa056978567c1b66592827b6ff87156792bfe777745",
+      "contentSha256": "1994066c599a50ac0d08b54964b49e26cf694cbfd6306a58f1f5402981e7161a",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -6811,7 +6811,7 @@
       "songId": "907b73d3-bd85-54b7-9c2f-ef520218fe3c",
       "title": "Hes Got The Whole World In His Hands",
       "file": "songs/chrd/hes-got-the-whole-world-in-his-hands--907b73d3.chopro",
-      "contentSha256": "30bdfc421107fd77edb688f691040330aead7c3ae1942c2b5c2d6f782b9efecb",
+      "contentSha256": "d9ce89898bf33ffa71ae6f443adc26cc9c15db44ac1eb9a345775d6c6ee8c3db",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -6840,7 +6840,7 @@
       "songId": "908a34fb-3d9c-5915-96b4-dec60a2ac3ca",
       "title": "In The Name Of Jesus",
       "file": "songs/chrd/in-the-name-of-jesus--908a34fb.chopro",
-      "contentSha256": "37731640d9726ca8173582ac2e8db4ea52c974c507afb905ff1a089a1a3b055d",
+      "contentSha256": "9439e1a841516e15d02f486fc48d7928534aeb9ca01be6df365e1bf8335f6548",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -6872,7 +6872,7 @@
       "songId": "90ae9067-98bf-568e-b77f-1f8cd3cd17c9",
       "title": "Victory In Jesus",
       "file": "songs/chrd/victory-in-jesus--90ae9067.chopro",
-      "contentSha256": "ef86c450e227ca9f75a7dd62319f8f6e3dcab5fc8df6eda0baaa777d07b4d8c2",
+      "contentSha256": "08ab17aa70631994eabec74133290583e0fa291d8f88466b654d85d789021c82",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -6908,7 +6908,7 @@
       "songId": "91437e21-548b-5a57-8328-24d8d7cf7f8a",
       "title": "This Is The Place",
       "file": "songs/chrd/this-is-the-place--91437e21.chopro",
-      "contentSha256": "f3183ea3ffd69cf96d13d7c87b50d4cc1f58869fb61a321f435802c6ed428136",
+      "contentSha256": "17f48cade9adb1c92ffb464d7b5d69d34e273cf9cea9f2eaa6705d0787043f3d",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -6943,7 +6943,7 @@
       "songId": "9175b9ef-20f9-5d91-a63f-9e3a28328664",
       "title": "My Soul Says Yes",
       "file": "songs/chrd/my-soul-says-yes--9175b9ef.chopro",
-      "contentSha256": "935c5ba55fc10a0675b1d87749629e51b55f8a4da22d91d7fe26cfe9092f02a2",
+      "contentSha256": "81e3a9f557d25ec95be2f53f7298e03e375cd402b8e62c10d83ac497afb86af2",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -6977,7 +6977,7 @@
       "songId": "91a0a150-4320-539b-af17-3f1eaa8d8770",
       "title": "Lord We Give You Glory",
       "file": "songs/chrd/lord-we-give-you-glory--91a0a150.chopro",
-      "contentSha256": "7efb1cd921d4cd68a38749e4ebd2dc4a3fa337ea932b828fe4941bd33fafb3b4",
+      "contentSha256": "b5e5a162a5bfa76cb0dd5b46f060760291cec23a6b19b0812a833df0c7577c41",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -7011,7 +7011,7 @@
       "songId": "93407038-508f-5870-b7b3-2bf3e8b9ecd1",
       "title": "I Can Only Imagine",
       "file": "songs/chrd/i-can-only-imagine--93407038.chopro",
-      "contentSha256": "cedffdab957468856e4ccdb1c81aff44b1fd8a79b79f1af9790682cf05c427e9",
+      "contentSha256": "55af73b9005e2551718e229876c54590964ec0b8525cd14342a9954c19f78fc7",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -7043,7 +7043,7 @@
       "songId": "95df1c51-1984-5cbd-9f0e-4bd1687089cb",
       "title": "Baptize Me Jesus",
       "file": "songs/chrd/baptize-me-jesus--95df1c51.chopro",
-      "contentSha256": "cc494712dc5841e8d900dbddd0a098fcbcb512231c23c6b3a87fbff637283af2",
+      "contentSha256": "adbb06dc520ef829e0b2911a906cf6a3266e1123d3a9861163f98c275b01fa45",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -7077,7 +7077,7 @@
       "songId": "96c37769-8658-551d-883e-802367640b62",
       "title": "I Found It All In The Word OF God",
       "file": "songs/chrd/i-found-it-all-in-the-word-of-god--96c37769.chopro",
-      "contentSha256": "c2cf40a74ef2a98841d077009e48072e1953d7d92fdf4e36daef6406fb930818",
+      "contentSha256": "70a6be231cff309a19b57c1b30c74d6fdf7fba2884b7e2271b61bbd05d2ad771",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -7111,7 +7111,7 @@
       "songId": "96ec8317-d746-5cd6-a517-3bcdb67346d2",
       "title": "Youre My Brother Youre My Sister",
       "file": "songs/chrd/youre-my-brother-youre-my-sister--96ec8317.chopro",
-      "contentSha256": "70cd59b0e2082ccb7b9b9cd136bcd84c5216ead60c08ad88dd84714f676d26a2",
+      "contentSha256": "93ab750273ae891b63d0ae104969bca6b7e330f4eac00234bdd27b7abb9d5ca7",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -7140,7 +7140,7 @@
       "songId": "97101105-bf26-52d8-a937-37857ee07ff1",
       "title": "Holy Ground",
       "file": "songs/chrd/holy-ground--97101105.chopro",
-      "contentSha256": "f0c7c59f2fa345ba309e00c77e3f4158d90f7aff6d403d786832612c0b633bf1",
+      "contentSha256": "7ee86e32443b3f2f5023eb19a5e07a10bf2ac5ad12ab53f0deab234fed2989b9",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -7173,7 +7173,7 @@
       "songId": "99dc966d-f668-5caf-b3ce-21600edf9f0d",
       "title": "Jesus Is",
       "file": "songs/chrd/jesus-is--99dc966d.chopro",
-      "contentSha256": "3448a14fc1847d082b251a15667b6ea16d86c3b864e80b7be89ad3d7fc86c735",
+      "contentSha256": "dfc459783e9df52a0099fa821f3c09d56ac176079a8d400d9f01ab1c0ec85792",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -7207,7 +7207,7 @@
       "songId": "9a39fc1e-899d-5364-90fd-f658002df918",
       "title": "Jesus Medley",
       "file": "songs/chrd/jesus-medley--9a39fc1e.chopro",
-      "contentSha256": "7e3d917eb2ebc991ae56c79bce348f48b80561fc5b62940915360e1c19e635a7",
+      "contentSha256": "c6f313b5e967db5daee6dd310aec35cec7e7bd94039e295cafe987b555f025e9",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -7239,7 +7239,7 @@
       "songId": "9a6e0f87-addf-5c73-b78d-c199ef3ba59f",
       "title": "Chain Breaker",
       "file": "songs/chrd/chain-breaker--9a6e0f87.chopro",
-      "contentSha256": "5757fc52c2c5bbe9017e4f6debb624a6c334de979fe7f097848d75c8928b6ad5",
+      "contentSha256": "bbe34f886eefca389021eb2bed54bed7535c94d0c85ac9edda513c908c6e0941",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7270,7 +7270,7 @@
       "songId": "9a8a19c0-c255-5929-8669-d1418ed604c2",
       "title": "Victory Is Mine",
       "file": "songs/chrd/victory-is-mine--9a8a19c0.chopro",
-      "contentSha256": "66f54ed2667332aa708d4c64083af32ddeee473cb52181177b0de51addda6bc8",
+      "contentSha256": "a44ca259d7572102937bc452508c7d3491c3e6c374edcaf2dc452267e23c08a5",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -7302,7 +7302,7 @@
       "songId": "9a8b448a-4fe6-5d62-bc76-3cb89ac07b9b",
       "title": "Eyes On Me",
       "file": "songs/chrd/eyes-on-me--9a8b448a.chopro",
-      "contentSha256": "d1bf93e8ff226aed37489cf1ab962827462a07d789e5b3478105aac66142267a",
+      "contentSha256": "cbc1b34ae4bc663afa4cf75096884fae5f1b98ac0bccd64d517c75458605a212",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7336,7 +7336,7 @@
       "songId": "9ab77593-1200-595a-9972-007114f3dc0e",
       "title": "I Exalt Thee",
       "file": "songs/chrd/i-exalt-thee--9ab77593.chopro",
-      "contentSha256": "cb577a735960a9918131905940028945b1919ac5fa67e6b118785a56091fb892",
+      "contentSha256": "bd7cd83c0221d9c97dba6d818cae5a503145282683240ca1a05fe870cba73f8a",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7367,7 +7367,7 @@
       "songId": "9ab98dde-2caf-5714-a33c-6c52e1b0f85c",
       "title": "What A Day That Will Be",
       "file": "songs/chrd/what-a-day-that-will-be--9ab98dde.chopro",
-      "contentSha256": "f62ee8b4c6a7df44481a834a92506b319eed9685efb99e67e4fadfeccc9dc668",
+      "contentSha256": "9bf32c3b273f147fd69cfb8c4b6ed15a138de29c54144b6fd5a04a3f2f3bfc50",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7401,7 +7401,7 @@
       "songId": "9bd835d7-7771-51fd-9fe5-9a2af3d38908",
       "title": "He Took My Sins Away",
       "file": "songs/chrd/he-took-my-sins-away--9bd835d7.chopro",
-      "contentSha256": "0233b6bad6edff362fe6aba239d46bbee005213c3172bc7c1b002038ced199a3",
+      "contentSha256": "e47135f6ca4bca72973f7967f586612acf7028b1d5bd3c0f1d0454dfb6b9a61f",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7432,7 +7432,7 @@
       "songId": "9c5be3c3-bb0f-5052-a2a9-f328fdce1524",
       "title": "Evermore",
       "file": "songs/chrd/evermore--9c5be3c3.chopro",
-      "contentSha256": "403a7869a7d0959363a3e8ce3b1e168595d24381ec2181bd247042a2a7af3df8",
+      "contentSha256": "1506702403bde544db060766dd69136b7d819fd68bdf31649cfab71ff16ec1cf",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -7466,7 +7466,7 @@
       "songId": "9cdccdd4-3115-5ea3-9d2e-e1d414d87d41",
       "title": "Hes In The Room",
       "file": "songs/chrd/hes-in-the-room--9cdccdd4.chopro",
-      "contentSha256": "f7735d6cc1e27c002741ab4573b5f8e9fca499f808a54a6d2ea1af73b98dfcf9",
+      "contentSha256": "56f333db3559fada25f6886e1dedc4092aea36aebaf288a0156da32b95ccda91",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -7498,7 +7498,7 @@
       "songId": "9d26b9c6-5023-5212-a84e-a5aa967e6cad",
       "title": "This Is Your House",
       "file": "songs/chrd/this-is-your-house--9d26b9c6.chopro",
-      "contentSha256": "a7246c81a317c516cd1eb7399fd88422aa6ecb34ef8a0723deb020ac29ead353",
+      "contentSha256": "8492594776a25bab48d8db9f067a8c05d5c23ec7549ea453e0130121cc103906",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7537,7 +7537,7 @@
       "songId": "9e25e10b-15d4-5dfd-99b7-46310b37196f",
       "title": "Draw Me Nearer",
       "file": "songs/chrd/draw-me-nearer--9e25e10b.chopro",
-      "contentSha256": "7f572b147f7dbb1b59ab74d359025c9e3c27ec5f227f1104c245f7ca370ae78e",
+      "contentSha256": "16b6c9023db6090de1d168389806fc82a981025b54029961ab4b5927518b15b7",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -7574,7 +7574,7 @@
       "songId": "9e652d24-3f1d-5de5-8e89-fe04e045c9a5",
       "title": "He Aint Never Done Me Nothin But Good",
       "file": "songs/chrd/he-aint-never-done-me-nothin-but-good--9e652d24.chopro",
-      "contentSha256": "72e3b82af1ffaf716a6ecb2e6218e9ec884c94c32ae60d944fbd8fddd1370c90",
+      "contentSha256": "bc31f2b6b315ddd4f9dcc3c64eddb390cb8ee872b7d81bda07381326199c6386",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7606,7 +7606,7 @@
       "songId": "9e66b5e0-8cf6-52ec-9819-f05c6c5ffba5",
       "title": "Say Amen",
       "file": "songs/chrd/say-amen--9e66b5e0.chopro",
-      "contentSha256": "f3849a22b38b821624df5076e061d377ea1fca7dda1893c17bf013e6dd591464",
+      "contentSha256": "7d83ff827d4adb3b4ef821bdbe9b0826c900f7455e80b3d0a0fba289859ab872",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7640,7 +7640,7 @@
       "songId": "9ec8a954-2655-5864-b842-a9bc5264f0ac",
       "title": "Just The Mention Of His Name",
       "file": "songs/chrd/just-the-mention-of-his-name--9ec8a954.chopro",
-      "contentSha256": "4075fca59e66feffaa275bcbdd496bb4bfa6756542445c5b2f58ce7f38de30d1",
+      "contentSha256": "2fb5742d9e8d807a1c945c60267fc7c563161220934756311479b35dfa6c2025",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -7671,7 +7671,7 @@
       "songId": "9ed1ff7c-d15e-58cf-a329-159c8908f4fa",
       "title": "I Believe In The Cross",
       "file": "songs/chrd/i-believe-in-the-cross--9ed1ff7c.chopro",
-      "contentSha256": "d2dcb3505eb2ffbf66dae0e913444de13f8e6f57e0a2cdb8329ed28ac1838ce1",
+      "contentSha256": "0c8455e285bbe451592943dd5e94d5676aa6621d93fa1a5e436671c1659254e0",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -7706,7 +7706,7 @@
       "songId": "9efcb28d-f141-581a-b577-02cd1dbd366b",
       "title": "Worthy Is The Lamb Medley",
       "file": "songs/chrd/worthy-is-the-lamb-medley--9efcb28d.chopro",
-      "contentSha256": "ca49446932bf99179f654f3055350d890370b4c616b686befbd350b99842a6cb",
+      "contentSha256": "f73fe0dbc323a82945cd97e56b74517507d55b7a2399cae0f6815fd66857f3e2",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -7740,7 +7740,7 @@
       "songId": "9f137f76-ae5d-5530-b76b-8b571a4d001e",
       "title": "Wait On The Lord",
       "file": "songs/chrd/wait-on-the-lord--9f137f76.chopro",
-      "contentSha256": "9b6ae7f302968be1bcbb1371376b61f98250330a4ab82a574d18f29d2469b5a9",
+      "contentSha256": "2fb6499991dee65b104617dad826fe5983b8a128890dc737af82ca37e0aabde7",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7769,7 +7769,7 @@
       "songId": "9f25f88a-281a-5804-b7c9-1b3ee054801c",
       "title": "Order My Steps",
       "file": "songs/chrd/order-my-steps--9f25f88a.chopro",
-      "contentSha256": "6b1409d995168fc4ebcfd1edacfbe22a458141f8f437d0dc0246de64cdfa83a6",
+      "contentSha256": "683b70e60874855062b0ad74a25c89cea04be8f8856a15a33809f7fc70ab29a8",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7801,7 +7801,7 @@
       "songId": "9f31ba29-20e1-573e-adee-a279f2b4387c",
       "title": "Jesus Ill Never Forget",
       "file": "songs/chrd/jesus-ill-never-forget--9f31ba29.chopro",
-      "contentSha256": "d5b3018225de60d1fe4bc9007e65f0ce51f33f5e1613470b5e4198dcc2d3b7cc",
+      "contentSha256": "02238343c96bab56b4318530a43f391e3e95c39d2feb9fd732749fda3badc387",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7832,7 +7832,7 @@
       "songId": "a013e680-86a4-520f-954a-494076f904b7",
       "title": "Great Is Our King",
       "file": "songs/chrd/great-is-our-king--a013e680.chopro",
-      "contentSha256": "81cc0d32dcfffa9ffdc8c8763e192d8f44ff865f9dcff292eafe57a89e57e52f",
+      "contentSha256": "83c8aaa4656376f09d4808d4d6a00845d225b360491c50de7af49f902ccd2506",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -7869,7 +7869,7 @@
       "songId": "a08a804d-9f90-5fb8-93f3-2fe7ad0948af",
       "title": "Gospel Ship",
       "file": "songs/chrd/gospel-ship--a08a804d.chopro",
-      "contentSha256": "f54fca4c3d61d32633a24f0123fa38a14366bd2dd00192526c29d81a1f653dcc",
+      "contentSha256": "0c209aa2204e8f5cc75f421ae6528062003f77390696613a6a164af0b5f80cd4",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7903,7 +7903,7 @@
       "songId": "a0b1240f-f5d5-5890-9ed0-9e6a3a43e407",
       "title": "He Has Made Me Glad",
       "file": "songs/chrd/he-has-made-me-glad--a0b1240f.chopro",
-      "contentSha256": "31651c64d6bd9ea0ceb3cc91e77ed040b84ed3eeee4b349aa230dcb2e6954543",
+      "contentSha256": "215ef6244c12a5d1c98392521cbe0ccd29bc9070b0492811d097dfdd3d3141ac",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -7935,7 +7935,7 @@
       "songId": "a0e51b99-f48e-54d7-b299-dc7a1421d54e",
       "title": "Falling In Love With Jesus",
       "file": "songs/chrd/falling-in-love-with-jesus--a0e51b99.chopro",
-      "contentSha256": "8ef46f574ce458ed732ba41c5670e63fe8dbf367059cf7dda29ed313fc980cf1",
+      "contentSha256": "7b445cd12be764bb9337f77b3da1fc5a2f7e84441ca9060da3923c3539824a4c",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -7964,7 +7964,7 @@
       "songId": "a13e0da2-4430-5646-a2d5-7946dfd6db88",
       "title": "Woke Up This Morning With My Mind Stayed On Jesus",
       "file": "songs/chrd/woke-up-this-morning-with-my-mind-stayed-on-jesus--a13e0da2.chopro",
-      "contentSha256": "2899e63112b82a126222b9a2bf6348d4e235a6c3b69743ef2cc8f4bb70ae0bc5",
+      "contentSha256": "2261de8d49b0d3c744c46cb920838193e5ac5cc9d0a0c900fdc21a7c811a90f8",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7995,7 +7995,7 @@
       "songId": "a17b2152-0e0b-5760-a0b4-991326c026a0",
       "title": "I Give Myself Away",
       "file": "songs/chrd/i-give-myself-away--a17b2152.chopro",
-      "contentSha256": "b208331b54253a46ac2677523ac415bc46fbd1608d0b763c20e6ff8d92e92f59",
+      "contentSha256": "704e1c7be7e2987b94fe48c8425cb97b89f8c61bccfae0e08bc1e32adcfd1c4f",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -8030,7 +8030,7 @@
       "songId": "a1af8a74-8a63-5746-920c-0a6501bda832",
       "title": "This Place",
       "file": "songs/chrd/this-place--a1af8a74.chopro",
-      "contentSha256": "45c933710e8162710b9dfbd68f7974ddde1c7a95cc31d317c7feb0cdf04e31be",
+      "contentSha256": "fec7d7fa075ef2757a1d040174738d2dfb1f76ba975cf9c545c925dd32cf1322",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -8062,7 +8062,7 @@
       "songId": "a20455ab-d4a3-58ac-80d5-4d372f7337ce",
       "title": "Gloria / Better",
       "file": "songs/chrd/gloria-better--a20455ab.chopro",
-      "contentSha256": "fce9685ec875a9b3408f0e67b50f63b152d816bc0e8d7ec406a81b4195a7c19c",
+      "contentSha256": "818c3aaaa158e5504979f2cdd0aff4e47e5b7dde4c43217e1193bbf74da792ba",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8094,7 +8094,7 @@
       "songId": "a2089352-b024-5989-b1f1-7b7bee549473",
       "title": "Blessed Be The Name Of The Lord",
       "file": "songs/chrd/blessed-be-the-name-of-the-lord--a2089352.chopro",
-      "contentSha256": "aa8fe3bfc871ff73470c37470fc7225309ec9fe55e20af461c8b485f42d732f2",
+      "contentSha256": "37dc877ea264ff137646d54ec29490f99215ac9313e7c3f1ebde56073958482c",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8126,7 +8126,7 @@
       "songId": "a44d6540-4a1a-59ff-8042-ca2a1aaee11a",
       "title": "Breath On Me",
       "file": "songs/chrd/breath-on-me--a44d6540.chopro",
-      "contentSha256": "2aa3436e500661e058b473a6018ba47c9ddb1715860daafb0dfce956da3e798e",
+      "contentSha256": "f28e4b230c035d4f68ef1648a0da4daf8ee0bac54e89ad56dad7cb1a85553396",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -8157,7 +8157,7 @@
       "songId": "a4996b7c-d944-592a-aebe-bdefe90fc71a",
       "title": "I Bless Your Name",
       "file": "songs/chrd/i-bless-your-name--a4996b7c.chopro",
-      "contentSha256": "d6e9cdab2721a20231c9271f7bb77813c44ef492db5be5083d1db39b852e7169",
+      "contentSha256": "9581fb317aba63f332b5ed2ec5877dcb5dd2d378534148fd9ffb1460b99371fc",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8190,7 +8190,7 @@
       "songId": "a4d7e4b1-aff6-5027-b609-045800f22f05",
       "title": "Because You Gave",
       "file": "songs/chrd/because-you-gave--a4d7e4b1.chopro",
-      "contentSha256": "8ea3884cb90deaa4ee06d8557efaa341ab07b25519c033cdbf0d52fd604b4fdc",
+      "contentSha256": "298e0e62d8062ffbe67642f8cccfa42f53b2be9730ee23f62979df93bea90c6c",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -8222,7 +8222,7 @@
       "songId": "a5da52f6-ef38-5d16-ba6b-c4f5c65e07ea",
       "title": "Above All",
       "file": "songs/chrd/above-all--a5da52f6.chopro",
-      "contentSha256": "7748039f6b7ac7a1b89cea501d99c62ac391b28925097172c76fed57b681e5e0",
+      "contentSha256": "31411f6d99cc6c5fd3b045a59d7ba8f876bc0848dadfb259b52fb31800867a91",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -8254,7 +8254,7 @@
       "songId": "a60dffeb-e0cf-5bc5-a217-9afc833a099b",
       "title": "Serving God is Beautiful",
       "file": "songs/chrd/serving-god-is-beautiful--a60dffeb.chopro",
-      "contentSha256": "0428d565ffb0cd3872477b8eaf59a3dadaa56c219c2873c02627bf476bd6b6e4",
+      "contentSha256": "bdf76371fe85ef2530e211a68ffaaeb481c3531540642a96410099bab5647504",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8285,7 +8285,7 @@
       "songId": "a787ad35-66fe-53b0-8749-deeda8a57419",
       "title": "The Great I Am",
       "file": "songs/chrd/the-great-i-am--a787ad35.chopro",
-      "contentSha256": "1c00f41a966e91d481d026ab60f056bb90936c71bc9502f3c8c4b5542a2eae45",
+      "contentSha256": "ec6955f919f4cf7fd2aa4b818fef2f707a46cc66509d77bde24f95460ba10359",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8320,7 +8320,7 @@
       "songId": "a7935b46-bb50-5a02-bd3d-9e23a5176836",
       "title": "Im Just Warming Up",
       "file": "songs/chrd/im-just-warming-up--a7935b46.chopro",
-      "contentSha256": "c58eb50c41da2ac90fbde2c41d8a8d05857748d0260952e81621615982121fe7",
+      "contentSha256": "184c02b5ce9665ff383de27b60238402e86b2e2040cf185273f13b20d2270790",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -8352,7 +8352,7 @@
       "songId": "a7d00cbf-6d50-5ddc-b2fa-27fa3874a6ad",
       "title": "Dont Do It Without Me",
       "file": "songs/chrd/dont-do-it-without-me--a7d00cbf.chopro",
-      "contentSha256": "52c0f8522c24314a94416e362f0982404d71476d0a484f352e42002c5805ca44",
+      "contentSha256": "70291a9a1cfea06adbc2cbf85925207673a19c7bc32af5f1c1fb1d73d7ce35b7",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8383,7 +8383,7 @@
       "songId": "a7de4d52-ec50-5047-8ccd-d2bb35d393c2",
       "title": "Into My Heart Lord Jesus",
       "file": "songs/chrd/into-my-heart-lord-jesus--a7de4d52.chopro",
-      "contentSha256": "17bda398dedbaac0cee91c925a7077bec639d4c4b8e2bf907d2a4514c58e1b48",
+      "contentSha256": "2173e23d7722591eee5dc488cd588f1d06c11f52888f656e36c42d1f0d23d5d5",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8412,7 +8412,7 @@
       "songId": "a7e949fb-41ef-5fa5-aab4-d96a4221b9fc",
       "title": "He Brought Me Out Of The Miry Clay",
       "file": "songs/chrd/he-brought-me-out-of-the-miry-clay--a7e949fb.chopro",
-      "contentSha256": "270772b4583ca917d00bb8a57fa0fed6de41047ceee047492b896ed140036eff",
+      "contentSha256": "f06ddf99dcd7614c29d72f5210388ca5f94003a3a630674bb31b3b102e7a78d6",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8445,7 +8445,7 @@
       "songId": "a83fc8f8-8722-536c-8535-2a335c3447fb",
       "title": "Shut In With God",
       "file": "songs/chrd/shut-in-with-god--a83fc8f8.chopro",
-      "contentSha256": "9d113580582c0c5d8d63c55e08d1cae4214a60d249473fc0f12daf0aaa0b2b61",
+      "contentSha256": "09f28a657c9fac6862599e7dec491cbb2bfb87b88ccd3573f66a35dcbd96386c",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8477,7 +8477,7 @@
       "songId": "a9c48cac-39d1-5c8d-b40b-f38a2c679c36",
       "title": "I Feel The Rain",
       "file": "songs/chrd/i-feel-the-rain--a9c48cac.chopro",
-      "contentSha256": "9bca9c69ca4653425fd69ce361543fa5fea8e51f7c700b5b8ba35b1b35be20b7",
+      "contentSha256": "9001140b49b0bd67a3aa6dbdfc1c8de1eae658e2cf68a701ca980e74047ca872",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8509,7 +8509,7 @@
       "songId": "a9cd8044-4b27-5a59-9fae-7e3eafefe262",
       "title": "More Than Anything",
       "file": "songs/chrd/more-than-anything--a9cd8044.chopro",
-      "contentSha256": "92e9b0eca93dbd21dc998ad0a0f28d0283a64fc16dbc09b7a1a815c7068ac1af",
+      "contentSha256": "73cb652a9eb4adab1c18ae46bb4fae702cd6b09dca23a6e64498127247ce1b3a",
       "metadata": {
         "key": "Ab",
         "artist": "Brooklyn tabernacle Choir",
@@ -8545,7 +8545,7 @@
       "songId": "aa039371-5d8a-5d30-9e1c-fc5f3b9a2b4c",
       "title": "Step Into The Water",
       "file": "songs/chrd/step-into-the-water--aa039371.chopro",
-      "contentSha256": "dc48fea416f4ed164807338792966ab745f7a34f1ff8c702139f98cac545ea96",
+      "contentSha256": "cf491f95f1fc1fbaf2e0ca1732a7b9503c3a1771f1a3e820480592ad02a04460",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8578,7 +8578,7 @@
       "songId": "aa332fd1-478b-574e-8ff2-b120a6ca9148",
       "title": "Psalm 34",
       "file": "songs/chrd/psalm-34--aa332fd1.chopro",
-      "contentSha256": "22508ffc4db794e197e98834046e7861545b8be82e1b5a0055612bd48711c69d",
+      "contentSha256": "1f80f64d928d031f3462b9fc15b4b952c7584dea2acbe355007b9d017d2318b6",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8611,7 +8611,7 @@
       "songId": "aa416aa9-4a1a-5200-b749-62688dda02d2",
       "title": "Forever - and Ever",
       "file": "songs/chrd/forever-and-ever--aa416aa9.chopro",
-      "contentSha256": "ac9e70b8381f4435ea5905ae87719456cc286ae1d86ac5cb28ba064a9c9e94b7",
+      "contentSha256": "531d4e479f6b85ca6208b05d3f27ae3a1a4dcc3c093a4f63661a8d993642c89c",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -8643,7 +8643,7 @@
       "songId": "aaaef1cf-e2aa-52c6-8861-5c20d690a137",
       "title": "Jesus Is Alive",
       "file": "songs/chrd/jesus-is-alive--aaaef1cf.chopro",
-      "contentSha256": "97834635a76fa50d0cd7fe022e66fb5c9ae31a61e07fcaaa88dd54e929c0c79c",
+      "contentSha256": "249ed7d4a49ae6982ac5cf29d258bf21004f33227855882a29b42522ba132697",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8683,7 +8683,7 @@
       "songId": "ac351c7b-a3bb-56bb-adf4-8d4203425d76",
       "title": "In Jesus Name (God of Possible)",
       "file": "songs/chrd/in-jesus-name-god-of-possible--ac351c7b.chopro",
-      "contentSha256": "549d249ddc4b76afa17d0c0b63c181669395c191fed4cda15541f7ae0843355f",
+      "contentSha256": "1eb2ff15c1bc09e3113292645468684612f33af6a28e19e0494b8b36ec1fdec9",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -8721,7 +8721,7 @@
       "songId": "ada883e6-3bed-5834-8551-34eb72817426",
       "title": "Surround Me Oh Lord",
       "file": "songs/chrd/surround-me-oh-lord--ada883e6.chopro",
-      "contentSha256": "0adc61cfa22de01a2e0b05382ec723c4a72df4fa1bd260740a5678a0dd02972d",
+      "contentSha256": "3c5f55e0fc40396c68ba0e759e80058ed5d6187a5e0314124dded7866d3a9a3c",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -8750,7 +8750,7 @@
       "songId": "aea39eb1-16a5-5830-8550-42907b9d838a",
       "title": "Its The Holy Ghost And Fire",
       "file": "songs/chrd/its-the-holy-ghost-and-fire--aea39eb1.chopro",
-      "contentSha256": "4840dc289065c750c44370a34b788c43c8b9b10b24e21df8862f6b74c3bd62f0",
+      "contentSha256": "df64fa35412cf02c82c5257ed9ebb7c2302c7719984bdf203aeb8635f18ef909",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8781,7 +8781,7 @@
       "songId": "af0c51e8-e4b7-5b3d-868d-18b535e38d11",
       "title": "Ive Got A Reason",
       "file": "songs/chrd/ive-got-a-reason--af0c51e8.chopro",
-      "contentSha256": "cc21fee0bf650edeb8771d60dc94dfceb8d30d014891cfdaf145a6cd7c7ac665",
+      "contentSha256": "0d7938dd2e5e1fa5ca03978858912f886b426a4da40e8266045c3b9e7bc5212b",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -8814,7 +8814,7 @@
       "songId": "b0ca067b-4fda-581e-b295-b0ba3ca54e25",
       "title": "You Alone",
       "file": "songs/chrd/you-alone--b0ca067b.chopro",
-      "contentSha256": "7d6d8d1df18222ab74359ec42b6aae51c5d690f85d48ec501dd6053646fbf4b9",
+      "contentSha256": "ecf43c5afba3f6da981a581c1a2c00374fe4125525ffc1209dc427e9c0752f4d",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -8846,7 +8846,7 @@
       "songId": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
       "title": "Just a Little Talk With Jesus",
       "file": "songs/chrd/just-a-little-talk-with-jesus--b24c1b5d.chopro",
-      "contentSha256": "86c6bb7a6b5151f566a5a4ef5ff39dbfb11b07d3c4db1217d793832038dc24c0",
+      "contentSha256": "9a9f5e87da1b41a9af8d0ad4ca6f0528f1c474697d069431520988b02df289c3",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8879,7 +8879,7 @@
       "songId": "b2f19667-ebd2-5351-86c3-acda53fd88b0",
       "title": "Hes Been Faithful",
       "file": "songs/chrd/hes-been-faithful--b2f19667.chopro",
-      "contentSha256": "f31ec6dc8ad4056206045be51e2f25a914e3de43ec00e4a2444757467ad6bf1c",
+      "contentSha256": "a83f8f71fef8cc33e739d88186adb8a59c8a36e6c4cda845871191ba79c66792",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -8916,7 +8916,7 @@
       "songId": "b40e672d-7e22-5a6a-8294-63c0f0388afc",
       "title": "Pass Me Not O Gentle Saviour",
       "file": "songs/chrd/pass-me-not-o-gentle-saviour--b40e672d.chopro",
-      "contentSha256": "690f223f875385f107ce191546025403e1c7737a9fa26553199ba70c63792c7e",
+      "contentSha256": "b874ed0668b4c6198247c9347ca74e46b1af48ea9e7ba0febc8624cfe1f0c992",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -8949,7 +8949,7 @@
       "songId": "b5b437e4-9af3-501e-b1ed-acc7665f32b4",
       "title": "Thank God I Am Free",
       "file": "songs/chrd/thank-god-i-am-free--b5b437e4.chopro",
-      "contentSha256": "6dd682c162e2759db7b62b22a7e19922f15bdd7e874c86b05f99893a56caee40",
+      "contentSha256": "8eadab5dcfe2f31fd7903a27451e73aad1c84b56e42c66c5d330e7317b277a74",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -8984,7 +8984,7 @@
       "songId": "b6707263-7c41-50e5-ba79-bcbd7d98686b",
       "title": "Holy Of Holies",
       "file": "songs/chrd/holy-of-holies--b6707263.chopro",
-      "contentSha256": "541d914cf9852cb1925ae52ae9a427fd2b3892de05e4ae3e4d0c6d095c6b3b14",
+      "contentSha256": "de001ba87604696cdeecc03f4fccd5b0bb49fd8aeff9f4f660d3adcd4d385a21",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -9015,7 +9015,7 @@
       "songId": "b68e6f63-4024-5c0a-a69e-0e23ee7f6807",
       "title": "Glory Of The Lord Is Coming Down",
       "file": "songs/chrd/glory-of-the-lord-is-coming-down--b68e6f63.chopro",
-      "contentSha256": "56f201d1f0558f929113b8616bc69e1c589f6f78891fcd0e6b10f46106cce6d2",
+      "contentSha256": "66cff5ea4402a2891e473ebbcb98f006a0b3d895f9c8333e58f04041ebb6523a",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9046,7 +9046,7 @@
       "songId": "b79659bc-4c96-5c36-b1be-eeb92d1fe130",
       "title": "Forever",
       "file": "songs/chrd/forever--b79659bc.chopro",
-      "contentSha256": "e50c0c29932269182a91f4590eb3de9c207d3949177411a998f48c60322d1d28",
+      "contentSha256": "7302c54b2f6cb1a3fafc0e3288ddbb65df02df387888835a1cdb41b7b79f3737",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9082,7 +9082,7 @@
       "songId": "b7b20e85-3218-514c-aeb3-24818e236900",
       "title": "Everybody Will Be Happy Over There",
       "file": "songs/chrd/everybody-will-be-happy-over-there--b7b20e85.chopro",
-      "contentSha256": "89f32d90a253d8c192897f9594bc27250b5142da54fc266118db949ad7b17023",
+      "contentSha256": "ab7ec9c718579712d74def3da3443a241207d3f5d2afff556adbab3f39696481",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -9115,7 +9115,7 @@
       "songId": "b81d0c7e-fd40-5387-ad93-6d0997d42c90",
       "title": "In His Presence Theres Fullness Of Joy",
       "file": "songs/chrd/in-his-presence-theres-fullness-of-joy--b81d0c7e.chopro",
-      "contentSha256": "f22003821e3218e3101ac44cd23c95bdaabbeda97b34202e948a1e053d175994",
+      "contentSha256": "1d74810a9d5623e4390fb26b522fe1a47bd1ef3f0c3b94aae13e3fe0a9e05859",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9146,7 +9146,7 @@
       "songId": "b9df7259-f74c-54e5-b2e6-b9a03331dd41",
       "title": "I Am Determined To Hold Out",
       "file": "songs/chrd/i-am-determined-to-hold-out--b9df7259.chopro",
-      "contentSha256": "b5079c8730362e1c47ed458c91beaf1a81003e064bcc16c529b0d75d470b7b2c",
+      "contentSha256": "e91b13f389fa96455e5620b43c7ed0562f76d18d3ecd7d91ed764cd2b956d9db",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -9180,7 +9180,7 @@
       "songId": "ba987d1c-93c7-55ff-ba86-329f8c2e759a",
       "title": "Ive Got It",
       "file": "songs/chrd/ive-got-it--ba987d1c.chopro",
-      "contentSha256": "95c6aa333dc12be8611bf957b31e2a43965deeba05b6564384c8d75f49c2f108",
+      "contentSha256": "c50c4dd204c60270a8ba22bdc2f01d07805beffdefc2771825771a98027b6cc4",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9211,7 +9211,7 @@
       "songId": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
       "title": "I Have Decided To Follow Jesus",
       "file": "songs/chrd/i-have-decided-to-follow-jesus--bc8aaa31.chopro",
-      "contentSha256": "72129e24a6e15e43ed5f7e5b23862ae93f0e17f26002ef0b9f763dd75f6b8ac4",
+      "contentSha256": "434c6da710e86ec6f147682d361520f3e8e4da869be70d0975ff7c8ffec4d041",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9242,7 +9242,7 @@
       "songId": "bd2a147e-c145-5553-9b48-826108d8fb56",
       "title": "Its All In Him",
       "file": "songs/chrd/its-all-in-him--bd2a147e.chopro",
-      "contentSha256": "7a56658eba5565d16c06e0f0a951751a07a3e34ae70ddbd016ff9c870b38d9ca",
+      "contentSha256": "ff97e81cacdfab143cbd91082fc78cb3dee4db289c5ce79921d87be2a8f2cfb6",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -9273,7 +9273,7 @@
       "songId": "bd78592d-c1f7-5ee6-8b60-5baecacfa32b",
       "title": "Days Of Elijah - Behold He Comes",
       "file": "songs/chrd/days-of-elijah-behold-he-comes--bd78592d.chopro",
-      "contentSha256": "32270441a353bf24b1b8575c581a66a27acd7aa61f8169e62fc96f2d215d62c1",
+      "contentSha256": "933996225f571e557c697697d1d5f8a4256f22925fe6f2a2e9477fbf1cf4f17f",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9306,7 +9306,7 @@
       "songId": "bd83f559-047f-5786-9972-2d7ec65b20a1",
       "title": "Welcome Into This Place",
       "file": "songs/chrd/welcome-into-this-place--bd83f559.chopro",
-      "contentSha256": "3320c4fe7bd6dedb3ce4415f7c91878b2f073ad9bcd392c6edcecb0154f8ff70",
+      "contentSha256": "1f833bb556fc3f68bf6be709c036a670ca0548f621226fd58081cb9523cc9bec",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -9337,7 +9337,7 @@
       "songId": "bda6007a-9f78-51de-8324-ed01fce73b06",
       "title": "In This House",
       "file": "songs/chrd/in-this-house--bda6007a.chopro",
-      "contentSha256": "163610ae64c1277f0f0e4800194a12757be502a90556eb6d22847e41905895d1",
+      "contentSha256": "00b46e95eee05c2b3afd3eba6c7142dee394fe24cbd1f3c1a6ff1369950e41c5",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -9369,7 +9369,7 @@
       "songId": "bde55598-4141-5706-9da1-134d1e134aa0",
       "title": "Jesus Said It",
       "file": "songs/chrd/jesus-said-it--bde55598.chopro",
-      "contentSha256": "5c92eccb9710da258d4ecea211d1a39207fe9d436277797e0420236d1503cfda",
+      "contentSha256": "c0222d260213f004b5c73079d91d3af052af9c26ab829c4e9ffba0261a9b77db",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -9402,7 +9402,7 @@
       "songId": "bebd49d5-ab58-52b7-b422-b50d2652ea9b",
       "title": "Holy Holy Holy",
       "file": "songs/chrd/holy-holy-holy--bebd49d5.chopro",
-      "contentSha256": "88865ab989463c21bd706002d83f26f1b0fce19e607a5b518564997828250a9b",
+      "contentSha256": "407254dfe4b65108ca75bb1290fc5905cc242ea6b16aee4374a95b7d79a912ca",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9433,7 +9433,7 @@
       "songId": "bf2d2a9e-5b4d-5928-b9dc-ebb6a4624d59",
       "title": "Holy",
       "file": "songs/chrd/holy--bf2d2a9e.chopro",
-      "contentSha256": "6fb78b7c0a22019cb7a93d335f03fb443d746e497a95ba2c7864b7eef142cac8",
+      "contentSha256": "1367de4fc499aa8bc2104b7dbf4c6e5b933d092fee7c54f70275c9b0640844ec",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9465,7 +9465,7 @@
       "songId": "bf890d2c-cfd9-5bc7-a576-5488ee0db254",
       "title": "I Believe In A Hill Called Mount Calvary",
       "file": "songs/chrd/i-believe-in-a-hill-called-mount-calvary--bf890d2c.chopro",
-      "contentSha256": "56fbf2b366d344a989fdfb2ea1babdb99262aa3e632b6474fd732d085e78d528",
+      "contentSha256": "c8745fbc1dc374e97c99625bcf7f8b7eb1a0d3517ccebed48c47a9f7dd35a0d3",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9498,7 +9498,7 @@
       "songId": "bfd06b83-e91d-5079-8559-a494b8db8543",
       "title": "Gods Grace",
       "file": "songs/chrd/gods-grace--bfd06b83.chopro",
-      "contentSha256": "0e2b2f6be7cae9a8cb4d3c94ea11f48fa133d468006d060bff81b46ac073c598",
+      "contentSha256": "7eab6e03b233e34449a07ac4a4416c050e6f07b86d4ee3784531aa8c57b39768",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -9529,7 +9529,7 @@
       "songId": "bfedf31c-903e-5115-966a-e67a6a38b630",
       "title": "Old School Church Medley",
       "file": "songs/chrd/old-school-church-medley--bfedf31c.chopro",
-      "contentSha256": "f53edcb7ddc3bad2275a896c7e2c0c19fbf726f3b5cfa519a800158142946574",
+      "contentSha256": "669c11d66b29349a596245bf18fab8e986e701f60ff56af8a12ef561f358cbc4",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -9558,7 +9558,7 @@
       "songId": "c01e0bd4-d2ef-5541-a9af-fd8c21d2f34a",
       "title": "Hes The Only Reason I Live",
       "file": "songs/chrd/hes-the-only-reason-i-live--c01e0bd4.chopro",
-      "contentSha256": "853dc1a9689621ba4fd638d7f0a2869acc7ffae2af758e78688389117e4b58f5",
+      "contentSha256": "1c78a2ed22860ea4de12f016c0910362b7cb5a33880735ff41843d870d247e7f",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9587,7 +9587,7 @@
       "songId": "c042b06f-795f-5ddb-b018-1ca33ffb5673",
       "title": "The Anchor Holds",
       "file": "songs/chrd/the-anchor-holds--c042b06f.chopro",
-      "contentSha256": "91192c3559cc75dbdfba7d1c39b3291a27272b50b54ed9ef709ab304332c0c78",
+      "contentSha256": "9f756b124b7eb8a80ac864a0b8d908e8e2e5d38097a9a7ae86e0f69fe01d8088",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9618,7 +9618,7 @@
       "songId": "c10b3b7f-170a-5a34-9ec5-93242afd99ca",
       "title": "Colors of the Wind",
       "file": "songs/chrd/colors-of-the-wind--c10b3b7f.chopro",
-      "contentSha256": "71dc3590460ae94bcfde39b87ddeba63a3124c99994ab39afeef7801ff5235a7",
+      "contentSha256": "de3e0ad3b720f5145cc39c69eb2ec8735783753f435f70d76755d30aad64be1b",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -9656,7 +9656,7 @@
       "songId": "c121e897-dfe1-502d-8d5c-d78e67726b7f",
       "title": "The Potters House",
       "file": "songs/chrd/the-potters-house--c121e897.chopro",
-      "contentSha256": "9975a48e6e76d20834b5d746fa8e4b15783c91dd44818f7624d577c8ddfa3308",
+      "contentSha256": "f832075c8d3c2153344dd310266bf1711eac7880e9fc02082a78183c70cd2b0e",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -9688,7 +9688,7 @@
       "songId": "c2edc308-9dac-58d3-92ed-b014094c5c06",
       "title": "Oh The Blood Of Jesus",
       "file": "songs/chrd/oh-the-blood-of-jesus--c2edc308.chopro",
-      "contentSha256": "ed6964de20600e5a0b8075a8371cdb4e960dd3c137c13be1147bd7b7418b5e67",
+      "contentSha256": "a369eeeff654a2fcfaba65c83d01200418dfe8b2b72e39b409b2d361ef21c909",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9720,7 +9720,7 @@
       "songId": "c33afc2f-92ce-5446-b826-5d40caff3ce5",
       "title": "Theres Room At The Cross For You",
       "file": "songs/chrd/theres-room-at-the-cross-for-you--c33afc2f.chopro",
-      "contentSha256": "22850fe571eb045cdaa844a2fef7ddde4d14bd3dfea3d0ad8f606fcf50069155",
+      "contentSha256": "9658f379df5cda4d8aab67bdbdcd160f4f5fb0c3c70d49d174b908f9f7a1d74f",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -9754,7 +9754,7 @@
       "songId": "c3c8384f-e193-53d8-8c35-520b6c00d6e0",
       "title": "Look What The Lord Has Done",
       "file": "songs/chrd/look-what-the-lord-has-done--c3c8384f.chopro",
-      "contentSha256": "01d5304c01d507454a79dd7576fc1763e3ab028933ed86ea15f2fe5feb0062e3",
+      "contentSha256": "b8a42862197c8790e4e2d7b757979661d844e7c15548e4e137c0b67b95a010ec",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9788,7 +9788,7 @@
       "songId": "c4226c77-740f-5812-ae46-f05ab9de006c",
       "title": "I Know It Was The Blood",
       "file": "songs/chrd/i-know-it-was-the-blood--c4226c77.chopro",
-      "contentSha256": "c4472e24e58835b5f36209705882349c50e188f14a34c56b95b7fca92c8f79b2",
+      "contentSha256": "36ac6e60509649d53ba71662af7e704fc7520ba87a3f99c9489846c3aa87f13f",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -9820,7 +9820,7 @@
       "songId": "c4d9b204-f9eb-5ad3-9c81-b253bf41f3f5",
       "title": "O Magnify The Lord",
       "file": "songs/chrd/o-magnify-the-lord--c4d9b204.chopro",
-      "contentSha256": "86847791c5d9ba84199f0289139396cb55ddcc325435d248a39490524d629982",
+      "contentSha256": "83033a9f5f0ab89c15c5de794d1c6106d26e073fe2dea381abefc2965a913f2e",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9852,7 +9852,7 @@
       "songId": "c4e7dfd7-c156-5f96-93c6-8ace9e8f86cf",
       "title": "You Deserve The Glory",
       "file": "songs/chrd/you-deserve-the-glory--c4e7dfd7.chopro",
-      "contentSha256": "1ae83f805c92516da67efbfb03bd7e9151e7d328962609bc760d1a5c20eeb111",
+      "contentSha256": "79ca9b236ef46889431bf9a0edc54e68200d610e8967bfb1de125b2d5b7ee07c",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9885,7 +9885,7 @@
       "songId": "c7299657-e6c4-5680-b0fe-f06716596248",
       "title": "Way Maker",
       "file": "songs/chrd/way-maker--c7299657.chopro",
-      "contentSha256": "cd6508b582403f42cb66a3e012816e01f297b4d72f7e831c4f8ef0d5e16f507b",
+      "contentSha256": "a99b50d6de23d9902f50675f4fb9c7c557224c5d027aa51eceec73c50f0fcf16",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -9917,7 +9917,7 @@
       "songId": "c76eff39-1ca6-5f46-a841-6adedc1ffb74",
       "title": "Anointing Fall On Me",
       "file": "songs/chrd/anointing-fall-on-me--c76eff39.chopro",
-      "contentSha256": "b5015cc407ea02714ef9784cc6311c306e982d9cb2c4b970128da0022852db7c",
+      "contentSha256": "ef9e42cae6d175bd41fb1aecaae58c19a6f43ddfe1b6076c960067fafc9f0edd",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -9948,7 +9948,7 @@
       "songId": "c8aa5bfd-4623-59d4-94f1-4dcd0f7a25de",
       "title": "Im So Glad That The Lord Saved Me",
       "file": "songs/chrd/im-so-glad-that-the-lord-saved-me--c8aa5bfd.chopro",
-      "contentSha256": "089e2633f08dbcc38b2de735c92167a3547ad38ce61fa845717af40c0a33bd04",
+      "contentSha256": "d1daad8f656fc5f0cd2e37ad890dcd4fe8317bfb42aa99eac276b4340447da91",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9979,7 +9979,7 @@
       "songId": "c9011865-bcd3-5a0b-b473-000af6954214",
       "title": "We Shall See The King",
       "file": "songs/chrd/we-shall-see-the-king--c9011865.chopro",
-      "contentSha256": "ebb540d442473b32813d697ac716e26b32a6412846371714f98db9535630d9fc",
+      "contentSha256": "f702e28c4b672e293256bfe102afd5546c617a69048cf605be6bc02009931e1a",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10008,7 +10008,7 @@
       "songId": "c997ea8c-5c7e-5730-9c27-9f15ebb78b13",
       "title": "Rain Lord",
       "file": "songs/chrd/rain-lord--c997ea8c.chopro",
-      "contentSha256": "a37203d1be315ccad3a571dbdd59c4d31a71de68c621015a66f627f72496efbc",
+      "contentSha256": "fb1dc2522e0aab48a03e423e2e53f89d07e3cb1423ac60bc95df161522eb444c",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -10041,7 +10041,7 @@
       "songId": "c9d22cc5-677d-5641-a71e-48cacb1062ca",
       "title": "Glory, Honor, Power",
       "file": "songs/chrd/glory-honor-power--c9d22cc5.chopro",
-      "contentSha256": "33f7211d1a3082c9b7931c994ccd4c2da9bc530f7e061e0498362b4e213c284b",
+      "contentSha256": "158292f115420024547d89d2a7a890da8451960bc84c2bd388b6b3577d474835",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -10074,7 +10074,7 @@
       "songId": "cace7122-f477-5262-ab91-77b29659f90f",
       "title": "What A Beautiful Name",
       "file": "songs/chrd/what-a-beautiful-name--cace7122.chopro",
-      "contentSha256": "047d58c142a204b60bdd225ee79000467d3729a444a29fcb30eaa230320d08a4",
+      "contentSha256": "32a67686da1bfdc1366fdd993ce71b18baee239b0a5e3a10dfb5fddf07d2f173",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10112,7 +10112,7 @@
       "songId": "cb15fcc3-0b4f-504e-8550-c554635c88f5",
       "title": "If I Shout",
       "file": "songs/chrd/if-i-shout--cb15fcc3.chopro",
-      "contentSha256": "07cbae9a4c3e9dab90da8b020a2374a84bca5e6dcfd4796fca703db6cfcce987",
+      "contentSha256": "b671e92c3041186514e972237c4a7c83e3f158c0a49b6cac227e3b790d9bf843",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10148,7 +10148,7 @@
       "songId": "cb6d3509-2c25-506b-a9a5-d51be6d8a462",
       "title": "Hes God",
       "file": "songs/chrd/hes-god--cb6d3509.chopro",
-      "contentSha256": "f3d9f7c739e4ccf403704d3d85696848f0384367bd1504368a47ae7329d7e374",
+      "contentSha256": "a3dcade239d0be3c7f67e7298c1c67f6a187cdd385779480cab490d34c973544",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10182,7 +10182,7 @@
       "songId": "cbc6c2dc-c37d-5d9f-a6b4-2b986ec47374",
       "title": "The Hallelujah Side",
       "file": "songs/chrd/the-hallelujah-side--cbc6c2dc.chopro",
-      "contentSha256": "4da3fb914c3123227e7ede0824015e96e51bbce6e97ab1a4367e60768bf6cfca",
+      "contentSha256": "300d74d21617da0eab910e3712c3822453e019ed193904e494bfaa00cb631aec",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10216,7 +10216,7 @@
       "songId": "cc9f21b1-efa1-5444-a3f6-c74afd807eaf",
       "title": "God Gave Me A Song",
       "file": "songs/chrd/god-gave-me-a-song--cc9f21b1.chopro",
-      "contentSha256": "10f9c11962b9293d53f05caa4e85ca72de7e2653313c4fca59aba4bdb755ebf3",
+      "contentSha256": "26fecc13a69e1851a3c338155ee6c32c7da828b212a624ff71593b6f59e98669",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -10250,7 +10250,7 @@
       "songId": "cd3c54e9-3346-547c-b2e4-34ed1ba20d2f",
       "title": "Holy Spirit Rain Down",
       "file": "songs/chrd/holy-spirit-rain-down--cd3c54e9.chopro",
-      "contentSha256": "ad6c78ddc649672a5c56be0d8f4841d864d58c61abcfb6256191c24ef571802f",
+      "contentSha256": "8c586d680055be80b2b622f1335c191cce12d0ec047be9a30a47ccd3f55b74fe",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10283,7 +10283,7 @@
       "songId": "cde73347-e7e5-5561-a631-09a0dbfcbed6",
       "title": "Still I will Trust You",
       "file": "songs/chrd/still-i-will-trust-you--cde73347.chopro",
-      "contentSha256": "5d0d90e481884614273c6e5904bdc03c658f8d2f0537b03b7ed692738c9587e6",
+      "contentSha256": "03c315d4366d6a30f7ef3fb89bc6e7c56704a78f7932c5cceb7a4af3f321f69f",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10319,7 +10319,7 @@
       "songId": "cdf941f4-db93-50fc-a9d2-a4124392e891",
       "title": "Hes Still Working On Me",
       "file": "songs/chrd/hes-still-working-on-me--cdf941f4.chopro",
-      "contentSha256": "e08c65e9630fc280aa316da3c80715bb436b92bde003fc75f633d22aa37a0c00",
+      "contentSha256": "e4510f0ebb12a62626a3064b5a2c46b24953f0ce21ef73258c3f6aecfbc8409a",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -10351,7 +10351,7 @@
       "songId": "ce042fb1-cc4f-5f08-9707-a4c92ea94edb",
       "title": "Every Praise Is To Our God",
       "file": "songs/chrd/every-praise-is-to-our-god--ce042fb1.chopro",
-      "contentSha256": "55979a882f856d838891f17434ef13c81aadadeb30663a1194dd82410d7f0330",
+      "contentSha256": "059fdeec71f81e22d336a31d73833f5372dd2adff6dfac2482bf46dcc4b09368",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10384,7 +10384,7 @@
       "songId": "ce7808ff-7b77-5ef0-9949-60b32e123fba",
       "title": "Tremble",
       "file": "songs/chrd/tremble--ce7808ff.chopro",
-      "contentSha256": "262f72ea2fef3c8784715f37c19964c9622cba988b8a020fa5fe68c0cd1e98d6",
+      "contentSha256": "5b1117b4f4dbbbd9ebfbd61b54a861b30da8752f14b61f46647a334801634b71",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10415,7 +10415,7 @@
       "songId": "cebad9a1-9e99-5367-a797-75dc2e512d20",
       "title": "Jesus Lover Of My Soul",
       "file": "songs/chrd/jesus-lover-of-my-soul--cebad9a1.chopro",
-      "contentSha256": "6eab63ed015b5b34d9bd01f25166470aee93fdc3b1301611b436f4399277db2a",
+      "contentSha256": "cc0e4a916fa94e4626e154597a40995dd3408860594f09828b6cbb95e6cab542",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10447,7 +10447,7 @@
       "songId": "cec0dcef-9952-5c29-9ed9-f9ea908771f7",
       "title": "There's Just Something About That Name",
       "file": "songs/chrd/there-s-just-something-about-that-name--cec0dcef.chopro",
-      "contentSha256": "8664dd3bdd5243d70b2129963b29d9c73c194c30f549b363be10634291cc85cb",
+      "contentSha256": "dc2ccb547b2402ee9169c9c63e4b4d12b778909f44a2e41bd180395fe9114335",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10478,7 +10478,7 @@
       "songId": "ceeec5e7-8e81-5f43-bb19-b67c155f2ff5",
       "title": "Blessed Jesus Hold My Hand",
       "file": "songs/chrd/blessed-jesus-hold-my-hand--ceeec5e7.chopro",
-      "contentSha256": "c57a849ed10fa6588c93abf3a6afd88bdf15e27272d83b48dd09b77505332056",
+      "contentSha256": "dc7396d1987f8341cc2a79920c5c784c6a5b390d43583a874c5a3818642710e3",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -10512,7 +10512,7 @@
       "songId": "cf658ecf-1733-5e3d-98d4-943078186e9a",
       "title": "We Need You Lord",
       "file": "songs/chrd/we-need-you-lord--cf658ecf.chopro",
-      "contentSha256": "b655e4198c5ae674e8c0a92c1f7eea4a3e53297a97f2c71fa45b6cc3fa0c3347",
+      "contentSha256": "db586e79c64c16fd97d91c24da14f4a3f1c811bf5186a4415d60c0ac40418354",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -10543,7 +10543,7 @@
       "songId": "cf9c3e70-81cd-5b23-9b39-ff86c1131194",
       "title": "My God Can Do Anything",
       "file": "songs/chrd/my-god-can-do-anything--cf9c3e70.chopro",
-      "contentSha256": "e48b0a409f5a5b8d22928b77464b39fcc1e083d0b37c8f2dc9715a62870e2e7a",
+      "contentSha256": "21cf0a9be574eba95157253514a76ba015bfc8d5b3c76f380992c261fa751666",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -10574,7 +10574,7 @@
       "songId": "d0103a23-476f-51a8-bc20-9d6cf6cfa578",
       "title": "He Looked Beyond My Fault And Saw My Need",
       "file": "songs/chrd/he-looked-beyond-my-fault-and-saw-my-need--d0103a23.chopro",
-      "contentSha256": "c2cdab49931f5c08da877df592bff292b2ee01fa9be209d6877d1eda337777ab",
+      "contentSha256": "8626f6d45c442988a2de5efe434b8f5a29dcfe9badf6f95ae3196589343fdb36",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10608,7 +10608,7 @@
       "songId": "d086013a-d839-5c4d-afaf-e33cbb8e9671",
       "title": "Let It Start In Me",
       "file": "songs/chrd/let-it-start-in-me--d086013a.chopro",
-      "contentSha256": "17a5b953215fd932065e559319bbaee413d8e96c38fbb3ec5a000965a00124a7",
+      "contentSha256": "a551cc8a567481e5fd23662f14e0ef191540e9b1a9b038deec72ce890ce40c63",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10639,7 +10639,7 @@
       "songId": "d0a83da6-1bae-597d-834b-3f1a38b25867",
       "title": "The Blessing",
       "file": "songs/chrd/the-blessing--d0a83da6.chopro",
-      "contentSha256": "207cdacbc7b414b53e2d44946cbb40a21ede35a1baade6c9433ad012f7ceb945",
+      "contentSha256": "f22252b5046f1dbd053256dfdad5dc2d8b741cd5a1db135a6649e8b7865aa2db",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -10668,7 +10668,7 @@
       "songId": "d21fd2c0-3971-5078-a43e-c90e7f9525b6",
       "title": "Give Me That Old Time Religion",
       "file": "songs/chrd/give-me-that-old-time-religion--d21fd2c0.chopro",
-      "contentSha256": "2336fc478485b687dcebd5931c9ffa62a5309d3e281716dab60dd692fcdbd372",
+      "contentSha256": "81209b8e8f2fd63375a0f2a9fb3362fafe2cd029de260b36f2fdf55ddc535a98",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10697,7 +10697,7 @@
       "songId": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
       "title": "Let Me Walk With You Jesus",
       "file": "songs/chrd/let-me-walk-with-you-jesus--d4b83943.chopro",
-      "contentSha256": "4d17f61daad587ab971a510c282f017c57b0cf3bc6006f5fe50f99b1aa13d53f",
+      "contentSha256": "e180ec3566d5c05da48afe23b33c8c667c10b0f1787d77ead9eb2c4cfbd056f3",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10728,7 +10728,7 @@
       "songId": "d4daef67-2048-59bc-895f-dc22ccbed081",
       "title": "Anything Can Happen",
       "file": "songs/chrd/anything-can-happen--d4daef67.chopro",
-      "contentSha256": "b781376aa4b16de64aee5c526460bf720cb091d0c0d4c556180fa649bf3e22a3",
+      "contentSha256": "b7e586624b3e386401899cf039f04c99d91ede7b23e209f6129f7238d4b83a2e",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -10760,7 +10760,7 @@
       "songId": "d5837b32-e565-5685-b941-bd80ef68c131",
       "title": "Worthy Of It All",
       "file": "songs/chrd/worthy-of-it-all--d5837b32.chopro",
-      "contentSha256": "b2421c01ba33b63447a073c795bb6ec908f90909d9b67806cdd6595b494486d2",
+      "contentSha256": "44f3d8e0656c5e2e35a0f0a58989c99092fa9be0f9b42b0b888b4ad8c256bdf7",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10792,7 +10792,7 @@
       "songId": "d59d44eb-a93a-5097-b727-3ee8e46f0a2a",
       "title": "I Wont Go Back",
       "file": "songs/chrd/i-wont-go-back--d59d44eb.chopro",
-      "contentSha256": "a922e8954b112f5780fdfef2c9332e3417591fff2ed514fe01d2bef574196ba5",
+      "contentSha256": "622067d8fed73889298123e5f7fad5e0329d4cf8ab481eaf903e45912610e9d4",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -10825,7 +10825,7 @@
       "songId": "d5f558e5-1617-5fdd-b0be-3a4d77608737",
       "title": "I Wont Turn Back",
       "file": "songs/chrd/i-wont-turn-back--d5f558e5.chopro",
-      "contentSha256": "0499a104b5028c9839e9e8ab556e41dfc18cc1de0b8407ae6372d3cc60ed2bbb",
+      "contentSha256": "867da23b855028cc45399a677f5d16525bf9f2066dd39a184bf581adc3fb9672",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -10857,7 +10857,7 @@
       "songId": "d6dcb220-399c-56fa-b9a1-11976c8335f3",
       "title": "Lord I Love You",
       "file": "songs/chrd/lord-i-love-you--d6dcb220.chopro",
-      "contentSha256": "08dfc46596eb172ff14ad4b48aa825df4e1a146a302d97b1367a512f13563349",
+      "contentSha256": "8c5293873200a9269ff68098edb87ac450ec7e4c3df7b0c21d60cafccfb77dcc",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -10889,7 +10889,7 @@
       "songId": "d9285333-4bfc-562e-b5ba-dcd0165de3a5",
       "title": "He Didn't Just Carry A Cross",
       "file": "songs/chrd/he-didn-t-just-carry-a-cross--d9285333.chopro",
-      "contentSha256": "f97849fadf912656e36d3d4acf6d5c295b82f01dce9e7db07b79fbd63589687d",
+      "contentSha256": "3380f9e2080d3f81ae61ffc9dab4febd4c819ab85e4d813b94ebed1665ccc687",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -10922,7 +10922,7 @@
       "songId": "d96752aa-4560-5d6d-b4a6-93a99e32f6f2",
       "title": "Sing Till The Power",
       "file": "songs/chrd/sing-till-the-power--d96752aa.chopro",
-      "contentSha256": "76afe38a0e73e708da4eada049174590440a96ff2993cee2d219f561745139c4",
+      "contentSha256": "3722b259dd2048cfbf23fe10514a2e5689079c7366f638d9d9f70f33689f2d75",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -10959,7 +10959,7 @@
       "songId": "d9e52bdc-2007-5122-8bb0-82a3fc0082d3",
       "title": "This Blood",
       "file": "songs/chrd/this-blood--d9e52bdc.chopro",
-      "contentSha256": "45482a57fffc7b8eee74eb54c82949007eeb482780016f0e6d75bc577056cb6e",
+      "contentSha256": "c475aecae7a916e09b0a51013310fd96b28e55796436bb5691060813b4483a4d",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10994,7 +10994,7 @@
       "songId": "dad1ca67-3fd0-5212-8380-47486167e549",
       "title": "Battle Hymn Of The Republic",
       "file": "songs/chrd/battle-hymn-of-the-republic--dad1ca67.chopro",
-      "contentSha256": "b6ef719252a2cba8249177d9de51bfd10a5262612ce5b0de32770a72efd99bf9",
+      "contentSha256": "7f48af266bb996cde68a93d55e2ae87c409c26916e02aac890861096950494b2",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11027,7 +11027,7 @@
       "songId": "db65ca04-d17b-5d03-8486-779defbb27de",
       "title": "Hes All I Need",
       "file": "songs/chrd/hes-all-i-need--db65ca04.chopro",
-      "contentSha256": "679c0e9b76af3d3849d745e8d30a6b9f4820baa4f3aca43401b9af1c05b5b37e",
+      "contentSha256": "9dc3bdefee608d1cf5f0420c5d80b8a559a5c7e1499eef0b5bf1363458156c20",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -11056,7 +11056,7 @@
       "songId": "db7b481f-4869-53ab-96d8-db713ee1b184",
       "title": "Worthy Of It All",
       "file": "songs/chrd/worthy-of-it-all--db7b481f.chopro",
-      "contentSha256": "dbb9b6dcc1192c5ac1891afb8e48f1d82bb362204982e787afc61f532df10f69",
+      "contentSha256": "a709ee458a97924e95a609b87b5045604cbae5285a7212935b31437c5eec56f7",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -11088,7 +11088,7 @@
       "songId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
       "title": "I See A Crimson Stream",
       "file": "songs/chrd/i-see-a-crimson-stream--dcedbd3d.chopro",
-      "contentSha256": "e5c71b42401a4d87a034e0b835a5530608d8c423e8cd657c11177c4445adaca5",
+      "contentSha256": "6bf27bc11aad347739667f1d267f36cef4fd9f9d79824ae491521773f7d8e792",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11122,7 +11122,7 @@
       "songId": "dcfa8dd4-5491-5fd7-bca9-96ab14a9d7d3",
       "title": "We Bring The Sacrifice Of Praise",
       "file": "songs/chrd/we-bring-the-sacrifice-of-praise--dcfa8dd4.chopro",
-      "contentSha256": "8ff5b9691717c7ecd2aed6ca53211fad5b37bf4228528c085892e50748f95402",
+      "contentSha256": "97f264a28d400dcacba5b5fa87d1d56ce8afaf31ae6213bb7ce55289fbc4dba0",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11154,7 +11154,7 @@
       "songId": "dd991095-f3e0-5622-960c-3bf818e01824",
       "title": "But God - The Devil Thought He Had Me",
       "file": "songs/chrd/but-god-the-devil-thought-he-had-me--dd991095.chopro",
-      "contentSha256": "e688545afddd84c139c467195add5a29c90a0381948f7fc712cdc7aa14ec442e",
+      "contentSha256": "cd505aedc001ee9ba609df13f9cf260093738c0753392d11f794ddabedad00c1",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -11183,7 +11183,7 @@
       "songId": "def8180b-436d-5999-a628-957798aba362",
       "title": "Jesus Is Everything I Need",
       "file": "songs/chrd/jesus-is-everything-i-need--def8180b.chopro",
-      "contentSha256": "d124d0fcd8b9d3f013ece4845cfd494a5846dada36370ccfe36c081e16a81b65",
+      "contentSha256": "bbf72b0fbad06ef4cf73981ae3a00b0e91497f5ad07c29bdac2f2877957d981c",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -11212,7 +11212,7 @@
       "songId": "df7c91d8-2765-5612-a1f1-2c11ccddc655",
       "title": "Crucified With Christ",
       "file": "songs/chrd/crucified-with-christ--df7c91d8.chopro",
-      "contentSha256": "8e5e8f76a64f6ac821570d9336088fd92c34ef319e649adc1d569754788b2765",
+      "contentSha256": "cc7de9e596c5f3dfb36b5c3658291d9d367b3584c4d0c0876dc927144c21eb6a",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -11245,7 +11245,7 @@
       "songId": "e0423ccf-a31d-5b48-be85-360737bbaae2",
       "title": "I Go To The Rock",
       "file": "songs/chrd/i-go-to-the-rock--e0423ccf.chopro",
-      "contentSha256": "b882d8953c293ed803c991a6cead424aa09e1b4b38b925e0070a5e82447ff6f1",
+      "contentSha256": "ba467d5c22f751ad44060c0d9acba246d8dd8c8e1d6711252c8319b35884e09b",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11277,7 +11277,7 @@
       "songId": "e158c930-ca53-570d-88e0-76b59abd944d",
       "title": "Whose Report Will You Believe",
       "file": "songs/chrd/whose-report-will-you-believe--e158c930.chopro",
-      "contentSha256": "f285bc1332ff46a42ff34a92400123206e97e51c59577e17663457e8f2470bfd",
+      "contentSha256": "f7d30d75db1b00eda9b8ae58aab2bac9a53960b3a62a77f97da9155078559090",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11309,7 +11309,7 @@
       "songId": "e1dd1876-b453-5e98-85ef-ffe69bfd7e8b",
       "title": "The Potters Hand",
       "file": "songs/chrd/the-potters-hand--e1dd1876.chopro",
-      "contentSha256": "d59201f9e41a6e39fde84c23e3ac191022acecb58912de969e941c2c7ff3a7a0",
+      "contentSha256": "f6645fc03848b62cbff35efd6348c3bb83c53352af4c202b8312ff459300a653",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11341,7 +11341,7 @@
       "songId": "e2d01273-9f63-5ce1-892e-db18a6eb7941",
       "title": "Lead Me Lord",
       "file": "songs/chrd/lead-me-lord--e2d01273.chopro",
-      "contentSha256": "5ac64803f87e5584bc35c264f9a49ade8d59425f40058d49a024ab4ed5ae1b27",
+      "contentSha256": "5b9bd8ee7e31954b5c6c993a025be4bf2edd5d7f55b7e40def991c41948824ee",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11370,7 +11370,7 @@
       "songId": "e3000143-7bbb-56c6-9de1-43560e7dc7d1",
       "title": "I Surrender",
       "file": "songs/chrd/i-surrender--e3000143.chopro",
-      "contentSha256": "0a5232af7c15944a0a53c314bd5a155dc3a0a26a3b4996ed65cb7430e78261bf",
+      "contentSha256": "0c7fb931887d634a9f5a0a0a4cddcefe22b6d1e7fd126e24c3277ebae8b4dc17",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11401,7 +11401,7 @@
       "songId": "e50ce4c2-6395-5e5c-961b-5043b857773b",
       "title": "I Love You Lord Today",
       "file": "songs/chrd/i-love-you-lord-today--e50ce4c2.chopro",
-      "contentSha256": "248b810e89fa26d1a8a533c459fe62c41f9cf77197ad56299a062c71d239945f",
+      "contentSha256": "a77b5ca3dd84207452a71a5e94fdf8d9c2f24e26b1a7dda7799428fff9516f02",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11432,7 +11432,7 @@
       "songId": "e53ad8ff-7501-5e2b-9b3b-3f1353ce7d39",
       "title": "Still Everything",
       "file": "songs/chrd/still-everything--e53ad8ff.chopro",
-      "contentSha256": "6dbd45325bf9a31a39d17f74610994f3cbd76df76398028f6a9b0b920ddd3fbb",
+      "contentSha256": "1f9c05c82356fe50f969675147534f7b9b03ba5a9b3afdd1bb81221a0972a50f",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11466,7 +11466,7 @@
       "songId": "e688a393-49d9-5d87-a7e7-4f19bc00697e",
       "title": "At Calvary",
       "file": "songs/chrd/at-calvary--e688a393.chopro",
-      "contentSha256": "9896ba523f50515ceef67da1fc4b1c9c5dd99bf8eb5da8a06f7656ac8bbff202",
+      "contentSha256": "e90c0b22c64a081e313a19a7304bdd66bce6932405645262959689a59a460e43",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11500,7 +11500,7 @@
       "songId": "e6a28c8c-fa90-533a-a152-515cac7d61a2",
       "title": "Glorious Day - Living He Loved Me",
       "file": "songs/chrd/glorious-day-living-he-loved-me--e6a28c8c.chopro",
-      "contentSha256": "164a66355ba15b9cf2536ca117caaf1cf1a2aef7f60d2798e9a5f09e9c49af99",
+      "contentSha256": "6083b46fa35ded63b781965e97ba4e45776124a160eaba3307c3d8c6c4ff0dda",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -11536,7 +11536,7 @@
       "songId": "e6e6840b-0d85-5308-a34e-5999563794d5",
       "title": "I Dont Know Why Jesus Loves Me",
       "file": "songs/chrd/i-dont-know-why-jesus-loves-me--e6e6840b.chopro",
-      "contentSha256": "85f8fde3826f88b8de711cbf8760bad055a2e7863b93de21ac9c458a203d0dcf",
+      "contentSha256": "32958a7a75b0c03006d1a98f1a9e0ab72e7b60fc8b2cbcb8f353d6db4c52abf3",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -11565,7 +11565,7 @@
       "songId": "e710a1d2-055b-5497-b2c8-0f4344781941",
       "title": "By His Grace Im Saved",
       "file": "songs/chrd/by-his-grace-im-saved--e710a1d2.chopro",
-      "contentSha256": "237329251125984d5311e433ada71691baa0cfee9f351e5bed9ada9f2506ab9e",
+      "contentSha256": "d023d5b7f78cdf046084fffb9900b633d361d1184af22e9c52180210ef6a0f59",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11596,7 +11596,7 @@
       "songId": "e7696de6-1f04-5435-a53d-f7e49be2ce3b",
       "title": "Praise The Lord - Praise His Holy Name",
       "file": "songs/chrd/praise-the-lord-praise-his-holy-name--e7696de6.chopro",
-      "contentSha256": "6d44d9c8dd785cb8f5dae8fef469a8afeef7b4f64ffad643984f43f3c76f0f00",
+      "contentSha256": "fb60732af45e561bfc04d523b828402f4949a2bd8eebf8cefed4bdb093320eea",
       "metadata": {
         "key": "A",
         "artist": null,
@@ -11629,7 +11629,7 @@
       "songId": "e76f8c28-3873-5556-be8e-0e51a5369bd3",
       "title": "Why Don't You Come On In This House",
       "file": "songs/chrd/why-don-t-you-come-on-in-this-house--e76f8c28.chopro",
-      "contentSha256": "728ebe044523aeb61b8f376b445848b4b8c11869a3de9e5d12215cca65580abe",
+      "contentSha256": "782b7ad24f44311c817ca870a9a89fc8b4909bd39b552cafe859b2c6f635bcb6",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11664,7 +11664,7 @@
       "songId": "e817a551-5f8f-5ee0-8e0a-3ded4c6b03b6",
       "title": "Down From His Glory",
       "file": "songs/chrd/down-from-his-glory--e817a551.chopro",
-      "contentSha256": "a15a6c07ca4471b6888beabd0806ccbda430e31d048ff0de9eb14ee526c17a12",
+      "contentSha256": "52c6e8c33b8c1473e30628ff0b8c7f31c6cb153f409464d1ee544c1ce944a4c0",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -11698,7 +11698,7 @@
       "songId": "e841c301-8f4b-51af-b3a3-07a4d90c325f",
       "title": "Determined",
       "file": "songs/chrd/determined--e841c301.chopro",
-      "contentSha256": "ccb6ec8d3799bc4f5de3237a4e43ffa8200d59af24b72a54b1e8cea476241029",
+      "contentSha256": "abee62ae34f728aa06816837f2ab6afbbe62026fff34842a8b70e8208fade406",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -11734,7 +11734,7 @@
       "songId": "e85cac51-6ec1-5ad8-a0ec-34667ba33724",
       "title": "Lord Prepare Me To Be A Sanctuary",
       "file": "songs/chrd/lord-prepare-me-to-be-a-sanctuary--e85cac51.chopro",
-      "contentSha256": "418f795d1d2502ddfcc23897884ee6940bbeeff29b2dbdf2fedddd49f8a00f87",
+      "contentSha256": "19155483c8dcb405cd8e921ef53d1f57b5d1ae430d5a637f109bc1f7820bbbe7",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -11765,7 +11765,7 @@
       "songId": "e8f5d57b-775c-523e-ac9f-b4878b1fce20",
       "title": "I Want To Be More Like You",
       "file": "songs/chrd/i-want-to-be-more-like-you--e8f5d57b.chopro",
-      "contentSha256": "03c8f3b1e27b45907934a6c87c1d210e880cea1ba508201272c56809b82ddbaf",
+      "contentSha256": "92460d7cc0005923f12671bc9a8d8a0ba2b436f1cf6c4b5fd68e17c044620be6",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11794,7 +11794,7 @@
       "songId": "e997e1bc-318e-5442-83cc-13209bf45e68",
       "title": "Fill My Cup Lord",
       "file": "songs/chrd/fill-my-cup-lord--e997e1bc.chopro",
-      "contentSha256": "f1e80064e015419b048bc361bb10b5ca0524c8472c958a30f27c133340226e45",
+      "contentSha256": "9f8744bc832fbf7a6607245310941a4b1e8d68c6c2cd28c1b50fccf59b3ee581",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11827,7 +11827,7 @@
       "songId": "e99ba077-c65e-58a3-88dc-f0beb0d09dec",
       "title": "Let Your Glory Fill This Place",
       "file": "songs/chrd/let-your-glory-fill-this-place--e99ba077.chopro",
-      "contentSha256": "638316c537b70d06cfb1eca82df839ca454f41455f5fdac0b453c520b1aa0a28",
+      "contentSha256": "09329717a88defc451c75f9f2ff629f3bf3a7387e21a84e1ac5866a6ba3622e1",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -11858,7 +11858,7 @@
       "songId": "e9aab61e-a39d-551c-aea2-984a4ae5895c",
       "title": "I Surrender All",
       "file": "songs/chrd/i-surrender-all--e9aab61e.chopro",
-      "contentSha256": "72b43a946cfcea50872cd0c2cf49e85d8003671cc043e611bdb27ab8932e36e8",
+      "contentSha256": "92a02e5cfbe6ea8f0001ea012571cac8219d026a70e3079d329e5d34a1f50696",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -11894,7 +11894,7 @@
       "songId": "ea02bc1f-846e-5779-877c-5224d02cd5e5",
       "title": "Power Filled With The Spirit",
       "file": "songs/chrd/power-filled-with-the-spirit--ea02bc1f.chopro",
-      "contentSha256": "cff76488e28e9bf2ef1adc0e90b000d7cc46c98ef74480e359075b528b6a6592",
+      "contentSha256": "aede0071616c8b4d712de0f1e4e72e0dbe33884776c504754da5fee587b64a66",
       "metadata": {
         "key": "Db",
         "artist": null,
@@ -11930,7 +11930,7 @@
       "songId": "ea429199-c8b3-5fc6-a0c7-1c7b21ef1c96",
       "title": "Grace Greater Than Our Sin",
       "file": "songs/chrd/grace-greater-than-our-sin--ea429199.chopro",
-      "contentSha256": "24175567ccdf60f450691588fcfafcc2251b7727f40c237000e5961f2d7a7915",
+      "contentSha256": "f473e5977923fd3dd847aed4eb56a06a6e9329f325d348fab1227448e71486e2",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11964,7 +11964,7 @@
       "songId": "eaf2c6cf-e044-59cf-80e2-ecc608c8618c",
       "title": "Jesus You're Beautiful",
       "file": "songs/chrd/jesus-you-re-beautiful--eaf2c6cf.chopro",
-      "contentSha256": "e7dc58c6a8b398856deee27a39625e1a694357e6d41f17963d1fb27b9361ca69",
+      "contentSha256": "ee790f5631cb04ddb7a2d1df07bc4ff3193d2e87e5e2c9a2320de113049b6400",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -11995,7 +11995,7 @@
       "songId": "eb2ddaa5-f1c1-59fa-bd1d-45e34af7ead3",
       "title": "Willing Vessel",
       "file": "songs/chrd/willing-vessel--eb2ddaa5.chopro",
-      "contentSha256": "9496303b6a30d20ac9207b944ed935740ae1fedccf3c6de99583c9815bcda869",
+      "contentSha256": "02874a82f350918c815ba9aba68e4e2c41b4a4ff6b9b85f48c79e3fc95c2d774",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -12024,7 +12024,7 @@
       "songId": "ec23910f-e453-5156-bda4-e2c20aae6946",
       "title": "Somebody Touched Me",
       "file": "songs/chrd/somebody-touched-me--ec23910f.chopro",
-      "contentSha256": "4cf39967d9248012a44686b19ab2a6e682bf6e052b692c528ec0b497cf97ef27",
+      "contentSha256": "146c39819ffc8dba66f86091d1d71d8462c29d26d295f9770ecf288f57aa4d74",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12053,7 +12053,7 @@
       "songId": "ee8932d6-f17d-55ab-8d6e-82599f4ad41c",
       "title": "The Way That I Take",
       "file": "songs/chrd/the-way-that-i-take--ee8932d6.chopro",
-      "contentSha256": "cf3e03ec7232d3376755b7276a46a10e6f213d6aa2ecf0dd4134f1c1ceac7cc1",
+      "contentSha256": "d45e6fb439fdd83b458f7712b36a2c44ca2b441cd7f6768cec142012ff7ab11e",
       "metadata": {
         "key": "Ab",
         "artist": null,
@@ -12082,7 +12082,7 @@
       "songId": "ef1d6b54-22b5-5f18-9548-4b26573d805d",
       "title": "Its For Me Its For You",
       "file": "songs/chrd/its-for-me-its-for-you--ef1d6b54.chopro",
-      "contentSha256": "31d20155c7c7bedd510f92f0fc73ccc22649a446d2ac6291bdea9e601d55fb28",
+      "contentSha256": "fde8bf7f89bb57b8abb13e7fcf91584f3f69b6237ed457377469a78a2307cb2c",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -12114,7 +12114,7 @@
       "songId": "f068a4ab-ccf2-5feb-b2da-1733423c29f2",
       "title": "We Stand",
       "file": "songs/chrd/we-stand--f068a4ab.chopro",
-      "contentSha256": "bfa117ae4760e798bb6969ea096260b7dca907f1513b21fb6b56ecb3f3907691",
+      "contentSha256": "e9262d63e0c28374ba420590ae15e024b69b0e8dcb0b31501a8cc33f111f5117",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -12145,7 +12145,7 @@
       "songId": "f07c5f48-4a82-5a22-a5c7-4eba6ea0b0af",
       "title": "Give Him The Glory",
       "file": "songs/chrd/give-him-the-glory--f07c5f48.chopro",
-      "contentSha256": "51271fc5e42069948127ddbccc38eea6c1191b0175ae0c78bf636d4972e7bf16",
+      "contentSha256": "9d380684c8bdbec98391570ac65530bba933a0da41cde6a0ca9c8c8e51155ecf",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12176,7 +12176,7 @@
       "songId": "f0bb3917-1b86-505a-a428-01c220002bdb",
       "title": "When He Was On The Cross",
       "file": "songs/chrd/when-he-was-on-the-cross--f0bb3917.chopro",
-      "contentSha256": "93a44908e8586d292fb26a795367df451622716187e2c7f87339ef4b75935704",
+      "contentSha256": "2feb8f378ce68225ae718f8da7f8ec4a645c02c47b96e72aed4971cd1b4c0c0f",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -12210,7 +12210,7 @@
       "songId": "f130b11f-88a9-5e8e-8c06-7c8d03863bf5",
       "title": "I Got My Mind Made Up To Serve The Lord",
       "file": "songs/chrd/i-got-my-mind-made-up-to-serve-the-lord--f130b11f.chopro",
-      "contentSha256": "ac569247feab8b235f8ff5ed889ee8e9ef050e933a255115606af233199743b5",
+      "contentSha256": "78e5a1c29cc85b811d62cc10e9feafbe75b985dafa13aaa13f5bcd9ed2e6bd20",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -12242,7 +12242,7 @@
       "songId": "f162ec06-76d3-548d-852b-c7beeb7494dd",
       "title": "Holy Ghost",
       "file": "songs/chrd/holy-ghost--f162ec06.chopro",
-      "contentSha256": "734b9249449f411fba7c0e643e3286a615d71bd183900730d850e45626abec22",
+      "contentSha256": "3b063959a2a5ef04a25c4788cf5eb23cb8ddaf3c545b9d00a65132104a2fa7b9",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -12278,7 +12278,7 @@
       "songId": "f1b1da7f-3c0a-53a8-9951-d4d9d08066cb",
       "title": "Glory To His Name",
       "file": "songs/chrd/glory-to-his-name--f1b1da7f.chopro",
-      "contentSha256": "5127eaae321f9dd86c100bf1e8408f386ce1a43d758f9726a42cd088a1e9d7cf",
+      "contentSha256": "4c4d6ebe527b1df916e5e356a61252d38b218e37e323c2fd76c3bd20e1cd8066",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12311,7 +12311,7 @@
       "songId": "f221af9a-e263-554b-b9e0-9f58c0ac0e7b",
       "title": "Have Thine Own Way Lord",
       "file": "songs/chrd/have-thine-own-way-lord--f221af9a.chopro",
-      "contentSha256": "3eefe25faaebe4c16057ad15dcbae8eae2f630d1c9f6bee767aa1f2e664920af",
+      "contentSha256": "5cfd5de4850c73fc0d31464eed7fb326da35ea97eae40c6fa52165c04029a4bc",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -12344,7 +12344,7 @@
       "songId": "f26a0d1c-a509-5bea-83f2-2813ce9c35e8",
       "title": "Learning To Lean",
       "file": "songs/chrd/learning-to-lean--f26a0d1c.chopro",
-      "contentSha256": "1224ef1e355f8b07e76195ab20ef7d178c27d9dd6eed72004192790576aa332c",
+      "contentSha256": "f12da0757d3bfdad6a309330d64932ef41580700934a0475d5cbd41416508ac2",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -12377,7 +12377,7 @@
       "songId": "f289d3d7-d3f7-57bb-a5d3-6bb5285032e9",
       "title": "Dearly Beloved",
       "file": "songs/chrd/dearly-beloved--f289d3d7.chopro",
-      "contentSha256": "8cc4c58f8d9c4c2a040c5991b265175f80d1d0b7956b651c0c00d69f4d7e6079",
+      "contentSha256": "0d81dccadb52b29fee453f295dc1b3a7e1d1b07a9f77c35e3ae685d198803cc1",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -12406,7 +12406,7 @@
       "songId": "f40b5df5-4c8a-5041-adf3-4d5add8e5f5b",
       "title": "I Dont Feel At Home Anymore",
       "file": "songs/chrd/i-dont-feel-at-home-anymore--f40b5df5.chopro",
-      "contentSha256": "40aafe78617166508d85114d7e6bfcd03f54003bbb03076e6732266658a52c0a",
+      "contentSha256": "9e4403c9a0c617916860a7b9096b58fe03975a652447dd50aa9205956a85fc9e",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -12438,7 +12438,7 @@
       "songId": "f5a68210-cccd-592e-867b-884cea9ac771",
       "title": "Give God The Glory",
       "file": "songs/chrd/give-god-the-glory--f5a68210.chopro",
-      "contentSha256": "ab3faea83092f5daaa453ef0cfbe7dda612981748b2961de8bab5a852fe9d734",
+      "contentSha256": "3a6fe2064076f1baa3854efe982bfaabbc378a7e4ead3016f5e89ea6e02fedb3",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -12471,7 +12471,7 @@
       "songId": "f652958a-35ae-5137-8594-75743d5db08f",
       "title": "Its My Desire",
       "file": "songs/chrd/its-my-desire--f652958a.chopro",
-      "contentSha256": "d6b9b16f338d1bf97ee0024be3e026a68687dba983193694ee3b27dd2f723201",
+      "contentSha256": "b15d93d0626a4081aa39c28e1ac45115f37ba6948a22a13ba3ecc2b5aaf8c2d7",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -12502,7 +12502,7 @@
       "songId": "f6e87d92-0e69-5522-a3f1-c86195e9faa9",
       "title": "Thanks",
       "file": "songs/chrd/thanks--f6e87d92.chopro",
-      "contentSha256": "74c846891a955ede63a832aa247ab7d0c90470ff7f5bc93045c6f90a984a3923",
+      "contentSha256": "ba38ffada89e2524205cf172a4b7e249831d946b02dbcf61adec51d116fd8513",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -12535,7 +12535,7 @@
       "songId": "f7654c6b-abc1-53e7-95a5-a2f64b64f4fe",
       "title": "Everybody Ought To Know",
       "file": "songs/chrd/everybody-ought-to-know--f7654c6b.chopro",
-      "contentSha256": "532e7b46f72604d8896c1f99a5d7f421f463d234bac9a948f9e0f550b37fbeff",
+      "contentSha256": "624ad4b693a3a2c7c9aaaea18a182ba3188d41a135e6e86dd73d4dbcfca88003",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -12567,7 +12567,7 @@
       "songId": "f7825bfe-d275-5913-b409-df08f3842c5a",
       "title": "Shake This House",
       "file": "songs/chrd/shake-this-house--f7825bfe.chopro",
-      "contentSha256": "ad9db8ea12e7d77bba1eae67e8ed130e5b20588f7adb2ae7bce28dbc7335ab64",
+      "contentSha256": "e12d0f090d07675694eed5ba6a08ab6da32ec038d59902bf4b77799977754be1",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -12599,7 +12599,7 @@
       "songId": "f782d8cd-ffe3-523d-b0f4-e183ac7de298",
       "title": "Believe For It",
       "file": "songs/chrd/believe-for-it--f782d8cd.chopro",
-      "contentSha256": "071ac0c2f65b6459dca46e443e0ddab5a426bde771aa618425c4bff9c76f9d4e",
+      "contentSha256": "4a815ed7da544f667ac841e37a267f7495e278eaefac5dfaf883bab91ec29073",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12631,7 +12631,7 @@
       "songId": "f86106fe-ce81-5c5b-b406-362f561bffb6",
       "title": "Redeemer",
       "file": "songs/chrd/redeemer--f86106fe.chopro",
-      "contentSha256": "8b27046738d0d80f7672d0e2aa9c33ffc9c1d3e7d16dd473bd6b51c7d639b6cf",
+      "contentSha256": "e1375456b31bbf7aa3da02f10fbc471f1758760e38f98ab18d484dc0b92d913e",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12663,7 +12663,7 @@
       "songId": "f9220d26-875e-5cc8-9ee9-cb19e31cd50d",
       "title": "No Other Name (Mark Yandris)",
       "file": "songs/chrd/no-other-name-mark-yandris--f9220d26.chopro",
-      "contentSha256": "12e60d7a46f67dee7063f8cbe53d61fab1fe62262b2ce6fec4f5845c17ba6e3e",
+      "contentSha256": "b1e491ee8ab35ff45d22dd337833a30471ac2b7eca0b8b9f7737d60cb02f696b",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -12697,7 +12697,7 @@
       "songId": "f9e0339d-6a6b-53f5-ab8d-3e7b5ef85634",
       "title": "Worship the King",
       "file": "songs/chrd/worship-the-king--f9e0339d.chopro",
-      "contentSha256": "9ee6ebdfb689721dcb2a778dc6a27e01914b15c9f663f54527de51f6ee665d1b",
+      "contentSha256": "c4ead746ff0d4dc2715f6bac1f55c160898a29fbd310e18e9b06e0aef234f9b7",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -12729,7 +12729,7 @@
       "songId": "fa034290-2b4e-5311-aa59-69c1e90750c2",
       "title": "Highway To Heaven",
       "file": "songs/chrd/highway-to-heaven--fa034290.chopro",
-      "contentSha256": "4860172ed274a29badeb5b60b67fcc2f955199ac43d6ede108301f4811ac2071",
+      "contentSha256": "733eff989b1802fa951116c300b75e7cfd363b7cddd224f1754d365a35b07e3d",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -12761,7 +12761,7 @@
       "songId": "fa64f6b0-b0ca-5151-895e-88991350c3da",
       "title": "I Thank You",
       "file": "songs/chrd/i-thank-you--fa64f6b0.chopro",
-      "contentSha256": "489f2ca4a492cad5d16621fa14bee9e2fea03e3ca18799931ecfd1697d3a6373",
+      "contentSha256": "44fc34f5b7e934f2d988d7863561cca43ce87ca56962ea66ba132809d710b9ac",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -12792,7 +12792,7 @@
       "songId": "fb54fb44-4398-5f09-8f2d-48b9e670f809",
       "title": "Joy Unspeakable",
       "file": "songs/chrd/joy-unspeakable--fb54fb44.chopro",
-      "contentSha256": "f8c2f9f9217d6cbb635e0e24dacc359738d244ee638f899f410f2d427c843cda",
+      "contentSha256": "06aec7be2798175b9d487dc749c8bf4986104f8a66674cc6dccdf2befc9fb8a2",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -12825,7 +12825,7 @@
       "songId": "fbbd29a9-3216-5c66-9311-02ecc6fbc4d2",
       "title": "Greater Is He That Is In Me",
       "file": "songs/chrd/greater-is-he-that-is-in-me--fbbd29a9.chopro",
-      "contentSha256": "1be0330a48899bd2b71d471735408b11ce5012f2df259ef3a49f6dc8d3ed3c6e",
+      "contentSha256": "476c3446553e30896e71a17e52e571bdcbaacd9ed1fcc26df9f5c1c48e8b1cb3",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -12857,7 +12857,7 @@
       "songId": "fbf380d3-a401-5041-8dea-b92809509ed3",
       "title": "I Feel The Joy Of The Lord",
       "file": "songs/chrd/i-feel-the-joy-of-the-lord--fbf380d3.chopro",
-      "contentSha256": "b43a73b87c49055cb783bc38eefbf54abdec17f90b527f1eef973eaf7aee2339",
+      "contentSha256": "652926623d788aa5213da71d237c2e27d362f6cb1e727d062a5aa43d380932ac",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -12893,7 +12893,7 @@
       "songId": "fdf5cddb-0df1-5a63-b5d3-7371199017f0",
       "title": "God Still Delivers",
       "file": "songs/chrd/god-still-delivers--fdf5cddb.chopro",
-      "contentSha256": "f45a4a07a9dc39346a37411e7f8d92ffb75eb517efedd0a5e6304931b96ed0e9",
+      "contentSha256": "30e7926222562635ecff803752884163a10f79940a4ddcc9ad48dafb86fcf0a4",
       "metadata": {
         "key": "E",
         "artist": null,

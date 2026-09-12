@@ -1,5 +1,7 @@
 {title: I Can Pray}
 {key: C}
+{x_theme: healing, prayer}
+{x_source: chrd:i_can_pray.chrd}
 
 {comment: Verse 1}
 Some say [C]I'm not able, I'm to [Fm]young or I'm to [C]old

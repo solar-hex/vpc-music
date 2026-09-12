@@ -1,5 +1,7 @@
 {title: This Blood}
 {key: G}
+{x_theme: healing, praise, blood, cross, easter}
+{x_source: chrd:this_blood.chrd}
 
 {comment: Verse 1}
 [G]There is a blood that [C/G]cost a  [G]life

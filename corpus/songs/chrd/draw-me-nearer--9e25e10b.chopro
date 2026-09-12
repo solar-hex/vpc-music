@@ -1,5 +1,7 @@
 {title: Draw Me Nearer}
 {key: D}
+{x_theme: altar, cross, faith-trust, grace-mercy, joy, prayer, worship}
+{x_source: chrd:draw_me_nearer.chrd}
 
 {comment: Chorus}
 Draw me nearer, [G]nearer blessed [D]Lord,

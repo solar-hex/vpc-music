@@ -43,9 +43,45 @@ pnpm lint
 pnpm build:web
 pnpm sync:shared && node scripts/check-shared-drift.mjs
 pnpm import:chrd [env] --dir <path> --org <name|uuid> --dry-run
+
+# the corpus — files first, database second
+pnpm corpus:build --source chrd|docx --tree <path> [--dry-run]
+pnpm corpus:scan  --tree <path>            # covered / new / changed / moved / gone
+pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
+pnpm corpus:stats                          # the whole library, counted
+pnpm corpus:reader                         # dist/songbook.html, one offline file
+pnpm intake [--apply]                      # file whatever is in intake/inbox/
 ```
 
 Every tranche ships with typecheck, web, API and script tests green.
+
+## The corpus
+
+`corpus/` is the durable copy of every song; Postgres is a projection of it
+that can be dropped and rebuilt. The pipeline is two-phase, and the phases are
+separated by a file boundary so there is exactly one writer:
+
+```
+build:  sources → corpus/songs/*.chopro     (never touches a database)
+load:   corpus  → songs table               (not built yet; needs approval)
+```
+
+Rules that hold the whole thing together:
+
+- **A chart file is the complete record.** Artist, tempo, derived themes, media
+  links and provenance live in the file's directive block as `x_*` directives,
+  not in a side table. Nothing in the app renders unknown directives, so they
+  travel with the chart invisibly. A directive key appears at most once — the
+  parser keeps the last value — so every media file gets its own key.
+- **Rebuilds are byte-identical.** No run timestamps in committed files; those
+  go to the gitignored report. Churn after a no-op rebuild is a bug.
+- **`deterministicSongId` is frozen.** Production rows carry these ids, and a
+  stock `uuidv5()` will not reproduce the namespace. Call the function.
+- **`corpus:scan` never opens a media file.** Reading a cloud placeholder
+  hydrates gigabytes; identity for media is path + size + mtime, with a
+  two-second tolerance because sync clients drift.
+- **Themes only ever get added.** A human's rejection is stored as
+  `!theme:blood`, so broadening `corpus/themes.json` never undoes a correction.
 
 ## ChordPro conventions
 

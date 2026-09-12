@@ -34,7 +34,9 @@
         "preflight": "node scripts/preflight.mjs",
         "sync:shared": "powershell -ExecutionPolicy Bypass -File scripts/sync-shared.ps1",
         "corpus:media": "node scripts/corpus-media.mjs",
-        "corpus:reader": "node scripts/corpus-reader.mjs"
+        "corpus:reader": "node scripts/corpus-reader.mjs",
+        "corpus:stats": "node scripts/corpus-stats.mjs",
+        "intake": "node scripts/intake.mjs"
     },
     "devDependencies": {
         "concurrently": "^8.2.2",

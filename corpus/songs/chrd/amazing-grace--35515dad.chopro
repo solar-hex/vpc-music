@@ -1,7 +1,9 @@
 {title: Amazing Grace}
-{key: G}
 {artist: John Newton}
+{key: G}
 {year: 1779}
+{x_theme: grace-mercy, salvation, praise, testimony}
+{x_source: chrd:amazing_grace.chrd}
 
 {comment: Chorus}
 A[G]mazing [G7]Grace! (how [C]sweet the [G]sound)

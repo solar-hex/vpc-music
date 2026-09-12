@@ -1,5 +1,7 @@
 {title: I See A Crimson Stream}
 {key: F}
+{x_theme: blood, cross, prayer, salvation}
+{x_source: chrd:i_see_a_crimson_stream.chrd}
 
 {comment: Chorus}
 I [F]see a [Bb]crimson stream of [F]blood,

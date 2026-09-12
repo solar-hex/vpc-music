@@ -66,3 +66,7 @@ apps/api/.env.docker
 
 # uploaded files are runtime data, not source
 apps/api/uploads/
+
+# intake is a workspace, not a record — only its README is tracked
+intake/*
+!intake/README.md

@@ -1,5 +1,7 @@
 {title: Battle Hymn Of The Republic}
 {key: G}
+{x_theme: praise, altar, grace-mercy}
+{x_source: chrd:battle_hymn_of_the_republic.chrd}
 
 {comment: Chorus}
 [G]Glory! Glory! Hallelujah!

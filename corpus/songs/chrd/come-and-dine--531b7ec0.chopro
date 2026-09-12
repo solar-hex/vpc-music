@@ -1,5 +1,7 @@
 {title: Come And Dine}
 {key: D}
+{x_theme: heaven, communion, faith-trust}
+{x_source: chrd:come_and_dine.chrd}
 
 {comment: Chorus}
 "Come and [A]dine, " the Master calleth, "Come and [D]dine";

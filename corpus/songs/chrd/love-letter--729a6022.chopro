@@ -1,7 +1,9 @@
 {title: Love Letter}
-{key: D}
-{artist: Kevin Duncan}
 {subtitle: September 2026}
+{artist: Kevin Duncan}
+{key: D}
+{x_theme: blood, grace-mercy, easter, victory}
+{x_source: chrd:~love_letter.chrd}
 
 {comment: Intro}
 {ci: Solo piano. Sparse, unhurried.}

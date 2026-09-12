@@ -1,5 +1,19 @@
 {title: Holy Ghost}
 {key: Bb}
+{tempo: 150}
+{x_tempo_source: derived from media filename}
+{x_theme: holy-spirit, revival, baptism, healing, praise, victory}
+{x_source: chrd:holy_ghost.chrd}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FHoly%20Ghost}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/audio/alto.mp3}
+{x_audio_drum_loop_150bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/audio/drum-loop-150bpm.mp3}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/audio/soprano.mp3}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/audio/tenor.mp3}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/number-chart.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/vocals.pdf}
 
 {comment: Intro}
 | [Gm7]/     /     /     /     | /     /     /     /     [Ebmaj9]| /     /     /     | /     /     /     /     |

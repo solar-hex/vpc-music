@@ -90,6 +90,40 @@ pnpm import:chrd [dev|staging|production] --dir <path> --org <name|uuid> [--crea
 
 Drafts come from the `~` filename prefix. A JSON and text report lands in `apps/api/import-reports/` listing converter warnings, duplicate titles and collisions with existing songs. Always dry-run first.
 
+## The corpus
+
+`corpus/` holds every song as a ChordPro file, committed. It is the durable copy of the library: the database is a projection of it that can be dropped and rebuilt. Each `.chopro` file is the **complete record** — artist, tempo, derived themes, links to its audio and charts, and where it came from all live in the file's directive block, so a song never depends on a side table to be understood.
+
+```
+corpus/
+  manifest/<source>.json    one record per song: id, title, file, hash, themes
+  sources/<source>.json     one record per source file: the coverage ledger
+  media/<tree>.ndjson       media inventory — paths, keys and sizes, never bytes
+  songs/<source>/<slug>--<id8>.chopro
+  themes.json               the theme lexicon; edit it and re-run
+  stats.json                the library, counted
+```
+
+```
+pnpm corpus:build --source chrd|docx --tree <path> [--dry-run]
+pnpm corpus:scan  --tree <path>            # covered / new / changed / moved / gone
+pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
+pnpm corpus:stats                          # coverage, themes, completeness
+pnpm corpus:reader                         # dist/songbook.html — one offline file
+```
+
+A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git diff` only ever shows real content changes. Run metadata goes to the gitignored report, never into a committed file.
+
+`corpus:scan` is built for a 19 GB shared folder: it compares size and mtime first, hashes only what changed, and never opens a media file — reading a cloud placeholder would pull gigabytes down. A renamed or re-filed source is matched by content hash and keeps its song rather than orphaning a row.
+
+### The songbook
+
+`pnpm corpus:reader` builds `dist/songbook.html`: one self-contained file with every chart, no server and no network. It embeds the real shared engine, so transposition behaves exactly as it does in the app. This is deliberately not the PWA — the PWA is the *app* working offline; the songbook is a *document* that outlives the app, the database and the hosting.
+
+### Dropping files in
+
+`intake/inbox/` takes anything — PDFs, Word documents, `.chrd`, `.onsong`, audio. `pnpm intake` says what it would do with each; `pnpm intake --apply` files them into `processed/`, `duplicate/`, `media/` or `rejected/` and records the decision in `intake/log.ndjson`. See `intake/README.md`.
+
 ## Repository map
 
 ```
