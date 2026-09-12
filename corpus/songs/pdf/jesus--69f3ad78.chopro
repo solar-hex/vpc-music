@@ -1,0 +1,213 @@
+{title: Jesus}
+{artist: Eddie James}
+{key: Am}
+{tempo: 78}
+{time: 6/8}
+{x_theme: healing, heaven, prayer, easter, holy-spirit}
+{x_source: pdf:UPCI Music/2020/Jesus/Jesus-Chord-Chart.pdf}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FJesus}
+{x_audio_drum_loop_147bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/drum-loop-147bpm.mp3}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/full-mix.m4a}
+{x_audio_jesus_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-alto.mp3}
+{x_audio_jesus_geoffery_golden_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffery-golden-alto.mp3}
+{x_audio_jesus_geoffery_golden_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffery-golden-soprano.mp3}
+{x_audio_jesus_geoffrey_golden_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffrey-golden-tenor.mp3}
+{x_audio_jesus_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-soprano.mp3}
+{x_audio_jesus_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-tenor.mp3}
+{x_audio_loop_165bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/loop-165bpm.wav}
+{x_chart_jesus_chord_chart_2_3_4: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2-3-4.pdf}
+{x_chart_jesus_chord_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2-3.pdf}
+{x_chart_jesus_chord_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2.pdf}
+{x_chart_jesus_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart.pdf}
+{x_chart_jesus_erv_2_3_4: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2-3-4.pdf}
+{x_chart_jesus_erv_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2-3.pdf}
+{x_chart_jesus_erv_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2.pdf}
+{x_chart_jesus_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv.pdf}
+{x_chart_jesus_number_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart-2-3.pdf}
+{x_chart_jesus_number_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart-2.pdf}
+{x_chart_jesus_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart.pdf}
+{x_chart_jesus_numbers_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-numbers-chart.pdf}
+{x_chart_jesus_rhythm_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart-2-3.pdf}
+{x_chart_jesus_rhythm_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart-2.pdf}
+{x_chart_jesus_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart.pdf}
+{x_chart_jesus_rhythm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm.pdf}
+{x_chart_jesus_vocal_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart-2-3.pdf}
+{x_chart_jesus_vocal_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart-2.pdf}
+{x_chart_jesus_vocal_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart.pdf}
+{x_chart_jesus_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocals.pdf}
+{x_source_jesus_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/source/Jesus-Chord-Chart-TXT.txt}
+{x_album: Jesus}
+
+{comment: Intro Interlude}
+||: Am / | / / | / / | / / :|| | Am / | / / | Bbm / | / / |
+Vamp (men only) Verse 2 (Key Change)
+Am Bbm (Ab-Bb) (Ab-Bb)
+Jesus, Jesus, Jesus, Jesus. Jesus said blessed are they who hunger and thirst
+(Ab-Bb) Gb
+Vamp (Unison 1x – Two Parts 2x) after righteousness for they shall be filled.
+Am (Ab-Bb) (Ab-Bb)
+In Him dwelleth the fullness of the Godhead bodily Jesus said to the world you’re a light shining in the
+He is the image of the invisible God (Ab-Bb) Bbm Db/Ab Ab/C
+Our Sabbath our rest, the Word made flesh, darkness, a city on a hill.
+Prophet, Priest, and King unto You we sing Db Db C
+Jesus taught us how to pray our Father which art in
+Verse 1 Fsus F 7
+Am Heaven hallowed by Thy Name.
+Jesus, Teacher, Rabbi with authority spake
+parables that enlighten our eyes. Chorus 1
+[Am]Jesus taught the pearl of great price, [Bbm](Jesus) He’s the Lion and the Lamb,
+marriage feast, mustard seed, (Jesus) He’s the Great
+G/B (Jesus) I Am, from the dead He is raised
+so accurate and precise. Ab/C
+C (Jesus) exalted and praised
+Jesus taught the seed and the sower, Db
+C B (Jesus) He reigns forever
+the field of hidden treasures, (Jesus) there will never be another
+Esus E E dim7 F (cut)
+vineyard and laborers. (Jesus) Yeshua Ha’Mashiach the Way,
+Truth and Life
+
+{comment: Chorus 1 Interlude}
+Am | Bbm / | / / | Bm / | / / |
+(Jesus) He’s the Lion and the Lamb,
+(Jesus) He’s the Great Verse 3
+{ci: Jesus) I Am, from the dead He is raised (A-B-B-A-B-B-A-B-B-B}
+G/B Jesus, Miracle worker to the
+{ci: Jesus) exalted and praised (A-B-B-A-B-B-A-B-B-B}
+C Wind and the waves He said “Peace be still”
+{ci: Jesus) He reigns forever (A-B-B-A-B-B-A-B-B-B}
+(Jesus) there will never be another Jesus, like blind Bartimaus the
+B/D# E (cut)
+(Jesus) Yeshua Ha’Mashiach the Way,
+Truth and Life
+{ci: A-B-B-A-B-B-A-B-B-B) (G-A-G-A-B-C#-E) Verse 5 (Key Change}
+deaf, the lame, and the lepers he healed. (B-C#-C#-B-C#-C#-B-C#-C#-C#)
+(C#-D-D-C#-D-D-C#-D-D-D) Jesus, descends into hell
+Jesus, the daughter of Jairus, the (B-C#-C#-B-C#-C#-B-C#-C#-C#) A
+D C# 7 /E# C# confronts principalities and Lucifer who fell.
+widow’s son and Lazarus, (B-C#-C#-B-C#-C#-B-C#-C#-C#)
+F#sus F# Jesus, takes the keys to death, hell,
+He raised from the dead. (B-C#-C#-B-C#-C#-B-C#-C#-C#)
+and the grave setting captives
+
+{comment: Chorus 1}
+{ci: C-B-A-B-C#-A_B-C#-D#-F#}
+Bm Free, releasing the slaves.
+(Jesus) He’s the Lion and the Lamb, C#m
+(Jesus) He’s the Great Jesus, on the third day He got up with
+E D# 7 /G D# G#sus G# 7
+(Jesus) I Am, from the dead He is raised
+A/C# All power in His hands.
+(Jesus) exalted and praised
+[D](Jesus) He reigns forever Chorus 1
+(Jesus) there will never be another C#m
+E# dim7 F# (cut) (Jesus) He’s the Lion and the Lamb,
+(Jesus) Yeshua Ha’Mashiach the Way, A
+Truth and Life (Jesus) He’s the Great
+Interlude [C#m](Jesus) I Am, from the dead He is raised
+| Bm/D /F# | Bm / | B/D#
+(Jesus) exalted and praised
+| Cm/Eb /F /G Bb | Ab/C Bb/D | E
+(Jesus) He reigns forever
+Verse 4 (Key Change) (Jesus) there will never be another
+G dim7 G# (cut)
+[Cm]Jesus, betrayed with a kiss, sentenced to die, (Jesus) Yeshua Ha’Mashiach the Way,
+by Peter three times denied. Truth and Life
+[Cm]Jesus beaten at the whipping post, hangs on the Interlude
+cross, the disciples scattered when | A B/A | A B/A | A B/A | A B/A |
+Bb/D 7
+He needed them the most. | F# B/F#| F# B/F#| G#sus | G# |
+Eb dim dim dim
+Jesus declares it is finished, | C#m F /C# | E /C# D# /C# C#m |
+Eb D 7 /F# D Gsus G# 7 sus
+| F dim /C# E dim /C# | D# dim /C# C#m |
+into Your hands commit my spirit
+Bridge 1 (8vb) Chorus 1
+F dim /C# E dim /C# D# dim /C# C#m
+(Jesus) Alpha, Omega, Beginning and the end. (Jesus) He’s the Lion and the Lamb,
+F dim /C# D# dim /C# E dim /C# D# dim /C# C#m D# dim /C# (Jesus) He’s the Great
+Which was and is, is to come Almighty. (Jesus) I Am, from the dead He is raised
+F dim /C# E dim /C# D# dim /C# B/D#
+The first, the last, alive forevermore. (Jesus) exalted and praised
+F dim /C# E dim /C# D# dim /C# C#m E
+The King of kings, the Lord of lords. (Jesus) He reigns forever
+(Jesus) there will never be another
+G dim7 G# (cut)
+Bridge 2 (Jesus) Yeshua Ha’Mashiach the Way,
+C#m C#m Truth and Life
+(Jesus) Alpha, Omega, Beginning and the end.
+C#m C#m Bridge 4
+Which was and is, is to come Almighty. F dim /C# E dim /C# D# dim /C#
+C#m C#m (Jesus) Alpha, Omega, Beginning and the end.
+The first, the last, alive forevermore. F dim /C# D# dim /C# E dim /C# D# dim /C# C#m D# dim /C#
+C#m C#m Which was and is, is to come Almighty.
+The King of kings, the Lord of lords. F dim /C# E dim /C# D# dim /C#
+The first, the last, alive forevermore.
+Bridge 3 F dim /C# E dim /C# D# dim /C# C#m
+F dim /C# E dim /C# D# dim /C#
+The King of kings, the Lord of lords.
+(Jesus) Alpha, Omega, Beginning and the end.
+F dim /C# D# dim /C# E dim /C# D# dim /C# C#m D# dim /C#
+
+{comment: Bridge 4}
+Which was and is, is to come Almighty. C#m C#m C#m C#m
+F dim /C# E dim /C# D# dim /C#
+(Jesus) Alpha, Omega, Beginning and the end.
+The first, the last, alive forevermore. C#m C#m C#m G# 7(alt) D 13(b5)
+F dim /C# E dim /C# D# dim /C# C#m
+Which was and is, is to come Almigh - ty.
+The King of kings, the Lord of lords. C#m C#m C#m C#m
+(Jesus)The first, the last, alive forevermore.
+Bridge 4 C#m
+F dim /C# E dim /C# D# dim /C#
+The King of kings, the Lord of lords.
+(Jesus) Alpha, Omega, Beginning and the end.
+F dim /C# D# dim /C# E dim /C# D# dim /C# C#m D# dim /C#
+
+{comment: Bridge 4}
+Which was and is, is to come Almighty. C#m B A E/G#
+F dim /C# E dim /C# D# dim /C#
+(Jesus) Alpha, Omega, Beginning and the end.
+The first, the last, alive forevermore. F#m7 E B/D# D 13(b5)
+F dim /C# E dim /C# D# dim /C# C#m
+Which was and is, is to come Almighty.
+The King of kings, the Lord of lords. F dim /C# E dim /C# D# dim /C#
+The first, the last, alive forevermore.
+F dim /C# E dim /C# D# dim /C# C#m
+The King of kings, the Lord of lords.
+
+{comment: Chorus 1 Bridge 4}
+C#m C#m B A 6 E/G#
+(Jesus) He’s the Lion and the Lamb, (Jesus) Alpha, Omega, Beginning and the end.
+A F#m 7 E B/D# D 9(#11)
+(Jesus) He’s the Great Which was and is, is to come Almigh - ty.
+F#m 7 C#m F dim /C# E dim /C# D# dim /C#
+(Jesus) I Am, from the dead He is raised (Jesus)The first, the last, alive forevermore.
+E/G# B/D# F dim /C# E dim /C# D# dim /C# C#m
+(Jesus) exalted and praised The King of kings, the Lord of lords.
+[E](Jesus) He reigns forever
+(Jesus) there will never be another Chorus 1
+G dim7 G# (cut) C#m
+(Jesus) Yeshua Ha’Mashiach the Way, (Jesus) He’s the Lion and the Lamb,
+Truth and Life A
+(Jesus) He’s the Great
+Interlude C#m
+| C#m F dim /C# C#m E dim /C# | (Jesus) I Am, from the dead He is raised
+| C#m D# dim /C# | C#m F dim /C# C#m E dim /C# | (Jesus) e[B/D#]xalted and praised
+| C#m D# dim /C# C#m D# dim / | [E](Jesus) He reigns forever
+(Jesus) there will never be another
+| C#m F dim /C# C#m E dim /C# | C#m D dim /C# C#m | G dim7 G# (cut)
+(Jesus) Yeshua Ha’Mashiach the Way,
+| C#m F dim /C# C#m E dim /C# | C#m D dim /C# C#m | C#m
+Truth and Life
+| C#m F dim /C# C#m E dim /C# | C#m D dim /C# C#m |
+| E#m 7 F#m 7 | A 6 A/B | E#m 7 F#m 7 |
+| Dmaj 7 Dmaj 7(add9) | B/D# C#m/D# |
+| B/D# C#m/D# |
+
+{comment: Bridge 4}
+[C#m](Jesus) Al[C#m]pha, Omega, [C#m]Beginning[C#m] and the end.
+C#m C#m C#m G# 7(alt) D 13(b5)
+Which was and is, is to come Almigh - ty.
+[C#m](Jesus)The fi[C#m]rst, the la[C#m C#m]st, alive forevermore.
+The [C#m]King of kings, the Lord of lords.

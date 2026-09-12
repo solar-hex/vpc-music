@@ -1,0 +1,62 @@
+{title: Mighty}
+{artist: Phase 2}
+{key: B}
+{tempo: 110}
+{x_tempo_source: derived from media filename}
+{x_theme: blood, worship}
+{x_source: pdf:UPCI Music/Mighty/Mighty - Chord Chart.pdf}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FMighty}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/audio/alto.m4a}
+{x_audio_loop_110bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/audio/loop-110bpm.mp3}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/audio/soprano.m4a}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/audio/tenor.mp3}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/number-chart.pdf}
+{x_chart_other: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/other.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/charts/vocals.pdf}
+{x_source_mighty_onsong_format_copy: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty/source/Mighty       (OnSong Format)  copy.txt}
+
+{comment: Solo Verse 1}
+[B]Lord, I[E] love [B/D#]You. You are my p[F#/A#]resent he[B]lp.
+B/D# E B/D# C#/E# - D#m - C# F#/A# - G#m - F#
+You knew my every move before my first step.
+B/D# E B/D# G ° G#m - Eb/G - G#m
+You hold the world in Your hands, both land and sea.
+E B/D# G ° G#m - Eb/G - G#m
+For You are mighty, You are mighty.
+
+{comment: Solo Verse 2}
+The su[B]n, moo[E]n, and the [B/D#]stars, they bow[F#/A#] down at Your n[B]ame.
+B/D# E B/D# C#/E# - D#m - C# B F#/A# - G#m - F#
+Your arms consume me like shelter from the rain.
+B/D# E B/D# G ° G#m- Eb/G - G#m
+You shed your blood and You died to save humanity.
+E B/D# G ° G#m
+For You are mighty, You are mighty.
+[E]Mig[B/D#]hty, for You are[F#/A#] mighty[B].
+
+{comment: Chorus}
+G#m 7 F# D#m 7 C#m 7
+Mighty, mighty
+
+{comment: Verse}
+E G ° G#m 7 F#/A# - B - B/D#
+Powerful, merciful, holy, You’re mighty.
+E G ° G#m 7
+Powerful, merciful, holy, You’re mighty.
+{ci: Repeat Chorus and Verse}
+
+{comment: Bridge}
+E G ° G#m 7 C ° C#m 7 B E
+Powerful, merciful, for all power is in Your hands.
+E G ° G#m 7 C ° C#m 7 B A 9
+Powerful, merciful, for all power is in Your hands.
+{ci: Repeat Chorus}
+Vamp 1& 2 same as Chorus
+Mighty are You…
+Holy are You…
+Worthy are You…
+Awesome are You…
+{ci: Repeat Chorus to end}

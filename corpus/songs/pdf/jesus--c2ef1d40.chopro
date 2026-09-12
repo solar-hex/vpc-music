@@ -1,0 +1,150 @@
+{title: Jesus}
+{artist: Geoffrey Golden}
+{key: A}
+{tempo: 148}
+{time: 4/4}
+{x_theme: name-of-jesus, heaven, salvation}
+{x_source: pdf:UPCI Music/2022/Jesus/Jesus-Chord-Chart.pdf}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FJesus}
+{x_audio_drum_loop_147bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/drum-loop-147bpm.mp3}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/full-mix.m4a}
+{x_audio_jesus_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-alto.mp3}
+{x_audio_jesus_geoffery_golden_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffery-golden-alto.mp3}
+{x_audio_jesus_geoffery_golden_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffery-golden-soprano.mp3}
+{x_audio_jesus_geoffrey_golden_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-geoffrey-golden-tenor.mp3}
+{x_audio_jesus_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-soprano.mp3}
+{x_audio_jesus_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/jesus-tenor.mp3}
+{x_audio_loop_165bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/audio/loop-165bpm.wav}
+{x_chart_jesus_chord_chart_2_3_4: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2-3-4.pdf}
+{x_chart_jesus_chord_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2-3.pdf}
+{x_chart_jesus_chord_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart-2.pdf}
+{x_chart_jesus_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-chord-chart.pdf}
+{x_chart_jesus_erv_2_3_4: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2-3-4.pdf}
+{x_chart_jesus_erv_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2-3.pdf}
+{x_chart_jesus_erv_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv-2.pdf}
+{x_chart_jesus_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-erv.pdf}
+{x_chart_jesus_number_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart-2-3.pdf}
+{x_chart_jesus_number_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart-2.pdf}
+{x_chart_jesus_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-number-chart.pdf}
+{x_chart_jesus_numbers_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-numbers-chart.pdf}
+{x_chart_jesus_rhythm_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart-2-3.pdf}
+{x_chart_jesus_rhythm_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart-2.pdf}
+{x_chart_jesus_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm-chart.pdf}
+{x_chart_jesus_rhythm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-rhythm.pdf}
+{x_chart_jesus_vocal_chart_2_3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart-2-3.pdf}
+{x_chart_jesus_vocal_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart-2.pdf}
+{x_chart_jesus_vocal_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocal-chart.pdf}
+{x_chart_jesus_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocals.pdf}
+{x_source_jesus_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/source/Jesus-Chord-Chart-TXT.txt}
+{x_album: See Revival}
+
+Intro (acapella) F#m7 E/G# A Bm7
+Whoa,_____ Whoa,_____ Je - sus we call on You
+Whoa,_____ Whoa,_____ A E/G#
+We call on You great name
+
+{comment: Intro}
+{ci: full band}
+D F#m A E Interlude
+Whoa,_____ Whoa,_____ | D / / F#m | / / / / | A / / E |
+[D]W[F#m]hoa,_____[A] [E]Whoa,_____ D F#m A E
+Whoa,_____ Whoa,_____
+
+{comment: Verse 1}
+E F#m7 D F#m7 Verse 1
+No other Name in Heaven or in earth E F#m7 D F#m7
+E F#m7 D F#m7 No other Name in Heaven or in earth
+Where men can be saved E F#m7 D F#m7
+E F#m7 D F#m7 Where men can be saved
+Strong tow’r for all who call on it E F#m7 D F#m7
+E F#m7 D Strong tow’r for all who call on it
+Safety in His name E F#m7 D
+(Safety in his name) Safety in His name
+
+{comment: Pre Chorus}
+{ci: Solo}
+A/C# D Pre Chorus (Solo)
+Tell me who can stand before us A/C# D
+Bm7 Tell me who can stand before us
+When we call on F#m E B/D# A/C# B
+E When we call on
+That great Name E F#m/B E F#m/B F#m E
+That great Name
+
+{comment: Chorus 1}
+F#m7 E/G# A Chorus 2
+Je - sus F#m7 E/G# A
+Bm7 Je - sus
+There’s no name higher Bm7
+A/C# D There’s no name higher
+There’s no name higher than A/C# D
+F#m7 E/G# A Bm7 There’s no name higher than
+Je - sus we call on You F#m7 E/G# A Bm7
+D Je - sus we call on You
+We call on You D
+F#m7 E/G# A We call on You
+Je - sus F#m7 E/G# A
+Bm7 Je - sus
+There’s no name higher Bm7
+A/C# D There’s no name higher
+There’s no name higher than A/C# D
+There’s no name higher than
+F#m7 E/G# A Bm7 Refrain
+Je - sus we call on You E/G# A D F#m
+A E/G# Je - sus
+We call on You great name A E
+Oh – oh – oh We call You
+Bridge (Solo) (2x) D F#m
+D F#m Je - sus
+Every knee will bow A E
+A E At the Name of our God, at the Name of
+Every tongue confess
+D F#m Refrain
+Demons have to flee E/G# A D F#m
+A Je - sus
+At the Name of our God A E
+E Oh – oh – oh We call You
+At the Name of Jesus D F#m
+Je - sus
+Bridge (men sing 8vb) A E
+D F#m At the Name of our God, at the Name of
+Every knee will bow E/G# A
+A E Je - sus
+Every tongue confess
+D F#m Bridge (Key Change – men sing 8vb)
+Demons have to flee Bb13 (cut music) Eb Eb
+A Every knee will bow
+At the Name of our God (cut music) Gm7 Gm7 F
+E Every tongue confess
+At the Name of Jesus (cut music)
+Demons have to flee
+
+{comment: Bridge}
+{ci: A-Bb}
+D F#m At the Name of our God
+Every knee will bow (A-G-F-D-C-Bb)
+A E At the Name of Jesus
+Every tongue confess Eb /F Gm
+D F#m Every knee will bow
+Demons have to flee /A Bb /C F
+A Every tongue confess
+At the Name of our God /Bb Eb /F Gm
+E Demons have to flee
+At the Name of /A Bb
+At the Name of our God
+/C F
+At the Name of
+
+{comment: Refrain}
+[F/A]Je [Bb Eb]- su[Gm7]s
+[Bb]Oh – oh – [F]oh We call You
+[Eb]Je - [Gm7]sus
+At the [Bb]Name of our God, [F]at the Name of
+
+{comment: Refrain}
+[F/A]Je [Bb Eb]- su[Gm7]s
+[Bb]Oh – oh – [F]oh We call You
+[Eb]Je - [Gm7]sus
+At the [Bb]Name of our God, [F]at the Name of
+(C Bb) Eb
+Je - sus

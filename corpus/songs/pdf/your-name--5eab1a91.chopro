@@ -1,0 +1,58 @@
+{title: Your Name}
+{key: A}
+{tempo: 74}
+{time: 4/4}
+{x_theme: praise, prayer}
+{x_source: pdf:UPCI Music/2023/Your Name/Your-Name-Chord-Chart.pdf}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FYour%20Name}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/audio/alto.mp3}
+{x_audio_loop_56bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/audio/loop-56bpm.wav}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/audio/soprano.mp3}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/audio/tenor.mp3}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/charts/number-chart.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/charts/rhythm-chart.pdf}
+{x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-your-name/charts/vocals-with-chords.pdf}
+{x_audio_loop_67_5bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hallowed-be-your-name/audio/loop-67.5bpm.wav}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hallowed-be-your-name/charts/vocals.pdf}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/to-your-name/audio/full-mix.mp3}
+{x_audio_loop_53bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-bless-your-name/audio/loop-53bpm.mp3}
+{x_audio_loop_101bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/your-great-name/audio/loop-101bpm.mp3}
+{x_album: Your Name (Single)}
+{x_writers: Blake McLaughlin, Ramzi Elassadi}
+
+{comment: Intro Vamp}
+| Bm7 A / E/G# | / / / / | A G
+| F#m7 E / D | / / / / | When I call Your name, You are breaking chains
+Verse [D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
+[D]Mountains have to mo[F#m7 E]ve [A/E]When I call Your nam[G]e, You are breaking chains
+[D]When we call on You[F#m7 E] [D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
+[D]My chains have to bre[F#m7 E]ak Tag
+[D]At the sound of Your [F#m7 E]name [A]When I call Your name[G], You are breaking chains
+Pre Chorus [D/F#]So we cry ou[Bm7(b5)]t
+[Bm7]When it’s hard to [F#m7]break thro[A]ugh Chorus
+[Bm7]I still ca[F#m7]ll on You[A] Refrain (3x)
+Chorus [D]Oh[E],[F#m7] o[Amaj7]h
+Your name is [A]Jesus, You conquered the g[E2/G#]rave Ending
+Your name is J[F#m7]esus, You wash s[A2/C#]ins away[D2] [D]Oh[E],[F#m7] o[C#m7]h
+I will fo[A]rever lift up Your[E2/G#] name [D]Oh[E],[F#m7] o[Amaj7]h[D]
+Your name is J[D]esu[F#m7]s[E]
+
+{comment: Interlude}
+| Bm7 A / E/G# | / / / / |
+| (A-B-C#) E/G# F#m7 Bm7 | / / / / |
+Verse > Pre Chorus
+
+{comment: Chorus}
+Your name is [A]Jesus, You conquered the g[E2/G#]rave
+Your name is J[F#m7]esus, You wash s[A2/C#]ins awa[D2]y
+I will fo[A]rever lift up Your[E2/G#] name
+I will fo[D]rever give You[F#m7] prais[E]e
+
+{comment: Bridge}
+{ci: 3x}
+[A]When I call Your nam[Bm7]e, circumstances change
+[F#m7]So we cry out, Je[E]sus, Jesus
+{ci: Last time: | A / / / | G / / / | D/F# / / / | D / / / |}
+UPCI Music 1

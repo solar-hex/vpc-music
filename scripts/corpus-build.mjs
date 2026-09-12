@@ -14,12 +14,13 @@
  *                     [--exclude <glob>]... [--report <dir>]
  */
 import { existsSync } from "node:fs";
-import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { convertChrdToChordPro } from "../shared/index.js";
 import { extractDocxParagraphs } from "../apps/api/src/corpus/docxText.js";
 import { convertLyricSheetToChordPro } from "../apps/api/src/corpus/lyricSheet.js";
+import { convertPdfChartToChordPro } from "../apps/api/src/corpus/pdfSong.js";
 import { detectThemes } from "../apps/api/src/corpus/themes.js";
 import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
 import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
@@ -37,7 +38,7 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
 
-export const SOURCE_TYPES = ["chrd", "docx"];
+export const SOURCE_TYPES = ["chrd", "docx", "pdf"];
 
 /**
  * One entry per source format. Each supplies how to find its files and how to
@@ -60,6 +61,12 @@ export const SOURCES = {
       const paragraphs = await extractDocxParagraphs(buffer);
       return convertLyricSheetToChordPro(filename, paragraphs);
     },
+  },
+  pdf: {
+    // Chord charts only. Rhythm charts and vocal parts are engraved notation
+    // with no text layer at all — they are media, not songs.
+    pattern: /chord.?chart.*\.pdf$/i,
+    convert: convertPdfChartToChordPro,
   },
 };
 
@@ -334,6 +341,7 @@ export async function buildCorpus({
   manifestEntries.sort((a, b) => a.songId.localeCompare(b.songId));
   ledgerEntries.sort((a, b) => a.path.localeCompare(b.path));
 
+  const orphansRemoved = [];
   const duplicateTitles = collectDuplicateTitles(manifestEntries);
   const duplicateFiles = collectDuplicateFiles(manifestEntries);
 
@@ -373,6 +381,17 @@ export async function buildCorpus({
     }
     await writeFile(manifestPath, stableJson(manifest), "utf8");
     await writeFile(ledgerPath, stableJson(ledger), "utf8");
+
+    // A corpus filename is derived from the title, so a title fix renames the
+    // file and leaves the old one behind. Sweep anything this source owns that
+    // the manifest no longer references, or the corpus slowly fills with
+    // orphans that no song points at.
+    const wanted = new Set(manifestEntries.map((e) => e.file.split("/").pop()));
+    for (const name of await readdir(songsDir)) {
+      if (!name.endsWith(".chopro") || wanted.has(name)) continue;
+      await rm(join(songsDir, name));
+      orphansRemoved.push(name);
+    }
   }
 
   return {
@@ -388,6 +407,7 @@ export async function buildCorpus({
     gone,
     duplicateTitles,
     duplicateFiles,
+    orphansRemoved,
     paths: { manifest: manifestPath, ledger: ledgerPath, songs: songsDir },
   };
 }
@@ -443,6 +463,8 @@ export function formatCorpusBuildReportText(summary) {
   for (const path of summary.gone) lines.push(`- ${path}`);
   lines.push("", `Duplicate titles inside the corpus (${summary.duplicateTitles.length})`);
   for (const dup of summary.duplicateTitles) lines.push(`- "${dup.title}": ${dup.files.join(", ")}`);
+  lines.push("", `Orphaned corpus files removed (${(summary.orphansRemoved || []).length})`);
+  for (const name of summary.orphansRemoved || []) lines.push(`- ${name}`);
   lines.push("", `Filename collisions (${summary.duplicateFiles.length})`);
   for (const dup of summary.duplicateFiles) lines.push(`- ${dup.file}: ${dup.songIds.join(", ")}`);
 

@@ -1,77 +1,78 @@
 {
   "totals": {
-    "songs": 752,
-    "withChords": 407,
-    "lyricsOnly": 345,
-    "drafts": 392,
-    "themed": 615,
-    "labels": 1485,
-    "withMedia": 46,
+    "songs": 1034,
+    "withChords": 666,
+    "lyricsOnly": 368,
+    "drafts": 674,
+    "themed": 881,
+    "labels": 2292,
+    "withMedia": 249,
     "mediaFiles": 2535,
     "mediaBytes": 19563955564,
-    "duplicateTitles": 169
+    "duplicateTitles": 198
   },
   "bySource": {
     "chrd": 399,
-    "docx": 353
+    "docx": 353,
+    "pdf": 282
   },
   "fields": {
-    "title": 752,
-    "key": 409,
-    "artist": 3,
-    "tempo": 25,
-    "tempoDerived": 25,
-    "themes": 615,
+    "title": 1034,
+    "key": 691,
+    "artist": 266,
+    "tempo": 263,
+    "tempoDerived": 46,
+    "themes": 881,
     "year": 1
   },
   "completeness": {
-    "30-49": 393,
-    "50-69": 356,
-    "90-100": 1,
-    "70-89": 2
+    "30-49": 395,
+    "50-69": 373,
+    "90-100": 222,
+    "70-89": 44
   },
   "missingCounts": {
-    "artist": 749,
-    "tempo": 727,
-    "tags": 137,
-    "year": 751,
+    "artist": 768,
+    "tempo": 771,
+    "tags": 153,
+    "year": 1033,
     "key": 343
   },
   "tempoBands": {
-    "medium": 9,
-    "fast": 4,
-    "slow": 8,
-    "shout": 4
+    "medium": 86,
+    "fast": 57,
+    "slow": 83,
+    "shout": 37
   },
   "themes": {
-    "blood": 89,
-    "cross": 70,
-    "holy-spirit": 89,
-    "baptism": 32,
-    "name-of-jesus": 85,
-    "healing": 77,
-    "praise": 240,
-    "worship": 74,
-    "jubilee": 6,
-    "communion": 6,
-    "altar": 18,
-    "victory": 66,
+    "blood": 122,
+    "cross": 95,
+    "holy-spirit": 115,
+    "baptism": 41,
+    "name-of-jesus": 136,
+    "healing": 154,
+    "praise": 385,
+    "worship": 143,
+    "jubilee": 9,
+    "communion": 7,
+    "altar": 26,
+    "victory": 107,
     "second-coming": 5,
-    "heaven": 100,
-    "testimony": 18,
-    "faith-trust": 103,
-    "grace-mercy": 90,
-    "prayer": 63,
-    "salvation": 120,
-    "joy": 95,
-    "revival": 15,
-    "christmas": 6,
-    "easter": 18
+    "heaven": 164,
+    "testimony": 27,
+    "faith-trust": 168,
+    "grace-mercy": 124,
+    "prayer": 79,
+    "salvation": 160,
+    "joy": 138,
+    "revival": 34,
+    "christmas": 18,
+    "easter": 35
   },
   "confidence": {
     "high": 402,
-    "medium": 6,
-    "low": 344
+    "medium": 262,
+    "low": 370
   },
   "rows": [
     {
@@ -1027,20 +1028,21 @@
       "key": "G",
       "artist": null,
       "year": null,
-      "tempo": 120,
-      "tempoDerived": true,
-      "band": "fast",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "praise"
       ],
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 10,
+      "mediaCount": 0,
       "lines": 8,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -1589,7 +1591,7 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 8,
+      "mediaCount": 0,
       "lines": 9,
       "percent": 55,
       "missing": [
@@ -3783,7 +3785,7 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 18,
+      "mediaCount": 0,
       "lines": 16,
       "percent": 55,
       "missing": [
@@ -4263,7 +4265,7 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 9,
+      "mediaCount": 0,
       "lines": 7,
       "percent": 45,
       "missing": [
@@ -4395,9 +4397,9 @@
       "key": "E",
       "artist": null,
       "year": null,
-      "tempo": null,
-      "tempoDerived": false,
-      "band": null,
+      "tempo": 144.5,
+      "tempoDerived": true,
+      "band": "shout",
       "themes": [
         "prayer",
         "worship",
@@ -4407,12 +4409,11 @@
       "chords": true,
       "isDraft": true,
       "confidence": "high",
-      "mediaCount": 18,
+      "mediaCount": 9,
       "lines": 23,
-      "percent": 55,
+      "percent": 65,
       "missing": [
         "artist",
-        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -5348,9 +5349,9 @@
       "key": "Bb",
       "artist": null,
       "year": null,
-      "tempo": 140,
-      "tempoDerived": true,
-      "band": "shout",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "praise",
         "worship"
@@ -5358,11 +5359,12 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 21,
+      "mediaCount": 0,
       "lines": 9,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -7050,9 +7052,9 @@
       "key": "F",
       "artist": null,
       "year": null,
-      "tempo": 76,
-      "tempoDerived": true,
-      "band": "medium",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "healing",
         "grace-mercy"
@@ -7060,11 +7062,12 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 16,
+      "mediaCount": 7,
       "lines": 13,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -7160,9 +7163,9 @@
       "key": "C",
       "artist": null,
       "year": null,
-      "tempo": 56,
-      "tempoDerived": true,
-      "band": "slow",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "praise",
         "baptism",
@@ -7171,11 +7174,12 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 17,
+      "mediaCount": 0,
       "lines": 16,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -7737,7 +7741,7 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 8,
+      "mediaCount": 0,
       "lines": 11,
       "percent": 55,
       "missing": [
@@ -8155,20 +8159,21 @@
       "key": "D",
       "artist": null,
       "year": null,
-      "tempo": 128,
-      "tempoDerived": true,
-      "band": "fast",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "praise"
       ],
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 10,
+      "mediaCount": 0,
       "lines": 16,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -11167,20 +11172,21 @@
       "key": "C",
       "artist": null,
       "year": null,
-      "tempo": 48,
-      "tempoDerived": true,
-      "band": "slow",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "faith-trust"
       ],
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 15,
+      "mediaCount": 0,
       "lines": 10,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -11193,9 +11199,9 @@
       "key": "G",
       "artist": null,
       "year": null,
-      "tempo": 145,
-      "tempoDerived": true,
-      "band": "shout",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "salvation",
         "grace-mercy",
@@ -11204,11 +11210,12 @@
       "chords": true,
       "isDraft": false,
       "confidence": "high",
-      "mediaCount": 9,
+      "mediaCount": 0,
       "lines": 20,
-      "percent": 65,
+      "percent": 55,
       "missing": [
         "artist",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -16245,9 +16252,9 @@
       "key": null,
       "artist": null,
       "year": null,
-      "tempo": 86,
-      "tempoDerived": true,
-      "band": "medium",
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
       "themes": [
         "cross",
         "prayer",
@@ -16257,12 +16264,13 @@
       "chords": false,
       "isDraft": true,
       "confidence": "low",
-      "mediaCount": 9,
+      "mediaCount": 0,
       "lines": 12,
-      "percent": 50,
+      "percent": 40,
       "missing": [
         "artist",
         "key",
+        "tempo",
         "year"
       ],
       "hasEssentials": false
@@ -21424,6 +21432,7637 @@
         "year"
       ],
       "hasEssentials": false
+    },
+    {
+      "songId": "03bd213a-4782-553a-bbb0-3fdc8e6d68ec",
+      "title": "Hosanna",
+      "slug": "hosanna",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Meaghan Williams McNeal",
+      "year": null,
+      "tempo": 73,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "blood",
+        "praise",
+        "cross",
+        "healing",
+        "name-of-jesus",
+        "salvation",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 36,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "03e05277-b261-5138-bff6-e0649bc9cea8",
+      "title": "Your Great Name",
+      "slug": "your-great-name",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Todd Dulaney",
+      "year": null,
+      "tempo": 103,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 52,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "04aff341-f649-5152-89ec-8710b3d8a587",
+      "title": "Miah White, J.J. Hairston Have Your Way",
+      "slug": "miah-white-j-j-hairston-have-your-way",
+      "source": "pdf",
+      "key": "A",
+      "artist": "J.J. Hairston",
+      "year": null,
+      "tempo": 57,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "altar",
+        "holy-spirit",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 55,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "064b864b-c49d-577b-b063-36a5c56a9c17",
+      "title": "Hallelujah He is Here",
+      "slug": "hallelujah-he-is-here",
+      "source": "pdf",
+      "key": "D",
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "christmas",
+        "joy",
+        "name-of-jesus"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 24,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "0668ad20-0af6-57d7-932c-590fa712f765",
+      "title": "Mike Hudson & Kelsey White Trusting For A Miracle",
+      "slug": "mike-hudson-kelsey-white-trusting-for-a-miracle",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Intro Chorus (Parts) (2x)",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 41,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "079cb79d-3e5f-5226-b2a5-a336ae409836",
+      "title": "Ancient of Days",
+      "slug": "ancient-of-days",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Darren Thomas & The Movement",
+      "year": null,
+      "tempo": 110,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "worship",
+        "praise",
+        "blood",
+        "faith-trust",
+        "healing",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 52,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "088178b0-7dcb-56c4-a093-0a0c9c909411",
+      "title": "He Shall Reign Forevermore",
+      "slug": "he-shall-reign-forevermore",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Christ Tomlin",
+      "year": null,
+      "tempo": 122,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "christmas"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 31,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "09410ae5-3e4d-5238-8d1a-188cda6b5f4b",
+      "title": "Somebody Give Him Some Praise",
+      "slug": "somebody-give-him-some-praise",
+      "source": "pdf",
+      "key": "F",
+      "artist": "The Chandlers",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "blood",
+        "joy"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 30,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "09de14aa-fd43-5429-b338-b75559be8e38",
+      "title": "How Majestic",
+      "slug": "how-majestic",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": 128,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 35,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "0b5ea52e-6a12-53d8-be1f-757dc1bb2f7a",
+      "title": "Ted Keith Rise Up",
+      "slug": "ted-keith-rise-up",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Ted Keith",
+      "year": null,
+      "tempo": 118,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "victory",
+        "name-of-jesus",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 71,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "0bf44b01-fa7c-5f73-8621-7eef106bb0df",
+      "title": "I Am Not Alone Chord Chart",
+      "slug": "i-am-not-alone-chord-chart",
+      "source": "pdf",
+      "key": "F",
+      "artist": "GPC Worship",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 47,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "0d8abc76-cd81-5fa7-aa0e-3ed521dd9653",
+      "title": "Not The Same",
+      "slug": "not-the-same",
+      "source": "pdf",
+      "key": "C#",
+      "artist": "Jeff Walthall",
+      "year": null,
+      "tempo": 125,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "cross",
+        "joy",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "0d8d5803-029d-5966-aab3-ceddfed6a068",
+      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) maj7 9 [Ab-Bb-Cb-C] Db/Gb Cb Db | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] 6 9 9 |Cb/C Db /F Abm7/Bb Eb Gb | CHORUS 9 Ab Ye shall have the power, ye shall have the power 9 Ab Ye shall have the power, ye shall have the power 9 9 9 7 9 9 B C Db Bb Eb Ab Af - ter the Holy Ghost has come upon you, ye shall have the power 9 9 9 7 7(#5#9) B C Db Bb Eb Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C 6 7 9 9 Db /F Abm /Bb Eb Gb | CHORUS",
+      "slug": "intro-ab-bb-cb-c-eb-f-gb-f-ab-bb-cb-c-eb-f-gb-gb-f-x2-maj7-9",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Eddie James - \"Magnify\"",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "holy-spirit",
+        "heaven",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 85,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "0ecce571-6c19-58e7-a545-db507ecac921",
+      "title": "Micah Pollock, Jonathan Stephens O Come Emmanuel",
+      "slug": "micah-pollock-jonathan-stephens-o-come-emmanuel",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Intro F G C",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "christmas",
+        "praise",
+        "worship",
+        "healing",
+        "grace-mercy",
+        "heaven",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 51,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "11cbe69a-235b-5206-aa68-3e277a6e96b0",
+      "title": "Christmas Day Andrew Bergthold",
+      "slug": "christmas-day-andrew-bergthold",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Chris Tomlin",
+      "year": null,
+      "tempo": 105,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "christmas",
+        "praise",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 66,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "13158aa5-b55b-5357-9687-d8ac0984ed76",
+      "title": "Excellent",
+      "slug": "excellent",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": null,
+      "year": null,
+      "tempo": 49,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 37,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "136d5f1f-01ac-5f73-9c0f-89295073114d",
+      "title": "Tevia Alfter, Natalie Bunner All To You",
+      "slug": "tevia-alfter-natalie-bunner-all-to-you",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Bryan Pound",
+      "year": null,
+      "tempo": 120,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "altar"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1547784f-ec0d-5a4b-b2d7-2f40140a8ba1",
+      "title": "Awesome and Powerful",
+      "slug": "awesome-and-powerful",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Mark Crowder",
+      "year": null,
+      "tempo": 98,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 51,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "16ce24f6-2148-52f0-b123-7c5178bd3ef8",
+      "title": "One God",
+      "slug": "one-god",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Calah Rhodes",
+      "year": null,
+      "tempo": 150,
+      "tempoDerived": true,
+      "band": "shout",
+      "themes": [
+        "faith-trust",
+        "salvation",
+        "name-of-jesus",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 12,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "191bfbd4-5e80-5624-8959-249454765908",
+      "title": "All Things",
+      "slug": "all-things",
+      "source": "pdf",
+      "key": "G",
+      "artist": "David & Nicole Binion",
+      "year": null,
+      "tempo": 69,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 21,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1978bb8e-ea2b-5814-b1c2-7687abf1dfad",
+      "title": "Order My Steps",
+      "slug": "order-my-steps",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "GMWA Women of Worship",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 53,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1b8b1e63-db32-5201-88b0-890471c8e92e",
+      "title": "Welcome In",
+      "slug": "welcome-in",
+      "source": "pdf",
+      "key": "F#m",
+      "artist": "R.A. Vernon",
+      "year": null,
+      "tempo": 128,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "heaven",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 21,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1bad7e6e-6922-5aa4-8873-359be2e6c8f2",
+      "title": "One Name (Jesus)",
+      "slug": "one-name-jesus",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Naomi Raine",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "healing",
+        "name-of-jesus",
+        "victory",
+        "blood"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 15,
+      "lines": 73,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1c40b5dd-3494-5e31-933c-613facdbec30",
+      "title": "I Will Go",
+      "slug": "i-will-go",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Ryan Johns",
+      "year": null,
+      "tempo": 135,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "heaven",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 42,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1cedb452-ecdc-5d74-98ce-494844e9adfc",
+      "title": "We Need the Rain",
+      "slug": "we-need-the-rain",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "David Jennings",
+      "year": null,
+      "tempo": 145,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 37,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1cee10f7-b207-5fa0-b306-f4e4bc1e701d",
+      "title": "We Pray for More",
+      "slug": "we-pray-for-more",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Ntokozo Mbambo",
+      "year": null,
+      "tempo": 52,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 18,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1eca1185-b3f7-58ab-a77b-8ee24ac4785f",
+      "title": "Kenna Turner West Answer is Jesus",
+      "slug": "kenna-turner-west-answer-is-jesus",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Karen Peck & New River",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 69,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1f39cd87-3b59-53c1-ad15-d005378717c7",
+      "title": "Send Me",
+      "slug": "send-me",
+      "source": "pdf",
+      "key": "C",
+      "artist": "River Valley Worship",
+      "year": null,
+      "tempo": 65,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "prayer",
+        "faith-trust",
+        "joy"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1f8e95d4-5f96-5f98-aca4-f980128fa45c",
+      "title": "Divine Exchange",
+      "slug": "divine-exchange",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Charity Gayle",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "blood",
+        "cross",
+        "faith-trust",
+        "grace-mercy",
+        "healing",
+        "praise",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 18,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "1fcd6deb-efbc-578e-9fff-6a11633d3180",
+      "title": "We’ve Come To Praise Him",
+      "slug": "we-ve-come-to-praise-him",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 43,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "206084c5-2e13-5d3f-88e9-f51b9ceab563",
+      "title": "Brandon Lake and Jacob Sooter House of Miracles",
+      "slug": "brandon-lake-and-jacob-sooter-house-of-miracles",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Brandon Lake",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "blood",
+        "faith-trust",
+        "praise",
+        "worship",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 61,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "208e4938-0489-5a55-9ac0-c09a693d18d8",
+      "title": "In Your Presence",
+      "slug": "in-your-presence",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "William McDowell",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": true,
+      "band": "slow",
+      "themes": [
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 21,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "20a52c66-9d1c-55d3-b0ba-65d2df2e69a1",
+      "title": "Kristen Sangary Already Done",
+      "slug": "kristen-sangary-already-done",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Kristen Sangary",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "prayer",
+        "worship",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 53,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "22b2df33-a210-5e70-82a5-5eee96cecc62",
+      "title": "Put The Attention On Jesus",
+      "slug": "put-the-attention-on-jesus",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Todd Dulaney",
+      "year": null,
+      "tempo": 136,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "232e9cbe-8586-5db0-852c-bcd8e2763294",
+      "title": "Anything Can Happen",
+      "slug": "anything-can-happen",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Mark Crowder",
+      "year": null,
+      "tempo": 78,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "244cfa9b-7151-545c-9eb9-0b7a3585d05a",
+      "title": "God Almighty",
+      "slug": "god-almighty",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Maranda Curtis",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "worship"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 31,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "24dad21d-ecf6-5594-a474-9d77dc5716ea",
+      "title": "Hallelujah for the Cross",
+      "slug": "hallelujah-for-the-cross",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Chris McClarney",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "blood",
+        "cross",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "259f1624-a948-54c3-a72b-54dc83839814",
+      "title": "Before The King",
+      "slug": "before-the-king",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Saddleback Worship",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "grace-mercy",
+        "salvation",
+        "joy",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 36,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "28acff8e-7ba6-52d9-b104-5637454295e3",
+      "title": "Battle Belongs",
+      "slug": "battle-belongs",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Phil Wickahm",
+      "year": null,
+      "tempo": 81,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "victory",
+        "easter",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "2dfda80d-462f-5ed6-b2bd-ecb9d007c63c",
+      "title": "We Bless the Name",
+      "slug": "we-bless-the-name",
+      "source": "pdf",
+      "key": "D",
+      "artist": "BJ Putnam",
+      "year": null,
+      "tempo": 82,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 65,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3085748a-b59e-535d-94c0-d78c0e4ce64f",
+      "title": "Brittani Scott I Speak Victory",
+      "slug": "brittani-scott-i-speak-victory",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "name-of-jesus",
+        "victory",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 15,
+      "lines": 56,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "30881347-6bcb-52c0-ac1a-61fc87eb5865",
+      "title": "Amen",
+      "slug": "amen",
+      "source": "pdf",
+      "key": "D",
+      "artist": "People and Songs",
+      "year": null,
+      "tempo": 106,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "blood",
+        "victory",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 18,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3169dd3e-2401-5b80-9979-4000c0ccf430",
+      "title": "Call the Name of Jesus",
+      "slug": "call-the-name-of-jesus",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Amante Lacey",
+      "year": null,
+      "tempo": 111,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "name-of-jesus",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "321a3182-24d5-5c67-a786-4335d7ee12bd",
+      "title": "Come Thou Long Expected Jesus",
+      "slug": "come-thou-long-expected-jesus",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Meredith Andrews",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "joy",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 36,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "367ec0cd-d506-5848-bc92-6df8ef3b0c72",
+      "title": "God of Wonder",
+      "slug": "god-of-wonder",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "heaven",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 45,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "369183f9-df45-5205-80e7-7e14d6c8aa27",
+      "title": "Promised One",
+      "slug": "promised-one",
+      "source": "pdf",
+      "key": "F#",
+      "artist": "River Valley Worship",
+      "year": null,
+      "tempo": 82,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "heaven",
+        "name-of-jesus",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "369d8d37-8cd0-54bd-8af7-d04131804f66",
+      "title": "Never Lost",
+      "slug": "never-lost",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "All Nations Worship",
+      "year": null,
+      "tempo": 152,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "faith-trust",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 46,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "372d20aa-aecc-5c70-8db1-953509d9fcfb",
+      "title": "Worthy",
+      "slug": "worthy",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "name-of-jesus",
+        "worship"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3740e957-2df8-5c07-9986-a1699f25501e",
+      "title": "Sing it Out",
+      "slug": "sing-it-out",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Jessica DiGiovanni",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 19,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3a0e68f1-9265-5ecc-83b1-81f68e409c92",
+      "title": "At the Cross",
+      "slug": "at-the-cross",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Brooklyn Tabernacle Choir",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "blood",
+        "cross",
+        "grace-mercy",
+        "salvation",
+        "joy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 16,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3af1ddd3-a39e-54fc-b855-57e9596277b4",
+      "title": "Your Blood",
+      "slug": "your-blood",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Texas Bible College (TBC)",
+      "year": null,
+      "tempo": 69,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "blood",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3b02b9b9-cf71-59b9-a86f-90f3e399e1e9",
+      "title": "Only You (How Great)",
+      "slug": "only-you-how-great",
+      "source": "pdf",
+      "key": "E",
+      "artist": "The Pentecostals of Katy Worship Team",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 26,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3db7cb67-5d89-5444-8ca4-2eed8df8f1fb",
+      "title": "Anthem We Raise & Keiko Grove",
+      "slug": "anthem-we-raise-keiko-grove",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "healing",
+        "revival",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 69,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3e43e9c5-4f3c-513a-8e3a-497ca09057e3",
+      "title": "Horatio Spafford It Is Well",
+      "slug": "horatio-spafford-it-is-well",
+      "source": "pdf",
+      "key": "C",
+      "artist": null,
+      "year": null,
+      "tempo": 104,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 80,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "3e67e089-9d6e-5d55-8f2b-681108e631cf",
+      "title": "Throne Room Song",
+      "slug": "throne-room-song",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "People and Songs",
+      "year": null,
+      "tempo": 79,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship",
+        "heaven",
+        "cross",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 16,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "3eaaa8a7-3465-5e32-af02-916ff87b9330",
+      "title": "Complete Surrender",
+      "slug": "complete-surrender",
+      "source": "pdf",
+      "key": "B",
+      "artist": null,
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": true,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "altar",
+        "revival",
+        "victory"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 42,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "3fa2a75d-6097-544c-82b6-ba66376d6792",
+      "title": "Consume Me",
+      "slug": "consume-me",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Caleb Dehart/James Simms",
+      "year": null,
+      "tempo": 67,
+      "tempoDerived": true,
+      "band": "slow",
+      "themes": [
+        "holy-spirit"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 19,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "41120acb-c270-5cdf-be80-57830ccd6c40",
+      "title": "To Your Name",
+      "slug": "to-your-name",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Jonathan Hudoff",
+      "year": null,
+      "tempo": 120,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "name-of-jesus",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4191436f-f932-5d41-be54-71d976a2ab01",
+      "title": "You Are holy",
+      "slug": "you-are-holy",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": null,
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": true,
+      "band": "shout",
+      "themes": [
+        "name-of-jesus",
+        "worship",
+        "praise",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 21,
+      "lines": 36,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "429fc22e-024d-586a-ad23-73011d3871c9",
+      "title": "Fire",
+      "slug": "fire",
+      "source": "pdf",
+      "key": "E",
+      "artist": "CeCe Winans",
+      "year": null,
+      "tempo": 134,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "holy-spirit",
+        "grace-mercy",
+        "heaven",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "42c0b4fa-d974-5b60-a28e-2bac8d29bdfb",
+      "title": "For My Good",
+      "slug": "for-my-good",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 73,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4492d44c-7c41-503d-aada-cbf245c57f56",
+      "title": "Thy Kingdom Come",
+      "slug": "thy-kingdom-come",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Monica Wilbanks",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "grace-mercy",
+        "heaven",
+        "prayer",
+        "worship"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 5,
+      "lines": 49,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4646c050-9bb1-55b4-96d1-8217503e3286",
+      "title": "Free Indeed",
+      "slug": "free-indeed",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Timothy Reddick",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 6,
+      "percent": 75,
+      "missing": [
+        "tempo",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "49892253-9a09-51c9-97cf-e8dbe635f0ec",
+      "title": "Won’t Stop Now",
+      "slug": "won-t-stop-now",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Elevation Worship",
+      "year": null,
+      "tempo": 122,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "faith-trust",
+        "cross",
+        "grace-mercy",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4993c273-a1ea-5baf-a265-c74ca97c60b2",
+      "title": "Forever Amen",
+      "slug": "forever-amen",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Draylin Young",
+      "year": null,
+      "tempo": 152,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "name-of-jesus",
+        "prayer",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 27,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4a325f15-3c85-5498-934b-5e2081949cf7",
+      "title": "I’ve Got a Reason",
+      "slug": "i-ve-got-a-reason",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Nashville Life Music",
+      "year": null,
+      "tempo": 79,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 64,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4b90832c-0cfe-5d3b-bc6d-d334709e2a42",
+      "title": "This Place",
+      "slug": "this-place",
+      "source": "pdf",
+      "key": "F",
+      "artist": "First Pentecostal Church of North Little Rock",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 16,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4bba84e5-a99a-57bc-b083-030c9fbe8da3",
+      "title": "It Is Done",
+      "slug": "it-is-done",
+      "source": "pdf",
+      "key": "E",
+      "artist": "The Pentecostals of Katy (POK)",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 79,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4d159614-c4f0-5874-a934-cf896ea9ef23",
+      "title": "I Am Not Ashamed",
+      "slug": "i-am-not-ashamed",
+      "source": "pdf",
+      "key": "Fm",
+      "artist": "Christian Life Center Mass Choir",
+      "year": null,
+      "tempo": 96,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "name-of-jesus",
+        "victory",
+        "blood",
+        "cross",
+        "holy-spirit",
+        "praise",
+        "salvation",
+        "easter",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 84,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4d6a6f27-b21a-552e-b18a-948bdc56d7ab",
+      "title": "He Can Chord Chart",
+      "slug": "he-can-chord-chart",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": 76,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 41,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4d7201ec-e09d-56f4-b228-34e66d321bd3",
+      "title": "Greater",
+      "slug": "greater",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Highlands Worship",
+      "year": null,
+      "tempo": 112,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 19,
+      "lines": 25,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4d7a04d7-9d4e-514b-bdb1-ce36a804f8fb",
+      "title": "For Your Glory",
+      "slug": "for-your-glory",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Tasha Cobbs",
+      "year": null,
+      "tempo": 50,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 44,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4d8aaf89-08b0-54c4-8f35-e412fd47efda",
+      "title": "Give Me Jesus",
+      "slug": "give-me-jesus",
+      "source": "pdf",
+      "key": "B",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": 125,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "4dc350af-57a8-54ba-9ebc-5b60c7f04613",
+      "title": "Lift Up Your Voices",
+      "slug": "lift-up-your-voices",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Sunday Service Choir",
+      "year": null,
+      "tempo": 116,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 79,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5119a6d4-1efb-5a3c-b035-f5c4074a2a82",
+      "title": "God Is Here",
+      "slug": "god-is-here",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Keith Pace",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "faith-trust",
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 22,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "51a73012-d3e8-53c5-817b-08aa059a8b4f",
+      "title": "How Great",
+      "slug": "how-great",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": null,
+      "year": null,
+      "tempo": 118,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 37,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "53ad7e85-7c7d-5197-b2ad-15d1c76ad26f",
+      "title": "Inhabit",
+      "slug": "inhabit",
+      "source": "pdf",
+      "key": "C",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 2,
+      "lines": 26,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "53c4b44e-d45f-569f-9d2c-345ab8f52ec9",
+      "title": "Only One Name (Jesus)",
+      "slug": "only-one-name-jesus",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Brandon Marin",
+      "year": null,
+      "tempo": 87,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5685c996-e977-5df4-a81b-60e60ffe96de",
+      "title": "Let’s Dance",
+      "slug": "let-s-dance",
+      "source": "pdf",
+      "key": "E",
+      "artist": "God's Chosen",
+      "year": null,
+      "tempo": 90,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "healing",
+        "joy",
+        "holy-spirit"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 36,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "56a78d06-5a0e-5fb0-8ed9-98dae6df04e2",
+      "title": "Greater Things",
+      "slug": "greater-things",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Faith Worship Arts",
+      "year": null,
+      "tempo": 135,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "revival",
+        "healing",
+        "faith-trust"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "56ffc497-bc63-59c0-87ff-8b58cd105d5c",
+      "title": "Silence the Roar Laura Payne, Cam Cook, Kevin Howard",
+      "slug": "silence-the-roar-laura-payne-cam-cook-kevin-howard",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 132,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "victory",
+        "praise",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 74,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "58aa7711-d292-53ac-923e-a45554ace96a",
+      "title": "Come Like The Dawn",
+      "slug": "come-like-the-dawn",
+      "source": "pdf",
+      "key": "C",
+      "artist": "River Valley Church",
+      "year": null,
+      "tempo": 76,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "heaven"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 7,
+      "lines": 21,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5b6d967c-8beb-5c30-85ef-7e3f544f4bcd",
+      "title": "O Come All Ye Faithful",
+      "slug": "o-come-all-ye-faithful",
+      "source": "pdf",
+      "key": "A",
+      "artist": "33Miles",
+      "year": null,
+      "tempo": 126,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "joy",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 41,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5bc29d3e-2e8b-5b0d-b397-69f6e995b571",
+      "title": "Joshua Dufrene, and Colin Edge Nobody Like You",
+      "slug": "joshua-dufrene-and-colin-edge-nobody-like-you",
+      "source": "pdf",
+      "key": "Am",
+      "artist": "Covenant Worship",
+      "year": null,
+      "tempo": 66,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "cross",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 41,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5bdbf273-947f-5fe3-b6a6-d6cff4380019",
+      "title": "More Than Able",
+      "slug": "more-than-able",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Maverick City Music",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 64,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5ddad45f-cadb-5fcf-94e6-a09f37381a66",
+      "title": "Making Room",
+      "slug": "making-room",
+      "source": "pdf",
+      "key": "G",
+      "artist": "David & Nicole Binion",
+      "year": null,
+      "tempo": 162,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "worship",
+        "communion"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 18,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5de4ed3b-4f69-51f7-b0d1-28ef2469091a",
+      "title": "A Reason to Dance",
+      "slug": "a-reason-to-dance",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "All Nations Worship",
+      "year": null,
+      "tempo": 130,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "victory",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5e3d7793-0186-5044-91e0-ef0a4f73953d",
+      "title": "This Is Freedom Lauren Strahm, Sarah Gerald",
+      "slug": "this-is-freedom-lauren-strahm-sarah-gerald",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "The Belonging Co.",
+      "year": null,
+      "tempo": 118,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 56,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5eab1a91-9390-5551-bc6d-58284ab701ae",
+      "title": "Your Name",
+      "slug": "your-name",
+      "source": "pdf",
+      "key": "A",
+      "artist": null,
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 25,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "5ee6c83f-fcaf-5508-846c-7653bae0086b",
+      "title": "You Are Healed",
+      "slug": "you-are-healed",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Mark Crowder",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "name-of-jesus",
+        "healing",
+        "baptism"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 19,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5f849300-fb5d-50b2-8c5b-1c1def492096",
+      "title": "Forward",
+      "slug": "forward",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "UPCI Music Ministry",
+      "year": null,
+      "tempo": 79,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "blood"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 73,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "5f9f6191-2814-5fd9-8d0d-1f88f22b799a",
+      "title": "Hands Toward Heaven",
+      "slug": "hands-toward-heaven",
+      "source": "pdf",
+      "key": "A",
+      "artist": "North Point Inside Out",
+      "year": null,
+      "tempo": 120,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "heaven",
+        "name-of-jesus",
+        "salvation",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 46,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6030d2bd-1679-5d98-87f6-945393eb41a3",
+      "title": "Ancient of Days",
+      "slug": "ancient-of-days",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Ron Kenoly",
+      "year": null,
+      "tempo": 88,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "heaven",
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 55,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6059d6e4-b256-5291-8078-c1a2d3c67186",
+      "title": "We’ve Come to Glorify the Lord",
+      "slug": "we-ve-come-to-glorify-the-lord",
+      "source": "pdf",
+      "key": "Am",
+      "artist": "Texas Bible College (TBC)",
+      "year": null,
+      "tempo": 150,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "worship",
+        "joy",
+        "name-of-jesus",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 26,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "607057ed-5d8a-577d-82d6-4f513a386f1b",
+      "title": "No God Like Our God",
+      "slug": "no-god-like-our-god",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Preashea Hilliard",
+      "year": null,
+      "tempo": 130,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "heaven",
+        "worship",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 40,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6093305f-7053-5538-af63-079113a2fb80",
+      "title": "Sarah Gerald Everything is Changing",
+      "slug": "sarah-gerald-everything-is-changing",
+      "source": "pdf",
+      "key": "C",
+      "artist": "The Belonging Co.",
+      "year": null,
+      "tempo": 65,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "healing",
+        "heaven",
+        "joy",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 104,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6207eae2-4326-559f-ae46-68d2e22e389b",
+      "title": "Come Move",
+      "slug": "come-move",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Brittani Scott",
+      "year": null,
+      "tempo": 152,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "revival",
+        "faith-trust",
+        "healing",
+        "heaven",
+        "holy-spirit",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 75,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6212be94-5ed2-56af-9203-a2b2e5c65e43",
+      "title": "Lead Us",
+      "slug": "lead-us",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Steve Richardson",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "grace-mercy",
+        "prayer",
+        "faith-trust"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 44,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "626b765f-11e4-5ddd-8d75-7be47f58f46c",
+      "title": "Jesus",
+      "slug": "jesus",
+      "source": "pdf",
+      "key": "Cm",
+      "artist": "Phase II",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "grace-mercy",
+        "easter",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 31,
+      "lines": 32,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6483f121-01db-5cc0-b506-66f883b12945",
+      "title": "No Other Name",
+      "slug": "no-other-name",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": 110,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "baptism",
+        "name-of-jesus",
+        "heaven",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 93,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6527f0c3-c4d5-579d-866c-c10b15842e65",
+      "title": "Glory",
+      "slug": "glory",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": 90,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 16,
+      "lines": 95,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "658201b4-586c-5253-a61b-29ed070d95c3",
+      "title": "Surrounded (Fight My Battles)",
+      "slug": "surrounded-fight-my-battles",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Michael W. Smith",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 30,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "65d572c0-39ce-5494-a499-95de4d02a17f",
+      "title": "My Story",
+      "slug": "my-story",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Apostolic Collective",
+      "year": null,
+      "tempo": 88,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "blood",
+        "praise",
+        "grace-mercy",
+        "salvation",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 56,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "67afac00-8002-5db9-9885-7be7d014ced4",
+      "title": "Hymn of Praise",
+      "slug": "hymn-of-praise",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "William McDowell",
+      "year": null,
+      "tempo": 75,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 26,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "681fd0cc-666d-51f3-a4fa-88f577ee6faf",
+      "title": "Better",
+      "slug": "better",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Hezekiah Walker",
+      "year": null,
+      "tempo": 99,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 60,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "699c012e-eeaa-5a85-b2ab-a4ddfa0e82d5",
+      "title": "A Place Of Healing",
+      "slug": "a-place-of-healing",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Jina McCool",
+      "year": null,
+      "tempo": 88,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "praise"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 39,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "69f3ad78-4cbb-5202-9e8e-e33098fac7b3",
+      "title": "Jesus",
+      "slug": "jesus",
+      "source": "pdf",
+      "key": "Am",
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": 78,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "heaven",
+        "prayer",
+        "easter",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 155,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6c6c08d8-5b74-572a-a4cf-8d28ff456a50",
+      "title": "No One",
+      "slug": "no-one",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": 78,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "grace-mercy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 76,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "6f8b9208-7c0a-5550-a7e1-015beadef8ae",
+      "title": "It’s Happening Now",
+      "slug": "it-s-happening-now",
+      "source": "pdf",
+      "key": "C",
+      "artist": "LYA",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "faith-trust",
+        "blood",
+        "heaven",
+        "worship",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 75,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "704b6498-296a-5018-8112-de352c71b5a2",
+      "title": "Be Lifted",
+      "slug": "be-lifted",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Michah Stampley",
+      "year": null,
+      "tempo": 113,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "707c06b0-03c1-5ddc-81dc-c4cd3a069cfc",
+      "title": "Bless Your Name",
+      "slug": "bless-your-name",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Clint Brown",
+      "year": null,
+      "tempo": 57,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 24,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7129ec33-64fd-5179-93ed-1923bd041857",
+      "title": "More",
+      "slug": "more",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Harvest Music Live",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "heaven",
+        "praise",
+        "worship",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "71bb9ca1-453f-5d7b-9d89-baaf0c85c36f",
+      "title": "Speak The Name",
+      "slug": "speak-the-name",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Koryn Hawthorne",
+      "year": null,
+      "tempo": 67,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "grace-mercy",
+        "heaven",
+        "holy-spirit",
+        "baptism"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 30,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "71db901f-db04-5eae-a7f1-294ce17feaa5",
+      "title": "Humbly We Bow (Holy Are You Lord)",
+      "slug": "humbly-we-bow-holy-are-you-lord",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Cape First Worship",
+      "year": null,
+      "tempo": 71,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "worship",
+        "grace-mercy",
+        "joy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "727267d4-f24f-5638-8f59-1c9d84696cb3",
+      "title": "God is Calling",
+      "slug": "god-is-calling",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": 65,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 48,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "72eed0f4-c26b-57ce-9080-ba1728f3e312",
+      "title": "We Have Overcome",
+      "slug": "we-have-overcome",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Brittani Scott",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "victory",
+        "name-of-jesus",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 39,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "739f0d8d-a6c3-5ffb-928e-39a44f5bf431",
+      "title": "You Are Holy",
+      "slug": "you-are-holy",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Brian Labat, Ginger Labat & The Calvary UPC Choir",
+      "year": null,
+      "tempo": 76,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "healing",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "765ad7b6-4f6d-5248-848e-d6056949fbbf",
+      "title": "Heaven",
+      "slug": "heaven",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Written by James Simms",
+      "year": null,
+      "tempo": 110,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "heaven",
+        "praise",
+        "grace-mercy",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7711fb19-2e29-597e-a0ad-498b59b04e9b",
+      "title": "Jesse Wilson Our God Reigns Forever",
+      "slug": "jesse-wilson-our-god-reigns-forever",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Jesse Wilson",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 55,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7813d4cc-b2d0-5e13-ae5b-24802de4f989",
+      "title": "When You Believe",
+      "slug": "when-you-believe",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Calvary Worship",
+      "year": null,
+      "tempo": 99,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "blood",
+        "cross",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 104,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "781aa4fa-351a-5aa4-97d2-c6e627a6b134",
+      "title": "Open the Heavens",
+      "slug": "open-the-heavens",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Faith Worship Arts",
+      "year": null,
+      "tempo": 13,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "heaven",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 49,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "792d5e96-f186-5ef9-811c-b6e95c785ee5",
+      "title": "Death, Hell + The Grave",
+      "slug": "death-hell-the-grave",
+      "source": "pdf",
+      "key": "D",
+      "artist": null,
+      "year": null,
+      "tempo": 83,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "blood",
+        "easter",
+        "healing",
+        "salvation",
+        "testimony",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 95,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "797f3f53-59a8-558b-b430-9d3eacc62dd4",
+      "title": "God of the Empty Grave",
+      "slug": "god-of-the-empty-grave",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Assemble Worship",
+      "year": null,
+      "tempo": 116,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "easter",
+        "cross",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 55,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7a256d57-04f9-5837-a650-1ccb3fa8bcf3",
+      "title": "I Will Rejoice",
+      "slug": "i-will-rejoice",
+      "source": "pdf",
+      "key": "Bbm",
+      "artist": "Miami Mass Choir",
+      "year": null,
+      "tempo": 104.5,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "joy",
+        "praise",
+        "victory"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 17,
+      "lines": 52,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7a271e1d-c216-5f23-aa66-77d134832a86",
+      "title": "Never Go A Day",
+      "slug": "never-go-a-day",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Shawn Bigby",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": true,
+      "band": "slow",
+      "themes": [
+        "grace-mercy"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 19,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7a6df22b-f583-5e56-918f-e49e0e6a9639",
+      "title": "Here Again",
+      "slug": "here-again",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Rheva Henry",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "holy-spirit",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 42,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7b40cb2e-b190-5c72-8314-8052b00c0222",
+      "title": "Thankful Lauren Strahm, Sarah Gerald",
+      "slug": "thankful-lauren-strahm-sarah-gerald",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "J.J. Hairston",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 0,
+      "lines": 137,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7b5765b8-28b6-5c1c-9acf-d203097bb22e",
+      "title": "Isn’t the Name",
+      "slug": "isn-t-the-name",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Covenant Worship",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "salvation",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 22,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7c212689-5922-524d-af38-cd2f1f41a1c2",
+      "title": "Unspeakable Joy",
+      "slug": "unspeakable-joy",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": 145,
+      "tempoDerived": true,
+      "band": "shout",
+      "themes": [
+        "joy",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 37,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7cbd91e7-27f9-50b3-aee6-f7533781aa89",
+      "title": "Ryan Avery, Tamika Jackson Cry Out",
+      "slug": "ryan-avery-tamika-jackson-cry-out",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "ReFresh Worship",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "victory",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 107,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7ea0a5c1-3086-59e1-abf0-e9b31a1504d1",
+      "title": "In Control",
+      "slug": "in-control",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Frankie Taylor",
+      "year": null,
+      "tempo": 75,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "7f502b59-bfc8-5be1-bf23-8b2cd5bf6b36",
+      "title": "This is a Move",
+      "slug": "this-is-a-move",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Tasha Cobbs Leonard",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "healing",
+        "heaven",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 31,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "805819f8-35a9-55f1-bf9b-b0d357690a7c",
+      "title": "He’s Worthy",
+      "slug": "he-s-worthy",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Sandra Crouch",
+      "year": null,
+      "tempo": 83,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "80c8e779-fec5-5ead-8eba-8f9170d792f4",
+      "title": "Worthy",
+      "slug": "worthy",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": 75,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 80,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8199ce65-9e12-549d-825a-ea35c3214964",
+      "title": "How I Need You Chris Griffin, Micah Massey",
+      "slug": "how-i-need-you-chris-griffin-micah-massey",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Highlands Worship",
+      "year": null,
+      "tempo": 84,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "healing",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "82c3b564-295f-5d55-8886-7fe3c518f038",
+      "title": "I Got Out",
+      "slug": "i-got-out",
+      "source": "pdf",
+      "key": "F",
+      "artist": "At the Cross",
+      "year": null,
+      "tempo": 95,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 54,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "83c9cf3f-2b09-580d-86d1-5defe5f05c14",
+      "title": "Joy",
+      "slug": "joy",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": 130,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "name-of-jesus",
+        "praise",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 64,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "841d22bb-57be-50a7-8fd8-6370fe5ad7c6",
+      "title": "I’ll Sing About Jesus",
+      "slug": "i-ll-sing-about-jesus",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Angie Pearson",
+      "year": null,
+      "tempo": 113,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "grace-mercy",
+        "praise",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 53,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "85573a6e-42d9-5acf-88a7-526c27ffbfbc",
+      "title": "He Is",
+      "slug": "he-is",
+      "source": "pdf",
+      "key": "Bm",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": 84,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "salvation",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 11,
+      "lines": 58,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8816928c-02b2-559a-8cee-db0961f640e6",
+      "title": "I Give You Glory",
+      "slug": "i-give-you-glory",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Jonathan Nelson",
+      "year": null,
+      "tempo": 160,
+      "tempoDerived": true,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 41,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "893a0ae4-cd9b-5373-89c6-0370488756fb",
+      "title": "Breakthrough",
+      "slug": "breakthrough",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Eddie James",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "victory",
+        "prayer",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 34,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8984dfda-01cf-5849-8958-8cd439a2aacd",
+      "title": "You’re Doing it All Again",
+      "slug": "you-re-doing-it-all-again",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Todd Dulaney",
+      "year": null,
+      "tempo": 131,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 65,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "89bb560c-5383-525f-a567-263e195c9e27",
+      "title": "My Help",
+      "slug": "my-help",
+      "source": "pdf",
+      "key": "G",
+      "artist": "James Simms",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "heaven",
+        "joy",
+        "salvation",
+        "worship",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 19,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8b1cbb67-6472-58df-a786-4845e38814ef",
+      "title": "We Want You",
+      "slug": "we-want-you",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Urshan College Choir",
+      "year": null,
+      "tempo": 142,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "heaven",
+        "blood",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 21,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8d71d408-2c84-5e86-abd6-ca2891d04be5",
+      "title": "Glory Sarah Benibo",
+      "slug": "glory-sarah-benibo",
+      "source": "pdf",
+      "key": "E",
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "joy",
+        "holy-spirit",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 49,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "8e8d6580-cb8e-5757-b8c2-e844ef0acd16",
+      "title": "Unspeakable Joy",
+      "slug": "unspeakable-joy",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "joy",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 40,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8ec67746-e266-5dd2-bddc-0479b3334f15",
+      "title": "Noel, Christ is Born",
+      "slug": "noel-christ-is-born",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": 97,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "christmas",
+        "joy",
+        "salvation",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 48,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "8f7dcf6d-d172-546e-bf62-65655043484b",
+      "title": "Speak Your Name",
+      "slug": "speak-your-name",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Anthony Brown & group therAPy",
+      "year": null,
+      "tempo": 65,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "worship",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 69,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "907d9f8b-5933-591d-aea6-df561863d32f",
+      "title": "Praisin’ the Power Down",
+      "slug": "praisin-the-power-down",
+      "source": "pdf",
+      "key": "Bbm",
+      "artist": null,
+      "year": null,
+      "tempo": 153,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 29,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "91147b7d-6cdd-5c8f-b3e4-8f1663d988b3",
+      "title": "You Are",
+      "slug": "you-are",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Next Generation Choir",
+      "year": null,
+      "tempo": 178,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "faith-trust",
+        "joy",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 53,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "92a4d66d-7ef5-5df1-a62b-3cd41426ab16",
+      "title": "Let Hope Arise",
+      "slug": "let-hope-arise",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Keith Pace",
+      "year": null,
+      "tempo": 83,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "name-of-jesus",
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "94abebdc-76ba-5477-ac3b-d8d9fd462b46",
+      "title": "Just the Mention of Your Name",
+      "slug": "just-the-mention-of-your-name",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "The Belonging Co.",
+      "year": null,
+      "tempo": 73,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 38,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "95b11dbd-fbf5-5b5a-9d48-8a1db17a393c",
+      "title": "Tell of Your Glory",
+      "slug": "tell-of-your-glory",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "David & Nicole Binion",
+      "year": null,
+      "tempo": 108,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "healing",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9696ae41-56ac-5120-a39b-7db2e1653104",
+      "title": "Hallelujah Jesus Reigns Chord Chart",
+      "slug": "hallelujah-jesus-reigns-chord-chart",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Angie Pearson",
+      "year": null,
+      "tempo": 69,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 60,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "96aca06c-554a-56fc-aa90-b200f0cc21cb",
+      "title": "Rain",
+      "slug": "rain",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Noel Robinson",
+      "year": null,
+      "tempo": 85,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "heaven",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "974fd7c8-ab42-582b-be3b-6b71ef1d0a45",
+      "title": "Nothing But The Blood",
+      "slug": "nothing-but-the-blood",
+      "source": "pdf",
+      "key": "C",
+      "artist": "James Simms",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "blood"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 21,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "990237a3-9b9c-5963-bc82-a88145ed6c7d",
+      "title": "We Speak the Name",
+      "slug": "we-speak-the-name",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Frankie Taylor",
+      "year": null,
+      "tempo": 132,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "healing",
+        "holy-spirit",
+        "name-of-jesus",
+        "baptism"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 60,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9b25b017-6e3b-54a4-adba-a94de5f3936d",
+      "title": "Emmanuel",
+      "slug": "emmanuel",
+      "source": "pdf",
+      "key": "D",
+      "artist": "TCT Worship",
+      "year": null,
+      "tempo": 92,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "christmas",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9b2e38de-293a-502a-bd6d-7fed314a433f",
+      "title": "Brandon Lake, Pat Barrett Same God",
+      "slug": "brandon-lake-pat-barrett-same-god",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Elevation Worship",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "healing",
+        "prayer",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 89,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9c883db2-8aa6-5d4c-948a-16d014642cb2",
+      "title": "Living Sacrifice",
+      "slug": "living-sacrifice",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "altar",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 22,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9d8f4aa8-6fe0-5a20-8610-9d58c7d96842",
+      "title": "No Other Fount",
+      "slug": "no-other-fount",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Travis Cottrell",
+      "year": null,
+      "tempo": 67,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "blood",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 38,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9e88fd98-70c5-587b-a2ed-85c9514db90d",
+      "title": "How Great",
+      "slug": "how-great",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Covenant Worship",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 12,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9ee03f4e-962e-56b8-a902-f7cb700077f3",
+      "title": "Wood When I Shout / Testify",
+      "slug": "wood-when-i-shout-testify",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": 93,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "heaven",
+        "praise",
+        "salvation",
+        "victory",
+        "blood",
+        "easter"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 50,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "9f38ef73-0920-5ea5-aad0-4058f776fd0c",
+      "title": "Give Him Praise",
+      "slug": "give-him-praise",
+      "source": "pdf",
+      "key": "C",
+      "artist": null,
+      "year": null,
+      "tempo": 117,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "grace-mercy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 50,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47",
+      "title": "Lord, You Reign",
+      "slug": "lord-you-reign",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Bishop Leonard Scott",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 17,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a0b1fb0c-4c6d-5a36-83b3-5ecbc01ee62a",
+      "title": "I Trust In You",
+      "slug": "i-trust-in-you",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": null,
+      "year": null,
+      "tempo": 129,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 27,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "a12f59ed-9c97-5da7-9d21-b4362b66569d",
+      "title": "Still Everything",
+      "slug": "still-everything",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": 63,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "healing",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 42,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a1440a7a-a33b-552f-9b02-f059550e5875",
+      "title": "You Reign",
+      "slug": "you-reign",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Mark Goins",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 5,
+      "lines": 18,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a173212c-6d47-5e36-a36e-d21e1f66b9b5",
+      "title": "Thank You (The Cross)",
+      "slug": "thank-you-the-cross",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Mark Goins",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "cross"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 25,
+      "lines": 19,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a2f911a4-d14a-5caa-8be0-e61a04657310",
+      "title": "Bless the Lord",
+      "slug": "bless-the-lord",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Shara McKee",
+      "year": null,
+      "tempo": 78,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 47,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a4104848-5195-5afa-8018-ae233a35e9dd",
+      "title": "Only One",
+      "slug": "only-one",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Texas Bible College (TBC)",
+      "year": null,
+      "tempo": 53,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "worship",
+        "baptism",
+        "faith-trust",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 98,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a4cac43f-0fd2-582e-ae13-6193f127419d",
+      "title": "Wait on the Lord",
+      "slug": "wait-on-the-lord",
+      "source": "pdf",
+      "key": "G",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 0,
+      "lines": 30,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a503d79d-13a2-54a2-958c-381767a3e629",
+      "title": "We Want You",
+      "slug": "we-want-you",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Harvest Music Live",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "praise",
+        "healing",
+        "heaven",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 64,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a625dd46-7b26-52cf-a107-43a46150a4d4",
+      "title": "Jesus Our Victory",
+      "slug": "jesus-our-victory",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Messengers of Peace",
+      "year": null,
+      "tempo": 130,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "victory",
+        "praise",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a7eb57a9-27b8-524e-94bf-8f5915e03119",
+      "title": "You Are Holy",
+      "slug": "you-are-holy",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Kathy Taylor & Windsor Village UMC",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "name-of-jesus",
+        "worship",
+        "praise",
+        "healing",
+        "victory",
+        "blood"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 62,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "a825008e-5989-518d-b39e-6b103477e75b",
+      "title": "Bless Him Some More",
+      "slug": "bless-him-some-more",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Free Worship",
+      "year": null,
+      "tempo": 132,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "victory",
+        "name-of-jesus",
+        "praise",
+        "joy",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 108,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "aa7cb945-14e8-58b0-9229-0f226266dd9b",
+      "title": "Covered",
+      "slug": "covered",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Mattoon Youth Choir",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "blood",
+        "cross"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 45,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ab0a94d5-3a21-5b18-b691-a4920a643072",
+      "title": "He’s Been Good",
+      "slug": "he-s-been-good",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Lawrence Trump",
+      "year": null,
+      "tempo": 160,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 58,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ab853e6c-1ab3-508b-b333-e0ddb4c7f6f2",
+      "title": "Have Your Way Chord Chart Draylin",
+      "slug": "have-your-way-chord-chart-draylin",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Draylin Young",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "holy-spirit",
+        "altar"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 18,
+      "lines": 45,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ac40022a-637c-5e90-9452-a80127637d27",
+      "title": "Breakout",
+      "slug": "breakout",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Mark Crowder",
+      "year": null,
+      "tempo": 157,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "joy",
+        "victory",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ac860abf-6efa-5cca-98ed-a1fed99ac46d",
+      "title": "Whatever It Takes",
+      "slug": "whatever-it-takes",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Zebrina Anderson",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 0,
+      "lines": 44,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "acefcf6c-a8d1-5eb5-8675-3d558e0040fc",
+      "title": "Jesus",
+      "slug": "jesus",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Phil Thompson",
+      "year": null,
+      "tempo": 63,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 42,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ad2aa396-89bb-5f8c-a48d-0644dec4df56",
+      "title": "Speak The Name",
+      "slug": "speak-the-name",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Church of the City",
+      "year": null,
+      "tempo": 97,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "healing",
+        "name-of-jesus",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "adbd27e9-f990-522c-a383-402111f1f0e0",
+      "title": "Who You Say I Am",
+      "slug": "who-you-say-i-am",
+      "source": "pdf",
+      "key": "F#",
+      "artist": "Hillsong Worship",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "testimony",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "adcde7eb-5532-5b7d-9d42-23dc98eaedd4",
+      "title": "This Dwelling Place",
+      "slug": "this-dwelling-place",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 76,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "joy",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 44,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "afaa8ce9-5569-52ba-8b05-8e50c8425a62",
+      "title": "Joy",
+      "slug": "joy",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Benita Jones",
+      "year": null,
+      "tempo": 140,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "joy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 85,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b00a7435-440d-5b28-a000-3bbce7ef6bb6",
+      "title": "Worthy",
+      "slug": "worthy",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Elevation Worship",
+      "year": null,
+      "tempo": 67,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "heaven",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b109ca7a-c152-5d5b-a96f-3fdcb20697f4",
+      "title": "Covenant Keeping God",
+      "slug": "covenant-keeping-god",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "All Nations Music",
+      "year": null,
+      "tempo": 71,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 20,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b24fab85-8ef3-5881-80ec-f83d6cc605be",
+      "title": "At The Name",
+      "slug": "at-the-name",
+      "source": "pdf",
+      "key": "F#",
+      "artist": "Written by Christyana Blake",
+      "year": null,
+      "tempo": 76,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "name-of-jesus",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 74,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b34656a5-bdce-5fee-92c9-88380adcfaa0",
+      "title": "Greater",
+      "slug": "greater",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Highlands Worship",
+      "year": null,
+      "tempo": 112,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 33,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b3ad877e-a236-5781-aa3e-8ee09365d4ef",
+      "title": "Way Maker",
+      "slug": "way-maker",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Sinach",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 18,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b3d850f3-03a7-518a-a0ff-948125b938a6",
+      "title": "We Bless Your Name",
+      "slug": "we-bless-your-name",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Nathaniel Bassey",
+      "year": null,
+      "tempo": 53,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b496710c-5439-5958-ba9e-f2dd3ece2a2f",
+      "title": "Mighty Cross",
+      "slug": "mighty-cross",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Elevation Worship",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "easter",
+        "blood",
+        "cross",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "b5e6842e-1150-55f4-a325-30bd06f33a74",
+      "title": "This Is Revival Kevin Winebarger, & Sean Hill",
+      "slug": "this-is-revival-kevin-winebarger-sean-hill",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Brittani Scott",
+      "year": null,
+      "tempo": 132,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "healing",
+        "heaven",
+        "joy",
+        "revival",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 86,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "bb4fdf28-d3f1-5dc6-8082-fb2c15efbbb9",
+      "title": "Awesome God",
+      "slug": "awesome-god",
+      "source": "pdf",
+      "key": "F#",
+      "artist": "Gerald & Tammi Haddon",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 55,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "bc7e5601-c07c-5eb7-9fdf-fa93e4d4ab3e",
+      "title": "Old Rugged Cross",
+      "slug": "old-rugged-cross",
+      "source": "pdf",
+      "key": "G",
+      "artist": null,
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "blood",
+        "cross",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 39,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "bc91f115-16f1-5d57-830b-a72135283b3d",
+      "title": "Greater",
+      "slug": "greater",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Todd Dulaney",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 37,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "bfb14c11-c3c6-5dee-9ac3-7c9c96d58bfb",
+      "title": "Covered",
+      "slug": "covered",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Mark Yandris",
+      "year": null,
+      "tempo": 143,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "cross",
+        "blood"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 80,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "bfb4f14c-41ce-53cd-bf56-c74ef01e8d37",
+      "title": "Jesus Is",
+      "slug": "jesus-is",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Brooklyn Tabernacle Choir",
+      "year": null,
+      "tempo": 144,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "prayer",
+        "worship",
+        "name-of-jesus",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c01bd7b5-9785-541e-99b7-08450ea0c343",
+      "title": "Holy Ghost Chord Chart",
+      "slug": "holy-ghost-chord-chart",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Taylor Fish",
+      "year": null,
+      "tempo": 150,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "holy-spirit",
+        "revival",
+        "baptism",
+        "healing",
+        "praise",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c116596f-7d5f-54f7-b82f-3e52aaaec07e",
+      "title": "Praise Pat Barrett, Steven Furtick",
+      "slug": "praise-pat-barrett-steven-furtick",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Elevation Worship",
+      "year": null,
+      "tempo": 127,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "easter",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 64,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c13b7641-12ad-5f7f-a549-01679a47d6b1",
+      "title": "Stand and Proclaim",
+      "slug": "stand-and-proclaim",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Benita Jones",
+      "year": null,
+      "tempo": 84,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c1c4f9b2-2386-520a-9ad7-30a7c61a8c6d",
+      "title": "Wide as the Sky",
+      "slug": "wide-as-the-sky",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Isabel Davis",
+      "year": null,
+      "tempo": 65,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 11,
+      "lines": 30,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c1df38e9-8732-591a-ad56-20620fb76e86",
+      "title": "The King’s House",
+      "slug": "the-king-s-house",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "victory",
+        "praise",
+        "grace-mercy",
+        "heaven",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 44,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c2049288-0e2c-53d6-aaaf-526dab7ee640",
+      "title": "The Wonder of the Cross",
+      "slug": "the-wonder-of-the-cross",
+      "source": "pdf",
+      "key": "B",
+      "artist": "GPC Worship",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "victory",
+        "blood",
+        "cross",
+        "faith-trust",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c299dc4b-d0fb-534c-83ff-674564812502",
+      "title": "The Lord’s Prayer",
+      "slug": "the-lord-s-prayer",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Phil Thompson",
+      "year": null,
+      "tempo": 165,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c2ef1d40-48b4-56af-933c-fd8799710953",
+      "title": "Jesus",
+      "slug": "jesus",
+      "source": "pdf",
+      "key": "A",
+      "artist": "Geoffrey Golden",
+      "year": null,
+      "tempo": 148,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "name-of-jesus",
+        "heaven",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 93,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c3528263-5792-50ac-b8b1-7abb3d7075e8",
+      "title": "We Want More",
+      "slug": "we-want-more",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": null,
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "holy-spirit",
+        "revival"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 43,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "c3c734dc-a7fd-5d55-9e3f-b8c63acbbd20",
+      "title": "He is More",
+      "slug": "he-is-more",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Lori Green",
+      "year": null,
+      "tempo": 130,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "salvation"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 7,
+      "lines": 24,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c41b24e8-1b45-53e5-a8ca-f927a7dbd0e1",
+      "title": "King of Glory",
+      "slug": "king-of-glory",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Todd Dulaney",
+      "year": null,
+      "tempo": 82,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "healing",
+        "joy",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 71,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c42b1cc2-ab39-5d7c-9348-c8b5682d6516",
+      "title": "I’ve Witnessed It",
+      "slug": "i-ve-witnessed-it",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Passion",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "healing",
+        "cross",
+        "praise",
+        "worship",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c5324a5b-c310-5e10-935d-28ba53a8b72d",
+      "title": "Made a Way",
+      "slug": "made-a-way",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Travis Greene",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": true,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 57,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c60d31fc-7696-521b-9d75-a5a2984df770",
+      "title": "Angels We Have Heard (Glory Be)",
+      "slug": "angels-we-have-heard-glory-be",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Jordan Smith",
+      "year": null,
+      "tempo": 128,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "christmas",
+        "grace-mercy",
+        "jubilee",
+        "worship",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 33,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c6f4c259-6c5c-508e-a210-0a6992a27b12",
+      "title": "Too Good to Not Believe",
+      "slug": "too-good-to-not-believe",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Cody Carnes & Brandon Lake",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "faith-trust",
+        "revival",
+        "easter",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 50,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c7906674-a205-5a91-8df4-4158fcd0e992",
+      "title": "The Sound",
+      "slug": "the-sound",
+      "source": "pdf",
+      "key": "A",
+      "artist": null,
+      "year": null,
+      "tempo": 135,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "holy-spirit",
+        "praise",
+        "heaven",
+        "revival",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 53,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "c8178714-401f-5921-b6d2-bfb21b8b5774",
+      "title": "Have Faith",
+      "slug": "have-faith",
+      "source": "pdf",
+      "key": "D",
+      "artist": null,
+      "year": null,
+      "tempo": 73,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "blood",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 27,
+      "percent": 65,
+      "missing": [
+        "artist",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "c851e488-794f-5dfd-8226-9cb101c49ea8",
+      "title": "Jesus You Alone",
+      "slug": "jesus-you-alone",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Highlands Worship",
+      "year": null,
+      "tempo": 56,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "blood",
+        "heaven",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 58,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c8b20b55-76b8-5868-9bcc-909539cc8962",
+      "title": "Greater Works",
+      "slug": "greater-works",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Elenee Young",
+      "year": null,
+      "tempo": 115,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "healing",
+        "name-of-jesus",
+        "faith-trust",
+        "heaven",
+        "praise",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 37,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c90061b8-38fb-5b8e-a69a-ba7c98271d79",
+      "title": "Worthy of it All",
+      "slug": "worthy-of-it-all",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "CeCe Winans",
+      "year": null,
+      "tempo": 71,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 30,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c901a411-86e4-5d78-9d9d-a3fd173a633d",
+      "title": "Glory To The Lamb",
+      "slug": "glory-to-the-lamb",
+      "source": "pdf",
+      "key": "G",
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 9,
+      "percent": 45,
+      "missing": [
+        "artist",
+        "tempo",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "c93b779a-9f8e-551f-a75d-0b3fab3e7235",
+      "title": "Thank You (The Cross)",
+      "slug": "thank-you-the-cross",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Mark David",
+      "year": null,
+      "tempo": 96,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "cross"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 16,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "c96b9b1f-052c-5032-885e-4251c2f7730c",
+      "title": "Lift You Up",
+      "slug": "lift-you-up",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": 142,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 48,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ca726198-b4ac-5b23-a136-c67de9c21e4c",
+      "title": "I Will Rejoice",
+      "slug": "i-will-rejoice",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Isabel Davis",
+      "year": null,
+      "tempo": 110,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 59,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cbdf0d8e-e058-585a-a5d0-6a34872b7479",
+      "title": "Holy (King of Israel)",
+      "slug": "holy-king-of-israel",
+      "source": "pdf",
+      "key": "Dm",
+      "artist": "The Pentecostals of Katy Sanctuary Choir",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "name-of-jesus",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cdc03ea2-c2c8-5ce6-9c9b-00fd02ff646c",
+      "title": "He’s In The Room",
+      "slug": "he-s-in-the-room",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "David Jennings feat. Bethany Jennings",
+      "year": null,
+      "tempo": 75,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cddb58bc-55ca-5dbf-b964-3f7edc2c4267",
+      "title": "My Worship",
+      "slug": "my-worship",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "Phil Thompson",
+      "year": null,
+      "tempo": 107,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 8,
+      "lines": 44,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ce1a229e-2cfb-5993-b83d-9b05c71a69f1",
+      "title": "Be Exalted / I Exalt Thee Sean Hill, & Shelly E. Johnson",
+      "slug": "be-exalted-i-exalt-thee-sean-hill-shelly-e-johnson",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Brittani Scott",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "worship",
+        "praise",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 65,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ce4f08bb-2014-50c2-8564-f03e89a04646",
+      "title": "Holy Forever",
+      "slug": "holy-forever",
+      "source": "pdf",
+      "key": "F",
+      "artist": "CeCe Winans",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "worship",
+        "salvation",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 39,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cf1b7b5f-63ac-5f07-8e8f-acee3555f8cb",
+      "title": "That’s My King",
+      "slug": "that-s-my-king",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "CeCe Winans",
+      "year": null,
+      "tempo": 95,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "heaven",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cf39cc4f-432c-5d89-b947-53b48608d392",
+      "title": "He Has Come",
+      "slug": "he-has-come",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Norman Hutchins",
+      "year": null,
+      "tempo": 111,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "joy",
+        "heaven",
+        "name-of-jesus",
+        "christmas"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 54,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cf74a8e9-260b-5b2e-933b-da7049ef4393",
+      "title": "Worthy of My Song (Worthy of It All)",
+      "slug": "worthy-of-my-song-worthy-of-it-all",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Maverick City Music",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "worship",
+        "easter",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "cfe7e209-591a-55ec-856d-c4e388d20c85",
+      "title": "Forever Faithful",
+      "slug": "forever-faithful",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Joshua Olivier",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "faith-trust",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 5,
+      "lines": 46,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d03e2671-29f4-5d5c-9090-2d35eb6325cd",
+      "title": "Strong Tower",
+      "slug": "strong-tower",
+      "source": "pdf",
+      "key": "G",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": 158,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "joy",
+        "name-of-jesus",
+        "healing",
+        "jubilee"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d05a8eb6-c625-59f5-aead-492141abc7c6",
+      "title": "Wonder",
+      "slug": "wonder",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Woodlawn Worship",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "christmas",
+        "praise",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 43,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e",
+      "title": "We Worship You",
+      "slug": "we-worship-you",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Bridgett Kern",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "worship",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 15,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d23758f4-2ebc-5be6-8694-989dcceb5720",
+      "title": "After This",
+      "slug": "after-this",
+      "source": "pdf",
+      "key": "G",
+      "artist": "J.J. Hairston & Youthful Praise",
+      "year": null,
+      "tempo": 142,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "faith-trust",
+        "healing",
+        "joy",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 130,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d5bb32cc-48f3-587e-b352-ad19961f4e28",
+      "title": "Mia Fields, Troy Culbreth Same God",
+      "slug": "mia-fields-troy-culbreth-same-god",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Cross Worship",
+      "year": null,
+      "tempo": 73,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 31,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d5ea892e-69f5-5534-8548-53ab2a585dc4",
+      "title": "Psalm 100 (Enter In)",
+      "slug": "psalm-100-enter-in",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Charity Gayle",
+      "year": null,
+      "tempo": 86,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 57,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d6282e78-4abd-565c-9729-c56cde668eae",
+      "title": "Emmanuel (God With Us Forever)",
+      "slug": "emmanuel-god-with-us-forever",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Bryan & Katie Torwalt",
+      "year": null,
+      "tempo": 66,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "salvation",
+        "heaven",
+        "joy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 27,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d707527a-c7e3-55f6-8f1d-3c15828a7e42",
+      "title": "Praise Break",
+      "slug": "praise-break",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "James Fortune",
+      "year": null,
+      "tempo": 158,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 9,
+      "lines": 65,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "d8da5a61-d365-5bce-a153-2ba83cd2477f",
+      "title": "It Is Finished",
+      "slug": "it-is-finished",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 136,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "praise",
+        "victory",
+        "cross",
+        "salvation",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 12,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "db58061e-9c10-5cd8-89e0-68c6385cc176",
+      "title": "Glory, Honor, Power",
+      "slug": "glory-honor-power",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Influence Music",
+      "year": null,
+      "tempo": 78,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship",
+        "praise",
+        "christmas",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 35,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "dc98a6af-3398-54c5-8749-7759087dee4d",
+      "title": "Surrender",
+      "slug": "surrender",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "The McKains",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 103,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ddc2bc4b-ab3f-5f69-ba0a-664163fe07bf",
+      "title": "A Better Word",
+      "slug": "a-better-word",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Benita Jones",
+      "year": null,
+      "tempo": 75,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "blood",
+        "healing",
+        "grace-mercy",
+        "victory",
+        "cross",
+        "jubilee"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 38,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "de6abb7c-80a7-52b0-b331-dcde9670a826",
+      "title": "Go Tell It / Wonderful Child",
+      "slug": "go-tell-it-wonderful-child",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "James Fortune & FIYA",
+      "year": null,
+      "tempo": 134,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "christmas",
+        "salvation",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 109,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "deca880a-611e-5910-8630-1385c468e420",
+      "title": "Not Afraid",
+      "slug": "not-afraid",
+      "source": "pdf",
+      "key": "F#",
+      "artist": "Jesus Culture",
+      "year": null,
+      "tempo": 79,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust",
+        "victory",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 29,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e03c7160-dcc4-5fb9-b7d4-051692983e01",
+      "title": "Walls Come Down",
+      "slug": "walls-come-down",
+      "source": "pdf",
+      "key": "A",
+      "artist": "ReFRESH Worship",
+      "year": null,
+      "tempo": 100,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "victory",
+        "faith-trust",
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 40,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e07d8da0-30c0-561c-a048-f3477f5c73a9",
+      "title": "My Help",
+      "slug": "my-help",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Gateway College",
+      "year": null,
+      "tempo": 77,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "heaven",
+        "joy",
+        "salvation",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 32,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e29db252-131d-561b-98a9-ec07c570dd41",
+      "title": "All Of Me",
+      "slug": "all-of-me",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Mark Condon",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 19,
+      "percent": 75,
+      "missing": [
+        "tempo",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e56b149f-2e07-5de8-95f3-10ac7c5de425",
+      "title": "Holy Ground",
+      "slug": "holy-ground",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Passion",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing",
+        "praise",
+        "altar",
+        "cross",
+        "heaven",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 21,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e588c589-4cc8-565d-86f9-31c2d321cd16",
+      "title": "Joy To The World",
+      "slug": "joy-to-the-world",
+      "source": "pdf",
+      "key": "G",
+      "artist": "Michah Stampley & Sheri Jones Moffett",
+      "year": null,
+      "tempo": 156,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "joy",
+        "christmas"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 74,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e6a93ae4-9112-5d5a-876a-adcbf9342358",
+      "title": "Standing",
+      "slug": "standing",
+      "source": "pdf",
+      "key": "E",
+      "artist": "William McDowell",
+      "year": null,
+      "tempo": 87,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 46,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e7947b2e-53bc-5491-9f11-8df27159f869",
+      "title": "I Praise You",
+      "slug": "i-praise-you",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Cedric Shannon Rives",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "joy",
+        "praise",
+        "worship"
+      ],
+      "chords": false,
+      "isDraft": true,
+      "confidence": "low",
+      "mediaCount": 6,
+      "lines": 32,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e8da128f-f715-5aa4-9b72-18d009120dd7",
+      "title": "I Am Reminded",
+      "slug": "i-am-reminded",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "The Brooklyn Tabernacle Choir",
+      "year": null,
+      "tempo": 72,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "faith-trust",
+        "praise",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 37,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "e8e475b3-f71d-50bf-9bf3-69ee1432f1a0",
+      "title": "See Revival",
+      "slug": "see-revival",
+      "source": "pdf",
+      "key": "Bb",
+      "artist": "Geoffrey Golden",
+      "year": null,
+      "tempo": 100,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "holy-spirit",
+        "revival",
+        "altar",
+        "baptism",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 47,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ea328796-cd0e-5b8f-9519-66f9270a828f",
+      "title": "Duncan, Paul Mabury Light of the World",
+      "slug": "duncan-paul-mabury-light-of-the-world",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Lauren Daigle",
+      "year": null,
+      "tempo": 109,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "name-of-jesus",
+        "healing",
+        "prayer"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 36,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ea5e6623-a507-56db-86b3-c3d136a06c35",
+      "title": "All Hail",
+      "slug": "all-hail",
+      "source": "pdf",
+      "key": "E",
+      "artist": "REVERE, Phil Thompson, & Carrington Gaines",
+      "year": null,
+      "tempo": 120,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "faith-trust",
+        "grace-mercy",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 47,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ec172787-f3a0-583b-aea5-71109dbc4662",
+      "title": "Nothing Compares (You Are Good)",
+      "slug": "nothing-compares-you-are-good",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Indiana Bible College (IBC)",
+      "year": null,
+      "tempo": 142,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [
+        "praise",
+        "grace-mercy"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 52,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "ed30ddd2-e5bd-567e-8863-b44cbcb249d9",
+      "title": "We Rise",
+      "slug": "we-rise",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Urshan College",
+      "year": null,
+      "tempo": 132,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "victory",
+        "blood",
+        "faith-trust",
+        "healing",
+        "salvation",
+        "testimony",
+        "joy",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 30,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "efb381c5-df82-5a84-a4a1-845ac88a0c9f",
+      "title": "All Of Me",
+      "slug": "all-of-me",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Mark Condon",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 19,
+      "percent": 75,
+      "missing": [
+        "tempo",
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f02077aa-50fa-591e-843e-6bcd938bfac9",
+      "title": "Throne Room Song",
+      "slug": "throne-room-song",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "People and Songs",
+      "year": null,
+      "tempo": 79,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship",
+        "heaven",
+        "cross",
+        "holy-spirit"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f2aa5a36-ba4b-5d04-b32f-183632b78dd5",
+      "title": "Even Now",
+      "slug": "even-now",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Awakening",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 92,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f336fcb5-d6ba-5aeb-9dc3-f4e65807900b",
+      "title": "Fight For Us",
+      "slug": "fight-for-us",
+      "source": "pdf",
+      "key": "Fm",
+      "artist": "Brittani Scott",
+      "year": null,
+      "tempo": 82,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "victory",
+        "baptism",
+        "name-of-jesus"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 7,
+      "lines": 59,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f3cce458-6e09-5ef8-b9d5-4e8b1ed496f2",
+      "title": "Yes I Will",
+      "slug": "yes-i-will",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Vertical Worship",
+      "year": null,
+      "tempo": 74,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "joy",
+        "name-of-jesus",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 23,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f46706c8-f193-5494-ab18-ebcdf08f22d4",
+      "title": "Dylan Woodward Revival Is Waiting",
+      "slug": "dylan-woodward-revival-is-waiting",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Intro G",
+      "year": null,
+      "tempo": 56,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "salvation",
+        "revival",
+        "baptism",
+        "healing",
+        "heaven",
+        "name-of-jesus",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 84,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f495072c-caaa-5c2f-af4b-9663d12a0474",
+      "title": "Heaven Medley",
+      "slug": "heaven-medley",
+      "source": "pdf",
+      "key": "E",
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 5,
+      "lines": 44,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "f4a931c4-9d68-53de-a628-e2b28bad0707",
+      "title": "Like Our God",
+      "slug": "like-our-god",
+      "source": "pdf",
+      "key": "F",
+      "artist": "Anthony Trimble feat. Bethany Easter",
+      "year": null,
+      "tempo": 69,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 10,
+      "lines": 15,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f679b3e2-ee5a-54cb-806c-faa21794031c",
+      "title": "Spirit Take Over",
+      "slug": "spirit-take-over",
+      "source": "pdf",
+      "key": "E",
+      "artist": "Lori Green",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "healing",
+        "faith-trust"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 5,
+      "lines": 25,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f69439b7-a651-584c-ad67-e3f63e91e5f5",
+      "title": "Glory Zebrina Anderson, Sarah Benibo",
+      "slug": "glory-zebrina-anderson-sarah-benibo",
+      "source": "pdf",
+      "key": "E",
+      "artist": null,
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "joy",
+        "holy-spirit",
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 49,
+      "percent": 55,
+      "missing": [
+        "artist",
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": false
+    },
+    {
+      "songId": "f6b67f61-18b6-5801-9c8b-9558417be6bb",
+      "title": "Miracles (Never Thought That I’d Be One)",
+      "slug": "miracles-never-thought-that-i-d-be-one",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Indiana Bible College - \"Miracles\"",
+      "year": null,
+      "tempo": 82,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "healing",
+        "testimony"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 78,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f6fa130e-712e-53ae-8263-4cf89312753c",
+      "title": "Total Praise",
+      "slug": "total-praise",
+      "source": "pdf",
+      "key": "Db",
+      "artist": "Richard Smallwood",
+      "year": null,
+      "tempo": 48,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 39,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f7a459b0-93db-5fcd-bb5e-5bf5351f9934",
+      "title": "Hosanna",
+      "slug": "hosanna",
+      "source": "pdf",
+      "key": "C",
+      "artist": "James Wilson",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "worship",
+        "altar"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 26,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f9b384e0-98e0-503f-bb12-d046d8f03cea",
+      "title": "Sound Like Heaven",
+      "slug": "sound-like-heaven",
+      "source": "pdf",
+      "key": "Eb",
+      "artist": "Angie Pearson feat. Landry Cantrell",
+      "year": null,
+      "tempo": 90,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [
+        "praise",
+        "worship",
+        "heaven"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 28,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "f9eac5f5-9f5a-5901-b929-d099cffd2e74",
+      "title": "Miracle Worker",
+      "slug": "miracle-worker",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "J.J. Hairston & Youthful Praise",
+      "year": null,
+      "tempo": 71,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "healing"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 49,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fa70333f-b776-5bad-b0e9-9b31e7a2963e",
+      "title": "His Blood Still Works",
+      "slug": "his-blood-still-works",
+      "source": "pdf",
+      "key": "Ab",
+      "artist": "VaShawn Mitchell",
+      "year": null,
+      "tempo": 111,
+      "tempoDerived": false,
+      "band": "fast",
+      "themes": [
+        "blood",
+        "cross"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 74,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fb406957-cd12-5b0c-b64f-06a96cab6c01",
+      "title": "Hallowed Be Your Name",
+      "slug": "hallowed-be-your-name",
+      "source": "pdf",
+      "key": "D",
+      "artist": "Ron Kenoly",
+      "year": null,
+      "tempo": 68,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "heaven",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 9,
+      "lines": 40,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fb90ca4c-65a4-50db-adf6-35fed9a2eb9f",
+      "title": "But God",
+      "slug": "but-god",
+      "source": "pdf",
+      "key": "C#",
+      "artist": "The Pentecostals of Katy (POK)",
+      "year": null,
+      "tempo": 158,
+      "tempoDerived": false,
+      "band": "shout",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 81,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fccc3080-2055-5df3-b1e9-305a9e840435",
+      "title": "Mighty",
+      "slug": "mighty",
+      "source": "pdf",
+      "key": "B",
+      "artist": "Phase 2",
+      "year": null,
+      "tempo": 110,
+      "tempoDerived": true,
+      "band": "fast",
+      "themes": [
+        "blood",
+        "worship"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 11,
+      "lines": 30,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fd35c467-49bd-5e61-88f1-bf7b9a29b883",
+      "title": "One Name",
+      "slug": "one-name",
+      "source": "pdf",
+      "key": "C",
+      "artist": "Anthony Trimble",
+      "year": null,
+      "tempo": null,
+      "tempoDerived": false,
+      "band": null,
+      "themes": [
+        "praise",
+        "grace-mercy",
+        "name-of-jesus",
+        "salvation"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 0,
+      "lines": 16,
+      "percent": 85,
+      "missing": [
+        "tempo",
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fd3baa04-f184-578e-981c-8c82da73e73e",
+      "title": "Be Praised",
+      "slug": "be-praised",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Red Worship",
+      "year": null,
+      "tempo": 66,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 8,
+      "lines": 34,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fdba7b07-6c25-5eea-9bbc-8ae60805a071",
+      "title": "Ain’t No Grave / Alive Forever Amen",
+      "slug": "ain-t-no-grave-alive-forever-amen",
+      "source": "pdf",
+      "key": "Bm",
+      "artist": "Travis Cottrell",
+      "year": null,
+      "tempo": 70,
+      "tempoDerived": false,
+      "band": "slow",
+      "themes": [
+        "praise",
+        "easter",
+        "cross",
+        "blood",
+        "victory"
+      ],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 65,
+      "percent": 95,
+      "missing": [
+        "year"
+      ],
+      "hasEssentials": true
+    },
+    {
+      "songId": "fe891ce0-f6da-5082-b6f4-6ae6c26e8821",
+      "title": "He Won’t Fail Darius Antonie James",
+      "slug": "he-won-t-fail-darius-antonie-james",
+      "source": "pdf",
+      "key": "Gb",
+      "artist": "Todd Galberth",
+      "year": null,
+      "tempo": 80,
+      "tempoDerived": false,
+      "band": "medium",
+      "themes": [],
+      "chords": true,
+      "isDraft": true,
+      "confidence": "medium",
+      "mediaCount": 6,
+      "lines": 112,
+      "percent": 85,
+      "missing": [
+        "tags",
+        "year"
+      ],
+      "hasEssentials": true
     }
   ]
 }

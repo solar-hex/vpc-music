@@ -1,0 +1,96 @@
+{title: Speak The Name}
+{artist: Church of the City}
+{key: G}
+{tempo: 97}
+{time: 4/4}
+{x_theme: praise, healing, name-of-jesus, joy}
+{x_source: pdf:UPCI Music/2023/Speak the Name/Speak-The-Name-Chord-Chart.pdf}
+{x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FSpeak%20the%20Name}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/full-mix.mp3}
+{x_audio_speak_the_name_alto_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-alto-2.m4a}
+{x_audio_speak_the_name_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-alto.m4a}
+{x_audio_speak_the_name_soprano_100: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-soprano-100.m4a}
+{x_audio_speak_the_name_soprano_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-soprano-2.m4a}
+{x_audio_speak_the_name_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-soprano.m4a}
+{x_audio_speak_the_name_tenor_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-tenor-2.m4a}
+{x_audio_speak_the_name_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-the-name-tenor.m4a}
+{x_audio_speak_your_name_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-your-name-alto.mp3}
+{x_audio_speak_your_name_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/speak-your-name-soprano.mp3}
+{x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/audio/tenor.mp3}
+{x_chart_speak_the_name_chord_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-chord-chart-2.pdf}
+{x_chart_speak_the_name_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-chord-chart.pdf}
+{x_chart_speak_the_name_erv_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-erv-2.pdf}
+{x_chart_speak_the_name_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-erv.pdf}
+{x_chart_speak_the_name_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-number-chart.pdf}
+{x_chart_speak_the_name_numbers_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-numbers-chart.pdf}
+{x_chart_speak_the_name_rhythm_chart_2: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-rhythm-chart-2.pdf}
+{x_chart_speak_the_name_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-rhythm-chart.pdf}
+{x_chart_speak_the_name_vocal_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-vocal-chart.pdf}
+{x_chart_speak_the_name_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-the-name-vocals.pdf}
+{x_chart_speak_your_name_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-your-name-chord-chart.pdf}
+{x_chart_speak_your_name_erv_1: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-your-name-erv-1.pdf}
+{x_chart_speak_your_name_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-your-name-number-chart.pdf}
+{x_chart_speak_your_name_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-your-name-rhythm-chart.pdf}
+{x_chart_speak_your_name_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/charts/speak-your-name-vocals.pdf}
+{x_source_speak_the_name_loop_65_5_bpm_mp3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/speak-the-name/source/Speak-the-Name-Loop-65.5-BPM.mp3.zip}
+{x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/audio/alto.mp3}
+{x_audio_drum_loop_132bpm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/audio/drum-loop-132bpm.mp3}
+{x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/audio/soprano.mp3}
+{x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/charts/chord-chart.pdf}
+{x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/charts/erv.pdf}
+{x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/charts/number-chart.pdf}
+{x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/charts/rhythm-chart.pdf}
+{x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-speak-the-name/charts/vocals.pdf}
+{x_album: De fl ant Joy}
+{x_writers: Ileia Hook, Je ff rey B Scott, Jennifer Holm, Matt Armstrong}
+
+{comment: Intro Interlude}
+[G] [G]
+
+{comment: Verse 1 Verse 3}
+[G]In the morning when the sun is rising [G]Every hour I know that You're moving
+[G]Another day to tell of all Your kindness [G]Even when I can't see what You're doing,
+[C]When I think of Your goodness, [C]I give You all the glory,
+[Am7]Oh, I sing for joy and I speak the [G]Name, [Am7]I give You all the praise,
+Verse 2 I speak the[G] Name
+[G]In the evening when the night is falling Chorus
+[G]When troubles rise and I can't hear You Speak the [C]Name, speak the [G]Name that
+calling Em D
+C Am7 has power
+I don't have to worry, I won't be afraid C G
+G Speak the Name, speak the Name above
+I speak the Name, and there's only one Em D
+thing all other
+Chorus My [C]Savior, R[G]edeemer,
+Speak the [C]Name, speak the [G]Name that My [Em]Hope and my H[D]ealer
+has [Em]power[D] [Am]Je- [G/B]sus, [C]Je- [Dsus2]sus, I speak the Name
+Speak the [C]Name, speak the[G] Name above Interlude
+all [Em]othe[D]r[G]
+My [C]Savior, R[G]edeemer, [Bridge]C D
+Em D Oh, at the name of Jesus
+My Hope and my Healer C Bm7
+Am G/B C Dsus2 The very name of Jesus
+Je- sus, Je- sus, I speak the Name
+[Am7]Tongues confess and [G/B]knees will bow [Am]Je- [G/B]sus, [C]Je- [Dsus2]sus
+[C]Chains will break and[D] walls come[Em] down [Am]Je- [G/B]sus, [C]Je- [Dsus2]sus, I speak the Name
+[Am7]Every- [G/B]thing can[Em7] change[Dsus2] Outro
+[Dsus2]When I speak the Nam[G]e
+
+{comment: Interlude}
+[G]
+
+{comment: Chorus}
+Speak the [C]Name, speak the [G]Name that
+has [Em]powe[D]r
+Speak the [C]Name, speak the[G] Name above
+all [Em]othe[D]r
+My [C]Savior, R[G]edeemer,
+My [Em]Hope and my H[D]ealer
+[Am]Je- [G/B]sus, [C]Je- [Dsus2]sus
+Speak the [C]Name, speak the [G]Name that
+has [Em]powe[D]r
+Speak the [C]Name, speak the[G] Name above
+all [Em]othe[D]r
+My [C]Savior, R[G]edeemer,
+My [Em]Hope and my H[D]ealer
+[Am]Je- [G/B]sus, [C]Je- [Dsus2]sus
