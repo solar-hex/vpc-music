@@ -84,7 +84,7 @@ describe("LoginPage — sandbox mode", () => {
       expect(screen.getByText(/view only/i)).toBeInTheDocument();
     });
 
-    it("pre-fills email and password when Admin button is clicked", async () => {
+    it("pre-fills the email but never a password when Admin button is clicked", async () => {
       renderLogin();
       const user = userEvent.setup();
       await user.click(screen.getByText("Admin"));
@@ -92,10 +92,10 @@ describe("LoginPage — sandbox mode", () => {
       const emailInput = screen.getByLabelText("Email");
       const passwordInput = screen.getByLabelText("Password");
       expect(emailInput).toHaveValue("worship-leader@vpc.church");
-      expect(passwordInput).toHaveValue("password123");
+      expect(passwordInput).toHaveValue("");
     });
 
-    it("pre-fills email and password when Musician button is clicked", async () => {
+    it("pre-fills the email but never a password when Musician button is clicked", async () => {
       renderLogin();
       const user = userEvent.setup();
       await user.click(screen.getByText("Musician"));
@@ -103,10 +103,10 @@ describe("LoginPage — sandbox mode", () => {
       const emailInput = screen.getByLabelText("Email");
       const passwordInput = screen.getByLabelText("Password");
       expect(emailInput).toHaveValue("keys@vpc.church");
-      expect(passwordInput).toHaveValue("password123");
+      expect(passwordInput).toHaveValue("");
     });
 
-    it("pre-fills email and password when Observer button is clicked", async () => {
+    it("pre-fills the email but never a password when Observer button is clicked", async () => {
       renderLogin();
       const user = userEvent.setup();
       await user.click(screen.getByText("Observer"));
@@ -114,7 +114,7 @@ describe("LoginPage — sandbox mode", () => {
       const emailInput = screen.getByLabelText("Email");
       const passwordInput = screen.getByLabelText("Password");
       expect(emailInput).toHaveValue("guitar@vpc.church");
-      expect(passwordInput).toHaveValue("password123");
+      expect(passwordInput).toHaveValue("");
     });
 
     it("expands the email form when a sandbox button is clicked", async () => {

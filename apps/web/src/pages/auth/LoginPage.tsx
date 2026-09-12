@@ -10,10 +10,13 @@ import type { User } from "@/contexts/AuthContext";
 
 const IS_SANDBOX = import.meta.env.VITE_SANDBOX === "true";
 
+// Email only, never a password: this list is compiled into the bundle, which
+// anyone can read. The buttons save typing the address; the password is
+// pasted.
 const SANDBOX_ACCOUNTS = [
-  { label: "Admin", desc: "Worship Leader — full access", email: "worship-leader@vpc.church", password: "password123" },
-  { label: "Musician", desc: "Band member — can edit", email: "keys@vpc.church", password: "password123" },
-  { label: "Observer", desc: "View only — read access", email: "guitar@vpc.church", password: "password123" },
+  { label: "Admin", desc: "Worship Leader — full access", email: "worship-leader@vpc.church" },
+  { label: "Musician", desc: "Band member — can edit", email: "keys@vpc.church" },
+  { label: "Observer", desc: "View only — read access", email: "guitar@vpc.church" },
 ] as const;
 
 // Inline Google "G" icon (multi-colour)
@@ -282,7 +285,7 @@ export function LoginPage() {
                   disabled={anyLoading}
                   onClick={() => {
                     setEmail(acct.email);
-                    setPassword(acct.password);
+                    setPassword("");
                     setShowEmailForm(true);
                     setNeedsPassword(false);
                   }}
