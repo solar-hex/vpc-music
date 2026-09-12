@@ -554,6 +554,7 @@ songRoutes.get(
         key: songs.key,
         tempo: songs.tempo,
         artist: songs.artist,
+        year: songs.year,
         tags: songs.tags,
         isDraft: songs.isDraft,
         tier: songs.tier,

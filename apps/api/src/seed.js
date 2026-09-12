@@ -229,10 +229,13 @@ Your goodness is [D]running after, it's running [A]after me`,
 
   const seededSongs = [];
   for (const s of songRows) {
+    // Scope to the seed org: matching on title alone adopts another org's
+    // song once a real library is loaded (every library has an "Amazing
+    // Grace"), which then lands a foreign row in this org's set lists.
     const [existing] = await db
       .select()
       .from(songs)
-      .where(eq(songs.title, s.title))
+      .where(and(eq(songs.title, s.title), eq(songs.organizationId, org.id)))
       .limit(1);
 
     if (existing) {
@@ -279,7 +282,7 @@ Your goodness is [D]running after, it's running [A]after me`,
     const [existing] = await db
       .select()
       .from(setlists)
-      .where(eq(setlists.name, sl.name))
+      .where(and(eq(setlists.name, sl.name), eq(setlists.organizationId, org.id)))
       .limit(1);
 
     if (existing) {
@@ -351,7 +354,7 @@ Your goodness is [D]running after, it's running [A]after me`,
     const [existing] = await db
       .select()
       .from(events)
-      .where(eq(events.title, ev.title))
+      .where(and(eq(events.title, ev.title), eq(events.organizationId, org.id)))
       .limit(1);
 
     if (existing) {
