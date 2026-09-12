@@ -19,6 +19,11 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { convertPdfChartToChordPro } from "../apps/api/src/corpus/pdfSong.js";
 import { convertTextChartToChordPro } from "../apps/api/src/corpus/textChart.js";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
+import {
+  compareSequences,
+  numberSequenceFromChordPro,
+  numberSequenceFromPdf,
+} from "../apps/api/src/corpus/nashvilleCheck.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
@@ -63,6 +68,69 @@ async function findPairs(tree) {
   return { texts, pdfs };
 }
 
+/**
+ * Compare every chord chart with the number chart beside it.
+ * Independent of the text oracle, and ~13x more songs.
+ */
+async function runNashville(tree, limit) {
+  const pairs = new Map();
+  (function walk(dir) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const p = join(dir, entry.name);
+      if (entry.isDirectory()) { walk(p); continue; }
+      const folder = dirname(p);
+      if (!pairs.has(folder)) pairs.set(folder, {});
+      if (/chord.?chart.*\.pdf$/i.test(entry.name)) pairs.get(folder).chord = p;
+      else if (/number.?s?.?chart.*\.pdf$/i.test(entry.name)) pairs.get(folder).number = p;
+    }
+  })(tree);
+
+  const both = [...pairs.values()].filter((v) => v.chord && v.number).slice(0, limit ?? Infinity);
+  console.log(`Chord/number chart pairs: ${both.length}
+`);
+
+  const rows = [];
+  for (const pair of both) {
+    try {
+      const chart = await convertPdfChartToChordPro(pair.chord, await readFile(pair.chord));
+      const theirs = await numberSequenceFromPdf(await readFile(pair.number));
+      if (!theirs || theirs.length === 0) { rows.push({ title: chart.title, skip: "number chart has no text" }); continue; }
+      if (!chart.metadata.key) { rows.push({ title: chart.title, skip: "no key read from the chord chart" }); continue; }
+      const ours = numberSequenceFromChordPro(chart.chordProContent, chart.metadata.key);
+      rows.push({ title: chart.title, key: chart.metadata.key, ...compareSequences(ours, theirs) });
+    } catch (error) {
+      rows.push({ title: basename(pair.chord), skip: error.message });
+    }
+  }
+
+  const scored = rows.filter((r) => !r.skip);
+  scored.sort((a, b) => a.coverage - b.coverage);
+
+  console.log("coverage  agree   ours/theirs  key   song");
+  for (const r of scored.slice(0, 25)) {
+    console.log(
+      `   ${String(Math.round(r.coverage * 100) + "%").padStart(4)}   ${String(Math.round(r.score * 100) + "%").padStart(4)}   ` +
+      `${String(r.ours).padStart(4)}/${String(r.theirs).padEnd(4)}  ${String(r.key ?? "-").padEnd(4)}  ${r.title}`,
+    );
+  }
+  if (scored.length > 25) console.log(`   … ${scored.length - 25} more, all at or above ${Math.round(scored[25].coverage * 100)}%`);
+
+  const good = scored.filter((r) => r.coverage >= 0.8).length;
+  const meanCoverage = scored.length ? scored.reduce((s, r) => s + r.coverage, 0) / scored.length : 0;
+  const skipped = rows.filter((r) => r.skip);
+  console.log("");
+  console.log(`${good}/${scored.length} reach 80% coverage · mean coverage ${Math.round(meanCoverage * 100)}%`);
+  if (skipped.length) {
+    const why = {};
+    for (const s of skipped) why[s.skip] = (why[s.skip] || 0) + 1;
+    console.log(`skipped ${skipped.length}: ${Object.entries(why).map(([k, v]) => `${v} ${k}`).join(", ")}`);
+  }
+  console.log("");
+  console.log("Coverage is how much of what the publisher wrote we found.");
+  console.log("Low coverage means chords were missed; a low agreement with high");
+  console.log("coverage would mean the key we read is wrong.");
+}
+
 async function runCli() {
   const argv = process.argv.slice(2);
   const arg = (f, d) => { const i = argv.indexOf(f); return i === -1 ? d : argv[i + 1]; };
@@ -71,6 +139,12 @@ async function runCli() {
     arg("--tree", "C:/Projects/Misc/ChurchMusic/exclude/Shared Dropbox/UPCI Song Parts TG"),
   );
   if (!existsSync(tree)) throw new Error(`Tree does not exist: ${tree}`);
+
+  if (argv.includes("--nashville")) {
+    const limit = arg("--limit", null);
+    await runNashville(tree, limit ? Number(limit) : null);
+    return;
+  }
 
   const { texts, pdfs } = await findPairs(tree);
   // Pair them by the folder they sit in — same song, two formats.

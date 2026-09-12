@@ -73,9 +73,9 @@
     },
     {
       "songId": "04aff341-f649-5152-89ec-8710b3d8a587",
-      "title": "Miah White, J.J. Hairston Have Your Way",
-      "file": "songs/pdf/miah-white-j-j-hairston-have-your-way--04aff341.chopro",
-      "contentSha256": "653d67bcecc351370d6e1ac659061b04e1319595d2287479b2336149e9672bc2",
+      "title": "Have Your Way Miah White, J.J. Hairston",
+      "file": "songs/pdf/have-your-way-miah-white-j-j-hairston--04aff341.chopro",
+      "contentSha256": "65b20fcef5fb86325607e857d2813e7a9fef3d43a69f526d7658605fa9ef653e",
       "metadata": {
         "key": "A",
         "artist": "J.J. Hairston",
@@ -142,9 +142,9 @@
     },
     {
       "songId": "0668ad20-0af6-57d7-932c-590fa712f765",
-      "title": "Mike Hudson & Kelsey White Trusting For A Miracle",
-      "file": "songs/pdf/mike-hudson-kelsey-white-trusting-for-a-miracle--0668ad20.chopro",
-      "contentSha256": "770384b0ca1b4b01db9944aa2d14477606bc847c82339fa9034e3a0eced750d7",
+      "title": "Trusting For A Miracle Mike Hudson & Kelsey White",
+      "file": "songs/pdf/trusting-for-a-miracle-mike-hudson-kelsey-white--0668ad20.chopro",
+      "contentSha256": "80d1fc46feca7513fb39dc038b8e5b710d207e5f0084321d8474267f87be6b25",
       "metadata": {
         "key": "F",
         "artist": "Intro Chorus (Parts) (2x)",
@@ -303,9 +303,9 @@
     },
     {
       "songId": "0b5ea52e-6a12-53d8-be1f-757dc1bb2f7a",
-      "title": "Ted Keith Rise Up",
-      "file": "songs/pdf/ted-keith-rise-up--0b5ea52e.chopro",
-      "contentSha256": "a53ae7705b428dfe43c7363e6d084a352f9ec04727074699a7fc5342e71ab913",
+      "title": "Rise Up Ted Keith",
+      "file": "songs/pdf/rise-up-ted-keith--0b5ea52e.chopro",
+      "contentSha256": "3442a44f682bac86c15510ae9acbd3f434c818654a8e6306b96ab412b778a31b",
       "metadata": {
         "key": "F",
         "artist": "Ted Keith",
@@ -336,9 +336,9 @@
     },
     {
       "songId": "0bf44b01-fa7c-5f73-8621-7eef106bb0df",
-      "title": "I Am Not Alone Chord Chart",
-      "file": "songs/pdf/i-am-not-alone-chord-chart--0bf44b01.chopro",
-      "contentSha256": "9039b0d06735bd9c9f1c1ad3bd03cc82e97c16a35599ab9217c20297c85c9306",
+      "title": "I Am Not Alone",
+      "file": "songs/pdf/i-am-not-alone--0bf44b01.chopro",
+      "contentSha256": "17f4909d658fc40b3b33fdf043363d97ed57c6c1b5148bf44f1274ec19e71c2a",
       "metadata": {
         "key": "F",
         "artist": "GPC Worship",
@@ -402,9 +402,9 @@
     },
     {
       "songId": "0d8d5803-029d-5966-aab3-ceddfed6a068",
-      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) maj7 9 [Ab-Bb-Cb-C] Db/Gb Cb Db | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] 6 9 9 |Cb/C Db /F Abm7/Bb Eb Gb | CHORUS 9 Ab Ye shall have the power, ye shall have the power 9 Ab Ye shall have the power, ye shall have the power 9 9 9 7 9 9 B C Db Bb Eb Ab Af - ter the Holy Ghost has come upon you, ye shall have the power 9 9 9 7 7(#5#9) B C Db Bb Eb Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C 6 7 9 9 Db /F Abm /Bb Eb Gb | CHORUS",
-      "file": "songs/pdf/intro-ab-bb-cb-c-eb-f-gb-f-ab-bb-cb-c-eb-f-gb-gb-f-x2-maj7-9--0d8d5803.chopro",
-      "contentSha256": "248f5e2ff334a0d6e83a03a909585caa6d736df2d7ef3e92dddd2b02f8c6e329",
+      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) [Ab-Bb-Cb-C] Db/Gb Cbmaj7 Db9 | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] |Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS Ab9 Ye shall have the power, ye shall have the power Ab9 Ye shall have the power, ye shall have the power B9 C9 Db9 Bb7 Eb9 Ab9 Af - ter the Holy Ghost has come upon you, ye shall have the power B9 C9 Db9 Bb7 Eb7(#5#9) Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS",
+      "file": "songs/pdf/intro-ab-bb-cb-c-eb-f-gb-f-ab-bb-cb-c-eb-f-gb-gb-f-x2-ab-bb--0d8d5803.chopro",
+      "contentSha256": "307bf4a0f3d5b32d1e0eeb4cfca35e5d0227a45bdc330acbf86d4b9d4ad89b5b",
       "metadata": {
         "key": "Ab",
         "artist": "Eddie James - \"Magnify\"",
@@ -435,9 +435,9 @@
     },
     {
       "songId": "0ecce571-6c19-58e7-a545-db507ecac921",
-      "title": "Micah Pollock, Jonathan Stephens O Come Emmanuel",
-      "file": "songs/pdf/micah-pollock-jonathan-stephens-o-come-emmanuel--0ecce571.chopro",
-      "contentSha256": "6a464e090da22236fe9f22df43a93f5964dc54d05dce55136150a655c579806b",
+      "title": "O Come Emmanuel Micah Pollock, Jonathan Stephens",
+      "file": "songs/pdf/o-come-emmanuel-micah-pollock-jonathan-stephens--0ecce571.chopro",
+      "contentSha256": "ecb8457c86a185ed9ecc75f10c6ecc5e36e6ad5b39b1b1fc566d8f30b72413bb",
       "metadata": {
         "key": "C",
         "artist": "Intro F G C",
@@ -536,9 +536,9 @@
     },
     {
       "songId": "136d5f1f-01ac-5f73-9c0f-89295073114d",
-      "title": "Tevia Alfter, Natalie Bunner All To You",
-      "file": "songs/pdf/tevia-alfter-natalie-bunner-all-to-you--136d5f1f.chopro",
-      "contentSha256": "4b213d1c9cafd4e2b1b21b3fa0573ddc4f6fe0be9c3648f878bd643045d3595b",
+      "title": "All To You Tevia Alfter, Natalie Bunner",
+      "file": "songs/pdf/all-to-you-tevia-alfter-natalie-bunner--136d5f1f.chopro",
+      "contentSha256": "32972acec3b857fb2d5cae42bc637ace52dc1ecdbd177dea46e8f353597c7f22",
       "metadata": {
         "key": "D",
         "artist": "Bryan Pound",
@@ -863,9 +863,9 @@
     },
     {
       "songId": "1eca1185-b3f7-58ab-a77b-8ee24ac4785f",
-      "title": "Kenna Turner West Answer is Jesus",
-      "file": "songs/pdf/kenna-turner-west-answer-is-jesus--1eca1185.chopro",
-      "contentSha256": "88bd9781222e4ab290c958eb80aff6049d4fa9a5a4f8648fab25a4b71c6a36b8",
+      "title": "Answer is Jesus Kenna Turner West",
+      "file": "songs/pdf/answer-is-jesus-kenna-turner-west--1eca1185.chopro",
+      "contentSha256": "c035110a2673a3ccb8dc64c1f2331efde4390a9a04508b4def21447bb173dc90",
       "metadata": {
         "key": "A",
         "artist": "Karen Peck & New River",
@@ -1000,9 +1000,9 @@
     },
     {
       "songId": "206084c5-2e13-5d3f-88e9-f51b9ceab563",
-      "title": "Brandon Lake and Jacob Sooter House of Miracles",
-      "file": "songs/pdf/brandon-lake-and-jacob-sooter-house-of-miracles--206084c5.chopro",
-      "contentSha256": "fafef9abdc976300e7d0d626c73bb2cecec976db6ebb27f3e2c08be31a063049",
+      "title": "House of Miracles Brandon Lake and Jacob Sooter",
+      "file": "songs/pdf/house-of-miracles-brandon-lake-and-jacob-sooter--206084c5.chopro",
+      "contentSha256": "af6b66e44baa5b5d7c9060e734a421e4f818a4b67ebc8b97c52cf1f8cab553fd",
       "metadata": {
         "key": "Db",
         "artist": "Brandon Lake",
@@ -1011,10 +1011,10 @@
         "isDraft": true
       },
       "themes": [
-        "healing",
         "name-of-jesus",
         "blood",
         "faith-trust",
+        "healing",
         "praise",
         "worship",
         "easter"
@@ -1068,9 +1068,9 @@
     },
     {
       "songId": "20a52c66-9d1c-55d3-b0ba-65d2df2e69a1",
-      "title": "Kristen Sangary Already Done",
-      "file": "songs/pdf/kristen-sangary-already-done--20a52c66.chopro",
-      "contentSha256": "14c3a04b64b0ef883e6f064ffd968dd10d1f56bd38f616633a000ae341108e17",
+      "title": "Already Done Kristen Sangary",
+      "file": "songs/pdf/already-done-kristen-sangary--20a52c66.chopro",
+      "contentSha256": "429d18fde111636e427d986de897b55f5c8ffdafec77ef38774c8f823437ae7c",
       "metadata": {
         "key": "Bb",
         "artist": "Kristen Sangary",
@@ -1331,9 +1331,9 @@
     },
     {
       "songId": "3085748a-b59e-535d-94c0-d78c0e4ce64f",
-      "title": "Brittani Scott I Speak Victory",
-      "file": "songs/pdf/brittani-scott-i-speak-victory--3085748a.chopro",
-      "contentSha256": "4da103efbdae610d51d8da0c36bc794e4f9b43c9c47a696ef3d6111cef7d5511",
+      "title": "I Speak Victory Brittani Scott",
+      "file": "songs/pdf/i-speak-victory-brittani-scott--3085748a.chopro",
+      "contentSha256": "60b9efe5552a6e5c0a75166a8bcc970031466fb8680804e095f37221979a5454",
       "metadata": {
         "key": "B",
         "artist": "Indiana Bible College (IBC)",
@@ -1758,9 +1758,9 @@
     },
     {
       "songId": "3e43e9c5-4f3c-513a-8e3a-497ca09057e3",
-      "title": "Horatio Spafford It Is Well",
-      "file": "songs/pdf/horatio-spafford-it-is-well--3e43e9c5.chopro",
-      "contentSha256": "5c780ce90698b4e481b46e74e62fe84218aa0ccdf0ecd0a131cd36775de7e782",
+      "title": "It Is Well Horatio Spafford",
+      "file": "songs/pdf/it-is-well-horatio-spafford--3e43e9c5.chopro",
+      "contentSha256": "a95c8d767556f4ea4250adfdda7d13db1405c94e0dd7e3042fa416e4b29f74d0",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1828,9 +1828,9 @@
       "songId": "3eaaa8a7-3465-5e32-af02-916ff87b9330",
       "title": "Complete Surrender",
       "file": "songs/pdf/complete-surrender--3eaaa8a7.chopro",
-      "contentSha256": "8a8ba4ff33baf6ec06f87e5690b657c9261cccfeaeba7ed21da74085244b56f3",
+      "contentSha256": "14d9801b2d7ac9e5e4d08772f72d683d7fbdd9afab1783bd2be229612b5c4b0a",
       "metadata": {
-        "key": "B",
+        "key": "Bb",
         "artist": null,
         "year": null,
         "tempo": null,
@@ -2300,9 +2300,9 @@
     },
     {
       "songId": "4d6a6f27-b21a-552e-b18a-948bdc56d7ab",
-      "title": "He Can Chord Chart",
-      "file": "songs/pdf/he-can-chord-chart--4d6a6f27.chopro",
-      "contentSha256": "ef8c02a7d028accaad8a9abd63be8bddb73fe595186be622aac43511ee9a22f6",
+      "title": "He Can",
+      "file": "songs/pdf/he-can--4d6a6f27.chopro",
+      "contentSha256": "3cbaee29158cc385a91278211b89ed7742dc3110fa82bf2b75f22f7add783f00",
       "metadata": {
         "key": "Eb",
         "artist": "Anthony Trimble",
@@ -2753,9 +2753,9 @@
     },
     {
       "songId": "5bc29d3e-2e8b-5b0d-b397-69f6e995b571",
-      "title": "Joshua Dufrene, and Colin Edge Nobody Like You",
-      "file": "songs/pdf/joshua-dufrene-and-colin-edge-nobody-like-you--5bc29d3e.chopro",
-      "contentSha256": "8740b1be19540893f7cfb816aa375e4ddec132768ee0d7e070b2e3f7241d5b37",
+      "title": "Nobody Like You Joshua Dufrene, and Colin Edge",
+      "file": "songs/pdf/nobody-like-you-joshua-dufrene-and-colin-edge--5bc29d3e.chopro",
+      "contentSha256": "500dec3dfead3af342231824058fb6a1a01418f5cc79c2a5d22431bb8aa590ae",
       "metadata": {
         "key": "Am",
         "artist": "Covenant Worship",
@@ -3152,9 +3152,9 @@
     },
     {
       "songId": "6093305f-7053-5538-af63-079113a2fb80",
-      "title": "Sarah Gerald Everything is Changing",
-      "file": "songs/pdf/sarah-gerald-everything-is-changing--6093305f.chopro",
-      "contentSha256": "25465317c5dfa597d8d293c2c22d0f0809719904936623a56d6d8b48cddaec58",
+      "title": "Everything is Changing Sarah Gerald",
+      "file": "songs/pdf/everything-is-changing-sarah-gerald--6093305f.chopro",
+      "contentSha256": "47ee28712278e2f1526b34677ee2a609d152529af1c921ced7213d62771c565c",
       "metadata": {
         "key": "C",
         "artist": "The Belonging Co.",
@@ -3622,7 +3622,7 @@
       "songId": "704b6498-296a-5018-8112-de352c71b5a2",
       "title": "Be Lifted",
       "file": "songs/pdf/be-lifted--704b6498.chopro",
-      "contentSha256": "aa8c96a80362423fbc102a2df63cfd51b0794b16265ffc01aed4ee95c8165716",
+      "contentSha256": "2168dd799e4889e03a21ed379deb60b402efa58437f734ab822a51a9d0dc66a7",
       "metadata": {
         "key": "A",
         "artist": "Michah Stampley",
@@ -3919,9 +3919,9 @@
     },
     {
       "songId": "7711fb19-2e29-597e-a0ad-498b59b04e9b",
-      "title": "Jesse Wilson Our God Reigns Forever",
-      "file": "songs/pdf/jesse-wilson-our-god-reigns-forever--7711fb19.chopro",
-      "contentSha256": "967dd3ed78a537fe5b7d77ac3f590b0f1332b1f0845f8b736e1f0b2ca261842c",
+      "title": "Our God Reigns Forever Jesse Wilson",
+      "file": "songs/pdf/our-god-reigns-forever-jesse-wilson--7711fb19.chopro",
+      "contentSha256": "7a03ce2da317defa67ddf2a4c63d2667c1188c418f17208cfe6f05ae24842c27",
       "metadata": {
         "key": "Bb",
         "artist": "Jesse Wilson",
@@ -4123,9 +4123,9 @@
       "songId": "7a271e1d-c216-5f23-aa66-77d134832a86",
       "title": "Never Go A Day",
       "file": "songs/pdf/never-go-a-day--7a271e1d.chopro",
-      "contentSha256": "20744aa510a5d0fa81e27ab8244072b751afc4be24074e03aa952afaa8010d6e",
+      "contentSha256": "ffc29dbe51849e10e4ce4b6eb9252a833a0335b9ed2aa77901ee9dbc2fcaa9e8",
       "metadata": {
-        "key": "E",
+        "key": "Eb",
         "artist": "Shawn Bigby",
         "year": null,
         "tempo": null,
@@ -4281,9 +4281,9 @@
     },
     {
       "songId": "7cbd91e7-27f9-50b3-aee6-f7533781aa89",
-      "title": "Ryan Avery, Tamika Jackson Cry Out",
-      "file": "songs/pdf/ryan-avery-tamika-jackson-cry-out--7cbd91e7.chopro",
-      "contentSha256": "90f4f8da2f066101bceb9d7835843ba689d3a03695219aba9430c5be1295ce7f",
+      "title": "Cry Out Ryan Avery, Tamika Jackson",
+      "file": "songs/pdf/cry-out-ryan-avery-tamika-jackson--7cbd91e7.chopro",
+      "contentSha256": "45103b23ac3275aab787089b231743543d3ebf4a7c6a7fddced6038aa1cdeeff",
       "metadata": {
         "key": "Bb",
         "artist": "ReFresh Worship",
@@ -5069,9 +5069,9 @@
     },
     {
       "songId": "9696ae41-56ac-5120-a39b-7db2e1653104",
-      "title": "Hallelujah Jesus Reigns Chord Chart",
-      "file": "songs/pdf/hallelujah-jesus-reigns-chord-chart--9696ae41.chopro",
-      "contentSha256": "dafc5baa0cd0a9a1ddcd3fb6afdd72246215437af66af9a96c13959e999d00e1",
+      "title": "Hallelujah, Jesus Reigns",
+      "file": "songs/pdf/hallelujah-jesus-reigns--9696ae41.chopro",
+      "contentSha256": "5ee095923b7f577abf254fb384c68df06b813bd8fad067ff0764baa648b7ae21",
       "metadata": {
         "key": "C",
         "artist": "Angie Pearson",
@@ -5229,9 +5229,9 @@
     },
     {
       "songId": "9b2e38de-293a-502a-bd6d-7fed314a433f",
-      "title": "Brandon Lake, Pat Barrett Same God",
-      "file": "songs/pdf/brandon-lake-pat-barrett-same-god--9b2e38de.chopro",
-      "contentSha256": "38e29de9daa30d5b48385e9e73849c675869411e79556f1f99d2c00ee088476b",
+      "title": "Same God Brandon Lake, Pat Barrett",
+      "file": "songs/pdf/same-god-brandon-lake-pat-barrett--9b2e38de.chopro",
+      "contentSha256": "8e6ee832ad82eb085bd1d6a02ce293c89412be9cc647399faafbef175637c0bd",
       "metadata": {
         "key": "Db",
         "artist": "Elevation Worship",
@@ -5358,9 +5358,9 @@
     },
     {
       "songId": "9ee03f4e-962e-56b8-a902-f7cb700077f3",
-      "title": "Wood When I Shout / Testify",
-      "file": "songs/pdf/wood-when-i-shout-testify--9ee03f4e.chopro",
-      "contentSha256": "43be8bc53dc0afc7a80dd77eb32a1022fda7f086a0aab840d0e6cd34803bd68a",
+      "title": "When I Shout / Testify Wood",
+      "file": "songs/pdf/when-i-shout-testify-wood--9ee03f4e.chopro",
+      "contentSha256": "433b58648e3b83e0d483131a93b3296e52c6e7d7cfc0af3c895026126177046e",
       "metadata": {
         "key": "D",
         "artist": "Indiana Bible College (IBC)",
@@ -5895,9 +5895,9 @@
     },
     {
       "songId": "ab853e6c-1ab3-508b-b333-e0ddb4c7f6f2",
-      "title": "Have Your Way Chord Chart Draylin",
-      "file": "songs/pdf/have-your-way-chord-chart-draylin--ab853e6c.chopro",
-      "contentSha256": "397db498cd03196430b5e28dc5dec2d5cfc812e238c50897332664aeccd6dd96",
+      "title": "Have Your Way",
+      "file": "songs/pdf/have-your-way--ab853e6c.chopro",
+      "contentSha256": "ffb8d0719b4013fe1597ce9c8325ffbecdcfd0743a006ab40c47a9dfca8d8af8",
       "metadata": {
         "key": "E",
         "artist": "Draylin Young",
@@ -6025,7 +6025,7 @@
       "songId": "ad2aa396-89bb-5f8c-a48d-0644dec4df56",
       "title": "Speak The Name",
       "file": "songs/pdf/speak-the-name--ad2aa396.chopro",
-      "contentSha256": "d412de9abaeef279d5b14bac72c30e63dfc77a88fb1241c1f7335b7895e61253",
+      "contentSha256": "beda12ab36e6ac44c96ca8f3af9cec3d1987d917e9e51b5a5e270b1365854c09",
       "metadata": {
         "key": "G",
         "artist": "Church of the City",
@@ -6580,9 +6580,9 @@
     },
     {
       "songId": "c01bd7b5-9785-541e-99b7-08450ea0c343",
-      "title": "Holy Ghost Chord Chart",
-      "file": "songs/pdf/holy-ghost-chord-chart--c01bd7b5.chopro",
-      "contentSha256": "6d5d2602e68530c82afdc00d6e9652421b15dcb8625aad8c68d86c8fdbf9f259",
+      "title": "Holy Ghost",
+      "file": "songs/pdf/holy-ghost--c01bd7b5.chopro",
+      "contentSha256": "537c63a8072535a5c40b9da63b12fb52878a17e01483f62d4f312529cf75acd5",
       "metadata": {
         "key": "G",
         "artist": "Taylor Fish",
@@ -7262,9 +7262,9 @@
       "songId": "c901a411-86e4-5d78-9d9d-a3fd173a633d",
       "title": "Glory To The Lamb",
       "file": "songs/pdf/glory-to-the-lamb--c901a411.chopro",
-      "contentSha256": "285d7efbe6bf4fb5c521c08029b92b05dd3a6215a106958bc0cc32979638981f",
+      "contentSha256": "37e1668653c375133eaa4708a75403480798ae45c47aa840537566b9328f7c82",
       "metadata": {
-        "key": "G",
+        "key": "Gb",
         "artist": null,
         "year": null,
         "tempo": null,
@@ -7819,9 +7819,9 @@
     },
     {
       "songId": "d5bb32cc-48f3-587e-b352-ad19961f4e28",
-      "title": "Mia Fields, Troy Culbreth Same God",
-      "file": "songs/pdf/mia-fields-troy-culbreth-same-god--d5bb32cc.chopro",
-      "contentSha256": "99f4da79dd265c702dc747510c2eba2f37eeba9c6947d96fa210f38000bb9101",
+      "title": "Same God Mia Fields, Troy Culbreth",
+      "file": "songs/pdf/same-god-mia-fields-troy-culbreth--d5bb32cc.chopro",
+      "contentSha256": "ef727258334e89cc1cd3cd5ec8c5c07b657bcbd03ffb9beaece69700a15b03e0",
       "metadata": {
         "key": "Gb",
         "artist": "Cross Worship",
@@ -8350,9 +8350,9 @@
       "songId": "e7947b2e-53bc-5491-9f11-8df27159f869",
       "title": "I Praise You",
       "file": "songs/pdf/i-praise-you--e7947b2e.chopro",
-      "contentSha256": "0c0a6158c476fae6de056908a330f6e5a34479ab0b1b7917c6c4f2453db62f00",
+      "contentSha256": "952450386b116c9a57f03a8b4892034130a434f05518a02c3baad88d8176e0a2",
       "metadata": {
-        "key": "E",
+        "key": "Eb",
         "artist": "Cedric Shannon Rives",
         "year": null,
         "tempo": null,
@@ -8449,9 +8449,9 @@
     },
     {
       "songId": "ea328796-cd0e-5b8f-9519-66f9270a828f",
-      "title": "Duncan, Paul Mabury Light of the World",
-      "file": "songs/pdf/duncan-paul-mabury-light-of-the-world--ea328796.chopro",
-      "contentSha256": "f6c478993cfabcf969892e0f315ce897a4fdcc478f62afd328b01bb5f7cc2858",
+      "title": "Light of the World Duncan, Paul Mabury",
+      "file": "songs/pdf/light-of-the-world-duncan-paul-mabury--ea328796.chopro",
+      "contentSha256": "f1d80fc7c1dbc002f0d55de87784f798f016ffd366f8488413dcf6c91c049648",
       "metadata": {
         "key": "Gb",
         "artist": "Lauren Daigle",
@@ -8752,9 +8752,9 @@
     },
     {
       "songId": "f46706c8-f193-5494-ab18-ebcdf08f22d4",
-      "title": "Dylan Woodward Revival Is Waiting",
-      "file": "songs/pdf/dylan-woodward-revival-is-waiting--f46706c8.chopro",
-      "contentSha256": "adce54fc66fe3f9d8570af4007ff431d2bc377a8bc0df3b306e01985fb54b014",
+      "title": "Revival Is Waiting Dylan Woodward",
+      "file": "songs/pdf/revival-is-waiting-dylan-woodward--f46706c8.chopro",
+      "contentSha256": "4b9d467f4a6fffbcd92e566863371ce9cba394793b37f21868fedfd05ab16c0a",
       "metadata": {
         "key": "D",
         "artist": "Intro G",
@@ -8791,9 +8791,9 @@
       "songId": "f495072c-caaa-5c2f-af4b-9663d12a0474",
       "title": "Heaven Medley",
       "file": "songs/pdf/heaven-medley--f495072c.chopro",
-      "contentSha256": "cbebc69c7df1fffd01ec2098bf2920d484f4819dd8cb98b50e73cab5c5e7fd2b",
+      "contentSha256": "4da3fa5aa27a727201a3ec12df87a03324f8ad965ef5c46108fb68fc9affdaa9",
       "metadata": {
-        "key": "E",
+        "key": "Eb",
         "artist": null,
         "year": null,
         "tempo": null,

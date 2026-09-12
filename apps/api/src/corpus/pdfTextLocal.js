@@ -108,6 +108,80 @@ export async function hasTextLayer(buffer, { minElements = 15 } = {}) {
 }
 
 /**
+ * Join runs that sit adjacent on the page into one token.
+ *
+ * A chord is frequently three runs — "Bm", "7" — and each must become one
+ * token or the merge emits `[Bm][7]` instead of `[Bm7]`.
+ */
+export function coalesceRuns(elements) {
+  // pdf.js splits in both directions: a chord can arrive as several runs
+  // ("Bm" + "7"), and a whole chord line can arrive as ONE run with the
+  // spacing inside it ("D        A/C#   Bm7"). Split first, then join, or the
+  // second case becomes a single nonsense token.
+  const pieces = [];
+  for (const el of [...(elements || [])].sort((a, b) => a.x - b.x)) {
+    const per = el.width / Math.max(el.text.length, 1);
+    for (const m of String(el.text).matchAll(/\S+/g)) {
+      pieces.push({
+        ...el,
+        text: m[0],
+        x: el.x + m.index * per,
+        width: m[0].length * per,
+      });
+    }
+  }
+
+  const runs = pieces;
+  const out = [];
+  for (const el of runs) {
+    const last = out[out.length - 1];
+    const gap = last ? el.x - (last.x + last.width) : Infinity;
+    const threshold = Math.max(el.fontSize, last?.fontSize ?? 0, 1) * 0.25;
+    if (last && gap <= threshold) {
+      last.text += el.text;
+      last.width = el.x + el.width - last.x;
+    } else {
+      out.push({ ...el, text: el.text });
+    }
+  }
+  return out;
+}
+
+/**
+ * Rebuild a line's text from its runs, honouring the gaps between them.
+ *
+ * pdf.js splits a line into glyph runs wherever the font or kerning changes,
+ * so a chord or a key arrives as several pieces. Joining them with a space
+ * unconditionally turns "Bm7" into "Bm 7" and "Bb" into "B b" — neither reads
+ * correctly, and that single mistake cost most of the chords on every chart
+ * and truncated every flat key.
+ *
+ * @returns {{ text: string, xs: number[] }} xs[i] is the x of text[i]
+ */
+export function renderLine(elements) {
+  let text = "";
+  const xs = [];
+  const runs = [...(elements || [])].sort((a, b) => a.x - b.x);
+  for (let i = 0; i < runs.length; i += 1) {
+    const el = runs[i];
+    if (i > 0) {
+      const prev = runs[i - 1];
+      const gap = el.x - (prev.x + prev.width);
+      // Anything under a quarter of the type size is kerning, not a space.
+      const threshold = Math.max(el.fontSize, prev.fontSize, 1) * 0.25;
+      if (gap > threshold) {
+        // Wide gaps are real layout: keep enough of them to preserve columns.
+        const spaces = Math.max(1, Math.round(gap / Math.max(el.fontSize * 0.5, 1)));
+        for (let s = 0; s < spaces; s += 1) { text += " "; xs.push(prev.x + prev.width); }
+      }
+    }
+    const per = el.width / Math.max(el.text.length, 1);
+    for (let c = 0; c < el.text.length; c += 1) { text += el.text[c]; xs.push(el.x + c * per); }
+  }
+  return { text, xs };
+}
+
+/**
  * Metadata from a UPCI-style chart header, which is denser than the generic
  * extractor assumes: "UPCI Music Ministry | Key: B | Way Maker | Sinach".
  *
@@ -125,10 +199,13 @@ export function readChartHeader(elements, { filename = "" } = {}) {
     if (last && Math.abs(last.y - e.y) < 4) last.parts.push(e);
     else lines.push({ y: e.y, parts: [e] });
   }
+  // Gap-aware, or a flat key is truncated: pdf.js splits "Bb" into "B" + "b",
+  // and joining with a space made `Key: Bb` read as `Key: B `. Every chord on
+  // the chart then transposes from the wrong tonic.
   const rendered = lines.map((l) => ({
     y: l.y,
     size: Math.max(...l.parts.map((p) => p.fontSize)),
-    text: l.parts.map((p) => p.text).join(" ").replace(/\s+/g, " ").trim(),
+    text: renderLine(l.parts).text.replace(/\s+/g, " ").trim(),
   })).filter((l) => l.text);
 
   const out = { ...empty };

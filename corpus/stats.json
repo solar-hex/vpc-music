@@ -21555,8 +21555,8 @@
     },
     {
       "songId": "04aff341-f649-5152-89ec-8710b3d8a587",
-      "title": "Miah White, J.J. Hairston Have Your Way",
-      "slug": "miah-white-j-j-hairston-have-your-way",
+      "title": "Have Your Way Miah White, J.J. Hairston",
+      "slug": "have-your-way-miah-white-j-j-hairston",
       "source": "pdf",
       "key": "A",
       "artist": "J.J. Hairston",
@@ -21573,7 +21573,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 55,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -21612,8 +21612,8 @@
     },
     {
       "songId": "0668ad20-0af6-57d7-932c-590fa712f765",
-      "title": "Mike Hudson & Kelsey White Trusting For A Miracle",
-      "slug": "mike-hudson-kelsey-white-trusting-for-a-miracle",
+      "title": "Trusting For A Miracle Mike Hudson & Kelsey White",
+      "slug": "trusting-for-a-miracle-mike-hudson-kelsey-white",
       "source": "pdf",
       "key": "F",
       "artist": "Intro Chorus (Parts) (2x)",
@@ -21629,7 +21629,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 41,
+      "lines": 40,
       "percent": 95,
       "missing": [
         "year"
@@ -21745,8 +21745,8 @@
     },
     {
       "songId": "0b5ea52e-6a12-53d8-be1f-757dc1bb2f7a",
-      "title": "Ted Keith Rise Up",
-      "slug": "ted-keith-rise-up",
+      "title": "Rise Up Ted Keith",
+      "slug": "rise-up-ted-keith",
       "source": "pdf",
       "key": "F",
       "artist": "Ted Keith",
@@ -21763,7 +21763,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 63,
+      "lines": 61,
       "percent": 95,
       "missing": [
         "year"
@@ -21772,8 +21772,8 @@
     },
     {
       "songId": "0bf44b01-fa7c-5f73-8621-7eef106bb0df",
-      "title": "I Am Not Alone Chord Chart",
-      "slug": "i-am-not-alone-chord-chart",
+      "title": "I Am Not Alone",
+      "slug": "i-am-not-alone",
       "source": "pdf",
       "key": "F",
       "artist": "GPC Worship",
@@ -21824,8 +21824,8 @@
     },
     {
       "songId": "0d8d5803-029d-5966-aab3-ceddfed6a068",
-      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) maj7 9 [Ab-Bb-Cb-C] Db/Gb Cb Db | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] 6 9 9 |Cb/C Db /F Abm7/Bb Eb Gb | CHORUS 9 Ab Ye shall have the power, ye shall have the power 9 Ab Ye shall have the power, ye shall have the power 9 9 9 7 9 9 B C Db Bb Eb Ab Af - ter the Holy Ghost has come upon you, ye shall have the power 9 9 9 7 7(#5#9) B C Db Bb Eb Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C 6 7 9 9 Db /F Abm /Bb Eb Gb | CHORUS",
-      "slug": "intro-ab-bb-cb-c-eb-f-gb-f-ab-bb-cb-c-eb-f-gb-gb-f-x2-maj7-9",
+      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) [Ab-Bb-Cb-C] Db/Gb Cbmaj7 Db9 | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] |Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS Ab9 Ye shall have the power, ye shall have the power Ab9 Ye shall have the power, ye shall have the power B9 C9 Db9 Bb7 Eb9 Ab9 Af - ter the Holy Ghost has come upon you, ye shall have the power B9 C9 Db9 Bb7 Eb7(#5#9) Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS",
+      "slug": "intro-ab-bb-cb-c-eb-f-gb-f-ab-bb-cb-c-eb-f-gb-gb-f-x2-ab-bb",
       "source": "pdf",
       "key": "Ab",
       "artist": "Eddie James - \"Magnify\"",
@@ -21852,8 +21852,8 @@
     },
     {
       "songId": "0ecce571-6c19-58e7-a545-db507ecac921",
-      "title": "Micah Pollock, Jonathan Stephens O Come Emmanuel",
-      "slug": "micah-pollock-jonathan-stephens-o-come-emmanuel",
+      "title": "O Come Emmanuel Micah Pollock, Jonathan Stephens",
+      "slug": "o-come-emmanuel-micah-pollock-jonathan-stephens",
       "source": "pdf",
       "key": "C",
       "artist": "Intro F G C",
@@ -21874,7 +21874,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 50,
+      "lines": 48,
       "percent": 95,
       "missing": [
         "year"
@@ -21935,8 +21935,8 @@
     },
     {
       "songId": "136d5f1f-01ac-5f73-9c0f-89295073114d",
-      "title": "Tevia Alfter, Natalie Bunner All To You",
-      "slug": "tevia-alfter-natalie-bunner-all-to-you",
+      "title": "All To You Tevia Alfter, Natalie Bunner",
+      "slug": "all-to-you-tevia-alfter-natalie-bunner",
       "source": "pdf",
       "key": "D",
       "artist": "Bryan Pound",
@@ -21951,7 +21951,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 56,
+      "lines": 54,
       "percent": 95,
       "missing": [
         "year"
@@ -22201,8 +22201,8 @@
     },
     {
       "songId": "1eca1185-b3f7-58ab-a77b-8ee24ac4785f",
-      "title": "Kenna Turner West Answer is Jesus",
-      "slug": "kenna-turner-west-answer-is-jesus",
+      "title": "Answer is Jesus Kenna Turner West",
+      "slug": "answer-is-jesus-kenna-turner-west",
       "source": "pdf",
       "key": "A",
       "artist": "Karen Peck & New River",
@@ -22218,7 +22218,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 58,
+      "lines": 56,
       "percent": 95,
       "missing": [
         "year"
@@ -22311,8 +22311,8 @@
     },
     {
       "songId": "206084c5-2e13-5d3f-88e9-f51b9ceab563",
-      "title": "Brandon Lake and Jacob Sooter House of Miracles",
-      "slug": "brandon-lake-and-jacob-sooter-house-of-miracles",
+      "title": "House of Miracles Brandon Lake and Jacob Sooter",
+      "slug": "house-of-miracles-brandon-lake-and-jacob-sooter",
       "source": "pdf",
       "key": "Db",
       "artist": "Brandon Lake",
@@ -22321,10 +22321,10 @@
       "tempoDerived": false,
       "band": "medium",
       "themes": [
-        "healing",
         "name-of-jesus",
         "blood",
         "faith-trust",
+        "healing",
         "praise",
         "worship",
         "easter"
@@ -22333,7 +22333,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 10,
-      "lines": 61,
+      "lines": 59,
       "percent": 95,
       "missing": [
         "year"
@@ -22367,8 +22367,8 @@
     },
     {
       "songId": "20a52c66-9d1c-55d3-b0ba-65d2df2e69a1",
-      "title": "Kristen Sangary Already Done",
-      "slug": "kristen-sangary-already-done",
+      "title": "Already Done Kristen Sangary",
+      "slug": "already-done-kristen-sangary",
       "source": "pdf",
       "key": "Bb",
       "artist": "Kristen Sangary",
@@ -22386,7 +22386,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 8,
-      "lines": 52,
+      "lines": 50,
       "percent": 95,
       "missing": [
         "year"
@@ -22582,8 +22582,8 @@
     },
     {
       "songId": "3085748a-b59e-535d-94c0-d78c0e4ce64f",
-      "title": "Brittani Scott I Speak Victory",
-      "slug": "brittani-scott-i-speak-victory",
+      "title": "I Speak Victory Brittani Scott",
+      "slug": "i-speak-victory-brittani-scott",
       "source": "pdf",
       "key": "B",
       "artist": "Indiana Bible College (IBC)",
@@ -22600,7 +22600,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 15,
-      "lines": 56,
+      "lines": 54,
       "percent": 95,
       "missing": [
         "year"
@@ -22934,8 +22934,8 @@
     },
     {
       "songId": "3e43e9c5-4f3c-513a-8e3a-497ca09057e3",
-      "title": "Horatio Spafford It Is Well",
-      "slug": "horatio-spafford-it-is-well",
+      "title": "It Is Well Horatio Spafford",
+      "slug": "it-is-well-horatio-spafford",
       "source": "pdf",
       "key": "C",
       "artist": null,
@@ -22950,7 +22950,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 60,
+      "lines": 58,
       "percent": 65,
       "missing": [
         "artist",
@@ -22992,7 +22992,7 @@
       "title": "Complete Surrender",
       "slug": "complete-surrender",
       "source": "pdf",
-      "key": "B",
+      "key": "Bb",
       "artist": null,
       "year": null,
       "tempo": 70,
@@ -23378,8 +23378,8 @@
     },
     {
       "songId": "4d6a6f27-b21a-552e-b18a-948bdc56d7ab",
-      "title": "He Can Chord Chart",
-      "slug": "he-can-chord-chart",
+      "title": "He Can",
+      "slug": "he-can",
       "source": "pdf",
       "key": "Eb",
       "artist": "Anthony Trimble",
@@ -23394,7 +23394,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 41,
+      "lines": 38,
       "percent": 95,
       "missing": [
         "year"
@@ -23745,8 +23745,8 @@
     },
     {
       "songId": "5bc29d3e-2e8b-5b0d-b397-69f6e995b571",
-      "title": "Joshua Dufrene, and Colin Edge Nobody Like You",
-      "slug": "joshua-dufrene-and-colin-edge-nobody-like-you",
+      "title": "Nobody Like You Joshua Dufrene, and Colin Edge",
+      "slug": "nobody-like-you-joshua-dufrene-and-colin-edge",
       "source": "pdf",
       "key": "Am",
       "artist": "Covenant Worship",
@@ -23763,7 +23763,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 36,
+      "lines": 35,
       "percent": 95,
       "missing": [
         "year"
@@ -24070,8 +24070,8 @@
     },
     {
       "songId": "6093305f-7053-5538-af63-079113a2fb80",
-      "title": "Sarah Gerald Everything is Changing",
-      "slug": "sarah-gerald-everything-is-changing",
+      "title": "Everything is Changing Sarah Gerald",
+      "slug": "everything-is-changing-sarah-gerald",
       "source": "pdf",
       "key": "C",
       "artist": "The Belonging Co.",
@@ -24090,7 +24090,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 104,
+      "lines": 101,
       "percent": 95,
       "missing": [
         "year"
@@ -24698,8 +24698,8 @@
     },
     {
       "songId": "7711fb19-2e29-597e-a0ad-498b59b04e9b",
-      "title": "Jesse Wilson Our God Reigns Forever",
-      "slug": "jesse-wilson-our-god-reigns-forever",
+      "title": "Our God Reigns Forever Jesse Wilson",
+      "slug": "our-god-reigns-forever-jesse-wilson",
       "source": "pdf",
       "key": "Bb",
       "artist": "Jesse Wilson",
@@ -24715,7 +24715,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 55,
+      "lines": 53,
       "percent": 95,
       "missing": [
         "year"
@@ -24866,7 +24866,7 @@
       "title": "Never Go A Day",
       "slug": "never-go-a-day",
       "source": "pdf",
-      "key": "E",
+      "key": "Eb",
       "artist": "Shawn Bigby",
       "year": null,
       "tempo": 68,
@@ -24993,8 +24993,8 @@
     },
     {
       "songId": "7cbd91e7-27f9-50b3-aee6-f7533781aa89",
-      "title": "Ryan Avery, Tamika Jackson Cry Out",
-      "slug": "ryan-avery-tamika-jackson-cry-out",
+      "title": "Cry Out Ryan Avery, Tamika Jackson",
+      "slug": "cry-out-ryan-avery-tamika-jackson",
       "source": "pdf",
       "key": "Bb",
       "artist": "ReFresh Worship",
@@ -25011,7 +25011,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 101,
+      "lines": 98,
       "percent": 95,
       "missing": [
         "year"
@@ -25638,8 +25638,8 @@
     },
     {
       "songId": "9696ae41-56ac-5120-a39b-7db2e1653104",
-      "title": "Hallelujah Jesus Reigns Chord Chart",
-      "slug": "hallelujah-jesus-reigns-chord-chart",
+      "title": "Hallelujah, Jesus Reigns",
+      "slug": "hallelujah-jesus-reigns",
       "source": "pdf",
       "key": "C",
       "artist": "Angie Pearson",
@@ -25769,8 +25769,8 @@
     },
     {
       "songId": "9b2e38de-293a-502a-bd6d-7fed314a433f",
-      "title": "Brandon Lake, Pat Barrett Same God",
-      "slug": "brandon-lake-pat-barrett-same-god",
+      "title": "Same God Brandon Lake, Pat Barrett",
+      "slug": "same-god-brandon-lake-pat-barrett",
       "source": "pdf",
       "key": "Db",
       "artist": "Elevation Worship",
@@ -25788,7 +25788,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 89,
+      "lines": 87,
       "percent": 95,
       "missing": [
         "year"
@@ -25875,8 +25875,8 @@
     },
     {
       "songId": "9ee03f4e-962e-56b8-a902-f7cb700077f3",
-      "title": "Wood When I Shout / Testify",
-      "slug": "wood-when-i-shout-testify",
+      "title": "When I Shout / Testify Wood",
+      "slug": "when-i-shout-testify-wood",
       "source": "pdf",
       "key": "D",
       "artist": "Indiana Bible College (IBC)",
@@ -25896,7 +25896,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 50,
+      "lines": 48,
       "percent": 95,
       "missing": [
         "year"
@@ -26310,8 +26310,8 @@
     },
     {
       "songId": "ab853e6c-1ab3-508b-b333-e0ddb4c7f6f2",
-      "title": "Have Your Way Chord Chart Draylin",
-      "slug": "have-your-way-chord-chart-draylin",
+      "title": "Have Your Way",
+      "slug": "have-your-way",
       "source": "pdf",
       "key": "E",
       "artist": "Draylin Young",
@@ -26870,8 +26870,8 @@
     },
     {
       "songId": "c01bd7b5-9785-541e-99b7-08450ea0c343",
-      "title": "Holy Ghost Chord Chart",
-      "slug": "holy-ghost-chord-chart",
+      "title": "Holy Ghost",
+      "slug": "holy-ghost",
       "source": "pdf",
       "key": "G",
       "artist": "Taylor Fish",
@@ -27430,7 +27430,7 @@
       "title": "Glory To The Lamb",
       "slug": "glory-to-the-lamb",
       "source": "pdf",
-      "key": "G",
+      "key": "Gb",
       "artist": null,
       "year": null,
       "tempo": null,
@@ -27883,8 +27883,8 @@
     },
     {
       "songId": "d5bb32cc-48f3-587e-b352-ad19961f4e28",
-      "title": "Mia Fields, Troy Culbreth Same God",
-      "slug": "mia-fields-troy-culbreth-same-god",
+      "title": "Same God Mia Fields, Troy Culbreth",
+      "slug": "same-god-mia-fields-troy-culbreth",
       "source": "pdf",
       "key": "Gb",
       "artist": "Cross Worship",
@@ -27900,7 +27900,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 0,
-      "lines": 31,
+      "lines": 30,
       "percent": 95,
       "missing": [
         "year"
@@ -28321,7 +28321,7 @@
       "title": "I Praise You",
       "slug": "i-praise-you",
       "source": "pdf",
-      "key": "E",
+      "key": "Eb",
       "artist": "Cedric Shannon Rives",
       "year": null,
       "tempo": null,
@@ -28402,8 +28402,8 @@
     },
     {
       "songId": "ea328796-cd0e-5b8f-9519-66f9270a828f",
-      "title": "Duncan, Paul Mabury Light of the World",
-      "slug": "duncan-paul-mabury-light-of-the-world",
+      "title": "Light of the World Duncan, Paul Mabury",
+      "slug": "light-of-the-world-duncan-paul-mabury",
       "source": "pdf",
       "key": "Gb",
       "artist": "Lauren Daigle",
@@ -28420,7 +28420,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 6,
-      "lines": 31,
+      "lines": 30,
       "percent": 95,
       "missing": [
         "year"
@@ -28649,8 +28649,8 @@
     },
     {
       "songId": "f46706c8-f193-5494-ab18-ebcdf08f22d4",
-      "title": "Dylan Woodward Revival Is Waiting",
-      "slug": "dylan-woodward-revival-is-waiting",
+      "title": "Revival Is Waiting Dylan Woodward",
+      "slug": "revival-is-waiting-dylan-woodward",
       "source": "pdf",
       "key": "D",
       "artist": "Intro G",
@@ -28671,7 +28671,7 @@
       "isDraft": true,
       "confidence": "medium",
       "mediaCount": 9,
-      "lines": 84,
+      "lines": 82,
       "percent": 95,
       "missing": [
         "year"
@@ -28683,7 +28683,7 @@
       "title": "Heaven Medley",
       "slug": "heaven-medley",
       "source": "pdf",
-      "key": "E",
+      "key": "Eb",
       "artist": null,
       "year": null,
       "tempo": null,

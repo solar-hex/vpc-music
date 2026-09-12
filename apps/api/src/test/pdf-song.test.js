@@ -97,12 +97,23 @@ describe("itemToElement", () => {
 });
 
 describe("readChartHeader", () => {
-  /** Build the elements a line of text would produce. */
-  const line = (text, { y, size = 10, x = 72 }) =>
-    text.split(" ").map((word, i) => ({
-      text: word, x: x + i * 30, y, width: word.length * 5,
-      height: size, fontName: "f", fontSize: size, fontIsBold: false, fontIsItalic: false, pageIndex: 0,
-    }));
+  /**
+   * Build the elements a line of text would produce, laid out the way a real
+   * PDF does: each word directly after the last with one space between, so the
+   * gap-aware reconstruction sees exactly one space.
+   */
+  const line = (text, { y, size = 10, x = 72 }) => {
+    const charWidth = size * 0.5;
+    let cursor = x;
+    return text.split(" ").map((word) => {
+      const el = {
+        text: word, x: cursor, y, width: word.length * charWidth,
+        height: size, fontName: "f", fontSize: size, fontIsBold: false, fontIsItalic: false, pageIndex: 0,
+      };
+      cursor += el.width + charWidth; // the space
+      return el;
+    });
+  };
 
   it("reads the dense credit line these charts carry", () => {
     const els = [
@@ -167,5 +178,45 @@ describe("run reconstruction", () => {
     const { renderLine } = await import("../corpus/pdfSong.js");
     const r = renderLine([run("abc", 0, 30), run("def", 60, 30)]);
     expect(r.xs).toHaveLength(r.text.length);
+  });
+});
+
+describe("flat keys", () => {
+  it("reads Bb as Bb, not B", async () => {
+    // pdf.js splits "Bb" into "B" + "b". Joining with a space made `Key: Bb`
+    // read as `Key: B`, and every chord then transposed from the wrong tonic.
+    const { readChartHeader } = await import("../corpus/pdfTextLocal.js");
+    const size = 10;
+    const cw = size * 0.5;
+    const runs = [];
+    let x = 72;
+    for (const piece of ["Key:", " ", "B", "b", " ", "Tempo:", " ", "70"]) {
+      if (piece === " ") { x += cw; continue; }
+      runs.push({
+        text: piece, x, y: 80, width: piece.length * cw,
+        height: size, fontName: "f", fontSize: size, fontIsBold: false, fontIsItalic: false, pageIndex: 0,
+      });
+      x += piece.length * cw;
+    }
+    const title = [{
+      text: "Complete Surrender", x: 72, y: 50, width: 18 * 14,
+      height: 28, fontName: "f", fontSize: 28, fontIsBold: true, fontIsItalic: false, pageIndex: 0,
+    }];
+    const h = readChartHeader([...title, ...runs]);
+    expect(h.key).toBe("Bb");
+    expect(h.tempo).toBe(70);
+  });
+
+  it("still reads a natural key as itself", async () => {
+    const { readChartHeader } = await import("../corpus/pdfTextLocal.js");
+    const el = (text, x, size = 10) => ({
+      text, x, y: 80, width: text.length * size * 0.5,
+      height: size, fontName: "f", fontSize: size, fontIsBold: false, fontIsItalic: false, pageIndex: 0,
+    });
+    const h = readChartHeader([
+      { ...el("Way Maker", 72, 28), y: 50, fontSize: 28 },
+      el("Key:", 72), el("B", 95),
+    ]);
+    expect(h.key).toBe("B");
   });
 });
