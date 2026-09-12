@@ -1,0 +1,36 @@
+{
+  "$comment": "Artist normalisation. `initialisms` appends a commonly-used short form in parentheses — 'Indiana Bible College' becomes 'Indiana Bible College (IBC)' — so the spelled-out name is what people read and the initials are still searchable. `aliases` folds a variant onto its canonical name, including the reverse case where a chart credits only the initials. Only add an initialism that is genuinely in common use; an invented one is worse than none.",
+  "version": 1,
+  "initialisms": {
+    "Indiana Bible College": "IBC",
+    "Texas Bible College": "TBC",
+    "Christian Life Center": "CLC",
+    "United Pentecostal Church International": "UPCI",
+    "The Pentecostals of Alexandria": "POA",
+    "The Pentecostals of Katy": "POK"
+  },
+  "aliases": {
+    "IBC": "Indiana Bible College",
+    "I.B.C.": "Indiana Bible College",
+    "TBC": "Texas Bible College",
+    "UPCI": "United Pentecostal Church International",
+    "POA": "The Pentecostals of Alexandria",
+    "POK": "The Pentecostals of Katy",
+    "Pentecostals of Alexandria": "The Pentecostals of Alexandria",
+    "Pentecostals of Katy": "The Pentecostals of Katy",
+    "Maverick City": "Maverick City Music",
+    "Elevation": "Elevation Worship",
+    "Highlands": "Highlands Worship",
+    "Bethel": "Bethel Music",
+    "Hillsong": "Hillsong Worship",
+    "Charity Gale": "Charity Gayle",
+    "Belonging Co": "The Belonging Co.",
+    "The Belonging Co": "The Belonging Co."
+  },
+  "ignore": [
+    "UPCI Music",
+    "Various",
+    "Unknown",
+    "Traditional"
+  ]
+}
