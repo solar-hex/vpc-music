@@ -5,7 +5,7 @@
       "songId": "35515dad-726f-5526-8f2b-3b3ec364f63a",
       "title": "Amazing Grace",
       "alias": "This Is Amazing Grace",
-      "state": "proposed",
+      "state": "rejected",
       "score": 0.85,
       "reason": "similar title"
     },
@@ -141,7 +141,7 @@
       "songId": "bf890d2c-cfd9-5bc7-a576-5488ee0db254",
       "title": "I Believe In A Hill Called Mount Calvary",
       "alias": "I Believe In A Hill Called Mt Calvary",
-      "state": "proposed",
+      "state": "approved",
       "score": 0.78,
       "reason": "similar title"
     },
@@ -205,7 +205,7 @@
       "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
       "title": "Jesus Is",
       "alias": "Jesus Is All I Need",
-      "state": "proposed",
+      "state": "rejected",
       "score": 0.82,
       "reason": "similar title"
     },
@@ -213,7 +213,7 @@
       "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
       "title": "Jesus Is",
       "alias": "Jesus Is Hear Right Now",
-      "state": "proposed",
+      "state": "rejected",
       "score": 0.82,
       "reason": "similar title"
     },
@@ -221,7 +221,7 @@
       "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
       "title": "Jesus Is",
       "alias": "Softly And Tenderly Jesus Is Calling",
-      "state": "proposed",
+      "state": "rejected",
       "score": 0.8,
       "reason": "similar title"
     },
@@ -229,7 +229,7 @@
       "songId": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
       "title": "Just a Little Talk With Jesus",
       "alias": "Just Have A Little Talk With Jesus",
-      "state": "proposed",
+      "state": "approved",
       "score": 0.86,
       "reason": "similar title"
     },
@@ -253,7 +253,7 @@
       "songId": "86e505b6-1766-52d9-93b9-42aef386f04c",
       "title": "Look out satan, lookout",
       "alias": "Look Out Satan, Look Out",
-      "state": "proposed",
+      "state": "approved",
       "score": 0.75,
       "reason": "similar title"
     },
@@ -293,7 +293,7 @@
       "songId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
       "title": "The Holy Ghost that Jesus is giving away",
       "alias": "The Holy Ghost Jesus Is Giving Away",
-      "state": "proposed",
+      "state": "approved",
       "score": 0.86,
       "reason": "similar title"
     },

@@ -1,8 +1,8 @@
 {
   "totals": {
     "targeted": 465,
-    "have": 358,
-    "probable": 45,
+    "have": 381,
+    "probable": 22,
     "missing": 62,
     "library": 1058,
     "masterIndex": 8234,
@@ -185,7 +185,7 @@
       "sourceUrl": null,
       "indexNote": "lyrics",
       "nearest": {
-        "title": "I’ve been redeemed",
+        "title": "I Have Decided To Follow Jesus",
         "score": 0.4
       }
     },
@@ -806,8 +806,8 @@
       "sourceUrl": null,
       "indexNote": null,
       "nearest": {
-        "title": "Over In The Glory Land",
-        "score": 0.29
+        "title": "When the redeemed are gathering in",
+        "score": 0.4
       }
     },
     {
@@ -862,20 +862,6 @@
   ],
   "probable": [
     {
-      "title": "I See A Crimson Stream Of Blood",
-      "status": null,
-      "candidate": "I See A Crimson Stream",
-      "candidateId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
-      "score": 0.91
-    },
-    {
-      "title": "Are You Washed In The Blood Of The Lamb (Are You Washed In The Blood Of The Lamb)",
-      "status": "Later",
-      "candidate": "Are You Washed In The Blood",
-      "candidateId": "5a2498df-eb2d-5d91-908a-795f376d6839",
-      "score": 0.9
-    },
-    {
       "title": "It's Coming Down",
       "status": null,
       "candidate": "Coming down",
@@ -883,81 +869,11 @@
       "score": 0.9
     },
     {
-      "title": "Glory And Honor and Praises",
-      "status": "Test",
-      "candidate": "Let There Be Glory And Honor And Praises",
-      "candidateId": "5e805bac-09bc-552c-bd5c-42c3dbfaac63",
-      "score": 0.89
-    },
-    {
-      "title": "Hes Got The Whole World",
-      "status": "Test",
-      "candidate": "Hes Got The Whole World In His Hands",
-      "candidateId": "907b73d3-bd85-54b7-9c2f-ef520218fe3c",
-      "score": 0.89
-    },
-    {
-      "title": "If Theres Revival, Dont Do It Without Me",
-      "status": null,
-      "candidate": "Dont Do It Without Me",
-      "candidateId": "a7d00cbf-6d50-5ddc-b2fa-27fa3874a6ad",
-      "score": 0.89
-    },
-    {
       "title": "I Will Bless The Lord",
       "status": null,
       "candidate": "Bless the Lord",
       "candidateId": "a2f911a4-d14a-5caa-8be0-e61a04657310",
       "score": 0.88
-    },
-    {
-      "title": "Ill Say Yes Lord Yes",
-      "status": null,
-      "candidate": "Yes Lord yes",
-      "candidateId": "44163842-65c9-5d86-ab76-4e0f9a9080b4",
-      "score": 0.88
-    },
-    {
-      "title": "Let Us Praise God",
-      "status": null,
-      "candidate": "Come on everybody let us praise God",
-      "candidateId": "549c85e1-50f4-52e1-8973-82b2fe7ae54f",
-      "score": 0.87
-    },
-    {
-      "title": "Were A Happy People Yes We Are",
-      "status": null,
-      "candidate": "We’re a happy people",
-      "candidateId": "43187cda-7ffe-57a2-9548-5b3103af597f",
-      "score": 0.87
-    },
-    {
-      "title": "Just Have A Little Talk With Jesus",
-      "status": null,
-      "candidate": "Just a Little Talk With Jesus",
-      "candidateId": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
-      "score": 0.86
-    },
-    {
-      "title": "The Holy Ghost Jesus Is Giving Away",
-      "status": null,
-      "candidate": "The Holy Ghost that Jesus is giving away",
-      "candidateId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
-      "score": 0.86
-    },
-    {
-      "title": "I Have Decided",
-      "status": null,
-      "candidate": "I Have Decided To Follow Jesus",
-      "candidateId": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
-      "score": 0.85
-    },
-    {
-      "title": "I Shall Know Him",
-      "status": null,
-      "candidate": "I shall know Him by the nail prints",
-      "candidateId": "b405fe9b-4264-5402-8ec8-a4ca474da9e4",
-      "score": 0.85
     },
     {
       "title": "Surround Me O Lord",
@@ -972,48 +888,6 @@
       "candidate": "Amazing Grace",
       "candidateId": "35515dad-726f-5526-8f2b-3b3ec364f63a",
       "score": 0.85
-    },
-    {
-      "title": "Walk With You",
-      "status": null,
-      "candidate": "Let Me Walk With You Jesus",
-      "candidateId": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
-      "score": 0.85
-    },
-    {
-      "title": "When The Redeemed",
-      "status": null,
-      "candidate": "When the redeemed are gathering in",
-      "candidateId": "4bae90ec-ce58-502b-bff8-71f05921a1f7",
-      "score": 0.85
-    },
-    {
-      "title": "Where Could I Go But To The Lord",
-      "status": null,
-      "candidate": "Where could I go –",
-      "candidateId": "9171dc48-341b-5dd1-a61b-f7ecce28748b",
-      "score": 0.85
-    },
-    {
-      "title": "I Remember When My Burdens Rolled Away",
-      "status": null,
-      "candidate": "Burdens Rolled Away",
-      "candidateId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
-      "score": 0.83
-    },
-    {
-      "title": "This Is The Day That The Lord Has Made",
-      "status": null,
-      "candidate": "This Is The Day",
-      "candidateId": "196a2992-5ff3-52aa-9473-743623f16d9e",
-      "score": 0.83
-    },
-    {
-      "title": "I Wanna Be Washed In The Blood Of The Lamb",
-      "status": null,
-      "candidate": "I wanna be washed",
-      "candidateId": "7a000174-3656-521c-9f3c-5b2ccc741513",
-      "score": 0.82
     },
     {
       "title": "Jesus Is All I Need",
@@ -1051,24 +925,10 @@
       "score": 0.81
     },
     {
-      "title": "I Wish Somebodys Soul Would Catch On Fire",
-      "status": null,
-      "candidate": "Catch On Fire",
-      "candidateId": "869801fc-5f8b-531f-9d9d-7fb72ea77685",
-      "score": 0.81
-    },
-    {
       "title": "Our God Is Greater, Our God Is Stronger",
       "status": null,
       "candidate": "God is Great",
       "candidateId": "889e9a0a-7388-5bce-a78e-bcd4d2d4b4f4",
-      "score": 0.81
-    },
-    {
-      "title": "Take The Whole World But Give Me Jesus",
-      "status": null,
-      "candidate": "Give Me Jesus",
-      "candidateId": "4d8aaf89-08b0-54c4-8f35-e412fd47efda",
       "score": 0.81
     },
     {
@@ -1083,13 +943,6 @@
       "status": null,
       "candidate": "Crying Holy",
       "candidateId": "4611c368-2d1d-5063-91a3-0f311a79baf3",
-      "score": 0.8
-    },
-    {
-      "title": "In The City",
-      "status": null,
-      "candidate": "In the city where the Lamb is the light",
-      "candidateId": "23ecb477-e688-5cfb-ab00-817ffd21d3a6",
       "score": 0.8
     },
     {
@@ -1114,13 +967,6 @@
       "score": 0.79
     },
     {
-      "title": "I Believe In A Hill Called Mt Calvary",
-      "status": null,
-      "candidate": "I Believe In A Hill Called Mount Calvary",
-      "candidateId": "bf890d2c-cfd9-5bc7-a576-5488ee0db254",
-      "score": 0.78
-    },
-    {
       "title": "God Is So Good To Me",
       "status": "Later",
       "candidate": "God is good",
@@ -1139,13 +985,6 @@
       "status": null,
       "candidate": "I’ll be listening",
       "candidateId": "9cecc27b-a206-53d1-acf5-5e3c1984f02e",
-      "score": 0.75
-    },
-    {
-      "title": "Look Out Satan, Look Out",
-      "status": null,
-      "candidate": "Look out satan, lookout",
-      "candidateId": "86e505b6-1766-52d9-93b9-42aef386f04c",
       "score": 0.75
     },
     {

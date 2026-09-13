@@ -22,6 +22,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { readXlsxRows, rowsToRecords } from "../apps/api/src/corpus/xlsxSheet.js";
 import { matchTitles, titleKey } from "../apps/api/src/corpus/titleMatch.js";
+import { approvedBySong, loadAliases } from "../apps/api/src/corpus/aliases.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
@@ -108,9 +109,16 @@ export async function importMaster(xlsxPath) {
 
 /* ─── what we have ────────────────────────────────────────────────────────── */
 
-/** Every live song in the corpus — superseded copies are not "have". */
+/**
+ * Every live song in the corpus — superseded copies are not "have".
+ *
+ * Each song's approved aliases come along, or the report keeps asking for a
+ * song it has: resolving "I See A Crimson Stream Of Blood" is only worth doing
+ * if the next run stops reporting it.
+ */
 export async function collectHave(corpusRoot) {
   const manifestDir = join(corpusRoot, "manifest");
+  const aliases = approvedBySong(loadAliases(join(corpusRoot, "aliases.json")));
   const have = [];
   for (const file of (await readdir(manifestDir)).sort()) {
     if (!file.endsWith(".json")) continue;
@@ -120,7 +128,7 @@ export async function collectHave(corpusRoot) {
       have.push({
         id: song.songId,
         title: song.title,
-        aka: null,
+        aka: aliases.get(song.songId) ?? [],
         source: manifest.sourceType,
         artist: song.metadata?.artist || null,
       });

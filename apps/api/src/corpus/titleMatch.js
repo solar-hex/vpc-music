@@ -139,7 +139,7 @@ export function titleSimilarity(a, b) {
  * Match a list of wanted titles against a library.
  *
  * @param {string[]} wanted
- * @param {Array<{id?:string, title:string, aka?:string|null}>} have
+ * @param {Array<{id?:string, title:string, aka?:string|string[]|null}>} have
  * @param {{ strong?: number, weak?: number }} [thresholds]
  * @returns {{ matched: Array, probable: Array, missing: Array }}
  *   matched  — confident, use it
@@ -147,6 +147,18 @@ export function titleSimilarity(a, b) {
  *              title into `songs.aka` fixes it permanently for future runs
  *   missing  — genuinely absent
  */
+/**
+ * Every name a song answers to: its title plus its aliases.
+ *
+ * `aka` is a single string on a database row and a list in the corpus, because
+ * a song can carry several alternate titles. Both shapes are accepted so the
+ * matcher works against either side.
+ */
+export function namesOf(song) {
+  const aka = Array.isArray(song?.aka) ? song.aka : String(song?.aka || "").split(";");
+  return [song?.title, ...aka].map((n) => String(n || "").trim()).filter(Boolean);
+}
+
 export function matchTitles(wanted, have, thresholds = {}) {
   const strong = thresholds.strong ?? 0.92;
   const weak = thresholds.weak ?? 0.72;
@@ -154,7 +166,7 @@ export function matchTitles(wanted, have, thresholds = {}) {
   // Index the library by every key it answers to, including `aka`.
   const index = new Map();
   for (const song of have) {
-    for (const name of [song.title, song.aka].filter(Boolean)) {
+    for (const name of namesOf(song)) {
       for (const key of titleVariants(name)) {
         if (!index.has(key)) index.set(key, []);
         if (!index.get(key).includes(song)) index.get(key).push(song);
@@ -184,10 +196,7 @@ export function matchTitles(wanted, have, thresholds = {}) {
     // Fall back to scoring against the whole library.
     let best = null;
     for (const song of have) {
-      const score = Math.max(
-        titleSimilarity(title, song.title),
-        song.aka ? titleSimilarity(title, song.aka) : 0,
-      );
+      const score = Math.max(...namesOf(song).map((name) => titleSimilarity(title, name)), 0);
       if (!best || score > best.score) best = { song, score };
     }
 

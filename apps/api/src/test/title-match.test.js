@@ -130,3 +130,31 @@ describe("matchTitles", () => {
     expect(a.missing.map((m) => m.title)).toEqual(b.missing.map((m) => m.title));
   });
 });
+
+describe("namesOf", () => {
+  it("accepts aka as a string or a list, because the row and the corpus differ", async () => {
+    const { namesOf } = await import("../corpus/titleMatch.js");
+    expect(namesOf({ title: "Bless the Lord", aka: "I Will Bless The Lord" }))
+      .toEqual(["Bless the Lord", "I Will Bless The Lord"]);
+    expect(namesOf({ title: "A", aka: ["B", "C"] })).toEqual(["A", "B", "C"]);
+    expect(namesOf({ title: "A", aka: null })).toEqual(["A"]);
+  });
+
+  it("splits the semicolons a stored aka uses", async () => {
+    const { namesOf } = await import("../corpus/titleMatch.js");
+    expect(namesOf({ title: "A", aka: "B; C" })).toEqual(["A", "B", "C"]);
+  });
+});
+
+describe("matching through an alias", () => {
+  it("finds a song by a name it answers to, not only by its title", async () => {
+    // The reason aliases exist: the church's list says one thing, the chart
+    // says another, and the gap report kept reporting a song we have.
+    const { matchTitles } = await import("../corpus/titleMatch.js");
+    const have = [{ id: "s1", title: "I See A Crimson Stream", aka: ["I See A Crimson Stream Of Blood"] }];
+    const { matched, missing } = matchTitles(["I See A Crimson Stream Of Blood"], have);
+    expect(missing).toHaveLength(0);
+    expect(matched[0].song.id).toBe("s1");
+    expect(matched[0].score).toBe(1);
+  });
+});
