@@ -51,6 +51,7 @@ pnpm corpus:stats                          # the whole library, counted
 pnpm corpus:reader                         # dist/songbook.html, one offline file
 pnpm gap:report                            # targeted list vs the library, by source site
 pnpm gap:resolve [--list|--approve <n>]    # alternate titles → corpus/aliases.json
+pnpm corpus:verify --nashville [--write]   # chart vs the publisher's number chart
 pnpm intake [--apply]                      # file whatever is in intake/inbox/
 ```
 
@@ -87,6 +88,10 @@ Rules that hold the whole thing together:
   two-second tolerance because sync clients drift.
 - **Themes only ever get added.** A human's rejection is stored as
   `!theme:blood`, so broadening `corpus/themes.json` never undoes a correction.
+- **A draft means the conversion is unverified**, not that the song is
+  unfinished. A PDF chart leaves draft only when the publisher's own number
+  chart agrees with it (`corpus/verified.json`); a song with no chords is a
+  finished lyrics sheet and gets `status = missing_chords` instead.
 - **`songs.tags` holds four namespaces**, all parsed in `shared/utils/library.js`:
   a plain tag, `theme:x`, `!theme:x` (a rejection), and `flag:x` (a property of
   the song, not a subject). `flag:unlisted` is the old site's `~` filename

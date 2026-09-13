@@ -28,6 +28,7 @@ import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
 import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
 import { loadMediaIndex, DROPBOX_ROOTS } from "../apps/api/src/corpus/mediaIndex.js";
 import { approvedBySong, loadAliases } from "../apps/api/src/corpus/aliases.js";
+import { loadVerified, verifiedNote } from "../apps/api/src/corpus/verified.js";
 import {
   corpusFileName,
   deterministicSongId,
@@ -295,6 +296,8 @@ export async function buildCorpus({
   // Reviewed alternate titles, written into each chart as {x_aka:} so the
   // decision lives in git and the file stays the complete record.
   const aliases = approvedBySong(loadAliases(join(corpusRoot, "aliases.json")));
+  // Charts the publisher's own number chart agrees with. See corpus:verify.
+  const verified = loadVerified(join(corpusRoot, "verified.json"));
   const stamp = todayStamp(now);
 
   const manifestEntries = [];
@@ -329,10 +332,21 @@ export async function buildCorpus({
       // The chart file is the complete record: artist, tempo, themes, where it
       // came from, and one link per media file all travel with the chart.
       const linked = mediaIndex.forTitle(conversion.metadata.title);
+
+      /*
+       * A chart the publisher's own number chart agrees with is not a guess.
+       * Every PDF lands as a draft because geometry placed its chords, which is
+       * the right default — but 181 of them have since been checked against an
+       * independent source and have no business staying hidden from the list.
+       */
+      const proof = verified.get(identity.songId);
+      if (proof) conversion.metadata.isDraft = false;
+
       const content = enrichChordPro({
         content: baseContent,
         metadata: conversion.metadata,
         aka: aliases.get(identity.songId),
+        verified: verifiedNote(verified.get(identity.songId)),
         flags: spec.flags ? spec.flags(relativePath) : [],
         themes,
         media: linked.media,

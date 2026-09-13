@@ -1,0 +1,1456 @@
+{
+  "version": 1,
+  "method": "number-chart",
+  "threshold": 0.8,
+  "note": "Each chart below was compared with the publisher's own Nashville number chart.",
+  "songs": {
+    "03e05277-b261-5138-bff6-e0649bc9cea8": {
+      "title": "Your Great Name",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 30,
+      "theirs": 30,
+      "path": "UPCI Music/Your Great Name/Your Great Name - Chord Chart.pdf"
+    },
+    "04aff341-f649-5152-89ec-8710b3d8a587": {
+      "title": "Have Your Way",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 61,
+      "theirs": 61,
+      "path": "UPCI Music/2021/Have Your Way/How-Your-Way-Chord-Chart.pdf"
+    },
+    "064b864b-c49d-577b-b063-36a5c56a9c17": {
+      "title": "Hallelujah He is Here",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 51,
+      "theirs": 51,
+      "path": "UPCI Music/2016/Hallelujah, He is Here/Hallelujah-He-is-Here-chord-chart.pdf"
+    },
+    "0668ad20-0af6-57d7-932c-590fa712f765": {
+      "title": "Trusting For A Miracle",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 9,
+      "theirs": 9,
+      "path": "UPCI Music/2023/Trusting for a Miracle/Trusting-For-A-Miracle-Chord-Chart.pdf"
+    },
+    "079cb79d-3e5f-5226-b2a5-a336ae409836": {
+      "title": "Ancient of Days",
+      "coverage": 0.96,
+      "agreement": 1,
+      "ours": 207,
+      "theirs": 215,
+      "path": "UPCI Music/2020/Ancient of Days/Ancient-of-Days-Chord-Chart.pdf"
+    },
+    "088178b0-7dcb-56c4-a093-0a0c9c909411": {
+      "title": "He Shall Reign Forevermore",
+      "coverage": 0.87,
+      "agreement": 0.87,
+      "ours": 30,
+      "theirs": 30,
+      "path": "UPCI Music/2020/He Shall Reign Forevermore/He-Shall-Reign-Forevermore-Chord-Chart.pdf"
+    },
+    "09410ae5-3e4d-5238-8d1a-188cda6b5f4b": {
+      "title": "Somebody Give Him Some Praise",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 28,
+      "theirs": 27,
+      "path": "UPCI Music/2016/Somebody Give Him Some Praise/Somebody-Give-Him-Some-Praise-Chord-Chart.pdf"
+    },
+    "0d8abc76-cd81-5fa7-aa0e-3ed521dd9653": {
+      "title": "Not The Same",
+      "coverage": 0.94,
+      "agreement": 0.94,
+      "ours": 129,
+      "theirs": 87,
+      "path": "UPCI Music/2016/Not the Same/Not-The-Same-chord-chart.pdf"
+    },
+    "0ecce571-6c19-58e7-a545-db507ecac921": {
+      "title": "O Come Emmanuel",
+      "coverage": 0.95,
+      "agreement": 1,
+      "ours": 61,
+      "theirs": 64,
+      "path": "UPCI Music/2022/O Come Emmanuel/O-Come-Emmanuel-Chord-Chart.pdf"
+    },
+    "11cbe69a-235b-5206-aa68-3e277a6e96b0": {
+      "title": "Christmas Day",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 56,
+      "theirs": 44,
+      "path": "UPCI Music/2021/Christmas Day/Christmas-Day-Chord-Chart.pdf"
+    },
+    "13158aa5-b55b-5357-9687-d8ac0984ed76": {
+      "title": "Excellent",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 45,
+      "theirs": 11,
+      "path": "UPCI Music/2019/Excellent/Excellent-Chord-Chart.pdf"
+    },
+    "136d5f1f-01ac-5f73-9c0f-89295073114d": {
+      "title": "All To You",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 26,
+      "theirs": 23,
+      "path": "UPCI Music/2022/All to You/All-To-You-Chord-Chart.pdf"
+    },
+    "191bfbd4-5e80-5624-8959-249454765908": {
+      "title": "All Things",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 61,
+      "theirs": 56,
+      "path": "UPCI Music/2020/All Things/All-Things-Chord-Chart.pdf"
+    },
+    "1978bb8e-ea2b-5814-b1c2-7687abf1dfad": {
+      "title": "Order My Steps",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 81,
+      "theirs": 39,
+      "path": "UPCI Music/2020/Order My Steps/Order-My-Steps-Chord-Chart.pdf"
+    },
+    "1bad7e6e-6922-5aa4-8873-359be2e6c8f2": {
+      "title": "One Name (Jesus)",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 126,
+      "theirs": 108,
+      "path": "UPCI Music/2023/One Name/One-Name-Jesus-Chord-Chart.pdf"
+    },
+    "1c40b5dd-3494-5e31-933c-613facdbec30": {
+      "title": "I Will Go",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 53,
+      "theirs": 49,
+      "path": "UPCI Music/2016/I Will Go/I-Will-Go-chord-chart.pdf"
+    },
+    "1cedb452-ecdc-5d74-98ce-494844e9adfc": {
+      "title": "We Need the Rain",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 13,
+      "theirs": 13,
+      "path": "UPCI Music/2022/We Need the Rain/We-Need-the-Rain-Chord-Chart.pdf"
+    },
+    "1cee10f7-b207-5fa0-b306-f4e4bc1e701d": {
+      "title": "We Pray for More",
+      "coverage": 0.86,
+      "agreement": 0.86,
+      "ours": 22,
+      "theirs": 22,
+      "path": "UPCI Music/2019/We Pray For More/We-Pray-for-More-Chord-Chart.pdf"
+    },
+    "1f8e95d4-5f96-5f98-aca4-f980128fa45c": {
+      "title": "Divine Exchange",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 24,
+      "theirs": 24,
+      "path": "UPCI Music/Divine Exchange/Divine Exchange - Chord Chart.pdf"
+    },
+    "1fcd6deb-efbc-578e-9fff-6a11633d3180": {
+      "title": "We’ve Come To Praise Him",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 69,
+      "theirs": 48,
+      "path": "UPCI Music/2016/We've Come to Praise Him/Weve-Come-To-Praise-Him-chord-chart.pdf"
+    },
+    "206084c5-2e13-5d3f-88e9-f51b9ceab563": {
+      "title": "House of Miracles",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 57,
+      "theirs": 54,
+      "path": "UPCI Music/2022/House of Miracles/House-of-Miracles-Chord-Chart.pdf"
+    },
+    "20a52c66-9d1c-55d3-b0ba-65d2df2e69a1": {
+      "title": "Already Done",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 22,
+      "theirs": 17,
+      "path": "UPCI Music/2022/Already Done/Already-Done-Chord-Chart.pdf"
+    },
+    "22b2df33-a210-5e70-82a5-5eee96cecc62": {
+      "title": "Put The Attention On Jesus",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 38,
+      "theirs": 38,
+      "path": "UPCI Music/2019/Put the Attention on Jesus/Put the Attention on Jesus - Chord Chart.pdf"
+    },
+    "24dad21d-ecf6-5594-a474-9d77dc5716ea": {
+      "title": "Hallelujah for the Cross",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 25,
+      "theirs": 23,
+      "path": "UPCI Music/Hallelujah for the Cross/Hallelujah For The Cross - Chord Chart.pdf"
+    },
+    "259f1624-a948-54c3-a72b-54dc83839814": {
+      "title": "Before The King",
+      "coverage": 0.89,
+      "agreement": 0.89,
+      "ours": 20,
+      "theirs": 18,
+      "path": "UPCI Music/2023/Before the King/Before-the-King-Chord-Chart.pdf"
+    },
+    "28acff8e-7ba6-52d9-b104-5637454295e3": {
+      "title": "Battle Belongs",
+      "coverage": 0.89,
+      "agreement": 0.98,
+      "ours": 94,
+      "theirs": 103,
+      "path": "UPCI Music/2020/Battle Belongs/Battle-Belongs-Chord-Chart.pdf"
+    },
+    "3085748a-b59e-535d-94c0-d78c0e4ce64f": {
+      "title": "I Speak Victory",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 41,
+      "theirs": 38,
+      "path": "UPCI Music/2022/I Speak Victory/I-Speak-Victory-Chord-Chart.pdf"
+    },
+    "30881347-6bcb-52c0-ac1a-61fc87eb5865": {
+      "title": "Amen",
+      "coverage": 0.84,
+      "agreement": 0.84,
+      "ours": 55,
+      "theirs": 51,
+      "path": "UPCI Music/Amen/Amen - Chord Chart.pdf"
+    },
+    "3169dd3e-2401-5b80-9979-4000c0ccf430": {
+      "title": "Call the Name of Jesus",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 71,
+      "theirs": 71,
+      "path": "UPCI Music/Call the Name of Jesus/Call the Name of Jesus - Chord Chart.pdf"
+    },
+    "369d8d37-8cd0-54bd-8af7-d04131804f66": {
+      "title": "Never Lost",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 78,
+      "theirs": 78,
+      "path": "UPCI Music/2021/Never Lost/Never-Lost-Chord-Chart.pdf"
+    },
+    "372d20aa-aecc-5c70-8db1-953509d9fcfb": {
+      "title": "Worthy",
+      "coverage": 0.93,
+      "agreement": 0.93,
+      "ours": 27,
+      "theirs": 14,
+      "path": "UPCI Music/2022/Worthy/Worthy-Chord-Chart.pdf"
+    },
+    "3a0e68f1-9265-5ecc-83b1-81f68e409c92": {
+      "title": "At the Cross",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 26,
+      "theirs": 26,
+      "path": "UPCI Music/At The Cross/At the Cross - Chord Chart.pdf"
+    },
+    "3af1ddd3-a39e-54fc-b855-57e9596277b4": {
+      "title": "Your Blood",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 15,
+      "theirs": 13,
+      "path": "UPCI Music/2019/Your Blood (Live)/Your-Blood-Chord-Chart.pdf"
+    },
+    "3db7cb67-5d89-5444-8ca4-2eed8df8f1fb": {
+      "title": "Anthem We Raise",
+      "coverage": 0.95,
+      "agreement": 0.95,
+      "ours": 24,
+      "theirs": 22,
+      "path": "UPCI Music/2021/Anthem We Raise/Anthem-We-Raise-Chord-Chart.pdf"
+    },
+    "3e67e089-9d6e-5d55-8f2b-681108e631cf": {
+      "title": "Throne Room Song",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 69,
+      "theirs": 53,
+      "path": "UPCI Music/2019/Throne Room Song/Throne-Room-Song-Chord-Chart.pdf"
+    },
+    "3eaaa8a7-3465-5e32-af02-916ff87b9330": {
+      "title": "Complete Surrender",
+      "coverage": 0.93,
+      "agreement": 0.93,
+      "ours": 78,
+      "theirs": 73,
+      "path": "UPCI Music/2016/Complete Surrender/Complete-Surrender-chord-chart.pdf"
+    },
+    "41120acb-c270-5cdf-be80-57830ccd6c40": {
+      "title": "To Your Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 49,
+      "theirs": 49,
+      "path": "UPCI Music/2020/To Your Name/To-Your-Name-Chord-Chart.pdf"
+    },
+    "429fc22e-024d-586a-ad23-73011d3871c9": {
+      "title": "Fire",
+      "coverage": 0.94,
+      "agreement": 0.94,
+      "ours": 112,
+      "theirs": 112,
+      "path": "UPCI Music/2022/Fire/Fire-Chord-Chart.pdf"
+    },
+    "42c0b4fa-d974-5b60-a28e-2bac8d29bdfb": {
+      "title": "For My Good",
+      "coverage": 0.98,
+      "agreement": 0.98,
+      "ours": 56,
+      "theirs": 56,
+      "path": "UPCI Music/2021/For My Good/For-My-Good-Chord-Chart.pdf"
+    },
+    "4646c050-9bb1-55b4-96d1-8217503e3286": {
+      "title": "Free Indeed",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 15,
+      "theirs": 15,
+      "path": "UPCI Music/Free Indeed/Free Indeed - Chord Chart.pdf"
+    },
+    "49892253-9a09-51c9-97cf-e8dbe635f0ec": {
+      "title": "Won’t Stop Now",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 36,
+      "theirs": 36,
+      "path": "UPCI Music/2019/Won't Stop Now/Wont-Stop-Now-Chord-Chart.pdf"
+    },
+    "4993c273-a1ea-5baf-a265-c74ca97c60b2": {
+      "title": "Forever Amen",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 83,
+      "theirs": 8,
+      "path": "UPCI Music/2022/Forever Amen/Forever-Amen-Chord-Chart.pdf"
+    },
+    "4a325f15-3c85-5498-934b-5e2081949cf7": {
+      "title": "I’ve Got a Reason",
+      "coverage": 0.85,
+      "agreement": 0.85,
+      "ours": 130,
+      "theirs": 123,
+      "path": "UPCI Music/2021/I've Got a Reason/Ive-Got-a-Reason-Chord-Chart.pdf"
+    },
+    "4b90832c-0cfe-5d3b-bc6d-d334709e2a42": {
+      "title": "This Place",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 19,
+      "theirs": 19,
+      "path": "UPCI Music/2019/This Place/This-Place-Chord-Chart.pdf"
+    },
+    "4bba84e5-a99a-57bc-b083-030c9fbe8da3": {
+      "title": "It Is Done",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 46,
+      "theirs": 46,
+      "path": "UPCI Music/2022/It Is Done/It-Is-Done-Chord-Chart.pdf"
+    },
+    "4d6a6f27-b21a-552e-b18a-948bdc56d7ab": {
+      "title": "He Can",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 14,
+      "theirs": 14,
+      "path": "UPCI Music/2021/He Can/He-Can-Chord-Chart.pdf"
+    },
+    "4d7201ec-e09d-56f4-b228-34e66d321bd3": {
+      "title": "Greater",
+      "coverage": 0.83,
+      "agreement": 0.83,
+      "ours": 25,
+      "theirs": 24,
+      "path": "UPCI Music/2019/Greater - Highlands Worship/Greater-Chord-Chart.pdf"
+    },
+    "4d7a04d7-9d4e-514b-bdb1-ce36a804f8fb": {
+      "title": "For Your Glory",
+      "coverage": 0.88,
+      "agreement": 1,
+      "ours": 76,
+      "theirs": 86,
+      "path": "UPCI Music/2019/For Your Glory/For-Your-Glory-Chord-Chart.pdf"
+    },
+    "4d8aaf89-08b0-54c4-8f35-e412fd47efda": {
+      "title": "Give Me Jesus",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 14,
+      "theirs": 14,
+      "path": "UPCI Music/2020/Give Me Jesus/Give-Me-Jesus-Chord-Chart.pdf"
+    },
+    "4dc350af-57a8-54ba-9ebc-5b60c7f04613": {
+      "title": "Lift Up Your Voices",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 98,
+      "theirs": 83,
+      "path": "UPCI Music/2020/Lift Up Your Voices/Lift-Up-Your-Voices-Chord-Chart.pdf"
+    },
+    "5119a6d4-1efb-5a3c-b035-f5c4074a2a82": {
+      "title": "God Is Here",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 27,
+      "theirs": 24,
+      "path": "UPCI Music/2016/God is Here/God-Is-Here-Chord-Chart.pdf"
+    },
+    "51a73012-d3e8-53c5-817b-08aa059a8b4f": {
+      "title": "How Great",
+      "coverage": 0.82,
+      "agreement": 0.82,
+      "ours": 27,
+      "theirs": 22,
+      "path": "UPCI Music/2024/How Great/How-Great-Chord-Chart.pdf"
+    },
+    "53c4b44e-d45f-569f-9d2c-345ab8f52ec9": {
+      "title": "Only One Name (Jesus)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 56,
+      "theirs": 56,
+      "path": "UPCI Music/2020/Only One Name/Only-One-NameJesus-Chord-Chart.pdf"
+    },
+    "5685c996-e977-5df4-a81b-60e60ffe96de": {
+      "title": "Let’s Dance",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 40,
+      "theirs": 30,
+      "path": "UPCI Music/2016/Let's Dance/Lets-Dance-chord-chart.pdf"
+    },
+    "56a78d06-5a0e-5fb0-8ed9-98dae6df04e2": {
+      "title": "Greater Things",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 225,
+      "theirs": 225,
+      "path": "UPCI Music/Greater Things/Greater Things - Chord Chart.pdf"
+    },
+    "56ffc497-bc63-59c0-87ff-8b58cd105d5c": {
+      "title": "Silence the Roar",
+      "coverage": 0.94,
+      "agreement": 0.94,
+      "ours": 62,
+      "theirs": 62,
+      "path": "UPCI Music/2021/Silence the Roar/Silence-the-Roar-Chord-Chart.pdf"
+    },
+    "58aa7711-d292-53ac-923e-a45554ace96a": {
+      "title": "Come Like The Dawn",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 40,
+      "theirs": 32,
+      "path": "UPCI Music/2016/Come Like the Dawn/Come-Like-The-Dawn-chord-chart.pdf"
+    },
+    "5bdbf273-947f-5fe3-b6a6-d6cff4380019": {
+      "title": "More Than Able",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 108,
+      "theirs": 42,
+      "path": "UPCI Music/2023/More Than Able/More-Than-Able-Chord-Chart.pdf"
+    },
+    "5ddad45f-cadb-5fcf-94e6-a09f37381a66": {
+      "title": "Making Room",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 76,
+      "theirs": 16,
+      "path": "UPCI Music/2021/Making Room/Making-Room-Chord-Chart.pdf"
+    },
+    "5de4ed3b-4f69-51f7-b0d1-28ef2469091a": {
+      "title": "A Reason to Dance",
+      "coverage": 0.9,
+      "agreement": 0.9,
+      "ours": 113,
+      "theirs": 105,
+      "path": "UPCI Music/2020/A Reason to Dance/A-Reason-to-Dance-Chord-Chart.pdf"
+    },
+    "5eab1a91-9390-5551-bc6d-58284ab701ae": {
+      "title": "Your Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 62,
+      "theirs": 56,
+      "path": "UPCI Music/2023/Your Name/Your-Name-Chord-Chart.pdf"
+    },
+    "5f849300-fb5d-50b2-8c5b-1c1def492096": {
+      "title": "Forward",
+      "coverage": 0.89,
+      "agreement": 0.89,
+      "ours": 59,
+      "theirs": 47,
+      "path": "UPCI Music/2021/Forward/Forward-Chord-Chart.pdf"
+    },
+    "5f9f6191-2814-5fd9-8d0d-1f88f22b799a": {
+      "title": "Hands Toward Heaven",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 35,
+      "theirs": 35,
+      "path": "UPCI Music/Hands Toward Heaven/Hands Toward Heaven - Chord Chart.pdf"
+    },
+    "6030d2bd-1679-5d98-87f6-945393eb41a3": {
+      "title": "Ancient of Days",
+      "coverage": 0.95,
+      "agreement": 0.95,
+      "ours": 109,
+      "theirs": 109,
+      "path": "UPCI Music/2021/Ancient of Days/Ancient-of-Days-Chord-Chart.pdf"
+    },
+    "6093305f-7053-5538-af63-079113a2fb80": {
+      "title": "Everything is Changing",
+      "coverage": 0.99,
+      "agreement": 0.99,
+      "ours": 82,
+      "theirs": 69,
+      "path": "UPCI Music/2022/Everything is Changing/Everything-is-Changing-Chord-Chart.pdf"
+    },
+    "6207eae2-4326-559f-ae46-68d2e22e389b": {
+      "title": "Come Move",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 73,
+      "theirs": 58,
+      "path": "UPCI Music/2020/Come Move/Come-Move-Chord-Chart.pdf"
+    },
+    "6212be94-5ed2-56af-9203-a2b2e5c65e43": {
+      "title": "Lead Us",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 58,
+      "theirs": 9,
+      "path": "UPCI Music/2016/Lead Us/Lead-Us-chord-chart.pdf"
+    },
+    "6483f121-01db-5cc0-b506-66f883b12945": {
+      "title": "No Other Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 123,
+      "theirs": 61,
+      "path": "UPCI Music/2022/No Other Name (Mark Yandris)/No-Other-Name-Chord-Chart.pdf"
+    },
+    "6527f0c3-c4d5-579d-866c-c10b15842e65": {
+      "title": "Glory",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 32,
+      "theirs": 24,
+      "path": "UPCI Music/2022/Glory/Glory-Chord-Chart.pdf"
+    },
+    "658201b4-586c-5253-a61b-29ed070d95c3": {
+      "title": "Surrounded (Fight My Battles)",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 25,
+      "theirs": 25,
+      "path": "UPCI Music/Surrounded (Fight My Battles)/Surrounded - Chord Chart.pdf"
+    },
+    "65d572c0-39ce-5494-a499-95de4d02a17f": {
+      "title": "My Story",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 58,
+      "theirs": 58,
+      "path": "UPCI Music/2020/My Story/My-Story-Chord-Chart.pdf"
+    },
+    "699c012e-eeaa-5a85-b2ab-a4ddfa0e82d5": {
+      "title": "A Place Of Healing",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 66,
+      "theirs": 44,
+      "path": "UPCI Music/2016/A Place of Healing/A-Place-of-Healing-chord-chart.pdf"
+    },
+    "6c6c08d8-5b74-572a-a4cf-8d28ff456a50": {
+      "title": "No One",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 42,
+      "theirs": 42,
+      "path": "UPCI Music/2021/No One/No-One-Chord-Chart.pdf"
+    },
+    "6f8b9208-7c0a-5550-a7e1-015beadef8ae": {
+      "title": "It’s Happening Now",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 48,
+      "theirs": 48,
+      "path": "UPCI Music/2020/It's Happening Now/Its-Happening-Now-Chord-Chart.pdf"
+    },
+    "707c06b0-03c1-5ddc-81dc-c4cd3a069cfc": {
+      "title": "Bless Your Name",
+      "coverage": 0.95,
+      "agreement": 0.95,
+      "ours": 65,
+      "theirs": 59,
+      "path": "UPCI Music/2020/Bless Your Name/Bless-Your-Name-Chord-Chart.pdf"
+    },
+    "7129ec33-64fd-5179-93ed-1923bd041857": {
+      "title": "More",
+      "coverage": 0.98,
+      "agreement": 0.98,
+      "ours": 103,
+      "theirs": 103,
+      "path": "UPCI Music/2021/More/More-Chord-Chart.pdf"
+    },
+    "71bb9ca1-453f-5d7b-9d89-baaf0c85c36f": {
+      "title": "Speak The Name",
+      "coverage": 0.99,
+      "agreement": 0.99,
+      "ours": 93,
+      "theirs": 78,
+      "path": "UPCI Music/2019/Speak the Name/Speak-The-Name-Chord-Chart.pdf"
+    },
+    "71db901f-db04-5eae-a7f1-294ce17feaa5": {
+      "title": "Humbly We Bow (Holy Are You Lord)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 20,
+      "theirs": 20,
+      "path": "UPCI Music/Humbly We Bow/Humbly We Bow (Holy Are You Lord) - Chord Chart.pdf"
+    },
+    "727267d4-f24f-5638-8f59-1c9d84696cb3": {
+      "title": "God is Calling",
+      "coverage": 0.98,
+      "agreement": 0.98,
+      "ours": 63,
+      "theirs": 63,
+      "path": "UPCI Music/2021/God is Calling/God-is-Calling-Chord-Chart.pdf"
+    },
+    "72eed0f4-c26b-57ce-9080-ba1728f3e312": {
+      "title": "We Have Overcome",
+      "coverage": 0.98,
+      "agreement": 0.98,
+      "ours": 65,
+      "theirs": 65,
+      "path": "UPCI Music/We Have Overcome/We Have Overcome - Chord Chart.pdf"
+    },
+    "739f0d8d-a6c3-5ffb-928e-39a44f5bf431": {
+      "title": "You Are Holy",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 13,
+      "theirs": 13,
+      "path": "UPCI Music/2019/You Are Holy/You-Are-Holy-Chord-Chart.pdf"
+    },
+    "765ad7b6-4f6d-5248-848e-d6056949fbbf": {
+      "title": "Heaven",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 33,
+      "theirs": 32,
+      "path": "UPCI Music/2023/Heaven/Heaven-Chord-Chart.pdf"
+    },
+    "7711fb19-2e29-597e-a0ad-498b59b04e9b": {
+      "title": "Our God Reigns Forever",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 103,
+      "theirs": 91,
+      "path": "UPCI Music/2022/Our God Reigns Forever/Our-God-Reings-Forever-Chord-Chart.pdf"
+    },
+    "7813d4cc-b2d0-5e13-ae5b-24802de4f989": {
+      "title": "When You Believe",
+      "coverage": 0.88,
+      "agreement": 0.9,
+      "ours": 99,
+      "theirs": 101,
+      "path": "UPCI Music/2020/When You Believe/When-You-Bellieve-Chord-Chart.pdf"
+    },
+    "781aa4fa-351a-5aa4-97d2-c6e627a6b134": {
+      "title": "Open the Heavens",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 35,
+      "theirs": 35,
+      "path": "UPCI Music/2019/Open the Heavens/Open-the-Heavens-Chord-Chart.pdf"
+    },
+    "792d5e96-f186-5ef9-811c-b6e95c785ee5": {
+      "title": "Death, Hell + The Grave",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 34,
+      "theirs": 34,
+      "path": "UPCI Music/2023/Death Hell + The Grave/Death-Hell-The-Grave-Chord-Chart.pdf"
+    },
+    "797f3f53-59a8-558b-b430-9d3eacc62dd4": {
+      "title": "God of the Empty Grave",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 46,
+      "theirs": 41,
+      "path": "UPCI Music/2024/God of the Empty Grave/God-of-the-Empty-Grave-Chord-Chart.pdf"
+    },
+    "7a271e1d-c216-5f23-aa66-77d134832a86": {
+      "title": "Never Go A Day",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 25,
+      "theirs": 25,
+      "path": "UPCI Music/2016/Never Go a Day/Never-Go-A-Day-chord-chart.pdf"
+    },
+    "7b40cb2e-b190-5c72-8314-8052b00c0222": {
+      "title": "Thankful",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 39,
+      "theirs": 20,
+      "path": "UPCI Music/2023/Thankful/Thankful-Chord-Chart.pdf"
+    },
+    "7b5765b8-28b6-5c1c-9acf-d203097bb22e": {
+      "title": "Isn’t the Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 47,
+      "theirs": 47,
+      "path": "UPCI Music/2016/Isn't the Name/Isnt-the-Name-Chord-Chart.pdf"
+    },
+    "7c212689-5922-524d-af38-cd2f1f41a1c2": {
+      "title": "Unspeakable Joy",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 59,
+      "theirs": 21,
+      "path": "UPCI Music/2016/Unspeakable Joy/Unspeakable-Joy-chord-chart.pdf"
+    },
+    "7ea0a5c1-3086-59e1-abf0-e9b31a1504d1": {
+      "title": "In Control",
+      "coverage": 0.91,
+      "agreement": 0.91,
+      "ours": 51,
+      "theirs": 46,
+      "path": "UPCI Music/2020/In Control/In-Control-Chord-Chart.pdf"
+    },
+    "7f502b59-bfc8-5be1-bf23-8b2cd5bf6b36": {
+      "title": "This is a Move",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 31,
+      "theirs": 8,
+      "path": "UPCI Music/2019/This is a Move/This-is-a-Move-Chord-Chart.pdf"
+    },
+    "805819f8-35a9-55f1-bf9b-b0d357690a7c": {
+      "title": "He’s Worthy",
+      "coverage": 0.93,
+      "agreement": 0.93,
+      "ours": 71,
+      "theirs": 59,
+      "path": "UPCI Music/2019/He's Worthy/Hes-Worthy-Chord-Chart.pdf"
+    },
+    "8199ce65-9e12-549d-825a-ea35c3214964": {
+      "title": "How I Need You",
+      "coverage": 0.87,
+      "agreement": 0.87,
+      "ours": 36,
+      "theirs": 30,
+      "path": "UPCI Music/2021/How I Need You/How-I-Need-You-Chord-Chart.pdf"
+    },
+    "82c3b564-295f-5d55-8886-7fe3c518f038": {
+      "title": "I Got Out",
+      "coverage": 0.92,
+      "agreement": 0.92,
+      "ours": 40,
+      "theirs": 26,
+      "path": "UPCI Music/I Got Out/I Got Out - Chord Chart.pdf"
+    },
+    "841d22bb-57be-50a7-8fd8-6370fe5ad7c6": {
+      "title": "I’ll Sing About Jesus",
+      "coverage": 0.99,
+      "agreement": 0.99,
+      "ours": 93,
+      "theirs": 93,
+      "path": "UPCI Music/2024/I'll Sing About Jesus/Ill-Sing-About-Jesus-Chord-Chart.pdf"
+    },
+    "8816928c-02b2-559a-8cee-db0961f640e6": {
+      "title": "I Give You Glory",
+      "coverage": 0.88,
+      "agreement": 0.88,
+      "ours": 56,
+      "theirs": 24,
+      "path": "UPCI Music/I Give You Glory/I Give You Glory - Chord Chart.pdf"
+    },
+    "893a0ae4-cd9b-5373-89c6-0370488756fb": {
+      "title": "Breakthrough",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 23,
+      "theirs": 23,
+      "path": "UPCI Music/2016/Breakthrough/Breakthrough-Chord-Chart.pdf"
+    },
+    "8984dfda-01cf-5849-8958-8cd439a2aacd": {
+      "title": "You’re Doing it All Again",
+      "coverage": 0.86,
+      "agreement": 0.92,
+      "ours": 84,
+      "theirs": 90,
+      "path": "UPCI Music/2019/You're Doing It All Again/Youre-Doing-it-All-Again-Chord-Chart.pdf"
+    },
+    "89bb560c-5383-525f-a567-263e195c9e27": {
+      "title": "My Help",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 36,
+      "theirs": 36,
+      "path": "UPCI Music/2016/My Help/My-Help-Chord-Chart-.pdf"
+    },
+    "8ec67746-e266-5dd2-bddc-0479b3334f15": {
+      "title": "Noel, Christ is Born",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 93,
+      "theirs": 55,
+      "path": "UPCI Music/2016/Noel Christ is Born/Noel-Christ-is-Born-chord-chart.pdf"
+    },
+    "8f7dcf6d-d172-546e-bf62-65655043484b": {
+      "title": "Speak Your Name",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 40,
+      "theirs": 38,
+      "path": "UPCI Music/2024/Speak the Name/Speak-Your-Name-Chord-Chart.pdf"
+    },
+    "95b11dbd-fbf5-5b5a-9d48-8a1db17a393c": {
+      "title": "Tell of Your Glory",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 59,
+      "theirs": 56,
+      "path": "UPCI Music/2020/Tell of Your Glory/Tell-of-Your-Glory-Chord-Chart.pdf"
+    },
+    "9696ae41-56ac-5120-a39b-7db2e1653104": {
+      "title": "Hallelujah, Jesus Reigns",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 69,
+      "theirs": 37,
+      "path": "UPCI Music/2021/Hallelujah Jesus Reigns/Hallelujah-Jesus-Reigns-Chord-Chart.pdf"
+    },
+    "96aca06c-554a-56fc-aa90-b200f0cc21cb": {
+      "title": "Rain",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 26,
+      "theirs": 26,
+      "path": "UPCI Music/Rain/Rain - Chord Chart.pdf"
+    },
+    "974fd7c8-ab42-582b-be3b-6b71ef1d0a45": {
+      "title": "Nothing But The Blood",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 73,
+      "theirs": 73,
+      "path": "UPCI Music/2016/Nothing But the Blood/Nothing-but-the-blood-chord-chart.pdf"
+    },
+    "9b25b017-6e3b-54a4-adba-a94de5f3936d": {
+      "title": "Emmanuel",
+      "coverage": 0.91,
+      "agreement": 0.91,
+      "ours": 48,
+      "theirs": 47,
+      "path": "UPCI Music/2020/Emmanuel/Emmanuel-Chord-Chart.pdf"
+    },
+    "9b2e38de-293a-502a-bd6d-7fed314a433f": {
+      "title": "Same God",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 15,
+      "theirs": 15,
+      "path": "UPCI Music/2022/Same God (Elevation Worship)/Same-God-Chord-Chart.pdf"
+    },
+    "9c883db2-8aa6-5d4c-948a-16d014642cb2": {
+      "title": "Living Sacrifice",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 13,
+      "theirs": 10,
+      "path": "UPCI Music/Living Sacrifice/Living Sacrifice - Chord Chart.pdf"
+    },
+    "9e88fd98-70c5-587b-a2ed-85c9514db90d": {
+      "title": "How Great",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 32,
+      "theirs": 32,
+      "path": "UPCI Music/How Great/How Great - Chord Chart.pdf"
+    },
+    "9ee03f4e-962e-56b8-a902-f7cb700077f3": {
+      "title": "When I Shout / Testify",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 43,
+      "theirs": 43,
+      "path": "UPCI Music/2021/When I Shout_Testify/When-I-Shout_Testify-Chord-Chart.pdf"
+    },
+    "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47": {
+      "title": "Lord, You Reign",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 39,
+      "theirs": 31,
+      "path": "UPCI Music/2016/Lord You Reign/Lord-You-Reign-Chord-Chart.pdf"
+    },
+    "a0b1fb0c-4c6d-5a36-83b3-5ecbc01ee62a": {
+      "title": "I Trust In You",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 65,
+      "theirs": 65,
+      "path": "UPCI Music/2023/I Trust in You/I-Trust-In-You-Chord-Chart-.pdf"
+    },
+    "a12f59ed-9c97-5da7-9d21-b4362b66569d": {
+      "title": "Still Everything",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 44,
+      "theirs": 41,
+      "path": "UPCI Music/2022/Still Everything/Still-Everything-Chord-Chart.pdf"
+    },
+    "a2f911a4-d14a-5caa-8be0-e61a04657310": {
+      "title": "Bless the Lord",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 47,
+      "theirs": 47,
+      "path": "UPCI Music/2020/Bless The Lord/Bless-the-Lord-Chord-Chart.pdf"
+    },
+    "a4104848-5195-5afa-8018-ae233a35e9dd": {
+      "title": "Only One",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 126,
+      "theirs": 97,
+      "path": "UPCI Music/2020/Only One/Only-One-Chord-Chart.pdf"
+    },
+    "a4cac43f-0fd2-582e-ae13-6193f127419d": {
+      "title": "Wait on the Lord",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 36,
+      "theirs": 36,
+      "path": "UPCI Music/2019/Wait on the Lord/Wait-on-the-Lord-Chord-Chart.pdf"
+    },
+    "a503d79d-13a2-54a2-958c-381767a3e629": {
+      "title": "We Want You",
+      "coverage": 0.91,
+      "agreement": 0.91,
+      "ours": 95,
+      "theirs": 95,
+      "path": "UPCI Music/2019/We Want You/We-Want-You-Chord-Chart.pdf"
+    },
+    "a625dd46-7b26-52cf-a107-43a46150a4d4": {
+      "title": "Jesus Our Victory",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 24,
+      "theirs": 9,
+      "path": "UPCI Music/2023/Jesus Our Victory/Jesus-Our-Victory-Chord-Chart.pdf"
+    },
+    "ab853e6c-1ab3-508b-b333-e0ddb4c7f6f2": {
+      "title": "Have Your Way",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 62,
+      "theirs": 62,
+      "path": "UPCI Music/2021/Have Your Way - Draylin Young/Have-Your-Way-Chord-Chart-Draylin.pdf"
+    },
+    "ac40022a-637c-5e90-9452-a80127637d27": {
+      "title": "Breakout",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 26,
+      "theirs": 26,
+      "path": "UPCI Music/2021/Breakout/Breakout-Chord-Chart.pdf"
+    },
+    "acefcf6c-a8d1-5eb5-8675-3d558e0040fc": {
+      "title": "Jesus",
+      "coverage": 0.86,
+      "agreement": 1,
+      "ours": 24,
+      "theirs": 28,
+      "path": "UPCI Music/2024/Jesus/Jesus-Chord-Chart-.pdf"
+    },
+    "ad2aa396-89bb-5f8c-a48d-0644dec4df56": {
+      "title": "Speak The Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 87,
+      "theirs": 82,
+      "path": "UPCI Music/2023/Speak the Name/Speak-The-Name-Chord-Chart.pdf"
+    },
+    "adbd27e9-f990-522c-a383-402111f1f0e0": {
+      "title": "Who You Say I Am",
+      "coverage": 0.84,
+      "agreement": 0.84,
+      "ours": 40,
+      "theirs": 38,
+      "path": "UPCI Music/Who You Say I Am/Who You Say I Am - Chord Chart.pdf"
+    },
+    "adcde7eb-5532-5b7d-9d42-23dc98eaedd4": {
+      "title": "This Dwelling Place",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 80,
+      "theirs": 80,
+      "path": "UPCI Music/2020/This Dwelling Place/This-Dwelling-Place-Chord-Chart.pdf"
+    },
+    "afaa8ce9-5569-52ba-8b05-8e50c8425a62": {
+      "title": "Joy",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 48,
+      "theirs": 38,
+      "path": "UPCI Music/2023/Joy/Joy-Chord-Chart.pdf"
+    },
+    "b00a7435-440d-5b28-a000-3bbce7ef6bb6": {
+      "title": "Worthy",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 36,
+      "theirs": 31,
+      "path": "UPCI Music/2020/Worthy - Elevation Worship/Worthy-Elevation-Chord-Chart.pdf"
+    },
+    "b24fab85-8ef3-5881-80ec-f83d6cc605be": {
+      "title": "At The Name",
+      "coverage": 0.85,
+      "agreement": 0.85,
+      "ours": 64,
+      "theirs": 62,
+      "path": "UPCI Music/2023/At The Name/At-The-Name-Chord-Chart.pdf"
+    },
+    "b3ad877e-a236-5781-aa3e-8ee09365d4ef": {
+      "title": "Way Maker",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 45,
+      "theirs": 45,
+      "path": "UPCI Music/Way Maker/Way Maker - Chord Chart.pdf"
+    },
+    "b496710c-5439-5958-ba9e-f2dd3ece2a2f": {
+      "title": "Mighty Cross",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 76,
+      "theirs": 65,
+      "path": "UPCI Music/Mighty Cross/Mighty Cross - Chord Chart.pdf"
+    },
+    "b5e6842e-1150-55f4-a325-30bd06f33a74": {
+      "title": "This Is Revival",
+      "coverage": 0.89,
+      "agreement": 0.89,
+      "ours": 100,
+      "theirs": 76,
+      "path": "UPCI Music/2021/This is Revival/This-is-Revival-Chord-Chart.pdf"
+    },
+    "bb4fdf28-d3f1-5dc6-8082-fb2c15efbbb9": {
+      "title": "Awesome God",
+      "coverage": 0.88,
+      "agreement": 0.88,
+      "ours": 87,
+      "theirs": 82,
+      "path": "UPCI Music/2019/Awesome God/Awesome God - Chord Chart.pdf"
+    },
+    "bc7e5601-c07c-5eb7-9fdf-fa93e4d4ab3e": {
+      "title": "Old Rugged Cross",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 21,
+      "theirs": 17,
+      "path": "UPCI Music/2024/Old Rugged Cross/Old-Rugged-Cross-Chord-Chart-.pdf"
+    },
+    "bfb4f14c-41ce-53cd-bf56-c74ef01e8d37": {
+      "title": "Jesus Is",
+      "coverage": 0.92,
+      "agreement": 0.92,
+      "ours": 27,
+      "theirs": 24,
+      "path": "UPCI Music/Jesus Is/Jesus Is - Chord Chart.pdf"
+    },
+    "c116596f-7d5f-54f7-b82f-3e52aaaec07e": {
+      "title": "Praise",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 61,
+      "theirs": 61,
+      "path": "UPCI Music/2023/Praise/Praise-Chord-Chart.pdf"
+    },
+    "c13b7641-12ad-5f7f-a549-01679a47d6b1": {
+      "title": "Stand and Proclaim",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 26,
+      "theirs": 26,
+      "path": "UPCI Music/Stand and Proclaim/Stand and Proclaim - Chord Chart.pdf"
+    },
+    "c1c4f9b2-2386-520a-9ad7-30a7c61a8c6d": {
+      "title": "Wide as the Sky",
+      "coverage": 0.88,
+      "agreement": 0.88,
+      "ours": 37,
+      "theirs": 24,
+      "path": "UPCI Music/2019/Wide as the Sky/Wide-as-the-Sky-Chord-Chart.pdf"
+    },
+    "c1df38e9-8732-591a-ad56-20620fb76e86": {
+      "title": "The King’s House",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 37,
+      "theirs": 9,
+      "path": "UPCI Music/2016/The King's House/The-Kings-House-chord-chart.pdf"
+    },
+    "c299dc4b-d0fb-534c-83ff-674564812502": {
+      "title": "The Lord’s Prayer",
+      "coverage": 0.93,
+      "agreement": 0.93,
+      "ours": 60,
+      "theirs": 60,
+      "path": "UPCI Music/The Lord's Prayer/The Lords Prayer - Chord Chart.pdf"
+    },
+    "c3528263-5792-50ac-b8b1-7abb3d7075e8": {
+      "title": "We Want More",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 7,
+      "theirs": 7,
+      "path": "UPCI Music/2024/We Want More/We-Want-More-Chord-Chart.pdf"
+    },
+    "c3c734dc-a7fd-5d55-9e3f-b8c63acbbd20": {
+      "title": "He is More",
+      "coverage": 0.98,
+      "agreement": 0.98,
+      "ours": 54,
+      "theirs": 44,
+      "path": "UPCI Music/2016/He is More/He-is-More-Chord-Chart-.pdf"
+    },
+    "c41b24e8-1b45-53e5-a8ca-f927a7dbd0e1": {
+      "title": "King of Glory",
+      "coverage": 0.92,
+      "agreement": 0.92,
+      "ours": 75,
+      "theirs": 38,
+      "path": "UPCI Music/King of Glory/King of Glory - Chord Chart.pdf"
+    },
+    "c42b1cc2-ab39-5d7c-9348-c8b5682d6516": {
+      "title": "I’ve Witnessed It",
+      "coverage": 0.92,
+      "agreement": 1,
+      "ours": 49,
+      "theirs": 53,
+      "path": "UPCI Music/2024/I've Witnessed It/Ive-Witnessed-It-Chord-Chart.pdf"
+    },
+    "c5324a5b-c310-5e10-935d-28ba53a8b72d": {
+      "title": "Made a Way",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 114,
+      "theirs": 102,
+      "path": "UPCI Music/Made a Way/Made a Way - Chord Chart.pdf"
+    },
+    "c60d31fc-7696-521b-9d75-a5a2984df770": {
+      "title": "Angels We Have Heard (Glory Be)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 37,
+      "theirs": 31,
+      "path": "UPCI Music/2023/Angels We Have Heard/Angels-We-Have-Heard-Glory-Be-Chord-Chart.pdf"
+    },
+    "c6f4c259-6c5c-508e-a210-0a6992a27b12": {
+      "title": "Too Good to Not Believe",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 50,
+      "theirs": 50,
+      "path": "UPCI Music/2022/Too Good to Not Believe/Too-Good-to-Not-Believe-Chord-Chart.pdf"
+    },
+    "c7906674-a205-5a91-8df4-4158fcd0e992": {
+      "title": "The Sound",
+      "coverage": 0.82,
+      "agreement": 0.82,
+      "ours": 85,
+      "theirs": 85,
+      "path": "UPCI Music/2022/The Sound/The-Sound-Chord-Chart.pdf"
+    },
+    "c8178714-401f-5921-b6d2-bfb21b8b5774": {
+      "title": "Have Faith",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 25,
+      "theirs": 21,
+      "path": "UPCI Music/2023/Have Faith/Have-Faith-Chord-Chart.pdf"
+    },
+    "c851e488-794f-5dfd-8226-9cb101c49ea8": {
+      "title": "Jesus You Alone",
+      "coverage": 0.96,
+      "agreement": 0.96,
+      "ours": 49,
+      "theirs": 49,
+      "path": "UPCI Music/2019/Jesus You Alone/Jesus-You-Alone-Chord-Chart.pdf"
+    },
+    "c8b20b55-76b8-5868-9bcc-909539cc8962": {
+      "title": "Greater Works",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 17,
+      "theirs": 2,
+      "path": "UPCI Music/2020/Greater Works/Greater-Works-Chord-Chart.pdf"
+    },
+    "c90061b8-38fb-5b8e-a69a-ba7c98271d79": {
+      "title": "Worthy of it All",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 33,
+      "theirs": 33,
+      "path": "UPCI Music/2021/Worthy of it All/Worthy-of-it-All-Chord-Chart.pdf"
+    },
+    "ce1a229e-2cfb-5993-b83d-9b05c71a69f1": {
+      "title": "Be Exalted / I Exalt Thee",
+      "coverage": 0.84,
+      "agreement": 0.84,
+      "ours": 30,
+      "theirs": 19,
+      "path": "UPCI Music/2021/Be Exalted _ I Exalt Thee/Be-Exalted-Chord-Chart.pdf"
+    },
+    "cf1b7b5f-63ac-5f07-8e8f-acee3555f8cb": {
+      "title": "That’s My King",
+      "coverage": 0.83,
+      "agreement": 0.83,
+      "ours": 43,
+      "theirs": 40,
+      "path": "UPCI Music/2024/That's My King/Thats-My-King-Chord-Chart.pdf"
+    },
+    "cf74a8e9-260b-5b2e-933b-da7049ef4393": {
+      "title": "Worthy of My Song (Worthy of It All)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 77,
+      "theirs": 66,
+      "path": "UPCI Music/2022/Worthy of my Song/Worthy-of-My-Song-Worthy-of-It-All-Chord-Chart.pdf"
+    },
+    "d03e2671-29f4-5d5c-9090-2d35eb6325cd": {
+      "title": "Strong Tower",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 84,
+      "theirs": 77,
+      "path": "UPCI Music/2022/Strong Tower/Strong-Tower-Chord-Chart.pdf"
+    },
+    "d05a8eb6-c625-59f5-aead-492141abc7c6": {
+      "title": "Wonder",
+      "coverage": 0.99,
+      "agreement": 0.99,
+      "ours": 77,
+      "theirs": 77,
+      "path": "UPCI Music/2022/Wonder/Wonder-Chord-Chart.pdf"
+    },
+    "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e": {
+      "title": "We Worship You",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 36,
+      "theirs": 36,
+      "path": "UPCI Music/2016/We Worship You/We-Worship-You-Chord-Chart.pdf"
+    },
+    "d6282e78-4abd-565c-9729-c56cde668eae": {
+      "title": "Emmanuel (God With Us Forever)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 22,
+      "theirs": 22,
+      "path": "UPCI Music/Emmanuel (God With Us Forever)/Emmanuel - Chord Chart.pdf"
+    },
+    "d707527a-c7e3-55f6-8f1d-3c15828a7e42": {
+      "title": "Praise Break",
+      "coverage": 0.92,
+      "agreement": 0.92,
+      "ours": 42,
+      "theirs": 12,
+      "path": "UPCI Music/2021/Praise Break/Praise-Break-Chord-Chart.pdf"
+    },
+    "d8da5a61-d365-5bce-a153-2ba83cd2477f": {
+      "title": "It Is Finished",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 61,
+      "theirs": 61,
+      "path": "UPCI Music/2019/It Is Finished/It-Is-Finished-Chord-Chart.pdf"
+    },
+    "db58061e-9c10-5cd8-89e0-68c6385cc176": {
+      "title": "Glory, Honor, Power",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 6,
+      "theirs": 5,
+      "path": "UPCI Music/2023/Glory, Honor, Power/Glory-Honor-Power-Chord-Chart.pdf"
+    },
+    "ddc2bc4b-ab3f-5f69-ba0a-664163fe07bf": {
+      "title": "A Better Word",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 137,
+      "theirs": 137,
+      "path": "UPCI Music/2021/A Better Word/A-Better-Word-Chord-Chart.pdf"
+    },
+    "de6abb7c-80a7-52b0-b331-dcde9670a826": {
+      "title": "Go Tell It / Wonderful Child",
+      "coverage": 0.97,
+      "agreement": 0.97,
+      "ours": 129,
+      "theirs": 104,
+      "path": "UPCI Music/2019/Go Tell It/Go-Tell-It-Chord-Chart.pdf"
+    },
+    "deca880a-611e-5910-8630-1385c468e420": {
+      "title": "Not Afraid",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 24,
+      "theirs": 24,
+      "path": "UPCI Music/2019/Not Afraid/Not Afraid - Chord Chart.pdf"
+    },
+    "e03c7160-dcc4-5fb9-b7d4-051692983e01": {
+      "title": "Walls Come Down",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 75,
+      "theirs": 75,
+      "path": "UPCI Music/2022/Walls Come Down/Walls-Come-Down-Chord-Chart.pdf"
+    },
+    "e07d8da0-30c0-561c-a048-f3477f5c73a9": {
+      "title": "My Help",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 43,
+      "theirs": 40,
+      "path": "UPCI Music/2020/My Help/My-Help-Chord-Chart.pdf"
+    },
+    "e6a93ae4-9112-5d5a-876a-adcbf9342358": {
+      "title": "Standing",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 58,
+      "theirs": 58,
+      "path": "UPCI Music/Standing/Standing - Chord Chart.pdf"
+    },
+    "e8da128f-f715-5aa4-9b72-18d009120dd7": {
+      "title": "I Am Reminded",
+      "coverage": 0.89,
+      "agreement": 0.89,
+      "ours": 29,
+      "theirs": 28,
+      "path": "UPCI Music/I Am Reminded/I Am Reminded - Chord Chart.pdf"
+    },
+    "ec172787-f3a0-583b-aea5-71109dbc4662": {
+      "title": "Nothing Compares (You Are Good)",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 25,
+      "theirs": 24,
+      "path": "UPCI Music/2020/Nothing Compares/Nothing-Compares-You-are-Good-Chord-Chart.pdf"
+    },
+    "ed30ddd2-e5bd-567e-8863-b44cbcb249d9": {
+      "title": "We Rise",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 34,
+      "theirs": 32,
+      "path": "UPCI Music/We Rise/We Rise - Chord Chart.pdf"
+    },
+    "f2aa5a36-ba4b-5d04-b32f-183632b78dd5": {
+      "title": "Even Now",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 76,
+      "theirs": 72,
+      "path": "UPCI Music/2023/Even Now/Even-Now-Chord-Chart.pdf"
+    },
+    "f3cce458-6e09-5ef8-b9d5-4e8b1ed496f2": {
+      "title": "Yes I Will",
+      "coverage": 0.85,
+      "agreement": 0.85,
+      "ours": 41,
+      "theirs": 39,
+      "path": "UPCI Music/2019/Yes I Will/Yes I Will - Chord Chart.pdf"
+    },
+    "f46706c8-f193-5494-ab18-ebcdf08f22d4": {
+      "title": "Revival Is Waiting",
+      "coverage": 0.92,
+      "agreement": 0.92,
+      "ours": 13,
+      "theirs": 13,
+      "path": "UPCI Music/2023/Revival is Waiting/Revival-Is-Waiting-Chord-Chart.pdf"
+    },
+    "f6fa130e-712e-53ae-8263-4cf89312753c": {
+      "title": "Total Praise",
+      "coverage": 0.94,
+      "agreement": 0.94,
+      "ours": 58,
+      "theirs": 48,
+      "path": "UPCI Music/2021/Total Praise/Total-Praise-Chord-Chart.pdf"
+    },
+    "f7a459b0-93db-5fcd-bb5e-5bf5351f9934": {
+      "title": "Hosanna",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 20,
+      "theirs": 20,
+      "path": "UPCI Music/2020/Hosanna/Hosanna-Chord-Chart-Songs-for-the-Church.pdf"
+    },
+    "f9b384e0-98e0-503f-bb12-d046d8f03cea": {
+      "title": "Sound Like Heaven",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 17,
+      "theirs": 17,
+      "path": "UPCI Music/2024/Sound Like Heaven/Sound-Like-Heaven-Chord-Chart-.pdf"
+    },
+    "fb406957-cd12-5b0c-b64f-06a96cab6c01": {
+      "title": "Hallowed Be Your Name",
+      "coverage": 0.93,
+      "agreement": 0.93,
+      "ours": 97,
+      "theirs": 58,
+      "path": "UPCI Music/2019/Hallowed be Your Name/Hallowed-Be-Your-Name-Chord-Chart.pdf"
+    },
+    "fccc3080-2055-5df3-b1e9-305a9e840435": {
+      "title": "Mighty",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 33,
+      "theirs": 18,
+      "path": "UPCI Music/Mighty/Mighty - Chord Chart.pdf"
+    },
+    "fd35c467-49bd-5e61-88f1-bf7b9a29b883": {
+      "title": "One Name",
+      "coverage": 1,
+      "agreement": 1,
+      "ours": 42,
+      "theirs": 42,
+      "path": "UPCI Music/2016/One Name/One-Name-Chord-Chart-.pdf"
+    },
+    "fd3baa04-f184-578e-981c-8c82da73e73e": {
+      "title": "Be Praised",
+      "coverage": 0.82,
+      "agreement": 1,
+      "ours": 70,
+      "theirs": 85,
+      "path": "UPCI Music/2023/Be Praised/Be-Praised-Chord-Chart.pdf"
+    }
+  }
+}

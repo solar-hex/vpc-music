@@ -29,6 +29,7 @@ describe("decorate", () => {
   it("derives the same completeness the corpus build reports", () => {
     const grace = rows.find((r) => r.song.id === "s1")!;
     expect(grace.percent).toBe(songCompleteness(library[0]).percent);
+    // 100 without a year, because year is not part of the score.
     expect(grace.percent).toBe(100);
     expect(grace.missing).toEqual([]);
     expect(grace.band).toBe(completenessBand(100));
@@ -71,8 +72,8 @@ describe("filterSongs", () => {
   });
 
   it("ANDs across facets", () => {
-    // Both are in a key we asked for; only one of them is also missing a year.
-    const out = filterSongs(rows, { ...EMPTY_FILTER, keys: ["G", "E"], missing: ["year"] });
+    // Both are in a key we asked for; only one of them carries that theme.
+    const out = filterSongs(rows, { ...EMPTY_FILTER, keys: ["G", "E"], themes: ["faith-trust"] });
     expect(out.map((r) => r.song.id)).toEqual(["s2"]);
   });
 
@@ -171,7 +172,9 @@ describe("libraryStats", () => {
     expect(stats.labels).toBe(5); // s3 carries two
     expect(stats.ready).toBe(2); // title AND artist
     expect(stats.coverage.find((c) => c.id === "artist")).toMatchObject({ have: 2, missing: 3 });
-    expect(stats.coverage.find((c) => c.id === "year")).toMatchObject({ have: 1, missing: 4 });
+    expect(stats.coverage.find((c) => c.id === "tags")).toMatchObject({ have: 4, missing: 1 });
+    // Year is not scored at all — it is unobtainable for this library.
+    expect(stats.coverage.find((c) => c.id === "year")).toBeUndefined();
   });
 
   it("reports a median, not a mean — one perfect song must not flatter the rest", () => {

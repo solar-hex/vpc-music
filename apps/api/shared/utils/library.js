@@ -110,14 +110,20 @@ export function themeLabel(id) {
  * Weighted because not all metadata is equally useful for finding a song.
  * Title + artist = 60: those are the two the church named as essential — you
  * search for a song by what it is called and who sings it.
+ *
+ * NO YEAR. It was worth 5 here, and 888 of 889 songs have none — the legacy
+ * library records a year for exactly one song (Amazing Grace, 1779) and there
+ * is no source for the rest. A field nobody can fill docks every song five
+ * points forever, which makes the whole score read five points too harsh and
+ * puts a permanent "needs year" on every row. A measure of what is worth doing
+ * should not include what cannot be done.
  */
 export const COMPLETENESS_FIELDS = [
   { id: "title", label: "Title", weight: 30, essential: true },
-  { id: "artist", label: "Artist", weight: 30, essential: true },
+  { id: "artist", label: "Artist", weight: 35, essential: true },
   { id: "key", label: "Key", weight: 15, essential: false },
   { id: "tempo", label: "Tempo", weight: 10, essential: false },
   { id: "tags", label: "Tags", weight: 10, essential: false },
-  { id: "year", label: "Year", weight: 5, essential: false },
 ];
 
 function isPresent(field, song) {

@@ -13,12 +13,13 @@
  *   pnpm corpus:verify [--tree <path>] [--limit <n>]
  */
 import { existsSync, readdirSync } from "node:fs";
-import { readFile, readdir } from "node:fs/promises";
-import { basename, dirname, join, resolve } from "node:path";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { convertPdfChartToChordPro } from "../apps/api/src/corpus/pdfSong.js";
 import { convertTextChartToChordPro } from "../apps/api/src/corpus/textChart.js";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
+import { deterministicSongId, normalizeRelativePath } from "../apps/api/src/corpus/identity.js";
 import {
   compareSequences,
   numberSequenceFromChordPro,
@@ -69,10 +70,17 @@ async function findPairs(tree) {
 }
 
 /**
- * Compare every chord chart with the number chart beside it.
- * Independent of the text oracle, and ~13x more songs.
+ * The bar a chart must clear to stop being a draft.
+ *
+ * Coverage is how much of what the publisher wrote we found. At 0.8 the chart
+ * we extracted contains at least four fifths of the chords on the publisher's
+ * own number chart, in the right order — which is a stronger check than a
+ * person glancing at it, and it is the publisher disagreeing with us, not us
+ * marking our own homework.
  */
-async function runNashville(tree, limit) {
+export const VERIFIED_COVERAGE = 0.8;
+
+async function runNashville(tree, limit, { write = false, corpusRoot = null } = {}) {
   const pairs = new Map();
   (function walk(dir) {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -97,7 +105,14 @@ async function runNashville(tree, limit) {
       if (!theirs || theirs.length === 0) { rows.push({ title: chart.title, skip: "number chart has no text" }); continue; }
       if (!chart.metadata.key) { rows.push({ title: chart.title, skip: "no key read from the chord chart" }); continue; }
       const ours = numberSequenceFromChordPro(chart.chordProContent, chart.metadata.key);
-      rows.push({ title: chart.title, key: chart.metadata.key, ...compareSequences(ours, theirs) });
+      const relativePath = normalizeRelativePath(relative(tree, pair.chord));
+      rows.push({
+        title: chart.title,
+        key: chart.metadata.key,
+        songId: deterministicSongId(relativePath),
+        path: relativePath,
+        ...compareSequences(ours, theirs),
+      });
     } catch (error) {
       rows.push({ title: basename(pair.chord), skip: error.message });
     }
@@ -126,6 +141,43 @@ async function runNashville(tree, limit) {
     console.log(`skipped ${skipped.length}: ${Object.entries(why).map(([k, v]) => `${v} ${k}`).join(", ")}`);
   }
   console.log("");
+  if (write) {
+    /*
+     * The ledger the build reads. A chart that agrees with the publisher's own
+     * number chart is not a guess, so it should not sit in the library as an
+     * unreviewed draft — this is what lets `corpus:build` say so.
+     *
+     * Committed and keyed by song id, so the decision is reviewable in a diff
+     * and survives a machine with no legacy tree.
+     */
+    const verified = {};
+    for (const r of scored) {
+      if (r.coverage < VERIFIED_COVERAGE) continue;
+      verified[r.songId] = {
+        title: r.title,
+        coverage: Math.round(r.coverage * 100) / 100,
+        agreement: Math.round(r.score * 100) / 100,
+        ours: r.ours,
+        theirs: r.theirs,
+        path: r.path,
+      };
+    }
+    const out = {
+      version: 1,
+      method: "number-chart",
+      threshold: VERIFIED_COVERAGE,
+      note: "Each chart below was compared with the publisher's own Nashville number chart.",
+      songs: Object.fromEntries(Object.entries(verified).sort(([a], [b]) => a.localeCompare(b))),
+    };
+    const file = join(corpusRoot ?? join(repoRoot, "corpus"), "verified.json");
+    await mkdir(dirname(file), { recursive: true });
+    await writeFile(file, `${JSON.stringify(out, null, 2)}
+`, "utf8");
+    console.log("");
+    console.log(`Wrote ${Object.keys(verified).length} verified chart(s) to ${file}`);
+    console.log("Re-run `pnpm corpus:build --source pdf` to take them out of draft.");
+  }
+
   console.log("Coverage is how much of what the publisher wrote we found.");
   console.log("Low coverage means chords were missed; a low agreement with high");
   console.log("coverage would mean the key we read is wrong.");
@@ -142,7 +194,10 @@ async function runCli() {
 
   if (argv.includes("--nashville")) {
     const limit = arg("--limit", null);
-    await runNashville(tree, limit ? Number(limit) : null);
+    await runNashville(tree, limit ? Number(limit) : null, {
+      write: argv.includes("--write"),
+      corpusRoot: arg("--corpus", null),
+    });
     return;
   }
 

@@ -16,8 +16,14 @@ import { assembleLines, detectColumns } from "../features/songs/pdfToChordPro.js
 import { coalesceRuns } from "./pdfSong.js";
 import { extractPdfElements } from "./pdfTextLocal.js";
 
-/** `1`, `4`, `6m`, `b7`, `5/7`, `2m7` — the notation these charts use. */
-export const NASHVILLE_TOKEN = /^[b#]?[1-7](?:m|maj|min|dim|aug|sus[24]?|add)?[0-9]*(?:\/[b#]?[1-7])?$/;
+/**
+ * `1`, `4`, `6m`, `b7`, `5/7`, `2m7` — the notation these charts use.
+ *
+ * At most two digits of extension. Real extensions are 7, 9, 11 and 13; an
+ * unbounded `[0-9]*` also matched "2026", so a bare year printed on its own
+ * line read as a chord and joined the publisher's sequence.
+ */
+export const NASHVILLE_TOKEN = /^[b#]?[1-7](?:m|maj|min|dim|aug|sus[24]?|add)?[0-9]{0,2}(?:\/[b#]?[1-7])?$/;
 
 export function isNashvilleToken(token) {
   return NASHVILLE_TOKEN.test(String(token).trim());

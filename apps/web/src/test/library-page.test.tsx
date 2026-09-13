@@ -56,7 +56,9 @@ describe("LibraryPage", () => {
     // 2 of 4 have an artist; 1 of 4 has a year.
     // The actionable number is what is LEFT, not what is covered.
     expect(screen.getByRole("button", { name: /Artist/ })).toHaveTextContent("2 to go");
-    expect(screen.getByRole("button", { name: /Year/ })).toHaveTextContent("3 to go");
+    // Year is deliberately not scored: 888 of 889 songs will never have one, so
+    // it only ever docked every song five points and asked for the impossible.
+    expect(screen.queryByRole("button", { name: /Year/ })).not.toBeInTheDocument();
     // Two of four carry both a title and an artist, so only two are findable by name.
     expect(screen.getByText("title + artist").previousSibling).toHaveTextContent("2");
     expect(screen.getByText("songs").previousSibling).toHaveTextContent("4");
@@ -68,7 +70,6 @@ describe("LibraryPage", () => {
     // A percentage tells you a song is unfinished; this tells you what to do.
     expect(rowLink("Holy Ghost")).toHaveTextContent("needs");
     expect(rowLink("Holy Ghost")).toHaveTextContent("artist");
-    expect(rowLink("Holy Ghost")).toHaveTextContent("year");
     // Amazing Grace has every field, so it asks for nothing.
     expect(rowLink("Amazing Grace")).not.toHaveTextContent("needs");
   });
@@ -130,7 +131,8 @@ describe("LibraryPage", () => {
     await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
     const titles = screen.getAllByRole("link").map((link) => link.textContent || "").filter((text) => /Grace|Maker|Ghost|Blood/.test(text));
     expect(titles[0]).toContain("Nothing But The Blood");
-    expect(titles[titles.length - 1]).toContain("Amazing Grace");
+    // Amazing Grace and Way Maker are both complete now, so the tie breaks A-Z.
+    expect(titles[titles.length - 1]).toContain("Way Maker");
     expect(rowLink("Amazing Grace")).toHaveAttribute("href", "/songs/s1");
   });
 });

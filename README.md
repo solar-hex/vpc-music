@@ -113,6 +113,7 @@ pnpm corpus:stats                          # coverage, themes, completeness
 pnpm corpus:reader                         # dist/songbook.html — one offline file
 pnpm gap:report                            # what the church wants that we do not have
 pnpm gap:resolve                           # "probably here under another name" → aliases
+pnpm corpus:verify --nashville [--write]   # check charts against the publisher's numbers
 ```
 
 A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git diff` only ever shows real content changes. Run metadata goes to the gitignored report, never into a committed file.
@@ -137,6 +138,27 @@ a percentage. It reads the copy of the library already on the device, so it work
 and costs no endpoint, and the derivation is shared (`shared/utils/library.js`) so the
 percentages on screen are the percentages the build reports. Filters live in the URL:
 `/library?missing=artist&key=Bb&sort=needsWork`.
+
+### How a chart stops being a draft
+
+Every PDF lands as a draft, because geometry placed its chords rather than a
+person. But every UPCI song ships a **number chart** — the same document with the
+chords written as Nashville numbers — so converting our extracted chart to
+Nashville and comparing gives an independent check we did not author.
+
+```
+pnpm corpus:verify --nashville --write     # writes corpus/verified.json
+pnpm corpus:build --source pdf --tree <path>
+```
+
+181 of 250 charts reach 80% coverage of what the publisher wrote, in order. Those
+come out of draft and carry `{x_verified: number chart, 92% of 105 chords}` so the
+reason travels with the chart. The rest stay drafts. Coverage is reported against
+**both** counts, never the shorter sequence — scoring against the shorter one once
+reported 100% agreement for 4 chords found out of 145.
+
+A song with no chords at all is not a draft — it is a finished lyrics sheet — and
+is labelled `status = missing_chords` instead.
 
 ### What is still missing
 

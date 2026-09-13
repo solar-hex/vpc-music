@@ -42,13 +42,13 @@
       "songId": "03e05277-b261-5138-bff6-e0649bc9cea8",
       "title": "Your Great Name",
       "file": "songs/pdf/your-great-name--03e05277.chopro",
-      "contentSha256": "3fa81953c471edd51fe59b02bdd49c69d3f4911b42cbafcc3018464b1e89e756",
+      "contentSha256": "5a5e12d24ede546ffdac7c61ed1bf61f6e1b1fda6e8949d2418ae0b575ab2f9f",
       "metadata": {
         "key": "Bb",
         "artist": "Todd Dulaney",
         "year": null,
         "tempo": 103,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -75,13 +75,13 @@
       "songId": "04aff341-f649-5152-89ec-8710b3d8a587",
       "title": "Have Your Way",
       "file": "songs/pdf/have-your-way--04aff341.chopro",
-      "contentSha256": "f0ba74a50a13a16f2ed2d1d0b69ac2d65a2380ae4073c80f8786657e81d4af62",
+      "contentSha256": "e91ae70f688e7102ff135192f1ef97f659f3c035d52fcfe079d7c1d0071ea0c3",
       "metadata": {
         "key": "A",
         "artist": "J.J. Hairston",
         "year": null,
         "tempo": 57,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "altar",
@@ -108,13 +108,13 @@
       "songId": "064b864b-c49d-577b-b063-36a5c56a9c17",
       "title": "Hallelujah He is Here",
       "file": "songs/pdf/hallelujah-he-is-here--064b864b.chopro",
-      "contentSha256": "3757b8925854d92126b8ce63ec131b5cc6f04cdfa86aff7622c0e1dcadcaf1de",
+      "contentSha256": "ca2af22f5886919b3d39d7225770a7046a6bfdfdc04a4686267e71bb33d9b23f",
       "metadata": {
         "key": "D",
         "artist": null,
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -144,13 +144,13 @@
       "songId": "0668ad20-0af6-57d7-932c-590fa712f765",
       "title": "Trusting For A Miracle",
       "file": "songs/pdf/trusting-for-a-miracle--0668ad20.chopro",
-      "contentSha256": "654bac7920ea7851373317c62b80d59fc9cbe18ed8a9bca4b46691fdd43b9e23",
+      "contentSha256": "f9b2ec5b4e88b457d92a40a2a7d9240cb12d9894feb70065616b7c2134baccef",
       "metadata": {
         "key": "F",
         "artist": null,
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -178,13 +178,13 @@
       "songId": "079cb79d-3e5f-5226-b2a5-a336ae409836",
       "title": "Ancient of Days",
       "file": "songs/pdf/ancient-of-days--079cb79d.chopro",
-      "contentSha256": "da9be17440e866e145b43087e35dabd115af1a1e7300d614888c27080467e4bd",
+      "contentSha256": "104bee90bb7c909ac0f19c34969d7032389d73ae277a7699716f405f8ad41a75",
       "metadata": {
         "key": "B",
         "artist": "Darren Thomas & The Movement",
         "year": null,
         "tempo": 110,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -214,13 +214,13 @@
       "songId": "088178b0-7dcb-56c4-a093-0a0c9c909411",
       "title": "He Shall Reign Forevermore",
       "file": "songs/pdf/he-shall-reign-forevermore--088178b0.chopro",
-      "contentSha256": "5eb4214a25f09f4df2e10ff53a39aed736a7573a2f2d933916156a471f798490",
+      "contentSha256": "88ae49babe79bb8ac9272460acd8430c3ef4b93c88dffbab42739296bac439f4",
       "metadata": {
         "key": "Bb",
         "artist": "Christ Tomlin",
         "year": null,
         "tempo": 122,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas"
@@ -245,13 +245,13 @@
       "songId": "09410ae5-3e4d-5238-8d1a-188cda6b5f4b",
       "title": "Somebody Give Him Some Praise",
       "file": "songs/pdf/somebody-give-him-some-praise--09410ae5.chopro",
-      "contentSha256": "dbcf08de17d2c699e4bbafc7a4a92d5c44d6c344af4543f24ed2df5d3a8845b1",
+      "contentSha256": "b2a2338264a6e0d4b91fe2ec9bdae594197011e2c0b62a9b5ad5c9ec2a891b79",
       "metadata": {
         "key": "F",
         "artist": "The Chandlers",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -371,13 +371,13 @@
       "songId": "0d8abc76-cd81-5fa7-aa0e-3ed521dd9653",
       "title": "Not The Same",
       "file": "songs/pdf/not-the-same--0d8abc76.chopro",
-      "contentSha256": "7c214d467d1108a182b4e6267524902e5495cf583801125366951062573eb66f",
+      "contentSha256": "969c1675d9f3f8c026de2594b420c7446bd701b83b51fa6cbaadf676117ff1b6",
       "metadata": {
         "key": "C#",
         "artist": "Jeff Walthall",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "cross",
@@ -441,13 +441,13 @@
       "songId": "0ecce571-6c19-58e7-a545-db507ecac921",
       "title": "O Come Emmanuel",
       "file": "songs/pdf/o-come-emmanuel--0ecce571.chopro",
-      "contentSha256": "d825d1a9f3bcd909c917ff2442a8a7ab94ccc5a3b783d6fd870893798e2c9017",
+      "contentSha256": "cdf6e88c465832f765d7845a537abc8422d491b6369491b5f05c1f25b1c7e313",
       "metadata": {
         "key": "C",
         "artist": null,
         "year": null,
         "tempo": 140,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -480,13 +480,13 @@
       "songId": "11cbe69a-235b-5206-aa68-3e277a6e96b0",
       "title": "Christmas Day",
       "file": "songs/pdf/christmas-day--11cbe69a.chopro",
-      "contentSha256": "a0a39c31de90387557121227a7828060e507d571cd23817570f5e89266bc3ff8",
+      "contentSha256": "6a341ae487b73a08b22ffc0b81c7bc8618eb8cbdac79fe421353af2abece0c1d",
       "metadata": {
         "key": "Bb",
         "artist": "Chris Tomlin",
         "year": null,
         "tempo": 105,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -513,13 +513,13 @@
       "songId": "13158aa5-b55b-5357-9687-d8ac0984ed76",
       "title": "Excellent",
       "file": "songs/pdf/excellent--13158aa5.chopro",
-      "contentSha256": "ab515d35a1bd85ad39d0e7c27f3def9e9f4d5cb932123dc2e99671de1de2207a",
+      "contentSha256": "faed05b3431c2c9fc92c4215abe7916590c5314abc6f9461aaf62d2246f79412",
       "metadata": {
         "key": "Eb",
         "artist": null,
         "year": null,
         "tempo": 49,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -544,13 +544,13 @@
       "songId": "136d5f1f-01ac-5f73-9c0f-89295073114d",
       "title": "All To You",
       "file": "songs/pdf/all-to-you--136d5f1f.chopro",
-      "contentSha256": "6257ee6130930180edae68cf4dffe111327f8d6742c3373b43dcdb094a7b8094",
+      "contentSha256": "d894ce9894dc6be3602a97200846bdf773af1580a4fb0f64c268dad1224bc607",
       "metadata": {
         "key": "D",
         "artist": "Bryan Pound",
         "year": null,
         "tempo": 120,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "altar"
@@ -644,13 +644,13 @@
       "songId": "191bfbd4-5e80-5624-8959-249454765908",
       "title": "All Things",
       "file": "songs/pdf/all-things--191bfbd4.chopro",
-      "contentSha256": "2c5d48b7335168c37f4bcc1d2eed6329edc5a6643fa127dc8d015e277b2d710c",
+      "contentSha256": "77c8c19dd95734c1561804d943ced30c4eb99a7dffc5aa1b35061bb27c8f45b0",
       "metadata": {
         "key": "G",
         "artist": "David & Nicole Binion",
         "year": null,
         "tempo": 69,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy"
@@ -675,13 +675,13 @@
       "songId": "1978bb8e-ea2b-5814-b1c2-7687abf1dfad",
       "title": "Order My Steps",
       "file": "songs/pdf/order-my-steps--1978bb8e.chopro",
-      "contentSha256": "a38bcb8ad4efbe3d4a3bec77d05a3d1cf8f2b7a3318c29846271341e58561b9c",
+      "contentSha256": "91c0841944a84ab9b68dec0c71d0f9f0420088d52f571e8b1678db2a9cbe732a",
       "metadata": {
         "key": "Db",
         "artist": "GMWA Women of Worship",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -740,13 +740,13 @@
       "songId": "1bad7e6e-6922-5aa4-8873-359be2e6c8f2",
       "title": "One Name (Jesus)",
       "file": "songs/pdf/one-name-jesus--1bad7e6e.chopro",
-      "contentSha256": "090eed95c2d29c0b5788d82ff3af8090639f065b6b9913f25b89b6fd99a38e4b",
+      "contentSha256": "07f523dabee72da03565ddd013323b39c14a0f5ed3fdfbe04531cc52d5646ec0",
       "metadata": {
         "key": "G",
         "artist": "Naomi Raine",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -776,13 +776,13 @@
       "songId": "1c40b5dd-3494-5e31-933c-613facdbec30",
       "title": "I Will Go",
       "file": "songs/pdf/i-will-go--1c40b5dd.chopro",
-      "contentSha256": "07390753415b817c3aab90e5746ad076a3143c2034b420407dbf7255aa24128e",
+      "contentSha256": "e637c24e4917ecd22f9d299eaeaa90d8d8560495bb17ece8c9b16e8ff828ddc1",
       "metadata": {
         "key": "A",
         "artist": "Ryan Johns",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -809,13 +809,13 @@
       "songId": "1cedb452-ecdc-5d74-98ce-494844e9adfc",
       "title": "We Need the Rain",
       "file": "songs/pdf/we-need-the-rain--1cedb452.chopro",
-      "contentSha256": "28a3159a5475199b9df0d1da99dfa84b60ac7903ab5e852b65569a9871538de2",
+      "contentSha256": "439c800d67d05d00cfd4f05ff7336ffddb7f8404314496f5bff3deacdcd40301",
       "metadata": {
         "key": "Ab",
         "artist": "David Jennings",
         "year": null,
         "tempo": 145,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "revival"
@@ -840,13 +840,13 @@
       "songId": "1cee10f7-b207-5fa0-b306-f4e4bc1e701d",
       "title": "We Pray for More",
       "file": "songs/pdf/we-pray-for-more--1cee10f7.chopro",
-      "contentSha256": "c5733b4cd0fbdd4c8897c5489c1add9c1d4d2e26ae4b7fa5c1089de14db8e985",
+      "contentSha256": "60684740eb678a4810172f85f37b9e02e179f39c7b9db95d25a52813ed6fa186",
       "metadata": {
         "key": "E",
         "artist": "Ntokozo Mbambo",
         "year": null,
         "tempo": 52,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "prayer"
@@ -940,13 +940,13 @@
       "songId": "1f8e95d4-5f96-5f98-aca4-f980128fa45c",
       "title": "Divine Exchange",
       "file": "songs/pdf/divine-exchange--1f8e95d4.chopro",
-      "contentSha256": "8752a9b6144b39265679d57b4f0b314d681c8080769540f8a28a544028935a60",
+      "contentSha256": "2af208bb61f56ab9a3614ca424a734d2f673bcc51c096fd2e7c6db962fd30310",
       "metadata": {
         "key": "D",
         "artist": "Charity Gayle",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -977,13 +977,13 @@
       "songId": "1fcd6deb-efbc-578e-9fff-6a11633d3180",
       "title": "We’ve Come To Praise Him",
       "file": "songs/pdf/we-ve-come-to-praise-him--1fcd6deb.chopro",
-      "contentSha256": "6f73c18ed2b83ee465c6e63c3770d6e0cedd84ea15d87d4fe1d63e9f7e631d84",
+      "contentSha256": "296ad35aa1a61f00530c4e8a060d8737ded0358aeb1a96e34ac03c76e45b476d",
       "metadata": {
         "key": "C",
         "artist": "Mark Yandris",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -1008,13 +1008,13 @@
       "songId": "206084c5-2e13-5d3f-88e9-f51b9ceab563",
       "title": "House of Miracles",
       "file": "songs/pdf/house-of-miracles--206084c5.chopro",
-      "contentSha256": "6be5103d25a279494df2f9822302dac42746ea933be1c0e60c681e07916f7acd",
+      "contentSha256": "ec3eea647e9e45136f8ebac080d3662ead9ed694df56ec1ccfeaa0153987cc01",
       "metadata": {
         "key": "Db",
         "artist": "Brandon Lake",
         "year": null,
         "tempo": 77,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -1076,13 +1076,13 @@
       "songId": "20a52c66-9d1c-55d3-b0ba-65d2df2e69a1",
       "title": "Already Done",
       "file": "songs/pdf/already-done--20a52c66.chopro",
-      "contentSha256": "98b1ce7cd5e12ba599cc06a8380d31ec2e217a42b1fa171f5ae740dde4978d41",
+      "contentSha256": "f36ea51278fb54be9ad6d64d1d149dd1d47dbbc8821be9d777f6fed5727fcacc",
       "metadata": {
         "key": "Bb",
         "artist": "Kristen Sangary",
         "year": null,
         "tempo": 68,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -1110,13 +1110,13 @@
       "songId": "22b2df33-a210-5e70-82a5-5eee96cecc62",
       "title": "Put The Attention On Jesus",
       "file": "songs/pdf/put-the-attention-on-jesus--22b2df33.chopro",
-      "contentSha256": "1e5c6da8c737320a7361844832d5ed1c9e89b1637c645ca37cce76c7217690c8",
+      "contentSha256": "fd96f59a05e02287a3d49c41ff9e1f899009904e3b97fc1db83b03b008c1784d",
       "metadata": {
         "key": "G",
         "artist": "Todd Dulaney",
         "year": null,
         "tempo": 136,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -1204,13 +1204,13 @@
       "songId": "24dad21d-ecf6-5594-a474-9d77dc5716ea",
       "title": "Hallelujah for the Cross",
       "file": "songs/pdf/hallelujah-for-the-cross--24dad21d.chopro",
-      "contentSha256": "611d552d23e407bbbde62c5607fa6942ed977a5675f046ae89dc79a98f674fac",
+      "contentSha256": "e605b5b452eb3cdfe2c9ecc285a5c6a088d955c1f62a78401ddc7f0fe118ceac",
       "metadata": {
         "key": "D",
         "artist": "Chris McClarney",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy",
@@ -1239,13 +1239,13 @@
       "songId": "259f1624-a948-54c3-a72b-54dc83839814",
       "title": "Before The King",
       "file": "songs/pdf/before-the-king--259f1624.chopro",
-      "contentSha256": "881cf5c8d005d7a93c497a4f79bc4eefa4b88cfe299796bb9b37de63fef1829e",
+      "contentSha256": "7476b2c7e73cbae4f787a4adbeb5fb6b5c95dce58a738650d749d5a237141f2e",
       "metadata": {
         "key": "F",
         "artist": "Saddleback Worship",
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy",
@@ -1273,13 +1273,13 @@
       "songId": "28acff8e-7ba6-52d9-b104-5637454295e3",
       "title": "Battle Belongs",
       "file": "songs/pdf/battle-belongs--28acff8e.chopro",
-      "contentSha256": "8f41a57bbc7fd1aa4e83b3c40946c88883218a6aac14b3103b2f084ab8ce0b26",
+      "contentSha256": "8d1123bc35c3b1df109df67018555534258e4ac5a9e39f51251e5e4e0f87c19c",
       "metadata": {
         "key": "Db",
         "artist": "Phil Wickahm",
         "year": null,
         "tempo": 81,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -1339,13 +1339,13 @@
       "songId": "3085748a-b59e-535d-94c0-d78c0e4ce64f",
       "title": "I Speak Victory",
       "file": "songs/pdf/i-speak-victory--3085748a.chopro",
-      "contentSha256": "37d917818d6e38ccbe2e3c310fe94352ad4792207ba9ebbb9e7c1a924a4907e1",
+      "contentSha256": "45673ab33ae1aeba23dcc7e53e438830460a900a0d3a57be0b4d59da5e1dbb51",
       "metadata": {
         "key": "B",
         "artist": "Indiana Bible College (IBC)",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "name-of-jesus",
@@ -1372,13 +1372,13 @@
       "songId": "30881347-6bcb-52c0-ac1a-61fc87eb5865",
       "title": "Amen",
       "file": "songs/pdf/amen--30881347.chopro",
-      "contentSha256": "d14f3303961c0ba4c62444d35ae05cdc126e905b8be61fb2983fafa1ce22a362",
+      "contentSha256": "28892d35076c106860f3f594036db4f4a7a41a67db906d30a0573af18fe3cde0",
       "metadata": {
         "key": "D",
         "artist": "People and Songs",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -1405,13 +1405,13 @@
       "songId": "3169dd3e-2401-5b80-9979-4000c0ccf430",
       "title": "Call the Name of Jesus",
       "file": "songs/pdf/call-the-name-of-jesus--3169dd3e.chopro",
-      "contentSha256": "4217c38894e30026bc4002586e060151b58bc1a0ed164492d3f7f561c181e48f",
+      "contentSha256": "9e8b6a5c7ce1e5516496bf8cd509c17c8a9e59157d1eb8433f63db8c38af784b",
       "metadata": {
         "key": "E",
         "artist": "Amante Lacey",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "name-of-jesus",
@@ -1536,13 +1536,13 @@
       "songId": "369d8d37-8cd0-54bd-8af7-d04131804f66",
       "title": "Never Lost",
       "file": "songs/pdf/never-lost--369d8d37.chopro",
-      "contentSha256": "872ae5ecb949ca2fd87af701d9250bbd8ddbc7d16e940e4fa0d2261f2f85171c",
+      "contentSha256": "6c208d55c67b94d399ea646da10e64bcdf06d3967967ff844ba51e90ea984c1a",
       "metadata": {
         "key": "Db",
         "artist": "All Nations Worship",
         "year": null,
         "tempo": 152,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -1568,13 +1568,13 @@
       "songId": "372d20aa-aecc-5c70-8db1-953509d9fcfb",
       "title": "Worthy",
       "file": "songs/pdf/worthy--372d20aa.chopro",
-      "contentSha256": "e1365716d9591fc3656fad3da6e83aeb49719d0a027949fce7a67039e96f2fc0",
+      "contentSha256": "521047eb827bb6eaf1ae0d110def1d015e797dbfcc870ee24e3eacbc2de6ddca",
       "metadata": {
         "key": "A",
         "artist": "Urshan College",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "name-of-jesus",
@@ -1631,13 +1631,13 @@
       "songId": "3a0e68f1-9265-5ecc-83b1-81f68e409c92",
       "title": "At the Cross",
       "file": "songs/pdf/at-the-cross--3a0e68f1.chopro",
-      "contentSha256": "3b669895a202bac5c380988df5a47d5ec1f106093135eed9af62aa02e2da3421",
+      "contentSha256": "1d33b4f93c8fff2a027d3b4328f11a0f79a836c35acf2efeb3b96574569d5965",
       "metadata": {
         "key": "G",
         "artist": "Brooklyn Tabernacle Choir",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -1667,13 +1667,13 @@
       "songId": "3af1ddd3-a39e-54fc-b855-57e9596277b4",
       "title": "Your Blood",
       "file": "songs/pdf/your-blood--3af1ddd3.chopro",
-      "contentSha256": "39e424aa2b606a345fad484fc43620d8bdf3263033127662c1c7789788a33c91",
+      "contentSha256": "d89ba4928ec4d590bbe972f8461264c11dd41e7e808e6bdc7d58bde1ebbecd2e",
       "metadata": {
         "key": "A",
         "artist": "Texas Bible College (TBC)",
         "year": null,
         "tempo": 69,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -1732,13 +1732,13 @@
       "songId": "3db7cb67-5d89-5444-8ca4-2eed8df8f1fb",
       "title": "Anthem We Raise",
       "file": "songs/pdf/anthem-we-raise--3db7cb67.chopro",
-      "contentSha256": "f9567cbae711e372797e976094c125c874bc3794e3e2baaf0cf342677723a105",
+      "contentSha256": "fedcebcb8b66e05fdd232041105a8d158a9f6225966d5ea681c6b861bec9c503",
       "metadata": {
         "key": "Bb",
         "artist": "Indiana Bible College (IBC)",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -1799,13 +1799,13 @@
       "songId": "3e67e089-9d6e-5d55-8f2b-681108e631cf",
       "title": "Throne Room Song",
       "file": "songs/pdf/throne-room-song--3e67e089.chopro",
-      "contentSha256": "3fabdb332e9f382f90dde443c9fb816196961b903c99a09dcfb392e84b9e7748",
+      "contentSha256": "ae8dc2755f6667ba64332d252e0eed44097dd4491ecb1b1650c553ae2d14fde0",
       "metadata": {
         "key": "Ab",
         "artist": "People and Songs",
         "year": null,
         "tempo": 79,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -1834,13 +1834,13 @@
       "songId": "3eaaa8a7-3465-5e32-af02-916ff87b9330",
       "title": "Complete Surrender",
       "file": "songs/pdf/complete-surrender--3eaaa8a7.chopro",
-      "contentSha256": "14d9801b2d7ac9e5e4d08772f72d683d7fbdd9afab1783bd2be229612b5c4b0a",
+      "contentSha256": "672a6a990b3bd8f92ce2278df3eafbbbdbfb29138e8e8fa8dc47694fb98a195f",
       "metadata": {
         "key": "Bb",
         "artist": null,
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -1901,13 +1901,13 @@
       "songId": "41120acb-c270-5cdf-be80-57830ccd6c40",
       "title": "To Your Name",
       "file": "songs/pdf/to-your-name--41120acb.chopro",
-      "contentSha256": "2b48c8aa365f365125aa45069da3c9b159a2625ad4df43e34a7fe94f4598e306",
+      "contentSha256": "12d49c21594f184bf71cdb042dd1223f6a3de558d78b9745fd1a75b2c94d5cee",
       "metadata": {
         "key": "C",
         "artist": "Jonathan Hudoff",
         "year": null,
         "tempo": 120,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -1971,13 +1971,13 @@
       "songId": "429fc22e-024d-586a-ad23-73011d3871c9",
       "title": "Fire",
       "file": "songs/pdf/fire--429fc22e.chopro",
-      "contentSha256": "bdd7d8d74c8aa52ba1c9e021c1c6c3cee37ef6d0c3569e8e477423aab19a56cb",
+      "contentSha256": "2c62ca5f2030a822d2fc6042780013f6ce01b605143ff05a0a3d3699caa260b9",
       "metadata": {
         "key": "E",
         "artist": "CeCe Winans",
         "year": null,
         "tempo": 134,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "holy-spirit",
@@ -2005,13 +2005,13 @@
       "songId": "42c0b4fa-d974-5b60-a28e-2bac8d29bdfb",
       "title": "For My Good",
       "file": "songs/pdf/for-my-good--42c0b4fa.chopro",
-      "contentSha256": "8a4948e237deeac132ee97af3b9e6145188fb40f5914913f414291899a92b703",
+      "contentSha256": "4f17f13f86c80b83dd5cd51f35b16fa93221ebc8ffffa245ef5711fa722a3796",
       "metadata": {
         "key": "G",
         "artist": "Anthony Trimble",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2074,13 +2074,13 @@
       "songId": "4646c050-9bb1-55b4-96d1-8217503e3286",
       "title": "Free Indeed",
       "file": "songs/pdf/free-indeed--4646c050.chopro",
-      "contentSha256": "ec7d79bcaa1bf824cee45972370037041f8654f68376b2c14defeae0fdaff091",
+      "contentSha256": "a83ecc21b6d78f0ce597db39facb2cce34a50dd252c2be0edc6022b369c06887",
       "metadata": {
         "key": "E",
         "artist": "Timothy Reddick",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -2105,13 +2105,13 @@
       "songId": "49892253-9a09-51c9-97cf-e8dbe635f0ec",
       "title": "Won’t Stop Now",
       "file": "songs/pdf/won-t-stop-now--49892253.chopro",
-      "contentSha256": "9acf7d89ab770d17a2abf091d6808ae10b21283d092202821c4da3336344b20d",
+      "contentSha256": "a635844aa830397deb229f51bd7077c3d11ed2266ec104c0d7b0b0e66c8ddc09",
       "metadata": {
         "key": "A",
         "artist": "Elevation Worship",
         "year": null,
         "tempo": 122,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -2139,13 +2139,13 @@
       "songId": "4993c273-a1ea-5baf-a265-c74ca97c60b2",
       "title": "Forever Amen",
       "file": "songs/pdf/forever-amen--4993c273.chopro",
-      "contentSha256": "3e0edc75693b6d6affaa9ce4b79df6989c8951542fbb22817bd7efc4469e7e57",
+      "contentSha256": "35feb66d327cc0765543f7e64724cf57ce026b9e236de2726ddb884d228d9035",
       "metadata": {
         "key": "G",
         "artist": "Draylin Young",
         "year": null,
         "tempo": 152,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2173,13 +2173,13 @@
       "songId": "4a325f15-3c85-5498-934b-5e2081949cf7",
       "title": "I’ve Got a Reason",
       "file": "songs/pdf/i-ve-got-a-reason--4a325f15.chopro",
-      "contentSha256": "ed65c83480783e9b65325fb5c982115e6ea259bc6a44ce23aa4732a42398c95b",
+      "contentSha256": "6cb373c30710f61fcfcce1ea89eb144d7525e4730b52e3e26813eafef1fef3f9",
       "metadata": {
         "key": "F",
         "artist": "Nashville Life Music",
         "year": null,
         "tempo": 79,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2206,13 +2206,13 @@
       "songId": "4b90832c-0cfe-5d3b-bc6d-d334709e2a42",
       "title": "This Place",
       "file": "songs/pdf/this-place--4b90832c.chopro",
-      "contentSha256": "49bf2f26c02fcb6bf94fe05dfb79cefbe42d1a8cef3d6a6adaa4de0b701812f6",
+      "contentSha256": "7c112ce10382b64a91b269f67bd201dd7f0d8962017915c32fadad96ef93f99f",
       "metadata": {
         "key": "F",
         "artist": "First Pentecostal Church of North Little Rock",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -2238,13 +2238,13 @@
       "songId": "4bba84e5-a99a-57bc-b083-030c9fbe8da3",
       "title": "It Is Done",
       "file": "songs/pdf/it-is-done--4bba84e5.chopro",
-      "contentSha256": "43983b955a4256eb5ce3aedf43d58fef190760c9b6fd6d924c992938f5be6901",
+      "contentSha256": "ea2583f5c427bfc4f7c498fa0a54182b1e7b8453097217ec340f33261c4f6bef",
       "metadata": {
         "key": "E",
         "artist": "The Pentecostals of Katy (POK)",
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -2310,13 +2310,13 @@
       "songId": "4d6a6f27-b21a-552e-b18a-948bdc56d7ab",
       "title": "He Can",
       "file": "songs/pdf/he-can--4d6a6f27.chopro",
-      "contentSha256": "3cbaee29158cc385a91278211b89ed7742dc3110fa82bf2b75f22f7add783f00",
+      "contentSha256": "9d15b5df583bfb589915bf661330aa700977b44819605907d3f4fd1f30fcabdc",
       "metadata": {
         "key": "Eb",
         "artist": "Anthony Trimble",
         "year": null,
         "tempo": 76,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust"
@@ -2341,13 +2341,13 @@
       "songId": "4d7201ec-e09d-56f4-b228-34e66d321bd3",
       "title": "Greater",
       "file": "songs/pdf/greater--4d7201ec.chopro",
-      "contentSha256": "8f538abac45dca37f5f6192b8f344a6b27861a3139fcd99aa02976ec0de45ed8",
+      "contentSha256": "e4b6d44bb0eae6d9ec52168ee81d64c575af40ea09e9e96227913ae6ae8fc74f",
       "metadata": {
         "key": "G",
         "artist": "Highlands Worship",
         "year": null,
         "tempo": 112,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2373,13 +2373,13 @@
       "songId": "4d7a04d7-9d4e-514b-bdb1-ce36a804f8fb",
       "title": "For Your Glory",
       "file": "songs/pdf/for-your-glory--4d7a04d7.chopro",
-      "contentSha256": "8b20163b9e444537e06ba981c039c039ebe89254311fc4c34428130c49e8bef5",
+      "contentSha256": "7184a9a62ed6327fb03c676bf4c74ed6e9f8c97d263004cdf6d267317c512118",
       "metadata": {
         "key": "Ab",
         "artist": "Tasha Cobbs",
         "year": null,
         "tempo": 50,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy"
@@ -2404,13 +2404,13 @@
       "songId": "4d8aaf89-08b0-54c4-8f35-e412fd47efda",
       "title": "Give Me Jesus",
       "file": "songs/pdf/give-me-jesus--4d8aaf89.chopro",
-      "contentSha256": "f7bd98787e4ca48b85c5ae749efd154b7461e732341be9e80af0f8aa3a008ee0",
+      "contentSha256": "9dffe9cc32b6c66299c8d31525f5b96e1d6d72ce20e1b8889671f5e4d452a5c5",
       "metadata": {
         "key": "B",
         "artist": "James Wilson",
         "year": null,
         "tempo": 125,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven"
@@ -2435,13 +2435,13 @@
       "songId": "4dc350af-57a8-54ba-9ebc-5b60c7f04613",
       "title": "Lift Up Your Voices",
       "file": "songs/pdf/lift-up-your-voices--4dc350af.chopro",
-      "contentSha256": "0d9c77360169c5011bec1ee1004970cd3af8d77cb7727302e4c3ed28f7b5b24b",
+      "contentSha256": "9a1f28a5b3a8bea5d0ad0f403517ba5623ba943917dc06f0686f4477a1cadefd",
       "metadata": {
         "key": "A",
         "artist": "Sunday Service Choir",
         "year": null,
         "tempo": 116,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2467,13 +2467,13 @@
       "songId": "5119a6d4-1efb-5a3c-b035-f5c4074a2a82",
       "title": "God Is Here",
       "file": "songs/pdf/god-is-here--5119a6d4.chopro",
-      "contentSha256": "94ac2d159951f7ac25bc3a9e508a1a06efedbe321f48009a1bba5f87ffd1acea",
+      "contentSha256": "00e7055d32e4a3cd2cb5b8f4e3c399456deb36ec340d4bc408276e7ab0f41586",
       "metadata": {
         "key": "D",
         "artist": "Keith Pace",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -2502,13 +2502,13 @@
       "songId": "51a73012-d3e8-53c5-817b-08aa059a8b4f",
       "title": "How Great",
       "file": "songs/pdf/how-great--51a73012.chopro",
-      "contentSha256": "f29be23dec38aefcbd030ef6dd0000694f384519d2cdfad8397bfbcb16fa8f20",
+      "contentSha256": "0fd5ae6d044c65b1a0c0c90b4bb50d122ff597187afc8981543005779c547d3b",
       "metadata": {
         "key": "Eb",
         "artist": null,
         "year": null,
         "tempo": 118,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -2566,13 +2566,13 @@
       "songId": "53c4b44e-d45f-569f-9d2c-345ab8f52ec9",
       "title": "Only One Name (Jesus)",
       "file": "songs/pdf/only-one-name-jesus--53c4b44e.chopro",
-      "contentSha256": "4cfcf4aef7518fdcc5c5b3a080e081d745653648e0f39a715b5e9450e44e709f",
+      "contentSha256": "a726cf7311ddc804b3349fbbb2dddb46d420682e906c99b61f7c8cdd724c9bdf",
       "metadata": {
         "key": "B",
         "artist": "Brandon Marin",
         "year": null,
         "tempo": 87,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2598,13 +2598,13 @@
       "songId": "5685c996-e977-5df4-a81b-60e60ffe96de",
       "title": "Let’s Dance",
       "file": "songs/pdf/let-s-dance--5685c996.chopro",
-      "contentSha256": "ae52a700825851e297d93f4270ad02771622c0af3842ef66a8c6a072cef1cab7",
+      "contentSha256": "a51fa0e75c4fa303ce2940556d39f159c86f67e2ad1cad8991af4e12846588f5",
       "metadata": {
         "key": "E",
         "artist": "God's Chosen",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2632,13 +2632,13 @@
       "songId": "56a78d06-5a0e-5fb0-8ed9-98dae6df04e2",
       "title": "Greater Things",
       "file": "songs/pdf/greater-things--56a78d06.chopro",
-      "contentSha256": "1d0211a90a12aed91dc2426cafae8d7ebcd9e340155f8313f5bc3a40de3e2566",
+      "contentSha256": "b92eabc1b89ad789ec5c9a9e9cd202f846f93d7193040ba61a22866cd4558ada",
       "metadata": {
         "key": "E",
         "artist": "Faith Worship Arts",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "revival",
@@ -2665,13 +2665,13 @@
       "songId": "56ffc497-bc63-59c0-87ff-8b58cd105d5c",
       "title": "Silence the Roar",
       "file": "songs/pdf/silence-the-roar--56ffc497.chopro",
-      "contentSha256": "2c3ca639f632dcc879ca43e65c0031e406d0480397f90ff14fc0b03c0f3f84c2",
+      "contentSha256": "7d7b9be49b84f12a52de475dadf7252876a3cbee993da57664cf8c7aee98c0c7",
       "metadata": {
         "key": "A",
         "artist": "Urshan College",
         "year": null,
         "tempo": 132,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -2698,13 +2698,13 @@
       "songId": "58aa7711-d292-53ac-923e-a45554ace96a",
       "title": "Come Like The Dawn",
       "file": "songs/pdf/come-like-the-dawn--58aa7711.chopro",
-      "contentSha256": "61f704b23bc9d35eca4c9ca5db1a96121b04c9482a354515ac9993623a1b4eba",
+      "contentSha256": "109eb4f538c7cb423294126d587686ef053395e523f8e5c52f3af206aceeeded",
       "metadata": {
         "key": "C",
         "artist": "River Valley Church",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven"
@@ -2796,13 +2796,13 @@
       "songId": "5bdbf273-947f-5fe3-b6a6-d6cff4380019",
       "title": "More Than Able",
       "file": "songs/pdf/more-than-able--5bdbf273.chopro",
-      "contentSha256": "a88d53fc62d92251a8604430e20cc9f938919771698612676302766468b65b84",
+      "contentSha256": "71d99b1088b52a6f8bf3619e566a53bc54353b3ce48160bb282b7ff69ca58dd8",
       "metadata": {
         "key": "D",
         "artist": "Maverick City Music",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -2828,13 +2828,13 @@
       "songId": "5ddad45f-cadb-5fcf-94e6-a09f37381a66",
       "title": "Making Room",
       "file": "songs/pdf/making-room--5ddad45f.chopro",
-      "contentSha256": "702eca1f94aa316d4cfb69c46375012a9b1fb1e131fceb70ec5ccf41e7bd92c7",
+      "contentSha256": "bccd34ba458f06e815fdfb71dce4c876044715541b653356ea391e1a9c82ff6b",
       "metadata": {
         "key": "G",
         "artist": "David & Nicole Binion",
         "year": null,
         "tempo": 162,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -2860,13 +2860,13 @@
       "songId": "5de4ed3b-4f69-51f7-b0d1-28ef2469091a",
       "title": "A Reason to Dance",
       "file": "songs/pdf/a-reason-to-dance--5de4ed3b.chopro",
-      "contentSha256": "405744873eea9fcd80c853e882fcf5ed6bbe54408dea4d42b5d9362202b493e6",
+      "contentSha256": "44ce1872f961c16efaafbf2047f70b702d3e93c7019b904eec132d59cf054216",
       "metadata": {
         "key": "Db",
         "artist": "All Nations Worship",
         "year": null,
         "tempo": 130,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2925,13 +2925,13 @@
       "songId": "5eab1a91-9390-5551-bc6d-58284ab701ae",
       "title": "Your Name",
       "file": "songs/pdf/your-name--5eab1a91.chopro",
-      "contentSha256": "7fbcb098851d6e051e1fb756fa94b122462e51f7acd8424e94d925b21e183e0e",
+      "contentSha256": "a6b2d58e90a96259f4c6ab97dcdc9435c32b843c0ac430c77e39ba3770923798",
       "metadata": {
         "key": "A",
         "artist": null,
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -2992,13 +2992,13 @@
       "songId": "5f849300-fb5d-50b2-8c5b-1c1def492096",
       "title": "Forward",
       "file": "songs/pdf/forward--5f849300.chopro",
-      "contentSha256": "1ddef1987e9e7a4c632f612bfbe4fee0b2c8f9093ded9b8126b42716bfb9b5d6",
+      "contentSha256": "dcfc679f698a5c6e0af6c8e378c4cbaeb37c7f45eda7d4433ed348f2c6b55e58",
       "metadata": {
         "key": "Ab",
         "artist": "UPCI Music Ministry",
         "year": null,
         "tempo": 79,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood"
@@ -3023,13 +3023,13 @@
       "songId": "5f9f6191-2814-5fd9-8d0d-1f88f22b799a",
       "title": "Hands Toward Heaven",
       "file": "songs/pdf/hands-toward-heaven--5f9f6191.chopro",
-      "contentSha256": "dd359515deca90fa900496495e7455e67fdb7f4cb724d4597c16b1d78162e0d1",
+      "contentSha256": "e1718717c0978347dc8ff5b92df330843e7fc1884aa66722366a51f023c94185",
       "metadata": {
         "key": "A",
         "artist": "North Point Inside Out",
         "year": null,
         "tempo": 120,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy",
@@ -3059,13 +3059,13 @@
       "songId": "6030d2bd-1679-5d98-87f6-945393eb41a3",
       "title": "Ancient of Days",
       "file": "songs/pdf/ancient-of-days--6030d2bd.chopro",
-      "contentSha256": "a5754cc651885846e72dcb6d5d9c27df5380a86bb2a2f08f8fe6054f36bf129e",
+      "contentSha256": "08352fe15b09b86a6e2f2e680af482a0a2f4bf6ca219226b22bf4af52d757c9e",
       "metadata": {
         "key": "D",
         "artist": "Ron Kenoly",
         "year": null,
         "tempo": 88,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -3162,13 +3162,13 @@
       "songId": "6093305f-7053-5538-af63-079113a2fb80",
       "title": "Everything is Changing",
       "file": "songs/pdf/everything-is-changing--6093305f.chopro",
-      "contentSha256": "e55cba16fba113edcb3a7a2f95309d49d7967577fc3e51ec49f4fba5b02da3be",
+      "contentSha256": "4a1ab9e780f7bfff4725fb0bb1b74cae7c654475a3c0ef46ff4ed4f61691e527",
       "metadata": {
         "key": "C",
         "artist": "The Belonging Co.",
         "year": null,
         "tempo": 65,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -3197,13 +3197,13 @@
       "songId": "6207eae2-4326-559f-ae46-68d2e22e389b",
       "title": "Come Move",
       "file": "songs/pdf/come-move--6207eae2.chopro",
-      "contentSha256": "88407abba7176e8d8a062673d3654707c311dc7282a739f62a691a16120cca19",
+      "contentSha256": "a5d8a610c37f6389331456010df519a822b28e1584d8c0e9893c1710a6881bec",
       "metadata": {
         "key": "E",
         "artist": "Brittani Scott",
         "year": null,
         "tempo": 152,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "revival",
@@ -3233,13 +3233,13 @@
       "songId": "6212be94-5ed2-56af-9203-a2b2e5c65e43",
       "title": "Lead Us",
       "file": "songs/pdf/lead-us--6212be94.chopro",
-      "contentSha256": "27698652042aed462627eb6f2da309322da20c83a04ce692b1d4338ac787b868",
+      "contentSha256": "e95681f2a5008cb74cf36856b14a0fdb2b8a3c243027ef8e5fe44ffc6a421f58",
       "metadata": {
         "key": "Db",
         "artist": "Steve Richardson",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy",
@@ -3299,13 +3299,13 @@
       "songId": "6483f121-01db-5cc0-b506-66f883b12945",
       "title": "No Other Name",
       "file": "songs/pdf/no-other-name--6483f121.chopro",
-      "contentSha256": "a3647ce334f5bab9fd7c8a15c85daae273efdb5b8f8ccf8ae44392ca9ad91578",
+      "contentSha256": "148f58f5ed6d8e68ab18b2605ae6dceda208bd2e9718a0fdeb4b7cf0923aef1c",
       "metadata": {
         "key": "Bb",
         "artist": "Mark Yandris",
         "year": null,
         "tempo": 110,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "baptism",
@@ -3333,13 +3333,13 @@
       "songId": "6527f0c3-c4d5-579d-866c-c10b15842e65",
       "title": "Glory",
       "file": "songs/pdf/glory--6527f0c3.chopro",
-      "contentSha256": "455b4c11604ce6963dd4442c685427acca14021edd7233b6ac39114708bc901b",
+      "contentSha256": "34bc59e67a87dfdafbf848462299e7f2cd373c60741e33cf1db7ea10cedb0586",
       "metadata": {
         "key": "F",
         "artist": "Eddie James",
         "year": null,
         "tempo": 90,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -3366,13 +3366,13 @@
       "songId": "658201b4-586c-5253-a61b-29ed070d95c3",
       "title": "Surrounded (Fight My Battles)",
       "file": "songs/pdf/surrounded-fight-my-battles--658201b4.chopro",
-      "contentSha256": "cc2fd156a0639cc8eb420f9cf0a5fd547fb75e4feede1e5a362ca27f103b8070",
+      "contentSha256": "a2d1a2bd77d7d4327b44a029fb7dfa4d46922bb2cce4f1cdb45f9d35116773a2",
       "metadata": {
         "key": "Bb",
         "artist": "Michael W. Smith",
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory"
@@ -3397,13 +3397,13 @@
       "songId": "65d572c0-39ce-5494-a499-95de4d02a17f",
       "title": "My Story",
       "file": "songs/pdf/my-story--65d572c0.chopro",
-      "contentSha256": "3a669d88c9663a7d9ff565790a05172a83f4292a338aa4ff2a3d866b535baf1c",
+      "contentSha256": "5c7ecb57d563e1bee2964c5bf4fee6a358dec26d33f82f8ba336d7c47231c655",
       "metadata": {
         "key": "E",
         "artist": "Apostolic Collective",
         "year": null,
         "tempo": 88,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -3494,13 +3494,13 @@
       "songId": "699c012e-eeaa-5a85-b2ab-a4ddfa0e82d5",
       "title": "A Place Of Healing",
       "file": "songs/pdf/a-place-of-healing--699c012e.chopro",
-      "contentSha256": "cc6b69bea68b558fdf8581ff4152707b283b36e383d61b9f6bec25c290295bdf",
+      "contentSha256": "453385ac777e8fee6cc63b2d1d547ac3d16b53bcd6b29f4a1e481dbacfa8be5b",
       "metadata": {
         "key": "D",
         "artist": "Jina McCool",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -3561,13 +3561,13 @@
       "songId": "6c6c08d8-5b74-572a-a4cf-8d28ff456a50",
       "title": "No One",
       "file": "songs/pdf/no-one--6c6c08d8.chopro",
-      "contentSha256": "46514884f641efe1af35fae1ec7b57590f0636032aef895b915e5ff09045b409",
+      "contentSha256": "4b5480895e30f3f18d94724e7306262bff7f6fbcf651e1aeee5bea13d1f811d0",
       "metadata": {
         "key": "F",
         "artist": "Anthony Trimble",
         "year": null,
         "tempo": 78,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -3594,13 +3594,13 @@
       "songId": "6f8b9208-7c0a-5550-a7e1-015beadef8ae",
       "title": "It’s Happening Now",
       "file": "songs/pdf/it-s-happening-now--6f8b9208.chopro",
-      "contentSha256": "d5cb2ec543a372ff8d36c2d535fc45ff806c823d2ae70ddf1fce4962959c2058",
+      "contentSha256": "7b097624b7ce81d32e2a1f4f1962af7445935188d6a355235a771ad015c26c3c",
       "metadata": {
         "key": "C",
         "artist": "LYA",
         "year": null,
         "tempo": 77,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -3661,13 +3661,13 @@
       "songId": "707c06b0-03c1-5ddc-81dc-c4cd3a069cfc",
       "title": "Bless Your Name",
       "file": "songs/pdf/bless-your-name--707c06b0.chopro",
-      "contentSha256": "c59501552307353e8191ac881ef9e1425486448a79b35197d8888149dae7754a",
+      "contentSha256": "99134bd6e766dcfe233cafb622be961145718ff1a00e8fb38b78cf4568c7b1c4",
       "metadata": {
         "key": "Eb",
         "artist": "Clint Brown",
         "year": null,
         "tempo": 57,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -3696,13 +3696,13 @@
       "songId": "7129ec33-64fd-5179-93ed-1923bd041857",
       "title": "More",
       "file": "songs/pdf/more--7129ec33.chopro",
-      "contentSha256": "55fce0ddf3842d8ada71fc9159690d05bcbe582fc9d16db76a86bc83ba45170f",
+      "contentSha256": "d27762444714dcfd415cf8bae28bcb6ead56684840bc4a2e6f1895b06ccb18ce",
       "metadata": {
         "key": "C",
         "artist": "Harvest Music Live",
         "year": null,
         "tempo": 140,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -3730,13 +3730,13 @@
       "songId": "71bb9ca1-453f-5d7b-9d89-baaf0c85c36f",
       "title": "Speak The Name",
       "file": "songs/pdf/speak-the-name--71bb9ca1.chopro",
-      "contentSha256": "e459562d71782154f4ac9704a1bda40a3d527fc0d92b05d8c80257c8e11afd14",
+      "contentSha256": "3de8a1631c06d0509a9868793131aa58173ec4809b7ca56f647caafba28917b0",
       "metadata": {
         "key": "Ab",
         "artist": "Koryn Hawthorne",
         "year": null,
         "tempo": 67,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -3766,13 +3766,13 @@
       "songId": "71db901f-db04-5eae-a7f1-294ce17feaa5",
       "title": "Humbly We Bow (Holy Are You Lord)",
       "file": "songs/pdf/humbly-we-bow-holy-are-you-lord--71db901f.chopro",
-      "contentSha256": "c4d317d20c8481a97f580de5c19e8f3a9bc82277499b318329962505a2f0993a",
+      "contentSha256": "808b09b8803cab2559c1373ac2b7de2f32695acd768f05a7828dfa1efdf8d6eb",
       "metadata": {
         "key": "A",
         "artist": "Cape First Worship",
         "year": null,
         "tempo": 71,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -3800,13 +3800,13 @@
       "songId": "727267d4-f24f-5638-8f59-1c9d84696cb3",
       "title": "God is Calling",
       "file": "songs/pdf/god-is-calling--727267d4.chopro",
-      "contentSha256": "c72cfc9e0dc2fd5235197a6044bf0d27ee5128b03f8ae27085d624f682581310",
+      "contentSha256": "bd308b4f3f6ab236710f05826a4416aba9dee86ab7795c731dc4a307fccdae65",
       "metadata": {
         "key": "G",
         "artist": "Anthony Trimble",
         "year": null,
         "tempo": 65,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -3829,13 +3829,13 @@
       "songId": "72eed0f4-c26b-57ce-9080-ba1728f3e312",
       "title": "We Have Overcome",
       "file": "songs/pdf/we-have-overcome--72eed0f4.chopro",
-      "contentSha256": "51d1f0a6afdc986474a6c250d26f592eb44604bbd6ee763b7960779b3689b78f",
+      "contentSha256": "8c0d2d6f934c56efcb4353a52a22f55a878dda93758fc049ef7f09bd913ff77e",
       "metadata": {
         "key": "B",
         "artist": "Brittani Scott",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -3862,13 +3862,13 @@
       "songId": "739f0d8d-a6c3-5ffb-928e-39a44f5bf431",
       "title": "You Are Holy",
       "file": "songs/pdf/you-are-holy--739f0d8d.chopro",
-      "contentSha256": "92a84c2b53f3ffeaa87437c02d5f28b5ab10b92f5e4aedc120651f758f037aca",
+      "contentSha256": "6b81fe9fcc6f870a22b55df0048324d7f08b484333e5c9d2c308dd75f978f553",
       "metadata": {
         "key": "G",
         "artist": "Brian Labat, Ginger Labat & The Calvary UPC Choir",
         "year": null,
         "tempo": 76,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -3895,13 +3895,13 @@
       "songId": "765ad7b6-4f6d-5248-848e-d6056949fbbf",
       "title": "Heaven",
       "file": "songs/pdf/heaven--765ad7b6.chopro",
-      "contentSha256": "d82b89fa0c11e1484b6d448755632caafeab882dfca2f6dc0186b5ad92d9600a",
+      "contentSha256": "2a9c19523b2c59035730952de6654c84c6cc8a70fab8602045d444a2ce2d595e",
       "metadata": {
         "key": "E",
         "artist": null,
         "year": null,
         "tempo": 110,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -3931,13 +3931,13 @@
       "songId": "7711fb19-2e29-597e-a0ad-498b59b04e9b",
       "title": "Our God Reigns Forever",
       "file": "songs/pdf/our-god-reigns-forever--7711fb19.chopro",
-      "contentSha256": "dac49d5575db16d7358657e07727b6ed8812ea212b285ea5c413ba138ecb3d60",
+      "contentSha256": "472c0f8844dc95334caf848035ad2da8bfb2537aa2a3b55190e6751761a827f8",
       "metadata": {
         "key": "Bb",
         "artist": "Jesse Wilson",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -3963,13 +3963,13 @@
       "songId": "7813d4cc-b2d0-5e13-ae5b-24802de4f989",
       "title": "When You Believe",
       "file": "songs/pdf/when-you-believe--7813d4cc.chopro",
-      "contentSha256": "db8d1cd15c30b40e8fb1ffb2c0ac5d46c5a8037219bff3698e9995bbe2bc854d",
+      "contentSha256": "ddb5d44d76873756244c843812ac66387f741c196d7523aa7f7c3aa1927e2307",
       "metadata": {
         "key": "B",
         "artist": "Calvary Worship",
         "year": null,
         "tempo": 99,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -3996,13 +3996,13 @@
       "songId": "781aa4fa-351a-5aa4-97d2-c6e627a6b134",
       "title": "Open the Heavens",
       "file": "songs/pdf/open-the-heavens--781aa4fa.chopro",
-      "contentSha256": "f22a07080a75b2c12ede7fed1c9171986e7ca292d49c8efcf41a2e6eca5de789",
+      "contentSha256": "8d8b90827f6a2ece01301085fc75c29c3e3b45c002138625629419ed9810b5d1",
       "metadata": {
         "key": "B",
         "artist": "Faith Worship Arts",
         "year": null,
         "tempo": 13,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -4029,13 +4029,13 @@
       "songId": "792d5e96-f186-5ef9-811c-b6e95c785ee5",
       "title": "Death, Hell + The Grave",
       "file": "songs/pdf/death-hell-the-grave--792d5e96.chopro",
-      "contentSha256": "c33fe577508ee99d894aa8d0454741f45eca812d96256f8b9c6848f61855bb99",
+      "contentSha256": "8686e336e3426ecf4fb52d510556e6e0d688267616e280745810ddafa5b2065e",
       "metadata": {
         "key": "D",
         "artist": null,
         "year": null,
         "tempo": 83,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -4067,13 +4067,13 @@
       "songId": "797f3f53-59a8-558b-b430-9d3eacc62dd4",
       "title": "God of the Empty Grave",
       "file": "songs/pdf/god-of-the-empty-grave--797f3f53.chopro",
-      "contentSha256": "fbc7eaea7e45c5ffbf05e24c978f7260d32aaef5ec101f345aff63f3748faa64",
+      "contentSha256": "a45df95af0256011053ee20febd7e8261d998228057ab0bf51e5b0d22c4cf657",
       "metadata": {
         "key": "C",
         "artist": "Assemble Worship",
         "year": null,
         "tempo": 116,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "easter",
@@ -4133,13 +4133,13 @@
       "songId": "7a271e1d-c216-5f23-aa66-77d134832a86",
       "title": "Never Go A Day",
       "file": "songs/pdf/never-go-a-day--7a271e1d.chopro",
-      "contentSha256": "ffc29dbe51849e10e4ce4b6eb9252a833a0335b9ed2aa77901ee9dbc2fcaa9e8",
+      "contentSha256": "7f6ca1e5972187b03819eb6dba73131fb1e00e650d54415ee50c998408eea35a",
       "metadata": {
         "key": "Eb",
         "artist": "Shawn Bigby",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy"
@@ -4198,13 +4198,13 @@
       "songId": "7b40cb2e-b190-5c72-8314-8052b00c0222",
       "title": "Thankful",
       "file": "songs/pdf/thankful--7b40cb2e.chopro",
-      "contentSha256": "94cd05f4f0932a7107fd88ce6907491ee7b4916c0f709b0c4f2b101e86b748dc",
+      "contentSha256": "de6151eca1be0d6c74dca2fa6a5e42fc2e0f2ea44d51c24942ab3bd9245602aa",
       "metadata": {
         "key": "Ab",
         "artist": "J.J. Hairston",
         "year": null,
         "tempo": 86,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -4227,13 +4227,13 @@
       "songId": "7b5765b8-28b6-5c1c-9acf-d203097bb22e",
       "title": "Isn’t the Name",
       "file": "songs/pdf/isn-t-the-name--7b5765b8.chopro",
-      "contentSha256": "690c360a3949f74dc7257a6d18679011df8aa6e0e1e44bb2bc3400200573f635",
+      "contentSha256": "e35d830c9c23b8b0d857199e8d77d16f1121edd051355c9b29b8141763f22762",
       "metadata": {
         "key": "Eb",
         "artist": "Covenant Worship",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -4263,13 +4263,13 @@
       "songId": "7c212689-5922-524d-af38-cd2f1f41a1c2",
       "title": "Unspeakable Joy",
       "file": "songs/pdf/unspeakable-joy--7c212689.chopro",
-      "contentSha256": "597ef59fecc25619d55e4925b8f182bb9ab16b72987c16c109ac21cc3bb53549",
+      "contentSha256": "d19b1968785c0157ac8e69eee3fb1b22d4d162edfe76f8a4308a9afd0cc69663",
       "metadata": {
         "key": "Bb",
         "artist": "Mark Yandris",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy",
@@ -4328,13 +4328,13 @@
       "songId": "7ea0a5c1-3086-59e1-abf0-e9b31a1504d1",
       "title": "In Control",
       "file": "songs/pdf/in-control--7ea0a5c1.chopro",
-      "contentSha256": "e7bcf917545c746298b7bf778104561dfe7c43111291266b9d67ebfad3f57849",
+      "contentSha256": "f631a99142e1085d51dd4181d04ad6b4d8d777cb9e49e7b3db7e928253f8a8c1",
       "metadata": {
         "key": "C",
         "artist": "Frankie Taylor",
         "year": null,
         "tempo": 75,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust"
@@ -4359,13 +4359,13 @@
       "songId": "7f502b59-bfc8-5be1-bf23-8b2cd5bf6b36",
       "title": "This is a Move",
       "file": "songs/pdf/this-is-a-move--7f502b59.chopro",
-      "contentSha256": "b9b0e0f73c6f08699a92dd2eb54bcdbcff678a16ab60097e1bdde74deb6ab7be",
+      "contentSha256": "e69190e0cec07eff64c58841fdedec7539ce6af2b75fb8403c969a110207d11f",
       "metadata": {
         "key": "Ab",
         "artist": "Tasha Cobbs Leonard",
         "year": null,
         "tempo": 140,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -4392,13 +4392,13 @@
       "songId": "805819f8-35a9-55f1-bf9b-b0d357690a7c",
       "title": "He’s Worthy",
       "file": "songs/pdf/he-s-worthy--805819f8.chopro",
-      "contentSha256": "0258f1d09453ec68e2fbc1fab17f39a45fdeda3742097719508339a7b30af653",
+      "contentSha256": "1d98364ef2e4285b8a1d5929c1474b66955b29cb2fe61aed67f60dc93cd9bda8",
       "metadata": {
         "key": "Ab",
         "artist": "Sandra Crouch",
         "year": null,
         "tempo": 83,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -4455,13 +4455,13 @@
       "songId": "8199ce65-9e12-549d-825a-ea35c3214964",
       "title": "How I Need You",
       "file": "songs/pdf/how-i-need-you--8199ce65.chopro",
-      "contentSha256": "c57e7aaab4184cbdb2b9034bdf09ecf0fe42c58b32a95a289a3b030ec870d246",
+      "contentSha256": "300c1539e42676fdb2d733a795e57465353c8ef8a288ed586b51189f874e4414",
       "metadata": {
         "key": "Eb",
         "artist": "Highlands Worship",
         "year": null,
         "tempo": 84,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -4488,13 +4488,13 @@
       "songId": "82c3b564-295f-5d55-8886-7fe3c518f038",
       "title": "I Got Out",
       "file": "songs/pdf/i-got-out--82c3b564.chopro",
-      "contentSha256": "615cde0777a171b2ead285aac08973964c6b397f0c99400f6286e48b2748d20b",
+      "contentSha256": "8f1022b563e7b9e02a1b39ed61edddd55e0a4cc0c73ddaa8f14d9b295f586966",
       "metadata": {
         "key": "F",
         "artist": "At the Cross",
         "year": null,
         "tempo": 95,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -4550,13 +4550,13 @@
       "songId": "841d22bb-57be-50a7-8fd8-6370fe5ad7c6",
       "title": "I’ll Sing About Jesus",
       "file": "songs/pdf/i-ll-sing-about-jesus--841d22bb.chopro",
-      "contentSha256": "637a3a30533c04ec6b470899e037a28b944581af2e4e1706e4c6db2c8436d05c",
+      "contentSha256": "bcf755ad1ad7c842ea25614c1a3f7b3edd44ea4ad290b4a30b33530fcbaf3926",
       "metadata": {
         "key": "Bb",
         "artist": "Angie Pearson",
         "year": null,
         "tempo": 113,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "grace-mercy",
@@ -4616,13 +4616,13 @@
       "songId": "8816928c-02b2-559a-8cee-db0961f640e6",
       "title": "I Give You Glory",
       "file": "songs/pdf/i-give-you-glory--8816928c.chopro",
-      "contentSha256": "83ed2a6fdda767ab0b48289a6cfbf358d334f78851227253763fe0c80c4de36a",
+      "contentSha256": "d9fe105f9c342b6f6971813de9f337b9f762e29af85ea48088b8e5bfc07ceb60",
       "metadata": {
         "key": "Ab",
         "artist": "Jonathan Nelson",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -4648,13 +4648,13 @@
       "songId": "893a0ae4-cd9b-5373-89c6-0370488756fb",
       "title": "Breakthrough",
       "file": "songs/pdf/breakthrough--893a0ae4.chopro",
-      "contentSha256": "1b9cb8f0565664e45fba37ccbdc40d90a109dba262b8a54e96433de540598563",
+      "contentSha256": "455b3c467ab4df3134b034da938afbc287193b15373eb8017243682969150705",
       "metadata": {
         "key": "D",
         "artist": "Eddie James",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -4685,13 +4685,13 @@
       "songId": "8984dfda-01cf-5849-8958-8cd439a2aacd",
       "title": "You’re Doing it All Again",
       "file": "songs/pdf/you-re-doing-it-all-again--8984dfda.chopro",
-      "contentSha256": "b34b0e1dd241af439ef7ebe6e41b698389923f7522806a34ab65203b70d2a4bd",
+      "contentSha256": "58397964842dfea2371f2ba208c498d355c6e511f6c95dabb98d4b8e1980edde",
       "metadata": {
         "key": "Db",
         "artist": "Todd Dulaney",
         "year": null,
         "tempo": 131,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -4714,13 +4714,13 @@
       "songId": "89bb560c-5383-525f-a567-263e195c9e27",
       "title": "My Help",
       "file": "songs/pdf/my-help--89bb560c.chopro",
-      "contentSha256": "26873870552e98fe1dce51fa10344f094cd52db5747d5f5a83f9bd855619b595",
+      "contentSha256": "b80aa5b260f5839dd3a47179dda0045bd007553173f15fdff0bba896f4be32be",
       "metadata": {
         "key": "G",
         "artist": "James Simms",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -4852,13 +4852,13 @@
       "songId": "8ec67746-e266-5dd2-bddc-0479b3334f15",
       "title": "Noel, Christ is Born",
       "file": "songs/pdf/noel-christ-is-born--8ec67746.chopro",
-      "contentSha256": "40956c0cb8edaee0a00753aa8a43bfa2c90e7efbb579cc69201deb443c49168b",
+      "contentSha256": "204f1a509bebaf6c89ab731617f68d1b2f5ac26c13a3fbf829fdd8c0ef76539e",
       "metadata": {
         "key": "Eb",
         "artist": "Mark Yandris",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -4886,13 +4886,13 @@
       "songId": "8f7dcf6d-d172-546e-bf62-65655043484b",
       "title": "Speak Your Name",
       "file": "songs/pdf/speak-your-name--8f7dcf6d.chopro",
-      "contentSha256": "9cad9a8ea135864b0da2f5c5f021e77e95f6abd753eb81e26c238a036bb85fb8",
+      "contentSha256": "c1ed8ab207262bf2b38c3c519de9a0e6dcf4bf4a59670d3e83a90ae488b1b096",
       "metadata": {
         "key": "C",
         "artist": "Anthony Brown & group therAPy",
         "year": null,
         "tempo": 65,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -5050,13 +5050,13 @@
       "songId": "95b11dbd-fbf5-5b5a-9d48-8a1db17a393c",
       "title": "Tell of Your Glory",
       "file": "songs/pdf/tell-of-your-glory--95b11dbd.chopro",
-      "contentSha256": "4213fed602b4b50b5316a8c11fad1de6e4f4cb860bdc24fd67fc0913a6117ba2",
+      "contentSha256": "f6e202403951cb90761916af57f8ed6bb47490c2cad8cbfadf4b7cfd3d0e0e81",
       "metadata": {
         "key": "Bb",
         "artist": "David & Nicole Binion",
         "year": null,
         "tempo": 108,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -5083,13 +5083,13 @@
       "songId": "9696ae41-56ac-5120-a39b-7db2e1653104",
       "title": "Hallelujah, Jesus Reigns",
       "file": "songs/pdf/hallelujah-jesus-reigns--9696ae41.chopro",
-      "contentSha256": "5ee095923b7f577abf254fb384c68df06b813bd8fad067ff0764baa648b7ae21",
+      "contentSha256": "131ca9884946efd5133cfd1106904c841fc8c43bb2b31980f60242c78d0839c6",
       "metadata": {
         "key": "C",
         "artist": "Angie Pearson",
         "year": null,
         "tempo": 69,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -5114,13 +5114,13 @@
       "songId": "96aca06c-554a-56fc-aa90-b200f0cc21cb",
       "title": "Rain",
       "file": "songs/pdf/rain--96aca06c.chopro",
-      "contentSha256": "5a431df9f3f7fdf96ca4dcccb448ec39ff527b5f819db52923f2c5247b078578",
+      "contentSha256": "c2a97fcdb79cab26780cad5bfbd1ab4f90ea10eacadb8887ecf16d91a422667d",
       "metadata": {
         "key": "C",
         "artist": "Noel Robinson",
         "year": null,
         "tempo": 85,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -5146,13 +5146,13 @@
       "songId": "974fd7c8-ab42-582b-be3b-6b71ef1d0a45",
       "title": "Nothing But The Blood",
       "file": "songs/pdf/nothing-but-the-blood--974fd7c8.chopro",
-      "contentSha256": "8bfc37ade569454bce411e2c16892d2808e2176461f3b8b9512c79c967770982",
+      "contentSha256": "43b31fc6fda3cb07933d70151bf1db20b95f141136032346fc6446aae60ea797",
       "metadata": {
         "key": "C",
         "artist": "James Simms",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood"
@@ -5211,13 +5211,13 @@
       "songId": "9b25b017-6e3b-54a4-adba-a94de5f3936d",
       "title": "Emmanuel",
       "file": "songs/pdf/emmanuel--9b25b017.chopro",
-      "contentSha256": "cced50b2442ac2906e684abc825f59dafd2fe4e4d4939db41f7b1e30a4f9184e",
+      "contentSha256": "2b14956ddbd2ade87abfc700a0ba03fa3878f09a9553c3c313c156d2bc5c0da4",
       "metadata": {
         "key": "D",
         "artist": "TCT Worship",
         "year": null,
         "tempo": 92,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -5243,13 +5243,13 @@
       "songId": "9b2e38de-293a-502a-bd6d-7fed314a433f",
       "title": "Same God",
       "file": "songs/pdf/same-god--9b2e38de.chopro",
-      "contentSha256": "c62c1ba13c098fc86c8b252d7a2ad4cd549e4b0e93cb4b378917bc36baa7d28b",
+      "contentSha256": "5462ce34a2d2c4db3432df54fe2544ceaced476e8e8961ebdc13498349ace415",
       "metadata": {
         "key": "Db",
         "artist": "Elevation Worship",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -5277,13 +5277,13 @@
       "songId": "9c883db2-8aa6-5d4c-948a-16d014642cb2",
       "title": "Living Sacrifice",
       "file": "songs/pdf/living-sacrifice--9c883db2.chopro",
-      "contentSha256": "95db6ddf38e799085ed629bba95186cc340f78ef9245ac60538562823da750a8",
+      "contentSha256": "a39ce3bbc72f6bd01930d9c8b89a60b55f3bb574936d07584e33503e40d91755",
       "metadata": {
         "key": "Eb",
         "artist": "Urshan College",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "altar",
@@ -5341,13 +5341,13 @@
       "songId": "9e88fd98-70c5-587b-a2ed-85c9514db90d",
       "title": "How Great",
       "file": "songs/pdf/how-great--9e88fd98.chopro",
-      "contentSha256": "7b59040754433085b241f9357389204a5238619929cb1a9e27e4727df3402375",
+      "contentSha256": "f6704c24ef11ea49ec3660e74734338525939890207df41c20d32fd8f3ed95b3",
       "metadata": {
         "key": "E",
         "artist": "Covenant Worship",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven"
@@ -5374,13 +5374,13 @@
       "songId": "9ee03f4e-962e-56b8-a902-f7cb700077f3",
       "title": "When I Shout / Testify",
       "file": "songs/pdf/when-i-shout-testify--9ee03f4e.chopro",
-      "contentSha256": "2dc769f311681c67dec236e95eefb0eaf7298ce3f1a322a5c11509f8dbcee612",
+      "contentSha256": "ce700af157cfe509fc40db591f843b521d0a695b804b0d88ae64cb0ef7acb843",
       "metadata": {
         "key": "D",
         "artist": "Indiana Bible College (IBC)",
         "year": null,
         "tempo": 93,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -5444,13 +5444,13 @@
       "songId": "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47",
       "title": "Lord, You Reign",
       "file": "songs/pdf/lord-you-reign--9f42c3c5.chopro",
-      "contentSha256": "7daea007e90bbe143bbc131c40f1a5ed105631589bcf55ee5e49214a74cb9a1e",
+      "contentSha256": "b96320e30da6c63154902a4ba57dd67dd659efa0d0e6a595ca4c8e068d116ce1",
       "metadata": {
         "key": "Ab",
         "artist": "Bishop Leonard Scott",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -5475,13 +5475,13 @@
       "songId": "a0b1fb0c-4c6d-5a36-83b3-5ecbc01ee62a",
       "title": "I Trust In You",
       "file": "songs/pdf/i-trust-in-you--a0b1fb0c.chopro",
-      "contentSha256": "96384c912d784fdacc8f44aafcd1b7f5a9711d14d745f25986f4c0e57df98713",
+      "contentSha256": "2480f6d36cfb7081f5a0f13d4d54d9e49c62242a3ebe97d50e32725837d005b4",
       "metadata": {
         "key": "Bb",
         "artist": null,
         "year": null,
         "tempo": 129,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust"
@@ -5510,13 +5510,13 @@
       "songId": "a12f59ed-9c97-5da7-9d21-b4362b66569d",
       "title": "Still Everything",
       "file": "songs/pdf/still-everything--a12f59ed.chopro",
-      "contentSha256": "86c1ba7f1e5e2bb5e78e2a4a0e52182f8bdc76e89dcc245dd578a513876d5efd",
+      "contentSha256": "f2a4e1e2c24d5444c100437ed8be3170c9d7694f919bed6245b3911bcf4185a7",
       "metadata": {
         "key": "F",
         "artist": "Indiana Bible College (IBC)",
         "year": null,
         "tempo": 63,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -5608,13 +5608,13 @@
       "songId": "a2f911a4-d14a-5caa-8be0-e61a04657310",
       "title": "Bless the Lord",
       "file": "songs/pdf/bless-the-lord--a2f911a4.chopro",
-      "contentSha256": "ca6c00bda759f17f6cf84c20e558de07c495e1fe25b52c2630458926aa4c613a",
+      "contentSha256": "60aafac854000d7d4ed27897af514bd33cab35788af0ad3f06414a2f729640ee",
       "metadata": {
         "key": "F",
         "artist": "Shara McKee",
         "year": null,
         "tempo": 78,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -5640,13 +5640,13 @@
       "songId": "a4104848-5195-5afa-8018-ae233a35e9dd",
       "title": "Only One",
       "file": "songs/pdf/only-one--a4104848.chopro",
-      "contentSha256": "3a12ecba8e5296a8e7064467ca2b873d3356c15fe3ff479c8152bf25d349ed2d",
+      "contentSha256": "b19ab47b38931c8a6c53998d426f358c749156300ae463a791649b0c59651fca",
       "metadata": {
         "key": "D",
         "artist": "Texas Bible College (TBC)",
         "year": null,
         "tempo": 53,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -5675,13 +5675,13 @@
       "songId": "a4cac43f-0fd2-582e-ae13-6193f127419d",
       "title": "Wait on the Lord",
       "file": "songs/pdf/wait-on-the-lord--a4cac43f.chopro",
-      "contentSha256": "ac6312141fdf087150e919ffe777308fde164b0bd148d8f6b866c65344003bf1",
+      "contentSha256": "090e092067acd1edd7e1361775f173b0e7431d94ad44129968a02423c290230d",
       "metadata": {
         "key": "G",
         "artist": "James Wilson",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -5708,13 +5708,13 @@
       "songId": "a503d79d-13a2-54a2-958c-381767a3e629",
       "title": "We Want You",
       "file": "songs/pdf/we-want-you--a503d79d.chopro",
-      "contentSha256": "0aa3c5f905ddcb92264644b5ff232a56240e5778cac45e9140322370b60cd817",
+      "contentSha256": "9132a2e2d60ea938de9759f2945e005d1c8aa3f1e892b6b7fe56e047181ace5f",
       "metadata": {
         "key": "D",
         "artist": "Harvest Music Live",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -5743,13 +5743,13 @@
       "songId": "a625dd46-7b26-52cf-a107-43a46150a4d4",
       "title": "Jesus Our Victory",
       "file": "songs/pdf/jesus-our-victory--a625dd46.chopro",
-      "contentSha256": "5f5453a047e0b66ee770f7c89d012ccae861530f1be4731516bf0fdb2dfc1664",
+      "contentSha256": "b4ff5e3ea2c5197f3065da5725abae1ddc90b14650628cc3370c721638177e97",
       "metadata": {
         "key": "Ab",
         "artist": "Messengers of Peace",
         "year": null,
         "tempo": 130,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -5911,13 +5911,13 @@
       "songId": "ab853e6c-1ab3-508b-b333-e0ddb4c7f6f2",
       "title": "Have Your Way",
       "file": "songs/pdf/have-your-way--ab853e6c.chopro",
-      "contentSha256": "ffb8d0719b4013fe1597ce9c8325ffbecdcfd0743a006ab40c47a9dfca8d8af8",
+      "contentSha256": "746e348a699a5bcf0c371cc632be2ffb4d6e044c2beae4e46da5b773bb6bd2b8",
       "metadata": {
         "key": "E",
         "artist": "Draylin Young",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "holy-spirit",
@@ -5943,13 +5943,13 @@
       "songId": "ac40022a-637c-5e90-9452-a80127637d27",
       "title": "Breakout",
       "file": "songs/pdf/breakout--ac40022a.chopro",
-      "contentSha256": "a25150af04fec25a32860d19025e1c3a98a4add1726de4f5d150467f0ecb4e10",
+      "contentSha256": "aad65b9beb5d82326ce5cf812237506b365dde5e5aaeacbcae43aecf2cd07c2a",
       "metadata": {
         "key": "Bb",
         "artist": "Mark Crowder",
         "year": null,
         "tempo": 157,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy",
@@ -6008,13 +6008,13 @@
       "songId": "acefcf6c-a8d1-5eb5-8675-3d558e0040fc",
       "title": "Jesus",
       "file": "songs/pdf/jesus--acefcf6c.chopro",
-      "contentSha256": "0f1c01f85c341c3c3e6eb151a07f3f89ebc3a35b7205e751775f4c64af7aa6fb",
+      "contentSha256": "6913345f428e44e51f0b3999dc38eac2162605de571818532eaf0ac7c4b4d3c4",
       "metadata": {
         "key": "Ab",
         "artist": "Phil Thompson",
         "year": null,
         "tempo": 63,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -6039,13 +6039,13 @@
       "songId": "ad2aa396-89bb-5f8c-a48d-0644dec4df56",
       "title": "Speak The Name",
       "file": "songs/pdf/speak-the-name--ad2aa396.chopro",
-      "contentSha256": "beda12ab36e6ac44c96ca8f3af9cec3d1987d917e9e51b5a5e270b1365854c09",
+      "contentSha256": "3cbfc6abc25f53b07257e29a7661882e529ce7caa60790643bf77aca9fa4e36c",
       "metadata": {
         "key": "G",
         "artist": "Church of the City",
         "year": null,
         "tempo": 97,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -6073,13 +6073,13 @@
       "songId": "adbd27e9-f990-522c-a383-402111f1f0e0",
       "title": "Who You Say I Am",
       "file": "songs/pdf/who-you-say-i-am--adbd27e9.chopro",
-      "contentSha256": "8aa3bcdd2e2fd90a47936ee2707776319feb62745bc25a981ed303cf4eeba45f",
+      "contentSha256": "b70599ba9a97c49940ea75513a171c87b917ade8dc3edc9d2aeffaf7a4066361",
       "metadata": {
         "key": "F#",
         "artist": "Hillsong Worship",
         "year": null,
         "tempo": 86,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "testimony",
@@ -6105,13 +6105,13 @@
       "songId": "adcde7eb-5532-5b7d-9d42-23dc98eaedd4",
       "title": "This Dwelling Place",
       "file": "songs/pdf/this-dwelling-place--adcde7eb.chopro",
-      "contentSha256": "cfc7274e68b9507ef5bf3f2623fad10b7f81afe0fbd52060b77f5b60a9b0e0e7",
+      "contentSha256": "f524262ca286eff93102c551cf959229b2e82bf73beadb350a6d64e6a99156b4",
       "metadata": {
         "key": "F",
         "artist": "Urshan College",
         "year": null,
         "tempo": 76,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -6138,13 +6138,13 @@
       "songId": "afaa8ce9-5569-52ba-8b05-8e50c8425a62",
       "title": "Joy",
       "file": "songs/pdf/joy--afaa8ce9.chopro",
-      "contentSha256": "76be2f24ec76cf742fd41ae6db22474fbd96bfb3a9a46ad4b855da71ba94b572",
+      "contentSha256": "fa15b37b327a18a82c92ce00efaf63dfaa4b31a3dc5d8ddc92d0ed765559b801",
       "metadata": {
         "key": "Eb",
         "artist": "Benita Jones",
         "year": null,
         "tempo": 140,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy",
@@ -6170,13 +6170,13 @@
       "songId": "b00a7435-440d-5b28-a000-3bbce7ef6bb6",
       "title": "Worthy",
       "file": "songs/pdf/worthy--b00a7435.chopro",
-      "contentSha256": "cbfaa7f19832d6b0fb0f33d6d6aac222e3aff92bad2a577d7364db44eb72172b",
+      "contentSha256": "836c5a94ec296f7e7357732bc215f79a849781467e7bc8fe6ab49c758bc444fb",
       "metadata": {
         "key": "Eb",
         "artist": "Elevation Worship",
         "year": null,
         "tempo": 67,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -6233,13 +6233,13 @@
       "songId": "b24fab85-8ef3-5881-80ec-f83d6cc605be",
       "title": "At The Name",
       "file": "songs/pdf/at-the-name--b24fab85.chopro",
-      "contentSha256": "513e0413acd916526ec4419145cd1d010dc77250cdb1a7b9763f76745fabc5db",
+      "contentSha256": "7369e141207ab58c0d7a6ed5678510adc9ca63aacb61e713bec6736e5ea0098d",
       "metadata": {
         "key": "F#",
         "artist": null,
         "year": null,
         "tempo": 76,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "name-of-jesus",
@@ -6299,13 +6299,13 @@
       "songId": "b3ad877e-a236-5781-aa3e-8ee09365d4ef",
       "title": "Way Maker",
       "file": "songs/pdf/way-maker--b3ad877e.chopro",
-      "contentSha256": "4d017d8659b9371952f85d1e7a7c378c6d6bc0abb44b3d4d68d78f95ec8a6658",
+      "contentSha256": "139a1c63047169101ae037fb618bc06994e52c354ee9cf841d9c5f9d1cb315af",
       "metadata": {
         "key": "B",
         "artist": "Sinach",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -6364,13 +6364,13 @@
       "songId": "b496710c-5439-5958-ba9e-f2dd3ece2a2f",
       "title": "Mighty Cross",
       "file": "songs/pdf/mighty-cross--b496710c.chopro",
-      "contentSha256": "2b8063d7fdc6bc08c7add6e930323f0236de4dd64c46befe540bffaaadab55a0",
+      "contentSha256": "1a379ab6519c0b215b0cdc8014717f3e60f78106c4cf0e4badab8621a25c1e2a",
       "metadata": {
         "key": "G",
         "artist": "Elevation Worship",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "easter",
@@ -6398,13 +6398,13 @@
       "songId": "b5e6842e-1150-55f4-a325-30bd06f33a74",
       "title": "This Is Revival",
       "file": "songs/pdf/this-is-revival--b5e6842e.chopro",
-      "contentSha256": "318a6d6c5b35f25041145fbbf4a60c758b446e98c5cb294dbc27741d92e2bbb9",
+      "contentSha256": "50087a8637a1698b3a70b3e2aebfca51324de562b675b1ac388e14adc09a30c1",
       "metadata": {
         "key": "Db",
         "artist": "Brittani Scott",
         "year": null,
         "tempo": 132,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -6433,13 +6433,13 @@
       "songId": "bb4fdf28-d3f1-5dc6-8082-fb2c15efbbb9",
       "title": "Awesome God",
       "file": "songs/pdf/awesome-god--bb4fdf28.chopro",
-      "contentSha256": "13c80f90389d64673d279af16f633cba841f2a1715a1b8a8ff5bf000ca3b3cd6",
+      "contentSha256": "a9ad92204acde69599324eb02bbc7a2fbe7b93a3bdba2178f5aa5760a9b89920",
       "metadata": {
         "key": "F#",
         "artist": "Gerald & Tammi Haddon",
         "year": null,
         "tempo": 86,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing"
@@ -6464,13 +6464,13 @@
       "songId": "bc7e5601-c07c-5eb7-9fdf-fa93e4d4ab3e",
       "title": "Old Rugged Cross",
       "file": "songs/pdf/old-rugged-cross--bc7e5601.chopro",
-      "contentSha256": "6275f8f307b31a922f60b4dbbdd4dc6855e73cd161c59ab50ce4b1cb8f42f1eb",
+      "contentSha256": "5288cc2dc50339c98097c0a82fdb983741a097dab4a72e85218f921783ec146e",
       "metadata": {
         "key": "G",
         "artist": null,
         "year": null,
         "tempo": 86,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -6564,13 +6564,13 @@
       "songId": "bfb4f14c-41ce-53cd-bf56-c74ef01e8d37",
       "title": "Jesus Is",
       "file": "songs/pdf/jesus-is--bfb4f14c.chopro",
-      "contentSha256": "454c47dc072be80a4700f9052c91e04694f4adf620a897b772debb847d5a3fd3",
+      "contentSha256": "0220268822db54c6053f503e26fa7b3c5c6cf40f34af48c394f3cde8b799710b",
       "metadata": {
         "key": "E",
         "artist": "Brooklyn Tabernacle Choir",
         "year": null,
         "tempo": 144,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "prayer",
@@ -6634,13 +6634,13 @@
       "songId": "c116596f-7d5f-54f7-b82f-3e52aaaec07e",
       "title": "Praise",
       "file": "songs/pdf/praise--c116596f.chopro",
-      "contentSha256": "2d7c208677cdd6a1885f76bc4e721ea67aa086b5e8cc5005bb30a6b5443ecd37",
+      "contentSha256": "8a9370319b46826929ef2ec2de1658c07c236e722f3b8f4af7675c1755d962b7",
       "metadata": {
         "key": "A",
         "artist": "Elevation Worship",
         "year": null,
         "tempo": 127,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -6668,13 +6668,13 @@
       "songId": "c13b7641-12ad-5f7f-a549-01679a47d6b1",
       "title": "Stand and Proclaim",
       "file": "songs/pdf/stand-and-proclaim--c13b7641.chopro",
-      "contentSha256": "778200634eeb449605211514a8cd5ff135d0eb1f6f9f0d2775102a1a96e60e85",
+      "contentSha256": "a0f118e0a7c7e08d12c8f7fc4bddc058b2b077e8bfe3c49922c483bca4d093c5",
       "metadata": {
         "key": "E",
         "artist": "Benita Jones",
         "year": null,
         "tempo": 84,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -6700,13 +6700,13 @@
       "songId": "c1c4f9b2-2386-520a-9ad7-30a7c61a8c6d",
       "title": "Wide as the Sky",
       "file": "songs/pdf/wide-as-the-sky--c1c4f9b2.chopro",
-      "contentSha256": "4d3b595d61fe1294da1fe8439fd1c067b578326a6720323dea9a3543cb235109",
+      "contentSha256": "47c7b76c917ac2d7f3a3192bab9ef88d50fc93d95c25ee9e4052a0ea858b30f7",
       "metadata": {
         "key": "Eb",
         "artist": "Isabel Davis",
         "year": null,
         "tempo": 65,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [],
       "sourceType": "pdf",
@@ -6729,13 +6729,13 @@
       "songId": "c1df38e9-8732-591a-ad56-20620fb76e86",
       "title": "The King’s House",
       "file": "songs/pdf/the-king-s-house--c1df38e9.chopro",
-      "contentSha256": "042d5b1469b790305211a33429192e585e581a4f1b92fbd2e9882e5b783a85d7",
+      "contentSha256": "914241dce91368eaa84e535cea67bce3ad3ba5ec88923538ba3f155d6e3b410d",
       "metadata": {
         "key": "F",
         "artist": "Urshan College",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -6801,13 +6801,13 @@
       "songId": "c299dc4b-d0fb-534c-83ff-674564812502",
       "title": "The Lord’s Prayer",
       "file": "songs/pdf/the-lord-s-prayer--c299dc4b.chopro",
-      "contentSha256": "c48107d17b783ba812aef24cd428ff5f46a6cf2e88734454be92dc9b3dc8bfec",
+      "contentSha256": "afb78ee27678bcc2dfa334d36bb35efd51d7e66c49dd99265fc8511c2923225d",
       "metadata": {
         "key": "C",
         "artist": "Phil Thompson",
         "year": null,
         "tempo": 165,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "heaven",
@@ -6866,13 +6866,13 @@
       "songId": "c3528263-5792-50ac-b8b1-7abb3d7075e8",
       "title": "We Want More",
       "file": "songs/pdf/we-want-more--c3528263.chopro",
-      "contentSha256": "97b688d1295e203c9352a41f0f789f12952029664fbc3eea6ec85f0df2501ef1",
+      "contentSha256": "058ad3105aafa672a1a41effd1d35b5081cd44f1a848249ee9ab7e06efb41376",
       "metadata": {
         "key": "Bb",
         "artist": null,
         "year": null,
         "tempo": 68,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -6901,13 +6901,13 @@
       "songId": "c3c734dc-a7fd-5d55-9e3f-b8c63acbbd20",
       "title": "He is More",
       "file": "songs/pdf/he-is-more--c3c734dc.chopro",
-      "contentSha256": "02f75e1bec53f90518e5882844717e63ceffb167a52beea0127430d66ab6ecda",
+      "contentSha256": "85bb5322813261e590f43da3170747dc2eda3a281d71a82af377fafbecef1087",
       "metadata": {
         "key": "C",
         "artist": "Lori Green",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "salvation"
@@ -6932,13 +6932,13 @@
       "songId": "c41b24e8-1b45-53e5-a8ca-f927a7dbd0e1",
       "title": "King of Glory",
       "file": "songs/pdf/king-of-glory--c41b24e8.chopro",
-      "contentSha256": "fb757e9c19e8416a6c3ebb2408b3921ff1acb441a98b283b67ce98c0c933dcf2",
+      "contentSha256": "a110c1b02edd41c3ce0079b74894942b2a0b33c251fd99cc1596a946c49c7554",
       "metadata": {
         "key": "E",
         "artist": "Todd Dulaney",
         "year": null,
         "tempo": 82,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -6966,13 +6966,13 @@
       "songId": "c42b1cc2-ab39-5d7c-9348-c8b5682d6516",
       "title": "I’ve Witnessed It",
       "file": "songs/pdf/i-ve-witnessed-it--c42b1cc2.chopro",
-      "contentSha256": "5a6287a87e5716820de37a3074674d7cf36061ea49515e158bc74ea86b662285",
+      "contentSha256": "96fc0f81a8fbe6232478dd3022f4ef7e79384523fb70b84ff6ce9fe56f26342f",
       "metadata": {
         "key": "Db",
         "artist": "Passion",
         "year": null,
         "tempo": 86,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -7002,13 +7002,13 @@
       "songId": "c5324a5b-c310-5e10-935d-28ba53a8b72d",
       "title": "Made a Way",
       "file": "songs/pdf/made-a-way--c5324a5b.chopro",
-      "contentSha256": "be1556cd959a5215d688ed0ac1e2155514f565a93546ab90e50cb4327bd8a236",
+      "contentSha256": "17edbc36f68634d907f8ec26ae26767e3f740f6d025765f5caa0c409da109320",
       "metadata": {
         "key": "B",
         "artist": "Travis Greene",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -7036,13 +7036,13 @@
       "songId": "c60d31fc-7696-521b-9d75-a5a2984df770",
       "title": "Angels We Have Heard (Glory Be)",
       "file": "songs/pdf/angels-we-have-heard-glory-be--c60d31fc.chopro",
-      "contentSha256": "694066f49c17dfa451d6b1877b4a24abc7d5fa8f083fc2556a0741c3c6879513",
+      "contentSha256": "faaa8f0f3c403c476b4297a0cfabcffa510f1ccbd52b0c272daefe5f80facbda",
       "metadata": {
         "key": "G",
         "artist": "Jordan Smith",
         "year": null,
         "tempo": 128,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -7071,13 +7071,13 @@
       "songId": "c6f4c259-6c5c-508e-a210-0a6992a27b12",
       "title": "Too Good to Not Believe",
       "file": "songs/pdf/too-good-to-not-believe--c6f4c259.chopro",
-      "contentSha256": "c9ee1c6386d0ed2d10a6c9da77c823adaa9f71e0226594213ee3f1fdabae0b83",
+      "contentSha256": "8b17c11f7f0237fdb4abb7973ab7fa53acaad305d6919225302f70c4444f5215",
       "metadata": {
         "key": "C",
         "artist": "Cody Carnes & Brandon Lake",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -7106,13 +7106,13 @@
       "songId": "c7906674-a205-5a91-8df4-4158fcd0e992",
       "title": "The Sound",
       "file": "songs/pdf/the-sound--c7906674.chopro",
-      "contentSha256": "cd117b7e56c5899be7da12ab67f6382f10571e7a97cd1aebd7655e9f707c6ba5",
+      "contentSha256": "3a7f3d7c5094255bfd7a89546a7b349a367591e413a230d266c77d40d807c76e",
       "metadata": {
         "key": "A",
         "artist": null,
         "year": null,
         "tempo": 135,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "holy-spirit",
@@ -7143,13 +7143,13 @@
       "songId": "c8178714-401f-5921-b6d2-bfb21b8b5774",
       "title": "Have Faith",
       "file": "songs/pdf/have-faith--c8178714.chopro",
-      "contentSha256": "792ace44e570ca29314dde1d1047b1206107b240ae07f75ee72550491a629acb",
+      "contentSha256": "a0287b374a458a656163252a25e24f601ba20b1a44553d493cd125989bedf7ac",
       "metadata": {
         "key": "D",
         "artist": null,
         "year": null,
         "tempo": 73,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -7178,13 +7178,13 @@
       "songId": "c851e488-794f-5dfd-8226-9cb101c49ea8",
       "title": "Jesus You Alone",
       "file": "songs/pdf/jesus-you-alone--c851e488.chopro",
-      "contentSha256": "49efb1977ef4614294f4dffe70ff586264a086645d8bbec0d98efbae1be88361",
+      "contentSha256": "59e4f63dd45250c1085ebe81980d0d232f50d54f565bc41955ecd5fae5556c2c",
       "metadata": {
         "key": "E",
         "artist": "Highlands Worship",
         "year": null,
         "tempo": 56,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -7211,13 +7211,13 @@
       "songId": "c8b20b55-76b8-5868-9bcc-909539cc8962",
       "title": "Greater Works",
       "file": "songs/pdf/greater-works--c8b20b55.chopro",
-      "contentSha256": "51d52832237523de262b3c4c02be0a4b9ee5253ec9476d7aece3b9a8db1a69f7",
+      "contentSha256": "389492434619322d880af19c380fd5c9dfc872a342b6ea557d4a41d2a1f57f4a",
       "metadata": {
         "key": "F",
         "artist": "Elenee Young",
         "year": null,
         "tempo": 115,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -7247,13 +7247,13 @@
       "songId": "c90061b8-38fb-5b8e-a69a-ba7c98271d79",
       "title": "Worthy of it All",
       "file": "songs/pdf/worthy-of-it-all--c90061b8.chopro",
-      "contentSha256": "ead2ce0d624bb04d12d42d61e829ebd93ef41b088e6a05c2c8e5da8cf522e209",
+      "contentSha256": "8e46fcb12e5261214164b0e48850688773d5a8ce431650aa6a628f3831eb3dd6",
       "metadata": {
         "key": "Eb",
         "artist": "CeCe Winans",
         "year": null,
         "tempo": 71,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship"
@@ -7501,13 +7501,13 @@
       "songId": "ce1a229e-2cfb-5993-b83d-9b05c71a69f1",
       "title": "Be Exalted / I Exalt Thee",
       "file": "songs/pdf/be-exalted-i-exalt-thee--ce1a229e.chopro",
-      "contentSha256": "8c3073f953ef9afc5172ec0e4c22e5839293a45fed5bc536bba70fbd5a6211d3",
+      "contentSha256": "de0f362b8e5637860c09d1c5314f26632fe322e846812024096e3bdba842d535",
       "metadata": {
         "key": "Eb",
         "artist": "Brittani Scott",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -7567,13 +7567,13 @@
       "songId": "cf1b7b5f-63ac-5f07-8e8f-acee3555f8cb",
       "title": "That’s My King",
       "file": "songs/pdf/that-s-my-king--cf1b7b5f.chopro",
-      "contentSha256": "2705894dda2e3769f0897796a3a92947c4dde1bfdf3555ed5153b5ea00a1bc19",
+      "contentSha256": "7f55e03f5ed2850939653c8a1262bb15d7bb710d78b85318fdc2269daad18c68",
       "metadata": {
         "key": "Ab",
         "artist": "CeCe Winans",
         "year": null,
         "tempo": 95,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -7634,13 +7634,13 @@
       "songId": "cf74a8e9-260b-5b2e-933b-da7049ef4393",
       "title": "Worthy of My Song (Worthy of It All)",
       "file": "songs/pdf/worthy-of-my-song-worthy-of-it-all--cf74a8e9.chopro",
-      "contentSha256": "8ddd9a78dfdeafe6a312b926854399fecc2e10efc71d30050e41cbdfee4cd93d",
+      "contentSha256": "8844e5c3c2c98b97f2df1e0f56847dbe30d233b869f20822bb1c27983c2d4726",
       "metadata": {
         "key": "D",
         "artist": "Maverick City Music",
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -7700,13 +7700,13 @@
       "songId": "d03e2671-29f4-5d5c-9090-2d35eb6325cd",
       "title": "Strong Tower",
       "file": "songs/pdf/strong-tower--d03e2671.chopro",
-      "contentSha256": "374292efb18d17014516879bb909c3a14e63648ecd69dd2f2c9ba950286ba458",
+      "contentSha256": "2e4c24edea230cb7cf66678e1891df55788396c40717af7c5a31f805a66edcc4",
       "metadata": {
         "key": "G",
         "artist": "James Wilson",
         "year": null,
         "tempo": 158,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "joy",
@@ -7734,13 +7734,13 @@
       "songId": "d05a8eb6-c625-59f5-aead-492141abc7c6",
       "title": "Wonder",
       "file": "songs/pdf/wonder--d05a8eb6.chopro",
-      "contentSha256": "3c876f4458d3454b0ac7961ef2390df56da5b947a986ccbd21dedb89a99fcc35",
+      "contentSha256": "adc50ef908d7b2587b286a8802658273c569a54733eb0c5781a92366e191e0ae",
       "metadata": {
         "key": "D",
         "artist": "Woodlawn Worship",
         "year": null,
         "tempo": 68,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -7767,13 +7767,13 @@
       "songId": "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e",
       "title": "We Worship You",
       "file": "songs/pdf/we-worship-you--d21d856b.chopro",
-      "contentSha256": "223c79fc04590e622eee32eeba4995309b638db89dcab2d1b5b8babc19883f99",
+      "contentSha256": "986db275d8d84af1cef8ffca9b352f49fb2042a63b880ab20ed2da8e2809efcb",
       "metadata": {
         "key": "Bb",
         "artist": "Bridgett Kern",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -7899,13 +7899,13 @@
       "songId": "d6282e78-4abd-565c-9729-c56cde668eae",
       "title": "Emmanuel (God With Us Forever)",
       "file": "songs/pdf/emmanuel-god-with-us-forever--d6282e78.chopro",
-      "contentSha256": "be40a966fe2c4861937ed8c020e6525d49ecf80c560515d970c6b25eeec8e78c",
+      "contentSha256": "a8675c5b47a8a50a3fbe85f4983752c5e01a8e0d456e8cb483000e90bf6d24b6",
       "metadata": {
         "key": "D",
         "artist": "Bryan & Katie Torwalt",
         "year": null,
         "tempo": 66,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -7933,13 +7933,13 @@
       "songId": "d707527a-c7e3-55f6-8f1d-3c15828a7e42",
       "title": "Praise Break",
       "file": "songs/pdf/praise-break--d707527a.chopro",
-      "contentSha256": "451478e757d54534bba3289dadbf4d03576d5e4757867c27ee9e9ce318e0c545",
+      "contentSha256": "e28a2a997bc0a4166c4c449f839769425cdb552575ce77e4b5e4c39485044685",
       "metadata": {
         "key": "Ab",
         "artist": "James Fortune",
         "year": null,
         "tempo": 158,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -7964,13 +7964,13 @@
       "songId": "d8da5a61-d365-5bce-a153-2ba83cd2477f",
       "title": "It Is Finished",
       "file": "songs/pdf/it-is-finished--d8da5a61.chopro",
-      "contentSha256": "366b075fd7d39359b46a0b7b8401a495bc2dd14a87762bd01601a93c8abb4e00",
+      "contentSha256": "4177ca45a76fb14ba9e9fae3356bdc778dbe67beaf6b3040696f9ae6def3f4c4",
       "metadata": {
         "key": "Eb",
         "artist": "Urshan College",
         "year": null,
         "tempo": 136,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -7999,13 +7999,13 @@
       "songId": "db58061e-9c10-5cd8-89e0-68c6385cc176",
       "title": "Glory, Honor, Power",
       "file": "songs/pdf/glory-honor-power--db58061e.chopro",
-      "contentSha256": "afa2320877623fb2c798b1d2161fe74f0d9fa84bf4665cb28d7bc1f43e3996e3",
+      "contentSha256": "69dad786cc134d6f058d33aede3eda3f2c2c34c5dbe61e33f420027720c0f5b7",
       "metadata": {
         "key": "E",
         "artist": "Influence Music",
         "year": null,
         "tempo": 78,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "worship",
@@ -8064,13 +8064,13 @@
       "songId": "ddc2bc4b-ab3f-5f69-ba0a-664163fe07bf",
       "title": "A Better Word",
       "file": "songs/pdf/a-better-word--ddc2bc4b.chopro",
-      "contentSha256": "1a00e30183791408004035909fe172e166f8d91372187f038ec53df496dd6a78",
+      "contentSha256": "fb4147a62c17116c723cb0f7f0471f97e49b0a0849058fe6b03de236658acc58",
       "metadata": {
         "key": "G",
         "artist": "Benita Jones",
         "year": null,
         "tempo": 75,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -8100,13 +8100,13 @@
       "songId": "de6abb7c-80a7-52b0-b331-dcde9670a826",
       "title": "Go Tell It / Wonderful Child",
       "file": "songs/pdf/go-tell-it-wonderful-child--de6abb7c.chopro",
-      "contentSha256": "09baf1d69e9e6184eda7ce15e55da033dfc457d5b30bea5a795a1111e2cb4186",
+      "contentSha256": "792d34c6054b66a969fb5c1a337265bf3db2b7e05de1d7dd35a690d66b50bcf9",
       "metadata": {
         "key": "Eb",
         "artist": "James Fortune & FIYA",
         "year": null,
         "tempo": 134,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "christmas",
@@ -8133,13 +8133,13 @@
       "songId": "deca880a-611e-5910-8630-1385c468e420",
       "title": "Not Afraid",
       "file": "songs/pdf/not-afraid--deca880a.chopro",
-      "contentSha256": "6dc14cc4ec5dd333f0edada4c45b78727cf5406d58217fa78e8f99dbf2a468dc",
+      "contentSha256": "398bea1bee009a124139c5f492a7b31c259c4730f3063db7ad677a33a6dd45cd",
       "metadata": {
         "key": "F#",
         "artist": "Jesus Culture",
         "year": null,
         "tempo": 79,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -8166,13 +8166,13 @@
       "songId": "e03c7160-dcc4-5fb9-b7d4-051692983e01",
       "title": "Walls Come Down",
       "file": "songs/pdf/walls-come-down--e03c7160.chopro",
-      "contentSha256": "23ecd73001a4bf70dd3f075a726b7b3e29c023496025e59f14985dfd9528ace3",
+      "contentSha256": "9cf27ab8bd1a4869ebffee87c240fcfdb7a8b6fb36f8438935a53bb2a003ddf1",
       "metadata": {
         "key": "A",
         "artist": "ReFRESH Worship",
         "year": null,
         "tempo": 100,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -8199,13 +8199,13 @@
       "songId": "e07d8da0-30c0-561c-a048-f3477f5c73a9",
       "title": "My Help",
       "file": "songs/pdf/my-help--e07d8da0.chopro",
-      "contentSha256": "9da11c40892311e6d5435377455f2c96e60689a472c6c0c867d8364927f87dc7",
+      "contentSha256": "5c992afc550a82aad7acbdcffaf0cac59284485fe3a6d66f09e888530b4cfd83",
       "metadata": {
         "key": "G",
         "artist": "Gateway College",
         "year": null,
         "tempo": 77,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -8333,13 +8333,13 @@
       "songId": "e6a93ae4-9112-5d5a-876a-adcbf9342358",
       "title": "Standing",
       "file": "songs/pdf/standing--e6a93ae4.chopro",
-      "contentSha256": "d4b57787277403e26fa007aa765073c92032b9607a8628f18ce3eda49d25ec84",
+      "contentSha256": "be818ad1f988a7c090bc5aad2b26b515ed32f29b0f445e7545829d1c6f7f57ac",
       "metadata": {
         "key": "E",
         "artist": "William McDowell",
         "year": null,
         "tempo": 87,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust"
@@ -8397,13 +8397,13 @@
       "songId": "e8da128f-f715-5aa4-9b72-18d009120dd7",
       "title": "I Am Reminded",
       "file": "songs/pdf/i-am-reminded--e8da128f.chopro",
-      "contentSha256": "0b539595b3e8032ca422cbc6e8ac50921bb2fed28bb0f2c1afcc353a105f9178",
+      "contentSha256": "f555bf3a7b0eede96175dd00ee313fec280f8bc42e4e351dcaac91948da899fc",
       "metadata": {
         "key": "Db",
         "artist": "The Brooklyn Tabernacle Choir",
         "year": null,
         "tempo": 72,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "faith-trust",
@@ -8531,13 +8531,13 @@
       "songId": "ec172787-f3a0-583b-aea5-71109dbc4662",
       "title": "Nothing Compares (You Are Good)",
       "file": "songs/pdf/nothing-compares-you-are-good--ec172787.chopro",
-      "contentSha256": "29abc44cc65033db46bc511a4b4ca9a28890f074f64594e5b66380b2f829e5e2",
+      "contentSha256": "cddc6c6b1aa2c2368a5245f104b11e93b80b33c8a857dd7289012a5c4df3d4f1",
       "metadata": {
         "key": "C",
         "artist": "Indiana Bible College (IBC)",
         "year": null,
         "tempo": 142,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -8563,13 +8563,13 @@
       "songId": "ed30ddd2-e5bd-567e-8863-b44cbcb249d9",
       "title": "We Rise",
       "file": "songs/pdf/we-rise--ed30ddd2.chopro",
-      "contentSha256": "8928edc053d1ed320a239c0eb2e4a4b49d811b990a012976d23d7cafc34d07cb",
+      "contentSha256": "a3999c0ae31823021a6ea356406d64682967319be7382e3fe07be41d4f0af170",
       "metadata": {
         "key": "F",
         "artist": "Urshan College",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "victory",
@@ -8669,13 +8669,13 @@
       "songId": "f2aa5a36-ba4b-5d04-b32f-183632b78dd5",
       "title": "Even Now",
       "file": "songs/pdf/even-now--f2aa5a36.chopro",
-      "contentSha256": "e100e359737889c7c68abda8253843a48e4fabe66dc25e5b349b99bffd07fed9",
+      "contentSha256": "e783eb03ab527988e03615744d1d37aa67dab7e474f6a3ef209e21ad374bf75d",
       "metadata": {
         "key": "B",
         "artist": "Awakening",
         "year": null,
         "tempo": 80,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "healing",
@@ -8734,13 +8734,13 @@
       "songId": "f3cce458-6e09-5ef8-b9d5-4e8b1ed496f2",
       "title": "Yes I Will",
       "file": "songs/pdf/yes-i-will--f3cce458.chopro",
-      "contentSha256": "e7c951a0d0684b01ad5057bd609485957aeef6f46ad434eb3d000e5c69e107c8",
+      "contentSha256": "1e7adfdd60c18e4a239ce999b1e2cfbf6476dad5dfedd3265c1636ae194ede85",
       "metadata": {
         "key": "C",
         "artist": "Vertical Worship",
         "year": null,
         "tempo": 74,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -8768,13 +8768,13 @@
       "songId": "f46706c8-f193-5494-ab18-ebcdf08f22d4",
       "title": "Revival Is Waiting",
       "file": "songs/pdf/revival-is-waiting--f46706c8.chopro",
-      "contentSha256": "5243b5df8f2e3263c6bec9321229b079a5ca8ec016e550493bfdff2e8da29fcb",
+      "contentSha256": "900a8b09dafb611cbf2de0d7c265e5228f454271773c04fbfec6a9b1f58a3ab5",
       "metadata": {
         "key": "D",
         "artist": null,
         "year": null,
         "tempo": 56,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "salvation",
@@ -8969,13 +8969,13 @@
       "songId": "f6fa130e-712e-53ae-8263-4cf89312753c",
       "title": "Total Praise",
       "file": "songs/pdf/total-praise--f6fa130e.chopro",
-      "contentSha256": "456d929bb93fcb52676143383a4140769a1d702d7ffc82b1d76520a191e01b5e",
+      "contentSha256": "a498ce1265615392db04611d1e777f1ea8e78af10564cc69ed1cd04d126f0236",
       "metadata": {
         "key": "Db",
         "artist": "Richard Smallwood",
         "year": null,
         "tempo": 48,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"
@@ -9000,13 +9000,13 @@
       "songId": "f7a459b0-93db-5fcd-bb5e-5bf5351f9934",
       "title": "Hosanna",
       "file": "songs/pdf/hosanna--f7a459b0.chopro",
-      "contentSha256": "8e3ef71032bc37a52f3cdf6db7fe41280c6dc1e318b2998d018e799c2c1987a7",
+      "contentSha256": "4f62cac20ddc6fb71cb158e6709136fee94a298f598e9758789b2bf43cbb4083",
       "metadata": {
         "key": "C",
         "artist": "James Wilson",
         "year": null,
         "tempo": 70,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -9033,13 +9033,13 @@
       "songId": "f9b384e0-98e0-503f-bb12-d046d8f03cea",
       "title": "Sound Like Heaven",
       "file": "songs/pdf/sound-like-heaven--f9b384e0.chopro",
-      "contentSha256": "1500a0018fc29eed1cad9ee17680352f5a3a121f0004f1426133af804e48bb34",
+      "contentSha256": "b6aeafa16cdd854216e31a66913e0537a3fceec278b531fbc48fef8d8245d24b",
       "metadata": {
         "key": "Eb",
         "artist": "Angie Pearson feat. Landry Cantrell",
         "year": null,
         "tempo": 90,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -9129,13 +9129,13 @@
       "songId": "fb406957-cd12-5b0c-b64f-06a96cab6c01",
       "title": "Hallowed Be Your Name",
       "file": "songs/pdf/hallowed-be-your-name--fb406957.chopro",
-      "contentSha256": "4038bb9e9ae5b5a2453e48eaff543f92af115dba71fad9c9929ccc4b65b8909c",
+      "contentSha256": "c9a1f8d959784a41198a36cc39e5d47665a222978ed88102c0f017ee81d725d3",
       "metadata": {
         "key": "D",
         "artist": "Ron Kenoly",
         "year": null,
         "tempo": 68,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -9191,13 +9191,13 @@
       "songId": "fccc3080-2055-5df3-b1e9-305a9e840435",
       "title": "Mighty",
       "file": "songs/pdf/mighty--fccc3080.chopro",
-      "contentSha256": "855ece763148c74041d18162e2e954a650d19b040e45091a22ef98b45af10ccb",
+      "contentSha256": "77efb111d08468fe9c0f1d82eeb2fc14827792e06c07e353518f9d73dc4132a8",
       "metadata": {
         "key": "B",
         "artist": "Phase 2",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "blood",
@@ -9223,13 +9223,13 @@
       "songId": "fd35c467-49bd-5e61-88f1-bf7b9a29b883",
       "title": "One Name",
       "file": "songs/pdf/one-name--fd35c467.chopro",
-      "contentSha256": "e5181c457590a37cdce183e0efe803434d7a2c1a0418f8bedd9cfcb9b8b0b6b0",
+      "contentSha256": "2422daf7b67a17206494b7bfd4e3d43034980961b2c0570e318eacf909a6a191",
       "metadata": {
         "key": "C",
         "artist": "Anthony Trimble",
         "year": null,
         "tempo": null,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise",
@@ -9257,13 +9257,13 @@
       "songId": "fd3baa04-f184-578e-981c-8c82da73e73e",
       "title": "Be Praised",
       "file": "songs/pdf/be-praised--fd3baa04.chopro",
-      "contentSha256": "7982b8f03e1c97e248a326b17d2acfd4580378d73e351b99da306804d0a45d4f",
+      "contentSha256": "2083123a790923fd84d8b8a3021208f4c2d31eb76ba9d1cc9333a621bf74de8f",
       "metadata": {
         "key": "Gb",
         "artist": "Red Worship",
         "year": null,
         "tempo": 66,
-        "isDraft": true
+        "isDraft": false
       },
       "themes": [
         "praise"

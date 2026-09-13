@@ -23,7 +23,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { eq } from "drizzle-orm";
 import { songs } from "../schema/index.js";
-import { formatTagField } from "@vpc-music/shared";
+import { formatTagField, hasChords } from "@vpc-music/shared";
 import { nullable, sha256 } from "./identity.js";
 import { parseHeader, splitHeader } from "./enrich.js";
 import { resolveCreator, resolveOrganization } from "./dbLookup.js";
@@ -42,7 +42,7 @@ export const FIELD_SETS = {
   tags: ["tags"],
   // `aka` joins tags as ours: the legacy importer never wrote it, so a reviewed
   // alternate title cannot be clobbered by a re-import.
-  all: ["title", "key", "artist", "year", "tempo", "content", "isDraft", "tags", "aka"],
+  all: ["title", "key", "artist", "year", "tempo", "content", "isDraft", "tags", "aka", "status"],
 };
 
 /** Read every manifest in the corpus. */
@@ -122,6 +122,13 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
         tempo: tempoOf(directive("tempo") ?? song.metadata?.tempo),
         content,
         isDraft: Boolean(song.metadata?.isDraft),
+        /*
+         * A lyrics sheet is not a half-finished chart — it is a finished lyrics
+         * sheet — but a musician reaching for a chart needs to know before they
+         * open it. 346 songs are lyrics only; this is what says so, and it
+         * gives the `status` enum its first real use.
+         */
+        status: hasChords(content) ? null : "missing_chords",
         tags: formatTagField({ flags, themes }) || null,
         source: manifest.sourceType,
       });
@@ -232,7 +239,7 @@ export async function runCorpusLoad(options, { database, log = console.log } = {
     .select({
       id: songs.id, title: songs.title, aka: songs.aka, key: songs.key, artist: songs.artist,
       year: songs.year, tempo: songs.tempo, content: songs.content,
-      isDraft: songs.isDraft, tags: songs.tags, isArchived: songs.isArchived,
+      isDraft: songs.isDraft, tags: songs.tags, status: songs.status, isArchived: songs.isArchived,
     })
     .from(songs)
     .where(eq(songs.organizationId, organization.id));

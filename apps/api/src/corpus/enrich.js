@@ -73,6 +73,7 @@ export function mediaDirectiveKey(objectKey) {
  * @param {string} spec.content        the converted ChordPro
  * @param {object} spec.metadata       title/artist/key/tempo/year from conversion
  * @param {string[]} [spec.aka]        other names this song answers to
+ * @param {string} [spec.verified]     how an independent source confirmed it
  * @param {string[]} [spec.themes]     derived theme ids
  * @param {Array<{key,url,bpm?}>} [spec.media]
  * @param {string} [spec.sourcePath]   path inside the source tree
@@ -138,6 +139,10 @@ export function enrichChordPro(spec) {
    * character inside the source path, which is recoverable but not usable.
    */
   if (spec.flags?.length) out.set("x_flag", [...new Set(spec.flags)].sort().join(", "));
+
+  // Why this chart is trusted, travelling with the chart rather than sitting in
+  // a report nobody opens.
+  if (spec.verified) out.set("x_verified", spec.verified);
 
   if (spec.themes?.length) out.set("x_theme", [...spec.themes].join(", "));
   if (spec.sourceType && spec.sourcePath) {
