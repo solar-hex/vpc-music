@@ -220,3 +220,73 @@ describe("flat keys", () => {
     expect(h.key).toBe("B");
   });
 });
+
+describe("the credit column", () => {
+  /** One run on the page, positioned exactly where the real charts put it. */
+  const run = (text, { x, y, size }) => ({
+    text, x, y, width: text.length * size * 0.5,
+    height: size, fontName: "f", fontSize: size, fontIsBold: false, fontIsItalic: false, pageIndex: 0,
+  });
+
+  it("does not read the right-aligned writer credit as part of the title", async () => {
+    const { readChartHeader } = await import("../corpus/pdfTextLocal.js");
+    // The exact layout of It-is-Well-Chord-Chart.pdf: "Written by" is a small
+    // label at x=525, and the writer's name sits at x=498 on the SAME baseline
+    // as the title at x=36 — so reading left to right titled the song
+    // "It Is Well Horatio Spafford" and lost the writer.
+    const h = readChartHeader([
+      run("Written by", { x: 525, y: 30, size: 11 }),
+      run("It Is Well", { x: 36, y: 60, size: 28 }),
+      run("Horatio Spafford", { x: 498, y: 60, size: 28 }),
+      run("Key: C Tempo: 104 Time: 4/4", { x: 36, y: 80, size: 10 }),
+    ]);
+    expect(h.title).toBe("It Is Well");
+    expect(h.writers).toBe("Horatio Spafford");
+    expect(h.key).toBe("C");
+    expect(h.tempo).toBe(104);
+  });
+
+  it("leaves a title alone when the page carries no such label", async () => {
+    const { readChartHeader } = await import("../corpus/pdfTextLocal.js");
+    // Without the "Written by" label the split must not fire, or a genuine
+    // two-part title laid out across the page would be truncated.
+    const h = readChartHeader([
+      run("Go Tell It", { x: 36, y: 60, size: 28 }),
+      run("Wonderful Child", { x: 400, y: 60, size: 28 }),
+      run("Key: F", { x: 36, y: 80, size: 10 }),
+    ]);
+    expect(h.title).toBe("Go Tell It Wonderful Child");
+  });
+
+  it("refuses a title that is really a page of chords", async () => {
+    const { readChartHeader } = await import("../corpus/pdfTextLocal.js");
+    // One chart has no large type at all, so every body line was "the title"
+    // and the song came out named with its whole first page.
+    const body = "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F] | (x2) [Ab-Bb-Cb-C] Db/Gb Cbmaj7 Db9 | CHORUS Ye shall have the power";
+    const h = readChartHeader([run(body, { x: 36, y: 60, size: 11 })], { filename: "Power-Chord-Chart.pdf" });
+    expect(h.title).toBe("Power Chord Chart");
+  });
+});
+
+describe("artistFromLine", () => {
+  it("takes the performer from the line under the title", async () => {
+    const { artistFromLine } = await import("../corpus/pdfSong.js");
+    expect(artistFromLine("Sinach")).toBe("Sinach");
+    expect(artistFromLine("Indiana Bible College")).toBe("Indiana Bible College");
+  });
+
+  it("keeps the performer and drops the album beside it", async () => {
+    const { artistFromLine } = await import("../corpus/pdfSong.js");
+    expect(artistFromLine('Eddie James - "Magnify"')).toBe("Eddie James");
+  });
+
+  it("refuses the arrangement, which is what sits there on a chart with no credit", async () => {
+    const { artistFromLine } = await import("../corpus/pdfSong.js");
+    // These two were stored as artists: an artist never opens with a section
+    // word, and a name never contains a chord.
+    expect(artistFromLine("Intro F G C")).toBeNull();
+    expect(artistFromLine("Intro Chorus (Parts) (2x)")).toBeNull();
+    expect(artistFromLine("| Dm C/E Dm |")).toBeNull();
+    expect(artistFromLine("Key: C Tempo: 104")).toBeNull();
+  });
+});

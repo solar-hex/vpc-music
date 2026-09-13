@@ -199,6 +199,41 @@ export function readChartHeader(elements, { filename = "" } = {}) {
     if (last && Math.abs(last.y - e.y) < 4) last.parts.push(e);
     else lines.push({ y: e.y, parts: [e] });
   }
+
+  /*
+   * These charts right-align the songwriter credit on the SAME baseline as the
+   * title: "It Is Well" sits at x=36 and "Horatio Spafford" at x=498, with a
+   * small "Written by" label above it. Reading the line left to right glued
+   * the two together, so ~20 songs were titled "It Is Well Horatio Spafford"
+   * — the title wrong AND the writers lost, in one move.
+   *
+   * Split the title line at the gap. Guarded twice, because a wrong cut would
+   * truncate a legitimate two-part title: only on the largest type on the
+   * page, and only when the page actually carries the "Written by" label.
+   */
+  const creditParts = [];
+  const labelled = lines.some((l) => /^written\s+by\b/i.test(renderLine(l.parts).text.trim()));
+  if (labelled) {
+    const sizeOf = (l) => Math.max(...l.parts.map((p) => p.fontSize));
+    const biggest = Math.max(...lines.map(sizeOf));
+    for (const line of lines) {
+      if (sizeOf(line) < biggest * 0.95) continue;
+      const sorted = [...line.parts].sort((a, b) => a.x - b.x);
+      let cut = -1;
+      for (let i = 1; i < sorted.length; i += 1) {
+        const prev = sorted[i - 1];
+        const gap = sorted[i].x - (prev.x + prev.width);
+        // Two and a half line-heights of white space is a column boundary, not
+        // a word space — a wide word space is well under one.
+        if (gap > Math.max(sorted[i].fontSize, prev.fontSize) * 2.5) { cut = i; break; }
+      }
+      if (cut > 0) {
+        creditParts.push({ y: line.y, parts: sorted.slice(cut) });
+        line.parts = sorted.slice(0, cut);
+      }
+    }
+  }
+
   // Gap-aware, or a flat key is truncated: pdf.js splits "Bb" into "B" + "b",
   // and joining with a space made `Key: Bb` read as `Key: B `. Every chord on
   // the chart then transposes from the wrong tonic.
@@ -257,6 +292,11 @@ export function readChartHeader(elements, { filename = "" } = {}) {
     }
     break;
   }
+  // Whatever sat in the credit column of the title line belongs here too.
+  for (const credit of creditParts.sort((a, b) => a.y - b.y)) {
+    const text = renderLine(credit.parts).text.replace(/\s+/g, " ").trim();
+    if (text && !/^written\s+by\b/i.test(text)) writerParts.push(text);
+  }
   if (writerParts.length > 0) {
     out.writers = writerParts.join(" ").replace(/\s*,\s*/g, ", ").replace(/,\s*$/, "").trim() || null;
   }
@@ -272,6 +312,21 @@ export function readChartHeader(elements, { filename = "" } = {}) {
       .replace(/\s+/g, " ")
       .trim() || null;
   }
+  /*
+   * NOT attempted: splitting a credit off the title by reading the words. One
+   * chart sets its writers in the title's own type with no gap and no label
+   * ("Glory Zebrina Anderson, Sarah Benibo"), and no word pattern separates
+   * that from a real title — "Jesus, There Is Something, About That Name" has
+   * the same shape and was mangled by every rule tried. Geometry is evidence;
+   * guessing at names is not. That one title stays for a human.
+   */
+
+  /*
+   * A chart with no large type at all makes every body line "the title", and
+   * one song came out titled with its entire first page of chords. No song is
+   * called that; the filename is a better answer than a paragraph.
+   */
+  if (out.title && (out.title.length > 90 || out.title.split(/\s+/).length > 14)) out.title = null;
   if (!out.title && filename) {
     out.title = filename.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim() || null;
   }

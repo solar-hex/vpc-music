@@ -7,8 +7,8 @@
     "library": 1058,
     "masterIndex": 8234,
     "sourceable": 15,
-    "ours": 317,
-    "duplicateTitles": 215
+    "ours": 305,
+    "duplicateTitles": 217
   },
   "byStatus": {
     "Later": 6,
@@ -497,8 +497,8 @@
       "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
       "indexNote": null,
       "nearest": {
-        "title": "Cry Out Ryan Avery, Tamika Jackson",
-        "score": 0.14
+        "title": "Cry Out",
+        "score": 0.33
       }
     },
     {
@@ -562,8 +562,8 @@
       "sourceUrl": null,
       "indexNote": null,
       "nearest": {
-        "title": "Weve Come To Praise Him",
-        "score": 0.18
+        "title": "All To You",
+        "score": 0.22
       }
     },
     {
@@ -1219,27 +1219,17 @@
       "artist": null
     },
     {
-      "title": "All To You Tevia Alfter, Natalie Bunner",
-      "source": "pdf",
-      "artist": "Bryan Pound"
-    },
-    {
-      "title": "Already Done Kristen Sangary",
-      "source": "pdf",
-      "artist": "Kristen Sangary"
-    },
-    {
       "title": "Angels We Have Heard (Glory Be)",
       "source": "pdf",
       "artist": "Jordan Smith"
     },
     {
-      "title": "Answer is Jesus Kenna Turner West",
+      "title": "Answer is Jesus",
       "source": "pdf",
       "artist": "Karen Peck & New River"
     },
     {
-      "title": "Anthem We Raise & Keiko Grove",
+      "title": "Anthem We Raise",
       "source": "pdf",
       "artist": "Indiana Bible College (IBC)"
     },
@@ -1266,7 +1256,7 @@
     {
       "title": "At The Name",
       "source": "pdf",
-      "artist": "Written by Christyana Blake"
+      "artist": null
     },
     {
       "title": "Available",
@@ -1279,7 +1269,7 @@
       "artist": "Mark Crowder"
     },
     {
-      "title": "Be Exalted / I Exalt Thee Sean Hill, & Shelly E. Johnson",
+      "title": "Be Exalted / I Exalt Thee",
       "source": "pdf",
       "artist": "Brittani Scott"
     },
@@ -1379,11 +1369,6 @@
       "artist": null
     },
     {
-      "title": "Christmas Day Andrew Bergthold",
-      "source": "pdf",
-      "artist": "Chris Tomlin"
-    },
-    {
       "title": "Colors of the Wind",
       "source": "chrd",
       "artist": null
@@ -1439,11 +1424,6 @@
       "artist": null
     },
     {
-      "title": "Cry Out Ryan Avery, Tamika Jackson",
-      "source": "pdf",
-      "artist": "ReFresh Worship"
-    },
-    {
       "title": "Days Of Elijah - Behold He Comes",
       "source": "chrd",
       "artist": null
@@ -1484,7 +1464,7 @@
       "artist": null
     },
     {
-      "title": "Everything is Changing Sarah Gerald",
+      "title": "Everything is Changing",
       "source": "pdf",
       "artist": "The Belonging Co."
     },
@@ -1649,11 +1629,6 @@
       "artist": null
     },
     {
-      "title": "Have Your Way Miah White, J.J. Hairston",
-      "source": "pdf",
-      "artist": "J.J. Hairston"
-    },
-    {
       "title": "He Didn't Just Carry A Cross",
       "source": "chrd",
       "artist": null
@@ -1689,7 +1664,7 @@
       "artist": "Lori Green"
     },
     {
-      "title": "He Won’t Fail Darius Antonie James",
+      "title": "He Won’t Fail",
       "source": "pdf",
       "artist": "Todd Galberth"
     },
@@ -1711,7 +1686,7 @@
     {
       "title": "Heaven Medley",
       "source": "pdf",
-      "artist": null
+      "artist": "Cortt Chavis"
     },
     {
       "title": "Hes An Awesome God",
@@ -1759,12 +1734,7 @@
       "artist": null
     },
     {
-      "title": "House of Miracles Brandon Lake and Jacob Sooter",
-      "source": "pdf",
-      "artist": "Brandon Lake"
-    },
-    {
-      "title": "How I Need You Chris Griffin, Micah Massey",
+      "title": "How I Need You",
       "source": "pdf",
       "artist": "Highlands Worship"
     },
@@ -1889,7 +1859,7 @@
       "artist": null
     },
     {
-      "title": "I Speak Victory Brittani Scott",
+      "title": "I Speak Victory",
       "source": "pdf",
       "artist": "Indiana Bible College (IBC)"
     },
@@ -1964,19 +1934,9 @@
       "artist": "James Wilson"
     },
     {
-      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) [Ab-Bb-Cb-C] Db/Gb Cbmaj7 Db9 | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] |Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS Ab9 Ye shall have the power, ye shall have the power Ab9 Ye shall have the power, ye shall have the power B9 C9 Db9 Bb7 Eb9 Ab9 Af - ter the Holy Ghost has come upon you, ye shall have the power B9 C9 Db9 Bb7 Eb7(#5#9) Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS",
-      "source": "pdf",
-      "artist": "Eddie James - \"Magnify\""
-    },
-    {
       "title": "It Is Done",
       "source": "pdf",
       "artist": "The Pentecostals of Katy (POK)"
-    },
-    {
-      "title": "It Is Well Horatio Spafford",
-      "source": "pdf",
-      "artist": null
     },
     {
       "title": "It’s Happening Now",
@@ -2109,11 +2069,6 @@
       "artist": "James Wilson"
     },
     {
-      "title": "Light of the World Duncan, Paul Mabury",
-      "source": "pdf",
-      "artist": "Lauren Daigle"
-    },
-    {
       "title": "Like Our God",
       "source": "pdf",
       "artist": "Anthony Trimble feat. Bethany Easter"
@@ -2219,11 +2174,6 @@
       "artist": "Preashea Hilliard"
     },
     {
-      "title": "Nobody Like You Joshua Dufrene, and Colin Edge",
-      "source": "pdf",
-      "artist": "Covenant Worship"
-    },
-    {
       "title": "Noel, Christ is Born",
       "source": "pdf",
       "artist": "Mark Yandris"
@@ -2254,9 +2204,9 @@
       "artist": "Indiana Bible College (IBC)"
     },
     {
-      "title": "O Come Emmanuel Micah Pollock, Jonathan Stephens",
+      "title": "O Come Emmanuel",
       "source": "pdf",
-      "artist": "Intro F G C"
+      "artist": null
     },
     {
       "title": "Old School Church Medley",
@@ -2299,7 +2249,7 @@
       "artist": "GMWA Women of Worship"
     },
     {
-      "title": "Our God Reigns Forever Jesse Wilson",
+      "title": "Our God Reigns Forever",
       "source": "pdf",
       "artist": "Jesse Wilson"
     },
@@ -2334,11 +2284,6 @@
       "artist": null
     },
     {
-      "title": "Praise Pat Barrett, Steven Furtick",
-      "source": "pdf",
-      "artist": "Elevation Worship"
-    },
-    {
       "title": "Praise The Lord - Praise His Holy Name",
       "source": "chrd",
       "artist": null
@@ -2369,14 +2314,9 @@
       "artist": null
     },
     {
-      "title": "Revival Is Waiting Dylan Woodward",
+      "title": "Revival Is Waiting",
       "source": "pdf",
-      "artist": "Intro G"
-    },
-    {
-      "title": "Rise Up Ted Keith",
-      "source": "pdf",
-      "artist": "Ted Keith"
+      "artist": null
     },
     {
       "title": "Same God",
@@ -2384,12 +2324,12 @@
       "artist": null
     },
     {
-      "title": "Same God Brandon Lake, Pat Barrett",
+      "title": "Same God",
       "source": "pdf",
       "artist": "Elevation Worship"
     },
     {
-      "title": "Same God Mia Fields, Troy Culbreth",
+      "title": "Same God",
       "source": "pdf",
       "artist": "Cross Worship"
     },
@@ -2404,7 +2344,7 @@
       "artist": "Geoffrey Golden"
     },
     {
-      "title": "Silence the Roar Laura Payne, Cam Cook, Kevin Howard",
+      "title": "Silence the Roar",
       "source": "pdf",
       "artist": "Urshan College"
     },
@@ -2504,7 +2444,7 @@
       "artist": "David & Nicole Binion"
     },
     {
-      "title": "Thankful Lauren Strahm, Sarah Gerald",
+      "title": "Thankful",
       "source": "pdf",
       "artist": "J.J. Hairston"
     },
@@ -2574,12 +2514,12 @@
       "artist": "Urshan College"
     },
     {
-      "title": "This Is Freedom Lauren Strahm, Sarah Gerald",
+      "title": "This Is Freedom",
       "source": "pdf",
       "artist": "The Belonging Co."
     },
     {
-      "title": "This Is Revival Kevin Winebarger, & Sean Hill",
+      "title": "This Is Revival",
       "source": "pdf",
       "artist": "Brittani Scott"
     },
@@ -2609,9 +2549,9 @@
       "artist": "Cody Carnes & Brandon Lake"
     },
     {
-      "title": "Trusting For A Miracle Mike Hudson & Kelsey White",
+      "title": "Trusting For A Miracle",
       "source": "pdf",
-      "artist": "Intro Chorus (Parts) (2x)"
+      "artist": null
     },
     {
       "title": "Turn you eyes upon Jesus",
@@ -2719,7 +2659,7 @@
       "artist": "R.A. Vernon"
     },
     {
-      "title": "When I Shout / Testify Wood",
+      "title": "When I Shout / Testify",
       "source": "pdf",
       "artist": "Indiana Bible College (IBC)"
     },
@@ -2933,6 +2873,14 @@
       "sources": [
         "pdf",
         "text"
+      ]
+    },
+    {
+      "title": "Same God",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
       ]
     },
     {
@@ -3315,6 +3263,13 @@
       "sources": [
         "chrd",
         "docx"
+      ]
+    },
+    {
+      "title": "Have Your Way",
+      "count": 2,
+      "sources": [
+        "pdf"
       ]
     },
     {

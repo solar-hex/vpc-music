@@ -1,4 +1,5 @@
 {title: Heaven Medley}
+{artist: Cortt Chavis}
 {key: Eb}
 {x_theme: heaven}
 {x_source: pdf:UPCI Music/2016/Heaven Medley/Heaven-Medley-Chord-Chart.pdf}
@@ -8,8 +9,6 @@
 {x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/heaven-medley/charts/chord-chart.pdf}
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/heaven-medley/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/heaven-medley/charts/vocals.pdf}
-
-[Cortt] [Chavis]
 
 {comment: Intro}
 Eb Gb/Eb - Ab/Eb - Bbm/Eb Ab/Eb-Gb/Eb Gb/Eb - Ab/Eb - Gb/Eb (3x)

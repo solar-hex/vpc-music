@@ -64,6 +64,34 @@ export function classifyChartLine(text) {
 }
 
 /**
+ * The line under the title on an older chart is usually the performer — but
+ * not always, and a wrong artist is worse than none.
+ *
+ * The charts with no credit line start straight into the arrangement, so this
+ * was reading "Intro F G C" and "Intro Chorus (Parts) (2x)" as artists. Two
+ * rules settle it: an artist never opens with a section word, and a name never
+ * contains a chord.
+ *
+ * @returns {string|null} the performer, or null if the line is not one
+ */
+export function artistFromLine(text) {
+  let line = String(text || "").trim();
+  if (!line) return null;
+  if (/key\s*:|tempo\s*:|time\s*:|written\s+by/i.test(line)) return null;
+  if (new RegExp(`^(?:${SECTION_WORD})\\b`, "i").test(line)) return null;
+  if (/[|[\]]/.test(line)) return null;
+
+  // 'Eddie James – "Magnify"' is a performer and an album; keep the performer.
+  line = line.split(/\s+[–—-]\s+/)[0].replace(/[“"][^”"]*[”"]/g, "").trim();
+  if (!line || !/^[A-Z]/.test(line)) return null;
+  if (line.length > 40 || line.split(/\s+/).length > 5) return null;
+
+  const tokens = line.split(/\s+/).filter(Boolean);
+  if (tokens.some((t) => isChordToken(t.replace(/[(),.]/g, "")))) return null;
+  return line;
+}
+
+/**
  * Put each chord at the lyric character nearest its x position — the same rule
  * the `.chrd` converter uses, because alignment is meaning.
  */
@@ -129,14 +157,13 @@ export async function convertPdfChartToChordPro(filename, buffer) {
       else lines.push({ y: e.y, parts: [e] });
     }
     const rendered = lines
-      .map((l) => ({ size: Math.max(...l.parts.map((p) => p.fontSize)), text: l.parts.map((p) => p.text).join(" ").replace(/\s+/g, " ").trim() }))
+      .map((l) => ({ size: Math.max(...l.parts.map((p) => p.fontSize)), text: renderLine(l.parts).text.replace(/\s+/g, " ").trim() }))
       .filter((l) => l.text);
     const max = Math.max(...rendered.map((l) => l.size), 0);
     const titleAt = rendered.findIndex((l) => l.size >= max * 0.95);
     for (const l of rendered.slice(titleAt + 1, titleAt + 3)) {
-      if (classifyChartLine(l.text).type !== "lyric") continue;
-      if (/key\s*:|tempo\s*:/i.test(l.text)) continue;
-      if (l.text.length <= 40 && l.text.split(/\s+/).length <= 5 && /^[A-Z]/.test(l.text)) { rawArtist = l.text; break; }
+      const candidate = artistFromLine(l.text);
+      if (candidate) { rawArtist = candidate; break; }
     }
   }
   const credits = normalizeCredits({ artist: rawArtist, writers: header.writers });
