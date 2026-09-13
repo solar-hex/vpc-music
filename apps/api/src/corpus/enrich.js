@@ -72,6 +72,7 @@ export function mediaDirectiveKey(objectKey) {
  * @param {object} spec
  * @param {string} spec.content        the converted ChordPro
  * @param {object} spec.metadata       title/artist/key/tempo/year from conversion
+ * @param {string[]} [spec.aka]        other names this song answers to
  * @param {string[]} [spec.themes]     derived theme ids
  * @param {Array<{key,url,bpm?}>} [spec.media]
  * @param {string} [spec.sourcePath]   path inside the source tree
@@ -107,6 +108,27 @@ export function enrichChordPro(spec) {
   if (!out.has("tempo") && spec.derivedTempo) {
     out.set("tempo", String(spec.derivedTempo));
     out.set("x_tempo_source", "derived from media filename");
+  }
+
+  /*
+   * Other names this song answers to. The church's own list calls it "I See A
+   * Crimson Stream Of Blood" and the chart is titled "I See A Crimson Stream";
+   * without this, searching the first finds nothing and the gap report keeps
+   * reporting a song we have as missing.
+   *
+   * Semicolons separate them, because an alternate title often contains a
+   * comma. Reviewed in `corpus/aliases.json`, never guessed here.
+   */
+  if (spec.aka?.length) {
+    const seen = new Set([String(out.get("title") || "").toLowerCase()]);
+    const names = [];
+    for (const name of spec.aka) {
+      const text = String(name || "").trim();
+      if (!text || seen.has(text.toLowerCase())) continue;
+      seen.add(text.toLowerCase());
+      names.push(text);
+    }
+    if (names.length > 0) out.set("x_aka", names.join("; "));
   }
 
   if (spec.themes?.length) out.set("x_theme", [...spec.themes].join(", "));

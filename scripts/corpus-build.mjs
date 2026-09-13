@@ -27,6 +27,7 @@ import { detectThemes } from "../apps/api/src/corpus/themes.js";
 import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
 import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
 import { loadMediaIndex, DROPBOX_ROOTS } from "../apps/api/src/corpus/mediaIndex.js";
+import { approvedBySong, loadAliases } from "../apps/api/src/corpus/aliases.js";
 import {
   corpusFileName,
   deterministicSongId,
@@ -273,6 +274,9 @@ export async function buildCorpus({
   // Media links live in the chart file itself, so load whatever the media
   // ledgers know. Absent ledgers simply mean no links yet.
   const mediaIndex = await loadMediaIndex(corpusRoot);
+  // Reviewed alternate titles, written into each chart as {x_aka:} so the
+  // decision lives in git and the file stays the complete record.
+  const aliases = approvedBySong(loadAliases(join(corpusRoot, "aliases.json")));
   const stamp = todayStamp(now);
 
   const manifestEntries = [];
@@ -310,6 +314,7 @@ export async function buildCorpus({
       const content = enrichChordPro({
         content: baseContent,
         metadata: conversion.metadata,
+        aka: aliases.get(identity.songId),
         themes,
         media: linked.media,
         derivedTempo: linked.tempo,

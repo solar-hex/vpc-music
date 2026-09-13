@@ -111,6 +111,7 @@ pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
 pnpm corpus:stats                          # coverage, themes, completeness
 pnpm corpus:reader                         # dist/songbook.html — one offline file
 pnpm gap:report                            # what the church wants that we do not have
+pnpm gap:resolve                           # "probably here under another name" → aliases
 ```
 
 A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git diff` only ever shows real content changes. Run metadata goes to the gitignored report, never into a committed file.

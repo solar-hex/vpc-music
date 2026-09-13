@@ -39,7 +39,9 @@ const BATCH_SIZE = 50;
 export const FIELD_SETS = {
   core: ["title", "key", "artist", "year", "tempo", "content", "isDraft"],
   tags: ["tags"],
-  all: ["title", "key", "artist", "year", "tempo", "content", "isDraft", "tags"],
+  // `aka` joins tags as ours: the legacy importer never wrote it, so a reviewed
+  // alternate title cannot be clobbered by a re-import.
+  all: ["title", "key", "artist", "year", "tempo", "content", "isDraft", "tags", "aka"],
 };
 
 /** Read every manifest in the corpus. */
@@ -109,6 +111,7 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
       rows.push({
         id: song.songId,
         title: directive("title") ?? song.title,
+        aka: directive("x_aka"),
         key: directive("key") ?? nullable(song.metadata?.key),
         artist: directive("artist") ?? nullable(song.metadata?.artist),
         year: directive("year") ?? nullable(song.metadata?.year),
@@ -219,7 +222,7 @@ export async function runCorpusLoad(options, { database, log = console.log } = {
 
   const existingInOrg = await database
     .select({
-      id: songs.id, title: songs.title, key: songs.key, artist: songs.artist,
+      id: songs.id, title: songs.title, aka: songs.aka, key: songs.key, artist: songs.artist,
       year: songs.year, tempo: songs.tempo, content: songs.content,
       isDraft: songs.isDraft, tags: songs.tags,
     })

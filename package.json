@@ -39,6 +39,7 @@
         "intake": "node scripts/intake.mjs",
         "corpus:verify": "node scripts/corpus-verify.mjs",
         "gap:report": "node scripts/gap-report.mjs",
+        "gap:resolve": "node scripts/gap-resolve.mjs",
         "corpus:dedupe": "node scripts/corpus-dedupe.mjs",
         "corpus:load": "node scripts/corpus-load.mjs",
         "corpus:export": "node scripts/corpus-load.mjs --export"

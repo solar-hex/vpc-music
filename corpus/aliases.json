@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "aliases": [
+    {
+      "songId": "35515dad-726f-5526-8f2b-3b3ec364f63a",
+      "title": "Amazing Grace",
+      "alias": "This Is Amazing Grace",
+      "state": "proposed",
+      "score": 0.85,
+      "reason": "similar title"
+    },
+    {
+      "songId": "5a2498df-eb2d-5d91-908a-795f376d6839",
+      "title": "Are You Washed In The Blood",
+      "alias": "Are You Washed In The Blood Of The Lamb (Are You Washed In The Blood Of The Lamb)",
+      "state": "approved",
+      "score": 0.9,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "4f86b48b-35c8-51af-bb35-59195345a040",
+      "title": "Awesome God",
+      "alias": "Our God Is An Awesome God, Our God Is An Awesome God",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "a2f911a4-d14a-5caa-8be0-e61a04657310",
+      "title": "Bless the Lord",
+      "alias": "I Will Bless The Lord",
+      "state": "proposed",
+      "score": 0.88,
+      "reason": "one title contains the other, but so do other songs"
+    },
+    {
+      "songId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
+      "title": "Burdens Rolled Away",
+      "alias": "I Remember When My Burdens Rolled Away",
+      "state": "approved",
+      "score": 0.83,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "869801fc-5f8b-531f-9d9d-7fb72ea77685",
+      "title": "Catch On Fire",
+      "alias": "I Wish Somebodys Soul Would Catch On Fire",
+      "state": "approved",
+      "score": 0.81,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "549c85e1-50f4-52e1-8973-82b2fe7ae54f",
+      "title": "Come on everybody let us praise God",
+      "alias": "Let Us Praise God",
+      "state": "approved",
+      "score": 0.87,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "07b5e3db-8e36-59b2-8cae-2c4905ab2dc6",
+      "title": "Coming down",
+      "alias": "It's Coming Down",
+      "state": "proposed",
+      "score": 0.9,
+      "reason": "similar title"
+    },
+    {
+      "songId": "4611c368-2d1d-5063-91a3-0f311a79baf3",
+      "title": "Crying Holy",
+      "alias": "Im Crying Holy Unto The Lord",
+      "state": "proposed",
+      "score": 0.8,
+      "reason": "similar title"
+    },
+    {
+      "songId": "a7d00cbf-6d50-5ddc-b2fa-27fa3874a6ad",
+      "title": "Dont Do It Without Me",
+      "alias": "If Theres Revival, Dont Do It Without Me",
+      "state": "approved",
+      "score": 0.89,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "4d8aaf89-08b0-54c4-8f35-e412fd47efda",
+      "title": "Give Me Jesus",
+      "alias": "Take The Whole World But Give Me Jesus",
+      "state": "approved",
+      "score": 0.81,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "244cfa9b-7151-545c-9eb9-0b7a3585d05a",
+      "title": "God Almighty",
+      "alias": "Holy Is The Lord God Almighty",
+      "state": "proposed",
+      "score": 0.8,
+      "reason": "similar title"
+    },
+    {
+      "songId": "f4a802e5-6905-59bb-be98-c81fe5d69c38",
+      "title": "God is good",
+      "alias": "God Is So Good To Me",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "889e9a0a-7388-5bce-a78e-bcd4d2d4b4f4",
+      "title": "God is Great",
+      "alias": "Our God Is Greater, Our God Is Stronger",
+      "state": "proposed",
+      "score": 0.81,
+      "reason": "similar title"
+    },
+    {
+      "songId": "5df8db11-f299-54e8-a2d6-1632950483b5",
+      "title": "Happy Day",
+      "alias": "Oh What A Happy Day",
+      "state": "proposed",
+      "score": 0.82,
+      "reason": "similar title"
+    },
+    {
+      "songId": "907b73d3-bd85-54b7-9c2f-ef520218fe3c",
+      "title": "Hes Got The Whole World In His Hands",
+      "alias": "Hes Got The Whole World",
+      "state": "approved",
+      "score": 0.89,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "b6707263-7c41-50e5-ba79-bcbd7d98686b",
+      "title": "Holy Of Holies",
+      "alias": "I Can Go Into The Holy Of Holies",
+      "state": "proposed",
+      "score": 0.81,
+      "reason": "one title contains the other, but so do other songs"
+    },
+    {
+      "songId": "bf890d2c-cfd9-5bc7-a576-5488ee0db254",
+      "title": "I Believe In A Hill Called Mount Calvary",
+      "alias": "I Believe In A Hill Called Mt Calvary",
+      "state": "proposed",
+      "score": 0.78,
+      "reason": "similar title"
+    },
+    {
+      "songId": "f40b5df5-4c8a-5041-adf3-4d5add8e5f5b",
+      "title": "I Dont Feel At Home Anymore",
+      "alias": "I Dont Feel At Home In This World Anymore",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
+      "title": "I Have Decided To Follow Jesus",
+      "alias": "I Have Decided",
+      "state": "approved",
+      "score": 0.85,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
+      "title": "I See A Crimson Stream",
+      "alias": "I See A Crimson Stream Of Blood",
+      "state": "approved",
+      "score": 0.91,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "b405fe9b-4264-5402-8ec8-a4ca474da9e4",
+      "title": "I shall know Him by the nail prints",
+      "alias": "I Shall Know Him",
+      "state": "approved",
+      "score": 0.85,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "7a000174-3656-521c-9f3c-5b2ccc741513",
+      "title": "I wanna be washed",
+      "alias": "I Wanna Be Washed In The Blood Of The Lamb",
+      "state": "approved",
+      "score": 0.82,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "9cecc27b-a206-53d1-acf5-5e3c1984f02e",
+      "title": "I’ll be listening",
+      "alias": "Ill Be Somewhere Listening For My Name",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "23ecb477-e688-5cfb-ab00-817ffd21d3a6",
+      "title": "In the city where the Lamb is the light",
+      "alias": "In The City",
+      "state": "approved",
+      "score": 0.8,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "title": "Jesus Is",
+      "alias": "Jesus Is All I Need",
+      "state": "proposed",
+      "score": 0.82,
+      "reason": "similar title"
+    },
+    {
+      "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "title": "Jesus Is",
+      "alias": "Jesus Is Hear Right Now",
+      "state": "proposed",
+      "score": 0.82,
+      "reason": "similar title"
+    },
+    {
+      "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "title": "Jesus Is",
+      "alias": "Softly And Tenderly Jesus Is Calling",
+      "state": "proposed",
+      "score": 0.8,
+      "reason": "similar title"
+    },
+    {
+      "songId": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
+      "title": "Just a Little Talk With Jesus",
+      "alias": "Just Have A Little Talk With Jesus",
+      "state": "proposed",
+      "score": 0.86,
+      "reason": "similar title"
+    },
+    {
+      "songId": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
+      "title": "Let Me Walk With You Jesus",
+      "alias": "Walk With You",
+      "state": "approved",
+      "score": 0.85,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "5e805bac-09bc-552c-bd5c-42c3dbfaac63",
+      "title": "Let There Be Glory And Honor And Praises",
+      "alias": "Glory And Honor and Praises",
+      "state": "approved",
+      "score": 0.89,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "86e505b6-1766-52d9-93b9-42aef386f04c",
+      "title": "Look out satan, lookout",
+      "alias": "Look Out Satan, Look Out",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "d6dcb220-399c-56fa-b9a1-11976c8335f3",
+      "title": "Lord I Love You",
+      "alias": "Lord I Want To Love You More",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "ca3daaac-b131-5f8d-a788-ef1b01bffc73",
+      "title": "Something good’s about to happen",
+      "alias": "Something Good",
+      "state": "proposed",
+      "score": 0.82,
+      "reason": "similar title"
+    },
+    {
+      "songId": "23d52e14-32fc-51ad-ad1d-160dbfae83c8",
+      "title": "Surround me",
+      "alias": "Surround Me O Lord",
+      "state": "proposed",
+      "score": 0.85,
+      "reason": "similar title"
+    },
+    {
+      "songId": "4f926a65-c9dd-5db5-b02f-f748160a599a",
+      "title": "Thats Enough",
+      "alias": "Ive Got The Lord And Thats Enough",
+      "state": "proposed",
+      "score": 0.79,
+      "reason": "similar title"
+    },
+    {
+      "songId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
+      "title": "The Holy Ghost that Jesus is giving away",
+      "alias": "The Holy Ghost Jesus Is Giving Away",
+      "state": "proposed",
+      "score": 0.86,
+      "reason": "similar title"
+    },
+    {
+      "songId": "feb95590-ec2c-5fa2-8e20-f997575b1ac5",
+      "title": "The old account was settled",
+      "alias": "Old Account Settled",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "196a2992-5ff3-52aa-9473-743623f16d9e",
+      "title": "This Is The Day",
+      "alias": "This Is The Day That The Lord Has Made",
+      "state": "approved",
+      "score": 0.83,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "3b504be5-fd19-5023-80b9-2bfada5f4e27",
+      "title": "This train is bound for glory",
+      "alias": "This Train",
+      "state": "proposed",
+      "score": 0.8,
+      "reason": "similar title"
+    },
+    {
+      "songId": "43187cda-7ffe-57a2-9548-5b3103af597f",
+      "title": "We’re a happy people",
+      "alias": "Were A Happy People Yes We Are",
+      "state": "approved",
+      "score": 0.87,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "4bae90ec-ce58-502b-bff8-71f05921a1f7",
+      "title": "When the redeemed are gathering in",
+      "alias": "When The Redeemed",
+      "state": "approved",
+      "score": 0.85,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "9171dc48-341b-5dd1-a61b-f7ecce28748b",
+      "title": "Where could I go –",
+      "alias": "Where Could I Go But To The Lord",
+      "state": "approved",
+      "score": 0.85,
+      "reason": "one title contains the other, and only this song answers to it"
+    },
+    {
+      "songId": "2d02564e-b69d-5765-905f-85d4c2972b6c",
+      "title": "Yes Lord",
+      "alias": "My Soul Yes, To The Lord",
+      "state": "proposed",
+      "score": 0.75,
+      "reason": "similar title"
+    },
+    {
+      "songId": "44163842-65c9-5d86-ab76-4e0f9a9080b4",
+      "title": "Yes Lord yes",
+      "alias": "Ill Say Yes Lord Yes",
+      "state": "approved",
+      "score": 0.88,
+      "reason": "one title contains the other, and only this song answers to it"
+    }
+  ]
+}

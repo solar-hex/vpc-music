@@ -1301,7 +1301,7 @@
       "songId": "196a2992-5ff3-52aa-9473-743623f16d9e",
       "title": "This Is The Day",
       "file": "songs/chrd/this-is-the-day--196a2992.chopro",
-      "contentSha256": "b8c80381e8bd9c47f623c78fd4bc1cc1f15dcfe69920905eae329a971c6b021a",
+      "contentSha256": "eac1c73094961edff90621edcd0a55f08632310235143b11dd04359ec1b7bd88",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -4345,7 +4345,7 @@
       "songId": "5a2498df-eb2d-5d91-908a-795f376d6839",
       "title": "Are You Washed In The Blood",
       "file": "songs/chrd/are-you-washed-in-the-blood--5a2498df.chopro",
-      "contentSha256": "3647693e799a7207002b30f4f8b3dee3586bb6b6a85457b5e322a208f8f57958",
+      "contentSha256": "ad10571f4d4b8150536b980413e1fe8f96cba1c840fe0bd375e6598e5146399f",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -4545,7 +4545,7 @@
       "songId": "5e805bac-09bc-552c-bd5c-42c3dbfaac63",
       "title": "Let There Be Glory And Honor And Praises",
       "file": "songs/chrd/let-there-be-glory-and-honor-and-praises--5e805bac.chopro",
-      "contentSha256": "ab0980652647765345734393dd42e10e75c464aba66902e3edfb120673cac116",
+      "contentSha256": "3b2a09d00899e84dde92fb95c5d2bc5ed5c5a8f3d65b7a7f599adb12ab0a774c",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -6464,7 +6464,7 @@
       "songId": "869801fc-5f8b-531f-9d9d-7fb72ea77685",
       "title": "Catch On Fire",
       "file": "songs/chrd/catch-on-fire--869801fc.chopro",
-      "contentSha256": "962ee64829b819a865755a03f6c9e1e20f1a2b0557b56e7804ad9379cf15c7d2",
+      "contentSha256": "0bc6483448536775926fb91cdd3338c245db8788d508875a62a30abf7ffe035c",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -6811,7 +6811,7 @@
       "songId": "907b73d3-bd85-54b7-9c2f-ef520218fe3c",
       "title": "Hes Got The Whole World In His Hands",
       "file": "songs/chrd/hes-got-the-whole-world-in-his-hands--907b73d3.chopro",
-      "contentSha256": "d9ce89898bf33ffa71ae6f443adc26cc9c15db44ac1eb9a345775d6c6ee8c3db",
+      "contentSha256": "574c9bca3652213bbc1a20c8453b483f12d5eb2887bee36215c2ef21ec615485",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8352,7 +8352,7 @@
       "songId": "a7d00cbf-6d50-5ddc-b2fa-27fa3874a6ad",
       "title": "Dont Do It Without Me",
       "file": "songs/chrd/dont-do-it-without-me--a7d00cbf.chopro",
-      "contentSha256": "70291a9a1cfea06adbc2cbf85925207673a19c7bc32af5f1c1fb1d73d7ce35b7",
+      "contentSha256": "309aa8b4f3b3ac5c17a68399b881d79f1fa8cf07d009a202409722d43d0c1ab0",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -9211,7 +9211,7 @@
       "songId": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
       "title": "I Have Decided To Follow Jesus",
       "file": "songs/chrd/i-have-decided-to-follow-jesus--bc8aaa31.chopro",
-      "contentSha256": "434c6da710e86ec6f147682d361520f3e8e4da869be70d0975ff7c8ffec4d041",
+      "contentSha256": "c7c6db3f28e2662805e1b58df98fe9e466a4f17ca0a55319bbf9e638baff42f6",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -10697,7 +10697,7 @@
       "songId": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
       "title": "Let Me Walk With You Jesus",
       "file": "songs/chrd/let-me-walk-with-you-jesus--d4b83943.chopro",
-      "contentSha256": "e180ec3566d5c05da48afe23b33c8c667c10b0f1787d77ead9eb2c4cfbd056f3",
+      "contentSha256": "69b52741d2fd62169e8c211f8e510eef872cb99e1384c9926c13103e3432be65",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -11088,7 +11088,7 @@
       "songId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
       "title": "I See A Crimson Stream",
       "file": "songs/chrd/i-see-a-crimson-stream--dcedbd3d.chopro",
-      "contentSha256": "6bf27bc11aad347739667f1d267f36cef4fd9f9d79824ae491521773f7d8e792",
+      "contentSha256": "856bebcd2756b7ae2f2856ee6a78757d2674250f924ce256d8f5989c2d7667f4",
       "metadata": {
         "key": "F",
         "artist": null,
