@@ -20,7 +20,7 @@ import {
   type LibrarySong,
   type SortId,
 } from "@/lib/library";
-import { flagLabel, tempoBandLabel } from "@vpc-music/shared";
+import { flagLabel, songStatusLabel, tempoBandLabel } from "@vpc-music/shared";
 
 /** Filters live in the URL so a view of the library is a link you can send. */
 const PARAMS: Record<string, keyof LibraryFilter> = {
@@ -31,23 +31,24 @@ const PARAMS: Record<string, keyof LibraryFilter> = {
   flag: "flags",
   missing: "missing",
   band: "bands",
+  content: "content",
 };
 
 function readFilter(params: URLSearchParams): LibraryFilter {
   const list = (name: string) => (params.get(name) || "").split(",").map((s) => s.trim()).filter(Boolean);
   const drafts = params.get("drafts");
-  return {
+  const filter: LibraryFilter = {
     ...EMPTY_FILTER,
     query: params.get("q") || "",
-    themes: list("theme"),
-    keys: list("key"),
-    tempos: list("tempo"),
-    artists: list("artist"),
-    flags: list("flag"),
-    missing: list("missing"),
-    bands: list("band"),
     drafts: drafts === "hide" || drafts === "only" ? (drafts as DraftMode) : "show",
   };
+  // Driven by the same PARAMS map that writes the URL. Listing the facets
+  // here by hand is how a new one gets written to the URL and then silently
+  // dropped on the way back in.
+  for (const [name, field] of Object.entries(PARAMS)) {
+    (filter[field] as string[]) = list(name);
+  }
+  return filter;
 }
 
 function writeFilter(filter: LibraryFilter, sort: SortId): URLSearchParams {
@@ -186,6 +187,7 @@ function SongRow({ row }: { row: LibrarySong }) {
           <div className="flex items-center gap-2">
             <span className="truncate font-medium text-[hsl(var(--foreground))]">{song.title}</span>
             {song.isDraft && <span className="badge-muted shrink-0">Draft</span>}
+            {songStatusLabel(song.status) && <span className="badge-muted shrink-0">{songStatusLabel(song.status)}</span>}
             {/* The old site's tilde. Kept out of the default list — not access control. */}
             {row.flags.map((flag) => (
               <span key={flag} className="badge-warning shrink-0">
@@ -366,6 +368,7 @@ export function LibraryPage() {
             {showFilters && (
               <div className="card card-body space-y-4">
                 <FacetGroup title="Missing" options={facets.missing} onToggle={toggle("missing")} />
+                <FacetGroup title="Chords" options={facets.content} onToggle={toggle("content")} />
                 <FacetGroup title="Flags" options={facets.flags} onToggle={toggle("flags")} />
                 <FacetGroup title="Completeness" options={facets.bands} onToggle={toggle("bands")} />
                 <FacetGroup title="Tempo" options={facets.tempos} onToggle={toggle("tempos")} />

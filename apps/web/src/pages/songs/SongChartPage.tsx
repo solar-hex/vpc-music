@@ -19,7 +19,7 @@ import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { OfflineBanner } from "@/components/layout/OfflineBanner";
 import type { ActionMenuEntry } from "@/components/ui/ActionMenu";
-import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey, parseChordPro, parseKeyRoot, spellForTarget } from "@vpc-music/shared";
+import { ALL_KEYS, composeTranspose, normalizeEnharmonicKey, parseChordPro, parseKeyRoot, songStatusLabel, spellForTarget } from "@vpc-music/shared";
 
 /** "Bb", "C#m" -> the canonical spelling, or null when it is not a key we can transpose to. */
 function validKey(value: string | null): string | null {
@@ -264,6 +264,7 @@ export function SongChartPage() {
               {(song.artist || song.year) && <span>{[song.artist, song.year].filter(Boolean).join(" / ")}</span>}
               {song.tempo ? <TempoIndicator tempo={song.tempo} /> : null}
               {song.isDraft && <span className="badge-muted">Draft</span>}
+              {songStatusLabel(song.status) && <span className="badge-muted">{songStatusLabel(song.status)}</span>}
             </div>
           </div>
 

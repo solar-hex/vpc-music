@@ -125,6 +125,7 @@ vi.mock("@/contexts/ConnectivityContext", () => ({
 
 vi.mock("@vpc-music/shared", () => ({
   parseChordPro: () => ({ directives: {}, sections: [], chordDefinitions: {} }),
+  songStatusLabel: (status: string | null | undefined) => (status === "missing_chords" ? "Lyrics only" : null),
   transposeKeyName: (key: string) => key,
   normalizeEnharmonicKey: (key: string | null | undefined) => key,
   parseKeyRoot: (key: string | null | undefined) => (key ? { root: key.replace(/m$/, ""), isMinor: /m$/.test(key) } : null),

@@ -7,7 +7,7 @@ import { useSongLibrary } from "@/hooks/useSongLibrary";
 import { groupByLetter, matchesQuery, sortForList } from "@/lib/song-search";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { ImportSongsDialog } from "@/components/songs/ImportSongsDialog";
-import { ALL_KEYS, normalizeEnharmonicKey, parseKeyRoot } from "@vpc-music/shared";
+import { ALL_KEYS, normalizeEnharmonicKey, parseKeyRoot, songStatusLabel } from "@vpc-music/shared";
 
 const LYRIC_SEARCH_MIN_LENGTH = 3;
 const LYRIC_SEARCH_DEBOUNCE_MS = 300;
@@ -91,6 +91,9 @@ export function SongListPage() {
           <div className="flex items-center gap-2">
             <span className="truncate font-medium text-[hsl(var(--foreground))]">{song.title}</span>
             {song.isDraft && <span className="badge-muted shrink-0">Draft</span>}
+            {/* A complete lyrics sheet with no chords. Says so, rather than
+                looking like a chart that failed to load. */}
+            {songStatusLabel(song.status) && <span className="badge-muted shrink-0">{songStatusLabel(song.status)}</span>}
           </div>
           {song.artist && <div className="truncate text-xs text-[hsl(var(--muted-foreground))]">{song.artist}</div>}
         </div>

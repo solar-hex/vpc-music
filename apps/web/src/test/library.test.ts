@@ -50,6 +50,45 @@ describe("decorate", () => {
   });
 });
 
+describe("lyrics-only songs", () => {
+  // The corpus loader sets status = "missing_chords" on a finished lyrics
+  // sheet that carries no chords. 194 songs are in that state, and they stay
+  // hidden as drafts until the app can tell a musician why.
+  const withStatus = decorate([
+    song({ id: "c1", title: "Has Chords", key: "G" }),
+    song({ id: "c2", title: "Words Only", status: "missing_chords" }),
+    song({ id: "c3", title: "Also Words", status: "missing_chords" }),
+  ]);
+
+  it("splits a library into chorded and lyrics-only", () => {
+    expect(withStatus.map((r) => r.content)).toEqual(["chords", "lyrics", "lyrics"]);
+  });
+
+  it("treats an unset status as an ordinary chart", () => {
+    expect(decorate([song({ id: "n", title: "No Status" })])[0].content).toBe("chords");
+  });
+
+  it("filters to just the lyrics sheets", () => {
+    const matched = filterSongs(withStatus, { ...EMPTY_FILTER, content: ["lyrics"] });
+    expect(matched.map((r) => r.song.title)).toEqual(["Words Only", "Also Words"]);
+  });
+
+  it("counts both kinds as facet options", () => {
+    const facets = libraryFacets(withStatus, EMPTY_FILTER);
+    expect(facets.content.map((o) => [o.value, o.count])).toEqual([
+      ["chords", 1],
+      ["lyrics", 2],
+    ]);
+  });
+
+  it("counts the other kind without the current selection narrowing it away", () => {
+    // A facet must not filter itself, or selecting one option would hide the other.
+    const facets = libraryFacets(withStatus, { ...EMPTY_FILTER, content: ["lyrics"] });
+    expect(facets.content.find((o) => o.value === "chords")?.count).toBe(1);
+    expect(facets.content.find((o) => o.value === "lyrics")?.selected).toBe(true);
+  });
+});
+
 describe("a theme rejection is not a tag", () => {
   it("does not count `!theme:x` towards completeness", () => {
     // The tombstone is real data, but the song still has no tags.

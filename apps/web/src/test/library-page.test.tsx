@@ -103,6 +103,28 @@ describe("LibraryPage", () => {
     expect(url()).toContain("theme=holy-spirit");
   });
 
+  it("marks a lyrics sheet and filters to just those", async () => {
+    // Scoped fixture: the shared one feeds a dozen count assertions, and a
+    // fifth song would move every one of them.
+    mockList.mockResolvedValue({
+      songs: [
+        { id: "a", title: "Has Chords", key: "G", content: "" },
+        { id: "b", title: "Words Only Hymn", content: "", status: "missing_chords" },
+      ],
+      total: 2,
+    });
+    renderLibrary();
+    await waitFor(() => expect(rowLink("Words Only Hymn")).toBeInTheDocument());
+    expect(rowLink("Words Only Hymn")).toHaveTextContent("Lyrics only");
+    expect(rowLink("Has Chords")).not.toHaveTextContent("Lyrics only");
+
+    fireEvent.click(screen.getByRole("button", { name: /Filters/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Lyrics only/ }));
+    await waitFor(() => expect(rowLink("Has Chords")).not.toBeInTheDocument());
+    expect(rowLink("Words Only Hymn")).toBeInTheDocument();
+    expect(url()).toContain("content=lyrics");
+  });
+
   it("opens with the filters a link carries", async () => {
     renderLibrary("/library?key=Bb");
     await waitFor(() => expect(rowLink("Holy Ghost")).toBeInTheDocument());

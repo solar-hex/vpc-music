@@ -32,6 +32,7 @@ const library = [
   { id: "s2", title: "Blessed Assurance", artist: null, key: "D", content: "", isDraft: false },
   { id: "s3", title: "Above All", artist: "Paul Baloche", key: "A", content: "", isDraft: false },
   { id: "s4", title: "Zion Draft", artist: null, key: "C", content: "", isDraft: true },
+  { id: "s5", title: "Words Only Hymn", artist: null, key: null, content: "", isDraft: false, status: "missing_chords" },
 ];
 
 function renderList(path = "/songs") {
@@ -75,7 +76,7 @@ describe("SongListPage", () => {
     // The count names what this list IS — the ready songs — and links to the
     // other view, so the hidden drafts are one tap away rather than lost.
     const counts = screen.getByRole("link", { name: /ready/ });
-    expect(counts).toHaveTextContent("3 ready");
+    expect(counts).toHaveTextContent("4 ready");
     expect(counts).toHaveTextContent("1 need work");
     expect(counts).toHaveAttribute("href", "/library");
   });
@@ -106,6 +107,15 @@ describe("SongListPage", () => {
     expect(rowLink("Zion Draft")).toHaveTextContent("Draft");
     fireEvent.click(screen.getByRole("button", { name: "Hide drafts" }));
     expect(screen.queryByText("Zion Draft")).not.toBeInTheDocument();
+  });
+
+  it("says when a song is a lyrics sheet rather than a chart", async () => {
+    // 194 songs are complete lyrics with no chords. Without the badge they
+    // look like a chart that failed to load.
+    renderList();
+    await waitFor(() => rowLink("Words Only Hymn"));
+    expect(rowLink("Words Only Hymn")).toHaveTextContent("Lyrics only");
+    expect(rowLink("Amazing Grace")).not.toHaveTextContent("Lyrics only");
   });
 
   it("carries a key from the chart page into every song link", async () => {

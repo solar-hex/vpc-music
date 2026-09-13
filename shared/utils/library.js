@@ -85,6 +85,21 @@ export function flagLabel(id) {
   return SONG_FLAGS.find((f) => f.id === id)?.label ?? themeLabel(id);
 }
 
+/**
+ * How a song's rehearsal-readiness status reads on screen, or null when there
+ * is nothing worth saying.
+ *
+ * Only `missing_chords` is in use: the corpus loader sets it on a sheet whose
+ * lyrics are complete but which carries no chords (see `hasChords`). The other
+ * four values the column allows are legacy and unused, so they return null
+ * rather than rendering raw snake case at a musician. A null status — the
+ * ordinary case, 695 of 889 songs — says nothing, because "this song is
+ * normal" is not a badge.
+ */
+export function songStatusLabel(status) {
+  return status === "missing_chords" ? "Lyrics only" : null;
+}
+
 /** Just the flags on a song. */
 export function songFlags(song) {
   return parseTagField(song?.tags).flags;
