@@ -725,7 +725,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c9d22cc5-677d-5641-a71e-48cacb1062ca",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "0f3ffa0f-e349-5d97-89f1-8e9cbd9dc06e",
@@ -891,7 +893,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "34dc4909-916d-53d2-af0a-f5bb20f993e9",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "107eea25-8904-5529-a8a5-6a4eb0607ddc",
@@ -1295,7 +1299,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9f137f76-ae5d-5530-b76b-8b571a4d001e",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "196a2992-5ff3-52aa-9473-743623f16d9e",
@@ -5922,7 +5928,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d9e52bdc-2007-5122-8bb0-82a3fc0082d3",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "7e639ef5-08be-5ce7-b715-e6a0f6925343",
@@ -5956,7 +5964,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "273adaa5-80fe-520c-ab09-895614b0fa80",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "7f32954e-11c9-5898-af40-cb6fe58412e1",
@@ -7201,7 +7211,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "9a39fc1e-899d-5364-90fd-f658002df918",
@@ -9267,7 +9279,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "08d7fc23-5f4b-551e-a359-9e881dcbf6b8",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "bd78592d-c1f7-5ee6-8b60-5baecacfa32b",
@@ -10754,7 +10768,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "768cb222-2c9d-5a4f-86c1-89493df40b29",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "d5837b32-e565-5685-b941-bd80ef68c131",
@@ -11082,7 +11098,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d5837b32-e565-5685-b941-bd80ef68c131",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
@@ -12076,7 +12094,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "0008df55-24c8-5210-b81d-6ff5406600a5",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "ef1d6b54-22b5-5f18-9548-4b26573d805d",

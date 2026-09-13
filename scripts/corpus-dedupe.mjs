@@ -23,6 +23,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
 import { hasChords } from "../shared/utils/library.js";
+import { numberSequenceFromChordPro } from "../apps/api/src/corpus/nashvilleCheck.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
@@ -36,17 +37,71 @@ export const SOURCE_RANK = { text: 5, chrd: 4, onsong: 3, pdf: 2, docx: 1 };
 
 /**
  * Rank the copies of one song, best first.
- * More chords wins; then the more trusted source; then the fuller chart; then
- * the id, so the result never depends on directory order.
+ *
+ * More chords wins; then more secondary cues, because `[*ab]` is the old
+ * site's `^` line and a chart carrying it is strictly richer than the same
+ * chart without; then the more trusted source; then the fuller chart; then the
+ * id, so the result never depends on directory order.
  */
 export function rankCopies(copies) {
   return [...copies].sort(
     (a, b) =>
       b.chords - a.chords ||
+      (b.cues ?? 0) - (a.cues ?? 0) ||
       (SOURCE_RANK[b.source] ?? 0) - (SOURCE_RANK[a.source] ?? 0) ||
       b.lines - a.lines ||
       a.songId.localeCompare(b.songId),
   );
+}
+
+/** The ordered PRIMARY chord tokens in a chart — layout-independent. */
+export function chordSequence(content) {
+  const out = [];
+  for (const m of String(content).matchAll(/\[([^\]]+)\]/g)) {
+    const token = m[1].trim();
+    if (/^[A-G]/.test(token)) out.push(token);
+  }
+  return out;
+}
+
+/**
+ * The same sequence written in Nashville numbers, so two copies of one
+ * arrangement in different keys compare equal. Transposition is a URL
+ * parameter in this app, so a second row that is only a transposition is
+ * redundant — but only if it really is the same arrangement, which this is
+ * what proves.
+ */
+export function nashvilleSequence(content, key) {
+  if (!key) return null;
+  const seq = numberSequenceFromChordPro(String(content), key);
+  return seq && seq.length > 0 ? seq : null;
+}
+
+/**
+ * Two copies whose chords are the same, in the same order.
+ *
+ * Placement can still differ by a character — "The[Ab] everlasting" against
+ * "The [Ab]everlasting" — which is what stopped these being caught as
+ * identical. A musician playing from either gets the same chords in the same
+ * order, so keeping both is not a judgement call.
+ *
+ * The floor of eight tokens is the guard: two genuinely different songs could
+ * share a title AND a four-chord loop, but not an eight-chord sequence.
+ */
+export const SAME_ARRANGEMENT_MIN_CHORDS = 8;
+
+export function isSameArrangement(a, b) {
+  if (a.chordSeq.length < SAME_ARRANGEMENT_MIN_CHORDS) return null;
+  if (a.chordSeq.length === b.chordSeq.length && a.chordSeq.every((t, i) => t === b.chordSeq[i])) {
+    return "same chords, in the same order — only the placement differs";
+  }
+  // Same arrangement, different key: compare what the numbers say.
+  if (a.nashville && b.nashville && a.key && b.key && a.key !== b.key) {
+    if (a.nashville.length === b.nashville.length && a.nashville.every((t, i) => t === b.nashville[i])) {
+      return `the same arrangement in ${b.key} rather than ${a.key} — the app transposes`;
+    }
+  }
+  return null;
 }
 
 /**
@@ -70,22 +125,53 @@ export function decideGroup(copies) {
     };
   }
 
-  // A chart with chords against the same song with none is not a judgement
-  // call either — a lyrics sheet must never shadow a real chart.
-  if (winner.chords > 0 && different.every((s) => s.chords === 0)) {
+  /*
+   * Everything that is redundant whatever else is in the group:
+   *  - a lyrics-only sheet against a real chart, which must never shadow it
+   *  - the same arrangement written out twice, differing only in placement
+   *    or in key
+   */
+  const sameArrangement = [];
+  const genuinelyDifferent = [];
+  for (const song of different) {
+    if (winner.chords > 0 && song.chords === 0) {
+      sameArrangement.push({ song, reason: `lyrics only, superseded by the ${winner.source} chart` });
+      continue;
+    }
+    const why = isSameArrangement(winner, song);
+    if (why) sameArrangement.push({ song, reason: why });
+    else genuinelyDifferent.push(song);
+  }
+
+  if (genuinelyDifferent.length === 0 && different.every((s) => s.chords === 0)) {
     return {
       winner,
-      losers: [
-        ...identical.map((s) => ({ song: s, reason: "identical copy" })),
-        ...different.map((s) => ({ song: s, reason: `lyrics only, superseded by the ${winner.source} chart` })),
-      ],
+      losers: [...identical.map((s) => ({ song: s, reason: "identical copy" })), ...sameArrangement],
       auto: true,
       why: "chords beat lyrics-only",
     };
   }
+  const decided = [...identical.map((s) => ({ song: s, reason: "identical copy" })), ...sameArrangement];
 
-  // Two real charts. A person decides.
-  return { winner, losers: [], auto: false, why: "two or more charts with chords" };
+  if (genuinelyDifferent.length === 0 && sameArrangement.length > 0) {
+    return { winner, losers: decided, auto: true, why: "same arrangement" };
+  }
+
+  /*
+   * Two real charts that differ. A person decides BETWEEN THOSE — but any
+   * redundant copy inside the group is still redundant, so it is superseded
+   * now rather than waiting on an unrelated question. "Glory, Honor, Power"
+   * has two identical .chrd arrangements and a PDF that reads only 7 chords;
+   * the PDF is the question, the second .chrd is not.
+   */
+  return {
+    winner,
+    losers: decided,
+    auto: false,
+    why: "two or more charts with chords",
+    // What the person is actually choosing between.
+    open: [winner, ...genuinelyDifferent],
+  };
 }
 
 export async function loadManifests(corpusRoot) {
@@ -130,6 +216,8 @@ export function buildGroups(manifests, readContent) {
         musicalSha256: musicalHash(content),
         cues: (content.match(/\[\*[^\]]*\]/g) || []).length,
         key: s.metadata?.key ?? null,
+        chordSeq: chordSequence(content),
+        nashville: nashvilleSequence(content, s.metadata?.key ?? null),
         lines: content.split("\n").filter((l) => l.trim() && !l.startsWith("{")).length,
       });
     }
@@ -165,14 +253,15 @@ async function runCli() {
 
   for (const [key, copies] of groups) {
     const result = decideGroup(copies);
-    if (!result.auto) {
-      reviewGroups += 1;
-      reviewList.push({ key, copies: rankCopies(copies) });
-      continue;
-    }
-    autoGroups += 1;
+    // Losers are recorded even in a group that still needs review: a redundant
+    // copy does not become less redundant because another copy is in question.
     for (const loser of result.losers) {
       decisions.set(loser.song.songId, { supersededBy: result.winner.songId, reason: loser.reason });
+    }
+    if (result.auto) autoGroups += 1;
+    else {
+      reviewGroups += 1;
+      reviewList.push({ key, copies: result.open ?? rankCopies(copies) });
     }
   }
 

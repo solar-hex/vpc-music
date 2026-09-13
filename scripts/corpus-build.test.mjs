@@ -56,9 +56,19 @@ afterEach(async () => {
 });
 
 describe("deterministicSongId", () => {
-  it("is stable and matches the frozen production namespace", () => {
-    // Guard: these ids exist in the production database. If this test fails,
-    // the namespace or the derivation changed and every row would orphan.
+  it("still produces the exact ids that are in the production database", () => {
+    /*
+     * THE guard on the frozen namespace, and it has to be literal values.
+     * Comparing the function against itself proves it is a function, not that
+     * it is the RIGHT one: change the 16-byte namespace constant and every
+     * self-consistency check still passes while all 909 production rows
+     * orphan. These two ids are rows in prd-vpc-music today.
+     */
+    expect(deterministicSongId("amazing_grace.chrd")).toBe("35515dad-726f-5526-8f2b-3b3ec364f63a");
+    expect(deterministicSongId("above_all.chrd")).toBe("a5da52f6-ef38-5d16-ba6b-c4f5c65e07ea");
+  });
+
+  it("is stable and normalises the path the same way every time", () => {
     expect(deterministicSongId("amazing_grace.chrd")).toBe(
       deterministicSongId("amazing_grace.chrd"),
     );

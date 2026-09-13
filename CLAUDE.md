@@ -42,7 +42,6 @@ pnpm test:all       # what CI runs
 pnpm lint
 pnpm build:web
 pnpm sync:shared && node scripts/check-shared-drift.mjs
-pnpm import:chrd [env] --dir <path> --org <name|uuid> --dry-run
 
 # the corpus — files first, database second
 pnpm corpus:build --source chrd|docx --tree <path> [--dry-run]
@@ -65,8 +64,12 @@ separated by a file boundary so there is exactly one writer:
 
 ```
 build:  sources → corpus/songs/*.chopro     (never touches a database)
-load:   corpus  → songs table               (not built yet; needs approval)
+load:   corpus  → songs table               (THE only writer)
 ```
+
+The legacy bulk importer (`import-chrd-library.js`, `pnpm import:chrd`, `pnpm migrate:chrd`)
+is deleted: `corpus:load` replaced it and a second write path into `songs` was the thing
+that most needed removing. The in-app single-file import routes are unrelated and stay.
 
 Rules that hold the whole thing together:
 
@@ -98,4 +101,4 @@ Rules that hold the whole thing together:
 
 ## Database safety
 
-`apps/api/.env`, `.env.local` and `.env.production` may all point at the PRODUCTION database. Before running anything that writes (`db:push`, `db:seed`, `import:chrd`), check the `DATABASE_URL` in the env file you are about to use, and prefer `--dry-run` first. Table drops need an explicit go-ahead and a backup.
+`apps/api/.env`, `.env.local` and `.env.production` may all point at the PRODUCTION database. Before running anything that writes (`db:push`, `db:seed`, `corpus:load`), check the `DATABASE_URL` in the env file you are about to use, and prefer `--dry-run` first. `corpus:load` prints its target host and refuses production without `--yes`. Table drops need an explicit go-ahead and a backup.

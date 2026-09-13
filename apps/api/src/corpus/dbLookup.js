@@ -1,8 +1,8 @@
 /**
  * Resolving the org and the creator a load runs as.
  *
- * Extracted from `import-chrd-library.js` so the corpus loader and the legacy
- * importer share one definition rather than drifting apart. `database` is
+ * Extracted from the retired `import-chrd-library.js` before it was deleted,
+ * so there is one definition rather than two drifting apart. `database` is
  * always passed in, so nothing here opens a connection of its own and tests
  * can hand it a pg-mem instance.
  */

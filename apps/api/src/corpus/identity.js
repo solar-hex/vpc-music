@@ -3,8 +3,8 @@
  *
  * Deliberately free of any database, dotenv or schema import so the corpus
  * build/scan scripts can load it without opening a Postgres connection.
- * `import-chrd-library.js` re-exports from here, so there is one definition
- * of a song's identity in the repo.
+ * This is the ONLY definition of a song's identity in the repo; the legacy
+ * importer that used to carry a second copy is gone.
  */
 import { createHash } from "node:crypto";
 

@@ -76,19 +76,20 @@ Roles: observers read, musicians edit songs, admins (worship leaders) manage the
 
 ## Importing the old library
 
-`.chrd` files convert with `shared/utils/chrd.js`. Preview a folder file by file:
+`.chrd` files convert with `shared/utils/chrd.js`. There is exactly ONE way a song
+reaches the database — `corpus:build` converts, `corpus:load` writes:
 
 ```
-pnpm migrate:chrd <source-dir> <output-dir>
+pnpm corpus:build --source chrd --tree <path>
+pnpm corpus:load [dev|staging|production] --org <name|uuid> [--fields core|tags|all] [--apply --yes]
 ```
 
-Load a folder straight into a team's songs (idempotent: re-runs update changed files and never delete):
+Idempotent: a re-run of an unchanged corpus reports `0 to insert, 0 to update`. Dry run by
+default, and a production apply refuses without `--yes`. Drafts come from the `~` filename
+prefix, which also becomes `flag:unlisted`. A JSON report lands in `apps/api/import-reports/`.
 
-```
-pnpm import:chrd [dev|staging|production] --dir <path> --org <name|uuid> [--created-by <email>] [--dry-run] [--exclude <glob>]
-```
-
-Drafts come from the `~` filename prefix. A JSON and text report lands in `apps/api/import-reports/` listing converter warnings, duplicate titles and collisions with existing songs. Always dry-run first.
+The single-file importers in the app (`POST /songs/import/chrd`, `/import/onsong`) are a
+different thing and stay: one musician pasting one chart.
 
 ## The corpus
 
@@ -164,7 +165,7 @@ apps/web/src
 apps/api/src
   routes/auth.js, features/<module>/routes.js, schema/, test/ (pg-mem harness)
 shared/utils    chordpro, transpose, nashville, chart, chrd, onsong, plainText
-scripts/        db-push, import-chrd-library, migrate-chrd-library, sync-shared, preflight
+scripts/        corpus-*, gap-*, intake, db-push, sync-shared, preflight
 docs/archive    the original PRD, role model and editor notes
 ```
 

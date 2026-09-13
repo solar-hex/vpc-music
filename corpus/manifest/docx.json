@@ -2648,7 +2648,9 @@
       "warnings": [
         "No section labels found"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f9e0339d-6a6b-53f5-ab8d-3e7b5ef85634",
+      "supersedeReason": "same chords, in the same order — only the placement differs"
     },
     {
       "songId": "36bd7fc5-e9d7-561a-a3ed-a407c7453238",
@@ -5928,7 +5930,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "1fcd6deb-efbc-578e-9fff-6a11633d3180",
+      "supersedeReason": "lyrics only, superseded by the pdf chart"
     },
     {
       "songId": "75933b31-56a0-541b-9ea8-eac8be59d866",
@@ -7582,7 +7586,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "12d8a12a-f9af-5b52-9131-b8c4ea6a1540",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "9171dc48-341b-5dd1-a61b-f7ecce28748b",
@@ -8542,7 +8548,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "ac860abf-6efa-5cca-98ed-a1fed99ac46d",
+      "supersedeReason": "lyrics only, superseded by the pdf chart"
     },
     {
       "songId": "a09fed4c-7e60-5875-9811-529e58288e1a",
@@ -10689,7 +10697,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "36855a3d-e5b3-5ec5-bb20-f44dce726ece",
+      "supersedeReason": "lyrics only, superseded by the text chart"
     },
     {
       "songId": "d10e0f48-cf59-5293-82a6-f0b0972d9738",
@@ -11068,7 +11078,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "423bee59-c2b9-5b19-bd66-eb19fb5f6f1c",
+      "supersedeReason": "lyrics only, superseded by the chrd chart"
     },
     {
       "songId": "d8c20d55-9517-53e6-8896-f50690d37788",

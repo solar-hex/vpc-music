@@ -18,8 +18,6 @@
         "test:watch": "pnpm --filter @vpc-music/web test:watch",
         "typecheck": "pnpm --filter @vpc-music/web typecheck",
         "lint": "pnpm --filter @vpc-music/web lint",
-        "migrate:chrd": "node scripts/migrate-chrd-library.mjs",
-        "import:chrd": "node scripts/import-chrd-library.mjs",
         "corpus:build": "node scripts/corpus-build.mjs",
         "corpus:scan": "node scripts/corpus-scan.mjs",
         "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-router.ps1",

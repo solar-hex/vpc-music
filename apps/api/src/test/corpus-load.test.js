@@ -168,6 +168,48 @@ describe("readCorpusRows", () => {
   });
 });
 
+describe("archiving superseded duplicates", () => {
+  it("leaves a superseded row alone unless asked", async () => {
+    // A supersede decision made AFTER a load leaves the loser sitting in the
+    // library as a duplicate: skipped by the loader, so never updated and
+    // never removed. Silence is the safe default; retiring it is opt-in.
+    await db.insert(songs).values([
+      { id: ID_A, title: "God is Great", content: CHART_A, organizationId: ORG, createdBy: USER },
+      { id: ID_SUP, title: "God is Great", content: CHART_A, organizationId: ORG, createdBy: USER },
+    ]);
+    await runCorpusLoad({ corpusRoot, org: ORG, dryRun: false }, { database: db });
+    const [dupe] = await db.select().from(songs).where(eq(songs.id, ID_SUP));
+    expect(dupe.isArchived).toBeFalsy();
+  });
+
+  it("retires one on request, reversibly — archived, never deleted", async () => {
+    await db.insert(songs).values([
+      { id: ID_A, title: "God is Great", content: CHART_A, organizationId: ORG, createdBy: USER },
+      { id: ID_SUP, title: "God is Great", content: CHART_A, organizationId: ORG, createdBy: USER },
+    ]);
+    const report = await runCorpusLoad(
+      { corpusRoot, org: ORG, dryRun: false, archiveSuperseded: true },
+      { database: db },
+    );
+    expect(report.archived.map((a) => a.id)).toEqual([ID_SUP]);
+    const [dupe] = await db.select().from(songs).where(eq(songs.id, ID_SUP));
+    expect(dupe.isArchived).toBe(true);
+    expect(dupe.archivedAt).toBeTruthy();
+    // The row is still there. `POST /songs/:id/unarchive` puts it back.
+    expect(dupe.content).toBe(CHART_A);
+    const [winner] = await db.select().from(songs).where(eq(songs.id, ID_A));
+    expect(winner.isArchived).toBeFalsy();
+  });
+
+  it("says nothing about archiving when there is nothing to archive", async () => {
+    const report = await runCorpusLoad(
+      { corpusRoot, org: ORG, dryRun: true, archiveSuperseded: true },
+      { database: db },
+    );
+    expect(report.archived).toEqual([]);
+  });
+});
+
 describe("field masks", () => {
   it("core is exactly what the legacy importer owns", () => {
     expect(FIELD_SETS.core).toEqual(["title", "key", "artist", "year", "tempo", "content", "isDraft"]);

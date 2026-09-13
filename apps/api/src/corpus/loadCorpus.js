@@ -193,6 +193,9 @@ export function formatLoadReport(report) {
     `- Unchanged: ${report.counts.unchanged}`,
     `- Drafts among them: ${report.counts.drafts}`,
     `- Rows in this org the corpus does not know about: ${report.foreign.length}`,
+    ...(report.archived?.length
+      ? [`- Superseded duplicates retired (is_archived, reversible): ${report.archived.length}`]
+      : []),
   ];
   if (report.missing.length > 0) {
     lines.push("", `Manifest entries with no file (${report.missing.length})`);
@@ -212,6 +215,7 @@ export function formatLoadReport(report) {
  * @param {string} [options.createdBy]    email
  * @param {"core"|"tags"|"all"} [options.fields]
  * @param {boolean} [options.dryRun]
+ * @param {boolean} [options.archiveSuperseded] retire rows the corpus superseded
  * @param {{database?: object, log?: Function}} [deps]
  */
 export async function runCorpusLoad(options, { database, log = console.log } = {}) {
@@ -228,13 +232,25 @@ export async function runCorpusLoad(options, { database, log = console.log } = {
     .select({
       id: songs.id, title: songs.title, aka: songs.aka, key: songs.key, artist: songs.artist,
       year: songs.year, tempo: songs.tempo, content: songs.content,
-      isDraft: songs.isDraft, tags: songs.tags,
+      isDraft: songs.isDraft, tags: songs.tags, isArchived: songs.isArchived,
     })
     .from(songs)
     .where(eq(songs.organizationId, organization.id));
   const existingById = new Map(existingInOrg.map((s) => [s.id, s]));
 
   const plan = planCorpusLoad({ rows, existingById, fields: fieldSet });
+
+  /*
+   * A supersede decision made after a load leaves the loser sitting in the
+   * library as a duplicate: the loader skips it, so it is never updated and
+   * never removed. Retiring it is `is_archived = true` — the list endpoint
+   * already excludes archived songs and `POST /songs/:id/unarchive` puts one
+   * back, so the decision stays reversible. NEVER a delete.
+   */
+  const supersededIds = new Set(skipped.filter((s) => s.reason !== "song").map((s) => s.songId));
+  const toArchive = options.archiveSuperseded
+    ? [...existingById.values()].filter((s) => supersededIds.has(s.id) && !s.isArchived)
+    : [];
 
   const report = {
     dryRun: options.dryRun !== false,
@@ -246,13 +262,15 @@ export async function runCorpusLoad(options, { database, log = console.log } = {
     skipped,
     missing,
     foreign: plan.foreign,
+    archived: toArchive.map((s) => ({ id: s.id, title: s.title })),
     host: options.host,
     database: options.database,
     entries: plan.entries.map((e) => ({ id: e.row.id, title: e.row.title, action: e.action })),
   };
 
   if (report.dryRun) {
-    log(`Dry run: ${plan.counts.inserts} to insert, ${plan.counts.updates} to update, ${plan.counts.unchanged} unchanged.`);
+    const tail = toArchive.length > 0 ? `, ${toArchive.length} to archive` : "";
+    log(`Dry run: ${plan.counts.inserts} to insert, ${plan.counts.updates} to update, ${plan.counts.unchanged} unchanged${tail}.`);
     return report;
   }
 
@@ -278,8 +296,15 @@ export async function runCorpusLoad(options, { database, log = console.log } = {
       for (const f of fieldSet) patch[f] = entry.row[f];
       await tx.update(songs).set({ ...patch, updatedAt: new Date() }).where(eq(songs.id, entry.row.id));
     }
+    for (const row of toArchive) {
+      await tx
+        .update(songs)
+        .set({ isArchived: true, archivedAt: new Date(), updatedAt: new Date() })
+        .where(eq(songs.id, row.id));
+    }
   });
 
-  log(`Applied: ${inserts.length} inserted, ${updates.length} updated, ${plan.counts.unchanged} unchanged.`);
+  const archivedTail = toArchive.length > 0 ? `, ${toArchive.length} archived` : "";
+  log(`Applied: ${inserts.length} inserted, ${updates.length} updated, ${plan.counts.unchanged} unchanged${archivedTail}.`);
   return report;
 }

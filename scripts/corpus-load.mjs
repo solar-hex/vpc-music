@@ -28,6 +28,7 @@ export function parseArgs(argv) {
   const options = {
     mode: "load", env: null, org: null, createdBy: null,
     fields: "core", apply: false, yes: false, force: false, corpus: null,
+    archiveSuperseded: false,
   };
   // `--export` is supplied by the package script, so it can arrive before the
   // environment the user typed. Take it out first, then read the positional.
@@ -48,6 +49,7 @@ export function parseArgs(argv) {
     else if (arg === "--created-by") options.createdBy = next();
     else if (arg === "--fields") options.fields = next();
     else if (arg === "--corpus") options.corpus = next();
+    else if (arg === "--archive-superseded") options.archiveSuperseded = true;
     else if (arg === "--apply") options.apply = true;
     else if (arg === "--yes") options.yes = true;
     else if (arg === "--force") options.force = true;
@@ -120,6 +122,7 @@ async function runCli() {
       {
         corpusRoot, org: options.org, createdBy: options.createdBy,
         fields: options.fields, dryRun: !options.apply,
+        archiveSuperseded: options.archiveSuperseded,
         host: target.host, database: target.database,
       },
       { database: db },
