@@ -24,6 +24,7 @@ import { join } from "node:path";
 import { eq } from "drizzle-orm";
 import { songs } from "../schema/index.js";
 import { nullable, sha256 } from "./identity.js";
+import { parseHeader, splitHeader } from "./enrich.js";
 import { resolveCreator, resolveOrganization } from "./dbLookup.js";
 
 const BATCH_SIZE = 50;
@@ -81,14 +82,37 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
         continue;
       }
 
-      const themes = song.themes || [];
+      /*
+       * The FILE is the record, not the manifest's copy of it. The manifest
+       * stores what the converter read; the file also carries what enrichment
+       * worked out afterwards — 92 songs have a tempo derived from a media
+       * filename that the manifest never learned. Reading the manifest here
+       * meant those tempos existed in the corpus and never reached the app.
+       *
+       * Everything else agrees exactly (title, key, artist, year and themes
+       * were compared across all 909 live songs), so the manifest is the
+       * fallback, and `isDraft` still comes from it — a review state is not a
+       * fact about the chart.
+       */
+      const header = parseHeader(splitHeader(content).header);
+      const directive = (name) => nullable(header.get(name));
+      // `songs.tempo` is an integer column, and `fingerprint` is JSON — so a
+      // directive's "72" would never equal a stored 72 and every run would
+      // rewrite every tempo. Idempotence is the whole point of the loader.
+      const tempoOf = (value) => {
+        const n = Number(value);
+        return Number.isFinite(n) && n > 0 ? Math.round(n) : null;
+      };
+      const fileThemes = (directive("x_theme") || "").split(",").map((t) => t.trim()).filter(Boolean);
+      const themes = fileThemes.length > 0 ? fileThemes : song.themes || [];
+
       rows.push({
         id: song.songId,
-        title: song.title,
-        key: nullable(song.metadata?.key),
-        artist: nullable(song.metadata?.artist),
-        year: nullable(song.metadata?.year),
-        tempo: nullable(song.metadata?.tempo),
+        title: directive("title") ?? song.title,
+        key: directive("key") ?? nullable(song.metadata?.key),
+        artist: directive("artist") ?? nullable(song.metadata?.artist),
+        year: directive("year") ?? nullable(song.metadata?.year),
+        tempo: tempoOf(directive("tempo") ?? song.metadata?.tempo),
         content,
         isDraft: Boolean(song.metadata?.isDraft),
         tags: themes.length > 0 ? themes.map((t) => `theme:${t}`).join(", ") : null,

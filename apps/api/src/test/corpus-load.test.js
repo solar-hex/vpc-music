@@ -102,6 +102,47 @@ describe("readCorpusRows", () => {
     const { rows } = await readCorpusRows(corpusRoot);
     expect(rows.find((r) => r.id === ID_B).tags).toBe("theme:grace-mercy, theme:salvation");
   });
+
+  it("takes the metadata from the FILE, not from the manifest's copy of it", async () => {
+    // 92 songs carry a tempo worked out from a media filename after conversion.
+    // It is in the chart file and not in the manifest, so reading the manifest
+    // here meant those tempos existed in the corpus and never reached the app.
+    const root = await makeCorpus([
+      {
+        songId: ID_A,
+        slug: "derived",
+        title: "Holy Ghost",
+        tempo: null,
+        content: [
+          "{title: Holy Ghost}",
+          "{artist: IBC}",
+          "{tempo: 150}",
+          "{x_tempo_source: derived from media filename}",
+          "{x_theme: revival, praise}",
+          "",
+          "[G]Holy",
+          "",
+        ].join("\n"),
+      },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    // A NUMBER, not the directive's "150": songs.tempo is an integer column and
+    // the fingerprint is JSON, so a string would rewrite every tempo each run.
+    expect(rows[0].tempo).toBe(150);
+    expect(rows[0].artist).toBe("IBC");
+    expect(rows[0].tags).toBe("theme:revival, theme:praise");
+    await rm(root, { recursive: true, force: true });
+  });
+
+  it("falls back to the manifest when the file's header does not carry the field", async () => {
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "plain", title: "God is Great", key: "F", artist: "VPC", content: CHART_A },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].artist).toBe("VPC"); // CHART_A has no {artist:} directive
+    expect(rows[0].key).toBe("F");
+    await rm(root, { recursive: true, force: true });
+  });
 });
 
 describe("field masks", () => {
