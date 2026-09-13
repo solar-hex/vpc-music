@@ -55,6 +55,28 @@ vi.mock("sonner", () => ({
 vi.mock("@vpc-music/shared", () => ({
   CHROMATIC_SHARP: ["C", "D", "E", "F", "G", "A", "B"],
   CHROMATIC_FLAT: ["C", "D", "E", "F", "G", "A", "B"],
+  // The real implementations: the point of the tag tests below is that the
+  // machine-maintained namespaces survive an edit, which a stub would hide.
+  parseTagField: (raw: string | null | undefined) => {
+    const parts = String(raw || "").split(",").map((s) => s.trim()).filter(Boolean);
+    const tags: string[] = [], themes: string[] = [], negated: string[] = [], flags: string[] = [];
+    for (const part of parts) {
+      const lower = part.toLowerCase();
+      if (lower.startsWith("!theme:")) negated.push(lower.slice(7));
+      else if (lower.startsWith("theme:")) themes.push(lower.slice(6));
+      else if (lower.startsWith("flag:")) flags.push(lower.slice(5));
+      else tags.push(part);
+    }
+    return { tags, themes, negated, flags };
+  },
+  formatTagField: ({ tags = [], themes = [], negated = [], flags = [] }: any) =>
+    [
+      ...tags,
+      ...[...new Set(flags as string[])].sort().map((f) => `flag:${f}`),
+      ...[...new Set(themes as string[])].sort().map((t) => `theme:${t}`),
+      ...[...new Set(negated as string[])].sort().map((t) => `!theme:${t}`),
+    ].join(", "),
+  themeLabel: (id: string) => id.replace(/-/g, " "),
   PRESET_TAGS: ["worship", "praise", "hymn"],
   parseChordPro: (input: string) => ({
     directives: {
@@ -275,6 +297,36 @@ describe("SongEditPage", () => {
       expect(mockUpdate.mock.calls[0][1]).toMatchObject({ title: "Amazing Grace", year: "1780", lastKnownUpdatedAt: existingSong.updatedAt });
       expect(mockInvalidateLibrary).toHaveBeenCalled();
       expect(mockNavigate).toHaveBeenCalledWith("/songs/song-1");
+    });
+
+    it("shows only the plain tags, and keeps themes and flags through a save", async () => {
+      // The corpus loader maintains theme:, !theme: and flag: entries in the
+      // same column. They must not appear as editable pills, and must survive
+      // an edit that never touches tags.
+      mockGet.mockResolvedValue({
+        song: { ...existingSong, tags: "hymn,theme:grace,!theme:healing,flag:unlisted" },
+        variations: [],
+      });
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Edit Song" })).toBeInTheDocument());
+
+      expect(screen.getByText("hymn")).toBeInTheDocument();
+      expect(screen.queryByText("theme:grace")).not.toBeInTheDocument();
+      expect(screen.queryByText("!theme:healing")).not.toBeInTheDocument();
+      expect(screen.queryByText("flag:unlisted")).not.toBeInTheDocument();
+      expect(screen.getByText(/themes found in the lyrics/i)).toHaveTextContent("grace");
+
+      await user.clear(screen.getByLabelText("Year"));
+      await user.type(screen.getByLabelText("Year"), "1780");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalled());
+      const saved = mockUpdate.mock.calls[0][1].tags as string;
+      expect(saved).toContain("hymn");
+      expect(saved).toContain("theme:grace");
+      expect(saved).toContain("!theme:healing");
+      expect(saved).toContain("flag:unlisted");
     });
 
     it("warns before leaving with unsaved changes", async () => {

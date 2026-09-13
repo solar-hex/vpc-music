@@ -12,9 +12,16 @@ import { ResponsiveModal } from "@/components/ui/ResponsiveModal";
 import { invalidateSongLibrary } from "@/hooks/useSongLibrary";
 import { bulkImport, IMPORT_ACCEPT, IMPORT_FORMATS_LABEL, previewImportFile, type BulkImportItem, type ImportPreview } from "@/lib/song-import";
 import { enqueueOfflineSongEdit, isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
-import { CHROMATIC_FLAT, CHROMATIC_SHARP } from "@vpc-music/shared";
+import { CHROMATIC_FLAT, CHROMATIC_SHARP, formatTagField, parseTagField, themeLabel } from "@vpc-music/shared";
 import { useTheme } from "@/contexts/ThemeContext";
 
+/** The plain tags a person typed, from the comma-separated input. */
+function splitPlainTags(value: string): string[] {
+  return value
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
 type PendingInterruption = { type: "leave-page" } | { type: "replace-import"; files: File[] };
 
 type ConflictState = {
@@ -50,7 +57,14 @@ export function SongEditPage() {
   const [tempo, setTempo] = useState("");
   const [artist, setArtist] = useState("");
   const [year, setYear] = useState("");
+  // `tags` holds only the plain, human tags. The machine-maintained
+  // namespaces live in `derivedTags` and are written straight back on save.
   const [tags, setTags] = useState("");
+  const [derivedTags, setDerivedTags] = useState<{ themes: string[]; negated: string[]; flags: string[] }>({
+    themes: [],
+    negated: [],
+    flags: [],
+  });
   const [content, setContent] = useState("");
   const [isDraft, setIsDraft] = useState(false);
   const [loading, setLoading] = useState(!isNew);
@@ -79,7 +93,7 @@ export function SongEditPage() {
       tempo: songRecord?.tempo ? String(songRecord.tempo) : "",
       artist: songRecord?.artist || "",
       year: songRecord?.year || "",
-      tags: songRecord?.tags || "",
+      tags: parseTagField(songRecord?.tags).tags.join(", "),
       content: songRecord?.content || "",
       isDraft: Boolean(songRecord?.isDraft),
     }),
@@ -123,7 +137,9 @@ export function SongEditPage() {
     setTempo(song.tempo ? String(song.tempo) : "");
     setArtist(song.artist || "");
     setYear(song.year || "");
-    setTags(song.tags || "");
+    const parsedTags = parseTagField(song.tags);
+    setTags(parsedTags.tags.join(", "));
+    setDerivedTags({ themes: parsedTags.themes, negated: parsedTags.negated, flags: parsedTags.flags });
     setContent(song.content || "");
     setIsDraft(Boolean(song.isDraft));
   };
@@ -206,7 +222,11 @@ export function SongEditPage() {
     tempo: tempo ? Number(tempo) : undefined,
     artist: artist.trim() || undefined,
     year: year.trim() || undefined,
-    tags: tags.trim() || undefined,
+    // Only the plain tags are editable here. Themes, the tombstones that
+    // record a rejected theme, and flags are machine-maintained by the corpus
+    // loader, so they are carried through untouched: writing back just what
+    // the pills show would silently delete them.
+    tags: formatTagField({ ...derivedTags, tags: splitPlainTags(tags) }) || undefined,
     content,
     isDraft,
   });
@@ -398,6 +418,11 @@ export function SongEditPage() {
           <div className="text-sm sm:col-span-2">
             <span className="mb-1 block text-[hsl(var(--muted-foreground))]">Tags</span>
             <TagInput value={tags} onChange={setTags} />
+            {derivedTags.themes.length > 0 && (
+              <p className="mt-1.5 text-xs text-[hsl(var(--muted-foreground))]">
+                Themes found in the lyrics: {derivedTags.themes.map(themeLabel).join(", ")}. These are kept automatically.
+              </p>
+            )}
           </div>
         </div>
 
