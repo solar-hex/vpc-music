@@ -1,0 +1,4448 @@
+{
+  "totals": {
+    "targeted": 465,
+    "have": 358,
+    "probable": 45,
+    "missing": 62,
+    "library": 1058,
+    "masterIndex": 8234,
+    "sourceable": 15,
+    "ours": 317,
+    "duplicateTitles": 215
+  },
+  "byStatus": {
+    "Later": 6,
+    "Test": 2,
+    "(no status)": 54
+  },
+  "byBatch": {
+    "6": 1,
+    "7": 2,
+    "8": 1,
+    "9": 2,
+    "10": 1,
+    "11": 2,
+    "13": 1,
+    "14": 3,
+    "15": 1,
+    "18": 1,
+    "19": 1,
+    "20": 3,
+    "21": 1,
+    "22": 2,
+    "26": 1,
+    "27": 1,
+    "28": 2,
+    "29": 2,
+    "30": 3,
+    "32": 2,
+    "36": 3,
+    "37": 3,
+    "40": 3,
+    "41": 2,
+    "44": 1,
+    "45": 1,
+    "46": 1,
+    "48": 2,
+    "49": 2,
+    "50": 3
+  },
+  "bySite": {
+    "traditionalmusic.co.uk": 10,
+    "gospelchoruses.wordpress.com": 2,
+    "wordtoworship.com": 1,
+    "worship.lifeway.com": 2
+  },
+  "byIndexNote": {
+    "lyrics": 3,
+    "marked": 2,
+    "other locations": 3
+  },
+  "missing": [
+    {
+      "title": "Baptized Into the Body",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Step Into The Water",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Cherish That Name",
+      "status": "Test",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "There's Just Something About That Name",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "Dancing on the Graves of my Enemies",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Got My Foot On The Rock",
+        "score": 0.27
+      }
+    },
+    {
+      "title": "Hes Coming Back Again",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Coming down",
+        "score": 0.2
+      }
+    },
+    {
+      "title": "Hes The Lover Of My Soul",
+      "status": "Test",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Jesus Lover Of My Soul",
+        "score": 0.57
+      }
+    },
+    {
+      "title": "I Am Healed By the Word of God",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Found It All In The Word OF God",
+        "score": 0.42
+      }
+    },
+    {
+      "title": "I Believe In The Blood, I Believe In The Blood Of Calvary",
+      "status": null,
+      "batch": 7,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Believe In The Cross",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "I Exhault Thee (O Lord)",
+      "status": null,
+      "batch": 22,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Exalt Thee",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "I Got A Feeling",
+      "status": null,
+      "batch": 32,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Ive Got A Feeling",
+        "score": 0.6
+      }
+    },
+    {
+      "title": "I Have Been Redeemed",
+      "status": null,
+      "batch": 36,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "lyrics",
+      "nearest": {
+        "title": "I’ve been redeemed",
+        "score": 0.4
+      }
+    },
+    {
+      "title": "I Lift My Hands, Standing Unashamed",
+      "status": null,
+      "batch": 49,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Lift Up My Hands",
+        "score": 0.57
+      }
+    },
+    {
+      "title": "I Need Thee, O, I Need Thee",
+      "status": null,
+      "batch": 6,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Need Thee Every Hour",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "I Need Your Mercy, I Need Your Grace",
+      "status": null,
+      "batch": 8,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Need Your Glory",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "I Pray Well All Be Ready",
+      "status": null,
+      "batch": 10,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Above All Else I Must Be Saved",
+        "score": 0.3
+      }
+    },
+    {
+      "title": "I Sing Because Im Happy",
+      "status": null,
+      "batch": 15,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Will Sing Hallelujah",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "I Told All My Troubles Goodbye",
+      "status": null,
+      "batch": 20,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "marked",
+      "nearest": {
+        "title": "I Surrender All",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "I Will Sing Hallejuah",
+      "status": null,
+      "batch": 29,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "I Will Sing Hallelujah",
+        "score": 0.6
+      }
+    },
+    {
+      "title": "I Will Sing Of The Good News Of God",
+      "status": null,
+      "batch": 30,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Will Sing Hallelujah",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "I Wouldnt Take Nothing For My Journey Now",
+      "status": null,
+      "batch": 36,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "For My Good",
+        "score": 0.22
+      }
+    },
+    {
+      "title": "If You Can Use Anything Lord You Can Use Me",
+      "status": null,
+      "batch": 40,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "If you had known me",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Im A One God Apostolic Tongue Talking",
+      "status": null,
+      "batch": 48,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "One, way to God",
+        "score": 0.22
+      }
+    },
+    {
+      "title": "It Wont Be Long",
+      "status": null,
+      "batch": 14,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "other locations",
+      "nearest": {
+        "title": "How Can It Be",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Its So Beautiful The Name Of Jesus",
+      "status": null,
+      "batch": 20,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "In The Name Of Jesus",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "Ive Got My Mind Made Up",
+      "status": null,
+      "batch": 49,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I am determined, I’ve made up my mind",
+        "score": 0.56
+      }
+    },
+    {
+      "title": "Ive Never Been This Homesick Before",
+      "status": null,
+      "batch": 29,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "marked",
+      "nearest": {
+        "title": "Ive Been Delivered",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "Jesus Loves Me This I Know",
+      "status": null,
+      "batch": 40,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Dont Know Why Jesus Loves Me",
+        "score": 0.63
+      }
+    },
+    {
+      "title": "Jesus Loves the Little Children",
+      "status": null,
+      "batch": 50,
+      "credit": null,
+      "site": "gospelchoruses.wordpress.com",
+      "sourceUrl": "https://gospelchoruses.wordpress.com/choruses-songs-index/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Jesus on the mainline",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "Jesus Messiah",
+      "status": null,
+      "batch": 41,
+      "credit": null,
+      "site": "wordtoworship.com",
+      "sourceUrl": "https://wordtoworship.com/songs",
+      "indexNote": null,
+      "nearest": {
+        "title": "My Jesus",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Jesus What A Wonder",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Jesus, what a wander",
+        "score": 0.6
+      }
+    },
+    {
+      "title": "Jesus, Jesus, How I Trust Him",
+      "status": null,
+      "batch": 46,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "O How I Love Jesus",
+        "score": 0.43
+      }
+    },
+    {
+      "title": "Let Me Talk To You Jesus",
+      "status": null,
+      "batch": 14,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Let Me Walk With You Jesus",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "Lets All Go Down To The River",
+      "status": null,
+      "batch": 19,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "I Go To The Rock",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Lift Up Your Hands",
+      "status": null,
+      "batch": 22,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Lift Up Your Voices",
+        "score": 0.6
+      }
+    },
+    {
+      "title": "Midnight Cry",
+      "status": null,
+      "batch": 37,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Cry Out Ryan Avery, Tamika Jackson",
+        "score": 0.14
+      }
+    },
+    {
+      "title": "My Foots On The Rock And My Minds Made Up",
+      "status": null,
+      "batch": 41,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I Got My Foot On The Rock",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Oh How We Love You",
+      "status": null,
+      "batch": 50,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "other locations",
+      "nearest": {
+        "title": "Oh, how I love Jesus",
+        "score": 0.43
+      }
+    },
+    {
+      "title": "Rejoice Not Against Me",
+      "status": null,
+      "batch": 20,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Pass Me Not O Gentle Saviour",
+        "score": 0.25
+      }
+    },
+    {
+      "title": "Send It On Down",
+      "status": null,
+      "batch": 26,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "lyrics",
+      "nearest": {
+        "title": "Daystar - Shine Down On Me",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "So Ive Come, To Tell You Hes Alive",
+      "status": null,
+      "batch": 36,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Weve Come To Praise Him",
+        "score": 0.18
+      }
+    },
+    {
+      "title": "Somethings Got A Hold On Me",
+      "status": null,
+      "batch": 40,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Somethings got a hold of me",
+        "score": 0.71
+      }
+    },
+    {
+      "title": "Surely Goodness and Mercy Shall Follow Me",
+      "status": null,
+      "batch": 18,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Mercy And Grace",
+        "score": 0.25
+      }
+    },
+    {
+      "title": "Thats What Ill Be Willing To Do",
+      "status": null,
+      "batch": 9,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "I don’t know what you came to do",
+        "score": 0.25
+      }
+    },
+    {
+      "title": "The Beauty Of The Name",
+      "status": null,
+      "batch": 11,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "In The Name Of Jesus",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "The Eye Has Not Seen Nor Hath The Ear Heard",
+      "status": null,
+      "batch": 14,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Not The Same",
+        "score": 0.2
+      }
+    },
+    {
+      "title": "The Old Landmark",
+      "status": null,
+      "batch": 21,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": null
+    },
+    {
+      "title": "There Is Nothing Like The Presence Of The Lord",
+      "status": null,
+      "batch": 28,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Celebrate In The Presence Of The Lord",
+        "score": 0.4
+      }
+    },
+    {
+      "title": "There Is Power, Power, Wonder Working Power",
+      "status": null,
+      "batch": 30,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "There is power in the blood",
+        "score": 0.38
+      }
+    },
+    {
+      "title": "There Will be Light",
+      "status": null,
+      "batch": 32,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Everybody Will Be Happy Over There",
+        "score": 0.43
+      }
+    },
+    {
+      "title": "This I Believe (The Creed)",
+      "status": null,
+      "batch": 37,
+      "credit": null,
+      "site": "worship.lifeway.com",
+      "sourceUrl": "https://worship.lifeway.com/",
+      "indexNote": null,
+      "nearest": {
+        "title": "If You Believe And I Believe",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "Through It All",
+      "status": null,
+      "batch": 44,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Worthy Of It All",
+        "score": 0.4
+      }
+    },
+    {
+      "title": "To Worship You, I Live",
+      "status": null,
+      "batch": 48,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "other locations",
+      "nearest": {
+        "title": "I Came To Worship",
+        "score": 0.5
+      }
+    },
+    {
+      "title": "Turn Your Eyes Upon Jesus",
+      "status": null,
+      "batch": 50,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": "lyrics",
+      "nearest": {
+        "title": "Turn you eyes upon Jesus",
+        "score": 0.67
+      }
+    },
+    {
+      "title": "Walking And Talking",
+      "status": null,
+      "batch": 7,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Mercy And Grace",
+        "score": 0.2
+      }
+    },
+    {
+      "title": "We Glorify, We Glorify",
+      "status": null,
+      "batch": 13,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "We Stand",
+        "score": 0.33
+      }
+    },
+    {
+      "title": "What A Mighty God We Serve",
+      "status": null,
+      "batch": 27,
+      "credit": null,
+      "site": "gospelchoruses.wordpress.com",
+      "sourceUrl": "https://gospelchoruses.wordpress.com/choruses-songs-index/",
+      "indexNote": null,
+      "nearest": {
+        "title": "What A Friend We Have In Jesus",
+        "score": 0.3
+      }
+    },
+    {
+      "title": "What Can Wash Away My Sins",
+      "status": null,
+      "batch": 28,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "He Took My Sins Away",
+        "score": 0.38
+      }
+    },
+    {
+      "title": "What Would You Give In Exchange For Your Soul",
+      "status": null,
+      "batch": 30,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "In Your Presence",
+        "score": 0.2
+      }
+    },
+    {
+      "title": "When The Battles Over",
+      "status": null,
+      "batch": 37,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Over In The Glory Land",
+        "score": 0.29
+      }
+    },
+    {
+      "title": "Where He Leads Me I Will Follow",
+      "status": null,
+      "batch": 45,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": {
+        "title": "Lead me Lord – I will follow",
+        "score": 0.44
+      }
+    },
+    {
+      "title": "Wholehearted",
+      "status": "Later",
+      "batch": null,
+      "credit": null,
+      "site": null,
+      "sourceUrl": null,
+      "indexNote": null,
+      "nearest": null
+    },
+    {
+      "title": "Yet Not I But Through Christ In Me",
+      "status": null,
+      "batch": 9,
+      "credit": null,
+      "site": "worship.lifeway.com",
+      "sourceUrl": "https://worship.lifeway.com/",
+      "indexNote": null,
+      "nearest": {
+        "title": "When I think how He brought me through",
+        "score": 0.23
+      }
+    },
+    {
+      "title": "You Are My All In All",
+      "status": null,
+      "batch": 11,
+      "credit": null,
+      "site": "traditionalmusic.co.uk",
+      "sourceUrl": "http://www.traditionalmusic.co.uk/country-gospel-chords/",
+      "indexNote": null,
+      "nearest": {
+        "title": "Are You Washed In The Blood",
+        "score": 0.38
+      }
+    }
+  ],
+  "probable": [
+    {
+      "title": "I See A Crimson Stream Of Blood",
+      "status": null,
+      "candidate": "I See A Crimson Stream",
+      "candidateId": "dcedbd3d-2c7d-5dd3-a245-d35bdccdd4d2",
+      "score": 0.91
+    },
+    {
+      "title": "Are You Washed In The Blood Of The Lamb (Are You Washed In The Blood Of The Lamb)",
+      "status": "Later",
+      "candidate": "Are You Washed In The Blood",
+      "candidateId": "5a2498df-eb2d-5d91-908a-795f376d6839",
+      "score": 0.9
+    },
+    {
+      "title": "It's Coming Down",
+      "status": null,
+      "candidate": "Coming down",
+      "candidateId": "07b5e3db-8e36-59b2-8cae-2c4905ab2dc6",
+      "score": 0.9
+    },
+    {
+      "title": "Glory And Honor and Praises",
+      "status": "Test",
+      "candidate": "Let There Be Glory And Honor And Praises",
+      "candidateId": "5e805bac-09bc-552c-bd5c-42c3dbfaac63",
+      "score": 0.89
+    },
+    {
+      "title": "Hes Got The Whole World",
+      "status": "Test",
+      "candidate": "Hes Got The Whole World In His Hands",
+      "candidateId": "907b73d3-bd85-54b7-9c2f-ef520218fe3c",
+      "score": 0.89
+    },
+    {
+      "title": "If Theres Revival, Dont Do It Without Me",
+      "status": null,
+      "candidate": "Dont Do It Without Me",
+      "candidateId": "a7d00cbf-6d50-5ddc-b2fa-27fa3874a6ad",
+      "score": 0.89
+    },
+    {
+      "title": "I Will Bless The Lord",
+      "status": null,
+      "candidate": "Bless the Lord",
+      "candidateId": "a2f911a4-d14a-5caa-8be0-e61a04657310",
+      "score": 0.88
+    },
+    {
+      "title": "Ill Say Yes Lord Yes",
+      "status": null,
+      "candidate": "Yes Lord yes",
+      "candidateId": "44163842-65c9-5d86-ab76-4e0f9a9080b4",
+      "score": 0.88
+    },
+    {
+      "title": "Let Us Praise God",
+      "status": null,
+      "candidate": "Come on everybody let us praise God",
+      "candidateId": "549c85e1-50f4-52e1-8973-82b2fe7ae54f",
+      "score": 0.87
+    },
+    {
+      "title": "Were A Happy People Yes We Are",
+      "status": null,
+      "candidate": "We’re a happy people",
+      "candidateId": "43187cda-7ffe-57a2-9548-5b3103af597f",
+      "score": 0.87
+    },
+    {
+      "title": "Just Have A Little Talk With Jesus",
+      "status": null,
+      "candidate": "Just a Little Talk With Jesus",
+      "candidateId": "b24c1b5d-b429-5733-a1c6-39c514df29a4",
+      "score": 0.86
+    },
+    {
+      "title": "The Holy Ghost Jesus Is Giving Away",
+      "status": null,
+      "candidate": "The Holy Ghost that Jesus is giving away",
+      "candidateId": "f630dac2-6d1b-5eae-932d-d50e1de3afdd",
+      "score": 0.86
+    },
+    {
+      "title": "I Have Decided",
+      "status": null,
+      "candidate": "I Have Decided To Follow Jesus",
+      "candidateId": "bc8aaa31-24c2-5847-bb90-2705c72b85bf",
+      "score": 0.85
+    },
+    {
+      "title": "I Shall Know Him",
+      "status": null,
+      "candidate": "I shall know Him by the nail prints",
+      "candidateId": "b405fe9b-4264-5402-8ec8-a4ca474da9e4",
+      "score": 0.85
+    },
+    {
+      "title": "Surround Me O Lord",
+      "status": null,
+      "candidate": "Surround me",
+      "candidateId": "23d52e14-32fc-51ad-ad1d-160dbfae83c8",
+      "score": 0.85
+    },
+    {
+      "title": "This Is Amazing Grace",
+      "status": null,
+      "candidate": "Amazing Grace",
+      "candidateId": "35515dad-726f-5526-8f2b-3b3ec364f63a",
+      "score": 0.85
+    },
+    {
+      "title": "Walk With You",
+      "status": null,
+      "candidate": "Let Me Walk With You Jesus",
+      "candidateId": "d4b83943-348f-54b3-a561-2bf4bd8de81e",
+      "score": 0.85
+    },
+    {
+      "title": "When The Redeemed",
+      "status": null,
+      "candidate": "When the redeemed are gathering in",
+      "candidateId": "4bae90ec-ce58-502b-bff8-71f05921a1f7",
+      "score": 0.85
+    },
+    {
+      "title": "Where Could I Go But To The Lord",
+      "status": null,
+      "candidate": "Where could I go –",
+      "candidateId": "9171dc48-341b-5dd1-a61b-f7ecce28748b",
+      "score": 0.85
+    },
+    {
+      "title": "I Remember When My Burdens Rolled Away",
+      "status": null,
+      "candidate": "Burdens Rolled Away",
+      "candidateId": "8ef3dd2f-1526-573e-9a5a-4a534d199689",
+      "score": 0.83
+    },
+    {
+      "title": "This Is The Day That The Lord Has Made",
+      "status": null,
+      "candidate": "This Is The Day",
+      "candidateId": "196a2992-5ff3-52aa-9473-743623f16d9e",
+      "score": 0.83
+    },
+    {
+      "title": "I Wanna Be Washed In The Blood Of The Lamb",
+      "status": null,
+      "candidate": "I wanna be washed",
+      "candidateId": "7a000174-3656-521c-9f3c-5b2ccc741513",
+      "score": 0.82
+    },
+    {
+      "title": "Jesus Is All I Need",
+      "status": null,
+      "candidate": "Jesus Is",
+      "candidateId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "score": 0.82
+    },
+    {
+      "title": "Jesus Is Hear Right Now",
+      "status": null,
+      "candidate": "Jesus Is",
+      "candidateId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "score": 0.82
+    },
+    {
+      "title": "Oh What A Happy Day",
+      "status": "Later",
+      "candidate": "Happy Day",
+      "candidateId": "5df8db11-f299-54e8-a2d6-1632950483b5",
+      "score": 0.82
+    },
+    {
+      "title": "Something Good",
+      "status": null,
+      "candidate": "Something good’s about to happen",
+      "candidateId": "ca3daaac-b131-5f8d-a788-ef1b01bffc73",
+      "score": 0.82
+    },
+    {
+      "title": "I Can Go Into The Holy Of Holies",
+      "status": null,
+      "candidate": "Holy Of Holies",
+      "candidateId": "b6707263-7c41-50e5-ba79-bcbd7d98686b",
+      "score": 0.81
+    },
+    {
+      "title": "I Wish Somebodys Soul Would Catch On Fire",
+      "status": null,
+      "candidate": "Catch On Fire",
+      "candidateId": "869801fc-5f8b-531f-9d9d-7fb72ea77685",
+      "score": 0.81
+    },
+    {
+      "title": "Our God Is Greater, Our God Is Stronger",
+      "status": null,
+      "candidate": "God is Great",
+      "candidateId": "889e9a0a-7388-5bce-a78e-bcd4d2d4b4f4",
+      "score": 0.81
+    },
+    {
+      "title": "Take The Whole World But Give Me Jesus",
+      "status": null,
+      "candidate": "Give Me Jesus",
+      "candidateId": "4d8aaf89-08b0-54c4-8f35-e412fd47efda",
+      "score": 0.81
+    },
+    {
+      "title": "Holy Is The Lord God Almighty",
+      "status": "Later",
+      "candidate": "God Almighty",
+      "candidateId": "244cfa9b-7151-545c-9eb9-0b7a3585d05a",
+      "score": 0.8
+    },
+    {
+      "title": "Im Crying Holy Unto The Lord",
+      "status": null,
+      "candidate": "Crying Holy",
+      "candidateId": "4611c368-2d1d-5063-91a3-0f311a79baf3",
+      "score": 0.8
+    },
+    {
+      "title": "In The City",
+      "status": null,
+      "candidate": "In the city where the Lamb is the light",
+      "candidateId": "23ecb477-e688-5cfb-ab00-817ffd21d3a6",
+      "score": 0.8
+    },
+    {
+      "title": "Softly And Tenderly Jesus Is Calling",
+      "status": null,
+      "candidate": "Jesus Is",
+      "candidateId": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "score": 0.8
+    },
+    {
+      "title": "This Train",
+      "status": null,
+      "candidate": "This train is bound for glory",
+      "candidateId": "3b504be5-fd19-5023-80b9-2bfada5f4e27",
+      "score": 0.8
+    },
+    {
+      "title": "Ive Got The Lord And Thats Enough",
+      "status": null,
+      "candidate": "Thats Enough",
+      "candidateId": "4f926a65-c9dd-5db5-b02f-f748160a599a",
+      "score": 0.79
+    },
+    {
+      "title": "I Believe In A Hill Called Mt Calvary",
+      "status": null,
+      "candidate": "I Believe In A Hill Called Mount Calvary",
+      "candidateId": "bf890d2c-cfd9-5bc7-a576-5488ee0db254",
+      "score": 0.78
+    },
+    {
+      "title": "God Is So Good To Me",
+      "status": "Later",
+      "candidate": "God is good",
+      "candidateId": "f4a802e5-6905-59bb-be98-c81fe5d69c38",
+      "score": 0.75
+    },
+    {
+      "title": "I Dont Feel At Home In This World Anymore",
+      "status": null,
+      "candidate": "I Dont Feel At Home Anymore",
+      "candidateId": "f40b5df5-4c8a-5041-adf3-4d5add8e5f5b",
+      "score": 0.75
+    },
+    {
+      "title": "Ill Be Somewhere Listening For My Name",
+      "status": null,
+      "candidate": "I’ll be listening",
+      "candidateId": "9cecc27b-a206-53d1-acf5-5e3c1984f02e",
+      "score": 0.75
+    },
+    {
+      "title": "Look Out Satan, Look Out",
+      "status": null,
+      "candidate": "Look out satan, lookout",
+      "candidateId": "86e505b6-1766-52d9-93b9-42aef386f04c",
+      "score": 0.75
+    },
+    {
+      "title": "Lord I Want To Love You More",
+      "status": null,
+      "candidate": "Lord I Love You",
+      "candidateId": "d6dcb220-399c-56fa-b9a1-11976c8335f3",
+      "score": 0.75
+    },
+    {
+      "title": "My Soul Yes, To The Lord",
+      "status": null,
+      "candidate": "Yes Lord",
+      "candidateId": "2d02564e-b69d-5765-905f-85d4c2972b6c",
+      "score": 0.75
+    },
+    {
+      "title": "Old Account Settled",
+      "status": null,
+      "candidate": "The old account was settled",
+      "candidateId": "feb95590-ec2c-5fa2-8e20-f997575b1ac5",
+      "score": 0.75
+    },
+    {
+      "title": "Our God Is An Awesome God, Our God Is An Awesome God",
+      "status": null,
+      "candidate": "Awesome God",
+      "candidateId": "4f86b48b-35c8-51af-bb35-59195345a040",
+      "score": 0.75
+    }
+  ],
+  "ours": [
+    {
+      "title": "A Mother Like You",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "A Place of Healing",
+      "source": "text",
+      "artist": "Jina McCool"
+    },
+    {
+      "title": "A Place Of Healing",
+      "source": "pdf",
+      "artist": "Jina McCool"
+    },
+    {
+      "title": "A Reason to Dance",
+      "source": "pdf",
+      "artist": "All Nations Worship"
+    },
+    {
+      "title": "After This",
+      "source": "pdf",
+      "artist": "J.J. Hairston & Youthful Praise"
+    },
+    {
+      "title": "Ain’t No Grave / Alive Forever Amen",
+      "source": "pdf",
+      "artist": "Travis Cottrell"
+    },
+    {
+      "title": "All Hail",
+      "source": "pdf",
+      "artist": "REVERE, Phil Thompson, & Carrington Gaines"
+    },
+    {
+      "title": "All hale King Jesus",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "All To You Tevia Alfter, Natalie Bunner",
+      "source": "pdf",
+      "artist": "Bryan Pound"
+    },
+    {
+      "title": "Already Done Kristen Sangary",
+      "source": "pdf",
+      "artist": "Kristen Sangary"
+    },
+    {
+      "title": "Angels We Have Heard (Glory Be)",
+      "source": "pdf",
+      "artist": "Jordan Smith"
+    },
+    {
+      "title": "Answer is Jesus Kenna Turner West",
+      "source": "pdf",
+      "artist": "Karen Peck & New River"
+    },
+    {
+      "title": "Anthem We Raise & Keiko Grove",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "Anything Can Happen",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Anything Can Happen",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Anything Can Happen",
+      "source": "pdf",
+      "artist": "Mark Crowder"
+    },
+    {
+      "title": "Are You Washed In The Blood",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "At The Name",
+      "source": "pdf",
+      "artist": "Written by Christyana Blake"
+    },
+    {
+      "title": "Available",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Awesome and Powerful",
+      "source": "pdf",
+      "artist": "Mark Crowder"
+    },
+    {
+      "title": "Be Exalted / I Exalt Thee Sean Hill, & Shelly E. Johnson",
+      "source": "pdf",
+      "artist": "Brittani Scott"
+    },
+    {
+      "title": "Be Lifted",
+      "source": "pdf",
+      "artist": "Michah Stampley"
+    },
+    {
+      "title": "Beauty And The Beast Chords by Celine Dion",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Because You Gave",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Before The King",
+      "source": "pdf",
+      "artist": "Saddleback Worship"
+    },
+    {
+      "title": "Better",
+      "source": "pdf",
+      "artist": "Hezekiah Walker"
+    },
+    {
+      "title": "Bless Him Some More",
+      "source": "pdf",
+      "artist": "Free Worship"
+    },
+    {
+      "title": "Bless Your Name",
+      "source": "pdf",
+      "artist": "Clint Brown"
+    },
+    {
+      "title": "Breakout",
+      "source": "pdf",
+      "artist": "Mark Crowder"
+    },
+    {
+      "title": "Breathe On Me - (Power Of God)",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Burdens Rolled Away",
+      "source": "onsong",
+      "artist": null
+    },
+    {
+      "title": "But God",
+      "source": "pdf",
+      "artist": "The Pentecostals of Katy (POK)"
+    },
+    {
+      "title": "But God - The Devil Thought He Had Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "By His Grace Im Saved",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Call the Name of Jesus",
+      "source": "pdf",
+      "artist": "Amante Lacey"
+    },
+    {
+      "title": "Can You Feel the Love Tonight",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Catch On Fire",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Celebrate In The Presence Of The Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Celebration Medley (First Pentecostal Church of North Little Rock)",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Change Me Dear Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Christmas Day Andrew Bergthold",
+      "source": "pdf",
+      "artist": "Chris Tomlin"
+    },
+    {
+      "title": "Colors of the Wind",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Come Like The Dawn",
+      "source": "pdf",
+      "artist": "River Valley Church"
+    },
+    {
+      "title": "Come Move",
+      "source": "pdf",
+      "artist": "Brittani Scott"
+    },
+    {
+      "title": "Complete Surrender",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Complete Surrender",
+      "source": "text",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "Completely Yes",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Consume Me",
+      "source": "pdf",
+      "artist": "Caleb Dehart/James Simms"
+    },
+    {
+      "title": "Covenant Keeping God",
+      "source": "pdf",
+      "artist": "All Nations Music"
+    },
+    {
+      "title": "Covered",
+      "source": "pdf",
+      "artist": "Mattoon Youth Choir"
+    },
+    {
+      "title": "Covered",
+      "source": "pdf",
+      "artist": "Mark Yandris"
+    },
+    {
+      "title": "Crucified With Christ",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Cry Out Ryan Avery, Tamika Jackson",
+      "source": "pdf",
+      "artist": "ReFresh Worship"
+    },
+    {
+      "title": "Days Of Elijah - Behold He Comes",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Dearly Beloved",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Death, Hell + The Grave",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Determined",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Dont Do It Without Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Even Now",
+      "source": "pdf",
+      "artist": "Awakening"
+    },
+    {
+      "title": "Every Praise Is To Our God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Everybody will be happy of there –",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Everything is Changing Sarah Gerald",
+      "source": "pdf",
+      "artist": "The Belonging Co."
+    },
+    {
+      "title": "Everything you need is in this house",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Excellent",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Eyes On Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Favorite Song Of All",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Fight For Us",
+      "source": "pdf",
+      "artist": "Brittani Scott"
+    },
+    {
+      "title": "Fire",
+      "source": "pdf",
+      "artist": "CeCe Winans"
+    },
+    {
+      "title": "Forever Faithful",
+      "source": "pdf",
+      "artist": "Joshua Olivier"
+    },
+    {
+      "title": "Forward",
+      "source": "pdf",
+      "artist": "UPCI Music Ministry"
+    },
+    {
+      "title": "Gloria / Better",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Glory Of The Lord Is Coming Down",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Glory Sarah Benibo",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Glory Zebrina Anderson, Sarah Benibo",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Glory, Honor, Power",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Glory, Honor, Power",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Glory, Honor, Power",
+      "source": "pdf",
+      "artist": "Influence Music"
+    },
+    {
+      "title": "Go Tell It / Wonderful Child",
+      "source": "pdf",
+      "artist": "James Fortune & FIYA"
+    },
+    {
+      "title": "God Gave Me A Song",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "God Gave Me A Song",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "God Has Been So Good",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "God is Calling",
+      "source": "pdf",
+      "artist": "Anthony Trimble"
+    },
+    {
+      "title": "God of the Empty Grave",
+      "source": "pdf",
+      "artist": "Assemble Worship"
+    },
+    {
+      "title": "God of Wonder",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "God Still Delivers",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Great Is Our King",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Greater Works",
+      "source": "pdf",
+      "artist": "Elenee Young"
+    },
+    {
+      "title": "Hallelujah He is Here",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Hallelujah He is Here",
+      "source": "text",
+      "artist": null
+    },
+    {
+      "title": "Hallelujah Lord We Praise Your Name",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Hallelujah, Jesus Reigns",
+      "source": "pdf",
+      "artist": "Angie Pearson"
+    },
+    {
+      "title": "Hallowed Be Your Name",
+      "source": "pdf",
+      "artist": "Ron Kenoly"
+    },
+    {
+      "title": "Hands Toward Heaven",
+      "source": "pdf",
+      "artist": "North Point Inside Out"
+    },
+    {
+      "title": "Have Faith",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Have Your Way Miah White, J.J. Hairston",
+      "source": "pdf",
+      "artist": "J.J. Hairston"
+    },
+    {
+      "title": "He Didn't Just Carry A Cross",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "He Has Come",
+      "source": "pdf",
+      "artist": "Norman Hutchins"
+    },
+    {
+      "title": "He hath made me glad",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "He Is",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "He is all I need – p.71",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "He is More",
+      "source": "pdf",
+      "artist": "Lori Green"
+    },
+    {
+      "title": "He is More",
+      "source": "text",
+      "artist": "Lori Green"
+    },
+    {
+      "title": "He Won’t Fail Darius Antonie James",
+      "source": "pdf",
+      "artist": "Todd Galberth"
+    },
+    {
+      "title": "He’s Been Good",
+      "source": "pdf",
+      "artist": "Lawrence Trump"
+    },
+    {
+      "title": "He’s In The Room",
+      "source": "pdf",
+      "artist": "David Jennings feat. Bethany Jennings"
+    },
+    {
+      "title": "He’s Worthy",
+      "source": "pdf",
+      "artist": "Sandra Crouch"
+    },
+    {
+      "title": "Heaven Medley",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Hes An Awesome God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Hes Been Faithful",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Hes God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Hes In The Room",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Hes My Rock My Sword My Shield",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "His Blood Still Works",
+      "source": "pdf",
+      "artist": "VaShawn Mitchell"
+    },
+    {
+      "title": "His Eye Is On The Sparrow",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Holy Forever",
+      "source": "pdf",
+      "artist": "CeCe Winans"
+    },
+    {
+      "title": "Holy Spirit Come Fill This Place",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "House of Miracles Brandon Lake and Jacob Sooter",
+      "source": "pdf",
+      "artist": "Brandon Lake"
+    },
+    {
+      "title": "How I Need You Chris Griffin, Micah Massey",
+      "source": "pdf",
+      "artist": "Highlands Worship"
+    },
+    {
+      "title": "Humbly We Bow (Holy Are You Lord)",
+      "source": "pdf",
+      "artist": "Cape First Worship"
+    },
+    {
+      "title": "Hymn of Praise",
+      "source": "pdf",
+      "artist": "William McDowell"
+    },
+    {
+      "title": "I Am Not Ashamed",
+      "source": "pdf",
+      "artist": "Christian Life Center Mass Choir"
+    },
+    {
+      "title": "I Am Reminded",
+      "source": "pdf",
+      "artist": "The Brooklyn Tabernacle Choir"
+    },
+    {
+      "title": "I Came To Worship",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I can go in to the Holy of Holies",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "I Dont Feel At Home Anymore",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Dont Know Why Jesus Loves Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Feel Like Praising Him",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Found It All In The Word OF God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Found It All In The Word OF God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Give You Glory",
+      "source": "pdf",
+      "artist": "Jonathan Nelson"
+    },
+    {
+      "title": "I Got My Mind Made Up To Serve The Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Got Out",
+      "source": "pdf",
+      "artist": "At the Cross"
+    },
+    {
+      "title": "I got the Lord",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "I Know My God Can Do It",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Lift Up My Hands",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I love the Lord and I won’t take it back",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "I Need You To Survive",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Need Your Glory",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Praise You",
+      "source": "pdf",
+      "artist": "Cedric Shannon Rives"
+    },
+    {
+      "title": "I shall know Him by the nail prints",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "I Speak Jesus",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Speak Jesus",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Speak Victory Brittani Scott",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "I Trust In You",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "I Will Sing Hallelujah",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I Will Stand",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I’ll Sing About Jesus",
+      "source": "pdf",
+      "artist": "Angie Pearson"
+    },
+    {
+      "title": "I'm Gonna Dance",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I'm Gonna Dance",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "I’ve Got a Reason",
+      "source": "pdf",
+      "artist": "Nashville Life Music"
+    },
+    {
+      "title": "I’ve Witnessed It",
+      "source": "pdf",
+      "artist": "Passion"
+    },
+    {
+      "title": "If I Shout",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "If You Believe And I Believe",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Im Here to Worship",
+      "source": "text",
+      "artist": "Anthony Trimble"
+    },
+    {
+      "title": "In Control",
+      "source": "pdf",
+      "artist": "Frankie Taylor"
+    },
+    {
+      "title": "In the city where the Lamb is the light",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Inhabit",
+      "source": "pdf",
+      "artist": "James Wilson"
+    },
+    {
+      "title": "INTRO [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | (x2) [Ab-Bb-Cb-C] Db/Gb Cbmaj7 Db9 | [Ab-Bb-Cb-C-Eb-F-Gb-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-F] |Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS Ab9 Ye shall have the power, ye shall have the power Ab9 Ye shall have the power, ye shall have the power B9 C9 Db9 Bb7 Eb9 Ab9 Af - ter the Holy Ghost has come upon you, ye shall have the power B9 C9 Db9 Bb7 Eb7(#5#9) Af - ter the Holy Ghost has come upon you, ye shall have the power [Ab-Bb-Cb-C-Eb-F-Gb-F | Ab-Bb-Cb-C-Eb-F-Gb-Gb-F] | [Ab-Bb-Cb-C-Eb-F-Gb-F] | Cb/C Db6/F Abm7/Bb Eb9 Gb9 | CHORUS",
+      "source": "pdf",
+      "artist": "Eddie James - \"Magnify\""
+    },
+    {
+      "title": "It Is Done",
+      "source": "pdf",
+      "artist": "The Pentecostals of Katy (POK)"
+    },
+    {
+      "title": "It Is Well Horatio Spafford",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "It’s Happening Now",
+      "source": "pdf",
+      "artist": "LYA"
+    },
+    {
+      "title": "Its For Me Its For You",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Its The Holy Ghost And Fire",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Ive Been To The Potters House",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Ive Got A Reason",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Ive Got A Reason",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Jesus is here right now",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Jesus Our Victory",
+      "source": "pdf",
+      "artist": "Messengers of Peace"
+    },
+    {
+      "title": "Jesus Said It",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Jesus We Crown You With Praise",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Jesus You Are Welcome Here",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Jesus You're Beautiful",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "John 1",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "John 1",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Just The Mention Of His Name",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Just the Mention of Your Name",
+      "source": "pdf",
+      "artist": "The Belonging Co."
+    },
+    {
+      "title": "Lead Us",
+      "source": "pdf",
+      "artist": "Steve Richardson"
+    },
+    {
+      "title": "Let Hope Arise",
+      "source": "pdf",
+      "artist": "Keith Pace"
+    },
+    {
+      "title": "Let It Start In Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Let There Be Glory And Honor And Praises",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Let’s Dance",
+      "source": "pdf",
+      "artist": "God's Chosen"
+    },
+    {
+      "title": "Let’s Dance",
+      "source": "text",
+      "artist": null
+    },
+    {
+      "title": "Lift up the name of Jesus, shout",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Lift up the name of Jesus, sing",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Lift up the name of Jesus, sing",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Lift You Up",
+      "source": "pdf",
+      "artist": "James Wilson"
+    },
+    {
+      "title": "Light of the World Duncan, Paul Mabury",
+      "source": "pdf",
+      "artist": "Lauren Daigle"
+    },
+    {
+      "title": "Like Our God",
+      "source": "pdf",
+      "artist": "Anthony Trimble feat. Bethany Easter"
+    },
+    {
+      "title": "Living Sacrifice",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "Look out satan, lookout",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Look out satan, lookout",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Lord Prepare Me To Be A Sanctuary",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Lord, You Reign",
+      "source": "pdf",
+      "artist": "Bishop Leonard Scott"
+    },
+    {
+      "title": "Lord, You Reign",
+      "source": "text",
+      "artist": "Bishop Leonard Scott"
+    },
+    {
+      "title": "Love Letter",
+      "source": "chrd",
+      "artist": "Kevin Duncan"
+    },
+    {
+      "title": "Made a Way",
+      "source": "pdf",
+      "artist": "Travis Greene"
+    },
+    {
+      "title": "Making Room",
+      "source": "pdf",
+      "artist": "David & Nicole Binion"
+    },
+    {
+      "title": "Mercy And Grace",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Mighty",
+      "source": "pdf",
+      "artist": "Phase 2"
+    },
+    {
+      "title": "Mighty",
+      "source": "text",
+      "artist": "Phase 2"
+    },
+    {
+      "title": "More Than Able",
+      "source": "pdf",
+      "artist": "Maverick City Music"
+    },
+    {
+      "title": "My God Can Do Anything",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "My Help",
+      "source": "pdf",
+      "artist": "James Simms"
+    },
+    {
+      "title": "My Help",
+      "source": "pdf",
+      "artist": "Gateway College"
+    },
+    {
+      "title": "My Help",
+      "source": "text",
+      "artist": null
+    },
+    {
+      "title": "Never Go A Day",
+      "source": "pdf",
+      "artist": "Shawn Bigby"
+    },
+    {
+      "title": "Never Go A Day",
+      "source": "text",
+      "artist": "Shawn Bigby"
+    },
+    {
+      "title": "No God Like Our God",
+      "source": "pdf",
+      "artist": "Preashea Hilliard"
+    },
+    {
+      "title": "Nobody Like You Joshua Dufrene, and Colin Edge",
+      "source": "pdf",
+      "artist": "Covenant Worship"
+    },
+    {
+      "title": "Noel, Christ is Born",
+      "source": "pdf",
+      "artist": "Mark Yandris"
+    },
+    {
+      "title": "Noel, Christ is Born",
+      "source": "text",
+      "artist": "Mark Yandris"
+    },
+    {
+      "title": "Not Afraid",
+      "source": "pdf",
+      "artist": "Jesus Culture"
+    },
+    {
+      "title": "Not The Same",
+      "source": "pdf",
+      "artist": "Jeff Walthall"
+    },
+    {
+      "title": "Not The Same",
+      "source": "text",
+      "artist": "Jeff Walthall"
+    },
+    {
+      "title": "Nothing Compares (You Are Good)",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "O Come Emmanuel Micah Pollock, Jonathan Stephens",
+      "source": "pdf",
+      "artist": "Intro F G C"
+    },
+    {
+      "title": "Old School Church Medley",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "One Name",
+      "source": "pdf",
+      "artist": "Anthony Trimble"
+    },
+    {
+      "title": "One Name",
+      "source": "text",
+      "artist": "Anthony Trimble"
+    },
+    {
+      "title": "One Name (Jesus)",
+      "source": "pdf",
+      "artist": "Naomi Raine"
+    },
+    {
+      "title": "Only One Name (Jesus)",
+      "source": "pdf",
+      "artist": "Brandon Marin"
+    },
+    {
+      "title": "Open the Heavens",
+      "source": "pdf",
+      "artist": "Faith Worship Arts"
+    },
+    {
+      "title": "Order My Steps",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Order My Steps",
+      "source": "pdf",
+      "artist": "GMWA Women of Worship"
+    },
+    {
+      "title": "Our God Reigns Forever Jesse Wilson",
+      "source": "pdf",
+      "artist": "Jesse Wilson"
+    },
+    {
+      "title": "Overflowing",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Peace Speaker",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Power Filled With The Spirit",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Praise Break",
+      "source": "pdf",
+      "artist": "James Fortune"
+    },
+    {
+      "title": "Praise Him – Let all the earth",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Praise Him – Let all the earth",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Praise Pat Barrett, Steven Furtick",
+      "source": "pdf",
+      "artist": "Elevation Worship"
+    },
+    {
+      "title": "Praise The Lord - Praise His Holy Name",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Praisin’ the Power Down",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "Psalm 100 (Enter In)",
+      "source": "pdf",
+      "artist": "Charity Gayle"
+    },
+    {
+      "title": "Put The Attention On Jesus",
+      "source": "pdf",
+      "artist": "Todd Dulaney"
+    },
+    {
+      "title": "Rain",
+      "source": "pdf",
+      "artist": "Noel Robinson"
+    },
+    {
+      "title": "Redeemer",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Revival Is Waiting Dylan Woodward",
+      "source": "pdf",
+      "artist": "Intro G"
+    },
+    {
+      "title": "Rise Up Ted Keith",
+      "source": "pdf",
+      "artist": "Ted Keith"
+    },
+    {
+      "title": "Same God",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Same God Brandon Lake, Pat Barrett",
+      "source": "pdf",
+      "artist": "Elevation Worship"
+    },
+    {
+      "title": "Same God Mia Fields, Troy Culbreth",
+      "source": "pdf",
+      "artist": "Cross Worship"
+    },
+    {
+      "title": "Satan Your Kingdom Must Come Down",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "See Revival",
+      "source": "pdf",
+      "artist": "Geoffrey Golden"
+    },
+    {
+      "title": "Silence the Roar Laura Payne, Cam Cook, Kevin Howard",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "Sing it Out",
+      "source": "pdf",
+      "artist": "Jessica DiGiovanni"
+    },
+    {
+      "title": "Sing Till The Power",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Somebody Give Him Some Praise",
+      "source": "pdf",
+      "artist": "The Chandlers"
+    },
+    {
+      "title": "Somebody Give Him Some Praise",
+      "source": "text",
+      "artist": "The Chandlers"
+    },
+    {
+      "title": "Something good’s about to happen",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Somethings got a hold of me",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Sound Like Heaven",
+      "source": "pdf",
+      "artist": "Angie Pearson feat. Landry Cantrell"
+    },
+    {
+      "title": "Speak The Name",
+      "source": "pdf",
+      "artist": "Koryn Hawthorne"
+    },
+    {
+      "title": "Speak The Name",
+      "source": "pdf",
+      "artist": "Church of the City"
+    },
+    {
+      "title": "Speak Your Name",
+      "source": "pdf",
+      "artist": "Anthony Brown & group therAPy"
+    },
+    {
+      "title": "Spirit Take Over",
+      "source": "pdf",
+      "artist": "Lori Green"
+    },
+    {
+      "title": "Stand and Proclaim",
+      "source": "pdf",
+      "artist": "Benita Jones"
+    },
+    {
+      "title": "Still Everything",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Still Everything",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Still Everything",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "Still I will Trust You",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Still Moving",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Surround Me Oh Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Tell of Your Glory",
+      "source": "pdf",
+      "artist": "David & Nicole Binion"
+    },
+    {
+      "title": "Thankful Lauren Strahm, Sarah Gerald",
+      "source": "pdf",
+      "artist": "J.J. Hairston"
+    },
+    {
+      "title": "That’s My King",
+      "source": "pdf",
+      "artist": "CeCe Winans"
+    },
+    {
+      "title": "The Holy Ghost that Jesus is giving away",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "The King’s House",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "The Old Account",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "The Shepherds Point Of View",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "The Sound",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "The Way That I Take",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "The Way That I Take",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "There's Deliverance In His Name",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "There's Just Something About That Name",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Theres Gonna Be A Revival In The Land",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Theres Room At The Cross For You",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "This Dwelling Place",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "This Is Freedom Lauren Strahm, Sarah Gerald",
+      "source": "pdf",
+      "artist": "The Belonging Co."
+    },
+    {
+      "title": "This Is Revival Kevin Winebarger, & Sean Hill",
+      "source": "pdf",
+      "artist": "Brittani Scott"
+    },
+    {
+      "title": "This Is The Place",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "This train is bound for glory",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Thy Kingdom Come",
+      "source": "pdf",
+      "artist": "Monica Wilbanks"
+    },
+    {
+      "title": "To Your Name",
+      "source": "pdf",
+      "artist": "Jonathan Hudoff"
+    },
+    {
+      "title": "Too Good to Not Believe",
+      "source": "pdf",
+      "artist": "Cody Carnes & Brandon Lake"
+    },
+    {
+      "title": "Trusting For A Miracle Mike Hudson & Kelsey White",
+      "source": "pdf",
+      "artist": "Intro Chorus (Parts) (2x)"
+    },
+    {
+      "title": "Turn you eyes upon Jesus",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "Unspeakable Joy",
+      "source": "pdf",
+      "artist": "Mark Yandris"
+    },
+    {
+      "title": "Unspeakable Joy",
+      "source": "pdf",
+      "artist": "Mark Yandris"
+    },
+    {
+      "title": "Use Me",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Valley",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Wait on the Lord",
+      "source": "pdf",
+      "artist": "James Wilson"
+    },
+    {
+      "title": "Wait On The Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Wait On The Lord",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Walls Come Down",
+      "source": "pdf",
+      "artist": "ReFRESH Worship"
+    },
+    {
+      "title": "We Bless the Name",
+      "source": "pdf",
+      "artist": "BJ Putnam"
+    },
+    {
+      "title": "We Need the Rain",
+      "source": "pdf",
+      "artist": "David Jennings"
+    },
+    {
+      "title": "We Pray for More",
+      "source": "pdf",
+      "artist": "Ntokozo Mbambo"
+    },
+    {
+      "title": "We Rise",
+      "source": "pdf",
+      "artist": "Urshan College"
+    },
+    {
+      "title": "We Speak the Name",
+      "source": "pdf",
+      "artist": "Frankie Taylor"
+    },
+    {
+      "title": "We Stand",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "We Want More",
+      "source": "pdf",
+      "artist": null
+    },
+    {
+      "title": "We Want You",
+      "source": "pdf",
+      "artist": "Urshan College Choir"
+    },
+    {
+      "title": "We Want You",
+      "source": "pdf",
+      "artist": "Harvest Music Live"
+    },
+    {
+      "title": "We’re a happy people",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "We’ve Come to Glorify the Lord",
+      "source": "pdf",
+      "artist": "Texas Bible College (TBC)"
+    },
+    {
+      "title": "Welcome In",
+      "source": "pdf",
+      "artist": "R.A. Vernon"
+    },
+    {
+      "title": "When I Shout / Testify Wood",
+      "source": "pdf",
+      "artist": "Indiana Bible College (IBC)"
+    },
+    {
+      "title": "When the redeemed are gathering in",
+      "source": "docx",
+      "artist": null
+    },
+    {
+      "title": "When You Believe",
+      "source": "pdf",
+      "artist": "Calvary Worship"
+    },
+    {
+      "title": "Worthy Is The Lamb Medley",
+      "source": "chrd",
+      "artist": null
+    },
+    {
+      "title": "Worthy of My Song (Worthy of It All)",
+      "source": "pdf",
+      "artist": "Maverick City Music"
+    },
+    {
+      "title": "You Are Healed",
+      "source": "pdf",
+      "artist": "Mark Crowder"
+    },
+    {
+      "title": "You’re Doing it All Again",
+      "source": "pdf",
+      "artist": "Todd Dulaney"
+    },
+    {
+      "title": "Your Blood",
+      "source": "pdf",
+      "artist": "Texas Bible College (TBC)"
+    },
+    {
+      "title": "Youre My Brother Youre My Sister",
+      "source": "chrd",
+      "artist": null
+    }
+  ],
+  "duplicates": [
+    {
+      "title": "Jesus",
+      "count": 5,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Holy Holy Holy",
+      "count": 4,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "We Worship You",
+      "count": 4,
+      "sources": [
+        "chrd",
+        "docx",
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Anointing Fall On Me",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Anything Can Happen",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "At The Cross",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Bless The Lord Oh My Soul",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Come Let Us Sing",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Glory, Honor, Power",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Greater",
+      "count": 3,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Holy Ghost",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "How Great",
+      "count": 3,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "I Love You Lord Today",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Ive Got A Feeling",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Ive Got A Reason",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Jesus Is",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Jesus Lover Of My Soul",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Lord We Give You Glory",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "My Help",
+      "count": 3,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "No Other Name (Mark Yandris)",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "One Name (Jesus)",
+      "count": 3,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Still Everything",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "The Old Rugged Cross",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Wait On The Lord",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Weve Come To Praise Him",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Whatever It Takes",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "docx",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Worthy",
+      "count": 3,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Worthy Of It All",
+      "count": 3,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "You Are holy",
+      "count": 3,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "A Place Of Healing",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Ain't God Good",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "All Of Me",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Amazing Grace",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Ancient of Days",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "At Calvary",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Awesome God",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Because He Lives",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Because Of Who You Are",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Believe For It",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "Beyond The Open Door",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Bind Us Together",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Blessed Assurance",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Blessed Be The Name Of The Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Breakthrough",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Breath On Me",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Come And Dine",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Come into my heart, O Lord Jesus",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Complete Surrender",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Covered",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Do it again Lord, do it again",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Down From His Glory",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Emmanuel",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Evermore",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Falling In Love With Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Free Indeed",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Get Your Mind On Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Give God The Glory",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Give The Lord The Highest Praise",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Glory Glory, Hallelujah",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Glory To His Name",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Glory, Halleluj",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Glory, Somebody touched me",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "God Gave Me A Song",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "God Is Here",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Gods Not Dead",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Goodbye World Goodbye",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Gospel Ship",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Greater Is He That Is In Me",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Hallelujah He is Here",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Have Thine Own Way Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "He Brought Me Out",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "He Is Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "He is More",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "He Set Me Free",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "He Took My Sins Away",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "He Touched Me",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Heavenly Father I Appreciate You",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Heavens Jubilee",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Hes In The Room",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "His Name Is Wonderful",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Hold To Gods Unchanging Hand",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Holy",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Holy Ground",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Holy Spirit Rain Down",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Hosanna",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "How Great Is Our God",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "How Great Thou Art",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Adore You",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Am Determined To Hold Out",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Call Him Jesus My Rock",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Came To Praise The Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Exalt Thee",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Feel Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I feel like praising, praising Him",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "I Feel Like Traveling On",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Feel The Joy Of The Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Feel The Rain",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Found It All In The Word OF God",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "I Give You Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Go To The Rock",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Have Decided To Follow Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Have Found The Way",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Know It Was The Blood",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Know Who Holds Tomorrow",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Need Thee Every Hour",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Need You More",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Never Shall Forget The Day",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I See A Crimson Stream",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Sing Praises To Your Name",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Speak Jesus",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "I Surrender All",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Thank You",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Want To Be More Like You",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Want To Live The Way He Wants Me To Live",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Will Give You All",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I Will Rejoice",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "I Wont Turn Back",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "I'm Gonna Dance",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "Im Going Through",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Im Just Warming Up",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Im So Glad That The Lord Saved Me",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "In His Presence Theres Fullness Of Joy",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "In The Name Of Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "In The Presence Of Jehovah",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Isn’t the Name",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Its All In Him",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "Its Gonna Be Worth It All",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Its My Desire",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Ive Been Delivered",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Ive Got It",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Jesus Ill Never Forget",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Jesus, no other name",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Jesus, there’s just something about that name",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Jesus, use me –",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Jesus, what a wander",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "John 1",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "Joy",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Joy Unspeakable",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Just A Closer Walk With Thee",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Just a Little Talk With Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "King of Glory",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Leaning On The Everlasting Arms",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Learning To Lean",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Let Me Walk With You Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Let Your Glory Fill This Place",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Let’s Dance",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Lift up the name of Jesus, sing",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Lift Your Praises To The Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Look out satan, lookout",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Lord, You Reign",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Mighty",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "More Than Anything",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "My Soul Says Yes",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "My Thanks To Him",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Never Go A Day",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Noel, Christ is Born",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Not The Same",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Nothing but the blood",
+      "count": 2,
+      "sources": [
+        "docx",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Oh The Blood Of Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Oh, how I love Jesus",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Old Time Religion",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "One God",
+      "count": 2,
+      "sources": [
+        "onsong",
+        "pdf"
+      ]
+    },
+    {
+      "title": "One, way to God",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Only Jesus Can Satisfy Your Soul",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Order My Steps",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Pass me not, O gentle Savior",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Peace, peace wonderful peace",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Praise Him – Let all the earth",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Praise Him, In the morning",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Preacher, preach to me",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Reach Out And Touch The Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Serving God is Beautiful",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Shake This House",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Show Me Your Glory",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Shut In With God",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Somebody Give Him Some Praise",
+      "count": 2,
+      "sources": [
+        "pdf",
+        "text"
+      ]
+    },
+    {
+      "title": "Speak The Name",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Surely The Presence",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Thank God For The Blood",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Thank God I Am Free",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Thank You (The Cross)",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Thanks, thanks, I give You thanks",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "The Blood Will Never Lose Its Power",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "The Church Triumphant",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "The Glory Land Way",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "The Great I Am",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "The Way That I Take",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "There is strength",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Think About His Love",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "This Blood",
+      "count": 2,
+      "sources": [
+        "chrd"
+      ]
+    },
+    {
+      "title": "This Place",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "Throne Room Song",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Unspeakable Joy",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Victory In Jesus",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Victory Is Mine",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Victory, victory shall be mine",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Victory, yes victory -",
+      "count": 2,
+      "sources": [
+        "docx"
+      ]
+    },
+    {
+      "title": "Way Maker",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "We Bring The Sacrifice Of Praise",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "We Need You Lord",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "We Shall See The King",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "We Want You",
+      "count": 2,
+      "sources": [
+        "pdf"
+      ]
+    },
+    {
+      "title": "Welcome Into This Place",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Weve Got The Power",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "What A Beautiful Name",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "text"
+      ]
+    },
+    {
+      "title": "What A Day That Will Be",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "When He Was On The Cross",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Whose Report Will You Believe",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Why Don't You Come On In This House",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Why Should I Be Bound",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Wont We Have A Time",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Word Of God Speak",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "Worship the King",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    },
+    {
+      "title": "You Are",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "pdf"
+      ]
+    },
+    {
+      "title": "You Deserve The Glory",
+      "count": 2,
+      "sources": [
+        "chrd",
+        "docx"
+      ]
+    }
+  ]
+}

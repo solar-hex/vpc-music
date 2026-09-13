@@ -110,6 +110,7 @@ pnpm corpus:scan  --tree <path>            # covered / new / changed / moved / g
 pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
 pnpm corpus:stats                          # coverage, themes, completeness
 pnpm corpus:reader                         # dist/songbook.html — one offline file
+pnpm gap:report                            # what the church wants that we do not have
 ```
 
 A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git diff` only ever shows real content changes. Run metadata goes to the gitignored report, never into a committed file.
@@ -128,6 +129,24 @@ number is a filter, so tapping "Artist 284 / 1058" lists the songs with no artis
 the copy of the library already on the device, so it works offline and costs no endpoint.
 The derivation is shared (`shared/utils/library.js`), so the percentages on screen are the
 percentages the build reports. Filters live in the URL: `/library?missing=artist&key=Bb`.
+
+### What is still missing
+
+`pnpm gap:report` measures the library against the two song lists the church keeps:
+465 curated titles with a status, and an 8,234-title index that records the website each
+one came from. Both are read straight out of the `.xlsx` and committed to `corpus/lists/`
+as NDJSON, so every later run reproduces from git rather than from someone's Dropbox:
+
+```
+pnpm gap:report --targeted <TargetedSongList.xlsx> --master <FullSongList.xlsx>   # refresh
+pnpm gap:report                                                                   # re-run
+```
+
+It is read-only, and the 8,234-title index is deliberately never loaded into the database —
+it would bury a 1,058-song library under 7,000 ghosts and break every count. The report
+groups what is missing **by source website**, because sourcing is a batch job you work one
+site at a time, and lists the songs in neither external list separately: no website will
+ever supply their artist, so they are the manual-enrichment priority.
 
 ### Dropping files in
 

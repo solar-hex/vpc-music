@@ -50,6 +50,7 @@ pnpm corpus:scan  --tree <path>            # covered / new / changed / moved / g
 pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
 pnpm corpus:stats                          # the whole library, counted
 pnpm corpus:reader                         # dist/songbook.html, one offline file
+pnpm gap:report                            # targeted list vs the library, by source site
 pnpm intake [--apply]                      # file whatever is in intake/inbox/
 ```
 
