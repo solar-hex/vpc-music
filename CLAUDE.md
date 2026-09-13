@@ -27,7 +27,7 @@ Work on the current tranche. Do not build ahead into a later one without being a
 
 - `apps/web` — React 19 + Vite 7 + Tailwind 4 + react-router 7, CodeMirror for the editor, PWA.
 - `apps/api` — Express + Drizzle + Postgres, JWT cookie sessions (180 days, renewed on use), Google sign-in.
-- `shared/` — the ChordPro engine (parse, transpose, Nashville, exporters, `.chrd` converter). `apps/api/shared/` is a vendored copy: after any edit under `shared/`, run `pnpm sync:shared`; CI fails on drift.
+- `shared/` — the ChordPro engine (parse, transpose, Nashville, exporters, `.chrd` converter) plus `utils/library.js`, the derived facts (completeness, tempo bands, the `theme:`/`!theme:` tag grammar) that the corpus scripts and the `/library` page both read, so a percentage means one thing everywhere. `apps/api/shared/` is a vendored copy: after any edit under `shared/`, run `pnpm sync:shared`; CI fails on drift.
 - Tranche-2 code (`pages/setlists/*`, `components/setlists/*`, `hooks/useConductor.ts`) stays in the tree, compiled and tested but unrouted.
 
 ## Commands

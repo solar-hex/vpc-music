@@ -13,7 +13,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseChordPro } from "@vpc-music/shared";
+import { formatTagField, parseChordPro, parseTagField } from "@vpc-music/shared";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_LEXICON = resolve(__dirname, "../../../../corpus/themes.json");
@@ -103,36 +103,13 @@ export function detectThemes(chordProSource, options = {}) {
 
 /* ─── storing themes in songs.tags ───────────────────────────────────────── */
 
-/**
- * Split the free-text tags column into its three kinds.
- *   plain     — manual tags ("hymn", "choir")
- *   themes    — asserted:  `theme:blood`
- *   negated   — a human said no: `!theme:blood` (a tombstone, not an absence)
+/*
+ * Reading and writing the tags column lives in `shared/utils/library.js`: the
+ * web app has to understand `theme:blood` and `!theme:blood` exactly the way
+ * this pass writes them, and two copies of that rule would drift. Re-exported
+ * here so the theme pipeline still reads as one module.
  */
-export function parseTagField(raw) {
-  const parts = String(raw || "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-  const tags = [];
-  const themes = [];
-  const negated = [];
-  for (const part of parts) {
-    const lower = part.toLowerCase();
-    if (lower.startsWith("!theme:")) negated.push(lower.slice(7));
-    else if (lower.startsWith("theme:")) themes.push(lower.slice(6));
-    else tags.push(part);
-  }
-  return { tags, themes: [...new Set(themes)], negated: [...new Set(negated)] };
-}
-
-export function formatTagField({ tags = [], themes = [], negated = [] }) {
-  return [
-    ...tags,
-    ...[...new Set(themes)].sort().map((t) => `theme:${t}`),
-    ...[...new Set(negated)].sort().map((t) => `!theme:${t}`),
-  ].join(", ");
-}
+export { formatTagField, parseTagField };
 
 /**
  * Additive merge. The rule, in full:

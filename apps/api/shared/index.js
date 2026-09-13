@@ -18,3 +18,4 @@ export * as flow from "./utils/setflow.js";
 export * from "./utils/nashville.js";
 export * from "./utils/onsong.js";
 export * from "./utils/plainText.js";
+export * from "./utils/library.js";

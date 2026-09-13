@@ -22,7 +22,7 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
-import { hasChords } from "../apps/api/src/corpus/completeness.js";
+import { hasChords } from "../shared/utils/library.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");

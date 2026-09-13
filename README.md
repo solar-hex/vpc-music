@@ -120,6 +120,15 @@ A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git dif
 
 `pnpm corpus:reader` builds `dist/songbook.html`: one self-contained file with every chart, no server and no network. It embeds the real shared engine, so transposition behaves exactly as it does in the app. This is deliberately not the PWA — the PWA is the *app* working offline; the songbook is a *document* that outlives the app, the database and the hosting.
 
+### The library page
+
+`/library` in the app is the same roll-up as `pnpm corpus:stats`, over whatever is in
+the database: coverage per field, completeness, tempo bands, themes, artists — and every
+number is a filter, so tapping "Artist 284 / 1058" lists the songs with no artist. It reads
+the copy of the library already on the device, so it works offline and costs no endpoint.
+The derivation is shared (`shared/utils/library.js`), so the percentages on screen are the
+percentages the build reports. Filters live in the URL: `/library?missing=artist&key=Bb`.
+
 ### Dropping files in
 
 `intake/inbox/` takes anything — PDFs, Word documents, `.chrd`, `.onsong`, audio. `pnpm intake` says what it would do with each; `pnpm intake --apply` files them into `processed/`, `duplicate/`, `media/` or `rejected/` and records the decision in `intake/log.ndjson`. See `intake/README.md`.

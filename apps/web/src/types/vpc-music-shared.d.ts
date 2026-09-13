@@ -270,4 +270,49 @@ declare module "@vpc-music/shared" {
 
   // ── Plain Text Export ─────────────────────────
   export function chordProToPlainText(input: string, options?: { lyricsOnly?: boolean }): string;
+
+  // ── Derived library facts ─────────────────────
+  export interface ParsedTagField {
+    /** Manual tags someone typed. */
+    tags: string[];
+    /** Themes asserted by the lexicon pass: `theme:blood`. */
+    themes: string[];
+    /** Themes a human rejected: `!theme:blood` — a tombstone, not an absence. */
+    negated: string[];
+  }
+  export function parseTagField(raw: string | null | undefined): ParsedTagField;
+  export function formatTagField(parts: Partial<ParsedTagField>): string;
+  export function songThemes(song: { tags?: string | null } | null | undefined): string[];
+  export function themeLabel(id: string): string;
+
+  export interface CompletenessField {
+    id: "title" | "artist" | "key" | "tempo" | "tags" | "year";
+    label: string;
+    weight: number;
+    essential: boolean;
+    present: boolean;
+  }
+  export interface Completeness {
+    percent: number;
+    missing: CompletenessField["id"][];
+    present: CompletenessField["id"][];
+    hasEssentials: boolean;
+    fields: CompletenessField[];
+  }
+  export const COMPLETENESS_FIELDS: Omit<CompletenessField, "present">[];
+  export function songCompleteness(
+    song: { title?: string | null; artist?: string | null; key?: string | null; tempo?: number | null; tags?: string | null; year?: string | null },
+    options?: { fields?: Omit<CompletenessField, "present">[] },
+  ): Completeness;
+  export type CompletenessBandId = "90-100" | "70-89" | "50-69" | "30-49" | "0-29";
+  export const COMPLETENESS_BANDS: { id: CompletenessBandId; label: string; min: number; max: number }[];
+  export function completenessBand(percent: number): CompletenessBandId;
+
+  export type TempoBandId = "slow" | "medium" | "fast" | "shout";
+  export const TEMPO_BANDS: { id: TempoBandId; label: string; min: number | null; max: number | null }[];
+  export function tempoBand(bpm: number | null | undefined): TempoBandId | null;
+  export function tempoBandRange(bandId: string): { tempoMin?: number; tempoMax?: number } | null;
+  export function tempoBandLabel(bpm: number | null | undefined): string | null;
+
+  export function hasChords(chordProSource: string | null | undefined): boolean;
 }

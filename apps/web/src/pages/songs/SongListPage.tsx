@@ -143,10 +143,12 @@ export function SongListPage() {
           )}
         </div>
         <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[hsl(var(--muted-foreground))]">
-          <span>
+          {/* The count is the way in to the library view — the numbers behind it,
+              and the filters (artist, key, tempo, theme, what still needs work). */}
+          <Link to="/library" className="rounded-md px-2 py-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]">
             {songs.length} {songs.length === 1 ? "song" : "songs"}
             {offline ? " · offline copy" : ""}
-          </span>
+          </Link>
           {draftCount > 0 && (
             <button
               type="button"

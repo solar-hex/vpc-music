@@ -8,6 +8,7 @@ import { ProtectedRoute } from "./components/shared/ProtectedRoute";
 import { SharedSongPage } from "./pages/SharedSongPage";
 import { SharedSetlistPage } from "./pages/SharedSetlistPage";
 import { SongListPage } from "./pages/songs/SongListPage";
+import { LibraryPage } from "./pages/songs/LibraryPage";
 import { SongChartPage } from "./pages/songs/SongChartPage";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/auth/LoginPage";
@@ -78,6 +79,7 @@ export const router = createBrowserRouter([
     errorElement: <RouteErrorPage />,
     children: [
       { path: "/songs", element: <SongListPage /> },
+      { path: "/library", element: <LibraryPage /> },
       {
         path: "/songs/new",
         element: (

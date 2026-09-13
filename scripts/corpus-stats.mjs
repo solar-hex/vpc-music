@@ -10,7 +10,7 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { hasChords, songCompleteness, tempoBand } from "../apps/api/src/corpus/completeness.js";
+import { hasChords, songCompleteness, tempoBand } from "../shared/utils/library.js";
 import { loadThemes } from "../apps/api/src/corpus/themes.js";
 import { matchTitles, titleKey } from "../apps/api/src/corpus/titleMatch.js";
 
