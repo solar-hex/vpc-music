@@ -72,7 +72,12 @@ describe("SongListPage", () => {
     expect(rowLink("Amazing Grace")).toHaveTextContent("John Newton");
     expect(rowLink("Amazing Grace")).toHaveTextContent("G");
     expect(rowLink("Amazing Grace")).toHaveAttribute("href", "/songs/s1");
-    expect(screen.getByText("4 songs")).toBeInTheDocument();
+    // The count names what this list IS — the ready songs — and links to the
+    // other view, so the hidden drafts are one tap away rather than lost.
+    const counts = screen.getByRole("link", { name: /ready/ });
+    expect(counts).toHaveTextContent("3 ready");
+    expect(counts).toHaveTextContent("1 need work");
+    expect(counts).toHaveAttribute("href", "/library");
   });
 
   it("filters instantly as you type, without calling the server for short queries", async () => {

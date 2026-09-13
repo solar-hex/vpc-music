@@ -123,14 +123,20 @@ A rebuild of an unchanged tree produces a **byte-identical** corpus, so `git dif
 
 `pnpm corpus:reader` builds `dist/songbook.html`: one self-contained file with every chart, no server and no network. It embeds the real shared engine, so transposition behaves exactly as it does in the app. This is deliberately not the PWA — the PWA is the *app* working offline; the songbook is a *document* that outlives the app, the database and the hosting.
 
-### The library page
+### Two lists
 
-`/library` in the app is the same roll-up as `pnpm corpus:stats`, over whatever is in
-the database: coverage per field, completeness, tempo bands, themes, artists — and every
-number is a filter, so tapping "Artist 284 / 1058" lists the songs with no artist. It reads
-the copy of the library already on the device, so it works offline and costs no endpoint.
-The derivation is shared (`shared/utils/library.js`), so the percentages on screen are the
-percentages the build reports. Filters live in the URL: `/library?missing=artist&key=Bb`.
+`/songs` is the **ready library** — the songs a musician is looking for, drafts behind a
+toggle. `/library` is **every song**, drafts included, with the filters and what each one
+still needs. The count at the top of the song list is the way between them.
+
+`/library` is the same roll-up as `pnpm corpus:stats`, over whatever is in the database:
+coverage per field, completeness, tempo bands, themes, artists, flags — and every number
+is a filter, so tapping "Artist · 614 to go" lists the songs with no artist, least complete
+first. Each row says what it needs in words ("needs artist, tempo, year") rather than only
+a percentage. It reads the copy of the library already on the device, so it works offline
+and costs no endpoint, and the derivation is shared (`shared/utils/library.js`) so the
+percentages on screen are the percentages the build reports. Filters live in the URL:
+`/library?missing=artist&key=Bb&sort=needsWork`.
 
 ### What is still missing
 

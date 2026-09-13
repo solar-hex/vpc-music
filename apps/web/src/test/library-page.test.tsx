@@ -54,11 +54,32 @@ describe("LibraryPage", () => {
     renderLibrary();
     await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
     // 2 of 4 have an artist; 1 of 4 has a year.
-    expect(screen.getByRole("button", { name: /Artist/ })).toHaveTextContent("2 / 4");
-    expect(screen.getByRole("button", { name: /Year/ })).toHaveTextContent("1 / 4");
+    // The actionable number is what is LEFT, not what is covered.
+    expect(screen.getByRole("button", { name: /Artist/ })).toHaveTextContent("2 to go");
+    expect(screen.getByRole("button", { name: /Year/ })).toHaveTextContent("3 to go");
     // Two of four carry both a title and an artist, so only two are findable by name.
     expect(screen.getByText("title + artist").previousSibling).toHaveTextContent("2");
     expect(screen.getByText("songs").previousSibling).toHaveTextContent("4");
+  });
+
+  it("says what each song still needs, not just how far along it is", async () => {
+    renderLibrary();
+    await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
+    // A percentage tells you a song is unfinished; this tells you what to do.
+    expect(rowLink("Holy Ghost")).toHaveTextContent("needs");
+    expect(rowLink("Holy Ghost")).toHaveTextContent("artist");
+    expect(rowLink("Holy Ghost")).toHaveTextContent("year");
+    // Amazing Grace has every field, so it asks for nothing.
+    expect(rowLink("Amazing Grace")).not.toHaveTextContent("needs");
+  });
+
+  it("shows drafts by default — this is the everything list", async () => {
+    // The song list is the ready library; this one has to include what that
+    // one hides, or the hidden songs have nowhere to be found.
+    renderLibrary();
+    await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
+    expect(rowLink("Nothing But The Blood")).toBeInTheDocument(); // isDraft
+    expect(screen.getByText(/4 of 4 songs/)).toBeInTheDocument();
   });
 
   it("turns a coverage row into the songs behind it", async () => {

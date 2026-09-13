@@ -9,6 +9,7 @@ import {
   isFiltered,
   libraryFacets,
   libraryStats,
+  needsLabels,
   sortRows,
   toggleValue,
   EMPTY_FILTER,
@@ -107,9 +108,15 @@ function CoverageRow({
       <span className="h-2 flex-1 overflow-hidden rounded-full bg-[hsl(var(--muted))]">
         <span className="block h-full rounded-full bg-[hsl(var(--secondary))]" style={{ width: `${percent}%` }} />
       </span>
-      <span className="w-20 shrink-0 text-right text-xs tabular-nums text-[hsl(var(--muted-foreground))]">
-        {have}
-        <span className="opacity-60"> / {total}</span>
+      <span className="w-24 shrink-0 text-right text-xs tabular-nums text-[hsl(var(--muted-foreground))]">
+        {missing === 0 ? (
+          <span className="opacity-60">all {total}</span>
+        ) : (
+          <>
+            {missing}
+            <span className="opacity-60"> to go</span>
+          </>
+        )}
       </span>
     </button>
   );
@@ -170,6 +177,7 @@ function FacetGroup({
 
 function SongRow({ row }: { row: LibrarySong }) {
   const { song } = row;
+  const needs = needsLabels(row);
   const tone = row.percent >= 70 ? "bg-green-500" : row.percent >= 45 ? "bg-amber-500" : "bg-red-500";
   return (
     <li>
@@ -186,10 +194,25 @@ function SongRow({ row }: { row: LibrarySong }) {
             ))}
           </div>
           <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-[hsl(var(--muted-foreground))]">
-            <span className={song.artist ? "" : "italic opacity-70"}>{song.artist || "No artist"}</span>
-            {song.tempo ? <span>· {tempoBandLabel(song.tempo)}</span> : null}
-            {row.themes.length > 0 && <span className="truncate">· {row.themes.slice(0, 3).join(", ")}</span>}
+            {song.artist && <span>{song.artist}</span>}
+            {song.tempo ? <span>{tempoBandLabel(song.tempo)}</span> : null}
+            {row.themes.length > 0 && <span className="truncate">{row.themes.slice(0, 3).join(", ")}</span>}
           </div>
+          {/* What to do about the percentage, which is the only reason to know it. */}
+          {needs.length > 0 && (
+            <div className="mt-1 flex flex-wrap items-center gap-1">
+              <span className="text-[11px] uppercase tracking-wide text-[hsl(var(--muted-foreground))]">needs</span>
+              {needs.map((label) => (
+                <span
+                  key={label}
+                  className="rounded px-1.5 py-0.5 text-[11px] text-amber-800 dark:text-amber-300"
+                  style={{ backgroundColor: "hsl(var(--muted))" }}
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex shrink-0 items-center gap-2">
           {song.key && <span className="badge-key">{song.key}</span>}
@@ -246,11 +269,16 @@ export function LibraryPage() {
 
   return (
     <div className="space-y-5">
-      <header className="flex items-baseline justify-between gap-3">
-        <h1 className="page-title">Library</h1>
-        <Link to="/songs" className="text-sm text-[hsl(var(--muted-foreground))] underline hover:text-[hsl(var(--foreground))]">
-          Song list
-        </Link>
+      <header className="space-y-1">
+        <div className="flex items-baseline justify-between gap-3">
+          <h1 className="page-title">Every song</h1>
+          <Link to="/songs" className="text-sm text-[hsl(var(--muted-foreground))] underline hover:text-[hsl(var(--foreground))]">
+            Ready list
+          </Link>
+        </div>
+        <p className="text-xs text-[hsl(var(--muted-foreground))]">
+          Drafts included, and what each one still needs. The song list shows the ready ones.
+        </p>
       </header>
 
       {loading && songs.length === 0 ? (
@@ -280,8 +308,8 @@ export function LibraryPage() {
 
           <section aria-label="Field coverage" className="card card-body space-y-0.5">
             <div className="mb-1 flex items-baseline justify-between">
-              <h2 className="text-sm font-semibold text-[hsl(var(--foreground))]">What the library knows</h2>
-              <span className="text-xs text-[hsl(var(--muted-foreground))]">tap a row for the gaps</span>
+              <h2 className="text-sm font-semibold text-[hsl(var(--foreground))]">What songs still need</h2>
+              <span className="text-xs text-[hsl(var(--muted-foreground))]">tap a row to list them</span>
             </div>
             {stats.coverage.map((field) => (
               <CoverageRow

@@ -71,6 +71,7 @@ export function SongListPage() {
   }, [query]);
 
   const draftCount = useMemo(() => songs.filter((song) => song.isDraft).length, [songs]);
+  const readyCount = songs.length - draftCount;
   const visible = useMemo(
     () => sortForList(songs.filter((song) => (showDrafts || !song.isDraft) && matchesQuery(song, query))),
     [songs, query, showDrafts],
@@ -143,10 +144,15 @@ export function SongListPage() {
           )}
         </div>
         <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[hsl(var(--muted-foreground))]">
-          {/* The count is the way in to the library view — the numbers behind it,
-              and the filters (artist, key, tempo, theme, what still needs work). */}
+          {/*
+            This list is the ready library; drafts are the unreviewed
+            conversions and stay behind the toggle. The count is the way into
+            the other view — every song, with the filters and what each one
+            still needs — so the hidden ones are one tap away, not lost.
+          */}
           <Link to="/library" className="rounded-md px-2 py-1 hover:bg-[hsl(var(--muted))] hover:text-[hsl(var(--foreground))]">
-            {songs.length} {songs.length === 1 ? "song" : "songs"}
+            {readyCount} ready
+            {draftCount > 0 && <span className="opacity-70"> · {draftCount} need work</span>}
             {offline ? " · offline copy" : ""}
           </Link>
           {draftCount > 0 && (

@@ -242,6 +242,18 @@ export function libraryFacets(rows: LibrarySong[], filter: LibraryFilter): Libra
   };
 }
 
+/**
+ * What a song still needs, in words — "artist", "tempo", "year".
+ *
+ * The percentage says how far along a song is; this says what to do about it,
+ * which is the only reason anyone looks at the percentage.
+ */
+const FIELD_LABELS = new Map(COMPLETENESS_FIELDS.map((f) => [f.id as string, f.label.toLowerCase()]));
+
+export function needsLabels(row: LibrarySong): string[] {
+  return row.missing.map((id) => FIELD_LABELS.get(id as string) ?? String(id));
+}
+
 /* ─── the roll-up ─────────────────────────────────────────────────────────── */
 
 export interface LibraryStats {
