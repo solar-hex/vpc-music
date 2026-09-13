@@ -2,6 +2,7 @@ import type { Song } from "@/lib/api-client";
 import { matchesQuery, normalize } from "@/lib/song-search";
 import {
   completenessBand,
+  flagLabel,
   parseTagField,
   songCompleteness,
   tempoBand,
@@ -35,6 +36,7 @@ export interface LibrarySong {
   missing: CompletenessField["id"][];
   themes: string[];
   tags: string[];
+  flags: string[];
   tempo: TempoBandId | typeof NO_VALUE;
   key: string;
   artist: string;
@@ -44,7 +46,7 @@ export interface LibrarySong {
 export function decorate(songs: Song[]): LibrarySong[] {
   return songs.map((song) => {
     const completeness = songCompleteness(song);
-    const { tags, themes } = parseTagField(song.tags);
+    const { tags, themes, flags } = parseTagField(song.tags);
     return {
       song,
       percent: completeness.percent,
@@ -52,6 +54,7 @@ export function decorate(songs: Song[]): LibrarySong[] {
       missing: completeness.missing,
       themes,
       tags,
+      flags,
       tempo: tempoBand(song.tempo) ?? NO_VALUE,
       key: song.key?.trim() || NO_VALUE,
       artist: song.artist?.trim() || NO_VALUE,
@@ -70,6 +73,8 @@ export interface LibraryFilter {
   keys: string[];
   tempos: string[];
   artists: string[];
+  /** Properties of the song: unlisted, secular. */
+  flags: string[];
   /** Completeness fields a song must be MISSING — the "needs work" filter. */
   missing: string[];
   bands: string[];
@@ -82,6 +87,7 @@ export const EMPTY_FILTER: LibraryFilter = {
   keys: [],
   tempos: [],
   artists: [],
+  flags: [],
   missing: [],
   bands: [],
   drafts: "show",
@@ -96,6 +102,7 @@ const FACET_TESTS = {
   keys: (row: LibrarySong, f: LibraryFilter) => f.keys.includes(row.key),
   tempos: (row: LibrarySong, f: LibraryFilter) => f.tempos.includes(row.tempo),
   artists: (row: LibrarySong, f: LibraryFilter) => f.artists.includes(row.artist),
+  flags: (row: LibrarySong, f: LibraryFilter) => f.flags.some((flag) => row.flags.includes(flag)),
   missing: (row: LibrarySong, f: LibraryFilter) => f.missing.some((m) => row.missing.includes(m as CompletenessField["id"])),
   bands: (row: LibrarySong, f: LibraryFilter) => f.bands.includes(row.band),
 } as const;
@@ -174,6 +181,7 @@ const byKey = (a: FacetOption, b: FacetOption) =>
 const byOrder = (order: string[]) => (a: FacetOption, b: FacetOption) => order.indexOf(a.value) - order.indexOf(b.value);
 
 export interface LibraryFacets {
+  flags: FacetOption[];
   themes: FacetOption[];
   keys: FacetOption[];
   tempos: FacetOption[];
@@ -189,6 +197,12 @@ export function libraryFacets(rows: LibrarySong[], filter: LibraryFilter): Libra
   const fieldLabels = new Map(COMPLETENESS_FIELDS.map((f) => [f.id as string, f.label]));
 
   return {
+    flags: options(
+      countFacet(rows, filter, "flags", (r) => r.flags),
+      filter.flags,
+      (value) => flagLabel(value),
+      byCount,
+    ),
     themes: options(
       countFacet(rows, filter, "themes", (r) => r.themes),
       filter.themes,

@@ -121,13 +121,15 @@ export { formatTagField, parseTagField };
  * rejection survives every future run and every lexicon edit.
  */
 export function mergeThemes(existingTags, detectedThemeIds) {
-  const { tags, themes, negated } = parseTagField(existingTags);
+  const { tags, themes, negated, flags } = parseTagField(existingTags);
   const negatedSet = new Set(negated);
   const next = new Set(themes);
   for (const id of detectedThemeIds) {
     if (!negatedSet.has(id)) next.add(id);
   }
-  return formatTagField({ tags, themes: [...next], negated });
+  // `flags` rides through untouched. A theme pass that dropped it would delete
+  // an unlisted marking the next time anyone re-ran the lexicon.
+  return formatTagField({ tags, themes: [...next], negated, flags });
 }
 
 /**
@@ -136,16 +138,17 @@ export function mergeThemes(existingTags, detectedThemeIds) {
  * default.
  */
 export function resetThemes(existingTags) {
-  const { tags, negated } = parseTagField(existingTags);
-  return formatTagField({ tags, themes: [], negated });
+  const { tags, negated, flags } = parseTagField(existingTags);
+  return formatTagField({ tags, themes: [], negated, flags });
 }
 
 /** Record that a human removed a theme. */
 export function rejectTheme(existingTags, themeId) {
-  const { tags, themes, negated } = parseTagField(existingTags);
+  const { tags, themes, negated, flags } = parseTagField(existingTags);
   return formatTagField({
     tags,
     themes: themes.filter((t) => t !== themeId),
     negated: [...new Set([...negated, themeId])],
+    flags,
   });
 }

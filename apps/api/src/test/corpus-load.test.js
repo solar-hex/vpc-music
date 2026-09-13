@@ -130,7 +130,30 @@ describe("readCorpusRows", () => {
     // the fingerprint is JSON, so a string would rewrite every tempo each run.
     expect(rows[0].tempo).toBe(150);
     expect(rows[0].artist).toBe("IBC");
-    expect(rows[0].tags).toBe("theme:revival, theme:praise");
+    // Sorted, because the loader writes the tag field through the same grammar
+    // the theme pass uses — two songs with the same themes get the same string.
+    expect(rows[0].tags).toBe("theme:praise, theme:revival");
+    await rm(root, { recursive: true, force: true });
+  });
+
+  it("carries a flag through as a namespaced tag, beside the themes", async () => {
+    const root = await makeCorpus([
+      {
+        songId: ID_A,
+        slug: "unlisted",
+        title: "Holy Ghost",
+        content: [
+          "{title: Holy Ghost}",
+          "{x_flag: secular, unlisted}",
+          "{x_theme: revival}",
+          "",
+          "[G]Holy",
+          "",
+        ].join("\n"),
+      },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].tags).toBe("flag:secular, flag:unlisted, theme:revival");
     await rm(root, { recursive: true, force: true });
   });
 

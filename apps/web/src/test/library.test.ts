@@ -133,6 +133,35 @@ describe("libraryFacets", () => {
   });
 });
 
+describe("flags", () => {
+  const flagged = decorate([
+    song({ id: "f1", title: "Holy Ghost", tags: "flag:unlisted, theme:revival" }),
+    song({ id: "f2", title: "Colors of the Wind", tags: "flag:secular, flag:unlisted" }),
+    song({ id: "f3", title: "Way Maker", tags: "theme:faith-trust" }),
+  ]);
+
+  it("reads a flag out of the tags column, apart from the themes", () => {
+    expect(flagged[0].flags).toEqual(["unlisted"]);
+    expect(flagged[0].themes).toEqual(["revival"]);
+    expect(flagged[1].flags).toEqual(["secular", "unlisted"]);
+  });
+
+  it("does not let a flag make a song look catalogued", () => {
+    // The old site's tilde is not a tag: a song whose only "tag" is
+    // flag:unlisted still needs tagging.
+    expect(flagged[1].missing).toContain("tags");
+    expect(flagged[0].missing).not.toContain("tags");
+  });
+
+  it("filters by flag and offers it as a facet", () => {
+    const out = filterSongs(flagged, { ...EMPTY_FILTER, flags: ["unlisted"] });
+    expect(out.map((r) => r.song.id)).toEqual(["f1", "f2"]);
+    const facets = libraryFacets(flagged, EMPTY_FILTER);
+    expect(facets.flags.find((o) => o.value === "unlisted")).toMatchObject({ count: 2, label: "Unlisted" });
+    expect(facets.flags.find((o) => o.value === "secular")).toMatchObject({ count: 1, label: "Secular" });
+  });
+});
+
 describe("libraryStats", () => {
   it("rolls up the library the way the corpus report does", () => {
     const stats = libraryStats(rows);

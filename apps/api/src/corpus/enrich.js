@@ -131,6 +131,14 @@ export function enrichChordPro(spec) {
     if (names.length > 0) out.set("x_aka", names.join("; "));
   }
 
+  /*
+   * Properties of the song rather than subjects of it. `unlisted` is the old
+   * site's tilde — a `~` in front of the filename kept a song out of the
+   * default list — and `secular` is its `~z_` variant. Both survived only as a
+   * character inside the source path, which is recoverable but not usable.
+   */
+  if (spec.flags?.length) out.set("x_flag", [...new Set(spec.flags)].sort().join(", "));
+
   if (spec.themes?.length) out.set("x_theme", [...spec.themes].join(", "));
   if (spec.sourceType && spec.sourcePath) {
     out.set("x_source", `${spec.sourceType}:${spec.sourcePath}`);

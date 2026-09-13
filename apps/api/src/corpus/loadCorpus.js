@@ -23,6 +23,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { eq } from "drizzle-orm";
 import { songs } from "../schema/index.js";
+import { formatTagField } from "@vpc-music/shared";
 import { nullable, sha256 } from "./identity.js";
 import { parseHeader, splitHeader } from "./enrich.js";
 import { resolveCreator, resolveOrganization } from "./dbLookup.js";
@@ -107,6 +108,9 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
       };
       const fileThemes = (directive("x_theme") || "").split(",").map((t) => t.trim()).filter(Boolean);
       const themes = fileThemes.length > 0 ? fileThemes : song.themes || [];
+      // Flags ride in the same column, namespaced apart: `flag:unlisted` is a
+      // property of the song, `theme:blood` is what it is about.
+      const flags = (directive("x_flag") || "").split(",").map((f) => f.trim()).filter(Boolean);
 
       rows.push({
         id: song.songId,
@@ -118,7 +122,7 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
         tempo: tempoOf(directive("tempo") ?? song.metadata?.tempo),
         content,
         isDraft: Boolean(song.metadata?.isDraft),
-        tags: themes.length > 0 ? themes.map((t) => `theme:${t}`).join(", ") : null,
+        tags: formatTagField({ flags, themes }) || null,
         source: manifest.sourceType,
       });
     }

@@ -84,6 +84,11 @@ Rules that hold the whole thing together:
   two-second tolerance because sync clients drift.
 - **Themes only ever get added.** A human's rejection is stored as
   `!theme:blood`, so broadening `corpus/themes.json` never undoes a correction.
+- **`songs.tags` holds four namespaces**, all parsed in `shared/utils/library.js`:
+  a plain tag, `theme:x`, `!theme:x` (a rejection), and `flag:x` (a property of
+  the song, not a subject). `flag:unlisted` is the old site's `~` filename
+  prefix, which kept a song out of the default list — it is NOT access control.
+  Anything that rewrites the column must carry every namespace through.
 
 ## ChordPro conventions
 

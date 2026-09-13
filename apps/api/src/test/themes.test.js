@@ -98,6 +98,7 @@ describe("tag field", () => {
       tags: ["hymn", "choir"],
       themes: ["blood"],
       negated: ["cross"],
+      flags: [],
     });
   });
 
@@ -106,9 +107,25 @@ describe("tag field", () => {
     expect(parseTagField(formatTagField(parsed))).toEqual(parsed);
   });
 
+  it("keeps a flag out of the plain tags — unlisted is not a subject", () => {
+    const parsed = parseTagField("hymn, flag:unlisted, flag:secular, theme:blood");
+    expect(parsed.tags).toEqual(["hymn"]);
+    expect(parsed.flags).toEqual(["unlisted", "secular"]);
+    // And it survives a round trip, or the theme pass would drop it.
+    expect(parseTagField(formatTagField(parsed)).flags).toEqual(["secular", "unlisted"]);
+  });
+
+  it("a theme pass preserves a flag it knows nothing about", () => {
+    // mergeThemes reads and rewrites the whole field; a flag it dropped would
+    // vanish the next time anyone re-ran the lexicon.
+    const after = mergeThemes("flag:unlisted, theme:blood", ["cross"]);
+    expect(parseTagField(after).flags).toEqual(["unlisted"]);
+    expect(parseTagField(after).themes.sort()).toEqual(["blood", "cross"]);
+  });
+
   it("is safe on empty input", () => {
-    expect(parseTagField(null)).toEqual({ tags: [], themes: [], negated: [] });
-    expect(parseTagField("")).toEqual({ tags: [], themes: [], negated: [] });
+    expect(parseTagField(null)).toEqual({ tags: [], themes: [], negated: [], flags: [] });
+    expect(parseTagField("")).toEqual({ tags: [], themes: [], negated: [], flags: [] });
   });
 });
 
@@ -152,6 +169,6 @@ describe("mergeThemes", () => {
 describe("resetThemes", () => {
   it("clears assertions but preserves every human rejection", () => {
     const out = resetThemes("hymn, theme:blood, theme:cross, !theme:heaven");
-    expect(parseTagField(out)).toEqual({ tags: ["hymn"], themes: [], negated: ["heaven"] });
+    expect(parseTagField(out)).toEqual({ tags: ["hymn"], themes: [], negated: ["heaven"], flags: [] });
   });
 });

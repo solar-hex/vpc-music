@@ -15,18 +15,23 @@
 /* ─── the tag field ───────────────────────────────────────────────────────── */
 
 /**
- * `songs.tags` carries three kinds of value at once:
+ * `songs.tags` carries four kinds of value at once:
  *
- *   hymn            a plain tag someone typed
- *   theme:blood     a theme the lexicon detected
- *   !theme:blood    a human said "no, it isn't" — a tombstone, not an absence
+ *   hymn             a plain tag someone typed
+ *   theme:blood      a theme the lexicon detected
+ *   !theme:blood     a human said "no, it isn't" — a tombstone, not an absence
+ *   flag:unlisted    a property of the song, not a subject
  *
  * The negation has to be stored, because an absence is indistinguishable from
  * "not scanned yet", and the next detection pass would put the theme straight
  * back. Reading it is therefore never a plain `split(",")`.
  *
+ * A flag is separated from a plain tag because it is not something a musician
+ * browses by, and because it must not make a song look catalogued: a song
+ * whose only "tag" is `flag:unlisted` still has no tags.
+ *
  * @param {string|null|undefined} raw
- * @returns {{tags:string[], themes:string[], negated:string[]}}
+ * @returns {{tags:string[], themes:string[], negated:string[], flags:string[]}}
  */
 export function parseTagField(raw) {
   const parts = String(raw || "")
@@ -36,22 +41,53 @@ export function parseTagField(raw) {
   const tags = [];
   const themes = [];
   const negated = [];
+  const flags = [];
   for (const part of parts) {
     const lower = part.toLowerCase();
     if (lower.startsWith("!theme:")) negated.push(lower.slice(7));
     else if (lower.startsWith("theme:")) themes.push(lower.slice(6));
+    else if (lower.startsWith("flag:")) flags.push(lower.slice(5));
     else tags.push(part);
   }
-  return { tags, themes: [...new Set(themes)], negated: [...new Set(negated)] };
+  return {
+    tags,
+    themes: [...new Set(themes)],
+    negated: [...new Set(negated)],
+    flags: [...new Set(flags)],
+  };
 }
 
 /** The inverse of `parseTagField`, with a stable order so diffs stay readable. */
-export function formatTagField({ tags = [], themes = [], negated = [] }) {
+export function formatTagField({ tags = [], themes = [], negated = [], flags = [] }) {
   return [
     ...tags,
+    ...[...new Set(flags)].sort().map((f) => `flag:${f}`),
     ...[...new Set(themes)].sort().map((t) => `theme:${t}`),
     ...[...new Set(negated)].sort().map((t) => `!theme:${t}`),
   ].join(", ");
+}
+
+/**
+ * Flags a song can carry, and what they mean.
+ *
+ * `unlisted` is the old site's tilde: a `~` in front of the filename kept a
+ * song out of the default list until you triple-clicked search for `show all`.
+ * It is NOT access control — an unlisted song still opens from a direct or
+ * shared link. `secular` is the `~z_` prefix, which marked the handful of
+ * non-church songs.
+ */
+export const SONG_FLAGS = [
+  { id: "unlisted", label: "Unlisted", description: "Kept out of the default list. Not access control." },
+  { id: "secular", label: "Secular", description: "Not a church song." },
+];
+
+export function flagLabel(id) {
+  return SONG_FLAGS.find((f) => f.id === id)?.label ?? themeLabel(id);
+}
+
+/** Just the flags on a song. */
+export function songFlags(song) {
+  return parseTagField(song?.tags).flags;
 }
 
 /** Just the themes asserted on a song. */
@@ -88,7 +124,8 @@ function isPresent(field, song) {
   const value = song?.[field.id];
   if (field.id === "tempo") return Number.isFinite(Number(value)) && Number(value) > 0;
   if (field.id === "tags") {
-    // A rejection (`!theme:x`) is data, but it is not a populated tag field.
+    // A rejection (`!theme:x`) and a flag (`flag:unlisted`) are both data, but
+    // neither is a tag: a song marked unlisted is not thereby catalogued.
     const { tags, themes } = parseTagField(value);
     return tags.length + themes.length > 0;
   }

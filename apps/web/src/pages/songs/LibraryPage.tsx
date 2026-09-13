@@ -19,7 +19,7 @@ import {
   type LibrarySong,
   type SortId,
 } from "@/lib/library";
-import { tempoBandLabel } from "@vpc-music/shared";
+import { flagLabel, tempoBandLabel } from "@vpc-music/shared";
 
 /** Filters live in the URL so a view of the library is a link you can send. */
 const PARAMS: Record<string, keyof LibraryFilter> = {
@@ -27,6 +27,7 @@ const PARAMS: Record<string, keyof LibraryFilter> = {
   key: "keys",
   tempo: "tempos",
   artist: "artists",
+  flag: "flags",
   missing: "missing",
   band: "bands",
 };
@@ -41,6 +42,7 @@ function readFilter(params: URLSearchParams): LibraryFilter {
     keys: list("key"),
     tempos: list("tempo"),
     artists: list("artist"),
+    flags: list("flag"),
     missing: list("missing"),
     bands: list("band"),
     drafts: drafts === "hide" || drafts === "only" ? (drafts as DraftMode) : "show",
@@ -176,6 +178,12 @@ function SongRow({ row }: { row: LibrarySong }) {
           <div className="flex items-center gap-2">
             <span className="truncate font-medium text-[hsl(var(--foreground))]">{song.title}</span>
             {song.isDraft && <span className="badge-muted shrink-0">Draft</span>}
+            {/* The old site's tilde. Kept out of the default list — not access control. */}
+            {row.flags.map((flag) => (
+              <span key={flag} className="badge-warning shrink-0">
+                {flagLabel(flag)}
+              </span>
+            ))}
           </div>
           <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-[hsl(var(--muted-foreground))]">
             <span className={song.artist ? "" : "italic opacity-70"}>{song.artist || "No artist"}</span>
@@ -330,6 +338,7 @@ export function LibraryPage() {
             {showFilters && (
               <div className="card card-body space-y-4">
                 <FacetGroup title="Missing" options={facets.missing} onToggle={toggle("missing")} />
+                <FacetGroup title="Flags" options={facets.flags} onToggle={toggle("flags")} />
                 <FacetGroup title="Completeness" options={facets.bands} onToggle={toggle("bands")} />
                 <FacetGroup title="Tempo" options={facets.tempos} onToggle={toggle("tempos")} />
                 <FacetGroup title="Key" options={facets.keys} onToggle={toggle("keys")} />

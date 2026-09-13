@@ -48,6 +48,23 @@ export const SOURCE_TYPES = ["chrd", "docx", "pdf", "text", "onsong"];
  * turn one into ChordPro, so the build plumbing below stays format-agnostic.
  * `convert` is always async and always receives the raw bytes.
  */
+/**
+ * The old site encoded two decisions in the filename, and nothing else carried
+ * them: a leading `~` kept a song out of the default list (you triple-clicked
+ * search for `show all` to see them), and `~z_` marked the handful of secular
+ * songs. The converter turns `~` into `isDraft`, which is the right VISIBILITY
+ * but the wrong meaning — 510 other songs are drafts because a machine was
+ * unsure of the conversion, not because anyone chose to hide them.
+ *
+ * @param {string} relativePath path inside the source tree
+ * @returns {string[]} flag ids
+ */
+export function flagsFromChrdName(relativePath) {
+  const name = String(relativePath).split("/").pop() ?? "";
+  if (!name.startsWith("~")) return [];
+  return name.startsWith("~z_") ? ["secular", "unlisted"] : ["unlisted"];
+}
+
 export const SOURCES = {
   chrd: {
     pattern: /\.chrd$/i,
@@ -55,6 +72,7 @@ export const SOURCES = {
       const conversion = convertChrdToChordPro(filename, buffer.toString("utf8"));
       return { ...conversion, confidence: scoreChrdConversion(conversion) };
     },
+    flags: flagsFromChrdName,
   },
   docx: {
     // The `(1)` duplicates and the two legacy `.doc` binaries are excluded by
@@ -315,6 +333,7 @@ export async function buildCorpus({
         content: baseContent,
         metadata: conversion.metadata,
         aka: aliases.get(identity.songId),
+        flags: spec.flags ? spec.flags(relativePath) : [],
         themes,
         media: linked.media,
         derivedTempo: linked.tempo,

@@ -279,11 +279,16 @@ declare module "@vpc-music/shared" {
     themes: string[];
     /** Themes a human rejected: `!theme:blood` — a tombstone, not an absence. */
     negated: string[];
+    /** Properties of the song rather than subjects: `flag:unlisted`. */
+    flags: string[];
   }
   export function parseTagField(raw: string | null | undefined): ParsedTagField;
   export function formatTagField(parts: Partial<ParsedTagField>): string;
   export function songThemes(song: { tags?: string | null } | null | undefined): string[];
+  export function songFlags(song: { tags?: string | null } | null | undefined): string[];
   export function themeLabel(id: string): string;
+  export function flagLabel(id: string): string;
+  export const SONG_FLAGS: { id: string; label: string; description: string }[];
 
   export interface CompletenessField {
     id: "title" | "artist" | "key" | "tempo" | "tags" | "year";
