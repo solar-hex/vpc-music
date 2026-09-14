@@ -187,7 +187,10 @@ function chordRow(
   let lastEnd = 0;
   chords.forEach(({ chord, position }, i) => {
     const label = isSecondaryToken(chord) ? chord.slice(1) : chord;
-    const gap = Math.max(0, position - lastEnd);
+    // Two chords never touch. Chords that share a spot, such as a turnaround
+    // after the last word ("step.[F#/A#][G#m][F#]"), would otherwise print
+    // as one unreadable run, "F#/A#G#mF#".
+    const gap = i === 0 ? Math.max(0, position - lastEnd) : Math.max(1, position - lastEnd);
     if (gap > 0) {
       spans.push(
         <span key={`gap-${i}`} className="whitespace-pre">

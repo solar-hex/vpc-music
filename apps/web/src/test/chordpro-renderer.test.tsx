@@ -257,6 +257,31 @@ describe("ChordProRenderer", () => {
       expect(container.querySelector(".song-primary-chord")).toBeTruthy();
     });
 
+    it("keeps a space between chords that share a spot, so they never run together", () => {
+      // A turnaround printed after the last word lands on one position.
+      mockParseChordPro.mockReturnValue({
+        directives: {},
+        sections: [
+          {
+            name: "",
+            lines: [
+              {
+                chords: [
+                  { chord: "F#/A#", position: 5 },
+                  { chord: "G#m", position: 5 },
+                  { chord: "F#", position: 5 },
+                ],
+                lyrics: "step.",
+              },
+            ],
+          },
+        ],
+      });
+      const { container } = render(<ChordProRenderer content="test" />);
+      const row = container.querySelector("div.song-primary-chord.whitespace-pre");
+      expect(row?.textContent).toBe("     F#/A# G#m F#");
+    });
+
     it("never styles a section name like a secondary chord", () => {
       // They shared a colour, and "Chorus" was hard to tell from a purple `ab`.
       mockParseChordPro.mockReturnValue({
