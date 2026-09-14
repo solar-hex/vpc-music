@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
-import { CalendarPlus, Download, Edit, Printer, Share2, Trash2 } from "lucide-react";
+import { CalendarPlus, Download, Edit, FileText, Printer, Share2, Trash2 } from "lucide-react";
 import { songsApi, shareApi, songUsageApi, type Song, type SongVariation } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -15,6 +15,8 @@ import { SectionJumpBar, jumpToSection } from "@/components/songs/SectionJumpBar
 import { KeyPickerSheet } from "@/components/songs/KeyPickerSheet";
 import { LogPlayDialog } from "@/components/songs/LogPlayDialog";
 import { ChordDiagramSheet } from "@/components/songs/ChordDiagramSheet";
+import { SongAudioBar } from "@/components/songs/SongAudioBar";
+import { songMedia } from "@/lib/song-media";
 import { TempoIndicator } from "@/components/songs/TempoIndicator";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { OfflineBanner } from "@/components/layout/OfflineBanner";
@@ -125,7 +127,11 @@ export function SongChartPage() {
   });
 
   const sections = useMemo(() => chartSections(content), [content]);
-  const chordDefinitions = useMemo(() => parseChordPro(content).chordDefinitions, [content]);
+  // Parsed once: the chord shapes and the media links both come off the same
+  // document, instead of parsing the whole chart twice.
+  const parsedChart = useMemo(() => parseChordPro(content), [content]);
+  const chordDefinitions = parsedChart.chordDefinitions;
+  const media = useMemo(() => songMedia(parsedChart.directives), [parsedChart]);
 
   // The old site carried the current key back to the search page.
   const searchHref = semis !== 0 && displayKey ? `/songs?key=${encodeURIComponent(displayKey)}` : "/songs";
@@ -195,6 +201,21 @@ export function SongChartPage() {
     { label: "Download OnSong (.onsong)", icon: <Download />, onSelect: () => download(() => songsApi.exportOnSong(id!, defaultVariation?.id), "onsong") },
     { label: "Download text (.txt)", icon: <Download />, onSelect: () => download(() => songsApi.exportText(id!, defaultVariation?.id), "txt") },
     { label: "Download PDF", icon: <Download />, onSelect: () => window.open(songsApi.exportPdf(id!, defaultVariation?.id), "_blank") },
+    // The publisher's original charts. Here rather than in the audio bar:
+    // they open outside the app and are an occasional reference, not
+    // something touched while reading.
+    ...(media.charts.length > 0
+      ? ([
+          "separator",
+          ...media.charts.map(
+            (doc): ActionMenuEntry => ({
+              label: `${doc.label} (PDF)`,
+              icon: <FileText />,
+              onSelect: () => window.open(songsApi.mediaHref(id!, doc.directive), "_blank", "noopener"),
+            }),
+          ),
+        ] satisfies ActionMenuEntry[])
+      : []),
     ...(canEdit
       ? ([
           "separator",
@@ -283,6 +304,9 @@ export function SongChartPage() {
         </div>
       </div>
 
+      {/* Keyed by song so a new chart starts with nothing playing and no
+          parts marked broken from the last one. */}
+      <SongAudioBar key={id} songId={id!} tracks={media.audio} />
       <SectionJumpBar sections={sections} onJump={(sectionId) => jumpToSection(scrollRef.current, sectionId)} />
 
       <KeyPickerSheet

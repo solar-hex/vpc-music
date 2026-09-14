@@ -165,17 +165,6 @@ export function enrichChordPro(spec) {
   return `${headerText}\n\n${body}`.replace(/\n{3,}/g, "\n\n").replace(/\s*$/, "\n");
 }
 
-/** Read the media links back out of a chart. */
-export function mediaLinksFrom(directives) {
-  const out = [];
-  for (const [k, v] of Object.entries(directives || {})) {
-    if (!/^x_(audio|chart|media)_/.test(k)) continue;
-    const [, kind, ...rest] = k.split("_");
-    out.push({ kind, part: rest.join("_"), url: v });
-  }
-  return out.sort((a, b) => a.kind.localeCompare(b.kind) || a.part.localeCompare(b.part));
-}
-
 /** Themes recorded in a chart, as ids. */
 export function themesFrom(directives) {
   return String(directives?.x_theme || "")

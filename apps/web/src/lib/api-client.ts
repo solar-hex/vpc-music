@@ -259,6 +259,14 @@ export const songsApi = {
     fetchWithOrganization(`/api/songs/${id}/export/text${variationId || lyricsOnly ? `?${new URLSearchParams({ ...(variationId ? { variationId } : {}), ...(lyricsOnly ? { lyricsOnly: "true" } : {}) }).toString()}` : ""}`),
   exportPdf: (id: string, variationId?: string | null) =>
     buildApiUrl(`/api/songs/${id}/export/pdf${variationId ? `?variationId=${variationId}` : ""}`),
+  /**
+   * A song's audio part or chart PDF, by its directive key. The route answers
+   * 302 to a short-lived signed URL, so this works directly as `<audio src>`
+   * or as a link, and must never be cached (see the NetworkOnly rule in
+   * vite.config.ts).
+   */
+  mediaHref: (id: string, directiveKey: string) =>
+    buildApiUrl(`/api/songs/${encodeURIComponent(id)}/media/${encodeURIComponent(directiveKey)}`),
   importPdf: async (file: File) => {
     const formData = new FormData();
     formData.append("file", file);

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import { SongChartPage } from "@/pages/songs/SongChartPage";
@@ -28,6 +28,7 @@ vi.mock("@/lib/api-client", () => ({
     exportOnSong: vi.fn(),
     exportText: vi.fn(),
     exportPdf: (...args: any[]) => mockExportPdf(...args),
+    mediaHref: (id: string, key: string) => `/api/songs/${id}/media/${key}`,
   },
   shareApi: { create: (...args: any[]) => mockShareCreate(...args) },
   songUsageApi: { log: (...args: any[]) => mockLogPlay(...args) },
@@ -275,6 +276,73 @@ describe("SongChartPage", () => {
       await waitFor(() => screen.getByRole("button", { name: /toggle theme/i }));
       fireEvent.click(screen.getByRole("button", { name: /toggle theme/i }));
       expect(mockToggleTheme).toHaveBeenCalled();
+    });
+  });
+
+  describe("practice audio and original charts", () => {
+    const S3 = "https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/amazing-grace";
+    const withMedia = {
+      ...song,
+      content: [
+        "{title: Amazing Grace}",
+        `{x_audio_tenor: ${S3}/audio/tenor.mp3}`,
+        `{x_audio_soprano: ${S3}/audio/soprano.mp3}`,
+        `{x_audio_alto: ${S3}/audio/alto.mp3}`,
+        `{x_chart_number_chart: ${S3}/charts/number_chart.pdf}`,
+        `{x_chart_chord_chart: ${S3}/charts/chord_chart.pdf}`,
+        "{x_dropbox: https://www.dropbox.com/scl/fo/abc}",
+        "",
+        "{comment: Verse 1}",
+        "A[G]mazing [G7]grace",
+      ].join("\n"),
+    };
+
+    it("docks the parts between the chart and the section bar, soprano first", async () => {
+      mockGet.mockResolvedValue({ song: withMedia, variations: [] });
+      renderChart();
+      const bar = await screen.findByTestId("song-audio-bar");
+      const parts = within(bar).getAllByRole("button").map((b) => b.getAttribute("aria-label"));
+      expect(parts).toEqual(["Play Soprano", "Play Alto", "Play Tenor"]);
+
+      const jumpBar = screen.getByRole("navigation", { name: "Song sections" });
+      // The bar comes before the jump bar in the document, so it sits above it.
+      expect(bar.compareDocumentPosition(jumpBar) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+
+    it("shows no audio bar for a song without audio", async () => {
+      renderChart();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Amazing Grace" })).toBeInTheDocument());
+      expect(screen.queryByTestId("song-audio-bar")).not.toBeInTheDocument();
+    });
+
+    it("lists the original charts in the More menu, chords first, opened through the signed route", async () => {
+      const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
+      mockGet.mockResolvedValue({ song: withMedia, variations: [] });
+      const user = userEvent.setup();
+      renderChart();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      const items = screen.getAllByRole("menuitem").map((i) => i.textContent);
+      expect(items.indexOf("Chord chart (PDF)")).toBeLessThan(items.indexOf("Number chart (PDF)"));
+      await user.click(screen.getByRole("menuitem", { name: "Chord chart (PDF)" }));
+      expect(openSpy).toHaveBeenCalledWith("/api/songs/song-1/media/x_chart_chord_chart", "_blank", "noopener");
+    });
+
+    it("does not expose the Dropbox share link, which would bypass the private media", async () => {
+      mockGet.mockResolvedValue({ song: withMedia, variations: [] });
+      const user = userEvent.setup();
+      renderChart();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.queryByRole("menuitem", { name: /dropbox/i })).not.toBeInTheDocument();
+    });
+
+    it("offers no chart entries for a song without them", async () => {
+      const user = userEvent.setup();
+      renderChart();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.queryByRole("menuitem", { name: /\(PDF\)/ })).not.toBeInTheDocument();
     });
   });
 

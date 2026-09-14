@@ -46,16 +46,23 @@ already on every row of `songs.content` — no join, no media table, no upload.
 
 Coverage: soprano 321, alto 323, tenor 318, full mix 124, loops 83+.
 
-Read them with `mediaLinksFrom(directives)` in
-`apps/api/src/corpus/enrich.js`, which returns `{kind, part, url}`. The
-ChordPro parser already captures and preserves unknown `x_*` directives and
-nothing renders them, so they travel with the chart invisibly today.
+**Built 2026-09-14.** The chart page reads these with `songMedia(directives)`
+in `apps/web/src/lib/song-media.ts`, which orders parts for a singer, labels
+stems by instrument and loops by tempo, and drops empty values. The old
+`mediaLinksFrom` in `apps/api/src/corpus/enrich.js` was never imported and has
+been deleted.
 
 **A directive key appears at most once** — the parser keeps the last value —
 which is why every media file gets its own key rather than repeating `x_media`.
 
-A vocalist opening a song and tapping "Alto" is the church-choir use case and
-needs only UI.
+A vocalist opening a song and tapping "Alto" is the church-choir use case.
+
+**It did not need only UI.** The bucket behind these URLs is private, so a
+plain `<audio src>` gets 403. `GET /songs/:id/media/:key` checks the caller can
+see the song and answers 302 to a presigned URL valid for 15 minutes. It signs
+only URLs on the configured endpoint and bucket, because song content is
+editable and the stored URL is untrusted. The app addresses media by directive
+key through `songsApi.mediaHref`; never link a stored media URL directly.
 
 ### 2. `songs.tags` carries four namespaces
 
