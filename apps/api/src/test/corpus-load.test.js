@@ -112,15 +112,35 @@ describe("readCorpusRows", () => {
     expect(rows[0].isDraft).toBe(false);
   });
 
-  it("keeps an unlisted lyrics sheet hidden", async () => {
-    // flag:unlisted is the old site's tilde. The song list hides by isDraft,
-    // so an unlisted song has to stay a draft to stay out of the list.
-    const lyricsOnly = "{title: More Than Anything}\n{x_flag: unlisted}\n\n{comment: Verse 1}\nMore than anything\n";
+  it("lists a tilde church song", async () => {
+    // flag:unlisted is the old site's tilde, which hid a song. Kevin decided
+    // the church songs behind it should be listed; only secular ones stay out.
+    const chart = "{title: Anything Can Happen}\n{x_flag: unlisted}\n\n{comment: Verse 1}\n[Gb]With lifted hands\n";
     const root = await makeCorpus([
-      { songId: ID_A, slug: "more--aaaaaaaa", title: "More Than Anything", content: lyricsOnly, isDraft: true },
+      { songId: ID_A, slug: "anything--aaaaaaaa", title: "Anything Can Happen", content: chart, isDraft: true },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].isDraft).toBe(false);
+  });
+
+  it("keeps a secular song hidden, even when it is a lyrics sheet", async () => {
+    // The `~z_` songs: Disney, video-game music. Secular outranks every rule
+    // that would otherwise list a song.
+    const lyricsOnly = "{title: Colors of the Wind}\n{x_flag: unlisted, secular}\n\n{comment: Verse 1}\nYou think you own whatever land you land on\n";
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "colors--aaaaaaaa", title: "Colors of the Wind", content: lyricsOnly, isDraft: true },
     ]);
     const { rows } = await readCorpusRows(root);
     expect(rows[0].status).toBe("missing_chords");
+    expect(rows[0].isDraft).toBe(true);
+  });
+
+  it("keeps a secular chart hidden even if the converter did not mark it a draft", async () => {
+    const chart = "{title: Dearly Beloved}\n{x_flag: secular}\n\n{comment: Verse 1}\n[C]Dearly beloved\n";
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "dearly--aaaaaaaa", title: "Dearly Beloved", content: chart, isDraft: false },
+    ]);
+    const { rows } = await readCorpusRows(root);
     expect(rows[0].isDraft).toBe(true);
   });
 

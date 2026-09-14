@@ -288,9 +288,11 @@ declare module "@vpc-music/shared" {
   export function songFlags(song: { tags?: string | null } | null | undefined): string[];
   export function themeLabel(id: string): string;
   export function flagLabel(id: string): string;
+  /** Whether a flag keeps a song out of the song list. */
+  export function flagHides(id: string): boolean;
   /** "Lyrics only" for `missing_chords`, null for everything else. */
   export function songStatusLabel(status: string | null | undefined): string | null;
-  export const SONG_FLAGS: { id: string; label: string; description: string }[];
+  export const SONG_FLAGS: { id: string; label: string; description: string; hides: boolean }[];
 
   export interface CompletenessField {
     id: "title" | "artist" | "key" | "tempo" | "tags" | "year";

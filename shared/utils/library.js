@@ -72,17 +72,25 @@ export function formatTagField({ tags = [], themes = [], negated = [], flags = [
  *
  * `unlisted` is the old site's tilde: a `~` in front of the filename kept a
  * song out of the default list until you triple-clicked search for `show all`.
- * It is NOT access control — an unlisted song still opens from a direct or
- * shared link. `secular` is the `~z_` prefix, which marked the handful of
- * non-church songs.
+ * Here it is provenance only. Kevin decided the church songs behind the tilde
+ * should be listed, so it hides nothing. `secular` is the `~z_` prefix, which
+ * marked the handful of non-church songs, and it is the flag that hides one.
+ * Neither is access control: a hidden song still opens from a direct link.
  */
 export const SONG_FLAGS = [
-  { id: "unlisted", label: "Unlisted", description: "Kept out of the default list. Not access control." },
-  { id: "secular", label: "Secular", description: "Not a church song." },
+  // Provenance now, not visibility: the old site hid tilde songs, but the
+  // church ones are listed here (see the isDraft rule in corpus/loadCorpus.js).
+  { id: "unlisted", label: "Old site tilde", description: "Hidden on the old site. Listed here, because it is a church song.", hides: false },
+  { id: "secular", label: "Secular", description: "Not a church song. Kept out of the song list.", hides: true },
 ];
 
 export function flagLabel(id) {
   return SONG_FLAGS.find((f) => f.id === id)?.label ?? themeLabel(id);
+}
+
+/** Whether a flag keeps a song out of the song list. Unknown flags do not. */
+export function flagHides(id) {
+  return SONG_FLAGS.find((f) => f.id === id)?.hides === true;
 }
 
 /**

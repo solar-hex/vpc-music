@@ -123,15 +123,25 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
         tempo: tempoOf(directive("tempo") ?? song.metadata?.tempo),
         content,
         /*
-         * A lyrics sheet is a finished lyrics sheet, not a half-finished chart.
-         * The converters mark it a draft because it has no chords, but that
-         * reason is carried by `status` below, which the app renders as
-         * "Lyrics only". Being a draft as well hid a fifth of the library for
-         * no reason, so a lyrics sheet is listed — unless it is flagged
-         * unlisted, because the song list hides by `isDraft` and the old
-         * site's tilde has to keep working.
+         * What is listed. Kevin's rules, in priority order:
+         *
+         *  1. A SECULAR song stays hidden (Disney, video-game and the other
+         *     `~z_` songs), whatever else is true of it.
+         *  2. A tilde (`flag:unlisted`) church song is listed. The old site's
+         *     tilde hid them, but they are church songs the team wants.
+         *  3. A lyrics sheet is listed. The converters mark it a draft because
+         *     it has no chords, but that reason is carried by `status` below,
+         *     which the app renders as "Lyrics only".
+         *  4. Anything else keeps the draft state it came with.
+         *
+         * The song list hides by `isDraft`, so this line is the whole of what
+         * a musician sees.
          */
-        isDraft: lyricsOnly && !flags.includes("unlisted") ? false : Boolean(song.metadata?.isDraft),
+        isDraft: flags.includes("secular")
+          ? true
+          : flags.includes("unlisted") || lyricsOnly
+            ? false
+            : Boolean(song.metadata?.isDraft),
         /*
          * A musician reaching for a chart needs to know before they open it
          * that there are no chords in it. This is what says so, and it gives

@@ -20,7 +20,7 @@ import {
   type LibrarySong,
   type SortId,
 } from "@/lib/library";
-import { flagLabel, songStatusLabel, tempoBandLabel } from "@vpc-music/shared";
+import { flagHides, flagLabel, songStatusLabel, tempoBandLabel } from "@vpc-music/shared";
 
 /** Filters live in the URL so a view of the library is a link you can send. */
 const PARAMS: Record<string, keyof LibraryFilter> = {
@@ -190,7 +190,8 @@ function SongRow({ row }: { row: LibrarySong }) {
             {songStatusLabel(song.status) && <span className="badge-muted shrink-0">{songStatusLabel(song.status)}</span>}
             {/* The old site's tilde. Kept out of the default list — not access control. */}
             {row.flags.map((flag) => (
-              <span key={flag} className="badge-warning shrink-0">
+              // A warning colour only for a flag that actually hides the song.
+              <span key={flag} className={`${flagHides(flag) ? "badge-warning" : "badge-muted"} shrink-0`}>
                 {flagLabel(flag)}
               </span>
             ))}

@@ -197,7 +197,7 @@ describe("flags", () => {
     const out = filterSongs(flagged, { ...EMPTY_FILTER, flags: ["unlisted"] });
     expect(out.map((r) => r.song.id)).toEqual(["f1", "f2"]);
     const facets = libraryFacets(flagged, EMPTY_FILTER);
-    expect(facets.flags.find((o) => o.value === "unlisted")).toMatchObject({ count: 2, label: "Unlisted" });
+    expect(facets.flags.find((o) => o.value === "unlisted")).toMatchObject({ count: 2, label: "Old site tilde" });
     expect(facets.flags.find((o) => o.value === "secular")).toMatchObject({ count: 1, label: "Secular" });
   });
 });
