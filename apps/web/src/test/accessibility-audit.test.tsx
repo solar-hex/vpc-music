@@ -110,15 +110,21 @@ describe("Accessibility audit", () => {
     expect(results).toHaveNoViolations();
   });
 
-  it("Settings page has no obvious accessibility violations", async () => {
-    const { container, getByText } = render(
-      <MemoryRouter initialEntries={["/settings"]}>
-        <SettingsPage />
-      </MemoryRouter>,
-    );
-    await waitFor(() => expect(getByText("Pat")).toBeInTheDocument());
+  // Each tab is its own screen now, so each one is audited, tabs included.
+  it.each(["profile", "appearance", "team", "data", "about"])(
+    "Settings %s tab has no obvious accessibility violations",
+    async (tab) => {
+      const { container, getByRole, getByText } = render(
+        <MemoryRouter initialEntries={[`/settings#${tab}`]}>
+          <SettingsPage />
+        </MemoryRouter>,
+      );
+      expect(getByRole("tabpanel")).toBeInTheDocument();
+      if (tab === "team") await waitFor(() => expect(getByText("Pat")).toBeInTheDocument());
 
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  }, 30_000);
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    },
+    30_000,
+  );
 });

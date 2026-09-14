@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -96,6 +96,8 @@ function adminAuth() {
   };
 }
 
+const renderSettingsAt = (path: string) => renderPage(path);
+
 function renderPage(path = "/settings") {
   return render(
     <MemoryRouter initialEntries={[path]}>
@@ -107,46 +109,75 @@ function renderPage(path = "/settings") {
   );
 }
 
-const scrolledTo: string[] = [];
-const originalScrollIntoView = Element.prototype.scrollIntoView;
-
 beforeEach(() => {
   vi.clearAllMocks();
   mockAuthValue = adminAuth();
   mockListUsers.mockResolvedValue({ users: [] });
   mockUpdateSettings.mockResolvedValue({ settings: {} });
-  scrolledTo.length = 0;
-  Element.prototype.scrollIntoView = function scrollIntoView(this: Element) {
-    scrolledTo.push(this.id);
-  };
 });
 
-afterEach(() => {
-  Element.prototype.scrollIntoView = originalScrollIntoView;
-});
+const tab = (name: string) => screen.getByRole("tab", { name });
+const openSection = () => screen.getByRole("tabpanel");
 
 describe("SettingsPage", () => {
-  it("shows every section with pill anchors for an admin", async () => {
-    renderPage();
-    for (const name of ["Profile", "Appearance", "Team", "Data", "About"]) {
-      expect(screen.getByRole("heading", { level: 2, name })).toBeInTheDocument();
-      expect(screen.getByRole("link", { name })).toHaveAttribute("href", `#${name.toLowerCase()}`);
-    }
-    expect(screen.getByText(/Test Church · Worship Leader/)).toBeInTheDocument();
-    await waitFor(() => expect(mockListUsers).toHaveBeenCalled());
-  });
+  describe("tabs", () => {
+    it("offers a tab per section for an admin, and opens on Profile alone", () => {
+      renderPage();
+      expect(screen.getAllByRole("tab").map((t) => t.textContent)).toEqual(["Profile", "Appearance", "Team", "Data", "About"]);
+      expect(tab("Profile")).toHaveAttribute("aria-selected", "true");
+      expect(openSection()).toHaveAccessibleName("Profile");
+      expect(screen.getByText(/Test Church · Worship Leader/)).toBeInTheDocument();
+      // one section at a time, not a stack
+      expect(screen.getAllByRole("heading", { level: 2 }).map((h) => h.textContent)).toEqual(["Profile"]);
+      expect(mockListUsers).not.toHaveBeenCalled();
+    });
 
-  it("hides the Team section from musicians", () => {
-    mockAuthValue = { ...adminAuth(), activeOrg: { id: "org1", name: "Test Church", role: "musician" } };
-    renderPage();
-    expect(screen.queryByRole("heading", { level: 2, name: "Team" })).not.toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: "Team" })).not.toBeInTheDocument();
-    expect(mockListUsers).not.toHaveBeenCalled();
-  });
+    it("shows only the section of the tab that was clicked", async () => {
+      renderPage();
+      fireEvent.click(tab("Appearance"));
+      expect(tab("Appearance")).toHaveAttribute("aria-selected", "true");
+      expect(tab("Profile")).toHaveAttribute("aria-selected", "false");
+      expect(screen.getAllByRole("heading", { level: 2 }).map((h) => h.textContent)).toEqual(["Appearance"]);
+      expect(screen.queryByLabelText("Display name")).not.toBeInTheDocument();
 
-  it("scrolls to the section named in the hash", async () => {
-    renderPage("/settings#team");
-    await waitFor(() => expect(scrolledTo).toContain("team"));
+      fireEvent.click(tab("Team"));
+      expect(screen.getAllByRole("heading", { level: 2 }).map((h) => h.textContent)).toEqual(["Team"]);
+      await waitFor(() => expect(mockListUsers).toHaveBeenCalled());
+    });
+
+    it("opens the tab a link names, which is where the old /admin address lands", async () => {
+      renderPage("/settings#team");
+      expect(tab("Team")).toHaveAttribute("aria-selected", "true");
+      expect(openSection()).toHaveAccessibleName("Team");
+      await waitFor(() => expect(mockListUsers).toHaveBeenCalled());
+    });
+
+    it("hides the Team tab from musicians, and sends a Team link to Profile", () => {
+      mockAuthValue = { ...adminAuth(), activeOrg: { id: "org1", name: "Test Church", role: "musician" } };
+      renderPage("/settings#team");
+      expect(screen.queryByRole("tab", { name: "Team" })).not.toBeInTheDocument();
+      expect(tab("Profile")).toHaveAttribute("aria-selected", "true");
+      expect(mockListUsers).not.toHaveBeenCalled();
+    });
+
+    it("moves between tabs with the arrow keys, wrapping at the ends", () => {
+      renderPage();
+      expect(tab("Profile")).toHaveAttribute("tabindex", "0");
+      expect(tab("Appearance")).toHaveAttribute("tabindex", "-1");
+
+      fireEvent.keyDown(tab("Profile"), { key: "ArrowRight" });
+      expect(tab("Appearance")).toHaveAttribute("aria-selected", "true");
+      expect(tab("Appearance")).toHaveFocus();
+
+      fireEvent.keyDown(tab("Appearance"), { key: "ArrowLeft" });
+      fireEvent.keyDown(tab("Profile"), { key: "ArrowLeft" });
+      expect(tab("About")).toHaveAttribute("aria-selected", "true");
+
+      fireEvent.keyDown(tab("About"), { key: "Home" });
+      expect(tab("Profile")).toHaveAttribute("aria-selected", "true");
+      fireEvent.keyDown(tab("Profile"), { key: "End" });
+      expect(tab("About")).toHaveFocus();
+    });
   });
 
   describe("profile", () => {
@@ -200,6 +231,8 @@ describe("SettingsPage", () => {
   });
 
   describe("appearance", () => {
+    const renderPage = () => renderSettingsAt("/settings#appearance");
+
     it("switches the theme on the device and on the account", () => {
       renderPage();
       fireEvent.click(screen.getByRole("button", { name: "Light" }));
@@ -240,6 +273,8 @@ describe("SettingsPage", () => {
   });
 
   describe("data", () => {
+    const renderPage = () => renderSettingsAt("/settings#data");
+
     it("opens the import dialog for editors", () => {
       renderPage();
       expect(screen.queryByTestId("import-dialog")).not.toBeInTheDocument();
@@ -282,6 +317,8 @@ describe("SettingsPage", () => {
   });
 
   describe("about", () => {
+    const renderPage = () => renderSettingsAt("/settings#about");
+
     it("shows the version and opens the changelog", async () => {
       renderPage();
       expect(screen.getByText("VPC Music 0.0.0-test")).toBeInTheDocument();

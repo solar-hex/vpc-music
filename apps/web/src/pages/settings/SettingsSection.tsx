@@ -9,13 +9,13 @@ interface SettingsSectionProps {
   children: ReactNode;
 }
 
-/** One card on the settings page, addressable by hash for the pill anchors. */
+/** One card on the settings page: the panel of one tab. */
 export function SettingsSection({ id, title, icon: Icon, description, children }: SettingsSectionProps) {
   return (
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className="scroll-mt-20 space-y-4 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-4 sm:p-6"
+      className="space-y-4 rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-4 sm:p-6"
     >
       <div>
         <h2 id={`${id}-heading`} className="flex items-center gap-2 text-lg font-brand text-[hsl(var(--foreground))]">
