@@ -30,6 +30,14 @@ export default defineConfig({
         // Runtime caching for API calls
         runtimeCaching: [
           {
+            // Song media — never cache. The route answers 302 to a presigned
+            // URL that expires in minutes, and audio is streamed only, so a
+            // cached copy is both stale and a quiet drain on a phone's storage.
+            // Must come before the songs rule below, which would also match it.
+            urlPattern: /^https?:\/\/.*\/api\/songs\/[^/]+\/media\//,
+            handler: "NetworkOnly",
+          },
+          {
             // API data — network first, fallback to cache
             urlPattern: /^https?:\/\/.*\/api\/(songs|setlists|events|users|organizations)/,
             handler: "NetworkFirst",

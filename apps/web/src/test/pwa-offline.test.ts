@@ -109,6 +109,19 @@ describe("PWA / Offline Mode", () => {
       expect(viteConfig).toContain("google-fonts-webfonts");
     });
 
+    it("never caches song media, and says so before the songs rule can claim it", () => {
+      // Audio streams only, and the media route answers with a presigned URL
+      // that expires in minutes. Workbox takes the FIRST matching rule, and the
+      // api-data rule's pattern also matches /api/songs/:id/media/, so the
+      // NetworkOnly rule has to come first or media quietly gets cached.
+      const mediaRule = viteConfig.indexOf(String.raw`\/media\/`);
+      const networkOnly = viteConfig.indexOf('"NetworkOnly"');
+      const apiData = viteConfig.indexOf("api-data");
+      expect(mediaRule).toBeGreaterThan(-1);
+      expect(networkOnly).toBeGreaterThan(mediaRule);
+      expect(networkOnly).toBeLessThan(apiData);
+    });
+
     it("has navigateFallback configured", () => {
       expect(viteConfig).toContain("navigateFallback");
     });
