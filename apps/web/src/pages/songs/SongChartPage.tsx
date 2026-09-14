@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
-import { CalendarPlus, Download, Edit, FileText, Printer, Share2, Trash2 } from "lucide-react";
+import { CalendarPlus, Download, Edit, FileText, FolderOpen, Printer, Share2, Trash2 } from "lucide-react";
 import { songsApi, shareApi, songUsageApi, type Song, type SongVariation } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -201,10 +201,11 @@ export function SongChartPage() {
     { label: "Download OnSong (.onsong)", icon: <Download />, onSelect: () => download(() => songsApi.exportOnSong(id!, defaultVariation?.id), "onsong") },
     { label: "Download text (.txt)", icon: <Download />, onSelect: () => download(() => songsApi.exportText(id!, defaultVariation?.id), "txt") },
     { label: "Download PDF", icon: <Download />, onSelect: () => window.open(songsApi.exportPdf(id!, defaultVariation?.id), "_blank") },
-    // The publisher's original charts. Here rather than in the audio bar:
-    // they open outside the app and are an occasional reference, not
-    // something touched while reading.
-    ...(media.charts.length > 0
+    // Resources: the publisher's original charts, and the shared Dropbox
+    // folder the song came from, which holds further PDFs and recordings.
+    // Here rather than in the audio bar because they open outside the app and
+    // are an occasional reference, not something touched while reading.
+    ...(media.charts.length > 0 || media.dropboxUrl
       ? ([
           "separator",
           ...media.charts.map(
@@ -214,6 +215,15 @@ export function SongChartPage() {
               onSelect: () => window.open(songsApi.mediaHref(id!, doc.directive), "_blank", "noopener"),
             }),
           ),
+          ...(media.dropboxUrl
+            ? [
+                {
+                  label: "All song files (Dropbox)",
+                  icon: <FolderOpen />,
+                  onSelect: () => window.open(media.dropboxUrl!, "_blank", "noopener"),
+                } satisfies ActionMenuEntry,
+              ]
+            : []),
         ] satisfies ActionMenuEntry[])
       : []),
     ...(canEdit

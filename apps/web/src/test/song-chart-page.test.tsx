@@ -328,13 +328,30 @@ describe("SongChartPage", () => {
       expect(openSpy).toHaveBeenCalledWith("/api/songs/song-1/media/x_chart_chord_chart", "_blank", "noopener");
     });
 
-    it("does not expose the Dropbox share link, which would bypass the private media", async () => {
+    it("links to the song's shared Dropbox folder as a resource, after the charts", async () => {
+      const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
       mockGet.mockResolvedValue({ song: withMedia, variations: [] });
       const user = userEvent.setup();
       renderChart();
       await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
       await user.click(screen.getByRole("button", { name: /more actions/i }));
-      expect(screen.queryByRole("menuitem", { name: /dropbox/i })).not.toBeInTheDocument();
+      const items = screen.getAllByRole("menuitem").map((i) => i.textContent);
+      expect(items.indexOf("All song files (Dropbox)")).toBeGreaterThan(items.indexOf("Number chart (PDF)"));
+      await user.click(screen.getByRole("menuitem", { name: "All song files (Dropbox)" }));
+      expect(openSpy).toHaveBeenCalledWith("https://www.dropbox.com/scl/fo/abc", "_blank", "noopener");
+    });
+
+    it("offers the Dropbox folder even for a song with no chart PDFs", async () => {
+      mockGet.mockResolvedValue({
+        song: { ...song, content: `${song.content}\n{x_dropbox: https://www.dropbox.com/scl/fo/only}` },
+        variations: [],
+      });
+      const user = userEvent.setup();
+      renderChart();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      expect(screen.getByRole("menuitem", { name: "All song files (Dropbox)" })).toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: /\(PDF\)/ })).not.toBeInTheDocument();
     });
 
     it("offers no chart entries for a song without them", async () => {
