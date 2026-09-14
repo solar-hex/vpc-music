@@ -144,6 +144,61 @@ describe("SongAudioBar", () => {
     expect(screen.getByText("1:12")).toBeInTheDocument();
   });
 
+  describe("scrub bar", () => {
+    const loadTrack = (seconds: number) => {
+      Object.defineProperty(audio(), "duration", { value: seconds, configurable: true });
+      fire("loadedmetadata");
+    };
+
+    it("is hidden until a part is loaded", () => {
+      renderBar();
+      expect(screen.queryByTestId("audio-scrubber")).not.toBeInTheDocument();
+      fireEvent.click(chip("Play Alto"));
+      expect(screen.getByTestId("audio-scrubber")).toBeInTheDocument();
+    });
+
+    it("sits on its own row, outside the part buttons that scroll sideways", () => {
+      renderBar();
+      fireEvent.click(chip("Play Alto"));
+      const buttonRow = screen.getByRole("group", { name: "Practice audio" });
+      expect(buttonRow.contains(screen.getByTestId("audio-scrubber"))).toBe(false);
+    });
+
+    it("shows the track length once known", () => {
+      renderBar();
+      fireEvent.click(chip("Play Alto"));
+      fire("playing");
+      loadTrack(245);
+      expect(screen.getByTestId("audio-scrubber")).toHaveTextContent("4:05");
+      expect(screen.getByRole("slider", { name: "Position in Alto" })).toHaveAttribute("max", "245");
+    });
+
+    it("jumps to the dragged position", () => {
+      renderBar();
+      fireEvent.click(chip("Play Alto"));
+      fire("playing");
+      loadTrack(245);
+      Object.defineProperty(audio(), "currentTime", { value: 0, configurable: true, writable: true });
+      fireEvent.change(screen.getByRole("slider", { name: "Position in Alto" }), { target: { value: "120" } });
+      expect(audio().currentTime).toBe(120);
+      expect(screen.getByTestId("audio-scrubber")).toHaveTextContent("2:00");
+    });
+
+    it("cannot be dragged before the length is known", () => {
+      renderBar();
+      fireEvent.click(chip("Play Alto"));
+      expect(screen.getByRole("slider", { name: "Position in Alto" })).toBeDisabled();
+    });
+
+    it("announces the position in words for screen readers", () => {
+      renderBar();
+      fireEvent.click(chip("Play Alto"));
+      fire("playing");
+      loadTrack(245);
+      expect(screen.getByRole("slider", { name: "Position in Alto" })).toHaveAttribute("aria-valuetext", "0:00 of 4:05");
+    });
+  });
+
   it("replays the current part from the start", () => {
     renderBar();
     fireEvent.click(chip("Play Alto"));

@@ -25,10 +25,10 @@ function formatTime(seconds: number) {
  * reads the chart, and if the pause button had scrolled off screen they would
  * have to scroll back to stop the audio, which is no good on a music stand.
  *
- * Deliberately NO scrub bar. A drag target inside a horizontally scrolling row
- * fights the row's own swipe, and there is no width for it on a 360px phone.
- * Replay covers the real need, "play that again". If scrubbing is ever wanted,
- * it needs a different surface, not a squeezed one.
+ * The scrub bar is its OWN full-width row under the part buttons, shown only
+ * while a part is loaded. It is not inside the button row, because that row
+ * scrolls sideways and a drag target inside it would fight the swipe. On its
+ * own row it gets the whole width of the phone and nothing to fight.
  *
  * Deliberately NO keyboard shortcut. Space and PageDown already scroll the
  * chart as Bluetooth foot-pedal support (see hooks/useKeyboardShortcuts), and
@@ -124,7 +124,17 @@ export function SongAudioBar({ songId, tracks }: SongAudioBarProps) {
     if (state !== "playing") void Promise.resolve(el.play()).catch(() => active && markFailed(active));
   };
 
-  const progress = duration > 0 ? Math.min(100, (elapsed / duration) * 100) : 0;
+
+  /** Jump to a point in the current part, clamped to the track. */
+  const seek = (seconds: number) => {
+    const el = audioRef.current;
+    if (!el || !Number.isFinite(seconds)) return;
+    const target = Math.max(0, duration > 0 ? Math.min(seconds, duration) : seconds);
+    el.currentTime = target;
+    setElapsed(target);
+  };
+
+  const showScrubber = active !== null && (state === "playing" || state === "paused" || state === "loading");
 
   return (
     <div
@@ -171,9 +181,6 @@ export function SongAudioBar({ songId, tracks }: SongAudioBarProps) {
                   <Play className="h-3.5 w-3.5" aria-hidden="true" />
                 )}
                 {track.label}
-                {isActive && (state === "playing" || state === "paused") && (
-                  <span className="tabular-nums opacity-80">{formatTime(elapsed)}</span>
-                )}
               </button>
               {isActive && (state === "playing" || state === "paused") && (
                 <button
@@ -185,17 +192,34 @@ export function SongAudioBar({ songId, tracks }: SongAudioBarProps) {
                   <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
                 </button>
               )}
-              {isActive && (
-                <span
-                  className="pointer-events-none absolute bottom-0 left-0 h-0.5 rounded bg-[hsl(var(--secondary-foreground))]/70"
-                  style={{ width: `${progress}%` }}
-                  aria-hidden="true"
-                />
-              )}
+
             </div>
           );
         })}
       </div>
+
+      {showScrubber && (
+        <div className="flex items-center gap-3 px-3 pb-2" data-testid="audio-scrubber">
+          <span className="w-10 shrink-0 text-right text-xs tabular-nums text-[hsl(var(--muted-foreground))]">
+            {formatTime(elapsed)}
+          </span>
+          <input
+            type="range"
+            min={0}
+            max={duration > 0 ? duration : 0}
+            step={0.1}
+            value={Math.min(elapsed, duration > 0 ? duration : 0)}
+            disabled={duration <= 0}
+            onChange={(event) => seek(Number(event.target.value))}
+            aria-label={`Position in ${labelOf(active)}`}
+            aria-valuetext={`${formatTime(elapsed)} of ${formatTime(duration)}`}
+            className="h-6 min-w-0 flex-1 cursor-pointer accent-[hsl(var(--secondary))] disabled:cursor-default disabled:opacity-50"
+          />
+          <span className="w-10 shrink-0 text-xs tabular-nums text-[hsl(var(--muted-foreground))]">
+            {duration > 0 ? formatTime(duration) : "--:--"}
+          </span>
+        </div>
+      )}
 
       <span className="sr-only" aria-live="polite">
         {announcement}
