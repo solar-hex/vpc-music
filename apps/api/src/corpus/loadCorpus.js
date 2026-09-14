@@ -111,6 +111,7 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
       // Flags ride in the same column, namespaced apart: `flag:unlisted` is a
       // property of the song, `theme:blood` is what it is about.
       const flags = (directive("x_flag") || "").split(",").map((f) => f.trim()).filter(Boolean);
+      const lyricsOnly = !hasChords(content);
 
       rows.push({
         id: song.songId,
@@ -121,14 +122,22 @@ export async function readCorpusRows(corpusRoot, { fields = "core" } = {}) {
         year: directive("year") ?? nullable(song.metadata?.year),
         tempo: tempoOf(directive("tempo") ?? song.metadata?.tempo),
         content,
-        isDraft: Boolean(song.metadata?.isDraft),
         /*
-         * A lyrics sheet is not a half-finished chart — it is a finished lyrics
-         * sheet — but a musician reaching for a chart needs to know before they
-         * open it. 346 songs are lyrics only; this is what says so, and it
-         * gives the `status` enum its first real use.
+         * A lyrics sheet is a finished lyrics sheet, not a half-finished chart.
+         * The converters mark it a draft because it has no chords, but that
+         * reason is carried by `status` below, which the app renders as
+         * "Lyrics only". Being a draft as well hid a fifth of the library for
+         * no reason, so a lyrics sheet is listed — unless it is flagged
+         * unlisted, because the song list hides by `isDraft` and the old
+         * site's tilde has to keep working.
          */
-        status: hasChords(content) ? null : "missing_chords",
+        isDraft: lyricsOnly && !flags.includes("unlisted") ? false : Boolean(song.metadata?.isDraft),
+        /*
+         * A musician reaching for a chart needs to know before they open it
+         * that there are no chords in it. This is what says so, and it gives
+         * the `status` enum its first real use.
+         */
+        status: lyricsOnly ? "missing_chords" : null,
         tags: formatTagField({ flags, themes }) || null,
         source: manifest.sourceType,
       });

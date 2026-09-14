@@ -98,6 +98,43 @@ describe("readCorpusRows", () => {
     expect(rows.map((r) => r.id)).toEqual([ID_A]);
   });
 
+  it("does not hide a finished lyrics sheet as a draft", async () => {
+    // 194 songs are complete lyrics with no chords. The converter marks them
+    // drafts because they need chords, but that reason is now carried by
+    // status = "missing_chords", which the app labels "Lyrics only". Leaving
+    // them drafts as well hid a fifth of the library for no reason.
+    const lyricsOnly = "{title: Words Only}\n\n{comment: Verse 1}\nAmazing grace how sweet the sound\n";
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "words--aaaaaaaa", title: "Words Only", content: lyricsOnly, isDraft: true },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].status).toBe("missing_chords");
+    expect(rows[0].isDraft).toBe(false);
+  });
+
+  it("keeps an unlisted lyrics sheet hidden", async () => {
+    // flag:unlisted is the old site's tilde. The song list hides by isDraft,
+    // so an unlisted song has to stay a draft to stay out of the list.
+    const lyricsOnly = "{title: More Than Anything}\n{x_flag: unlisted}\n\n{comment: Verse 1}\nMore than anything\n";
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "more--aaaaaaaa", title: "More Than Anything", content: lyricsOnly, isDraft: true },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].status).toBe("missing_chords");
+    expect(rows[0].isDraft).toBe(true);
+  });
+
+  it("leaves a chorded draft a draft", async () => {
+    // The change is about lyrics sheets only. A chart with chords that the
+    // corpus has not verified keeps whatever draft state it came with.
+    const root = await makeCorpus([
+      { songId: ID_A, slug: "chart--aaaaaaaa", title: "God is Great", content: CHART_A, isDraft: true },
+    ]);
+    const { rows } = await readCorpusRows(root);
+    expect(rows[0].status).toBe(null);
+    expect(rows[0].isDraft).toBe(true);
+  });
+
   it("turns themes into namespaced tags", async () => {
     const { rows } = await readCorpusRows(corpusRoot);
     expect(rows.find((r) => r.id === ID_B).tags).toBe("theme:grace-mercy, theme:salvation");
