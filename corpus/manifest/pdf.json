@@ -277,7 +277,7 @@
       "songId": "09de14aa-fd43-5429-b338-b75559be8e38",
       "title": "How Majestic",
       "file": "songs/pdf/how-majestic--09de14aa.chopro",
-      "contentSha256": "dca7c6513f4b8ffbce6f01b59294fecdc9a509a84b6f351520e58efa2e38f556",
+      "contentSha256": "fd7a790a0dd4edd3021bc1dcede104b2b3bec1d03031faf4b1f90de65d8579b6",
       "metadata": {
         "key": "C",
         "artist": "Mark Yandris",
@@ -370,7 +370,7 @@
       "songId": "0d8abc76-cd81-5fa7-aa0e-3ed521dd9653",
       "title": "Not The Same",
       "file": "songs/pdf/not-the-same--0d8abc76.chopro",
-      "contentSha256": "67c12157e8607d75b53941f54dd6ddef972526b1b2ef5fe1e97316b45443538b",
+      "contentSha256": "f8b63a2175e1f2a133b7fc3c7173b319cd86d875d462b1f81bf6d8427cdb47de",
       "metadata": {
         "key": "C#",
         "artist": "Jeff Walthall",
@@ -607,7 +607,7 @@
       "songId": "16ce24f6-2148-52f0-b123-7c5178bd3ef8",
       "title": "One God",
       "file": "songs/pdf/one-god--16ce24f6.chopro",
-      "contentSha256": "ff392e630f6703713718c5eb4dec20efbe3349ddd3c0168188bd3c269d96a85c",
+      "contentSha256": "a9a8435b6004afcdac80c315e8e8b4e5c9e857c7e12e36b933d76654e66bdf16",
       "metadata": {
         "key": "C",
         "artist": "Calah Rhodes",
@@ -1930,7 +1930,7 @@
       "songId": "4191436f-f932-5d41-be54-71d976a2ab01",
       "title": "You Are holy",
       "file": "songs/pdf/you-are-holy--4191436f.chopro",
-      "contentSha256": "d6af99a56808658a8f4a71bdd449d9b6e89ddc73869f6e962c6b063457f80205",
+      "contentSha256": "010afc29aae2d1781706cb1ad0ad0f7fd92c1b8f1dc98d7cf56365796809ed5b",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -2529,7 +2529,7 @@
       "songId": "53ad7e85-7c7d-5197-b2ad-15d1c76ad26f",
       "title": "Inhabit",
       "file": "songs/pdf/inhabit--53ad7e85.chopro",
-      "contentSha256": "b64417256f919b34abc5aa6646072a8d9b1f21d09ce1586d7217cd3cd9b2a83c",
+      "contentSha256": "95a1469607fb4862c35fc1348e78e19f830a633a7d3830f5ce4c24a6c9df649e",
       "metadata": {
         "key": "C",
         "artist": "James Wilson",
@@ -3229,7 +3229,7 @@
       "songId": "6212be94-5ed2-56af-9203-a2b2e5c65e43",
       "title": "Lead Us",
       "file": "songs/pdf/lead-us--6212be94.chopro",
-      "contentSha256": "bf6085bc371c4db9c5f81e27d68ca5bcb1eb43bb7d633cb55ad4c0e86696639a",
+      "contentSha256": "b54a74ccc86cc14feb18d6dbcd8bffa9223659c1ebfc23edf6fa0d2b1f392e34",
       "metadata": {
         "key": "Db",
         "artist": "Steve Richardson",
@@ -4253,7 +4253,7 @@
       "songId": "7c212689-5922-524d-af38-cd2f1f41a1c2",
       "title": "Unspeakable Joy",
       "file": "songs/pdf/unspeakable-joy--7c212689.chopro",
-      "contentSha256": "e114f2d9989fcac3ff885def6c8ddc3f069e802d17c5034e7a773bdfb0269776",
+      "contentSha256": "bc98b699161ed5f0c90b8061de0a030c66ec78737cd469c888d4a0f9b08008d9",
       "metadata": {
         "key": "Bb",
         "artist": "Mark Yandris",
@@ -4507,7 +4507,7 @@
       "songId": "83c9cf3f-2b09-580d-86d1-5defe5f05c14",
       "title": "Joy",
       "file": "songs/pdf/joy--83c9cf3f.chopro",
-      "contentSha256": "8a77068abca67e8b0dc25f0cc4900653c67d2f6b6a4a6be23fb7436fb406c61b",
+      "contentSha256": "4df13bafbb5ef5196fbc181dd70fff16682c2e2bdd7fa65a65d3b96de7f2b377",
       "metadata": {
         "key": "F",
         "artist": "Eddie James",
@@ -4810,7 +4810,7 @@
       "songId": "8e8d6580-cb8e-5757-b8c2-e844ef0acd16",
       "title": "Unspeakable Joy",
       "file": "songs/pdf/unspeakable-joy--8e8d6580.chopro",
-      "contentSha256": "453a2ebf79aa7738d8b0c9649a7a35b1c15e5a299f88d3008950be329072ac5c",
+      "contentSha256": "94c2e37a9596f731f22c7970f3c9ee6d81a5d451b4fdab0bea235610b8c7993b",
       "metadata": {
         "key": "Bb",
         "artist": "Mark Yandris",
@@ -5434,7 +5434,7 @@
       "songId": "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47",
       "title": "Lord, You Reign",
       "file": "songs/pdf/lord-you-reign--9f42c3c5.chopro",
-      "contentSha256": "a2159be9704f72e5bb739c91b3047cf3ce9d57f3b1b92155e35764974e53ea32",
+      "contentSha256": "22b773cbb73645d482eabae71a38f26563bc0321ad0fc163f90b07fba0103bd4",
       "metadata": {
         "key": "Ab",
         "artist": "Bishop Leonard Scott",
@@ -7654,7 +7654,7 @@
       "songId": "cfe7e209-591a-55ec-856d-c4e388d20c85",
       "title": "Forever Faithful",
       "file": "songs/pdf/forever-faithful--cfe7e209.chopro",
-      "contentSha256": "9d9a8bd2851645e08fde537200f0deb71e65b054ccfd9eb2cbf15eff7b04f681",
+      "contentSha256": "d54b7344c214ceb9ca0971536074b3d598920f8b1a168682cacf335ceb0bd1d9",
       "metadata": {
         "key": "Gb",
         "artist": "Joshua Olivier",
@@ -8349,7 +8349,7 @@
       "songId": "e7947b2e-53bc-5491-9f11-8df27159f869",
       "title": "I Praise You",
       "file": "songs/pdf/i-praise-you--e7947b2e.chopro",
-      "contentSha256": "a0bff21c978f0b9e933de5d4eb9461d5e49911d9c6b24b154e543d21207e4811",
+      "contentSha256": "0c07b4741e9ff7992fad7b4264a4ff679107094dfec4fb940698d6f4b87e7555",
       "metadata": {
         "key": "Eb",
         "artist": "Cedric Shannon Rives",

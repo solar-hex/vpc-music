@@ -306,6 +306,7 @@ describe("section names as the charts write them", () => {
     expect(classifyChartLine("Interlude Guitars riffing")).toMatchObject({ name: "Interlude", note: "Guitars riffing" });
     expect(classifyChartLine("Intro (2x) Guitars riffing")).toMatchObject({ name: "Intro", note: "2x, Guitars riffing" });
     expect(classifyChartLine("Vamp 1& 2 same as Chorus")).toMatchObject({ name: "Vamp 1 & 2", note: "same as Chorus" });
+    expect(classifyChartLine("Verse 1&2")).toMatchObject({ type: "section", name: "Verse 1 & 2" });
     expect(classifyChartLine("Chorus 1 1st time: 2x 2nd time: 1x")).toMatchObject({ name: "Chorus 1", note: "1st time: 2x 2nd time: 1x" });
     expect(classifyChartLine("Interlude to Chorus")).toMatchObject({ type: "section", name: "Interlude to Chorus" });
   });
@@ -413,6 +414,39 @@ describe("the body of a chart", () => {
     expect(chartBody([row(10, [["Intro", 36], ["D", 90], ["Bm7", 120], ["A", 160], ["G", 190]])]).body).toEqual([
       "{comment: Intro}",
       "[D] [Bm7] [A] [G]",
+    ]);
+  });
+
+  it("reads a dash between a section name and its chords as punctuation", () => {
+    expect(chartBody([row(10, [["Interlude", 36], ["–", 100], ["(C-D-F-G)", 112], ["F", 190]])]).body).toEqual([
+      "{comment: Interlude}",
+      "[(C-D-F-G)] [F]",
+    ]);
+  });
+
+  it("drops the page footer even when it shares a line with the music", () => {
+    const { body } = chartBody([
+      row(10, [["Dm", 90], ["F", 150]]),
+      row(22, [["His name is Jesus Jesus", 36], ["UPCI Music Ministry", 485]]),
+    ]);
+    expect(body).toHaveLength(1);
+    expect(plain(body[0])).toBe("His name is Jesus Jesus");
+    expect(body[0]).toContain("[Dm]");
+  });
+
+  it("keeps a passing-chord run after a section name a chord, not the name's note", () => {
+    // Lord, You Reign: "Intro (Ab - G) DbM7" made "Ab-G" an italic note that
+    // would never transpose.
+    expect(chartBody([row(10, [["Intro", 36], ["(Ab", 90], ["-", 114], ["G)", 126], ["DbM7", 160]])]).body).toEqual([
+      "{comment: Intro}",
+      "[(Ab-G)] [DbM7]",
+    ]);
+    expect(chartBody([row(10, [["Intro", 36], ["(Bb-B-C-Eb)", 90]])]).body).toEqual(["{comment: Intro}", "[(Bb-B-C-Eb)]"]);
+    // a real note in the same place is still a note
+    expect(chartBody([row(10, [["Verse", 36], ["1", 76], ["(Unison)", 90], ["Cm7", 160]])]).body).toEqual([
+      "{comment: Verse 1}",
+      "{ci: Unison}",
+      "[Cm7]",
     ]);
   });
 

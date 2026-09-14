@@ -14,8 +14,7 @@
 {x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/you-reign/audio/loop.wav}
 
 {comment: Intro}
-{ci: Ab-G}
-[DbM7] [Ab2/C] [(Ab-G)] [DbM7] [Fm11]
+[(Ab-G)] [DbM7] [Ab2/C] [(Ab-G)] [DbM7] [Fm11]
 [(Ab-G)] [DbM7] [Ab2/C] [*Db/F] [Ab] [Eb2/G]
 {ci: repeat first two lines}
 {ci: *2nd time:Db/F Eb/G Ab}

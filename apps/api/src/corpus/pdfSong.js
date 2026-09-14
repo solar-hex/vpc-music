@@ -51,7 +51,9 @@ export function classifyChartLine(text) {
   // "&" and "," may sit against the number ("Vamp 1& 2"), so they take their
   // own branch; keeping them out of `tail` leaves one way to match each, and a
   // line of repeated "& & &" cannot send the match exponential.
-  const name = `(?:${SECTION_WORD})(?:\\s*[&,]|\\s+(?:\\d+[a-z]?|[ivx]+|and|to|[-–—]|${SECTION_WORD}))*`;
+  // The number may sit against the "&" too ("Verse 1&2"); only with no space,
+  // so " & 2" still has exactly one way to match.
+  const name = `(?:${SECTION_WORD})(?:\\s*[&,](?:\\d+[a-z]?)?|\\s+(?:\\d+[a-z]?|[ivx]+|and|to|[-–—]|${SECTION_WORD}))*`;
   const notesGroup = `((?:\\s*\\((?:[^()]|\\([^()]*\\))*\\))*)`;
   const nameOf = (raw) =>
     raw.replace(/\s*&\s*/g, " & ").replace(/\s+/g, " ").replace(/[\s,&–—-]+$/, "").trim();
@@ -293,6 +295,10 @@ function musicItem(tokens) {
   while (lastMusic > 0 && tokens[lastMusic].kind === "note") lastMusic -= 1;
   const middle = tokens.slice(firstMusic, lastMusic + 1);
   const music = middle.filter((t) => t.kind !== "note");
+  // A dash at either end links nothing: "Interlude – (C-D-F-G) F" is a name,
+  // punctuation, then chords.
+  while (music.length > 0 && music[0].kind === "dash" && music[0].text === "-") music.shift();
+  while (music.length > 0 && music[music.length - 1].kind === "dash" && music[music.length - 1].text === "-") music.pop();
   return {
     type: music.some((t) => t.kind === "bar") ? "bars" : "chords",
     tokens: music,
@@ -313,15 +319,21 @@ export function interpretChartLine(line) {
   const tokens = readChartRow(line.elements);
   if (isMusic(tokens)) return [musicItem(tokens)];
 
-  const whole = classifyChartLine(text);
-  if (whole.type === "section" || whole.type === "note") return [whole];
-
-  for (let k = tokens.length - 1; k >= 1; k -= 1) {
+  /*
+   * A section name with its music on the same row: "Intro  D  Bm7  A  G".
+   * Checked before the whole line, and the SHORTEST name wins, because a
+   * passing-chord run right after the name ("Intro (Ab - G) DbM7") also reads
+   * as a note in brackets — and as a note it would never transpose.
+   */
+  for (let k = 1; k < tokens.length; k += 1) {
     const rest = tokens.slice(k);
     if (!isMusic(rest)) continue;
     const head = classifyChartLine(tokens.slice(0, k).map((t) => t.text).join(" "));
     if (head.type === "section") return [head, musicItem(rest)];
   }
+
+  const whole = classifyChartLine(text);
+  if (whole.type === "section" || whole.type === "note") return [whole];
 
   // "Reign, reign, reign. (repeat)" and "…worship You.    2x": the lyric, then
   // the instruction as a note.
@@ -451,13 +463,18 @@ export function chartBody(lines, { title = null, artist = null } = {}) {
   let dropped = 0;
   let page = null;
   let pageStarted = false;
-  for (const line of lines) {
-    if (line.pageIndex !== page) {
-      page = line.pageIndex;
+  for (const whole of lines) {
+    if (whole.pageIndex !== page) {
+      page = whole.pageIndex;
       pageStarted = false;
     }
     // The header is read into directives, on every page it repeats on.
-    if (line.elements.length > 0 && line.elements.every((e) => e.region === "header")) { dropped += 1; continue; }
+    if (whole.elements.length > 0 && whole.elements.every((e) => e.region === "header")) { dropped += 1; continue; }
+    // The footer ("UPCI Music Ministry") can share a baseline with the last
+    // row of music, and then a chord row reads as a lyric. Drop the footer's
+    // own run, not just a line that is nothing but footer.
+    const line = { ...whole, elements: whole.elements.filter((e) => !CHROME.test(String(e.text).trim())) };
+    if (line.elements.length === 0) { dropped += 1; continue; }
     const text = renderLine(line.elements).text.replace(/\s+/g, " ").trim();
     if (!text) continue;
     if (CHROME.test(text) || CREDIT.test(text)) { dropped += 1; continue; }
