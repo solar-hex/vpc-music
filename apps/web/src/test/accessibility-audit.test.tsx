@@ -7,7 +7,11 @@ import { SettingsPage } from "@/pages/settings/SettingsPage";
 
 expect.extend(toHaveNoViolations as Parameters<typeof expect.extend>[0]);
 
-vi.mock("@vpc-music/shared", () => ({
+// The real engine underneath, with fakes on top: pages audited here pull in
+// more of it than the editor does (Settings previews a chart), and a
+// hand-listed mock breaks on every new import.
+vi.mock("@vpc-music/shared", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@vpc-music/shared")>()),
   transposeKeyName: (key: string) => key,
   keyPrefersFlats: () => false,
   parseBarLine: () => ({ measures: [] }),

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { SettingsPage } from "@/pages/settings/SettingsPage";
@@ -269,6 +269,17 @@ describe("SettingsPage", () => {
       expect(themeSetters.resetChordColors).toHaveBeenCalled();
       expect(mockUpdateSettings).toHaveBeenCalledWith({ chordColor: "#ca9762", secondaryChordColor: "#8b5cf6" });
       expect(screen.getByTestId("appearance-preview")).toHaveTextContent("Amazing grace");
+    });
+
+    it("previews a whole sheet: title, two verses, chords, secondary chords and a note", () => {
+      renderPage();
+      const preview = within(screen.getByTestId("appearance-preview"));
+      expect(preview.getByText("Amazing Grace")).toBeInTheDocument();
+      expect(preview.getByText("Key of G")).toBeInTheDocument();
+      expect(preview.getByText("Verse 1")).toHaveClass("chart-section-name");
+      expect(preview.getByText("Verse 2")).toHaveClass("chart-section-name");
+      expect(preview.getAllByTestId("secondary-chord-row").length).toBeGreaterThan(0);
+      expect(preview.getByText("Softly, first time through")).toBeInTheDocument();
     });
   });
 

@@ -1,5 +1,6 @@
 import { Palette } from "lucide-react";
 import { useTheme, type KeyNotation, type Theme } from "@/contexts/ThemeContext";
+import { ChordProRenderer } from "@/components/songs/ChordProRenderer";
 import { platformApi } from "@/lib/api-client";
 import { PAGE_WIDTHS } from "@/lib/page-width";
 import { SettingsSection } from "./SettingsSection";
@@ -14,6 +15,21 @@ const NOTATIONS: { value: KeyNotation; label: string }[] = [
   { value: "flats", label: "Flats (Gb)" },
   { value: "sharps", label: "Sharps (F#)" },
 ];
+
+/**
+ * Two verses of a public-domain hymn with everything a chart shows: section
+ * names, chords, secondary chords stacked above them, and a note. Drawn by
+ * the real chart renderer, so the preview cannot drift from a real chart.
+ */
+const PREVIEW_CHART = [
+  "{comment: Verse 1}",
+  "A[G]mazing grace, how [*e][C]sweet the [G]sound",
+  "That [G]saved a wretch like [*f#][D]me",
+  "{ci: Softly, first time through}",
+  "{comment: Verse 2}",
+  "'Twas [G]grace that taught my [*e][C]heart to [G]fear",
+  "And [G]grace my fears re[*f#][D]lieved",
+].join("\n");
 
 function choiceClass(active: boolean) {
   return `rounded-md px-4 py-2 text-sm font-medium transition-colors ${
@@ -157,12 +173,16 @@ export function AppearanceSection() {
           </button>
         </div>
         <div
-          className="rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] p-3 font-mono text-sm"
+          className="space-y-3 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] p-4"
           data-testid="appearance-preview"
         >
-          <div className="song-secondary-chord whitespace-pre text-xs">{"        c        f"}</div>
-          <div className="song-primary-chord whitespace-pre font-bold">{"G        C        D"}</div>
-          <div className="whitespace-pre">Amazing grace, how sweet the sound</div>
+          {/* The chart page's title block, so the whole sheet is previewed. */}
+          <div className="space-y-1">
+            <div className="text-xs font-semibold uppercase tracking-wide text-[hsl(var(--muted-foreground))]">Key of G</div>
+            <p className="page-title">Amazing Grace</p>
+            <div className="text-sm text-[hsl(var(--muted-foreground))]">John Newton / 1779</div>
+          </div>
+          <ChordProRenderer content={PREVIEW_CHART} songKey="G" />
         </div>
       </div>
     </SettingsSection>

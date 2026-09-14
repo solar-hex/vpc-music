@@ -48,7 +48,7 @@ export function ChordProRenderer({
 
   return (
     <div data-testid="chordpro-renderer">
-      <div className="space-y-4" style={{ fontSize: `${fontSize}px` }}>
+      <div className="space-y-6" style={{ fontSize: `${fontSize}px` }}>
         {doc.sections.map((section: any, si: number) => {
           // Consecutive bar rows ("| G | C |") render as one aligned grid
           const rows: React.ReactNode[] = [];
@@ -92,8 +92,14 @@ export function ChordProRenderer({
           flushBars("bars-tail");
           return (
             <div key={si} id={`section-${si}`} className="chart-section scroll-mt-4 space-y-1">
+              {/*
+                A section name must never read as a chord. It used to share the
+                secondary chord colour, so "Chorus" and a purple `ab` looked alike.
+                Neutral text on a chip, in capitals, sized with the chart so the
+                text-size control grows it too.
+              */}
               {section.name && (
-                <div className="song-secondary-chord mt-2 text-sm font-semibold uppercase tracking-wide">
+                <div className="chart-section-name mb-1 inline-block rounded bg-[hsl(var(--muted))] px-2 py-0.5 text-[0.8em] font-semibold uppercase tracking-wider text-[hsl(var(--foreground))]">
                   {section.name}
                 </div>
               )}

@@ -252,10 +252,28 @@ describe("ChordProRenderer", () => {
       expect(container.querySelectorAll(".leading-relaxed").length).toBe(0);
     });
 
-    it("renders chord and section semantic color classes", () => {
+    it("renders chords in the chord colour", () => {
       const { container } = render(<ChordProRenderer content="test" />);
       expect(container.querySelector(".song-primary-chord")).toBeTruthy();
-      expect(container.querySelector(".song-secondary-chord")).toBeTruthy();
+    });
+
+    it("never styles a section name like a secondary chord", () => {
+      // They shared a colour, and "Chorus" was hard to tell from a purple `ab`.
+      mockParseChordPro.mockReturnValue({
+        directives: {},
+        sections: [
+          {
+            name: "Chorus",
+            lines: [{ chords: [{ chord: "*ab", position: 0 }, { chord: "E", position: 0 }], lyrics: "He is" }],
+          },
+        ],
+      });
+      const { container } = render(<ChordProRenderer content="test" />);
+      const name = screen.getByText("Chorus");
+      expect(name).toHaveClass("chart-section-name");
+      expect(name).not.toHaveClass("song-secondary-chord");
+      expect(name.closest(".song-secondary-chord")).toBeNull();
+      expect(container.querySelector("[data-testid='secondary-chord-row']")).toHaveClass("song-secondary-chord");
     });
   });
 });
