@@ -1,0 +1,4 @@
+# The corpus loader verifies every chart against the sha256 in its manifest,
+# which is taken over LF text. A checkout that turns line endings into CRLF
+# makes every file look hand-edited, and the loader refuses to run.
+corpus/** text eol=lf
