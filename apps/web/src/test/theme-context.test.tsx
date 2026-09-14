@@ -9,11 +9,13 @@ function ThemeConsumer() {
     chordColor,
     secondaryChordColor,
     keyNotation,
+    pageWidth,
     toggleTheme,
     setTheme,
     setChordColor,
     setSecondaryChordColor,
     setKeyNotation,
+    setPageWidth,
     resetChordColors,
   } = useTheme();
   return (
@@ -23,6 +25,7 @@ function ThemeConsumer() {
       <span data-testid="chord-color">{chordColor}</span>
       <span data-testid="secondary-chord-color">{secondaryChordColor}</span>
       <span data-testid="key-notation">{keyNotation}</span>
+      <span data-testid="page-width">{pageWidth}</span>
       <button data-testid="toggle" onClick={toggleTheme}>Toggle</button>
       <button data-testid="set-light" onClick={() => setTheme("light")}>Light</button>
       <button data-testid="set-system" onClick={() => setTheme("system")}>System</button>
@@ -31,6 +34,7 @@ function ThemeConsumer() {
       <button data-testid="set-bad-chord" onClick={() => setChordColor("red")}>Bad chord colour</button>
       <button data-testid="set-secondary" onClick={() => setSecondaryChordColor("#654321")}>Secondary colour</button>
       <button data-testid="set-sharps" onClick={() => setKeyNotation("sharps")}>Sharps</button>
+      <button data-testid="set-full" onClick={() => setPageWidth("full")}>Full width</button>
       <button data-testid="reset" onClick={resetChordColors}>Reset</button>
     </div>
   );
@@ -57,8 +61,9 @@ describe("ThemeContext", () => {
     window.matchMedia = originalMatchMedia;
   });
 
-  it("defaults to dark, flats and the stock chord colours", () => {
+  it("defaults to dark, flats, a centered page and the stock chord colours", () => {
     renderTheme();
+    expect(screen.getByTestId("page-width").textContent).toBe("centered");
     expect(screen.getByTestId("theme").textContent).toBe("dark");
     expect(screen.getByTestId("resolved").textContent).toBe("dark");
     expect(screen.getByTestId("key-notation").textContent).toBe("flats");
@@ -128,12 +133,36 @@ describe("ThemeContext", () => {
   it("reads the appearance from localStorage", () => {
     localStorage.setItem(
       "vpc-appearance",
-      JSON.stringify({ chordColor: "#112233", secondaryChordColor: "#445566", keyNotation: "sharps" }),
+      JSON.stringify({ chordColor: "#112233", secondaryChordColor: "#445566", keyNotation: "sharps", pageWidth: "full" }),
     );
     renderTheme();
+    expect(screen.getByTestId("page-width").textContent).toBe("full");
     expect(screen.getByTestId("chord-color").textContent).toBe("#112233");
     expect(screen.getByTestId("secondary-chord-color").textContent).toBe("#445566");
     expect(screen.getByTestId("key-notation").textContent).toBe("sharps");
+  });
+
+  it("keeps a device from before page width existed centered, and ignores an unknown width", () => {
+    localStorage.setItem("vpc-appearance", JSON.stringify({ chordColor: "#112233", keyNotation: "sharps" }));
+    const { unmount } = renderTheme();
+    expect(screen.getByTestId("page-width").textContent).toBe("centered");
+    expect(screen.getByTestId("key-notation").textContent).toBe("sharps");
+    unmount();
+
+    localStorage.setItem("vpc-appearance", JSON.stringify({ pageWidth: "wide" }));
+    renderTheme();
+    expect(screen.getByTestId("page-width").textContent).toBe("centered");
+  });
+
+  it("switches to full width and remembers it on the device", () => {
+    renderTheme();
+    act(() => {
+      screen.getByTestId("set-full").click();
+    });
+    expect(screen.getByTestId("page-width").textContent).toBe("full");
+    expect(localStorage.getItem("vpc-appearance")).toContain('"pageWidth":"full"');
+    // the other appearance settings are untouched
+    expect(screen.getByTestId("key-notation").textContent).toBe("flats");
   });
 
   it("falls back to defaults for a corrupt appearance entry", () => {

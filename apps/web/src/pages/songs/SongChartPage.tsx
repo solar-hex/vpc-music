@@ -5,6 +5,7 @@ import { CalendarPlus, Download, Edit, FileText, FolderOpen, Printer, Share2, Tr
 import { songsApi, shareApi, songUsageApi, type Song, type SongVariation } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { pageWidthClass } from "@/lib/page-width";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { useWakeLock } from "@/hooks/useWakeLock";
 import { nextFontSize, useChartPrefs } from "@/lib/chart-prefs";
@@ -44,7 +45,7 @@ export function SongChartPage() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { user, activeOrg } = useAuth();
-  const { resolvedTheme, toggleTheme, keyNotation } = useTheme();
+  const { resolvedTheme, toggleTheme, keyNotation, pageWidth } = useTheme();
   const [prefs, updatePrefs] = useChartPrefs();
   const { supported: keepAwakeSupported } = useWakeLock(prefs.keepAwake);
 
@@ -282,7 +283,7 @@ export function SongChartPage() {
       <OfflineBanner />
 
       <div ref={scrollRef} className="chart-scroll flex-1 overflow-auto">
-        <div className="chart-sheet mx-auto max-w-3xl px-4 py-4 sm:px-6">
+        <div className={`chart-sheet mx-auto ${pageWidthClass(pageWidth)} px-4 py-4 sm:px-6`} data-testid="chart-sheet">
           <div className="print-meta mb-4 space-y-1">
             {displayKey && (
               <div className="text-xs font-semibold uppercase tracking-wide text-[hsl(var(--muted-foreground))]">

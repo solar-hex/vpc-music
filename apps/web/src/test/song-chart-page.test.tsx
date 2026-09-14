@@ -17,6 +17,7 @@ const mockLoadCachedSong = vi.fn();
 const mockSaveCachedSong = vi.fn();
 const mockIsOfflineRequestError = vi.fn();
 const mockToggleTheme = vi.fn();
+let mockPageWidth: "centered" | "full" = "centered";
 
 let mockAuthValue: any;
 
@@ -48,7 +49,7 @@ vi.mock("@/contexts/AuthContext", () => ({
 }));
 
 vi.mock("@/contexts/ThemeContext", () => ({
-  useTheme: () => ({ resolvedTheme: "light", toggleTheme: mockToggleTheme }),
+  useTheme: () => ({ resolvedTheme: "light", toggleTheme: mockToggleTheme, pageWidth: mockPageWidth }),
 }));
 
 vi.mock("@/contexts/ConnectivityContext", () => ({
@@ -137,6 +138,7 @@ describe("SongChartPage", () => {
     mockShareCreate.mockResolvedValue({ shareUrl: "/shared/tok123", shareToken: {} });
     mockLogPlay.mockResolvedValue({ usage: {} });
     mockDelete.mockResolvedValue({ message: "ok" });
+    mockPageWidth = "centered";
   });
 
   afterEach(() => {
@@ -153,6 +155,18 @@ describe("SongChartPage", () => {
       expect(renderer().getAttribute("data-transpose")).toBe("0");
       expect(renderer().getAttribute("data-wrap")).toBe("false");
       expect(mockSaveCachedSong).toHaveBeenCalled();
+    });
+
+    it("keeps the chart in a centered column unless the account chose full width", async () => {
+      const { unmount } = renderChart();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Amazing Grace" })).toBeInTheDocument());
+      expect(screen.getByTestId("chart-sheet")).toHaveClass("max-w-3xl");
+      unmount();
+
+      mockPageWidth = "full";
+      renderChart();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Amazing Grace" })).toBeInTheDocument());
+      expect(screen.getByTestId("chart-sheet")).toHaveClass("max-w-none");
     });
 
     it("marks drafts", async () => {

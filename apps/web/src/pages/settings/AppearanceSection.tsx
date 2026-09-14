@@ -1,6 +1,7 @@
 import { Palette } from "lucide-react";
 import { useTheme, type KeyNotation, type Theme } from "@/contexts/ThemeContext";
 import { platformApi } from "@/lib/api-client";
+import { PAGE_WIDTHS } from "@/lib/page-width";
 import { SettingsSection } from "./SettingsSection";
 
 const THEMES: { value: Theme; label: string }[] = [
@@ -22,7 +23,7 @@ function choiceClass(active: boolean) {
   }`;
 }
 
-/** Theme, key spelling and the two chord colours, with a live preview. */
+/** Theme, key spelling, page width and the two chord colours, with a live preview. */
 export function AppearanceSection() {
   const {
     theme,
@@ -34,6 +35,8 @@ export function AppearanceSection() {
     secondaryChordColor,
     setSecondaryChordColor,
     resetChordColors,
+    pageWidth,
+    setPageWidth,
   } = useTheme();
 
   // The device applies the change instantly; the account copy is best effort.
@@ -82,6 +85,29 @@ export function AppearanceSection() {
           ))}
         </div>
         <p className="text-xs text-[hsl(var(--muted-foreground))]">Used by the key picker and the editor's key list.</p>
+      </div>
+
+      <div className="space-y-2">
+        <p className="text-sm font-medium text-[hsl(var(--foreground))]">Page width</p>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Page width">
+          {PAGE_WIDTHS.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => {
+                setPageWidth(option.value);
+                persist({ pageWidth: option.value });
+              }}
+              className={choiceClass(pageWidth === option.value)}
+              aria-pressed={pageWidth === option.value}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+        <p className="text-xs text-[hsl(var(--muted-foreground))]">
+          Centered keeps every page in one reading column. Full width uses the whole screen on a computer or tablet.
+        </p>
       </div>
 
       <div className="space-y-3">

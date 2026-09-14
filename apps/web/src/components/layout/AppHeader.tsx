@@ -4,6 +4,8 @@ import { toast } from "sonner";
 import { ThemedLogo } from "@/components/ui/ThemedLogo";
 import { ActionMenu } from "@/components/ui/ActionMenu";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "@/contexts/ThemeContext";
+import { pageWidthClass } from "@/lib/page-width";
 
 function initialsOf(name: string | undefined, email: string | undefined) {
   const source = (name || email || "?").trim();
@@ -18,6 +20,7 @@ function initialsOf(name: string | undefined, email: string | undefined) {
  */
 export function AppHeader() {
   const { user, activeOrg, logout } = useAuth();
+  const { pageWidth } = useTheme();
   const navigate = useNavigate();
   const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
 
@@ -29,7 +32,8 @@ export function AppHeader() {
 
   return (
     <header className="print-hidden sticky top-0 z-20 border-b border-[hsl(var(--border))] bg-[hsl(var(--card))]/95 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-3xl items-center gap-2 px-3 sm:px-6">
+      {/* Same width as the page below, so the logo lines up with the content. */}
+      <div className={`mx-auto flex h-14 ${pageWidthClass(pageWidth)} items-center gap-2 px-3 sm:px-6`}>
         <Link to="/songs" className="flex items-center gap-2 font-brand text-lg text-[hsl(var(--foreground))]" aria-label="VPC Music home">
           <ThemedLogo className="h-8 w-8 rounded-md" alt="" />
           <span>VPC Music</span>

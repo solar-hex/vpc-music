@@ -9,6 +9,7 @@ const mockLogout = vi.fn();
 const mockNavigate = vi.fn();
 let mockAuthValue: any;
 let mockConnectivityValue: any;
+let mockPageWidth: "centered" | "full" | undefined;
 
 vi.mock("@/contexts/AuthContext", () => ({
   useAuth: () => mockAuthValue,
@@ -19,7 +20,7 @@ vi.mock("@/contexts/ConnectivityContext", () => ({
 }));
 
 vi.mock("@/contexts/ThemeContext", () => ({
-  useTheme: () => ({ resolvedTheme: "dark", toggleTheme: vi.fn() }),
+  useTheme: () => ({ resolvedTheme: "dark", toggleTheme: vi.fn(), pageWidth: mockPageWidth }),
 }));
 
 vi.mock("react-router-dom", async () => {
@@ -53,6 +54,31 @@ describe("AppShell", () => {
       logout: mockLogout,
     };
     mockConnectivityValue = { isOnline: true, syncingOfflineEdits: false, pendingOfflineEditCount: 0 };
+    mockPageWidth = "centered";
+  });
+
+  describe("page width", () => {
+    const headerRow = () => screen.getByRole("link", { name: /vpc music home/i }).parentElement as HTMLElement;
+
+    it("centres the page and the header on one column by default", () => {
+      renderShell();
+      expect(screen.getByRole("main")).toHaveClass("max-w-3xl");
+      expect(headerRow()).toHaveClass("max-w-3xl");
+    });
+
+    it("spans the screen, header included, when the account chose full width", () => {
+      mockPageWidth = "full";
+      renderShell();
+      expect(screen.getByRole("main")).toHaveClass("max-w-none");
+      expect(screen.getByRole("main")).not.toHaveClass("max-w-3xl");
+      expect(headerRow()).toHaveClass("max-w-none");
+    });
+
+    it("stays centered when no width has been chosen", () => {
+      mockPageWidth = undefined;
+      renderShell();
+      expect(screen.getByRole("main")).toHaveClass("max-w-3xl");
+    });
   });
 
   it("renders the page inside a header that links home to the song list", () => {

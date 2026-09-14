@@ -1,6 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Building2 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "@/contexts/ThemeContext";
+import { pageWidthClass } from "@/lib/page-width";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { AppHeader } from "./AppHeader";
 import { OfflineBanner } from "./OfflineBanner";
@@ -12,6 +14,7 @@ import { OfflineBanner } from "./OfflineBanner";
  */
 export function AppShell() {
   const { user, activeOrg } = useAuth();
+  const { pageWidth } = useTheme();
   const location = useLocation();
   const noTeam = Boolean(user) && !activeOrg;
   const showNoTeam = noTeam && !location.pathname.startsWith("/settings");
@@ -20,7 +23,7 @@ export function AppShell() {
     <div className="flex min-h-dvh flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       <AppHeader />
       <OfflineBanner />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-3 py-3 sm:px-6 sm:py-4">
+      <main className={`mx-auto w-full ${pageWidthClass(pageWidth)} flex-1 px-3 py-3 sm:px-6 sm:py-4`}>
         {showNoTeam ? (
           <EmptyState
             icon={Building2}

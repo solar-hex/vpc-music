@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
+import { isPageWidth, type PageWidth } from "@/lib/page-width";
 
 export type Theme = "dark" | "light" | "system";
 export type ResolvedTheme = "dark" | "light";
@@ -8,6 +9,7 @@ interface AppearanceSettings {
   chordColor: string;
   secondaryChordColor: string;
   keyNotation: KeyNotation;
+  pageWidth: PageWidth;
 }
 
 interface ThemeContextValue {
@@ -17,11 +19,14 @@ interface ThemeContextValue {
   secondaryChordColor: string;
   /** How the 12 keys are spelled in pickers and selects (F# vs Gb). */
   keyNotation: KeyNotation;
+  /** Centered reading column, or the whole screen. */
+  pageWidth: PageWidth;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
   setChordColor: (color: string) => void;
   setSecondaryChordColor: (color: string) => void;
   setKeyNotation: (notation: KeyNotation) => void;
+  setPageWidth: (width: PageWidth) => void;
   /** Back to the stock chord colours. */
   resetChordColors: () => void;
 }
@@ -36,6 +41,7 @@ const DEFAULT_APPEARANCE: AppearanceSettings = {
   chordColor: DEFAULT_CHORD_COLOR,
   secondaryChordColor: DEFAULT_SECONDARY_CHORD_COLOR,
   keyNotation: "flats",
+  pageWidth: "centered",
 };
 
 export function normalizeHexColor(value: string, fallback: string): string {
@@ -60,6 +66,7 @@ function readStoredAppearance(): AppearanceSettings {
         DEFAULT_APPEARANCE.secondaryChordColor,
       ),
       keyNotation: parsed.keyNotation === "sharps" ? "sharps" : "flats",
+      pageWidth: isPageWidth(parsed.pageWidth) ? parsed.pageWidth : DEFAULT_APPEARANCE.pageWidth,
     };
   } catch {
     return DEFAULT_APPEARANCE;
@@ -78,7 +85,8 @@ function resolve(theme: Theme): ResolvedTheme {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 /**
- * Theme (light / dark / system), the two chord colours and the key spelling.
+ * Theme (light / dark / system), the two chord colours, the key spelling and
+ * the page width.
  * Everything is kept on the device so it applies before sign-in; the same
  * values live in the account preferences so they follow the person to the
  * next device (see PreferencesSync).
@@ -134,6 +142,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const setKeyNotation = useCallback((notation: KeyNotation) => {
     setAppearance((current) => ({ ...current, keyNotation: notation }));
   }, []);
+  const setPageWidth = useCallback((width: PageWidth) => {
+    setAppearance((current) => ({ ...current, pageWidth: width }));
+  }, []);
   const resetChordColors = useCallback(() => {
     setAppearance((current) => ({
       ...current,
@@ -150,11 +161,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         chordColor: appearance.chordColor,
         secondaryChordColor: appearance.secondaryChordColor,
         keyNotation: appearance.keyNotation,
+        pageWidth: appearance.pageWidth,
         setTheme,
         toggleTheme,
         setChordColor,
         setSecondaryChordColor,
         setKeyNotation,
+        setPageWidth,
         resetChordColors,
       }}
     >

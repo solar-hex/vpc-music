@@ -16,6 +16,7 @@ const themeSetters = {
   setTheme: vi.fn(),
   toggleTheme: vi.fn(),
   setKeyNotation: vi.fn(),
+  setPageWidth: vi.fn(),
   setChordColor: vi.fn(),
   setSecondaryChordColor: vi.fn(),
   resetChordColors: vi.fn(),
@@ -25,6 +26,7 @@ vi.mock("@/contexts/ThemeContext", () => ({
     theme: "dark",
     resolvedTheme: "dark",
     keyNotation: "flats",
+    pageWidth: "centered",
     chordColor: "#ca9762",
     secondaryChordColor: "#8b5cf6",
     ...themeSetters,
@@ -211,6 +213,16 @@ describe("SettingsPage", () => {
       fireEvent.click(screen.getByRole("button", { name: "Sharps (F#)" }));
       expect(themeSetters.setKeyNotation).toHaveBeenCalledWith("sharps");
       expect(mockUpdateSettings).toHaveBeenCalledWith({ keyNotation: "sharps" });
+    });
+
+    it("keeps pages centered by default and lets the account choose full width", () => {
+      renderPage();
+      expect(screen.getByRole("group", { name: "Page width" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Centered" })).toHaveAttribute("aria-pressed", "true");
+      expect(screen.getByRole("button", { name: "Full width" })).toHaveAttribute("aria-pressed", "false");
+      fireEvent.click(screen.getByRole("button", { name: "Full width" }));
+      expect(themeSetters.setPageWidth).toHaveBeenCalledWith("full");
+      expect(mockUpdateSettings).toHaveBeenCalledWith({ pageWidth: "full" });
     });
 
     it("changes and resets the chord colours", () => {
