@@ -37,6 +37,15 @@ describe("bar grid rendering", () => {
     expect(within(grid).getByText("Gm")).toBeInTheDocument(); // Em → Gm
   });
 
+  it("lets a busy bar wrap inside its own cell instead of printing over the next", () => {
+    // "| Dbmaj7 Eb/G / Ab/C | Bb/D / / / |" overprinted "Ab/C" onto "Bb/D" on
+    // a phone. jsdom does not lay out, so this pins the classes that allow it.
+    render(<ChordProRenderer content={"| Dbmaj7 Eb/G / Ab/C | Bb/D / / / |"} songKey="Eb" />);
+    const [busy] = screen.getAllByTestId("bar-cell");
+    expect(within(busy).getByText("Ab/C")).toBeInTheDocument();
+    expect(busy).toHaveClass("flex", "flex-wrap", "min-w-0");
+  });
+
   it("hides bar rows entirely in lyrics-only view", () => {
     render(<ChordProRenderer content={CHART} showChords={false} />);
     expect(screen.queryByTestId("bar-grid")).not.toBeInTheDocument();

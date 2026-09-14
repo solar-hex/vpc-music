@@ -150,20 +150,24 @@ function BarGrid({
           {Array.from({ length: columns }, (_, ci) => {
             const tokens = row.measures[ci];
             return (
+              // A busy bar ("Dbmaj7 Eb/G / Ab/C") can be wider than its equal
+              // share of the row. Its chords wrap inside the cell rather than
+              // printing over the next bar, so the bars stay lined up.
               <div
                 key={ci}
-                className={`border-l border-[hsl(var(--border))] px-2 py-0.5 ${
+                data-testid="bar-cell"
+                className={`flex min-w-0 flex-wrap gap-x-2 border-l border-[hsl(var(--border))] px-2 py-0.5 ${
                   ci === columns - 1 ? "border-r" : ""
                 } ${tokens === undefined ? "invisible" : ""}`}
               >
                 {tokens?.length
                   ? tokens.map((token, ti) =>
                       token.type === "chord" ? (
-                        <span key={ti} className="song-primary-chord font-bold mr-2 last:mr-0">
+                        <span key={ti} className="song-primary-chord font-bold">
                           {nashville && songKey ? chordToNashville(token.value, songKey) : token.value}
                         </span>
                       ) : (
-                        <span key={ti} className="text-[hsl(var(--muted-foreground))] mr-2 last:mr-0">
+                        <span key={ti} className="text-[hsl(var(--muted-foreground))]">
                           {token.value}
                         </span>
                       ),
