@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 108}
 {time: 4/4}
-{x_verified: number chart, 100% of 56 chords}
+{x_verified: number chart, 100% of 70 chords}
 {x_theme: praise, healing, worship}
 {x_source: pdf:UPCI Music/2020/Tell of Your Glory/Tell-of-Your-Glory-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FTell%20of%20Your%20Glory}
@@ -19,42 +19,61 @@
 {x_album: Glory of Eden}
 {x_writers: David Binion, Aaron Lindsey}
 
-{comment: Intro Verse 3}
-Bb / / / | Bbsus / / / | Bb / / / | Bbsus / / / | Bb
-Glory to the One who brought us healing
-Verse 1                                              [Gm]We have come to crown You with our singing
-[Bb]Glory to the God of all creation                          [Eb]Every tongue and every nation
-[Gm]Glory to the Lamb who came to save us                 [Ebm]We will bow in adoration [Bb]Jesus
+{comment: Intro}
+| Bb / / / | Bbsus / / / | Bb / / / | Bbsus / / / |
+
+{comment: Verse 1}
+[Bb]Glory to the God of all creation
+[Gm]Glory to the Lamb who came to save us
 The [Eb]One who was and is to come
-S[Ebm]eated high, enthroned upon our [Bb]praise[Chorus]s
+S[Ebm]eated high, enthroned upon our [Bb]praises
+
+{comment: Verse 2}
+[Bb]Worthy is the One who gave us freedom
+[Gm]Inviting us to come into Your Kingdom
+[Eb]One day in Your house is better
+[Ebm]We belong to You forever J[Bb]esus
+
+{comment: Chorus}
+[Cm]W[Bb/D]e will [Eb]shout Your n[F]ame
+[Gm]If we had a thousand tongues
+To s[Eb]ing Your pr[F]aises
+[Gm]We would use them every one
+To t[Eb]ell of Your gr[F]eatness
+[Gb]Tell of Your gl[Ab]ory[Bb][Bbsus]
+
+{comment: Verse 3}
+[Bb]Glory to the One who brought us healing
+[Gm]We have come to crown You with our singing
+[Eb]Every tongue and every nation
+[Ebm]We will bow in adoration J[Bb]esus
+
+{comment: Chorus}
 
 {comment: Interlude}
-Verse 2 ||: (Bb) / / / | Gm / / / | Ab / / / | Eb / / / :||
-[Bb]Worthy is the One who gave us freedom
-Gm Bridge (Unison)
-Inviting us to come into Your Kingdom Bb Gm
-Eb Jesus, Jesus Nobody like You
-One day in Your house is better Ab Eb
-Ebm Bb Jesus, Jesus, No one beside You
-We belong to You forever Jesus Bb Gm
-Jesus, Jesus No one above You
-Chorus                                              J[Ab]esus, Jesus,[Eb]     Oh how we love You
-[Cm]W[Bb/D]e will [Eb]shout Your [F]name
-Gm Bridge (Parts) à Bridge (Flipped Parts)
-If we had a thousand tongues
-To s[Eb]ing Your pr[F]aises                                   Chorus
-[Gm]We would use them every one                               [Cm]W[Bb/D]e will [Eb]shout Your [F]name
-To t[Eb]ell of Your g[F]reatness                               [Gm]If we had a thousand tongues
-T[Gb]ell of Your gl[Ab]ory[Bb] [Bbsus]                                     To s[Eb]ing Your pr[F]aises
+||: (Bb) / / / | Gm / / / | Ab / / / | Eb / / / :||
+
+{comment: Bridge}
+{ci: Unison}
+J[Bb]esus, Jesus[Gm]    Nobody like You
+J[Ab]esus, Jesus,[Eb]    No one beside You
+J[Bb]esus, Jesus[Gm]    No one above You
+J[Ab]esus, Jesus,[Eb]    Oh how we love You
+Bridge (Parts) à Bridge
+{ci: Flipped Parts}
+
+{comment: Chorus}
+[Cm]W[Bb/D]e will [Eb]shout Your n[F]ame
+[Gm]If we had a thousand tongues
+To s[Eb]ing Your pr[F]aises
 [Gm]We would use them every one
-To t[Eb]ell of Your g[F]reatness
-[Gb] [Ab] [Bb] [Bbsus]
+To t[Eb]ell of Your gr[F]eatness
+[Gb]Tell of Your gl[Ab]ory[Bb][Bbsus]
 
 {comment: Refrain}
-J[Bb]esus, Jesus[Gm]         J[Ab]esus, Jesu[Eb]s
-J[Bb]esus, Jesus[Gm]         J[Ab]esus, Jesu[Eb]s
-{ci: Eb}
-Oh how we love You
+J[Bb]esus, Jesus[Gm]    J[Ab]esus, Jesus[Eb]
+J[Bb]esus, Jesus[Gm]    J[Ab]esus, Jesus[Eb]
+[(Eb)]Oh how we love You
 
 {comment: Tag}
 [Bb]O[Gm]h[Ab/C] [Eb]how we love You

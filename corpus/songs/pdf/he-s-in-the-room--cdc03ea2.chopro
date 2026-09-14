@@ -17,46 +17,58 @@
 {x_album: He’s In The Room (Single)}
 {x_writers: David Jennings}
 
-He’s In The Room Bethany Jennings, Savannah McKee
+{comment: Intro}
+| Cm7 / / / | Ab2 / / / | Eb2 / / / | Bb / / / |
 
-{comment: Intro Bridge 2}
-| Cm7 / / / | Ab2 / / / | Eb2 / / / | Bb / / / | Ab2 Bb
-Every life can be restored
-Verse Cm7 Gm7
-Cm7 Ab2 When You fill the room, God fill the room
-Don’t let our praise be empty space Ab2 Bb
-Eb2 Bbsus Bb Angels are in every corner
-Come abide in this place Cm7 Gm7
-Cm7 Ab2 When You fill the room, God fill the room
-Every heart, You are transforming Ab2 Fm7
-Eb Bb Everything that’s dead comes alive
-Come and move, have Your glory Cm7 Bb
-When You fill the room, God fill the room
-[Chorus]Eb                Bb                    [Ab2]Chains will break and demons will ru[Fm7]n
-Darkness trembles, mountains crumble Cm7 Bb
-Cm7 Ab2 When You fill the room, God fill the room
-When You draw near to us, You draw near to us
-Eb Bb Tag (2x)
-Strongholds breaking, destinies changing Ab2 Fm7
-Cm7 Ab2 He’s in the room, He’s in the room
-When You draw near to us, You draw near to us Cm7 Bb
-He’s in the room, He’s in the room
+{comment: Verse}
+Don’t let our p[Cm7]raise be empty s[Ab2]pace
+Come ab[Eb2]ide in this pl[Bbsus]ace[Bb]
+Every h[Cm7]eart, You are transf[Ab2]orming
+Come and m[Eb]ove, have Your gl[Bb]ory
+
+{comment: Chorus}
+Darkness tre[Eb]mbles, mountains cr[Bb]umble
+When You draw [Cm7]near to us, You draw [Ab2]near to us
+Strongholds br[Eb]eaking, destinies ch[Bb]anging
+When You draw [Cm7]near to us, You draw [Ab2]near to us
 
 {comment: Interlude}
-| Cm7 / / / | Ab2 / / / | Eb2 / / / | Bb / / / | Interlude (2x)
-| Ab2 / / / | Fm7 / / / | Cm7 / / / | Bb / / / |
-Verse > Chorus (2x)
+| Cm7 / / / | Ab2 / / / | Eb2 / / / | Bb / / / |
+Verse > Chorus
+{ci: 2x}
 
-{comment: Outro}
-Interlude (2x) |: Ab2 / / / | Bb / / / | Cm7 / / / | Gm9 / / / :| Ab2 / / / |
+{comment: Interlude}
+{ci: 2x}
 | Ab2 / / / | Bb / / / | Cm7 / / / | Gm7 / / / |
 
 {comment: Bridge 1}
-[Ab2]Every life can be rest[Bb]ored
-When You fill the r[Cm7]oom, God fill the [Gm7]room
+[Ab2]Every life can be resto[Bb]red
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
 [Ab2]Angels are in every co[Bb]rner
-When You fill the r[Cm7]oom, God fill the [Gm7]room
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
 [Ab2]Everything that’s dead comes ali[Bb]ve
-When You fill the r[Cm7]oom, God fill the [Gm7]room
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
 [Ab2]Chains will break and demons will ru[Bb]n
-When You fill the r[Cm7]oom, God fill the [Gm7]room
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
+
+{comment: Bridge 2}
+[Ab2]Every life can be resto[Bb]red
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
+[Ab2]Angels are in every co[Bb]rner
+When You fill the r[Cm7]oom, God fill the ro[Gm7]om
+[Ab2]Everything that’s dead comes ali[Fm7]ve
+When You fill the r[Cm7]oom, God fill the ro[Bb]om
+[Ab2]Chains will break and demons will ru[Fm7]n
+When You fill the r[Cm7]oom, God fill the ro[Bb]om
+
+{comment: Tag}
+{ci: 2x}
+He’s in the r[Ab2]oom, He’s in the [Fm7]room
+He’s in the r[Cm7]oom, He’s in the r[Bb]oom
+
+{comment: Interlude}
+{ci: 2x}
+| Ab2 / / / | Fm7 / / / | Cm7 / / / | Bb / / / |
+
+{comment: Outro}
+|: Ab2 / / / | Bb / / / | Cm7 / / / | Gm9 / / / :| Ab2 / / / |

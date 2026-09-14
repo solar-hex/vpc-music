@@ -3,8 +3,8 @@
 {key: A}
 {tempo: 132}
 {time: 4/4}
-{x_verified: number chart, 94% of 62 chords}
-{x_theme: victory, praise, faith-trust}
+{x_verified: number chart, 95% of 78 chords}
+{x_theme: victory, faith-trust, praise}
 {x_source: pdf:UPCI Music/2021/Silence the Roar/Silence-the-Roar-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FSilence%20the%20Roar}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/silence-the-roar/audio/alto.mp3}
@@ -19,74 +19,103 @@
 {x_album: Fearless}
 {x_writers: Laura Payne, Cam Cook, Kevin Howard}
 
-Silence the Roar Alayna McClintock, Bethany Marsh,
-Laura Payne, Cam Cook, Kevin Howard
+{comment: Intro}
+| A / / / | / / / / | / / / / | / / / / |
+| D / / / | / / / / | / / / / | / / / / |
 
-{comment: Intro Interlude}
-| A / / / | / / / / | / / / / | / / / / | | F#m7 / / / | / / A / | D / / / | / / / / | Bm7 / / / | / / / / |
-| D / / / | / / / / | / / / / | / / / / | | C#m7/ / / | / / / / |
-
-{comment: Verse 1 Bridge}
-{ci: Solo}
-[A]In the chaos cities crumble                           [F#m7]Silence the roar of the enem[A]y
-Truth is hidden by the ruble D
-G/D D G/D D Fill the earth with the sound of Your victory
-Hope is fading in the fire Bm7
-A D / / / Give me faith for the fight I cannot see
-And roar is growing louder C#m7
-Angel armies fight for me
+{comment: Verse 1}
+[A]In the chaos cities crumble
+Truth is hidden by the ruble
+[G/D]Hope is [D]fading in t[G/D]he fir[D]e
+| A D / / /
+And roar is growing louder
 
 {comment: Interlude}
-| A / / G/A | / / D/A / | A / / / G/A | / / D/A / | Bridge (men sing 8vb)
-Verse 2                                             [F#m7]Silence the roar of the enemy
-[A]In the ashes in the shaking                           Fill the[D] earth with the sound of Your victory
-We are here God we are praying Bm7
-D G/D D G/D D Give me faith for the fight I cannot see
-Make us fear - less in these last days C#m7
-A Angel armies fight for me
-We’ll see victory for Your name sake
-Bm7 A/C# D (B-C#-D-E) Gmaj9 Bridge (Unison)
-Chorus                                             [F#m7]Silence the roar of the e[F#m7]nem[E]y
-[F#m9]We shout Your [A2]praise                                 [A/C#]Fill the[D] earth with the sound of Your victory
-And the dar[D2]kness will[Bm7] shake                           [A/C#]Give me f[Bm7]aith for the fight I cannot see
-[F#m9]Fear cannot [Em7]stand                                    [C#m7]Angel armies fight for m[E#dim7]e
-At the so[D2]und of You[Gmaj7]r name                            [F#m7]Silence the roar of the ene[Em11]m[A9]y
-Interlude                                            Fill the[Dmaj9] earth with the sound of Your victor[F#7(#9#5)]y
-||: A / / Em7 | / / Em9 / | D2 / / / Gmaj7 | / / / / :|| Bm7
-Give me faith for the fight I cannot see
-Verse 2 (Unison) C#m7 /B /A /F#
-Angel armies fight for me
+| A / / G/A | / / D/A / | A / / / G/A | / / D/A / |
 
-{comment: Chorus}
-{ci: 2xs}
-Silence the Roar Alayna McClintock, Bethany Marsh,
-Laura Payne, Cam Cook, Kevin Howard
-
-{comment: Turnaround Ending}
-(C#-D-E-F#) Emaj9 Dmaj9 / / / / | / / / / | | F#m9 / / / | / / A2 / | D2 / / / | / / / / |
-Vamp | Bm7 / / / | / / / / | C#m7 / / / | / / / E#dim7 |
-[A]We shout Your [G/A]praise[A] [G/A] [Gmaj7/A]                               | F#m9 / / / / | / Em11 A9 / | Dmaj9 / / / |
-And the [A]darkness will [G/A]shake[A] [G/A] [Gmaj7/A]                         | / / / F#7(#9#5) | Bm7 / / / | / / / / |
-[A]Fear cannot st[G/A]and[A] [G/A] [Gmaj7/A]                                  C#m7       /B  /A /F#    F#m7
-A G/A A G/A Gmaj7/A (cut) Angel armies fight for me
-At the sound of Your name
+{comment: Verse 2}
+[A]In the ashes in the shaking
+We are here God we are praying
+[D]Make us [G/D]fear - [D]less in these[G/D] last [D]days
+[A]We’ll see victory for Your name sake
+[Bm7] [A/C#] [D] [(B-C#-D-E)] [Gmaj9]
 
 {comment: Chorus}
 [F#m9]We shout Your [A2]praise
-And the dar[D2]kness will[Bm7] shake
+And the dar[D2]kness will [Bm7]shake
 [F#m9]Fear cannot [Em7]stand
-At the so[D2]und of You[Gmaj7]r name
+At the sou[D2]nd of Your[Gmaj7] name
 
-{comment: Outro}
-||: A / / Em7 | / / Em9 / | D2 / / / Gmaj7 | / / / / :|| (cut)
+{comment: Interlude}
+||: A / / Em7 | / / Em9 / | D2 / / / Gmaj7 | / / / / :||
+
+{comment: Verse 2}
+{ci: Unison}
+
+{comment: Chorus}
+{ci: 2xs}
+
+{comment: Interlude}
+| F#m7 / / / | / / A / | D / / / | / / / / | Bm7 / / / | / / / / |
+| C#m7/ / / | / / / / |
 
 {comment: Bridge}
-[F#m7]Silence the roar of the e[F#m7]nem[E]y
-[A/C#]Fill the[D] earth with the sound of Your victory
-[A/C#]Give me f[Bm7]aith for the fight I cannot see
+{ci: Solo}
+[F#m7]Silence the roar of the enemy[A]
+Fill the [D]earth with the sound of Your victory
+Give me [Bm7]faith for the fight I cannot see
+[C#m7]Angel armies fight for me
+
+{comment: Bridge}
+{ci: men sing 8vb}
+[F#m7]Silence the roar of the enemy
+Fill the [D]earth with the sound of Your victory
+Give me [Bm7]faith for the fight I cannot see
+[C#m7]Angel armies fight for me
+
+{comment: Bridge}
+{ci: Unison}
+[F#m7]Silence the roar of the en[F#m7]emy[E]
+[A/C#]Fill the [D]earth with the sound of Your victory
+[A/C#]Give me [Bm7]faith for the fight I cannot see
 [C#m7]Angel armies fight for m[E#dim7]e
-[F#m7]Silence the roar of the ene[Em11]m[A9]y
-Fill the[Dmaj9] earth with the sound of Your victor[F#7(#9#5)]y
-Give me f[Bm7]aith for the fight I cannot see
-C#m7 /B /A /F#
-Angel armies fight for me
+[F#m7]Silence the roar of the ene[Em11]my[A9]
+Fill the [Dmaj9]earth with the sound of Your victor[F#7(#9#5)]y
+Give me [Bm7]faith for the fight I cannot see
+[C#m7]Angel armies [/B]fight [/A]for [/F#]me
+
+{comment: Turnaround}
+| (C#-D-E-F#) Emaj9 Dmaj9 / / / / | / / / / |
+
+{comment: Vamp}
+[A]We shout Your [G/A]praise[A][G/A][Gmaj7/A]
+And the [A]darkness will [G/A]shake[A][G/A][Gmaj7/A]
+[A]Fear cannot sta[G/A]nd[A][G/A][Gmaj7/A]
+At the [A]sound of Your [G/A]name[A][G/A][Gmaj7/A(cut)]
+
+{comment: Chorus}
+[F#m9]We shout Your [A2]praise
+And the dar[D2]kness will [Bm7]shake
+[F#m9]Fear cannot [Em7]stand
+At the sou[D2]nd of Your[Gmaj7] name
+
+{comment: Outro}
+||: A / / Em7 | / / Em9 / | D2 / / / Gmaj7 | / / / / :||
+{ci: cut}
+
+{comment: Bridge}
+[F#m7]Silence the roar of the en[F#m7]emy[E]
+[A/C#]Fill the [D]earth with the sound of Your victory
+[A/C#]Give me [Bm7]faith for the fight I cannot see
+[C#m7]Angel armies fight for m[E#dim7]e
+[F#m7]Silence the roar of the ene[Em11]my[A9]
+Fill the [Dmaj9]earth with the sound of Your victor[F#7(#9#5)]y
+Give me [Bm7]faith for the fight I cannot see
+[C#m7]Angel armies [/B]fight [/A]for [/F#]me
+
+{comment: Ending}
+| F#m9 / / / | / / A2 / | D2 / / / | / / / / |
+| Bm7 / / / | / / / / | C#m7 / / / | / / / E#dim7 |
+| F#m9 / / / / | / Em11 A9 / | Dmaj9 / / / |
+| / / / F#7(#9#5) | Bm7 / / / | / / / / |
+[C#m7]Angel armies [/B]fight [/A]for [/F#]me[F#m7]

@@ -15,47 +15,47 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/noel-christ-is-born/charts/vocals.pdf}
 {x_source_noel_christ_is_born_chord_charttxt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/noel-christ-is-born/source/Noel-Christ-is-Born-chord-charttxt.txt}
 
-Intro Eb7 C13 Db13 D13 Eb13 (repeat 2x) Eb7 F7(b9) Ebsus/C Bb+7(#9)
+{comment: Intro}
+{ci: repeat 2x}
+[Eb7] [C13] [Db13] [D13] [Eb13] [Eb7] [F7(b9)] [Ebsus/C] [Bb+7(#9)]
 
 {comment: Chorus}
-Eb7 /C F7(b9) Bbm7 A13(#11)
-Found Him in a manger in Beth - le – hem
+[Eb7]Found Him in a manger [/C]in [F7(b9)]Beth - le [Bbm7]– hem[A13(#11)]
 Found Him in a manger in swaddling clothes
-[Ab7]We now welcom[C7(#9)]e           [F7(b9)]J[Bb+7]esus the[Ebm7] Lamb
+[Ab7]We now welcom[C7(#9)]e    [F7(b9)]J[Bb+7]esus the [Ebm7]Lamb
 A sign to you the Lord of hosts
-[Eb7]Meek and lowly[Csus/D]         [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel_____[Bb+7(#9)]_
-{ci: Gb-C Ab-A-Gb-Ab-Gb-Eb) G13 Ab13 Bb+7(#9}
-Christ is born
+[Eb7]Meek and lowly[Csus/D]    [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel_____[Bb+7(#9)]_
+Christ is [(Gb-C-Ab-A-Gb-Ab-Gb-Eb)]born[G13][Ab13][Bb+7(#9)]
 
 {comment: Verse}
-[Eb7]Be of good cheer gladne[F7]ss and gr[Gb7]eat jo[G7]y
-[Ab7]The babe in a manger[C7(#9)]         [F7(b9)]is C[Bb+7]hrist the [Ebm7]savior
-[Eb7]Meek and lowly[Csus/D]         [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel_____[Bb+7(#9)]_
-{ci: Gb-C Ab-A-Gb-Ab-Gb-Eb) G13 Ab13 Bb+7(#9}
-Christ is born
+[Eb7]Be of good cheer gladn[F7]ess and g[Gb7]reat jo[G7]y
+[Ab7]The babe in a manger[C7(#9)]    [F7(b9)]is C[Bb+7]hrist the s[Ebm7]avior
+[Eb7]Meek and lowly[Csus/D]    [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ [Ab11]Noel ______ N[B13]oel_____[Bb+7(#9)]_
+Christ is [(Gb-C-Ab-A-Gb-Ab-Gb-Eb)]born[G13][Ab13][Bb+7(#9)]
 [Eb7]Be of good cheer[Eb7]    gladness and great joy
 [Ab7]The babe in a manger[Eb7]   is Christ the savior
-[Eb7]Meek and lowly[Csus/D]         [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel_____[Bb+7(#9)]_
-Christ is bor[Db7]n[C7][B7][Bb7][Gb7][F7][E7]
+[Eb7]Meek and lowly[Csus/D]    [G+7(#9)]oh so [Cm7]holy   [Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel______[Bb+7(#9)]
+Christ is born[Db7][C7][B7][Bb7][Gb7][F7][E7]
 
 {comment: Bridge}
-[Eb7]On this day from Jessie’s rod[Eb7(#9)]       [Ab7]in the city of David[Eb7]  a star was born
+[Eb7]On this day from Jessie’s rod[Eb7(#9)]    [Ab7]in the city of David[Eb7]  a star was born
 Csus/D G+7(#9) Cm9 F Gm7 Fo/Ab F/A Bb Cm7 Bbo/Db Bb+7(#9)
 There appeared a sign in the heaven peace on earth salvation has come
-[Eb7]The angel came said fear not Mar[Eb7(#9)]y      y[Ab7]ou’ve found favo[Abo7]r   w[Ao7]ith the mo[Bo7]st h[Co7]igh God
-[Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel_____[Bb+7(#9)]_
-{ci: Gb-C Ab-A-Gb-Ab-Gb-Eb) Ab/C Db Ab/C /F Bb+7(#9) Bb+7(b9}
-Christ is born
+[Eb7]The angel came said fear not Mar[Eb7(#9)]y    [Ab7]you’ve found favo[Ab°7]r   w[A°7]ith the mo[B°7]st hi[C°7]gh God
+[Gb13]Noel_____ N[Ab11]oel ______ N[B13]oel______[Bb+7(#9)]
+Christ is [(Gb-C-Ab-A-Gb-Ab-Gb-Eb)]born[Ab/C][Db][Ab/C][/F][Bb+7(#9)][Bb+7(b9)]
 
 {comment: Vamp I}
-Eb7 Ab7 Eb7 Ab7 Eb7 Ab7 Eb7 Ab7 (to vamp II Bb+7(#9))
-For unto us a child is born for unto us a son is given (2x)
+[Eb7]For unto [Ab7]us    [Eb7]a child is [Ab7]born[Eb7]    for unto [Ab7]us[Eb7]    a son is g[Ab7]iven
+{ci: to vamp II Bb+7(#9)}
+{ci: 2x}
 
 {comment: Vamp II}
-[Eb7]G[Gb]od[Fm/Ab]  with[Ebm/Bb]  us      [Gb]God[Fm/Ab]  with   [Ebm/Bb]us       [Gb]God[Fm/Ab]  with   [Ebm/Bb]us
-[Eb7]Emanuel C[Gb]hris[Fm/Ab]t Je - [Ebm/Bb]sus       [Gb]Chris[Fm/Ab]t Je - [Ebm/Bb]sus       [Gb]Chri[Fm/Ab]st Je - [Ebm/Bb]sus
-[Eb7]Emanuel[Gb] we[Fm/Ab]  wor - [Ebm/Bb]ship      [Gb]we  [Fm/Ab]wor - [Ebm/Bb]ship      [Gb]we[Fm/Ab]  wor - [Ebm/Bb]ship
-[Eb7]Emanuel  [Gb]God[Fm/Ab]  with[Ebm/Bb]  us       [Gb]God[Fm/Ab]  with[Ebm/Bb]   us       [Gb]Go[Fm/Ab]d  with[Ebm/Bb]   us
+[Eb7]G[Gb]od[Fm/Ab]  with[Ebm/Bb]  us    [Gb]God[Fm/Ab]  with   [Ebm/Bb]us    [Gb]God[Fm/Ab]  with   [Ebm/Bb]us
+[Eb7]Emanuel [Gb]Chri[Fm/Ab]st Je - s[Ebm/Bb]us    [Gb]Chri[Fm/Ab]st Je - s[Ebm/Bb]us    [Gb]Chr[Fm/Ab]ist Je - [Ebm/Bb]sus
+[Eb7]Emanuel [Gb]we[Fm/Ab]  wor - [Ebm/Bb]ship    [Gb]we  [Fm/Ab]wor - [Ebm/Bb]ship    [Gb]we[Fm/Ab]  wor - [Ebm/Bb]ship
+[Eb7]Emanuel  [Gb]God[Fm/Ab]  with[Ebm/Bb]  us    [Gb]God[Fm/Ab]  with[Ebm/Bb]   us    [Gb]Go[Fm/Ab]d  with[Ebm/Bb]   us
 G7 Ab7 A7 Bb7 C7 Db7 D7 [Eb7 Ab7 ]
-E - man - u - el ____________ God with us(repeat 7x)
-[Eb7]Emanuel[Eb13] [E13]             [F13]N[Gb13]oel_____ [Ab11]Noel ______ [B13]Noel______[Bb+7(#9)]       Christ is [Eb7]born
+E - man - u - el ____________ God with us
+{ci: repeat 7x}
+[Eb7]Emanue[Eb13]l[E13]    [F13]N[Gb13]oel_____ [Ab11]Noel ______ N[B13]oel______[Bb+7(#9)]    Christ is [Eb7]born

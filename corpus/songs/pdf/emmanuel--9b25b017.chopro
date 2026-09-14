@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 92}
 {time: 4/4}
-{x_verified: number chart, 91% of 47 chords}
+{x_verified: number chart, 91% of 87 chords}
 {x_theme: christmas, salvation}
 {x_source: pdf:UPCI Music/2020/Emmanuel/Emmanuel-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FEmmanuel}
@@ -22,36 +22,60 @@
 {x_album: Emmanuel (Single)}
 {x_writers: Dustin Clark}
 
-{comment: Intro Chorus 2}
-{ci: 2xs}
-/ / / D Em7 | / / / D/F# G | / / / A/C# D | D Em7 D/F# G A/C# D E/G# A
-/ / / E/G# A | / / / / Em – man – u – el, God is with us
-Verse 1                                              [D]Em – [Em7]man – [D/F#]u – e[G]l,   [A/C#]His n[D]ame,  [E/G#]Je – s[A]us
-So many t[Bm7]hought that He would b[G]e
-D A Bride (Duet)
-Clothed in royalty Em7 G
-Bm7 G Glory to God in the highest
-Living in a castle on a mountain side D A
-D A Glory to God in the highest
-Seated on a throne that touched the sky
-[D]Oh  [Em7]oh     [D/F#]oh   [G]oh   [A/C#]oh  o[D]h    [E/G#]oh ---[A]--              Bridge (Ladies)
-[Em7]Glory to God in the hi[G]ghest
-Verse 2 D A
-Bm7 G Glory to God in the highest
-But He came so meek and mild
-Just a p[D]oor little infant ch[A]ild                             Bridge (All in)
-With a [Bm7]manger as His t[G]hrone                            [Em7]Glory to God in the hi[G]ghest
-And a s[D]table for His[A] home                              [D]Glory to God in the hig[A]hes[D]t[Em7]
-Chorus 1 (2xs) Bridge (3xs)
-D Em7 D/F# G A/C# D E/G# A (Em7) D/F# G A/C# D
-Em – man – u – el, God is with us Glory to God in the highest (and good will)
-[D]Em – [Em7]man – [D/F#]u – e[G]l,   [A/C#]His n[D]ame,  [E/G#]Je – s[A]us            Glory to God in[E/G#] the  h[A]ighes[D]t[Em7]
+{comment: Intro}
+| / / / D Em7 | / / / D/F# G | / / / A/C# D |
+| / / / E/G# A | / / / /
 
-{comment: Verse 3 Chorus 2}
+{comment: Verse 1}
+So many t[Bm7]hought that He would b[G]e
+[D]Clothed in royalt[A]y
+Living in a [Bm7]castle on a mountain [G]side
+Seated on a t[D]hrone that touched the [A]sky
+[D]Oh  [Em7]oh    [D/F#]oh   [G]oh   [A/C#]oh  [D]oh    [E/G#]oh --[A]---
+
+{comment: Verse 2}
+But He [Bm7]came so meek and [G]mild
+Just a [D]poor little infant ch[A]ild
+With a [Bm7]manger as His t[G]hrone
+And a [D]stable for His [A]home
+
+{comment: Chorus 1}
 {ci: 2xs}
-Who could have [Bm7]know that[A/C#] we would [D]see
-The unv[Gmaj7]eiling of a mystery                              [Ending]Em7               G
-Bm7 A/C# D Glory to God in the highest
-From the curse of sin redeemed D A
-Cmaj7 A/C# Glory to God in the highest
-Is every heart that will receive
+[D]Em –[Em7] man [D/F#]– u – [G]el,   [A/C#]God [D]is   [E/G#]with  [A]us
+[D]Em –[Em7] man [D/F#]– u – [G]el,   [A/C#]His n[D]ame,  [E/G#]Je – s[A]us
+
+{comment: Verse 3}
+Who could have [Bm7]know that [A/C#]we would [D]see
+The un[Gmaj7]veiling of a mystery
+From the[Bm7] curse [A/C#]of sin re[D]deemed
+Is every[Cmaj7] heart that will re[A/C#]ceive
+
+{comment: Chorus 2}
+{ci: 2xs}
+[D]Em –[Em7] man [D/F#]– u – [G]el,   [A/C#]God [D]is   [E/G#]with  [A]us
+[D]Em –[Em7] man [D/F#]– u – [G]el,   [A/C#]His n[D]ame,  [E/G#]Je – s[A]us
+Bride (Duet)
+[Em7]Glory to God in the hi[G]ghest
+[D]Glory to God in the hig[A]hest
+
+{comment: Bridge}
+{ci: Ladies}
+[Em7]Glory to God in the hi[G]ghest
+[D]Glory to God in the hig[A]hest
+
+{comment: Bridge}
+{ci: All in}
+[Em7]Glory to God in the hi[G]ghest
+[D]Glory to God in the hig[A]hest[D][Em7]
+
+{comment: Bridge}
+{ci: 3xs}
+[(Em7)]Glory to God in[D/F#] the  [G]highest  (and g[A/C#]ood wi[D]ll)
+Glory to God in[E/G#] the  [A]highes[D]t[Em7]
+
+{comment: Chorus 2}
+{ci: 2xs}
+
+{comment: Ending}
+[Em7]Glory to God in the hi[G]ghest
+[D]Glory to God in the hig[A]hest

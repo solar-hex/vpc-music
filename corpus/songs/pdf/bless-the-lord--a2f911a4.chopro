@@ -3,8 +3,8 @@
 {key: F}
 {tempo: 78}
 {time: 4/4}
-{x_verified: number chart, 100% of 47 chords}
-{x_theme: praise, worship}
+{x_verified: number chart, 100% of 69 chords}
+{x_theme: worship, praise}
 {x_source: pdf:UPCI Music/2020/Bless The Lord/Bless-the-Lord-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FBless%20The%20Lord}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-the-lord/audio/alto.m4a}
@@ -18,53 +18,73 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/bless-the-lord/charts/vocals.pdf}
 {x_album: It’s Not Over}
 
-Intro Eb
-F / / / Eb | / / / / Bb/D | / / / / F | / / Eb Bb/D | I will choose to worship.
-F / / / Eb | / / / / Bb/D | / / F/C Bb F | / / / / |       No [Bb/D]matter what my circumstance,
-You’re [F]good[Eb].[Bb]
+{comment: Intro}
+| F / / / Eb | / / / / Bb/D | / / / / F | / / Eb Bb/D |
+| F / / / Eb | / / / / Bb/D | / / F/C Bb F | / / / / |
 
 {comment: Chorus}
 {ci: Solo}
-[F]Bless the Lord, oh my s[Eb/F]oul,                           Verse (men sing 8vb)
+[F]Bless the Lord, oh my [Eb/F]soul,
 bless the Lord, oh my [Bb/F]soul,
-F Chorus (Parts)
-bless the Lord, oh my soul. F Eb/C
-F Eb Bless the Lord, oh my soul,
-Bless the Lord, oh my soul, Bb/D
-Bb/D bless the Lord, oh my soul,
-bless the Lord, oh my soul, F
-F Eb Bb bless the Lord, oh my soul.
-bless the Lord, oh my soul. F Eb
-Bless the Lord, oh my soul,
-Chorus (men sing 8vb)                                bless the Lord, oh my soul[Bb/D],
-[F]Bless the Lord, oh my s[Eb/F]oul,                           bless the Lord, oh my s[F]oul[Eb].[Bb]
+bless the Lord, oh my [F]soul.
+[F]Bless the Lord, oh my [Eb]soul,
+bless the Lord, oh my [Bb/D]soul,
+bless the Lord, oh my [F]soul.[Eb][Bb]
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[F]Bless the Lord, oh my [Eb/F]soul,
 bless the Lord, oh my [Bb/F]soul,
-bless the Lord, oh my s[F]oul.                             Verse (Parts) 2xs
-[F]Bless the Lord, oh my s[Eb]oul,                           I wil[F]l choose to bless You,
-bless the Lord, oh my [Bb/D]soul,                             I wil[Eb]l choose to praise You.
-bless the Lord, oh my s[F]oul.                             No [Bb/D]matter what my circumstance,
+bless the Lord, oh my [F]soul.
+[F]Bless the Lord, oh my [Eb]soul,
+bless the Lord, oh my [Bb/D]soul,
+bless the Lord, oh my [F]soul.
+
+{comment: Verse}
+{ci: Solo}
+I will [F]choose to bless You,
+I will [Eb]choose to praise You.
+No [Bb/D]matter what my circumstance, You’re [F]good.
+I will [F]choose to honor
+I will [Eb]choose to worship.
+No [Bb/D]matter what my circumstance,
+You’re [F]good.[Eb][Bb]
+
+{comment: Verse}
+{ci: men sing 8vb}
+
+{comment: Chorus}
+{ci: Parts}
+[F]Bless the Lord, oh my so[Eb/C]ul,
+bless the Lord, oh my so[Bb/D]ul,
+bless the Lord, oh my sou[F]l.
+[F]Bless the Lord, oh my sou[Eb]l,
+bless the Lord, oh my sou[Bb/D]l,
+bless the Lord, oh my [F]soul.[Eb][Bb]
+Verse (Parts)
+{ci: 2xs}
+I will [F]choose to bless You,
+I will [Eb]choose to praise You.
+No [Bb/D]matter what my circumstance,
 You’re [F]good[Eb].[Bb]
-Verse (Solo) F
-F I will choose to honor
-I will choose to bless You, Eb
-Eb I will choose to worship.
-I will choose to praise You. Bb/D
-Bb/D F No matter what my circumstance,
-No matter what my circumstance, You’re good. F (C-D-F-G)
-F You’re good.
-I will choose to honor
-Bridge 2xs
-[F]You’re good,[Eb]      You’re good,
+I will [F]choose to honor
+I will [Eb]choose to worship.
+No [Bb/D]matter what my circumstance,
+You’re [F]good.[(C-D-F-G)]
+Bridge
+{ci: 2xs}
+[F]You’re good,[Eb]    You’re good,
 No matter [Bb/D]what my circumstance, You’re go[F]od.
-Bridge (Flipped Parts) 2xs
-[F]You’re good,[Eb]      You’re good,
+Bridge (Flipped Parts)
+{ci: 2xs}
+[F]You’re good,[Eb]    You’re good,
 [Bb/D]No matter what my circumstance, You’re [F]good.
 
 {comment: Chorus}
 {ci: Flipped Parts}
-[F]Bless the Lord, oh my [Eb/C]soul,
+[F]Bless the Lord, oh my[Eb/C] soul,
 bless the Lord, oh my [Eb]soul,
-bless the Lord, oh my s[F]oul.
-[F]Bless the Lord, [F13]oh [E13]my so[Eb13]ul,
-bless the Lord,[Ab13] oh my[A13] sou[Bb13]l,
+bless the Lord, oh my [F]soul.
+[F]Bless the Lord, [F13]oh [E13]my s[Eb13]oul,
+bless the Lord,[Ab13] oh m[A13]y sou[Bb13]l,
 bless the Lord[Eb13], oh m[E13]y s[F13]oul.

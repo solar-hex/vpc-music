@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 113}
 {time: 4/4}
-{x_verified: number chart, 99% of 93 chords}
+{x_verified: number chart, 99% of 113 chords}
 {x_theme: grace-mercy, praise, testimony}
 {x_source: pdf:UPCI Music/2024/I'll Sing About Jesus/Ill-Sing-About-Jesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FI'll%20Sing%20About%20Jesus}
@@ -19,72 +19,98 @@
 {x_album: I’ll Sing About Jesus (Single)}
 {x_writers: Sean Hill, Angie Pearson}
 
-{comment: Intro Bridge 1}
-{ci: cont.}
-| Bb / / / | Bbsus / / / | Bb / / / | Bbsus / / / | Gm F Bb
-I’m danc - ing again
-Verse 1 Bb
-Bb He brought me out of my worry
-When I think about where I’ve been Bbsus
-Oh the pit I was living in Brought me out of my pain
-How h[Gm7]ard He f[F/A]ought to [Bb]love me                           He [Bb]brought me out of my sadness
-Rede[Eb]mption is my s[Fadd4]tory                                  I’m [Gm]laugh - [F]ing [Bb]again
+{comment: Intro}
+| Bb / / / | Bbsus / / / | Bb / / / | Bbsus / / / |
 
-{comment: Chorus Bridge 1}
-I will[Eb] sing, I’ll sing about [Bb]Jesus                            He b[Bb/D]rought me out of my sorrow
-Sing about His g[Gm7]oodness and all He’s d[Fadd4]one                 [Eb]Brought me out of my shame
-I will[Eb] sing, I’ll sing about [Bb]Jesus                            He [Gm]brought me out of my mourning
-Sing about His me[Gm7]rcy, I can’t ou[Fadd4]trun                       I’m [Gm]danc - [F]ing [Bb]again
-I will[Eb] tes - ti[F] - fy with m[Bb/D]y hands lifted[Eb] high                   He b[Bb/D]rought me out of my worry
-I’ll sing[F], sing about [Bb]Jesus                                 [Eb]Brought me out of my pain
-Interlude                                              He [Gm]brought me out of my sadness
-| (Bb) / / / | Bbsus / / / | Bb / / / | Bbsus / / / | Gm F Bb
-I’m laugh - ing again
+{comment: Verse 1}
+When I t[Bb]hink about where I’ve been
+Oh the pit I was living in
+How [Gm7]hard He [F/A]fought to l[Bb]ove me
+Red[Eb]emption is my s[Fadd4]tory
+
+{comment: Chorus}
+I will [Eb]sing, I’ll sing about Je[Bb]sus
+Sing about His g[Gm7]oodness and all He’s d[Fadd4]one
+I will [Eb]sing, I’ll sing about Je[Bb]sus
+Sing about His m[Gm7]ercy, I can’t ou[Fadd4]trun
+I will [Eb]tes - ti - f[F]y with my [Bb/D]hands lifted [Eb]high
+I’ll sing, s[F]ing about J[Bb]esus
+
+{comment: Interlude}
+| (Bb) / / / | Bbsus / / / | Bb / / / | Bbsus / / / |
 
 {comment: Verse 2}
-Bb Bridge 2
-When I look at where I am now Bb/D Eb
-Oh, I see how He brought me out He broke me out of my darkness
-His [Gm7]grace that [F/A]now de[Bb]fines me                            [F]Broke me out of my [Gm]chains
-Is w[Eb]hat rewrites my [Fadd4]story                                 He [Ab]broke me out of depression
-This i[Eb/G]s my test[F/A]imony                                     I’m [Gm]shout - [F/A]ing  a[Bb]gain
+When I l[Bb]ook at where I am now
+Oh, I see how He brought me out
+His [Gm7]grace that n[F/A]ow def[Bb]ines me
+Is w[Eb]hat rewrites my [Fadd4]story
+This i[Eb/G]s my testi[F/A]mony
 
-{comment: Chorus Chorus}
-Interlude                                              I will[Eb] sing, I’ll sing about [Bb]Jesus
-| (Bb) / / / | Bbsus / / / | Bb / / / | Eb / / / | Gm7 Fadd4
-Sing about His goodness and all He’s done
-Bridge 1 Eb Bb/D
-Bb I will sing, I’ll sing about Jesus
-He brought me out of my sorrow Gm7 Fadd4
-Bbsus Sing about His mercy, I can’t outrun
-Brought me out of my shame
+{comment: Chorus}
+
+{comment: Interlude}
+| (Bb) / / / | Bbsus / / / | Bb / / / | Eb / / / |
+
+{comment: Bridge 1}
+He [Bb]brought me out of my sorrow
+[Bbsus]Brought me out of my shame
 He [Bb]brought me out of my mourning
+
+{comment: Bridge 1}
+{ci: cont.}
+I’m [Gm]danc - i[F]ng a[Bb]gain
+[Bb]He brought me out of my worry
+[Bbsus]Brought me out of my pain
+He [Bb]brought me out of my sadness
+I’m [Gm]laugh - i[F]ng a[Bb]gain
+
+{comment: Bridge 1}
+He [Bb/D]brought me out of my sorrow
+[Eb]Brought me out of my shame
+He [Gm]brought me out of my mourning
+I’m [Gm]danc - i[F]ng a[Bb]gain
+He [Bb/D]brought me out of my worry
+[Eb]Brought me out of my pain
+He [Gm]brought me out of my sadness
+I’m [Gm]laugh - i[F]ng a[Bb]gain
+
+{comment: Bridge 2}
+He [Bb/D]broke me out of my [Eb]darkness
+[F]Broke me out of my [Gm]chains
+He [Ab]broke me out of depression
+I’m [Gm]shout - i[F/A]ng  a[Bb]gain
+
+{comment: Chorus}
+I will [Eb]sing, I’ll sing about Je[Bb]sus
+Sing about His g[Gm7]oodness and all He’s d[Fadd4]one
+I will [Eb]sing, I’ll sing about Je[Bb/D]sus
+Sing about His m[Gm7]ercy, I can’t ou[Fadd4]trun
 UPCI Music 1
 
 {comment: Chorus}
-I will[Eb] sing, I’ll sing about [Bb]Jesus
+I will [Eb]sing, I’ll sing about Je[Bb]sus
 Sing about His g[Gm7]oodness and all He’s d[Fadd4]one
-I will[Eb] sing, I’ll sing about [Bb]Jesus
-Sin[Gm7]g about His mer[Fadd4]cy, I can’t outrun
+I will [Eb]sing, I’ll sing about Je[Bb]sus
+Si[Gm7]ng about His m[Fadd4]ercy, I can’t outrun
 Post Chorus
-I will[Eb] tes - ti[F] - fy with m[Bb/D]y hands lifted[Eb] high
-Bridge 1 > Bridge 2
+I will [Eb]tes - ti - f[F]y with my [Bb/D]hands lifted [Eb]high
+{ci: Bridge 1 → Bridge 2}
 
 {comment: Vamp}
-He brought me o[Bb]ut of the [Ab]miry [Eb]clay
-Set my [Bb]feet on the rock,[Ab] yea[Eb]h
-He gave me f[Bb]reedom and a s[Ab]ong to [Eb]sing
-[Bb]I’ll sing about Jesus[Ab], yea[Eb]h
+He brought me [Bb]out of the [Ab]miry [Eb]clay
+Set my [Bb]feet on the rock, [Ab]yea[Eb]h
+He gave me [Bb]freedom and a [Ab]song to [Eb]sing
+[Bb]I’ll sing about Jesus,[Ab] yea[Eb]h
 
 {comment: Vamp}
-He brought me o[Bb/D]ut of the [Ab]miry [Eb]clay
-Set my [Bb]feet on the rock,[Ab] yea[Eb]h
-He gave me f[Bb]reedom and a s[Ab]ong to [Eb]sing
-[Bb]I’ll sing about Jesus[Ab], yea[Eb]h
+He brought me [Bb/D]out of the [Ab]miry [Eb]clay
+Set my [Bb]feet on the rock, [Ab]yea[Eb]h
+He gave me [Bb]freedom and a [Ab]song to [Eb]sing
+[Bb]I’ll sing about Jesus,[Ab] yea[Eb]h
 
 {comment: Ending}
-[Bb]I’ll sing about Jesus[Ab], yea[Eb]h
-[Bb]
-[Bb]
-[Bb]I’ll sing about Jesus[Ab], yea[Eb]h[Bb]
+[Bb]I’ll sing about Jesus,[Ab] yea[Eb]h
+[Bb]I’ll sing about Jesus
+[Bb]I’ll sing about Jesus
+[Bb]I’ll sing about Jesus,[Ab] yea[Eb]h[Bb]
 UPCI Music 2

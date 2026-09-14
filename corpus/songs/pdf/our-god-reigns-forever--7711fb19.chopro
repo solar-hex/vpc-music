@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 80}
 {time: 4/4}
-{x_verified: number chart, 100% of 91 chords}
+{x_verified: number chart, 100% of 164 chords}
 {x_theme: praise, worship}
 {x_source: pdf:UPCI Music/2022/Our God Reigns Forever/Our-God-Reings-Forever-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FOur%20God%20Reigns%20Forever}
@@ -16,72 +16,115 @@
 {x_album: Our God Reigns Forever)}
 {x_writers: Jesse Wilson}
 
-Our God Reigns Forever Jesse Wilson
+{comment: Intro}
+| Eb / Bb / / | F / / / | Eb / Bb / / | F / / /
+| Eb / Bb / / | F / / / | Eb / Bb / / | F / / /
 
-{comment: Intro Verse 1}
+{comment: Verse}
+{ci: Solo}
+[Gm]W[Eb]ho is like our [Bb]Lord and King[F]
+[Gm]R[Eb]uler over [Bb]everything[F]
+[Gm]N[Eb]othing in this [Bb]world compares t[F/A]o
+[Gm]T[Eb]he wonder of His thron[Bb]e[F/A]
+
+{comment: Verse 2}
+{ci: Solo}
+[Gm]H[Eb]e is robed in[Bb] majesty[F]
+[Gm]P[Eb]ower and au - [Bb]thority[F]
+[Gm]E[Eb]very nation [Bb]will declare [F/A]Him
+[Gm]F[Eb]or He is God alo[Bb]ne
+
+{comment: Chorus}
+{ci: Solo}
+So we sing [Eb]Hall[Bb]e - lujah
+[F]Hal[Gm]l - elujah
+[Eb]Our Go[Bb]d reigns fore[Fsus]v - er[F]
+[Eb]King o[Bb]f glory
+[F]great i[Gm]n power
+[Eb]Our Go[Bb]d reigns forev[Fsus] - er[F]
+
+{comment: Interlude}
+| Eb / Bb / / | F / / / | Eb / Bb / / | F / / /
+
+{comment: Verse 1}
 {ci: Unison}
-Eb / Bb / / | F / / / | Eb / Bb / / | F / / / Gm Eb Bb F
-Eb / Bb / / | F / / / | Eb / Bb / / | F / / / Who is like our Lord and King
-Verse (Solo)                                               [Gm]R[Eb]uler over [Bb]everythin[F]g
-[Gm]W[Eb]ho is like our[Bb] Lord and King[F]                          [Gm]N[Eb]othing in this[Bb] world compares t[F/A]o
-[Gm]R[Eb]uler over [Bb]everything[F]                                 [Gm]T[Eb]he wonder of His thron[Bb]e[F/A]
-[Gm]N[Eb]othing in this[Bb] world compares t[F/A]o                 Verse 2 (Unison)
-[Gm]T[Eb]he wonder of His thron[Bb]e[F/A]                              [Gm]H[Eb]e is robed in[Bb] majest[F]y
-Verse 2 (Solo)                                             [Gm]P[Eb]ower and au - t[Bb]horit[F]y
-[Gm]H[Eb]e is robed in[Bb] majesty[F]                                [Gm]E[Eb]very nation [Bb]will declare[F/A] Him
-[Gm]P[Eb]ower and au - t[Bb]hority[F]                                 [Gm]F[Eb]or He is God al[Bb]one
-[Gm]E[Eb]very nation [Bb]will declare[F/A] Him                    Chorus (Parts)
-[Gm]F[Eb]or He is God al[Bb]one                            [Eb]Hall [Bb]- elujah
-Chorus (Solo)                                       [F]Hall[Gm] - elujah
-So we sing H[Eb]alle[Bb] - lujah                               [Eb]Our God [Bb]reigns forev[Fsus] - e[F]r
-[F]Hall[Gm] - elujah                                          [Eb]King o[Bb]f glory
-[Eb]Our God [Bb]reigns forev[Fsus] - er[F]                              [F]great [Gm]in power
-[Eb]King o[Bb]f glory                                         [Eb]Our God[Bb] reigns forev [Fsus]- e[F]r
-[F]great [Gm]in power                                        Chorus (Parts)
-[Eb]Our God[Bb] reigns forev [Fsus]- er[F]                              [Eb]Hall [Bb]- elujah
-Interlude                                            [F]Hall[Gm] - elujah
-Eb / Bb / / | F / / / | Eb / Bb / / | F / / / Eb Bb Fsus F
+[Gm]W[Eb]ho is like our [Bb]Lord and King[F]
+[Gm]R[Eb]uler over [Bb]everything[F]
+[Gm]N[Eb]othing in this [Bb]world compares t[F/A]o
+[Gm]T[Eb]he wonder of His thron[Bb]e[F/A]
+
+{comment: Verse 2}
+{ci: Unison}
+[Gm]H[Eb]e is robed in[Bb] majesty[F]
+[Gm]P[Eb]ower and au - [Bb]thority[F]
+[Gm]E[Eb]very nation [Bb]will declare [F/A]Him
+[Gm]F[Eb]or He is God alo[Bb]ne
+
+{comment: Chorus}
+{ci: Parts}
+[Eb]Hall[Bb] - elujah
+[F]Hal[Gm]l - elujah
+[Eb]Our Go[Bb]d reigns fore[Fsus]v - er[F]
+[Eb]King o[Bb]f glory
+[F]great i[Gm]n power
+[Eb]Our Go[Bb]d reigns forev[Fsus] - er[F]
+
+{comment: Chorus}
+{ci: Parts}
+[Eb]Hall[Bb] - elujah
+[F]Hal[Gm]l - elujah
+[Eb]Our Go[Bb]d reigns fore[Fsus]v - er[F]
+[Eb]King o[Bb]f glory
+[F]great i[Gm]n power
+| Eb Bb Fsus F / / | / / / /
 Our God reigns forev - er
-Our God Reigns Forever Jesse Wilson
-[Eb]King o[Bb]f glory                                         [Chorus]Eb Bb
-F Gm Hall – elujah
-great in power F Gm
-Eb Bb Fsus F / / | / / / / Hall – elujah
-Our God reigns forev - er Eb Bb Fsus F
-Our God reigns forev – er
-Bridge 1 (solo) Eb Bb
-Bb Bbsus King of glory
-He’s a matchless God, undefeat - ed F Gm
-Bb Bbsus great in power
-He’s a matchless God, undefeat - ed Eb Bb Fsus F
-Our God reigns forev – er
+
+{comment: Bridge 1}
+{ci: solo}
+He’s a matchless [Bb]God, undefea[Bbsus]t - ed
+He’s a matchless [Bb]God, undefea[Bbsus]t - ed
 
 {comment: Bridge 1}
 {ci: Unison}
-Bb Bbsus Tag
-He’s a matchless God, undefeat - ed Eb Bb
-Bb Bbsus He reigns for - ever
-He’s a matchless God, undefeat - ed F Gm Eb Bb
-He reigns for - ever
+He’s a matchless [Bb]God, undefea[Bbsus]t - ed
+He’s a matchless [Bb]God, undefea[Bbsus]t - ed
 
 {comment: Bridge 1}
 {ci: Parts}
-Gm Eb Bb Tag (Flipped Parts)
-He’s a matchless God, undefeat - ed Fsus F Eb Bb
-Gm Eb Bb He reigns for - ever
-He’s a matchless God, undefeat - ed F Gm Eb Bb
-Gm Eb Bb He reigns for - ever
-He’s a matchless God, undefeat - ed Fsus F Eb Bb
-Gm Eb Bb He reigns for - ever
-He’s a matchless God, undefeat - ed F Gm Eb Bb / / | F / / /
-He reigns for - ever
+He’s a matchless [Gm]God, [Eb]undefea[Bb]t - ed
+He’s a matchless [Gm]God, [Eb]undefea[Bb]t - ed
+He’s a matchless [Gm]God, [Eb]undefea[Bb]t - ed
+He’s a matchless [Gm]God, [Eb]undefea[Bb]t - ed
 
 {comment: Bridge 2}
 {ci: Flipped Parts}
-Bb Eb/Bb Bb Outro
-He’s a mighty God, undefeat - ed Eb Bb / / | F Gm / / | Eb Bb / / | Fsus F / /
-He’s a mighty [Bb]God, [Eb/Bb]undefeat[Bb] – ed                      Eb Bb / / | F Gm / / | Eb Bb / / | F
+He’s a mighty [Bb]God, [Eb/Bb]undefeat[Bb] - ed
+He’s a mighty [Bb]God, [Eb/Bb]undefeat[Bb] – ed
 
 {comment: Vamp}
 He’s a mighty [Eb]God, undefeat [F]- ed
-He’s a mighty[Eb/G] God, undefeat [F/A]- ed
+He’s a mighty[Eb/G] God, undefeat[F/A] - ed
+
+{comment: Chorus}
+[Eb]Hall[Bb] – elujah
+[F]Hal[Gm]l – elujah
+[Eb]Our Go[Bb]d reigns fore[Fsus]v – er[F]
+[Eb]King o[Bb]f glory
+[F]great i[Gm]n power
+[Eb]Our Go[Bb]d reigns forev[Fsus] – er[F]
+
+{comment: Tag}
+He reigns for - [Eb]ever[Bb]
+[F]H[Gm]e reigns for - [Eb]ever[Bb]
+
+{comment: Tag}
+{ci: Flipped Parts}
+[Fsus]H[F]e reigns for - [Eb]ever[Bb]
+[F]H[Gm]e reigns for - [Eb]ever[Bb]
+[Fsus]H[F]e reigns for - [Eb]ever[Bb]
+| F Gm Eb Bb / / | F / / /
+He reigns for - ever
+
+{comment: Outro}
+| Eb Bb / / | F Gm / / | Eb Bb / / | Fsus F / /
+| Eb Bb / / | F Gm / / | Eb Bb / / | F

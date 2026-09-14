@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 83}
 {time: 6/8}
-{x_verified: number chart, 93% of 59 chords}
+{x_verified: number chart, 88% of 104 chords}
 {x_theme: faith-trust, praise}
 {x_source: pdf:UPCI Music/2019/He's Worthy/Hes-Worthy-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FHe's%20Worthy}
@@ -18,33 +18,48 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/he-s-worthy/charts/vocals.pdf}
 {x_album: We Sing Praises}
 
-{comment: Intro Verse 2}
-| Ab Eb Ab Eb | Ab Bbm Ab/C Db | Ab Eb Ab Eb
-Blessing and glo - ry
-| Ab/Eb Ab/Eb | Eb Db/F Eb/G Ab /Eb | Ab Bbm Ab/C Db
-Wisdom and pow – er
-Verse 1                                              [Ab/Eb]God of my rock, i[Ab/Bb]n Him    [Bbm6/C]will       [Fm/Db]I      t[Eb9]rust.
-[Ab]He’s worth[Eb]y,  [Ab]God’s worth[Eb]y.                            [Ab]My  [Eb]strong [Ab]tow –[Eb] er  [Ab]and  [Bbm]my   [Ab/C]ref – [Db]uge,
-[Ab]Almight [Bbm]- y   [Ab/C]crea - t[Db]or,  [Ab/Eb]alpha omega,                  [Ab/Eb]Savior, deliverer and[Eb] soon [Fm]com –[Eb/G] ing  [Ab]King.
-be -[Ab/Bb] ginning[Bbm6/C] and       [Fm/Db]the    [Eb9]end.
-[Ab]Ho  - [Eb]ly,  [Ab]ho - l[Eb]y,  [Ab]Lord God [Bbm]al  -  [Ab/C]might -[Db] y[Chorus],
-Ab/Eb Eb Fm Eb/G Ab /Eb
-Which was and is and is - to come. Verse 3
-[Ab]The King will come[Bb7]   in the clouds
-Verse 1 Eb7 Bbm/Ab Ab Bbm/Ab Ab /C
-Ab Eb Ab Eb With great power and glo - ry with Him.
-He’s worthy, God’s worthy. Fm7 Bbm/G C7(b9) Fm7
-Ab Bbm Ab/C Db Ab/Eb Oh, but no man knows the day nor the hour,
-Almight - y crea - tor, alpha omega, Adim7 Bbm Ab/Eb Eb Ab Cm F
-Ab/Bb Bbm6/C Fm/Db Eb9 but we a – wait His soon re - turn.
-be - ginning and the end.
-[Ab]Ho  - [Eb]ly,  [Ab]ho - l[Eb]y,  [Ab]Lord God [Bbm]al  -  [Ab/C]might -[Db] y,          Bridge (5xs)
-[Ab/Eb]Which was and is and [Eb]is   [Fm]-   [Eb/G]to     [Ab]come.                [Bb7]Halle[Bb7/D]lujah,[Eb]        glory, g[Eb/C]lory
-Bb/F Bb/G C9 /D /E F9 /G /A
-hallelujah, praise His name.
-[Chorus]Ab   Ab  /Bb /C   Db  Bbm                            [Bb7]Halle[Bb7/D]lujah,[Eb]        glory, g[Eb/C]lory
-Hal - le - u - jah, Bb/F F Gm F/A Bb
-Ab/C Fm7 Ab/Bb Bbm/C Db Eb /F /G hallelujah, praise His name.
-hal - le - lu - - jah.
+{comment: Intro}
+| Ab Eb Ab Eb | Ab Bbm Ab/C Db |
+| Ab/Eb Ab/Eb | Eb Db/F Eb/G Ab /Eb |
+
+{comment: Verse 1}
+[Ab]He’s wort[Eb]hy,  [Ab]God’s worth[Eb]y.
+[Ab]Almight[Bbm] - y   [Ab/C]crea - [Db]tor,  [Ab/Eb]alpha omega,
+be -[Ab/Bb] ginning [Bbm6/C]and    [Fm/Db]the    [Eb9]end.
+[Ab]Ho  - [Eb]ly,  [Ab]ho - [Eb]ly,  [Ab]Lord God[Bbm] al  -  [Ab/C]might -[Db] y,
+[Ab/Eb]Which was and is and[Eb] is   [Fm]-   t[Eb/G]o    [Ab]come.[/Eb]
+
+{comment: Verse 1}
+[Ab]He’s wort[Eb]hy,  [Ab]God’s worth[Eb]y.
+[Ab]Almight[Bbm] - y   [Ab/C]crea - [Db]tor,  [Ab/Eb]alpha omega,
+be -[Ab/Bb] ginning [Bbm6/C]and    [Fm/Db]the    [Eb9]end.
+[Ab]Ho  - [Eb]ly,  [Ab]ho - [Eb]ly,  [Ab]Lord God[Bbm] al  -  [Ab/C]might -[Db] y,
+[Ab/Eb]Which was and is and[Eb] is   [Fm]-   t[Eb/G]o    [Ab]come.
+
+{comment: Chorus}
+[Ab]Hal - [Ab]le[/Bb]    -[/C]    [Db]u  -  [Bbm]jah,
+[Ab/C]hal  -  [Fm7]le  -  [Ab/Bb]lu    [Bbm/C]-    [Db]-   [Eb]jah.[/F][/G]
 [Ab]Hal -[Ab/C]  le  -   [Db]u  -[Bbm]  jah,
-[Ab/Eb]hal  -  le  -  [Eb]lu[Db/F]   -     [Eb/G]-   j[Ab]ah.
+[Ab/Eb]hal  -  le  -  [Eb]lu[Db/F]   -    [Eb/G]-   [Ab]jah.
+
+{comment: Verse 2}
+[Ab]Blessing[Eb] and [Ab]glo - [Eb]ry
+[Ab]Wisdom [Bbm]and   [Ab/C]pow –[Db] er
+[Ab/Eb]God of my rock, in[Ab/Bb] Him    [Bbm6/C]will    [Fm/Db]I    t[Eb9]rust.
+[Ab]My  [Eb]strong [Ab]tow –[Eb] er  [Ab]and  [Bbm]my   [Ab/C]ref – u[Db]ge,
+[Ab/Eb]Savior, deliverer and [Eb]soon [Fm]com [Eb/G]– ing  [Ab]King.
+
+{comment: Chorus}
+
+{comment: Verse 3}
+[Ab]The King will come[Bb7]   in the clouds
+With gr[Eb7]eat power an[Bbm/Ab]d glo  -  [Ab]ry[Bbm/Ab]   with    [Ab]Him[/C].
+[Fm7]Oh, but no man [Bbm/G]knows the day[C7(b9)] nor th[Fm7]e hour,
+but we a –[Adim7] wait[Bbm]  His   [Ab/Eb]soon  [Eb]re -[Ab] turn.[Cm][F]
+
+{comment: Bridge}
+{ci: 5xs}
+[Bb7]Halle[Bb7/D]lujah,[Eb]    glory, g[Eb/C]lory
+[Bb/F]hallel[Bb/G]ujah,    [C9]pra[/D]ise[/E] His [F9]nam[/G]e.[/A]
+[Bb7]Halle[Bb7/D]lujah,[Eb]    glory, g[Eb/C]lory
+[Bb/F]hallelujah,    [F]pr[Gm]aise  [F/A]His  [Bb]name.

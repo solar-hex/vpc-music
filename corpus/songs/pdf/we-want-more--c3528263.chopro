@@ -2,7 +2,7 @@
 {key: Bb}
 {tempo: 68}
 {time: 4/4}
-{x_verified: number chart, 100% of 7 chords}
+{x_verified: number chart, 100% of 55 chords}
 {x_theme: faith-trust, holy-spirit, revival}
 {x_source: pdf:UPCI Music/2024/We Want More/We-Want-More-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FWe%20Want%20More}
@@ -18,57 +18,68 @@
 {x_album: We Want More (Single)}
 {x_writers: Jeremy McKain}
 
-{comment: Intro Pre Chorus}
-{ci: 2x}
+{comment: Intro}
 | Bb / / / | / / / / | Gm7 / Dm7 / | Ebmaj9 / / / |
 
-{comment: Bridge 1}
-Verse Gm7 F
-Bb Pour out Your rain on us
-In Your presence, Father Ebmaj9 F
-Ebmaj9 Pour out Your rain on us
-We’re here for You, we wait on You
-Gm7 F/A Bridge 2
-Every burden, every fear Gm7 F
-Bb Ebmaj9 Pour out Your rain on us
-We lay it down, we lay it down Ebmaj9 F
-Pour out Your rain on us
-Pre Chorus Gm7 F
-Gm7 We need it, we need it
-‘Cause where the spirit of the Lord is Ebmaj9 F
-F/A Bb Ebmaj9 We want it, we want it
-Self is slain and freedom found
-Gm7 Bridge 2
-Every chain is shattered Gm7 F
-F/A Bb Ebmaj9 Pour out Your rain on us
-The atmosphere is ready now Ebmaj9 F
-Pour out Your rain on us
-Refrain C Eb
-Bb We need it, we need it
-God we want more Cm D
-Gm7 Dm7 Ebmaj9 We want it, we want it
-God we want more
+{comment: Verse}
+In Your p[Bb]resence, Father
+We’re here for Y[Ebmaj9]ou, we wait on You
+Every b[Gm7]urden, every [F/A]fear
+We l[Bb]ay it d[Ebmaj9]own, we lay it down
 
-{comment: Vamp}
-Verse Gm F/G
-Gotta have it, gotta have it
-Pre Chorus C/G F
-Gm7 Gotta have it, gotta have it, yeah
-‘Cause where the spirit of the Lord is
-F/A Bb Ebmaj9 Cm7 Interlude
-Self is slain and freedom found | Gm / / / | F/G / / / | C / / / | D / / / |
-Gm7 | Gm / / / | F/G / / / | C / / / | F / / / | Gm* / / / |
-Every chain is shattered
-F/A (Eb-D) Ebmaj9 *Return to Bridge and repeat sequence
-The atmosphere is ready now
+{comment: Pre Chorus}
+‘Cause where the [Gm7]spirit of the Lord is
+[F/A]Self is slain and [Bb]freedom fo[Ebmaj9]und
+[Gm7]Every chain is shattered
+The [F/A]atmosphere is [Bb]ready n[Ebmaj9]ow
+
+{comment: Refrain}
+God we want [Bb]more
+God we want [Gm7]more[Dm7][Ebmaj9]
+
+{comment: Verse}
+
+{comment: Pre Chorus}
+‘Cause where the [Gm7]spirit of the Lord is
+[F/A]Self is slain and [Bb]freedom fo[Ebmaj9]und[Cm7]
+[Gm7]Every chain is shattered
+The [F/A]atmosphere is [(Eb-D)]ready [Ebmaj9]now
 
 {comment: Pre Chorus}
 {ci: 2x}
 
 {comment: Chorus}
 [Ebmaj9]Rain in this place
-We w[Dm7]ant You to m[Gm7]ove in this p[F/A]lac[Bb]e
-We are h[Ebmaj9]ungry and thirsty for Y[Cm7]ou
+We [Dm7]want You to [Gm7]move in this p[F/A]lace[Bb]
+We are [Ebmaj9]hungry and thirsty for Yo[Cm7]u
 Gm7 F /A *1st time only
 We want to draw closer to You
+
+{comment: Pre Chorus}
+{ci: 2x}
+
+{comment: Bridge 1}
+[Gm7]Pour out Your ra[F]in on us
+[Ebmaj9]Pour out Your ra[F]in on us
+
+{comment: Bridge 2}
+[Gm7]Pour out Your ra[F]in on us
+[Ebmaj9]Pour out Your ra[F]in on us
+[Gm7]We need it,[F]   we need it
+[Ebmaj9]We want it,[F]   we want it
+
+{comment: Bridge 2}
+[Gm7]Pour out Your ra[F]in on us
+[Ebmaj9]Pour out Your ra[F]in on us
+[C]We need it,[Eb]   we need it
+[Cm]We want it,[D]   we want it
+
+{comment: Vamp}
+[Gm]Gotta have it,[F/G]   gotta have it
+[C/G]Gotta have it,[F]   gotta have it, yeah
+
+{comment: Interlude}
+| Gm / / / | F/G / / / | C / / / | D / / / |
+| Gm / / / | F/G / / / | C / / / | F / / / | Gm* / / / |
+*Return to Bridge and repeat sequence
 UPCI Music 1

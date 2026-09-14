@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 53}
 {time: 6/8}
-{x_verified: number chart, 100% of 97 chords}
+{x_verified: number chart, 100% of 118 chords}
 {x_theme: praise, worship, baptism, faith-trust, name-of-jesus}
 {x_source: pdf:UPCI Music/2020/Only One/Only-One-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FOnly%20One}
@@ -21,78 +21,118 @@
 {x_album: In Jesus Name}
 {x_writers: Brittani Scott}
 
-{comment: Intro Chorus}
+{comment: Intro}
+| G D | Bm7 A | G D | Bm7 A |
+| G D | Bm7 A | G A G/B A G/B | A/C# / |
+
+{comment: Verse}
 {ci: Solo}
-G D | Bm7 A | G D | Bm7 A | D Bm7
-I will lift up the Name of the One who
-G D | Bm7 A | G A G/B A G/B | A/C# / | A
-Is worthy of praise, I adore You
-Verse (Solo)                                          You are worthy, [G]Go[G]d[Bm7][A][A/C#]
-[Bm7]There’s only one God who [A]reigns                       [D]Jesus, I will de[D/F#]clare to the [Bm7]nations
-G2 A F#m7 (F#-G-A-D - E - F#) A
-There’s only one God who loves us The only Name that can save us
-Bm7 A G (D-E-F#-D)
-Only one worthy of praise You are worthy, God
+[Bm7]There’s only one God who [A]reigns
+[G2]There’s only one God who l[A]oves[F#m7] us
+[Bm7]Only one worthy of [A]praise
 [G2]Jesus
-Bm7 A Interlude
-There’s only one Name that saves / G D | Bm7 A | G D | Bm7 A | G D |
-[G2]There’s only one Name that f[A]ree[F#m7] us                      Bm7 A | G A G/B  A G/B | A/C#  / |
-[Bm7]Only one Name with all [A]power
-A/G G G D/F# Verse (men sing 8vb)
-Je - sus Bm7 A
-There’s only one God who reigns
-Pre Chorus (Solo)                                    [G2]There’s only one God who l[A]oves[F#m7] us
-[Em7]All of my heart                                        [Bm7]Only one worthy of [A]praise
-[Bm7]All my devotions is[G] You[A/G]rs[Gmaj7]                               [A/G]Je - [G]sus
-[G]L[D/F#]et  [Em7]Your matchless Name                         [Bm7]There’s only one Name that [A]saves
-[Bm7]Be exalted in all of the[G] ear[A/G]th[G] [A/G]                           [G2]There’s only one Name that f[A]ree[F#m7] us
-[Bm7]Only one Name with all [A]power
-[A/G]Je - [G]su[G]s[D/F#]
-Pre Chorus (men sing 8vb) Bridge 1 (Parts)
-[Em7]All of my heart                                        [Bm7]Only one God
-[Bm7]All my devotions is[G] You[A/G]rs[Gmaj7]                               [A]Only one Name
-[G]L[D/F#]et  [Em7]Your matchless Name                         [A/G]Je - [G]sus
-[Bm7]Be exalted in all of the[G] ear[A/G]th[G] [A/G]                           [Bm7]Only one God
+[Bm7]There’s only one Name that [A]saves
+[G2]There’s only one Name that f[A]ree[F#m7] us
+[Bm7]Only one Name with all p[A]ower
+[A/G]Je - s[G]us[G][D/F#]
+
+{comment: Pre Chorus}
+{ci: Solo}
+[Em7]All of my heart
+[Bm7]All my devotions is [G]You[A/G]rs[Gmaj7]
+[G]L[D/F#]et  [Em7]Your matchless Name
+[Bm7]Be exalted in all of the [G]ear[A/G]th[G][A/G]
+
+{comment: Chorus}
+{ci: Solo}
+[D]I will lift up the Name of the [Bm7]One who
+Is worthy of praise, I a[A]dore You
+You are worthy, [G]God[G][Bm7][A][A/C#]
+[D]Jesus, I will de[D/F#]clare to the n[Bm7]ations
+[(F#-G-A-D-E-F#)]The only Name that can [A]save us
+You are worthy, [G]God[(D-E-F#-D)]
+
+{comment: Interlude}
+| / G D | Bm7 A | G D | Bm7 A | G D |
+| Bm7 A | G A G/B A G/B | A/C# / |
+
+{comment: Verse}
+{ci: men sing 8vb}
+[Bm7]There’s only one God who [A]reigns
+[G2]There’s only one God who l[A]oves[F#m7] us
+[Bm7]Only one worthy of [A]praise
+[A/G]Je - s[G]us
+[Bm7]There’s only one Name that [A]saves
+[G2]There’s only one Name that f[A]ree[F#m7] us
+[Bm7]Only one Name with all p[A]ower
+[A/G]Je - s[G]us[G][D/F#]
+
+{comment: Pre Chorus}
+{ci: men sing 8vb}
+[Em7]All of my heart
+[Bm7]All my devotions is [G]You[A/G]rs[Gmaj7]
+[G]L[D/F#]et  [Em7]Your matchless Name
+[Bm7]Be exalted in all of the [G]ear[A/G]th[G][A/G]
+
+{comment: Chorus}
+{ci: Parts}
+[D]I will lift up the [D/F#]Name of the[Bm7] One who
+Is worthy of [Gmaj7]praise, I a[A]dore You
+You are[D/F#] worthy, [G]God[G][Bm7][A][A/C#]
+[D]Jesus, I will de[D/F#]clare to the n[Bm7]ations
+[(F#-G-A-D-E-F#)]The only Name that can [A]save us
+You are [D/F#]worthy, [G2]God
+
+{comment: Bridge 1}
+{ci: Solo}
+[Bm7]Only one God
 [A]Only one Name
-Chorus (Parts) A/G G Em7 /D /C#
-D D/F# Bm7 Je - sus
-I will lift up the Name of the One who
-Is worthy of[Gmaj7] praise, I [A]adore You                         Bridge 2 (Flipped Parts) (4xs)
-You are[D/F#] worthy,[G] God[G] [Bm7] [A] [A/C#]                                [Bm7]One God, one faith
-[D]Jesus, I will de[D/F#]clare to the [Bm7]nations                       One bapt[A]ism in the Name
-(F#-G-A-D - E - F#) A A/G G Em7 /D /C#
-The only Name that can save us Je - sus
-You are [D/F#]worthy,[G2] God
+[G2]Jesus
+[Bm7]Only one God
+[A]Only one Name
+[A/G]Je - s[G]us
+
+{comment: Bridge 1}
+{ci: Parts}
+[Bm7]Only one God
+[A]Only one Name
+[A/G]Je - s[G]us
+[Bm7]Only one God
+[A]Only one Name
+[A/G]Je - s[G]us[Em7][/D][/C#]
+
+{comment: Bridge 2}
+{ci: Flipped Parts, 4xs}
+[Bm7]One God, one faith
+One bap[A]tism in the Name
+[A/G]Je - s[G]us[Em7][/D][/C#]
 
 {comment: Bridge 2}
 {ci: Flipped Parts}
-Bridge 1 (Solo)                                       [Bm7]One God, one faith
-[Bm7]Only one God                                         One bapt[A]ism in the Name
-[A]Only one Name                                       [G]Jesu[Em7]s[Ddim7][C#dim7]
-[G2]Jesus                                                [Bm7]One God, one faith
-[Bm7]Only one God                                         One bapt[A]ism in the Name
-A G Em7 (F#-F#-E-D)
-Only one Name Jesus
-[A/G]Je - [G]sus
 [Bm7]One God, one faith
-One bapt[A]ism in the Name
-[G]Jesu[Em7]s[Ddim7][C#dim7]
+One bap[A]tism in the Name
+[G]Jesus[Em7][Ddim7][C#dim7]
 [Bm7]One God, one faith
-One bapt[A]ism in the Name
-[G]Jesu[G]s[D/F#][Em7][D/A]
-[G]Jesu[Em7]s[D/F#][Em/G][A13]
+One bap[A]tism in the Name
+[G]Jesus[Em7][(F#-F#-E-D)]
+[Bm7]One God, one faith
+One bap[A]tism in the Name
+[G]Jesus[Em7][Ddim7][C#dim7]
+[Bm7]One God, one faith
+One bap[A]tism in the Name
+[G]Jesus[G][D/F#][Em7][D/A]
+[G]Jesus[Em7][D/F#][Em/G][A13]
 
 {comment: Chorus}
 {ci: Parts}
 D (A-B-C#-E-C#-E-D-E-F#-A-B-C#)Bm11
 I will lift up the Name of the One who
-Is worthy of[Gmaj7] praise, I [A]adore You
-You are[D/F#] worthy,[G] Go[G]d[Bm7][A][A/C#]
-[D]Jesus, I will de[D/F#]clare to the [Bm7]nations
-(F#-G-A-D - E - F#) A
-The only Name that can save us
-You are [D/F#]worthy,[G2] God
+Is worthy of [Gmaj7]praise, I a[A]dore You
+You are[D/F#] worthy, [G]God[G][Bm7][A][A/C#]
+[D]Jesus, I will de[D/F#]clare to the n[Bm7]ations
+[(F#-G-A-D-E-F#)]The only Name that can [A]save us
+You are [D/F#]worthy, [G2]God
 
 {comment: Outro}
-G D | Bm7 A | G D | Bm7 A |
-G D | Bm7 A | G / |
+| G D | Bm7 A | G D | Bm7 A |
+| G D | Bm7 A | G / |

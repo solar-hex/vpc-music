@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 128}
 {time: 4/4}
-{x_verified: number chart, 100% of 31 chords}
+{x_verified: number chart, 100% of 68 chords}
 {x_theme: christmas, grace-mercy, jubilee, worship, praise}
 {x_source: pdf:UPCI Music/2023/Angels We Have Heard/Angels-We-Have-Heard-Glory-Be-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FAngels%20We%20Have%20Heard}
@@ -20,45 +20,62 @@
 
 {comment: Intro}
 {ci: 2x}
-| G / / / | C/G / / / | D/G / / / | C/G / / / | Pre Chorus 2
-Verse 1                                             [G]Glo[C]  -[G/B]  -  r[D]ia,[C] in excelsis[D] de[G]o
-[G]Angels we have [C/G]heard on high                         Chorus
-[D/G]Sweetly singing o[C/G]’er the plains                         Gl[Em7]ory be to G[C2]od on high and pe[G]ace on earth for[D]ever
-[G]And the mountains i[C/G]n reply                             Gl[Em7]ory be to G[C2]od above and pea[G]ce on earth
-[D/G]Echoing their [C/G]joyous strains                            And in [D]all hearts, [G]ame[C/G]n[G][Dsus]
+| G / / / | C/G / / / | D/G / / / | C/G / / / |
 
-{comment: Interlude Bridge}
-{ci: 3x}
-| G / / / | C/G / / / | D/G / / / | C/G / / / | Em C
-May there be peace, may there be light
-Verse 2 G Bm
-G C/G Mercy, justice for all the world
-Angels we have heard on high Em C
-D/G C/G May there be truth, may there be love
-Sweetly, sweetly through the night G/D Bm
-G C/G And peace on Earth and in all hearts
-And the mountains in reply
-D/G C/G Interlude
-Echoing their brief delight | G / / / | C/G / / / | D/G / / / | C/G / / / |
-[Amen]
+{comment: Verse 1}
+[G]Angels we have [C/G]heard on high
+[D/G]Sweetly singing [C/G]o’er the plains
+[G]And the mountains [C/G]in reply
+[D/G]Echoing their j[C/G]oyous strains
+
+{comment: Interlude}
+| G / / / | C/G / / / | D/G / / / | C/G / / / |
+
+{comment: Verse 2}
+[G]Angels we have [C/G]heard on high
+[D/G]Sweetly, sweetly [C/G]through the night
+[G]And the mountains [C/G]in reply
+[D/G]Echoing their [C/G]brief delight
 
 {comment: Pre Chorus 1}
-G C G/B D C D G Verse 4
-Glo - - ria, in excelsis deo G C/G
-Come to Bethlehem and see
-[Chorus]Em7      C2             G             D         [D/G]Him whose birth the [C/G]angels sing
-Glory be to God on high and peace on earth forever G C/G
-Em7 C2 G Come adore on bended knee
-Glory be to God above and peace on earth D/G C/G D7sus4 G
-D Christ the Lord, the new born King
-And in all hearts, amen
+[G]Glo[C]  -[G/B]  -  r[D]ia, [C]in excelsis [D]de[G]o
+
+{comment: Chorus}
+G[Em7]lory be to G[C2]od on high and p[G]eace on earth for[D]ever
+G[Em7]lory be to G[C2]od above and pe[G]ace on earth
+And in [D]all hearts, amen
 
 {comment: Interlude}
 | G / / / | C/G / / / | D/G / / / | C/G / / / |
 
 {comment: Verse 3}
-[G]Shepherds why this j[C/G]ubilee
-[D/G]Why your joyous s[C/G]trains prolong
-[G]What the gladsome [C/G]tidings be
+[G]Shepherds why this [C/G]jubilee
+[D/G]Why your joyous [C/G]strains prolong
+[G]What the gladsome[C/G] tidings be
 [D/G]When inspire [C/G]Your Heavenly song
+
+{comment: Pre Chorus 2}
+[G]Glo[C]  -[G/B]  -  r[D]ia, [C]in excelsis [D]de[G]o
+
+{comment: Chorus}
+G[Em7]lory be to G[C2]od on high and p[G]eace on earth for[D]ever
+G[Em7]lory be to G[C2]od above and pe[G]ace on earth
+And in [D]all hearts, a[G]me[C/G]n[G][Dsus]
+
+{comment: Bridge}
+{ci: 3x}
+[Em]May there be peace, m[C]ay there be light
+M[G]ercy, justice for a[Bm]ll the world
+M[Em]ay there be truth, m[C]ay there be love
+And pe[G/D]ace on Earth and in [Bm]all hearts
+
+{comment: Interlude}
+| G / / / | C/G / / / | D/G / / / | C/G / / / |
+Amen
+
+{comment: Verse 4}
+[G]Come to Bethle[C/G]hem and see
+[D/G]Him whose birth the [C/G]angels sing
+[G]Come adore on [C/G]bended knee
+[D/G]Christ the Lord, the [C/G]new b[D7sus4]orn King[G]
 UPCI Music 1

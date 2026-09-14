@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 57}
 {time: 4/4}
-{x_verified: number chart, 95% of 59 chords}
+{x_verified: number chart, 95% of 80 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/2020/Bless Your Name/Bless-Your-Name-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWe%20Bless%20Your%20Name}
@@ -20,26 +20,50 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-bless-your-name/charts/vocals.pdf}
 {x_album: Live From Orlando}
 
-Verse (Solo) Verse (men sing 8vb)
-Ab/Bb Eb Cm7 (Ab/Bb) Eb Cm7
-With my praise I bring glory With my praise I bring glory
-With my l[Fm7]ips    [Eb/G]I   will[Ab/Bb]  sing[Bb/D]                          With my l[Fm7]ips    [Eb/G]I   will[Ab/Bb]  sing
-With my [Eb]heart[Bb/D]  I   wi[Cm7]ll  serve thee                          [Bb/D]With my [Eb]heart[Bb/D]  I   wil[Cm7]l  serve thee
-[Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Ebsus]name[Eb]                    [Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Eb]name
-Verse (men sing 8vb) (2xs) Chorus
-[Ab/Bb]With my p[Eb]raise I brin[Cm7]g glory                               [Ab]Bless Your name
-With my l[Fm7]ips    [Eb/G]I   wi[Ab/Bb]ll  sing                             [Bb/Ab]Bless Your name
-[Bb/D]With my [Eb]heart[Bb/D]  I   wil[Cm7]l  serve thee                    [Eb/G]Bless Your name
-[Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Eb]name            [Db/Eb]Lord    [Eb]I’ll  [Fm7]bless [Eb/G]You
-[Ab]
-[Chorus]Ab                                                     [Bb/Ab]Bless Your name
-Bless Your name Eb/G
-Bb/Ab Bless Your name
-Bless Your name Fm7 Gm7 Ab C7(#5#9)
-Eb/G I will bless
-[Db/Eb]Lord    [Eb]I’ll  [Fm7]bless [Eb/G]You                               Tag (3xs)
-[Ab]Bless Your name                                  [Fm7]I      [Gm7]will   [Ab]bles[C7(#5#9)]s
-[Bb/Ab]
-[Eb/G]Bless Your name                                  [Ending]Fm7  Gm7  Ab   Bb   Eb
-Fm7 Gm7 Ab Bb Eb Ab/Bb I will bless Your name
-I will bless Your name
+{comment: Verse}
+{ci: Solo}
+[Ab/Bb]With my [Eb]praise I brin[Cm7]g glory
+With my [Fm7]lips    [Eb/G]I   will[Ab/Bb]  sing[Bb/D]
+With my [Eb]hear[Bb/D]t  I   w[Cm7]ill  serve thee
+[Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Ebsus]name[Eb]
+
+{comment: Verse}
+{ci: men sing 8vb, 2xs}
+[Ab/Bb]With my [Eb]praise I brin[Cm7]g glory
+With my [Fm7]lips    [Eb/G]I   w[Ab/Bb]ill  sing
+[Bb/D]With my [Eb]heart[Bb/D]  I   wi[Cm7]ll  serve thee
+[Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Eb]name
+
+{comment: Chorus}
+[Ab]Bless Your name
+[Bb/Ab]Bless Your name
+[Eb/G]Bless Your name
+[Db/Eb]Lord    [Eb]I’ll  [Fm7]bless [Eb/G]You
+[Ab]Bless Your name
+[Bb/Ab]Bless Your name
+[Eb/G]Bless Your name
+[Fm7]I    [Gm7]will   [Ab]bless  [Bb]Your  [Eb]name[Ab/Bb]
+
+{comment: Verse}
+{ci: men sing 8vb}
+[(Ab/Bb)]With my [Eb]praise I brin[Cm7]g glory
+With my [Fm7]lips    [Eb/G]I   will[Ab/Bb]  sing
+[Bb/D]With my [Eb]heart[Bb/D]  I   wi[Cm7]ll  serve thee
+[Eb/Bb]O[Eb/G]h   [Fm7]Lord[Eb/G]  I  b[Bb]less  [Bb/D]Your  [Eb]name
+
+{comment: Chorus}
+[Ab]Bless Your name
+[Bb/Ab]Bless Your name
+[Eb/G]Bless Your name
+[Db/Eb]Lord    [Eb]I’ll  [Fm7]bless [Eb/G]You
+[Ab]Bless Your name
+[Bb/Ab]Bless Your name
+[Eb/G]Bless Your name
+[Fm7]I    [Gm7]will   [Ab]bless[C7(#5#9)]
+
+{comment: Tag}
+{ci: 3xs}
+[Fm7]I    [Gm7]will   [Ab]bless[C7(#5#9)]
+
+{comment: Ending}
+[Fm7]I    [Gm7]will   [Ab]bless  [Bb]Your  [Eb]name

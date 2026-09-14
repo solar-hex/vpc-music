@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 165}
 {time: 6/8}
-{x_verified: number chart, 93% of 60 chords}
+{x_verified: number chart, 92% of 79 chords}
 {x_theme: heaven, praise}
 {x_source: pdf:UPCI Music/The Lord's Prayer/The Lords Prayer - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FThe%20Lord's%20Prayer}
@@ -18,37 +18,64 @@
 {x_chart_the_lords_prayer_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/the-lord-s-prayer/charts/the-lords-prayer-vocals.pdf}
 {x_album: My Worship}
 
-{comment: Intro Chorus 2}
-{ci: Parts}
-F / | Am7 / | G / | G/B C | C
-F / | Am7 / | G / | Dm C | Let your kingdom come.
-[G]Let your will be done[Am7]       on [G]earth as
-Verse 1 (Solo) F C/E D/F#
-F Am7 G in heaven. Let your glory come
-Our God who art in heaven G G#dim7
-F Am7 G shining like the sun
-hallowed be your holy name Am7 G C/E F
-F Am7 G Your king - dom reigns
-Give us today our daily
-[F]bread forgive us [Am7]lord as we for[G]give                      Chorus 2 (Parts)
-Chorus 1 (Solo) Bridge (Solo)
-[C]Let your kingdom come.                           For – [C]ever we’ll pro – [G]claim.
-[G]Let your will be done[Am7]       on [G]earth as             For – [Am7]ever Your [G]king –[C/E] dom re[F]igns.
-[F]in heaven.[C/E]     Let your glory[D/F#] come                For [C/E]thine is the kingdom, and[G/B] power and the
-[G]shining like the[G#dim7] sun                                glory for[Dm]-ever and [Am7]ever we’ll   [G]sing
+{comment: Intro}
+| F / | Am7 / | G / | G/B C |
+| F / | Am7 / | G / | Dm C |
+
+{comment: Verse 1}
+{ci: Solo}
+[F]Our[Am7] God[G]    who art in heaven
+[F]hallowed[Am7] be your holy[G] name
+[F]Give us to[Am7]day    [G]our daily
+[F]bread forgive us l[Am7]ord as we for[G]give
+
+{comment: Chorus 1}
+{ci: Solo}
+[C]Let your kingdom come.
+[G]Let your will be done[Am7]    on [G]earth as
+[F]in heaven.[C/E]    Let your glory [D/F#]come
+[G]shining like the [G#dim7]sun
 [Am7]Your [G]king - dom
+
+{comment: Interlude}
+| F / | F / | F / | F / |
+reign.
+
+{comment: Verse 2}
+{ci: Unison}
+[F]Lead us[Am7] not,[G]    into temp –[G/B] ta – t[C]ion.
+[F]Deliver us [Am7]from the evil [G]one.[Dm][C]
+[F]Remind our [Am7]hearts,[G]    You’re always [G/B]with [C]us.
+[Dm]We shall [Am7]never be a -[G] fraid
+
+{comment: Chorus 2}
+{ci: Parts}
+[C]Let your kingdom come.
+[G]Let your will be done[Am7]    on [G]earth as
+[F]in heaven.[C/E]    Let your glory [D/F#]come
+[G]shining like th[G#dim7]e sun
+[Am7]Your [G]king - [C/E]dom [F]reigns
+
+{comment: Chorus 2}
+{ci: Parts}
+
+{comment: Bridge}
+{ci: Solo}
+For – [C]ever we’ll pro – [G]claim.
+For – [Am7]ever Your [G]king – [C/E]dom r[F]eigns.
+For [C/E]thine is the kingdom, and [G/B]power and the
+glory for-[Dm]ever and [Am7]ever we’ll   [G]sing
 
 {comment: Bridge}
 {ci: Parts}
 
-{comment: Interlude Bridge}
+{comment: Bridge}
 {ci: Flipped Parts}
-F / | F / | F / | F / |
-reign.
-Ending / Chorus 1 (Solo)
-Verse 2 (Unison)                                          [C]Let your kingdom come.
-[F]Lead us [Am7]not,[G]       into temp – [G/B]ta – t[C]ion.                 [G]Let your will be done[Am7]       on [G]earth as
-[F]Deliver us [Am7]from the evil [G]one.[Dm] [C]                            [F]in heaven.[C/E]     Let your glory[D/F#] come
-[F]Remind our [Am7]hearts,[G]     You’re always [G/B]with u[C]s.            [G]shining like th[G#dim7]e sun
-[Dm]We shall n[Am7]ever be a - [G]fraid                              [Am7]Your [G]king -[C/E] dom  [F]reign.
-Fore[C]ver we’ll proclaim
+Ending / Chorus 1
+{ci: Solo}
+[C]Let your kingdom come.
+[G]Let your will be done[Am7]    on [G]earth as
+[F]in heaven.[C/E]    Let your glory [D/F#]come
+[G]shining like the[G#dim7] sun
+[Am7]Your [G]king - [C/E]dom  [F]reign.
+For[C]ever we’ll proclaim

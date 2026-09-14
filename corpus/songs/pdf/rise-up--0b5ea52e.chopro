@@ -3,6 +3,7 @@
 {key: F}
 {tempo: 118}
 {time: 4/4}
+{x_verified: number chart, 82% of 68 chords}
 {x_theme: victory, name-of-jesus, praise}
 {x_source: pdf:UPCI Music/2022/Rise Up/Rise-Up-Chord-Chart-1.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FRise%20Up}
@@ -18,73 +19,108 @@
 {x_album: Rise Up (Single)}
 {x_writers: Ted Keith}
 
-Rise Up Ted Keith
+{comment: Intro}
+| N.C. Dm6/9 / / / | / / / / |
+It’s time to let the church rise
+| Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / |
+| A (A-C#-E-F-G-G) / |
 
-{comment: Intro Interlude}
-N.C. Dm6/9 / / / | / / / / | | Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / |
-It’s time to let the church rise | A (A-C#-E-F-G-G) / |
-| Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / | Verse 2
-| A (A-C#-E-F-G-G) / | Dm
-Take up your weapons,
-Verse 1 G7
-Dm prepare, it’s time to fight
-Rise up, be counted Bbmaj7
-G7 Powers of darkness
-It’s time to take your place A7 A7 Dm
-Bbmaj7 A7 A7 Dm invaded by the light
-The Name of Jesus is worthy to be praised Dm Dm/F G7
-Reveal, Your glory
-Our God is ready Am7
-G7 Lord, let Your kingdom come
-Our King is soon to come Bbmaj7
-Bbmaj7 Satan’s defeated
-Satan’s defeated, /B /C A7(b9)/C#
-/B /C A7(b9)/C# the battle’s al – rea – dy – won
-the battle’s al – rea – dy – won C#dim7
-C#dim7 It’s time to let the church
-It’s time to let the church
+{comment: Verse 1}
+[Dm]Rise up, be counted
+[G7]It’s time to take your place
+[Bbmaj7]The Name of Jesus is worthy to [A7]be [A7]pra[Dm]ised
+Our God is ready
+[G7]Our King is soon to come
+[Bbmaj7]Satan’s defeated,
+the battle’s al – r[/B]ea –[/C] dy –[A7(b9)/C#] won
+[C#dim7]It’s time to let the church
 
 {comment: Chorus}
-[Chorus]Dm                                             [Dm]Rise up,
-Rise up, G7
-G7 take your place
-take your place Bbmaj7 Asus A7 A7
-Bbmaj7 Asus A7 A7 Declare the victory of the Lord in this place
-Declare the victory of the Lord in this place Dm
-Dm Rise up,
-Rise up, G7
-G7 show your strength
-show your strength Bbmaj7 A7sus
-Bbmaj7 A7sus Raise up a banner of praise
-Raise up a banner of praise A7 C#dim7
-A7 C#dim7 Let the church rise
-Let the church rise
-Rise Up Ted Keith
+[Dm]Rise up,
+[G7]take your place
+[Bbmaj7]Declare the victory of the [Asus]Lord in t[A7]his [A7]place
+[Dm]Rise up,
+[G7]show your strength
+[Bbmaj7]Raise up a banner of [A7sus]praise
+[A7]Let [C#dim7]the church rise
 
-{comment: Interlude Vamp 1}
+{comment: Interlude}
+| Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / |
+| A (A-C#-E-F-G-G) / |
+
+{comment: Verse 2}
+[Dm]Take up your weapons,
+[G7]prepare, it’s time to fight
+[Bbmaj7]Powers of darkness
+[A7]invaded [A7]by the l[Dm]ight
+Reveal, [Dm]Your[Dm/F]    glory[G7]
+Lord, let Your kingdom [Am7]come
+[Bbmaj7]Satan’s defeated
+the battle’s al – r[/B]ea –[/C] dy –[A7(b9)/C#] won
+[C#dim7]It’s time to let the church
+
+{comment: Chorus}
+[Dm]Rise up,
+[G7]take your place
+[Bbmaj7]Declare the victory of the [Asus]Lord in t[A7]his [A7]place
+[Dm]Rise up,
+[G7]show your strength
+[Bbmaj7]Raise up a banner of [A7sus]praise
+[A7]Let [C#dim7]the church rise
+
+{comment: Interlude}
+| Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / |
+| A (A-C#-E-F-G-G) / |
+
+{comment: Bridge}
 {ci: Solo}
-| Dm A7/C# | Dm/C G7/B | Bbmaj7 / / / | Dm (cut)
-| A (A-C#-E-F-G-G) / | This is a battle cry, this is a call to
-Dm A/C# | Dm/C G/B / A/C# |
-Bridge (Solo) war
-[Dm]No time to lose, [A/C#]no time to wait,                    Vamp 1 (Unison)
-Dm/C G/B Dm (cut)
-The time is now, don’t hesitate This is a battle cry, this is a call to
-Dm A/C# | Dm/C G/B / A/C# |
-Bridge (Unison) war
-[Bbmaj7]No time to lose, [F/A]no time to wait[F#dim],                    Vamp 2
-[Gm7]The time is now, d[A7sus]on’t hesitate[A7(b9)]                        [Dm]Raise up a banner
-Bridge (Parts)                                      [G7]Raise up a banner [Am7]of praise
-[Dm]No time to lose, [A/C#]no time to wait,                       [Bbmaj7]Raise up a banner
-[Dm/C]The time is now, [G/B]don’t hesitate                        [A7]Raise up a [C#dim7]banner of praise
-Bridge (Flipped Parts)                               [Dm]Raise up a banner
-[Bbmaj7]No time to lose, [F/A]no time to wait[F#dim],                       [G7]Raise up a banner [Am7]of praise
-[Gm7]The time is now, d[A7sus]on’t hesitate[C#dim7]                        [Bbmaj7]Raise up a banner
-A7 (A-C#-E-G-Bb)
-Refrain (2xs) Raise up a banner of
-[Dm]Rise up[G7]                                         Ending
-Bbmaj7 Dm / / / | G7 / / / | Bbmaj7 / / / | A7 (A-C#-E-G-Bb)
-Rise up praise
-A7 (A-C#-E-G)
-It’s time to let the church
+[Dm]No time to lose, [A/C#]no time to wait,
+[Dm/C]The time is now,[G/B] don’t hesitate
+
+{comment: Bridge}
+{ci: Unison}
+[Bbmaj7]No time to lose, [F/A]no time to wait[F#dim],
+[Gm7]The time is now, d[A7sus]on’t hesitate[A7(b9)]
+
+{comment: Bridge}
+{ci: Parts}
+[Dm]No time to lose, [A/C#]no time to wait,
+[Dm/C]The time is now,[G/B] don’t hesitate
+
+{comment: Bridge}
+{ci: Flipped Parts}
+[Bbmaj7]No time to lose, [F/A]no time to wait[F#dim],
+[Gm7]The time is now, d[A7sus]on’t hesitate[C#dim7]
+
+{comment: Refrain}
+{ci: 2xs}
+[Dm]Rise up[G7]
+[Bbmaj7]Rise up
+[A7]It’s time [(A-C#-E-G)]to let the church
 | Dm | G7 | Bbmaj7 | A7 (A-C#-E-G-Bb)
+
+{comment: Vamp 1}
+{ci: Solo}
+[Dm(cut)]This is a battle cry, this is a call to
+wa[Dm]r[A/C#]
+| Dm/C G/B / A/C# |
+
+{comment: Vamp 1}
+{ci: Unison}
+[Dm(cut)]This is a battle cry, this is a call to
+wa[Dm]r[A/C#]
+| Dm/C G/B / A/C# |
+
+{comment: Vamp 2}
+[Dm]Raise up a banner
+[G7]Raise up a banner[Am7] of praise
+[Bbmaj7]Raise up a banner
+[A7]Raise up a [C#dim7]banner of praise
+[Dm]Raise up a banner
+[G7]Raise up a banner[Am7] of praise
+[Bbmaj7]Raise up a banner
+[A7]Raise [(A-C#-E-G-Bb)]up a banner of
+
+{comment: Ending}
+| Dm / / / | G7 / / / | Bbmaj7 / / / | A7 (A-C#-E-G-Bb)
+praise

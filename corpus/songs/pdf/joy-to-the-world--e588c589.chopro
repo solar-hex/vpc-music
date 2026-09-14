@@ -17,83 +17,106 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/joy-to-the-world/charts/vocals.pdf}
 {x_album: Motown Christmas}
 
-Intro Bb7
-| G / / / | / / / / | / / / / | x / / / | Three wise men came bearing gifts
-| G7/B / C | G/D / / / | / / / / | A9 Bb9 B7
-| / Bbma7 / C/F | G/C x Dm9 / | They traveled from so far
-| Ebma7 / / / | / / Fma7 G | C7
-When they arrived they saw a child
-Verse 1 B7 Bb7
-Fma7 G Fma7 Dm9 G/B C Jesus was His name
-Joy to the world, the Lord is come A7 B7 C7 Db7
-C/G D/F# B7/D# Em Am7 He would come and save the world
-Let earth receive her King D7 E7 F7 G7
-G/D D7sus(b9) And bring us joy a – gain, can you say it was
-Let ev’ry heart
-G/D D7sus(b9) Refrain 3
-Pre - pare Him room G/B C A7/C# D
-And heav - en and heav - en
-Refrain 1 B7/D# Em Am7 G/D D7 G
-G/B C A7/C# D And heav - en and na - ture sing
-And heav - en and heav - en G/F C/E A7/C# D/C
-B7/D# Em Am7 G/D D7 G And heav - en, oh heav - en
-And heav - en and na - ture sing B7/F# E/G# Am7 G/D D9sus4 G/B
-G/F C/E A7/C# D/C And heav - en and na - ture sing
-And heav - en oh heav - en
-B7/F# E/G# Am7 G/D D9sus4 G Bridge 1
-And heav - en and na - ture sing (G/B) Cm6
-| x / / / | / / Dm7 G | Joy to the world
-Verse 1                                              Oh, the[D9sus4]  night is[Esus] com[E]e
+{comment: Intro}
+| G / / / | / / / / | / / / / | x / / / |
+| G7/B / C | G/D / / / | / / / / |
+| / Bbma7 / C/F | G/C x Dm9 / |
+| Ebma7 / / / | / / Fma7 G |
 
-{comment: Refrain 2 Verse 3}
-And heav -[G/B] en    [C]and heav -[A7/C#] en[D]                         [D7sus4/A]Oo,    [D7/A]He  rules the[G2/B] worl[G/B]d
-And heav -[B7/D#] en[Em]          [Am7]and  [G/D]na - t[D7]ure [G]sing           Wit[Ebma7/Bb]h  truth   and[F9sus4]  grac[F]e
-And heav -[G/F] en[C/E]     oh heav -[A7/C#] en[D/C]                        And[Bbma7] makes[E7(b9)]       the [Ebma9]nations[D7sus4]  prov[D/C]e
-And heav [B7/F#]- en[E/G#]         [Am7]and  [G/D]na - [D9sus4]ture     [G]sing        The g[G/B]lories  [Cm6]of  His  [G/D]righteous -[Am7(b5)/Eb]   ness
+{comment: Verse 1}
+[Fma7]Joy  to the world, the [G]Lord  [Fma7]is    [Dm9]come[G/B][C]
+Let eart[C/G]h[D/F#]    receive[B7/D#]    [Em]her King[Am7]
+Let [G/D]ev’ry[D7sus(b9)]    heart
+Pre - [G/D]pare Him   [D7sus(b9)]room
+
+{comment: Refrain 1}
+And heav -[G/B] en    [C]and heav -[A7/C#] en[D]
+And heav -[B7/D#] en[Em]    [Am7]and  [G/D]na - t[D7]ure [G]sing
+And heav -[G/F] en[C/E]    oh heav - [A7/C#]en[D/C]
+And heav [B7/F#]- en[E/G#]    [Am7]and  [G/D]na - [D9sus4]ture    [G]sing
+| x / / / | / / Dm7 G |
+
+{comment: Verse 1}
+
+{comment: Refrain 2}
+And heav -[G/B] en    [C]and heav -[A7/C#] en[D]
+And heav -[B7/D#] en[Em]    [Am7]and  [G/D]na - t[D7]ure [G]sing
+And heav -[G/F] en[C/E]    oh heav - [A7/C#]en[D/C]
+And heav [B7/F#]- en[E/G#]    [Am7]and  [G/D]na - [D9sus4]ture    [G]sing
 | G / / / | G7 Ab7 A7 Bb7 |
 
+{comment: Verse 2}
+There was a [Bb]night    [Eb/Bb]in    [Bb]Beth -[Eb/Bb]  le   - [Bb]hem
+With [Cm/Bb]great  -  [Bb]ly s[Eb/Bb]hinin’   [Fm7]star[Gm7][Abma7]
+[Bb7]Three wise men came bearing gifts
+They traveled from so [A9]far[Bb9][B7]
+[C7]When they arrived they saw a child
+Jesus was His name[B7][Bb7]
+[A7]He would [B7]come and [C7]save the [Db7]world
+[D7]And bring us [E7]joy a – [F7]gain, can [G7]you say it was
+
+{comment: Refrain 3}
+And heav -[G/B] en    [C]and heav -[A7/C#] en[D]
+And heav -[B7/D#] en[Em]    [Am7]and  [G/D]na - t[D7]ure [G]sing
+And heav -[G/F] en,[C/E]    oh heav -[A7/C#] en[D/C]
+And heav [B7/F#]- en[E/G#]    [Am7]and  [G/D]na - [D9sus4]ture    [G/B]sing
+
+{comment: Bridge 1}
+[(G/B)]Joy to the [Cm6]world
+Oh, the[D9sus4]  night is c[Esus]ome[E]
+
+{comment: Verse 3}
+[D7sus4/A]Oo,    [D7/A]He  rules the [G2/B]world[G/B]
+Wit[Ebma7/Bb]h  truth   and[F9sus4]  grace[F]
+And[Bbma7] makes[E7(b9)]    the [Ebma9]nations  [D7sus4]prove[D/C]
+The [G/B]glories  [Cm6]of  His  [G/D]righteous -[Am7(b5)/Eb]   ness
+
 {comment: Refrain 4}
-Verse 2 G/B C A7/C# D
-Bb Eb/Bb Bb Eb/Bb Bb And won - ders, and won - ders
-There was a night in Beth - le - hem B7/D# Em Am7 G/D D7 G
-Cm/Bb Bb Eb/Bb Fm7 Gm7 Abma7 And won – ders, and won - ders of His love
-With great - ly shinin’ star
-G/F Am7 A7/E Ebm7(b5) Chorus 4
-And won - ders, oh won - ders Fm/Eb Eb Fm/Eb Eb
-G#m7 C#m7 Am7 G/D D9sus4 Joy to the world
-And won - ders, won - ders of His Fm/Eb Eb Fm/Eb Eb
-G Joy to the world
-Of His love Fm/Eb Eb Fm/Eb Eb
-Bridge 2 B F#/A# x Db Ab/C Eb
-Em11 F#m11 B7(b9) E6/9 He brought joy to the world
-Joy to the world the Lord is come
-(E6/9) C#m7 Chorus 5
-Joy to the world Fm/Eb Eb Fm/Eb Eb
-Ab7sus4/Eb Ab7 Db Joy to the world
-The Lord is come Fm/Eb Eb Fm/Eb Eb
-(Db) Ab7/Eb Db/F Gbdim7 Db/Ab | E/G# Joy to the world
-Joy to the world, the joy Fm/Eb Eb Fm/Eb Eb
-Chorus 1 B F#/A# x Db Ab/C
-Db Ebm/Db Db Ebm/Db Db He brought great joy
-Ev’ - ry na - tion
-Ebm/Db Db Ebm/Db Db Tag
-Cel - e - bra - tion B F#/A# x Db Ab/C
-Ebm/Db Db Ebm/Db Db He brought great joy
-Help us praise Him B F#/A# Db/Ab Ab
-A E/G# x B Gb/Bb x Db He brought great joy
-He brought joy to the world Eb5 Db B Bbm7 Abm9 E/Bb
-He brought joy, joy
-Chorus 2 /Db /C /Ab /Gb /Ab /Bb Db Eb
-Db Ebm/Db Db Ebm/Db Db Joy to the world
-Ev’ - ry na - tion
-[Ebm/Db]Cel   - [Db]e -   [Ebm/Db]bra     - [Db]tion
+And won - [G/B]ders,[C]  and won [A7/C#]- ders[D]
+And won –[B7/D#] ders,[Em]   and won -[Am7] ders[G/D]  of  [D7]His  l[G]ove
+And won - [G/F]ders,[Am7]    oh won - [A7/E]ders[Ebm7(b5)]
+And won - [G#m7]ders,[C#m7]    won - [Am7]ders   [G/D]of    [D9sus4]His
+Of  His  l[G]ove
+
+{comment: Bridge 2}
+Joy to the world[Em11]    the   [F#m11]Lord    [B7(b9)]is    [E6/9]come
+[(E6/9)]Joy  to the world[C#m7]
+The   [Ab7sus4/Eb]Lord    [Ab7]is   [Db]come
+[(Db)]Joy    [Ab7/Eb]to   the [Db/F]world,[Gbdim7]    the[Db/Ab]  joy
+| E/G#
+
+{comment: Chorus 1}
+[Db]E[Ebm/Db]v’ -    [Db]ry[Ebm/Db]    na   - [Db]tion
+[Ebm/Db]Cel   - [Db]e -   [Ebm/Db]bra    - t[Db]ion
 [Ebm/Db]Help    [Db]us   [Ebm/Db]praise    [Db]Him
-A E/G# x B Gb/Bb x D
-He brought joy to the world
+[A]He [E/G#]brought   j[B]oy   [Gb/Bb]to   the [Db]world
+
+{comment: Chorus 2}
+[Db]E[Ebm/Db]v’ -    [Db]ry[Ebm/Db]    na   - [Db]tion
+[Ebm/Db]Cel   - [Db]e -   [Ebm/Db]bra    - t[Db]ion
+[Ebm/Db]Help    [Db]us   [Ebm/Db]praise    [Db]Him
+[A]He [E/G#]brought   j[B]oy   [Gb/Bb]to   the [D]world
 
 {comment: Chorus 3}
-[Em/D]Ev’ -   [D]ry  [Em/D]na   - [D]tion
-[Em/D]Cel  - [D]e -[Em/D] bra  - [D]tion
+[Em/D]Ev’ -   [D]ry  [Em/D]na   - t[D]ion
+[Em/D]Cel  - [D]e - [Em/D]bra  - t[D]ion
 [Em/D]Help  [D]us  [Em/D]praise  [D]Him
-Bb F/A x C G/B D Eb
-He brought joy to the world
+[Bb]He [F/A]brought   [C]joy  [G/B]to   [D]the[Eb] world
+
+{comment: Chorus 4}
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[B]He [F#/A#]brought    [Db]joy[Ab/C]  to   [Eb]the world
+
+{comment: Chorus 5}
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[Fm/Eb]Joy[Eb]    [Fm/Eb]to   the w[Eb]orld
+[B]He [F#/A#]brought    [Db]great  [Ab/C]joy
+
+{comment: Tag}
+[B]He [F#/A#]brought    [Db]great  [Ab/C]joy
+[B]He [F#/A#]brought    [Db/Ab]great  [Ab]joy
+[Eb5]He [Db]brought   [B]joy,   [Bbm7]joy[Abm9][E/Bb]
+[/Db]Joy[/C] [/Ab]    [/Gb]to[/Ab]    [/Bb]t[Db]he [Eb]world

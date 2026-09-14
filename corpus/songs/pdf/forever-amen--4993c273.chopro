@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 152}
 {time: 6/8}
-{x_verified: number chart, 100% of 8 chords}
+{x_verified: number chart, 100% of 92 chords}
 {x_theme: praise, name-of-jesus, prayer, salvation}
 {x_source: pdf:UPCI Music/2022/Forever Amen/Forever-Amen-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FForever%20Amen}
@@ -19,35 +19,72 @@
 {x_album: The Unseen}
 {x_writers: Draylin Young}
 
-Intro Em7 C2 G
-||:Em7 / / C2 / / | G / / / / / | And Your name is vic - tor - y
-| Em7 / / C2 / / | G / / / / / :|| Em7 C2 G
-And Your name is vic - tor - y
+{comment: Intro}
+||:Em7 / / C2 / / | G / / / / / |
+| Em7 / / C2 / / | G / / / / / :||
 
-{comment: Verse 1 Interlude}
+{comment: Verse 1}
+You are [Em7]God the [C2]spotless [G]lamb
+King of [Em7]kings the [C2]great I [G]AM
+He who [Em7]was and [C2]is to c[G]ome
+Son of [Em7]God the [C2]Holy [G]One
+
+{comment: Verse 2}
+You are [Em7]alpha [C2]and o[G]mega
+The [Em7]beginning [C2]and the[G] end
+You’re the f[Em7]lood that [C2]crashes [G]over
+And You’re the[Em7] fire that [C2]burns [G]within
+
+{comment: Chorus}
+Unto [C]God be the glory forever[D]
+Unto [Em7]God be the glory forever[Bm7]
+Unto [C]God be the glory forever[D]
+Unto [Em7]God be the glory for[D]ever
+| Ebm7 Db/F Gb Gb/Bb |
+
+{comment: Interlude}
 {ci: 2x}
-You are [Em7]God the [C2]spotless[G] lamb                      Bridge (2x)
-King of [Em7]kings the [C2]great I[G] AM                         Not my w[C2]ill but Yours be[G] done
-He who [Em7]was and i[C2]s to [G]come                         Lord we [Em7]pray Your kingdom[D] come
-Son of [Em7]God the [C2]Holy [G]One                           Not my [C2]will but Yours be [Em7]done in [G]us, Je[D]sus
+A[Em7]men,[C2]    [G]a[Em7]men[C2][G]
 
-{comment: Verse 2 Verse 4}
-You are [Em7]alpha[C2] and [G]omega                          When my [Em7]time [C2]on ea[G]rth has come
-The [Em7]beginning [C2]and the[G] end                         And [Em7]I hear You[C2] say wel[G]l done
-You’re the [Em7]flood that[C2] crashes [G]over                   I will sing [Em7]Your prais[C2]e foreve[G]r
-And You’re the f[Em7]ire that [C2]burns [G]within                  And it [Em7]still won’[C2]t be e[G]nough, and it [Em7]still won’[C2]t be e[G]nough
-Chorus                                          And it [Em7]still won’[C2]t be [G]enough
-Unto G[C]od be the glory forever[D]                       Chorus
-Unto G[Em7]od be the glory foreve[Bm7]r[Bridge]
-Unto G[C]od be the glory forever[D]                       Bridge (2x)
-Unto G[Em7]od be the glory for[D]ever                       Not my w[Am7]ill but Yours be done
-| Ebm7  Db/F  Gb  Gb/Bb |                        Lord we [Em7]pray Your kingdom[D] come
-Interlude (2x)                                     Not my [C2]will but Yours be [Am7]done in [Em7]us, Je[D]sus
-A[Em7]men,[C2]        [G]a[Em7]men[C2] [G]                             Interlude
+{comment: Verse 2}
+You’re th[Em7]e King o[C2]f Glor - [G]y
+And You[Em7] reign in [C2]maj - es - [G]ty
+You’re the [Em7]God of [C2]my sal[G]vation
+And Your [Em7]name is[C2] vic - tor - [G]y
+And Your [Em7]name is[C2] vic - tor - [G]y
+
+{comment: Interlude}
+{ci: 2x}
+
+{comment: Bridge}
+{ci: 2x}
+Not my [C2]will but Yours be [G]done
+Lord we [Em7]pray Your kingdom [D]come
+Not my [C2]will but Yours be [Em7]done in [G]us, Jes[D]us
+
+{comment: Verse 4}
+When m[Em7]y time[C2] on ea[G]rth has come
+And [Em7]I hear You[C2] say we[G]ll done
+I will sing Y[Em7]our prais[C2]e forever[G]
+And it [Em7]still won’t [C2]be en[G]ough, and it [Em7]still won’t [C2]be en[G]ough
+And it [Em7]still won’t [C2]be en[G]ough
+
+{comment: Chorus}
+
+{comment: Bridge}
+{ci: 2x}
+Not my [Am7]will but Yours be done
+Lord we [Em7]pray Your kingdom [D]come
+Not my [C2]will but Yours be [Am7]done in [Em7]us, Je[D]sus
+
+{comment: Interlude}
 | Am7 / / / / / | / / / / / / | Em7 / / / / / | D / / / / / |
-Verse 2 | C / / / / / | Em7 / / / / / | G / / / / / | D / / / / / |
-You’re the[Em7] King of[C2] Glor - [G]y                         Interlude
-Em7 C2 G | C / / / / / | Am7 / / / / / | Em7 / / / / / | D/F# / / / / / |
-And You reign in maj - es - ty | C / / / / / | Am7 / / / / / | G / / / / / | D / / / / / |
-You’re the[Em7] God of [C2]my sal[G]vation                      Ending (2x)
-A[Em7]men,[C2]        [G]a[Em7]me[C2]n[G]
+| C / / / / / | Em7 / / / / / | G / / / / / | D / / / / / |
+
+{comment: Interlude}
+| C / / / / / | Am7 / / / / / | Em7 / / / / / | D/F# / / / / / |
+| C / / / / / | Am7 / / / / / | G / / / / / | D / / / / / |
+
+{comment: Ending}
+{ci: 2x}
+A[Em7]men,[C2]    [G]a[Em7]men[C2][G]

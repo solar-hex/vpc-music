@@ -3,7 +3,8 @@
 {key: Db}
 {tempo: 98}
 {time: 4/4}
-{x_theme: praise, worship, heaven}
+{x_verified: number chart, 97% of 78 chords}
+{x_theme: worship, heaven, praise}
 {x_source: pdf:UPCI Music/2020/Awesome and Powerful/Awesome-and-Powerful-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FAwesome%20and%20Powerful}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/awesome-and-powerful/audio/alto.m4a}
@@ -17,64 +18,71 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/awesome-and-powerful/charts/vocals.pdf}
 {x_album: Awesome and Powerful}
 
-{comment: Intro Chorus}
-{ci: 2xs}
-Db / / / | Gbsus/Db / / / | Gbmaj7 / / / | / / / / | (Gb) Db
-We’ve come to say
-Verse 1 (men sing 8vb) (2xs) Ab
-Db Lord You’re great
-We stand in awe to worship Bbm Gb
-B Gb Awesome and powerful is Your name
-We stand in awe to praise Db
-Db B Gb We’ve come with praise
-We stand in awe of Your name Ab Bbm
-Unrestrained Awesome and powerful
-[Chorus](Gb)                  Db                             Is[Db/Ab] Your  [Gb]name
-We’ve come to say (Gb) Db
-Ab We’ve come to say
-Lord You’re great Ab
-Bbm Gb Lord You’re great
-Awesome and powerful is Your name Bbm Db/Ab Gb
-Db Awesome and powerful is Your name
-We’ve come with praise Db
-Ab Bbm We’ve come with praise
-Unrestrained Awesome and powerful Ab/C Adim Bbm
-Gb | Break / / / / | Unrestrained Awesome and powerful
-Is Your name Db/Ab Gb
+{comment: Intro}
+| Db / / / | Gbsus/Db / / / | Gbmaj7 / / / | / / / / |
+
+{comment: Verse 1}
+{ci: men sing 8vb, 2xs}
+[Db]We stand in awe to worship
+[B]We stand in aw[Gb]e   to praise
+[Db]We stand in awe of Your nam[B]e[Gb]
+
+{comment: Chorus}
+[(Gb)]We’ve come to sa[Db]y
+Lord You’re grea[Ab]t
+Awesome and p[Bbm]owerful is Your [Gb]name
+We’ve come with pr[Db]aise
+Unrestra[Ab]ined    Awesome and p[Bbm]owerful
+Gb | Break / / / / |
 Is Your name
 
 {comment: Verse 2}
 {ci: men sing 8vb}
-Db Bridge 1
-We stand in awe to worship Db
-B Gb So open the windows of heaven and
-We stand in awe to praise Ab Bbm Gb
-Db B Gb let it rain Let it rain
-We stand in awe of Your name oh Db/F Gb Ab
-Db Db Ebm Db/F Ebm Db So open the windows of heaven and let it rain
-We stand in awe to wor - ship Bbm
-B Gb Let it rain
-We stand in awe to praise
-[Db]We stand in awe of Your[Gb] name
+[Db]We stand in awe to worship
+[B]We stand in aw[Gb]e   to praise
+[Db]We stand in awe of Your nam[B]e    [Gb]oh
+[Db]We stand in [Db]awe[Ebm]  to   [Db/F]wor -[Ebm]   sh[Db]ip
+[B]We stand in aw[Gb]e   to praise
+[Db]We stand in awe of Your [Gb]name
+
+{comment: Chorus}
+{ci: 2xs}
+[(Gb)]We’ve come to sa[Db]y
+Lord You’re grea[Ab]t
+Awesome and po[Bbm]werful is Your na[Gb]me
+We’ve come with prais[Db]e
+Unrestr[Ab]ained    Awesome and[Bbm] powerful
+Is[Db/Ab] Your  [Gb]name
+[(Gb)]We’ve come to sa[Db]y
+Lord You’re grea[Ab]t
+Awesome and po[Bbm]werful is[Db/Ab] Your  [Gb]name
+We’ve come with prais[Db]e
+Unrestr[Ab/C]ained    Awesome [Adim]and po[Bbm]werful
+Is[Db/Ab] Your  [Gb]name
+
+{comment: Bridge 1}
+So [Db]open the windows of heaven and
+let i[Ab]t  rai[Bbm]n   Let it rai[Gb]n
+So [Db/F]open the windows of hea[Gb]ven and let it rai[Ab]n
+Let it rai[Bbm]n
 
 {comment: Bridge 2}
-So [Db/F]open the windows of heave[Gb]n and let it rai[Ab]n
-Bbm (C-Db-Ab)
-Let it rain
-So [Db/F]open the windows of heave[Gb]n and let it rai[Ab]n
+So [Db/F]open the windows of hea[Gb]ven and let it rai[Ab]n
+Let it rai[Bbm]n[(C-Db-Ab)]
+So [Db/F]open the windows of hea[Gb]ven and let it rai[Ab]n
 Let it rai[Bbm]n
 
 {comment: Chorus}
-Db (cut music)
-We’ve come to say
+We’ve come to [Db]say
+{ci: cut music}
 Lord You’re great
-Awesome and powerful is[Db/F] Your [Gb]name
-[Gb]We’ve[Db/F] come [Ebm]with p[Db]raise
-Unrestr[Ab/C]ained       Awesome a[Adim]nd pow[Bbm]erful
+Awesome and powerful is[Db/F] Your n[Gb]ame
+[Gb]We’ve[Db/F] come[Ebm] with p[Db]raise
+Unrestr[Ab/C]ained    Awesome [Adim]and po[Bbm]werful
 Is[Db/F] Your  [Gb]name
 
 {comment: Ending}
-[Bbm]
-Is[Db/F] Your  n[Gb]ame
-[Bbm]
-Is[Db/F] Your  n[Gb]ame
+Awesome and po[Bbm]werful
+Is [Db/F]Your  n[Gb]ame
+Awesome and po[Bbm]werful
+Is [Db/F]Your  n[Gb]ame

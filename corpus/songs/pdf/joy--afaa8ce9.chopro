@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 140}
 {time: 4/4}
-{x_verified: number chart, 97% of 38 chords}
+{x_verified: number chart, 99% of 125 chords}
 {x_theme: joy, praise}
 {x_source: pdf:UPCI Music/2023/Joy/Joy-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FJoy}
@@ -24,91 +24,112 @@
 {x_chart_joy_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/joy/charts/joy-vocals.pdf}
 {x_album: The Entreating (Live)}
 
-Benita Jones | Chandler Moore | Howard Jones | Timothy Reddick
+{comment: Intro}
+||: Eb / / / | Bb/Eb / / / | Ab/Eb / / Eb | Abmaj7/Eb :||
 
-{comment: Intro Verse 2}
-||: Eb / / / | Bb/Eb / / / | Ab/Eb / / Eb | Abmaj7/Eb :|| Ab Bb Ab/C
-I’ve tasted and seen
-Verse 1 Eb Eb Ab/Eb / / Eb
-Eb Eb Bb/Eb Of the real thing
-The world didn’t give it Ab/Eb Cm7
-Ab/Eb Eb Ab/Eb What’s down in my soul
-And it can’t take it away Bb Ab Bbm7 C7(alt)
-Cm7 Bb Ab Joy that won’t let go
-What’s down in my soul Fm7 Eb / / / /
-Eb The garment of praise
-Joy that won’t let go Eb Eb Ab/Eb Eb Ab/Eb
-Eb Eb Bb/Eb For my heav - i - ness
-In every season Cm7
-Ab/Eb Eb Ab/Eb What’s down in my soul
-It will never fade Bb Ab Eb / / / | / / / /
-Cm7 Bb Ab Joy that won’t let go
-What’s down in my soul
-Eb Pre Chorus 2
-Joy that won’t let go Ab Bb/Ab Ab
-Darkness may come storms may rage
-Pre Chorus 1 Ab Ab/C Bb/D
-Ab(hit) Ab(hit) Eb One things for sure, this I know
-Darkness may come storms may rage
-[Ab]One things for sure[Ab/C], this I[Bb/D] know                           [Chorus]Eb                Fm
-The joy of the Lord is my strength
-[Chorus]Eb                Fm                           The [Cm]louder I sing the more joy You [Ab]bring
-The joy of the Lord is my strength Eb Fm
-Cm Ab The joy of the Lord is my strength
-The louder I sing the more joy You bring Cm Ab
-Eb Fm Weeping may come but it won’t steal my
-The joy of the Lord is my strength (Ab-G-Ab-A)
-Cm Ab Joy (The)
-Weeping may come but it won’t steal my joy
+{comment: Verse 1}
+The world didn’t [Eb]give it[Eb][Bb/Eb]
+And it can’t take it [Ab/Eb]away[Eb][Ab/Eb]
+What’s down in my [Cm7]soul[Bb][Ab]
+Joy that won’t let [Eb]go
+In every [Eb]seaso[Eb]n[Bb/Eb]
+It will never [Ab/Eb]fade[Eb][Ab/Eb]
+What’s down in my [Cm7]soul[Bb][Ab]
+Joy that won’t let [Eb]go
+
+{comment: Pre Chorus 1}
+[Ab(hit)]Darkness may come[Ab(hit)]    storms may rage[Eb]
+[Ab]One things for sure[Ab/C], this I [Bb/D]know
+
+{comment: Chorus}
+The [Eb]joy of the Lord is my [Fm]strength
+The [Cm]louder I sing the more joy You [Ab]bring
+The [Eb]joy of the Lord is my [Fm]strength
+[Cm]Weeping may come but it won’t [Ab]steal my joy
 
 {comment: Interlude}
 | Eb / / / | / / Fm / | Cm / / / | / / Ab / |
 | Eb / / / | / / Fm / | Cm / / / |
-Benita Jones | Chandler Moore | Howard Jones | Timothy Reddick
 
-{comment: Chorus Bridge}
-[Eb/Bb]The joy of the Lord[Bmaj7(#5)/Bb]            is my strength            J[Eb]oy like a river [Dbmaj7]I feel it rising
-The [Cm]louder I sing the more joy You [Ab]bring                 C[Cm7]ome overtake us
-The [Eb]joy of the Lord is my [Fm]strength                        [Eb/Db]Hal  -  [Fm7]le  - [Ab]lu - [Cm7]jah
-[Cm]Weeping may come                                   Turned my m[Eb]ourning into dancing
-but i[Eb/G]t won’t [Ab]steal m[Eb/Bb]y joy[Ab/C] [Bb/D]                               S[Dbmaj7]orrow into singing
-Interlude                                            [Cm7]Shout it out louder
-| Eb / / / | / / Fm / | Cm / / / | / / Ab / | Eb/Db Fm7 Ab Cm7
-Hal - le - lu - jah
+{comment: Verse 2}
+[Ab]I[Bb]’ve[Ab/C] tasted and seen
+| Eb Eb Ab/Eb / / Eb
+Of the real thing
+[Ab/Eb]What’s down in my[Cm7] soul
+[Bb]Jo[Ab]y that won’t let go[Bbm7][C7(alt)]
+| Fm7 Eb / / / /
+The garment of praise
+[Eb]F[Eb]or my hea[Ab/Eb]v - i - nes[Eb]s[Ab/Eb]
+What’s down in my [Cm7]soul
+| Bb Ab Eb / / / | / / / /
+Joy that won’t let go
+
+{comment: Pre Chorus 2}
+[Ab]Darkness may come [Bb/Ab]storms may [Ab]rage
+[Ab]One things for sure,[Ab/C]  this I [Bb/D]know
+
+{comment: Chorus}
+The [Eb]joy of the Lord is my [Fm]strength
+The [Cm]louder I sing the more joy You [Ab]bring
+The [Eb]joy of the Lord is my [Fm]strength
+[Cm]Weeping may come but it won’t [Ab]steal my
+[(Ab-G-Ab-A)]Joy    (The)
+
+{comment: Chorus}
+[Eb/Bb]The joy of the Lord[Bmaj7(#5)/Bb]    is my strength
+The [Cm]louder I sing the more joy You [Ab]bring
+The [Eb]joy of the Lord is my [Fm]strength
+[Cm]Weeping may come
+but it[Eb/G] won’t [Ab]steal m[Eb/Bb]y joy[Ab/C][Bb/D]
+
+{comment: Interlude}
+| Eb / / / | / / Fm / | Cm / / / | / / Ab / |
 
 {comment: Vamp}
 {ci: Solo}
-Eb (Ab-C-Eb) Vamp (Unison)
-O the joy of the Lord is my strength Eb Fm
-Cm Ab O the joy of the Lord is my strength
-O the joy of the Lord is my strength Cm Ab
-Eb (G-Eb) Cm O the joy of the Lord is my strength
-O the joy of the Lord is my strength Eb Fm
-Cm Ab O the joy of the Lord is my strength
-O the joy of the Lord is my strength Cm Ab(cut)
-O the joy of the Lord is my strength
+O the [Eb]joy of the Lor[(Ab-C-Eb)]d    is my strength
+O the [Cm]joy of the Lord    is my [Ab]strength
+O the [Eb]joy of the Lor[(G-Eb)]d    is [Cm]my strength
+O the [Cm]joy of the Lord    is my [Ab]strength
 
 {comment: Vamp}
 {ci: Unison}
-Eb Fm Vamp (Parts)
-O the joy of the Lord is my strength (Ab-C-Eb)
-Cm Ab O the joy of the Lord is my strength
-O the joy of the Lord is my strength (G-Eb) Cm
-Eb Fm O the joy of the Lord is my strength
-O the joy of the Lord is my strength (Ab-C-Eb)
-Cm Ab O the joy of the Lord is my strength
-O the joy of the Lord is my strength Eb/Db Fm7 Ab Cm7
-Eb Fm Hal - le - lu - jah
-O the joy of the Lord is my strength
+O the [Eb]joy of the Lord is my strengt[Fm]h
 O the [Cm]joy of the Lord is my strengt[Ab]h
-O the [Eb]joy of the Lord is my streng[Fm]th
-[Eb/Db]Hal  -  [Fm7]le  - [Ab]lu - [Cm7]jah
-Benita Jones | Chandler Moore | Howard Jones | Timothy Reddick
+O the [Eb]joy of the Lord is my strengt[Fm]h
+O the [Cm]joy of the Lord is my strengt[Ab]h
+O the [Eb]joy of the Lord is my strengt[Fm]h
+O the [Cm]joy of the Lord is my strengt[Ab]h
+O the [Eb]joy of the Lord is my strengt[Fm]h
+[Eb/Db]Hal  -  [Fm7]le  - l[Ab]u - [Cm7]jah
 
 {comment: Bridge}
-J[Eb]oy like a river [Dbmaj7]I feel it rising
+J[Eb]oy like a river[Dbmaj7] I feel it rising
 [Cm7]Come overtake us
-[Eb/Db]Hal  -  [Fm7]le  - [Ab]lu - [Cm7]jah
+[Eb/Db]Hal  -  [Fm7]le  - l[Ab]u - [Cm7]jah
+Turned my [Eb]mourning into dancing
+[Dbmaj7]Sorrow into singing
+[Cm7]Shout it out louder
+[Eb/Db]Hal  -  [Fm7]le  - l[Ab]u - [Cm7]jah
+
+{comment: Vamp}
+{ci: Unison}
+O the [Eb]joy of the Lord is my strengt[Fm]h
+O the [Cm]joy of the Lord is my strengt[Ab]h
+O the [Eb]joy of the Lord is my strengt[Fm]h
+O the [Cm]joy of the Lord is my strengt[Ab(cut)]h
+
+{comment: Vamp}
+{ci: Parts}
+O the joy of the Lord[(Ab-C-Eb)]    is my strength
+O the joy of the Lord[(G-Eb)]    is m[Cm]y strength
+O the joy of the Lord[(Ab-C-Eb)]    is my strength
+[Eb/Db]Hal  -  [Fm7]le  - l[Ab]u - [Cm7]jah
+
+{comment: Bridge}
+J[Eb]oy like a river[Dbmaj7] I feel it rising
+[Cm7]Come overtake us
+[Eb/Db]Hal  -  [Fm7]le  - l[Ab]u - [Cm7]jah
 Turned my [Eb/G]mourning into dancing
-S[Bbm9]orrow into singing
+[Bbm9]Sorrow into singing
 [Cm7]Shout it out loude[Eb/Db]r[Fm7][Ab][Cm7]

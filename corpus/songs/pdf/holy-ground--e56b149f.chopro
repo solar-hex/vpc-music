@@ -17,29 +17,28 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ground--97101105/charts/vocals.pdf}
 {x_album: Worthy of Your Name (Live)}
 
-Intro (2x) Bridge 1
-||: Ab2 / / / | Bb / / / | Cm7 / / / | Eb/G / / / :|| Ab2 Bb Cm7
-Chains fall, fear bow, here, now
-Verse 1                                              [Eb/G]Jesus, You change everything
-[Ab2]Here as we w[Bb]ait, seek Your [Cm7]face                        [Ab2]Lives healed, [Bb]hope found, [Cm7]here, now
-Come and make Your t[Eb/G]hrone upon our praise[Eb]            [Eb/G]Jesus, You change everything
-[Ab2]Here in this [Bb]place, have Your[Cm7] way
-Eb/G Bridge 2
-The moment that we see You we are changed Ab2 Bb Cm7
-Chains fall, fear bow, here, now
-Chorus                                              [Eb/G]Jesus, You change everything
-[Ab2]Show us Your g[Bb]lory, show us Your g[Cm7]lory           [Ab2]Lives healed,[Bb] hope found,[Cm7] here, now
-In wonder and sur - [Eb/G]render we fall down                  [Eb/G]Jesus, You change everything
-[Ab2]Show us Your g[Bb]lory, show us Your g[Cm7]lory
-Eb/G Instrumental 2 (2x)
-Let every burning heart be holy ground ||: Ab2 / / / | Bb / / / | Cm7 / / / | Eb/G / / / :||
+{comment: Intro}
+{ci: 2x}
+||: Ab2 / / / | Bb / / / | Cm7 / / / | Eb/G / / / :||
 
-{comment: Intro Bridge 2}
+{comment: Verse 1}
+[Ab2]Here as we [Bb]wait, seek Your f[Cm7]ace
+Come and make Your [Eb/G]throne upon our prais[Eb]e
+[Ab2]Here in this p[Bb]lace, have Your [Cm7]way
+The moment that we [Eb/G]see You we are changed
 
-{comment: Verse 2 End}
-[Ab2]Here, not by [Bb]power, not by [Cm7]migh[Ab2]t
+{comment: Chorus}
+[Ab2]Show us Your [Bb]glory, show us Your [Cm7]glory
+In wonder and sur - r[Eb/G]ender we fall down
+[Ab2]Show us Your [Bb]glory, show us Your [Cm7]glory
+Let every burning [Eb/G]heart be holy ground
+
+{comment: Intro}
+
+{comment: Verse 2}
+[Ab2]Here, not by p[Bb]ower, not by [Cm7]might
 But only by the[Eb/G] cross we come aliv[Eb]e
-[Ab2]Here, we're un - [Bb]done, over –[Cm7] come
+[Ab2]Here, we're un - [Bb]done, over – [Cm7]come
 By heaven’s love re -[Eb/G] vealed before our eyes
 
 {comment: Chorus}
@@ -48,3 +47,24 @@ By heaven’s love re -[Eb/G] vealed before our eyes
 {comment: Instrumental 1}
 {ci: 2x}
 ||: Ab2 / / / | Bb / / / | Cm7 / / / | Eb/G / / / :||
+
+{comment: Bridge 1}
+[Ab2]Chains fall, f[Bb]ear bow, [Cm7]here, now
+[Eb/G]Jesus, You change everything
+[Ab2]Lives healed, [Bb]hope found, [Cm7]here, now
+[Eb/G]Jesus, You change everything
+
+{comment: Bridge 2}
+[Ab2]Chains fall, [Bb]fear bow,[Cm7] here, now
+[Eb/G]Jesus, You change everything
+[Ab2]Lives healed, [Bb]hope found,[Cm7] here, now
+[Eb/G]Jesus, You change everything
+
+{comment: Instrumental 2}
+{ci: 2x}
+||: Ab2 / / / | Bb / / / | Cm7 / / / | Eb/G / / / :||
+
+{comment: Bridge 2}
+
+{comment: End}
+[Ab2]

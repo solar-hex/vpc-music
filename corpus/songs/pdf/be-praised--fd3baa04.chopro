@@ -18,37 +18,71 @@
 {x_album: Be Praised}
 {x_writers: Aaron Moses, Dante Bowe}
 
-Joel Barnes
-Intro (2x) Interlude
-| Abm7 / Gb / | Dbsus / Db / | | Gb / / / | Abm7 / / / | Ebm7 / / / | Cb2 / / / |
+{comment: Intro}
+{ci: 2x}
+| Abm7 / Gb / | Dbsus / Db / |
 
-{comment: Verse 1 Bridge 1}
-[Abm7]You spoke those[Gb] words                             When I[Gb] think of all You’ve done
-Let there be [Dbsus]light and it w[Db]as                            And all the[Abm7] battles You’ve brought
-[Abm7]And in that same [Gb]breath                            Me over,[Ebm7] halleluja[Cb2]h
-The stars fell in [Dbsus]line                                   And all the [Gb]storms I saw Him calm
-With one vo[Db]ice creation cries                           In my def[Abm7]ense, my only song is ha[Ebm7]lleluja[Cb2]h
-[Abm7]You do a[Gb]ll things well[Dbsus] [Db]                             Bridge 2
-[Abm7]You do a[Gb]ll things well[Dbsus] [Db]                             And how He ne[Gb]ver let me fall
-Chorus                                             Now unto Hi[Abm7]m who is able, hal[Ebm7]leluja[Cb2]h
-Be [Cb2]praised,[Ebm7] be    [Db]praised[Gb/Bb]                             And let there [Gb/Db]never be a day
-For[Cb2]ever and [Dbsus]always                                   That I don’t r[Abm7]ise to bring You praise, h[Ebm7]alleluja[Cb2]h
-Interlude (same as Intro - 2x) Chorus > Bridge 1
+{comment: Verse 1}
+[Abm7]You spoke those[Gb] words
+Let there be [Dbsus]light and it w[Db]as
+[Abm7]And in that same [Gb]breath
+The stars fell in l[Dbsus]ine
+With one v[Db]oice creation cries
+[Abm7]You do [Gb]all things wel[Dbsus]l[Db]
+[Abm7]You do [Gb]all things wel[Dbsus]l[Db]
 
-{comment: Verse 2 Bridge 2}
-[Abm7]Lost in the [Gb]dark up under the [Ebm7]dirt                   And how He ne[Gb/Db]ver let me fall
-I was bu[Db]ried, left to die                                Now unto Hi[Abm7]m who is able, hal[Ebm7]leluja[Cb2]h
-[Abm7]I heard You[Gb]r voice calling m[Ebm7]y name                And let there [Gb/Db]never be a day
-From the t[Db]omb, I came alive                            That I don’t r[Abm7]ise to bring You praise, h[Ebm7]alleluja[Cb2]h
-[Abm7]You do a[Gb]ll things well[Dbsus] [Db]                             Chorus > Bridge 1 > Bridge 2
-[Abm7]You do a[Gb]ll things well[Dbsus] [Db]                             Vamp (2x)
-Chorus                                                 [Gb/Db]We give You the highest praise
-Be [Cb2]praised,[Ebm7] be    [Db]praised                             [Abm7]Give You the highest praise
-[Gb/Bb]Be      [Cb2]praised,[Ebm7] be    [Db]praised                           [Ebm7]We give You the highest praise
-[Gb/Bb]Be      [Cb2]praised,[Ebm7] be    [Db]praised[Gb/Bb]                        [Cb]Give You the highest praise
+{comment: Chorus}
+Be [Cb2]praised, [Ebm7]be    [Db]praise[Gb/Bb]d
 For[Cb2]ever and [Dbsus]always
+
+{comment: Interlude}
+{ci: same as Intro - 2x}
+
+{comment: Verse 2}
+[Abm7]Lost in the [Gb]dark up under the[Ebm7] dirt
+I was b[Db]uried, left to die
+[Abm7]I heard You[Gb]r voice calling my[Ebm7] name
+From the t[Db]omb, I came alive
+[Abm7]You do [Gb]all things wel[Dbsus]l[Db]
+[Abm7]You do [Gb]all things wel[Dbsus]l[Db]
+
+{comment: Chorus}
+Be [Cb2]praised, [Ebm7]be    [Db]praised
+[Gb/Bb]Be    [Cb2]praised,[Ebm7] be    [Db]praised
+[Gb/Bb]Be    [Cb2]praised,[Ebm7] be    [Db]praise[Gb/Bb]d
+For[Cb2]ever and [Dbsus]always
+
+{comment: Interlude}
+| Gb / / / | Abm7 / / / | Ebm7 / / / | Cb2 / / / |
+
+{comment: Bridge 1}
+When [Gb]I think of all You’ve done
+And all the [Abm7]battles You’ve brought
+Me ove[Ebm7]r, hallelujah[Cb2]
+And all the s[Gb]torms I saw Him calm
+In my de[Abm7]fense, my only song is h[Ebm7]allelujah[Cb2]
+
+{comment: Bridge 2}
+And how He [Gb]never let me fall
+Now unto H[Abm7]im who is able, ha[Ebm7]llelujah[Cb2]
+And let there [Gb/Db]never be a day
+That I don’t ri[Abm7]se to bring You praise, h[Ebm7]alleluja[Cb2]h
+{ci: Chorus → Bridge 1}
+
+{comment: Bridge 2}
+And how He [Gb/Db]never let me fall
+Now unto H[Abm7]im who is able, ha[Ebm7]llelujah[Cb2]
+And let there [Gb/Db]never be a day
+That I don’t ri[Abm7]se to bring You praise, h[Ebm7]alleluja[Cb2]h
+{ci: Chorus → Bridge 1 → Bridge 2}
+
+{comment: Vamp}
+{ci: 2x}
+[Gb/Db]We give You the highest praise
+[Abm7]Give You the highest praise
+[Ebm7]We give You the highest praise
+[Cb]Give You the highest praise
 UPCI Music 1
-Joel Barnes
 
 {comment: Vamp}
 {ci: 2x}

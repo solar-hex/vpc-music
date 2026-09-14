@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 65}
 {time: 4/4}
-{x_verified: number chart, 98% of 63 chords}
+{x_verified: number chart, 99% of 89 chords}
 {x_source: pdf:UPCI Music/2021/God is Calling/God-is-Calling-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FGod%20is%20Calling}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/god-is-calling/audio/alto.mp3}
@@ -18,40 +18,68 @@
 {x_album: Live at the Upper Room}
 {x_writers: Anthony Trimble}
 
-{comment: Intro Chorus}
+{comment: Intro}
+||: Gsus G / / | Gsus G / / |
+| Gsus G / Em | D / / / :||
+
+{comment: Verse}
+{ci: Solo}
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - l[G]ing my [Dsus]name[D]
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling[Em]    my [Dsus]name[D]
+
+{comment: Chorus}
+{ci: Solo}
+An[G/B]d I will [C]answer
+I will [Em]answer
+I will [C]answer the [Dsus]call[D]
+An[G/B]d I will [C]answer
+I will [Em]answer
+I will [C]answer the [Dsus]call[D]
+
+{comment: Verse}
 {ci: Unison}
-||: Gsus G / / | Gsus G / / | G/B C
-And I will answer
-| Gsus G / Em | D / / / :|| Em D
-I will answer
-Verse (Solo) C Dsus D
-Gsus G I will answer the call
-God is cal - ling G/B C
-Gsus G And I will answer
-God is cal - ling Em D
-Gsus G Dsus D I will answer
-God is cal - ling my name C Dsus D
-Gsus G I will answer the call
-God is cal - ling
-Gsus G Interlude
-God is cal - ling ||: Am7 / / / | G/B / / / | C / / / | Dsus / D / :||
-God is c[Gsus]al - [G]ling[Em]    my [Dsus]name[D]                         Bridge (Solo)
-Chorus (Solo)                                           [Am7]Hear His voice calling
-And[G/B] I will[C] answer                                         [G/B]Hear His voice calling
-I will[Em] answer                                             [C]Hear His voice calling your[Dsus] nam[D]e
-I wil[C]l answer the [Dsus]call[D]                                  Bridge (men sing 8vb)
-And[G/B] I will[C] answer                                     Chorus (Two Parts)
-I will[Em] answer                                         And[G/B] I will[C] answer
-I wil[C]l answer the [Dsus]call[D]                                  I will[Em] answer
-Verse (Unison)                                       [D]I will[C] answer the c[Dsus]al[D]l
-God is c[Gsus]al - [G]ling                                       [G/B]I will[C] answer
-God is c[Gsus]al - [G]ling                                     I will[Em] answer
-God is c[Gsus]al - [G]ling[Em]    my [Dsus]name[D]                         [D]I will[C] answer the c[Dsus]al[D]l
-God is c[Gsus]al - [G]ling
-God is c[Gsus]al - [G]ling
-God is c[Gsus]al - [G]ling[Em]    my [Dsus]nam[D]e
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling[Em]    my [Dsus]name[D]
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling[Em]    my [Dsus]name[D]
+
+{comment: Chorus}
+{ci: Unison}
+An[G/B]d I will [C]answer
+I will [Em]answer[D]
+I will [C]answer the [Dsus]call[D]
+An[G/B]d I will [C]answer
+I will [Em]answer[D]
+I will [C]answer the [Dsus]call[D]
+
+{comment: Interlude}
+||: Am7 / / / | G/B / / / | C / / / | Dsus / D / :||
+
+{comment: Bridge}
+{ci: Solo}
+[Am7]Hear His voice calling
+[G/B]Hear His voice calling
+[C]Hear His voice calling your [Dsus]name[D]
+
+{comment: Bridge}
+{ci: men sing 8vb}
+
+{comment: Chorus}
+{ci: Two Parts}
+An[G/B]d I will [C]answer
+I will [Em]answer
+[D]I will [C]answer the [Dsus]call[D]
+[G/B]I will [C]answer
+I will [Em]answer
+[D]I will [C]answer the [Dsus]call[D]
 
 {comment: Ending}
-God is c[Gsus]al - [G]ling
-God is c[Gsus]al - [G]ling
-God is [Gsus]cal -[G] ling my[D] nam[Gmaj7/B]e[C]
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - [G]ling
+God is [Gsus]cal - l[G]ing my [D]name[Gmaj7/B][C]

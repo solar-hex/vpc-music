@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 68}
 {time: 4/4}
-{x_verified: number chart, 93% of 58 chords}
+{x_verified: number chart, 95% of 119 chords}
 {x_theme: praise, heaven, worship}
 {x_source: pdf:UPCI Music/2019/Hallowed be Your Name/Hallowed-Be-Your-Name-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FHallowed%20be%20Your%20Name}
@@ -18,44 +18,60 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hallowed-be-your-name/charts/vocals.pdf}
 {x_album: (Lift Him Up)}
 
-{comment: Intro Chorus}
-| Gmaj7 / A/G / | F#m7 / Bm7 / | D F#m7 Bm7
-Hallowed be Your na - me
-| Em/C D/C Em/C / / | Bsus/C# / C13 / | Em7 G/B A/C# D A/C# G/B
-Verse 1                                                [D]Hallowed be Your[F#m7] na  - [Bm7]me
-[Bm]Holy holy[F#/A#]          Lord, You’re worthy             [Cmaj7]Lord and majesty, div[Em7]ine authority
-[Bm/A]And I’m honored to sing your [Bm/G#]praise                   [Asus]Hallowed be Your
-[Gmaj7]King of g[A/G]lory,[F#m7]      God al[Bm7]mighty
-Cmaj7 Bsus/C# C13 Interlude
-Hallowed be Your name | G / A/G / | F#m7 / Bsus/C# F#7(#5#9) |
-name
+{comment: Intro}
+| Gmaj7 / A/G / | F#m7 / Bm7 / |
+| Em/C D/C Em/C / / | Bsus/C# / C13 / |
+
+{comment: Verse 1}
+[Bm]Holy holy[F#/A#]    Lord, You’re worthy
+[Bm/A]And I’m honored to sing your[Bm/G#] praise
+[Gmaj7]King of [A/G]glory,[F#m7]    God al[Bm7]mighty
+[Cmaj7]Hallowed be Your[Bsus/C#] name[C13]
 
 {comment: Verse 2}
-[Bm]All creation,[F#/A#]       every nation                    Verse 3
-[Bm/A]Has its being by Your[Bm/G#] word                            [Bm]Holy holy[F#/A#]          Lord, You’re worthy
-[Gmaj7] [A/G] [F#m7] [Bm7]
-As it is   done up in heaven                           [Bm/A]tonight I’m honored to sing your[Bm/G#] praise
-Cmaj7 Em7 maj7
-Let it be done here on earth                           [G]King of g[A/G]lory,[F#m7]      God al[Bm7]mighty
-Asus D G/B A/C# maj7
-Let it be done on earth                                [C]Hallowed be Your[Em7] name
-[Asus] [D] [G/B] [A/C#]
+[Bm]All creation,[F#/A#]    every nation
+[Bm/A]Has its being by Your [Bm/G#]word
+[Gmaj7]As it[A/G] is   [F#m7]done up in[Bm7] heaven
+[Cmaj7]Let it be done [Em7]here on earth
+[Asus]Let it be done on [D]earth[G/B][A/C#]
 
 {comment: Chorus}
-[D]Hallowed be Your[F#m7] na  - [Bm7]me                         Chorus
-[Em7]Hallowed [G/B]be[A/C#]       Your[D] name[A/C#] [G/B]                        [D]Hallowed be Your[F#m7] na  - [Bm7]me
-[D]Hallowed be Your[F#m7] na  - [Bm7]me                            [Em7]Hallowed  [G/B]be[A/C#]       Your[D] nam[A/C#]e[G/B]
-[Cmaj7] [Em7]
-Lord and majesty, divine authority                         [D]Hallowed  be Your[F#m7] na  - [Bm7]me
-Asus D G/B A/C# maj7
-Hallowed be Your name                            [C]Lord and majesty, div[Em7]ine authority
-[Asus] [D] [G/B] [Em7] [A]
+[D]Hallowed be Your[F#m7] na  - [Bm7]me
+[Em7]Hallowed [G/B]be[A/C#]    Your [D]name[A/C#][G/B]
+[D]Hallowed be Your[F#m7] na  - [Bm7]me
+[Cmaj7]Lord and majesty, di[Em7]vine authority
+[Asus]Hallowed be Your [D]name[G/B][A/C#]
+
+{comment: Chorus}
+[D]Hallowed be You[F#m7]r na  -[Bm7] me
+[Em7]Hallowed [G/B]be[A/C#]    Your [D]name[A/C#][G/B]
+[D]Hallowed be Your[F#m7] na  - [Bm7]me
+[Cmaj7]Lord and majesty, di[Em7]vine authority
+[Asus]Hallowed be Your
+
+{comment: Interlude}
+| G / A/G / | F#m7 / Bsus/C# F#7(#5#9) |
+name
+
+{comment: Verse 3}
+[Bm]Holy holy[F#/A#]    Lord, You’re worthy
+[Bm/A]tonight I’m honored to sing your[Bm/G#] praise
+[Gmaj7]King of [A/G]glory,[F#m7]    God al[Bm7]mighty
+[Cmaj7]Hallowed be Your[Em7] name
+[Asus]Hallowed be Your [D]name[G/B][A/C#]
+
+{comment: Chorus}
+[D]Hallowed be Your[F#m7] na  - [Bm7]me
+[Em7]Hallowed  [G/B]be[A/C#]    Your [D]name[A/C#][G/B]
+[D]Hallowed  be Your[F#m7] na  - [Bm7]me
+[Cmaj7]Lord and majesty, di[Em7]vine authority
+[Asus]Hallowed be Your [D]nam[G/B]e[Em7][A]
 
 {comment: Chorus - Ending}
 [D]Hallowed be Your[F#m7] na  - [Bm7]me
-[Em7] [G/B] [A/C#] [D] [G/B] [A/C#] [G/B]
+[Em7]Hallowed [G/B]be[A/C#]    Your [D]na[G/B]me[A/C#][G/B]
 [D]Hallowed be Your[F#m7] na  - [Bm7]me
-[Cmaj7]Lord and majesty, div[Em7]ine authority
-[Asus] [Bm7] [Em7] [D]
-[Cmaj7]Hallowed be[Em7]          [Asus]Your
-[Gmaj7]name[A/G] [F#m7]                   [Em7]Y[Asus]our [D]name
+[Cmaj7]Lord and majesty, di[Em7]vine authority
+[Asus]Hallowed be Your [Bm7]name[Em7][D]
+[Cmaj7]Hallowed be[Em7]    [Asus]Your
+[Gmaj7]name[A/G] [F#m7]    [Em7]Y[Asus]our [D]name

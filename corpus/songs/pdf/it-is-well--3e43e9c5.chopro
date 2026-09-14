@@ -16,64 +16,119 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/it-is-well/charts/vocals.pdf}
 {x_writers: Horatio Spafford}
 
-It Is Well Horatio Spafford
-UPCI Bible Colleges Mas Choir arr. by Mark Yandris – “UPCI General Conference 2021
-Intro Dm7(b5) C/E C/G Em7 Am7 D9
-| Dm7(b5) C/E Dm7(b5)/F Dm7(b5) | C/G / / / | It is well
-| G / / / | C / / / | G7(13) / / / |                     [G]With my [C]soul[G7(13)].
-Verse 1 (Ladies / Parts) Verse 2 (Solo)
-[C]When peace like a [Am/F#]river    [F]atten[Fm6/9]deth my [C]way,           And L[C]ord, haste th[Am/F#]e da[D/F#]y
-When s[Am7]orrows like [Am7/D]sea billows r[Gsus]oll.[D7/F#]                      when my fa[F]ith s[Ddim7]hall be [C]sig[E7(#9#5)]h
-[G]W[F#dim7]h[Fdim7]at - [C/E]ever my l[F]ot, [F/Eb]Thou hast                 The c[Am7]louds be rolled b[Am7/D]ack as a s[Gsus]crol[G]l
-[D]taught[D/F#] me    [Am/F#]to    [G]say,                                     [F#dim7]T[Fdim7]he   [C/E]trump shall re[F]soun[F/Eb]d
-Chorus                                             And the L[D]ord [D/F#]shall[Am/F#]       de[G]scend
-Dm7(b5) C/E C/G Em7 Am7 Dm7 (Even so, it is well with my soul)
-[Dm7(b5)]It       [C/E]is   [C/G]well[Em7] [Am7] [Dm7]                                  [Chorus]Dm7(b5) C/E  C/G  Em7 Am7 Dm7
-Dm7(b5) C/E C/G Em7 Am7 D9 It is well
-It is well Dm7(b5) C/E C/G Em7 Am7 Dm7
-G C G7(13) It is well
-With my soul. Dm7(b5) C/E C/G Em7 Am7 D9
-Verse 2 (Solo) G C
-C Am/F# D/F# With my soul.
-And Lord, haste the day
-F Ddim7 C E7(#9#5) Refrain (2xs)
-when my faith shall be sigh G C
-Am7 Am7/D Gsus G It is well______
-The clouds be rolled back as a scroll It is well
-[F#dim7]T[Fdim7]he   [C/E]trump shall re[F]sound[F/Eb]                     With my [G]soul,______[C]___
-D D/F# Am/F# G With my soul
-And the Lord shall descend A Dm
-(Even so, it is well with my soul) It is well______
-[Chorus]Dm7(b5) C/E  C/G  Em7 Am7 Dm7                    With my [A]soul,______[Dm]___
-It is well With my soul
-[Dm7(b5)]It I[C/E]s [C/G]Wel[Em7]l[Am7] [Dm7]                                                              Horatio Spafford
-UPCI Bible Colleges Mas Choir arr. by Mark Yandris – “UPCI General Conference 2021
+{comment: Intro}
+| Dm7(b5) C/E Dm7(b5)/F Dm7(b5) | C/G / / / |
+| G / / / | C / / / | G7(13) / / / |
 
-{comment: Chorus Vamp 1}
-{ci: 2x}
-[Dm7(b5)]It       [C/E]is   [C/G]well[Em7] [Am7] [Dm7]                                    [Db]It is well
-[Dm7(b5)]It       [C/E]is   [C/G]well[Em7] [Am7] [Dm7]                                    [B]It is well
-[Dm7(b5)]It       [C/E]is   [C/G]well[Em7] [Am7] [D9]                                    [Gb/Bb]It is well
-[G]With my [C]soul.                                          [Ebm6/A]It is well
-Interlude Bridge 2 (Key Change)(4x)
-/C Abmaj9 Bbmaj9 Dsus9 D9 Dsus9 Ab13
-/C Abmaj9 Bbmaj9 It is well, my soul is well
-/C Abmaj9 Bbmaj9 G13 E7(b9#5) A7(#5)
-/C Abmaj9 Bbmaj9 It is well, well with my soul
-/C Abmaj9/Eb Bbmaj9/F
-/C Abmaj9 Bbmaj9 Vamp 2
-/C Abmaj9 Bbmaj9 D9
-Bb F/A Ab/D G7(#9#5) It is well
-Bridge 1 (Sopranos)(2x)                                 [D9/F#]It is well
-[Csus9]It is well, my [C9]soul is [Csus9]well[Gb13]                                 [G13]It is well
-[F13]It is well,[D7(b9#5)] well[G7(#5)]        with my soul                         [E7(b9#5)]It is[A7(#5)] well
-Bridge 1 (2x)                                          [D9]With my soul
-[Csus9]It is well, my [C9]soul is [Csus9]well[Gb13]                                 [D9/F#]With my soul
-[F13]It is well,[D7(b9#5)] well[G7(#5)]        with my soul                       [G13]With my soul
-Bridge 2 (Key Change)(3x)                               [E7(b9#5)]With my [A7(#5)]soul
-[Dbsus9]It is well, my [Db9]soul is[Dbsus9] well[G13]                               Ending
-Gb13 Eb7(b9#5) Ab7(#5) D7 (cut) D7
-It is well, well with my soul It is well, my soul is well.
+{comment: Verse 1}
+{ci: Ladies / Parts}
+[C]When peace like a[Am/F#] river    [F]attend[Fm6/9]eth my [C]way,
+When [Am7]sorrows lik[Am7/D]e sea billows [Gsus]roll.[D7/F#]
+[G]W[F#dim7]h[Fdim7]at - [C/E]ever my l[F]ot, [F/Eb]Thou hast
+[D]taught [D/F#]me    [Am/F#]to    [G]say,
+
+{comment: Chorus}
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][D9]
+[G]With my [C]soul.[G7(13)]
+
+{comment: Verse 2}
+{ci: Solo}
+And [C]Lord, haste the[Am/F#] day[D/F#]
+when my f[F]aith s[Ddim7]hall be [C]sigh[E7(#9#5)]
+The [Am7]clouds be rolled [Am7/D]back as a [Gsus]scrol[G]l
+[F#dim7]T[Fdim7]he   [C/E]trump shall res[F]ound[F/Eb]
+And the [D]Lord [D/F#]shall[Am/F#]    de[G]scend
+{ci: Even so, it is well with my soul}
+
+{comment: Chorus}
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][D9]
+[G]With my [C]soul.[G7(13)]
+
+{comment: Verse 2}
+{ci: Solo}
+And [C]Lord, haste the[Am/F#] day[D/F#]
+when my f[F]aith s[Ddim7]hall be [C]sigh[E7(#9#5)]
+The [Am7]clouds be rolled [Am7/D]back as a [Gsus]scrol[G]l
+[F#dim7]T[Fdim7]he   [C/E]trump shall res[F]ound[F/Eb]
+And the [D]Lord [D/F#]shall[Am/F#]    de[G]scend
+{ci: Even so, it is well with my soul}
+
+{comment: Chorus}
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][D9]
+[G]With my [C]soul.
+
+{comment: Refrain}
+{ci: 2xs}
+It is[G] well___[C]___
+It is well
+With my [G]soul,______[C]___
+With my soul
+It is [A]well___[Dm]___
+It is well
+With my [A]soul,______[Dm]___
+With my soul
+
+{comment: Chorus}
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][Dm7]
+[Dm7(b5)]It    [C/E]is   [C/G]well[Em7][Am7][D9]
+[G]With my [C]soul.
 
 {comment: Interlude}
-Db / / / | B / / / | Gb/Bb / / / | Ebm6/A / / / |
+[/C] [Abmaj9] [Bbmaj9]
+[/C] [Abmaj9] [Bbmaj9]
+[/C] [Abmaj9] [Bbmaj9]
+[/C] [Abmaj9] [Bbmaj9]
+[/C] [Abmaj9/Eb] [Bbmaj9/F]
+[/C] [Abmaj9] [Bbmaj9]
+[/C] [Abmaj9] [Bbmaj9]
+[Bb] [F/A] [Ab/D] [G7(#9#5)]
+
+{comment: Bridge 1}
+{ci: Sopranos, 2x}
+[Csus9]It is well, my [C9]soul is [Csus9]well[Gb13]
+[F13]It is well, [D7(b9#5)]well[G7(#5)]    with my soul
+
+{comment: Bridge 1}
+{ci: 2x}
+[Csus9]It is well, my [C9]soul is [Csus9]well[Gb13]
+[F13]It is well, [D7(b9#5)]well[G7(#5)]    with my soul
+
+{comment: Bridge 2}
+{ci: Key Change, 3x}
+[Dbsus9]It is well, my [Db9]soul is [Dbsus9]well[G13]
+[Gb13]It is well, [Eb7(b9#5)]well    [Ab7(#5)]with my soul
+
+{comment: Interlude}
+| Db / / / | B / / / | Gb/Bb / / / | Ebm6/A / / / |
+
+{comment: Vamp 1}
+{ci: 2x}
+[Db]It is well
+[B]It is well
+[Gb/Bb]It is well
+[Ebm6/A]It is well
+
+{comment: Bridge 2}
+{ci: Key Change, 4x}
+[Dsus9]It is well, my [D9]soul is [Dsus9]well[Ab13]
+[G13]It is well, [E7(b9#5)]well[A7(#5)]    with my soul
+
+{comment: Vamp 2}
+[D9]It is well
+[D9/F#]It is well
+[G13]It is well
+[E7(b9#5)]It is [A7(#5)]well
+[D9]With my soul
+[D9/F#]With my soul
+[G13]With my soul
+[E7(b9#5)]With my[A7(#5)] soul
+
+{comment: Ending}
+[D7(cut)]It is well, my soul is well[D7].

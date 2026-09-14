@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 80}
 {time: 4/4}
-{x_theme: praise, heaven, name-of-jesus}
+{x_theme: praise, heaven}
 {x_source: pdf:UPCI Music/God of Wonder/God of Wonder - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FGod%20of%20Wonder}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/god-of-wonder/audio/alto.m4a}
@@ -18,59 +18,85 @@
 {x_album: Majesty Displayed}
 
 {comment: Intro}
-Bb / / / / | Bb / / / |
+| Bb / / / / | Bb / / / |
+
+{comment: Verse 1}
+{ci: Solo}
+The [Bb]earth and all You’ve made declare the
+p[Ab]ower of Your name. The[Eb/G] heavens testify
+the God of wo[Bb]nders. Your [Bb]majesty displayed
+in the thu[Ab]nder of the waves, the[Eb/G] earth is
+only Yours, the God of wo[Bb]nders.
+
+{comment: Interlude}
+| Bb / / / | Ab / / / | Eb/G / / / | Bb / / /
+
+{comment: Verse 1}
+{ci: Unison}
+The [Bb]earth and all You’ve made declare the
+p[Ab]ower of Your name. The[Eb/G] heavens testify
+the God of wo[Bb]nders. Your [Bb]majesty displayed
+in the thu[Ab]nder of the waves, the[Eb/G] earth is
+only Yours, the God of wo[Bb]nders.
+
+{comment: Pre-Chorus}
+[F/A]Be ex – [F/D]alt - [Cm]ed,   [Bb]oh [F/A]God above the hea[Bb]vens.
+[Bb/D]Let Your [Eb]glory reign over [Fsus]all the [F]earth.
 
 {comment: Chorus}
 {ci: Unison}
-Verse 1 (Solo)                                        There [Bb]is no one besid[Eb]e You. There [Gm7]is no
-The [Bb]earth and all You’ve made declare the               name above[F]. The ea[Bb]rth will rise to prais[Eb]e
-po[Ab]wer of Your name. The [Eb/G]heavens testify                You. You’re the God of won[Gm7]der,
-the God of won[Bb]ders. Your [Bb]majesty displayed             God of wonde[F]r
-in the th[Ab]under of the waves, the[Eb/G] earth is
-Bb Verse 2
-only Yours, the God of wonders. Bb Ab
-Eternity is Yours. We come behind,
-Interlude                                             You go before. From beg[Eb/G]inning to the end,
-Bb / / / | Ab / / / | Eb/G / / / | Bb / / / Bb Bb
-a God of wonder. The crooked is made straight
-Verse 1 (Unison)                                      and the de[Ab]sert springs to life. I[Eb/G] lift my
-The [Bb]earth and all You’ve made declare the               hands to praise this God of won[Bb]der.
-po[Ab]wer of Your name. The [Eb/G]heavens testify
-Bb Bb Pre-Chorus
-the God of wonders. Your majesty displayed
-in the th[Ab]under of the waves, the[Eb/G] earth is                  Chorus (Parts)
-only Yours, the God of wo[Bb]nders.
+There [Bb]is no one besid[Eb]e You. There[Gm7] is no
+name abo[F]ve. The [Bb]earth will rise to prais[Eb]e
+You. You’re the God of won[Gm7]der,
+God of wond[F]er
+
+{comment: Verse 2}
+E[Bb]ternity is Yours. We come beh[Ab]ind,
+You go before. From be[Eb/G]ginning to the end,
+a God of wo[Bb]nder. The[Bb] crooked is made straight
+and the d[Ab]esert springs to life. [Eb/G]I lift my
+hands to praise this God of won[Bb]der.
+
+{comment: Pre-Chorus}
+
+{comment: Chorus}
+{ci: Parts}
 
 {comment: Bridge}
 {ci: Solo}
-Pre-Chorus                                          Al[Bb]mighty, creator. You’re [Bb]higher.
-[F/A]Be ex – a[F/D]lt - e[Cm]d,   [Bb]oh [F/A]God above the hea[Bb]vens.           There’s no other s[Bb]eated forever.
-[Bb/D]Let Your g[Eb]lory reign over a[Fsus]ll the [F]earth.                      [Bb]You are the God of wonder
-Ab / / / | Eb/G / / / | Bb / / /
+Al[Bb]mighty, creator. You’re [Bb]higher.
+There’s no other [Bb]seated forever.
+[Bb]You are the God of wonder
+| Ab / / / | Eb/G / / / | Bb / / /
 
 {comment: Bridge}
 {ci: Unison}
-Bb Bb Outro
-Almighty, creator. You’re higher. C / / / | Bb / / / | F/A / / / | Bb / / / |
-There’s no other s[Bb]eated forever.                        C / / / | Bb / / / | F/A / / / |  Bb / / / |
-[Bb]You are the God of wonder                          C /  /  /  |
-oh,[Ab]      oh[Eb/G].[Ab]
+Al[Bb]mighty, creator. You’re [Bb]higher.
+There’s no other [Bb]seated forever.
+[Bb]You are the God of wonder
+oh,[Ab]    oh.[Eb/G][Ab]
 
 {comment: Bridge}
 {ci: Ladies sing 8va}
 Al[Bb]mighty, creator. You’re [Bb]higher.
-There’s no other s[Bb]eated forever.
+There’s no other [Bb]seated forever.
 [Bb]You are the God of wonder
-oh,[Ab]      oh[Eb/G].[Ab/Gb]
-Bridge (Parts / Key Change) – (3xs)
+oh,[Ab]    oh.[Eb/G][Ab/Gb]
+Bridge (Parts / Key Change) –
+{ci: 3xs}
 Al[C]mighty, creator. You’re [Bb]higher.
 There’s no other [F/A]seated forever.
 [Bb]You are the God of wonder
 
-{comment: Chorus 2 -}
+{comment: Chorus 2}
 {ci: 2xs}
 There i[C7/E]s no   [F]one be[C]side You[C7/E].[F]
-Ther[C]e  i[C7/E]s no  [F]name ab[G7]ove.
-The earth [C7/E]will  [F]rise to[C] praise Yo[C7/E]u[F].
+Ther[C]e  is[C7/E] no  [F]name ab[G7]ove.
+The earth [C7/E]will  [F]rise to[C] praise Yo[C7/E]u.[F]
 You’re the God of wond[Am7]er
-[G7]
+God of wo[G7]nder
+
+{comment: Outro}
+| C / / / | Bb / / / | F/A / / / | Bb / / / |
+| C / / / | Bb / / / | F/A / / / | Bb / / / |
+| C / / / |

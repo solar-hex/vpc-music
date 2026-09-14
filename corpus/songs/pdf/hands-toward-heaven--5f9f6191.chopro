@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 120}
 {time: 4/4}
-{x_verified: number chart, 100% of 35 chords}
+{x_verified: number chart, 100% of 57 chords}
 {x_theme: grace-mercy, praise, heaven, name-of-jesus, salvation, easter}
 {x_source: pdf:UPCI Music/Hands Toward Heaven/Hands Toward Heaven - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FHands%20Toward%20Heaven}
@@ -18,55 +18,75 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hands-toward-heaven/charts/vocals.pdf}
 {x_album: Hear}
 
-{comment: Verse 1 Verse 3}
-[A]Yours is the[A] name high a – [Asus]bove ev’ry [A]other              Yours is the [A]whole earth and ev[Asus]’rything i[A]n it
-Yours is the[D2] kingdom for – [D]ever You [Dmaj7]reign                Yours are the [D2]stars
-[F#m7]Yours is the[D/F#] power                                    That You s[D]poke in – [Dmaj7]to place
-That l[F#m]ifted us out of the[D2] grave[D] [Dmaj7]                          And [F#m7]Yours are the[D/F#] shouts
-Of the[F#m] sons and daughters
-Verse 2 D2 D Dmaj7
-A Lifting up Your holy name
-Yours is the heart
-Asus A Chorus 1
-That is beating in – side us
-D2 D Dmaj7 Chorus 2
-Yours is the glory and all of the fame A
-F#m7 D/F# For un – ending mercy for amazing grace
-And Yours is the love D
-F#m7 For life everlasting and sins erased
-That You poured down on us F#m7
-D2 D Dmaj7 With our hands t’ward heaven
-We’re rising up to sing Your praise And our voices raised
-To the [D]King almighty
-Chorus 1 We give all our praise (yeah)
-To the [A]King Almighty to the One who saves
-D Interlude
-Be glory and honor for all our days
-With our[F#m7] hands t’ward heaven                          Bridge (3x)
-And our voices raised A
-D Rescued, redeemed, we’re alive, we’re forgiven
-To the King almighty G
-We give all our praise (yeah) Shouting our praise
-With our[D] hands t’ward heaven
+{comment: Verse 1}
+[A]Yours is the [A]name high a –[Asus] bove ev’ry [A]other
+Yours is the [D2]kingdom for – [D]ever You [Dmaj7]reign
+[F#m7]Yours is the [D/F#]power
+That l[F#m]ifted us out of the [D2]grav[D]e[Dmaj7]
 
-{comment: Interlude}
-A / Asus / | A / / / | D2 / D | Dmaj7 / / /
+{comment: Verse 2}
+Yours is the h[A]eart
+That is [Asus]beating in – [A]side us
+Yours is the [D2]glory and [D]all of the [Dmaj7]fame
+And [F#m7]Yours is the [D/F#]love
+That You [F#m7]poured down on us
+We’re r[D2]ising up to[D] sing Your [Dmaj7]praise
 
 {comment: Chorus 1}
-F#m7 / D/F# / | F#m / / / | D2 / D | Dmaj7 / / / Chorus 2
+To the [A]King Almighty to the One who saves
+Be [D]glory and honor for all our days
+With our [F#m7]hands t’ward heaven
+And our voices raised
+To the [D]King almighty
+We give all our praise (yeah)
+
+{comment: Interlude}
+| A / Asus / | A / / / | D2 / D | Dmaj7 / / /
+| F#m7 / D/F# / | F#m / / / | D2 / D | Dmaj7 / / /
+
+{comment: Verse 3}
+Yours is the [A]whole earth and [Asus]ev’rything[A] in it
+Yours are the [D2]stars
+That You [D]spoke in – [Dmaj7]to place
+And [F#m7]Yours are the[D/F#] shouts
+Of the[F#m] sons and daughters
+[D2]Lifting up Your [D]holy [Dmaj7]name
+
+{comment: Chorus 1}
+
+{comment: Chorus 2}
+For un – [A]ending mercy for amazing grace
+For [D]life everlasting and sins erased
+With our [F#m7]hands t’ward heaven
+And our voices raised
+To the [D]King almighty
+We give all our praise (yeah)
+
+{comment: Interlude}
+
+{comment: Bridge}
+{ci: 3x}
+[A]Rescued, redeemed, we’re alive, we’re forgiven
+[G]Shouting our praise
+With our [D]hands t’ward heaven
+
+{comment: Chorus 1}
+
+{comment: Chorus 2}
 
 {comment: Instrumental}
-A / Asus / | A / / / | D2 / D | Dmaj7 / / /
-F#m7 / D/F# / | F#m / / / |
+| A / Asus / | A / / / | D2 / D | Dmaj7 / / /
+| F#m7 / D/F# / | F#m / / / |
 
 {comment: Tag 1}
 To the [D2]King Almighty
-We give [Dmaj7]all our praise (yeah)
+We give[Dmaj7] all our praise (yeah)
 
 {comment: Instrumental}
-A / Asus / | A / / / | D2 / D | Dmaj7 / / /
-Ending – Tag 2
-With our[F#m7] hands t’ward[D/F#] heaven
-And our v[F#m]oices raised
+| A / Asus / | A / / / | D2 / D | Dmaj7 / / /
+
+{comment: Ending – Tag 2}
+With our [F#m7]hands t’ward [D/F#]heaven
+And our [F#m]voices raised
 To the [D2]King Al-[D]mighty
-We give [Dmaj7]all our praise yea[A5]h
+We give[Dmaj7] all our praise yea[A5]h

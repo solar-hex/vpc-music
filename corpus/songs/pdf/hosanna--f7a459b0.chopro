@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 70}
 {time: 4/4}
-{x_verified: number chart, 100% of 20 chords}
+{x_verified: number chart, 100% of 56 chords}
 {x_theme: praise, worship, altar}
 {x_source: pdf:UPCI Music/2020/Hosanna/Hosanna-Chord-Chart-Songs-for-the-Church.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FHosanna}
@@ -27,31 +27,26 @@
 {x_album: Songs for the Church}
 {x_writers: James Wilson}
 
-{comment: Intro Interlude}
-||: C/E / / / | F / / / | C / / / | G / / / :|| (G-A-G-A-D-E-D-C) (Rep 4xs)
-| Am7 / / / | F / / / | C / / / | G (F-E) Dm7 |
-Chorus (Unison) | Am7 / / / | F / / / | Em7 / / / | G (F-E) Dm7 |
+{comment: Intro}
+||: C/E / / / | F / / / | C / / / | G / / / :||
+
+{comment: Chorus}
+{ci: Unison}
 [C/E]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
-C/E F C G Bridge (2xs)
-Hosanna hosanna hosanna to our King F G
-C/E F C G As we bow down low be lifted high
-Hosanna hosanna hosanna to our King F/A G/B
-C/E F C G let your presence flow let it fill the sky
-Hosanna hosanna hosanna to our King F G
-As our praise rings out send your glory in
-Chorus                                              come and h[F/A]ave your way let your [G/B]love rush in
+[C/E]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+[C/E]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+[C/E]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+
+{comment: Chorus}
 [Am7]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
-Am7 F C G Interlude
-Hosanna hosanna hosanna to our King (G-A-G-A-D-E-D-C) (Rep 4xs)
-| Am7 / / / | F / / / | C / / / | G (F-E) Dm7 |
-Bridge (Unison) | Am7 / / / | F / / / | Em7 / / / | G (F-E) Dm7 |
-As we b[F]ow down low be lif[G]ted high
-F/A G/B Chorus (Unison)
-let your presence flow let it fill the sky C F C G
-F G Hosanna hosanna hosanna to our King
-As our praise rings out send your glory in Am7 F C G
-F/A G/B Hosanna hosanna hosanna to our King
-come and have your way let your love rush in
+[Am7]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+
+{comment: Bridge}
+{ci: Unison}
+As we [F]bow down low be li[G]fted high
+let your [F/A]presence flow let i[G/B]t fill the sky
+As our [F]praise rings out send your[G] glory in
+come and [F/A]have your way let your[G/B] love rush in
 
 {comment: Bridge}
 {ci: Parts}
@@ -59,4 +54,28 @@ come and have your way let your love rush in
 {comment: Chorus}
 {ci: Parts}
 [Am7]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+[Am7]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
+
+{comment: Interlude}
+[(G-A-G-A-D-E-D-C)]
+{ci: Rep 4xs}
+| Am7 / / / | F / / / | C / / / | G (F-E) Dm7 |
+| Am7 / / / | F / / / | Em7 / / / | G (F-E) Dm7 |
+
+{comment: Bridge}
+{ci: 2xs}
+As we [F]bow down low be li[G]fted high
+let your pr[F/A]esence flow let i[G/B]t fill the sky
+As our pr[F]aise rings out send your [G]glory in
+come and [F/A]have your way let your[G/B] love rush in
+
+{comment: Interlude}
+[(G-A-G-A-D-E-D-C)]
+{ci: Rep 4xs}
+| Am7 / / / | F / / / | C / / / | G (F-E) Dm7 |
+| Am7 / / / | F / / / | Em7 / / / | G (F-E) Dm7 |
+
+{comment: Chorus}
+{ci: Unison}
+[C]Hosanna[F]   hosanna[C]   hosanna  [G]to our King
 [Am7]Hosanna[F]   hosanna[C]   hosanna  [G]to our King

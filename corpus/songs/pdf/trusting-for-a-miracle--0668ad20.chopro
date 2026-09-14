@@ -2,7 +2,7 @@
 {key: F}
 {tempo: 70}
 {time: 4/4}
-{x_verified: number chart, 100% of 9 chords}
+{x_verified: number chart, 100% of 44 chords}
 {x_theme: faith-trust, healing}
 {x_source: pdf:UPCI Music/2023/Trusting for a Miracle/Trusting-For-A-Miracle-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FTrusting%20for%20a%20Miracle}
@@ -18,50 +18,75 @@
 {x_album: Trusting For A Miracle}
 {x_writers: Mike Hudson, Kelsey White}
 
-Trusting For A Miracle Mike Hudson & Kelsey White
-Intro Chorus (Parts) (2x)
-| F / / / | / / / / | / / / / | / / / / | Bb Dm
-I am trusting, trusting for a miracle
-| F/A / / / | Bb / / / | Dm Bb | F5(no3rd) / / / / Bb F
-Laying down impossible in faith
-Verse 1 Bb (A-C) Dm
-F5(no3rd) I’m believing, ever in-ter-ceding
-You made a promise Bb F
-You’ll never leave us God come do a new thing in me
+{comment: Intro}
+| F / / / | / / / / | / / / / | / / / / |
+{ci: no3rd}
+| F/A / / / | Bb / / / | Dm Bb | F5 / / / /
+
+{comment: Verse 1}
+You made a [F5]promise
+{ci: no3rd}
+You’ll never leave us
 You are constant and faithful and true
-I may be broken Interlude
-But you’re not finished | F / / / | Bb / / / | Dm / Bb / | F / / / |
+I may be broken
+But you’re not finished
 Lord I know you’ll come through in the end
-Bridge (Solo) (2x)
-Pre Chorus 1 F C
-Bb F C Yes I believe it and I receive it
-Cause I know You’re working it out for my good Dm Bb
-Bb F C Lord You can do anything
-I know You’re working it out for my good
-Bridge (Unison) (1x)
+
+{comment: Pre Chorus 1}
+Cause I know You’re [Bb]working it [F]out for my [C]good
+I know You’re [Bb]working it [F]out for my [C]good
 
 {comment: Chorus}
 {ci: Solo}
-Bb Dm Bridge (Parts) (1x)
-I am trusting, trusting for a miracle F C
-Bb F Yes I believe it and I receive it
-Laying down impossible in faith Dm Bb / / / | F/Bb / / /
-Bb Dm Lord You can do anything
-And I’m believing, ever interceding
-Bb F Chorus (Flipped Parts)
-God come do a new thing in me Bb Dm
-I am trusting, trusting for a miracle
-Interlude Bb F
-F / / / | Bb / / / | Dm / Bb / | F / / / Laying down impossible in faith
-Bb (A-C) Dm
-Verse 2 I’m believing, ever in-ter-ceding
-When I have q[F]uestion you’re the[Bb/F] answer                 God come do a n[Bb]ew thing in [F]me
-Lord [F]You are the strength of my [Bb/F]life                     Outro
-F/A Bb | Bb / / / | Dm / / / | Bb / / / | F / / / |
-What I thought was over, oh You’re still in it
-Dm Bb F | Bb / / (A-C) | Dm / / / | Bb / / / |
-Lord I know You’ll come through in the end
-| F / / / | / / / / |
+I am [Bb]trusting, trusting for a [Dm]miracle
+Laying down [Bb]impossible in [F]faith
+And I’m [Bb]believing, ever in[Dm]terceding
+God come do a [Bb]new thing in [F]me
+
+{comment: Interlude}
+| F / / / | Bb / / / | Dm / Bb / | F / / /
+
+{comment: Verse 2}
+When I have [F]question you’re the [Bb/F]answer
+Lord [F]You are the strength of my[Bb/F] life
+What I thought was [F/A]over, oh You’re still[Bb] in it
+Lord I [Dm]know You’ll come [Bb]through in the [F]end
 
 {comment: Pre Chorus 2}
-Cause I know You’re w[Bb]orking it [F]out for my[C] good
+Cause I know You’re [Bb]working it [F]out for my [C]good
+
+{comment: Chorus}
+{ci: Parts, 2x}
+I am [Bb]trusting, trusting for a [Dm]miracle
+Laying down [Bb]impossible in [F]faith
+I’m be[Bb]lieving, ever[(A-C)] in-ter-[Dm]ceding
+God come do a [Bb]new thing in [F]me
+
+{comment: Interlude}
+| F / / / | Bb / / / | Dm / Bb / | F / / / |
+
+{comment: Bridge}
+{ci: Solo, 2x}
+[F]Yes I believe it[C]  and I receive it
+[Dm]Lord You can do [Bb]anything
+
+{comment: Bridge}
+{ci: Unison, 1x}
+
+{comment: Bridge}
+{ci: Parts, 1x}
+[F]Yes I believe it[C]  and I receive it
+| Dm Bb / / / | F/Bb / / /
+Lord You can do anything
+
+{comment: Chorus}
+{ci: Flipped Parts}
+I am [Bb]trusting, trusting for a [Dm]miracle
+Laying down [Bb]impossible in [F]faith
+I’m be[Bb]lieving, ever[(A-C)] in-ter-[Dm]ceding
+God come do a [Bb]new thing in [F]me
+
+{comment: Outro}
+| Bb / / / | Dm / / / | Bb / / / | F / / / |
+| Bb / / (A-C) | Dm / / / | Bb / / / |
+| F / / / | / / / / |

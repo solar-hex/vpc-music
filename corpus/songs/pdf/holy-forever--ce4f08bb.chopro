@@ -3,6 +3,7 @@
 {key: F}
 {tempo: 72}
 {time: 4/4}
+{x_verified: number chart, 99% of 85 chords}
 {x_theme: worship, salvation, faith-trust}
 {x_source: pdf:UPCI Music/2024/Holy Forever/Holy-Forever-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FHoly%20Forever}
@@ -19,50 +20,63 @@
 {x_album: Holy Forever (Single)}
 {x_writers: Brian Johnson, Chris Tomlin}
 
-Holy Forever Jason Ingram, Jenn Johnson, Phil Wickham
+{comment: Intro}
+| Bb / / Dm | C / / / | F/A / / / | Dm / C4 / |
 
-{comment: Intro Chorus 1}
-| Bb / / Dm | C / / / | F/A / / / | Dm / C4 / | Bb Dm C
-And the angels cry, ho - ly
-Verse 1 F/A Dm
-F Bb F All creation cries, holy
-A thousand generations falling down in worship Gm Dm C F
-Dm C Bb You are lifted high, ho - ly, holy forever
-To sing the song of ages to the Lamb Chorus 2
-And a[F]ll who’ve gone before us                          Hear your people s[Bb]ing, ho[Dm]  -  [C]ly
-And a[Bb]ll who will bel[F]ieve                                To the King of [F/A]kings, ho[Dm]ly
-Will[Dm] sing the song of[C] ages to the[Bb] Lamb                  You will always [Gm]be, ho[Dm]  -  [C]ly, holy for[F]eve[Fsus]r[F]
+{comment: Verse 1}
+A t[F]housand generations [Bb]falling down in [F]worship
+To [Dm]sing the song of [C]ages to the [Bb]Lamb
+And [F]all who’ve gone before us
+And [Bb]all who will bel[F]ieve
+Will [Dm]sing the song of [C]ages to the [Bb]Lamb
 
 {comment: Pre Chorus 1}
-Bb Dm Bridge (2x)
-Your name is the highest Bb Dm
-C Your name is the highest
-Your name is the greatest C
-Dm Bb Your name is the greatest
-Your name stands above them all Dm Bb
-Bb Dm Your name stands above them all
-All thrones and dominions Bb Dm
-C All thrones and dominions
-All powers and positions C
-Dm Gm7 All powers and positions
-Your name stands above them all Dm Bb *Gm7 -2nd time
+Your [Bb]name is the high[Dm]est
+Your [C]name is the greatest
+Your [Dm]name stands above them [Bb]all
+All t[Bb]hrones and domini[Dm]ons
+All [C]powers and positions
+Your n[Dm]ame stands above them [Gm7]all
+
+{comment: Chorus 1}
+And the angels [Bb]cry, ho[Dm]  -  [C]ly
+All creation c[Am7]ries, ho[Dm]ly
+You are lifted h[Gm]igh, ho[Dm]  -  [C]ly, holy fore[F]ver
+
+{comment: Verse 2}
+[F]If you’ve been forgiven, [Bb]if you’ve been red[F]eemed
+[Dm]Sing the song fore[C]ver to the [Bb]Lamb
+[F]If you walk in freedom, [Bb]if you bear His n[F]ame
+[Dm]Sing the song fore[C]ver to the L[Bb]amb
+We’ll s[Dm]ing the song fore[C]ver and am[Bb]en
+
+{comment: Chorus 1}
+And the angels [Bb]cry, ho[Dm]  -  [C]ly
+All creation c[F/A]ries, ho[Dm]ly
+You are lifted h[Gm]igh, ho[Dm]  -  [C]ly, holy fore[F]ver
+
+{comment: Chorus 2}
+Hear your people s[Bb]ing, ho[Dm]  -  [C]ly
+To the King of [F/A]kings, ho[Dm]ly
+You will always [Gm]be, ho[Dm]  -  [C]ly, holy for[F]ev[Fsus]er[F]
+
+{comment: Bridge}
+{ci: 2x}
+Your [Bb]name is the high[Dm]est
+Your [C]name is the greatest
+Your [Dm]name stands above them [Bb]all
+All t[Bb]hrones and domini[Dm]ons
+All [C]powers and positions
+Dm Bb *Gm7 -2nd time
 Your name stands above them all
 
 {comment: Chorus 1}
-Bb Dm C Chorus 1
-And the angels cry, ho - ly Bb Dm C
-Am7 Dm And the angels cry, ho - ly
-All creation cries, holy Am7 Dm
-Gm Dm C F All creation cries, holy
-You are lifted high, ho - ly, holy forever Gm Dm C F (Bb-A-F)
-You are lifted high, ho - ly, holy forever
+And the angels [Bb]cry, ho[Dm]  -  [C]ly
+All creation c[Am7]ries, ho[Dm]ly
+You are lifted h[Gm]igh, ho[Dm]  -  [C]ly, holy fore[F]ve[(Bb-A-F)]r
 
-{comment: Verse 2}
-F Bb F Chorus 2
-If you’ve been forgiven, if you’ve been redeemed
-[Dm]Sing the song fore[C]ver to the[Bb] Lamb                                    [Ending]Gm  Dm C        F Bb/F F
-F Bb F You will always be ho - ly, holy forever
-If you walk in freedom, if you bear His name
-[Dm]Sing the song fore[C]ver to the [Bb]Lamb
-We’ll [Dm]sing the song fo[C]rever and a[Bb]men
+{comment: Chorus 2}
+
+{comment: Ending}
+You will always [Gm]be ho[Dm]  -  [C]ly, holy for[F]ev[Bb/F]er[F]
 UPCI Music 1

@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 75}
 {time: 4/4}
-{x_verified: number chart, 100% of 137 chords}
+{x_verified: number chart, 99% of 140 chords}
 {x_theme: blood, healing, grace-mercy, victory, cross, jubilee}
 {x_source: pdf:UPCI Music/2021/A Better Word/A-Better-Word-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FA%20Better%20Word}
@@ -19,50 +19,88 @@
 {x_album: The Entreating}
 {x_writers: Benita Jones, Dante Bowe, & Aaron Moses}
 
-{comment: Intro Verse 3}
-| C / / / | Em D / / | C / / / | C Em D
-| Em D / G/B While yet I was an enem - y
-Verse 1                                             [C]You tore the veil that[Em] stood bet[D]-ween
-[C]I place my hope in [Em]Cal –[D] vary                       [C]Now freedom is the [G]song I[D] sing
-[C]Where love spilled from a [Em]rugged [D]tree           The bloo[C]d poured o[D]ut for[G] me
-[C]Oh, [Em]oh,    [Em]oh,[G]      [D]oh                           Chorus (Parts)
-the [C]blood poured [Am]out for[G] me                       I am heale[Em]d    I’m restore[C]d
-Verse 2                                         I’m made fre[G]e    I’ve been made whol[D]e
-[C]Mercy and grace washed [Em]over[D] me             There’s no sham[Em]e    only lov[C]e
-[C]His life hung for my[Em] ransom [D]fee                Yes, it doe[D]s  the blood speaks a better [C]word
-[C]Oh, [Em]oh,    [Em]oh,   [D]oh                              Bridge (Solo)
-the [C]blood poured [Am]out for[G] me                       [C/A]Death where is your string, [D/A]grave
-Chorus (Unison)                                 Your vict[C]ory
-I am heale[Em]d    I’m restore[C]d                       He’s [C/G]over-[G]come, He has[Em] ove[D]r-come
-I’m made fre[G]e    I’ve been made whol[D]e            [C/A]Hell, you won’t prevail,
-There’s no sham[Em]e    only lov[C]e                    [D/A]You have no [C]pow’r
-Yes, it doe[D]s  the blood speaks a better [C]word        We’ve [C/G]over -[G] come, [C]we have [Em]over -[D] come
-
-{comment: Interlude Bridge}
-{ci: Parts}
+{comment: Intro}
 | C / / / | Em D / / | C / / / |
 | Em D / G/B
 
-{comment: Verse 4 Vamp}
-{ci: 2xs}
-[C]Just when it seemed the[Em] end had[D] come           [C]Oh----[Em]----
-[C]It looked as if th[Em]e grave had[D] won                 [Em]Oh---[G]----[D]-
-[C]He rose and now the [G]work is[D] done                [C]Oh----[Em]----
-Jesus r[C]eigns fore[D]ver m[Em]ore                         [Em]Oh---[G]----[D]-
-Jesus r[C]eigns fore[D]ver m[G]ore                         [C]Oh----[Em]----
-Chorus (Flipped Parts)                           [Em]Oh---[G]----[D]-  the[C] blood poured [Am]out for[G] me
+{comment: Verse 1}
+[C]I place my hope in [Em]Cal – [D]vary
+[C]Where love spilled from a [Em]rugged [D]tree
+[C]Oh, [Em]oh,    [Em]oh,[G]    [D]oh
+the [C]blood poured [Am]out for [G]me
+
+{comment: Verse 2}
+[C]Mercy and grace washed [Em]over [D]me
+[C]His life hung for my r[Em]ansom [D]fee
+[C]Oh, [Em]oh,    [Em]oh,   [D]oh
+the [C]blood poured [Am]out for [G]me
+
+{comment: Chorus}
+{ci: Unison}
+I am heale[Em]d    I’m restore[C]d
+I’m made fre[G]e    I’ve been made whol[D]e
+There’s no sham[Em]e    only lov[C]e
+Yes, it doe[D]s  the blood speaks a better w[C]ord
+
+{comment: Interlude}
+| C / / / | Em D / / | C / / / |
+| Em D / G/B
+
+{comment: Verse 3}
+[C]While yet I was an[Em] enem - [D]y
+[C]You tore the veil that [Em]stood bet-[D]ween
+[C]Now freedom is the [G]song I[D] sing
+The blo[C]od poured [D]out for [G]me
+
+{comment: Chorus}
+{ci: Parts}
+I am heale[Em]d    I’m restore[C]d
+I’m made fre[G]e    I’ve been made whol[D]e
+There’s no sham[Em]e    only lov[C]e
+Yes, it doe[D]s  the blood speaks a better w[C]ord
+
+{comment: Bridge}
+{ci: Solo}
+[C/A]Death where is your string, [D/A]grave
+Your vict[C]ory
+He’s [C/G]over-c[G]ome, He has[Em] over[D]-come
+[C/A]Hell, you won’t prevail,
+[D/A]You have no [C]pow’r
+We’ve [C/G]over - [G]come, [C]we have [Em]over - [D]come
+
+{comment: Bridge}
+{ci: Parts}
+
+{comment: Verse 4}
+[C]Just when it seemed the [Em]end had [D]come
+[C]It looked as if the [Em]grave had [D]won
+[C]He rose and now the[G] work is [D]done
+Jesus [C]reigns fore[D]ver m[Em]ore
+Jesus [C]reigns fore[D]ver m[G]ore
+
+{comment: Chorus}
+{ci: Flipped Parts}
 I am heale[Em]d    I’m restore[C]d
 I’m made fre[G]e    I’ve been made whol[D]e
 There’s no sham[Em]e    only lov[C]e
 Yes, it doe[D]s
 
 {comment: Tag}
-The blood speaks a better wo[C]r[G/B]d
-[D/F#]T[G]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[G]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[Em]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[G]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[G]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[G]he blood speaks a better wo[C]r[G/B]d
-[D/F#]T[Em]he blood speaks a better wo[C]r[G/B]d
-D/F# G / / | / / / / | / / |
+The blood speaks a better wo[C]rd[G/B]
+[D/F#]T[G]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[G]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[Em]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[G]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[G]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[G]he blood speaks a better wo[C]rd[G/B]
+[D/F#]T[Em]he blood speaks a better wo[C]rd[G/B]
+| D/F# G / / | / / / / | / / |
+
+{comment: Vamp}
+{ci: 2xs}
+[C]Oh---[Em]-----
+[Em]Oh--[G]-----[D]-
+[C]Oh---[Em]-----
+[Em]Oh--[G]-----[D]-
+[C]Oh---[Em]-----
+[Em]Oh--[G]-----[D]-  the [C]blood poured [Am]out for [G]me

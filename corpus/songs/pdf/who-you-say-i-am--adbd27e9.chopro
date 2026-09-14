@@ -3,7 +3,7 @@
 {key: F#}
 {tempo: 86}
 {time: 6/8}
-{x_verified: number chart, 84% of 38 chords}
+{x_verified: number chart, 83% of 48 chords}
 {x_theme: testimony, grace-mercy}
 {x_source: pdf:UPCI Music/Who You Say I Am/Who You Say I Am - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FWho%20You%20Say%20I%20Am}
@@ -18,38 +18,69 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/who-you-say-i-am/charts/vocals.pdf}
 {x_album: There is More (Live)}
 
-{comment: Intro Bridge}
-| F# / | / / | / / | / / | D#m C#/E#
-I am chosen, not for - saken
-Verse 1 (Solo)                                        I[F#] am who You say I[B] am
-[F#]Who am I that the highest King                       You are [D#m]for me, not a –[C#/E#] gainst me
-Would [D#m]wel –[C#] come[F#] me                                 I[F#] am who You say I[B] am
+{comment: Intro}
+| F# / | / / | / / | / / |
+
+{comment: Verse 1}
+{ci: Solo}
+[F#]Who am I that the highest King
+Would [D#m]wel – [C#]come [F#]me
 [F#]I was lost but he brought me in
-Oh His [D#m]love  [C#]for  [B]m[Bridge]e
-Oh His [D#m]love  [C#]for  [B]me                                 Tag
-I[D#m] am who You [C#]say I[B] am
+Oh His [D#m]love  [C#]for  [B]me
+Oh His [D#m]love  [C#]for  [B]me
 
 {comment: Chorus 1}
 {ci: Unison}
-Who the S[F#]on sets free, oh is[C#] free indeed                 Chorus 1
-I’m a [D#m]child  [C#]of  [B]God, yes I[F#] am                         Chorus 2
+Who the [F#]Son sets free, oh is[C#] free indeed
+I’m a [D#m]child  [C#]of  [B]God, yes I[F#] am
+
+{comment: Verse 2}
+{ci: Unison}
+[F#]Free at last, He has ransomed me
+His [D#m]grace [C#]runs d[F#]eep
+[F#]While I was a slave to sin,
+Jesus [D#m]died  [C#]for  [B]me
+Jesus [D#m]died  [C#]for  [B]me
+
+{comment: Chorus 1}
+{ci: Parts}
+
+{comment: Chorus 2}
+In my [F#]Father’s house, there’s a [C#]place for me
+I’m a [D#m]child  [C#]of  [B]God, yes I[F#] am
+
+{comment: Bridge}
+I am [D#m]chosen, not for - [C#/E#]saken
+I [F#]am who You say I [B]am
+You are[D#m] for me, not a –[C#/E#] gainst me
+I [F#]am who You say I [B]am
+
+{comment: Bridge}
+
+{comment: Tag}
+I [D#m]am who You [C#]say I [B]am
+
+{comment: Chorus 1}
 
 {comment: Chorus 2}
 {ci: Breakdown}
 
-{comment: Verse 2}
-{ci: Unison}
-[F#]Free at last, He has ransomed me                    Interlude (rep 4xs)
-D#m C# F# ||: D#m | C#/E# | F# | B :||
-His grace runs deep
-[F#]While I was a slave to sin,                           Bridge (Parts)
-Jesus [D#m]died  [C#]for  [B]me                                 Bridge (Flipped Parts)
-Jesus [D#m]died  [C#]for  [B]me                                 Tag
-I[D#m] am who You [C#]say I[B] am
-Chorus 1 (Parts) D#m C# B / / /
+{comment: Interlude}
+{ci: rep 4xs}
+||: D#m | C#/E# | F# | B :||
+
+{comment: Bridge}
+{ci: Parts}
+
+{comment: Bridge}
+{ci: Flipped Parts}
+
+{comment: Tag}
+I [D#m]am who You [C#]say I [B]am
+| D#m C# B / / /
 I am who You say I am
 
-{comment: Chorus 2}
-F# C# Chorus 1 (Parts)
-In my Father’s house, there’s a place for me
-I’m a [D#m]child  [C#]of  [B]God, yes I[F#] am                          Ending - Chorus 2
+{comment: Chorus 1}
+{ci: Parts}
+
+{comment: Ending - Chorus 2}

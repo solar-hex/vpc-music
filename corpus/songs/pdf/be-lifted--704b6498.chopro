@@ -3,6 +3,7 @@
 {key: A}
 {tempo: 113}
 {time: 4/4}
+{x_verified: number chart, 98% of 42 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/Be Lifted/Be Lifted - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FBe%20Lifted}
@@ -17,52 +18,84 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/be-lifted/charts/vocals.pdf}
 {x_album: To the King…Vertical Worship}
 
-Verse 1 (solo) TAG (Repeat 3xs)
-D2 (cut) (unison)
-Jesus we lift Your Name on high, A2
-Clap your hands if you love Jesus.
-Your Name on high, be lifted high. A2
-Clap your hands if you’re a believer
+{comment: Verse 1}
+{ci: solo}
+[D2(cut)]Jesus we lift Your Name on high,
+Your Name on high, be lifted high.
 
 {comment: Verse 1}
 {ci: unison, music still out}
 
-{comment: TAG}
-{ci: to verse 3}
-Verse 1 (2xs)                                        [A2]Clap your hands if you love Jesus.
-(parts / add guitar, band slowly build) A2 A2 Bm7 A2/C#
-D2 A2 Clap your hands if you’re a believer
-Jesus we lift Your Name on high,
-Your N[E]ame on high, be li[A2]fted high.                     Verse 3 (2xs)
-{ci: 1x solo, 2x unison}
-Interlude (Band All In)                                [D2]Cristo,   Tu nombre al[A2]abaré,
-| A2 | A2 | A2 | A2 | E A2 A2 Bm7 A2/C#
-alabaré, te alabaré.
+{comment: Verse 1}
+{ci: 2xs}
+{ci: parts / add guitar, band slowly build}
+[D2]Jesus we lift Your [A2]Name on high,
+Your [E]Name on high, be l[A2]ifted high.
+
+{comment: Interlude}
+{ci: Band All In}
+| A2 | A2 | A2 | A2 |
 | A2 | A2 | A2 | A2 A Bm7 A2/C# |
 
-{comment: Chorus 2}
+{comment: Verse 1}
 {ci: 2xs}
-Verse 1 (2xs) (parts)
-(parts) D2 F#m7 A2
-D2 A2 Alabaré, alabaré, alabaré,
-Jesus we lift Your Name on high, E
-E A2 A2 Bm7 A2/C# Tu nombre alabaré,
-Your Name on high, be lifted high.
+{ci: parts}
+[D2]Jesus we lift Your [A2]Name on high,
+Your [E]Name on high, be l[A2]ifted h[A2]igh.[Bm7][A2/C#]
 
-{comment: TAG}
-{ci: unison}
-Chorus (2xs) Instrumental (2xs)
-D2 F#m7 ||: D2 | F#m7 | A2 | E :||
-Be lifted high, be lifted high,
-A2 E Outro 1 (2xs)
-Be lifted high, be lifted high in all the earth. (1x unison, 2x parts)
-[D2]Oh,       [F#m7]oh,        o[A2]h,        [E]oh.
+{comment: Chorus}
+{ci: 2xs}
+Be lifted [D2]high, be lifted [F#m7]high,
+Be lifted [A2]high, be lifted h[E]igh in all the earth.
 
 {comment: Verse 2}
 {ci: 2xs}
-{ci: 1x unison, 2x parts) Outro 1 (2xs}
-J[D2]esus Your Name be gl[A2]orified,                        Outro 2 (2x’s)
-E A2 A2 Bm7 A2/C# (accented rhythms 1x solo 2x unison)
-Chorus1 (2x’s)
-Be glorified, be lifted high . (solo)
+{ci: 1x unison, 2x parts}
+J[D2]esus Your Name be [A2]glorified,
+Be [E]glorified, be lif[A2]ted hig[A2]h .[Bm7][A2/C#]
+
+{comment: TAG}
+{ci: Repeat 3xs}
+{ci: unison}
+[A2]Clap your hands if you love Jesus.
+[A2]Clap your hands if you’re a believer
+
+{comment: TAG}
+{ci: to verse 3}
+[A2]Clap your hands if you love Jesus.
+[A2]Clap your hands if you’[A2]re a belie[Bm7]ver[A2/C#]
+
+{comment: Verse 3}
+{ci: 2xs}
+{ci: 1x solo, 2x unison}
+[D2]Cristo,   Tu nombre a[A2]labaré,
+a[E]labaré,  te a[A2]labar[A2]é.[Bm7][A2/C#]
+
+{comment: Chorus 2}
+{ci: 2xs}
+{ci: parts}
+Alaba[D2]ré,    ala[F#m7]baré,  alab[A2]aré,
+Tu n[E]ombre alabaré,
+
+{comment: TAG}
+{ci: unison}
+
+{comment: Instrumental}
+{ci: 2xs}
+||: D2 | F#m7 | A2 | E :||
+
+{comment: Outro 1}
+{ci: 2xs}
+{ci: 1x unison, 2x parts}
+[D2]Oh,    [F#m7]oh,    o[A2]h,    [E]oh.
+
+{comment: Outro 1}
+{ci: 2xs}
+
+{comment: Outro 2}
+{ci: 2x’s}
+{ci: accented rhythms 1x solo 2x unison}
+Chorus1
+{ci: 2x’s}
+{ci: solo}
 End as directed

@@ -4,7 +4,7 @@
 {tempo: 125}
 {time: 4/4}
 {x_aka: Take The Whole World But Give Me Jesus}
-{x_verified: number chart, 100% of 14 chords}
+{x_verified: number chart, 100% of 30 chords}
 {x_theme: heaven}
 {x_source: pdf:UPCI Music/2020/Give Me Jesus/Give-Me-Jesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FGive%20Me%20Jesus}
@@ -20,49 +20,77 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/give-me-jesus/charts/vocals.pdf}
 {x_album: Songs for the Church}
 
-{comment: Intro Verse}
-{ci: Two Parts}
+{comment: Intro}
 | E / / / | B / / / / | G#m / / / |
-Hey,______________ aye.___________ Pre Chorus (Two Parts) à Tag (Two Parts)
+Hey,______________ aye.___________
 | F# / / / | E / / / | B / / / / | G#m / / / |
-Hey,______________ aye.____________ Interlude
-| F# / / / | E / / / | B / / / / | G#m / / / | | E / / / | / / / / | G#m / / / | F#/A# / / / |
 Hey,______________ aye.____________
-| F# / / / | | C#m7 / / / | / / / / | B / / / | F# / / / |
-Verse (Solo) Bridge 1 (1x Solo) (2x men sing 8vb)
-This [B]world is not my h[F#/B]ome.                             The only last[E2]ing thing is You.
-I am[E/B] just passing through[B].                              You are fore[G#m]ver, You are for[F#/A#]ever.
-Earthly [B]treasure soon will fa[F#/B]de,                         You are the On[E2/C#]e that I run to.
-but I[E/B] found my hope in You[B].                            You are my trea[B]sure, You are my trea[F#]sure.
+| F# / / / | E / / / | B / / / / | G#m / / / |
+Hey,______________ aye.____________
+| F# / / / |
 
-{comment: Bridge 2}
-{ci: Two Parts}
-Pre Chorus (Solo) E2
-E F# E Others my fail but You remain.
-You are the one I want G#m F#/A#
-F# B You are my treasure, You are my treasure.
-You are the one I need E2/C#
-E F# E Heaven and earth will pass away
-This world can have it all B F# / / /
-F# B G#m / / / | F# / / / | You are forever, You are forever.
+{comment: Verse}
+{ci: Solo}
+This [B]world is not my h[F#/B]ome.
+I am[E/B] just passing throug[B]h.
+Earthly [B]treasure soon will fa[F#/B]de,
+but I [E/B]found my hope in You[B].
+
+{comment: Pre Chorus}
+{ci: Solo}
+[E]You are t[F#]he one[E] I want
+You are [F#]the one [B]I need
+[E]This world [F#]can have [E]it all
+| F# B G#m / / / | F# / / / |
 It can take everything
-
-{comment: Interlude}
-| E2/C# / / / / | / / / / | B / / / | F# / / / |
 
 {comment: Chorus}
 {ci: Unison}
-B G#m | E2 / / / | / / (F#-G#-B-C#) | B/F# / / / |
-Give me Jesus, give me Jesus, the One who
-F# | F# / / / |
-Broke these chains and took away my shame.
-E Chorus (Parts) (2xs)
-There is only one for me.
+[B]Give me Jesus, [G#m]give me Jesus, the One who
+[F#]Broke these chains and took away my shame.
+[E]There is only one for me.
+
+{comment: Tag}
+{ci: Unison}
+||: E / / / | B / / / / | G#m / / / | F# / / / :||
+Hey,________ aye.________Hey,_________
+
+{comment: Verse}
+{ci: Two Parts}
+Pre Chorus (Two Parts) à Tag
+{ci: Two Parts}
+
+{comment: Interlude}
+| E / / / | / / / / | G#m / / / | F#/A# / / / |
+| C#m7 / / / | / / / / | B / / / | F# / / / |
+
+{comment: Bridge 1}
+{ci: 1x Solo, 2x men sing 8vb}
+The only last[E2]ing thing is You.
+You are fore[G#m]ver, You are for[F#/A#]ever.
+You are the O[E2/C#]ne that I run to.
+You are my trea[B]sure, You are my trea[F#]sure.
+
+{comment: Bridge 2}
+{ci: Two Parts}
+Others my fai[E2]l but You remain.
+You are my tr[G#m]easure, You are my tr[F#/A#]easure.
+Heaven and ea[E2/C#]rth will pass away
+| B F# / / /
+You are forever, You are forever.
+
+{comment: Interlude}
+| E2/C# / / / / | / / / / | B / / / | F# / / / |
+| E2 / / / | / / (F#-G#-B-C#) | B/F# / / / |
+| F# / / / |
+
+{comment: Chorus}
+{ci: Parts, 2xs}
 
 {comment: Tag}
 {ci: 4xs}
 ||: E / / / | B / / / / | G#m / / / | F# / / / :||
-Tag (Unison) Hey,________ aye.________Hey,_________
-||: E / / / | B / / / / | G#m / / / | F# / / / :||
-Hey,________ aye.________Hey,_________ Ending
+Hey,________ aye.________Hey,_________
+
+{comment: Ending}
 | E / / / / |

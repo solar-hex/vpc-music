@@ -3,6 +3,7 @@
 {key: C}
 {tempo: 65}
 {time: 4/4}
+{x_verified: number chart, 100% of 49 chords}
 {x_theme: prayer, faith-trust, joy}
 {x_source: pdf:UPCI Music/2022/Send Me/Send-Me-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FSend%20Me}
@@ -17,49 +18,54 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/send-me/charts/vocals.pdf}
 {x_album: Faith In Our Time}
 
-Ben Fielding, Hannah Hobbs,
-Send Me Ryan Williams
+{comment: Intro}
+| F / / / | C / / / | F / / / | C / / / |
 
-{comment: Intro Bridge}
-{ci: 2xs}
-| F / / / | C / / / | F / / / | C / / / | G
-Hear my heart respond
-Verse 1 Am F
-F C A re - sounding yes
-I can hear my savior calling G C
-F G Am I will trust You all my days
-Take up your cross and follow me G
-F C Until You name is heard
-Let my heart move in sweet surrender Am F
-Dm G In the darkest place
-Lord it’s my joy G C
-C I will shine the light of Jesus
-to say yes to You
+{comment: Verse 1}
+I can [F]hear my savior [C]calling
+Take up your [F]cross and [G]follow [Am]me
+Let my heart [F]move in sweet sur[C]render
+Lord it’s my [Dm]joy[G]
+to say yes to [C]You
 
 {comment: Chorus}
 {ci: 2xs}
-Chorus (2xs) (G/B) Am
-(G/B) Am Send me
-Send me F
-F Send me
-Send me C
-C I’ll go anywhere
-I’ll go anywhere G
-G I’ll go anywhere
-I’ll go anywhere
+[(G/B)]Send  [Am]me
+Send [F]me
+I’ll go [C]anywhere
+I’ll go [G]anywhere
 
-{comment: Tag}
-Verse 2 F G
-F C I’ll go anywhere,
-This is my prayer for every nation C/E F Am G
-F G Am I’ll go anywhere
-To hear Your name be lifted high C/E F G
-F C I’ll go anywhere
-Lord as Your church and as Your children C/E F Am G
-Dm G I’ll go anywhere
-Oh, it’s our joy
-C Interlude / Ending (as dir.)
-To say yes to You ||: F / / / | G / / / :|| F
+{comment: Verse 2}
+This is my [F]prayer for every [C]nation
+To hear Your [F]name be[G] lifted[Am] high
+Lord as Your [F]church and as Your [C]children
+Oh, it’s our [Dm]joy[G]
+To say yes to [C]You
 
 {comment: Chorus}
 {ci: 4xs}
+
+{comment: Bridge}
+{ci: 2xs}
+Hear my[G] heart respond
+A re - [Am]sounding [F]yes
+I will [G]trust You all my [C]days
+Until You[G] name is heard
+In the [Am]darkest [F]place
+I will [G]shine the light of [C]Jesus
+
+{comment: Chorus}
+{ci: 2xs}
+[(G/B)]Send  [Am]me
+Send [F]me
+I’ll go [C]anywhere
+I’ll go [G]anywhere
+
+{comment: Tag}
+I’ll go [F]anywhere[G],
+[C/E]I’ll go [F]anywhere[Am][G]
+[C/E]I’ll go [F]anywher[G]e
+[C/E]I’ll go [F]anywhere[Am][G]
+Interlude / Ending
+{ci: as dir.}
+||: F / / / | G / / / :|| F

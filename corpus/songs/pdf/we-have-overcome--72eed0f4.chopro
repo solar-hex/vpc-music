@@ -3,7 +3,7 @@
 {key: B}
 {tempo: 74}
 {time: 4/4}
-{x_verified: number chart, 98% of 65 chords}
+{x_verified: number chart, 98% of 91 chords}
 {x_theme: victory, name-of-jesus, healing}
 {x_source: pdf:UPCI Music/We Have Overcome/We Have Overcome - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FWe%20Have%20Overcome}
@@ -18,51 +18,77 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-have-overcome/charts/vocals.pdf}
 {x_album: Fight for Us - EP}
 
-{comment: Intro Verse 3}
-G#m E | B F# | G#m E | B F# | E B F#
-Though there’s battles still ahead of us
-Verse 1 (Solo)                                           [E]You have [B]made us more than [F#]conquerors.
-[E]You’re the [B]God of the im[F#]possible                      There’s nothing we can’t[C#m] do,  nothing we can’t [E]do.
-[E]In your [B]hands is every [F#]miracle. There’s
-C#m E Chorus (Parts)
-Nothing we can’t do, nothing we can’t do.
+{comment: Intro}
+| G#m E | B F# | G#m E | B F# |
 
-{comment: Tag}
+{comment: Verse 1}
+{ci: Solo}
+[E]You’re the [B]God of the im[F#]possible
+[E]In your [B]hands is every [F#]miracle. There’s
+Nothing we can’t [C#m]do,    nothing we can’t d[E]o.
 
 {comment: Verse 2}
 {ci: Unison}
-[E]With Your p[B]ower that’s a - l[F#]ive in us                   Bridge 1 (Solo)
-[E]We can l[B]ive in the mi[F#]raculous. There’s                   [E]What can stand against the[F#] power of ou[G#m]r God?
-Nothing we can’t d[C#m]o,    nothing we can’t d[E]o.             We have [E]over[B]come, we have [F#]overcome.
+[E]With Your [B]power that’s a - [F#]live in us
+[E]We can [B]live in the mi[F#]raculous. There’s
+Nothing we can’t d[C#m]o,    nothing we can’t d[E]o.
+
+{comment: Chorus}
+{ci: Unison}
+[E]We speak to [B]mountains. Come [F#]crumbling down
+In the [G#m]name of Jesus.[E]   We make the [B]darkness
+[F#]Tremble in fe[C#m]ar.    [E]We break the [B]strong-holds.
+The [F#]victory’s ours and we [G#m]won’t be shaken.
+[E]W[B]e have over[F#]come.
+
+{comment: Tag}
+[G#m]Oh,___[E]  oh,___[B]   oh.___[F#]
+[G#m]Oh,___[E]  oh,___[B]   oh.___[F#]
+
+{comment: Verse 3}
+[E]Though there’s[B] battles still a[F#]head of us
+[E]You have [B]made us more than [F#]conquerors.
+There’s nothing we can’[C#m]t do,  nothing we can’t [E]do.
+
+{comment: Chorus}
+{ci: Parts}
+
+{comment: Tag}
+
+{comment: Bridge 1}
+{ci: Solo}
+[E]What can stand against the[F#] power of our[G#m] God?
+We have[E] over[B]come, we have [F#]overcome.
 [E]Every lie and every [F#]fear   has been un[G#m]done.
-Chorus (Unison) E B F#
-E B F# We have overcome, we have overcome.
-We speak to mountains. Come crumbling down
-In the[G#m] name of Jesus.[E]   We make the [B]darkness          Bridge 2 (Parts)
-[F#]Tremble in fe[C#m]ar.      [E]We break the [B]strong-holds.
-F# G#m Chorus 2
-The victory’s ours and we won’t be shaken. E B F#
-E B F# We speak to mountains. Come crumbling down
-We have overcome. G#m E B
-In the name of Jesus. We make the darkness
-/D# /F# /G# C#m E B
-Tag Trem – ble in fear. We break the strong-
-[G#m]Oh,___[E]  oh,___[B]   oh.___[F#]                          holds. The [F#]victory’s ours and we[G#m] won’t be shaken.
-G#m E B F# E B F# / / /
-Oh,___ oh,___ oh.___ We have overcome.
+We have [E]overco[B]me, we have [F#]overcome.
 
 {comment: Bridge 2}
 {ci: Parts}
-Bridge 3 (Flipped Parts) / (Cut Music)
+
+{comment: Chorus 2}
+[E]We speak to [B]mountains. Come [F#]crumbling down
+In the [G#m]name of Jesus.[E]   We make the [B]darkness
+[/D#]Trem [/F#]– ble [/G#]in   [C#m]fear.[E]    We break the[B] strong-
+holds. The [F#]victory’s ours and we [G#m]won’t be shaken.
+| E B F# / / /
+We have overcome.
+
+{comment: Bridge 2}
+{ci: Parts}
+
+{comment: Bridge 3}
+{ci: Flipped Parts}
+| /
+{ci: Cut Music}
 What can stand against the power of our God?
-F# / / (C#-D#-F#-G#)
+| F# / / (C#-D#-F#-G#)
 We have overcome, we have overcome.
-E[E]very lie and every [F#]fear   has been [G#m]undone.
-We have o[E]verco[B]me, we have [F#]overcome.
-[E]What can stand against the[F#] power of our[G#m] God?
+[E]Every lie and every [F#]fear   has been [G#m]undone.
+We have [E]overco[B]me, we have [F#]overcome.
+[E]What can stand against the [F#]power of our [G#m]God?
 We have [E]overc[B]ome, we have [F#]overcome.
 [C#m]Every lie and every [B/D#]fear   has been [G#m]undone.
-We have o[F#]vercome, we have overcome
+We have [F#]overcome, we have overcome
 Tag / Ending
-[G#m]Oh,___[E]  oh,___[B]   oh.__[F#]_
-[G#m]Oh,___[E]  oh,___[B]   oh.__[F#]_
+[G#m]Oh,___[E]  oh,___[B]   oh.___[F#]
+[G#m]Oh,___[E]  oh,___[B]   oh.___[F#]

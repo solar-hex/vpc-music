@@ -16,39 +16,46 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/breakthrough/charts/vocals.pdf}
 {x_source_breakthrough: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/breakthrough/source/Breakthrough.txt}
 
-Intro (F# - E - E - F# - G - F# - E - D - D) repeat
-G (melody continues throughout) Bm7 D G
+{comment: Intro}
+[(F#-E-E-F#-G-F#-E-D-D)]
+{ci: repeat}
+{ci: melody continues throughout}
+[G] [Bm7] [D] [G]
 
 {comment: Verse 1 & 2}
 [D]You are the undefeated One, my light and my salvation.
 Omnipotent, Almighty, Defender, my victory.
-[Bm7]When the wicked, my enemies and my foes, came up[G]on me to eat of my fl[A]esh,
+[Bm7]When the wicked, my enemies and my foes, came u[G]pon me to eat of my f[A]lesh,
 My refuge, the one I run to. You are the God, You are
-D (Intro melody) To Verse 2, first time only: G
-They stumbled and fell.
+{ci: Intro melody}
+{ci: To Verse 2}
+{ci: first time only}
+They stumbled and [D]fell.[G]
 the God of the breakthrough.
 
 {comment: Chorus}
-[D]Breakthrough, You are the God of the [G]breakthrough. When I can’t see my[Bm7] way through,
+[D]Breakthrough, You are the God of the [G]breakthrough. When I can’t see my [Bm7]way through,
 And I really don’t know w[A]hat to do, I look to You.
 [D/F#]Breakthrough, walls fall down when I s[G]hout through.
 Strongholds break when I [Bm7]pray through, so I’m gonna praise You.
 To Verses: To Bridge, go to Interlude
-A D (Intro melody)
-You are the God, You are the God of the breakthrough.
-Interlude G Bm7 A D/F# G Bm7 A/C# D/F#
+[A]You are the God, You are the God of the b[D]reakthrough.
+{ci: Intro melody}
+
+{comment: Interlude}
+[G] [Bm7] [A] [D/F#] [G] [Bm7] [A/C#] [D/F#]
 
 {comment: Bridge}
 G* Bm7
 Breakthrough in my heart, breakthrough in my mind.
-[A]Breakthrough in my spirit,      [D/F#]breakthrough in my soul.
-[G]Breakthrough in my weakness, b[Bm7]reakthrough in my struggle.
-[A/C#]You are the God,             [D/F#]You are the God of the
+[A]Breakthrough in my spirit,    [D/F#]breakthrough in my soul.
+[G]Breakthrough in my weakness, [Bm7]breakthrough in my struggle.
+[A/C#]You are the God,    [D/F#]You are the God of the
 [G]Breakthrough in my worship,   [Bm7]breakthrough in my praise
 [A]Breakthrough when I lift and   [D/F#]glorify Your name.
 G** Bm7
 Breakthrough when I dance, breakthrough when I shout.
-[A/C#]You are the God,             [D/F#]You are the God of the…
+[A/C#]You are the God,    [D/F#]You are the God of the…
 {ci: Return to Chorus, then Bridge again}
 *When returning to Bridge, cut here when the vocals go into parts
 **Resume music here after cutting

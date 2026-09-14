@@ -3,8 +3,8 @@
 {key: E}
 {tempo: 88}
 {time: 6/8}
-{x_verified: number chart, 100% of 58 chords}
-{x_theme: blood, praise, grace-mercy, salvation, testimony}
+{x_verified: number chart, 100% of 71 chords}
+{x_theme: blood, grace-mercy, praise, salvation, testimony}
 {x_source: pdf:UPCI Music/2020/My Story/My-Story-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FMy%20Story}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/my-story/audio/alto.mp3}
@@ -19,47 +19,76 @@
 {x_album: My Story (Single)}
 {x_writers: Fallon Erickson, Gina Vera}
 
-{comment: Verse 1 Pre Chorus 2}
-{ci: Parts}
-[E]Someone needs to hear that’s st[E/G#]ruggling with fear         [E/A]It’s our condition that[Bsus] gets His attention.
-Af[A2]raid tha[C#m7]t God just won’t [Bsus]come through                  [E/C#]He rescued me when I c[Bsus]alled on His name.
-Pre Chorus 1                                         [E/A]All of my story, [Bsus]all for His glory,
-[E/A]I’m here to tell you that[Bsus] God will not fail you               [E/C#]Hal - le - [Bsus]lu - jah.
-He [E/C#]did it for me he will[Bsus] do it for you
-E/A Bsus Chorus (Parts) (2xs)
-All of my story, all for His glory, E
-E/C# Bsus This is my story, the God of glory
-Hal - le - lu - jah. A2
-lifted me out of my grave.
-Chorus (men sing 8vb)                                [C#m7]Oh, praise His name, [Bsus]I’ve been changed,
-[E]This is my story, the God of glory                        [A2]I’ll never be the same
+{comment: Verse 1}
+[E]Someone needs to hear that’s s[E/G#]truggling with fear
+Af[A2]raid that[C#m7] God just won’t c[Bsus]ome through
+
+{comment: Pre Chorus 1}
+[E/A]I’m here to tell you that [Bsus]God will not fail you
+He[E/C#] did it for me he will[Bsus] do it for you
+[E/A]All of my story,[Bsus] all for His glory,
+[E/C#]Hal - le -[Bsus] lu - jah.
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[E]This is my story, the God of glory
 [A2]lifted me out of my grave.
-C#m7 Bsus Interlude
-Oh, praise His name, I’ve been changed, C#m7 / | E/A / | E / | Bsus / |
-A2 This is my story
-I’ll never be the same | C#m7 / | E/A / | E / | Bsus / |
-Tag (men sing 8vb) Bridge 1 (men sing 8vb)
-This is my [C#m7]story,[E/A] [E]                                      [C#m7]When I think of the[Bsus] goodness of Jesus,
-[Bsus]this is my[C#m7] story[E/A]            [E]I[Bsus] thank                 his [E/C#]hand reached down for m[Bsus]e.
-[E/A]When I think of the[Bsus] goodness of Jesus,
-Verse 2 (men sing 8vb) E/C# Bsus
-E C#m7 pulled me from death and defeat.
-God for His love and His endless mercy.
-[A2]Where would I[C#m7] be without Your [Bsus]grace.
+[C#m7]Oh, praise His name, [Bsus]I’ve been changed,
+[A2]I’ll never be the same
+
+{comment: Tag}
+{ci: men sing 8vb}
+This is my [C#m7]story,[E/A][E]
+[Bsus]this is my [C#m7]story[E/A] [E]    [Bsus]I thank
+
+{comment: Verse 2}
+{ci: men sing 8vb}
+[E]God for His love and His[C#m7] endless mercy.
+[A2]Where would[C#m7] I be without Your [Bsus]grace.
+
+{comment: Pre Chorus 2}
+{ci: Parts}
+[E/A]It’s our condition that [Bsus]gets His attention.
+[E/C#]He rescued me when I [Bsus]called on His name.
+[E/A]All of my story,[Bsus] all for His glory,
+[E/C#]Hal - le -[Bsus] lu - jah.
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+[E]This is my story, the God of glory
+[A2]lifted me out of my grave.
+[C#m7]Oh, praise His name, [Bsus]I’ve been changed,
+[A2]I’ll never be the same
+
+{comment: Interlude}
+| C#m7 / | E/A / | E / | Bsus / |
+This is my story
+| C#m7 / | E/A / | E / | Bsus / |
+
+{comment: Bridge 1}
+{ci: men sing 8vb}
+[C#m7]When I think of the [Bsus]goodness of Jesus,
+his [E/C#]hand reached down for m[Bsus]e.
+[E/A]When I think of the [Bsus]goodness of Jesus,
+[E/C#]pulled me from death and de[Bsus]feat.
 
 {comment: Bridge 2}
 {ci: Parts}
-[E/A]When I think of the[Bsus] goodness of Jesus,
+[E/A]When I think of the [Bsus]goodness of Jesus,
 and[E/C#] how He brought me [Bsus]out
-[E/A]When I think of the[Bsus] goodness of Jesus,
-[E/C#]Hal - le - [Bsus]lu - jah.
+[E/A]When I think of the [Bsus]goodness of Jesus,
+[E/C#]Hal - le -[Bsus] lu - jah.
 
 {comment: Vamp}
 {ci: 2xs}
 [E]I’m saved, redeemed, washed in the blood.
 I’m [Esus]cleansed, set free, oh what a love
-Vamp (Flipped Parts) (2xs)
-I’m [E/A]saved, redeemed, w[Bsus]ashed in the blood.
-I’m c[E/C#]leansed, set free,[Bsus] oh, what a love,
-Outro (men sing 8vb) (3xs)
-[E/C#]Al  - le - [A2]lu - jah. [E]Al  - le - [E/B]lu - j[Bsus]ah.
+
+{comment: Vamp}
+{ci: Flipped Parts, 2xs}
+I’m [E/A]saved, redeemed, [Bsus]washed in the blood.
+I’m c[E/C#]leansed, set free, [Bsus]oh, what a love,
+
+{comment: Outro}
+{ci: men sing 8vb, 3xs}
+[E/C#]Al  - le - l[A2]u - jah. [E]Al  - le - l[E/B]u - j[Bsus]ah.

@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 145}
 {time: 4/4}
-{x_verified: number chart, 100% of 13 chords}
+{x_verified: number chart, 100% of 69 chords}
 {x_theme: revival}
 {x_source: pdf:UPCI Music/2022/We Need the Rain/We-Need-the-Rain-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FWe%20Need%20the%20Rain}
@@ -20,47 +20,36 @@
 {x_writers: David Jennings}
 
 {comment: Verse}
-Ab Refrain
-We’re ready for a downpour Ab5
-Ab2/C Db2 We need the rain
-Let it fall fresh, let it fall fresh on us Ab5
-Fm7 Eb/G Ab We need the rain
-We’re ready for revival Ab5 /C /F Ab5
-Ab2/C Db2 Fm7 We need the rain
-Let it fall fresh, let it fall fresh on us Ab5
+We’re [Ab]ready for a downpour
+Let it fall f[Ab2/C]resh, let it fall f[Db2]resh on us
+We’re r[Fm7]eady for revi[Eb/G]val[Ab]
+Let it fall[Ab2/C] fresh, let it fall f[Db2]resh on us[Fm7]
 
 {comment: Pre Chorus}
-Eb Db2 Eb Fm7 Vamp 1 (3x)
-It’s coming down, it’s pouring out /Db /Eb /F /G /Ab /Db /C /Bb /Ab /G
-Db2 Eb Oh, oh
-The time is now, we need the rain
+[Eb]It’s co[Db2]ming down, it’s po[Eb]uring ou[Fm7]t
+The ti[Db2]me is now, we need the r[Eb]ain
 
-{comment: Vamp 1}
-Chorus (2x) /Db /Eb /F /G /Ab /Db /C /Bb
-Db Fm7 Eb Db Fm7 Ab Oh, oh
-We need the rain Ab5
-Db Fm7 Eb Bbm7 Fm7 Eb2/G We need the rain
-Break » Interlude
+{comment: Chorus}
+{ci: 2x}
+We need the rai[Db]n[Fm7][Eb][Db][Fm7][Ab]
+We need the rai[Db]n[Fm7][Eb][Bbm7][Fm7][Eb2/G]
 
 {comment: Interlude}
-| - (Bb-C-Eb-F) | Db / / Fm7 | - | Eb / / Ab2/C | - | Vamp 2 (punches at the end - 2x)
-| Db / / Fm7 | - (F-Bb-C) | Bbm7 Ab Ebm7 G11 | Fm7 Eb Db Bbm7
-Oh, oh
-Verse Fm7 Eb Db Bbm7
-Ab2 Ab2 Oh, oh
-We’re ready for a downpour
-Ab2/C Db2 (Db-C-Ab-Eb-Db- Vamp 2 (3x)
-Let it fall fresh, let it fall fresh on us Fm7 Eb Db Bbm7
--C-Bb-Ab-G) Fm7 Eb/G Ab Oh, oh
-We’re ready for revival Fm7 Eb Db Bbm7
-Ab/C Db2 Fm7 Oh, oh
-Let it fall fresh, let it fall fresh on us
+| - (Bb-C-Eb-F) | Db / / Fm7 | - | Eb / / Ab2/C | - |
+| Db / / Fm7 | - (F-Bb-C) | Bbm7 Ab Ebm7 G11 |
 
-{comment: Vamp 2}
-{ci: punches at the end}
-Pre Chorus » Chorus (2x) Fm7 Eb Db Bbm7
-Bridge (6x) Oh, oh
-P[Db2]our it [Fm7]out,  p[Eb]our it[Abmaj9/C] out                                [Fm7]Oh,[Eb]       [Db]o[Bbm7]h[Fm]
+{comment: Verse}
+We’re [Ab2]ready for a d[Ab2]ownpour
+Ab2/C Db2 (Db-C-Ab-Eb-Db-
+Let it fall fresh, let it fall fresh on us
+[C-Bb-Ab-G)]We’re re[Fm7]ady for revi[Eb/G]val[Ab]
+Let it fall[Ab/C] fresh, let it fall[Db2] fresh on u[Fm7]s
+Pre Chorus » Chorus
+{ci: 2x}
+
+{comment: Bridge}
+{ci: 6x}
+P[Db2]our it [Fm7]out,  p[Eb]our it[Abmaj9/C] out
 P[Db2]our it [Fm7]out ’til we [Eb]over - [Abmaj9/C]flow
 
 {comment: Interlude}
@@ -68,3 +57,33 @@ P[Db2]our it [Fm7]out ’til we [Eb]over - [Abmaj9/C]flow
 | /Db / /C /Bb | /Ab /G / / |
 | /Db / /Eb /F | /G /Ab / / |
 | /Db / /C /Bb | - (Ab5) / / |
+
+{comment: Refrain}
+[Ab5]We need the rain
+[Ab5]We need the rain
+[Ab5]We need the rai[/C]n[/F][Ab5]
+[Ab5]We need the rain
+
+{comment: Vamp 1}
+{ci: 3x}
+[/Db]Oh,[/Eb] [/F] [/G]    [/Ab]o[/Db]h[/C][/Bb][/Ab][/G]
+
+{comment: Vamp 1}
+[/Db]Oh,[/Eb] [/F] [/G]    [/Ab]o[/Db]h[/C][/Bb]
+[Ab5]We need the rain
+Break » Interlude
+
+{comment: Vamp 2}
+{ci: punches at the end - 2x}
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7]
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7]
+
+{comment: Vamp 2}
+{ci: 3x}
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7]
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7]
+
+{comment: Vamp 2}
+{ci: punches at the end}
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7]
+[Fm7]Oh,[Eb]    [Db]oh[Bbm7][Fm]

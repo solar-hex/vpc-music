@@ -3,7 +3,6 @@
 {key: F}
 {tempo: 70}
 {time: 4/4}
-{x_verified: number chart, 89% of 18 chords}
 {x_theme: grace-mercy, salvation, joy, worship}
 {x_source: pdf:UPCI Music/2023/Before the King/Before-the-King-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FBefore%20the%20King}
@@ -18,44 +17,66 @@
 {x_album: Before The King EP}
 {x_writers: Josh Miller, Vaughn Biggs, Jyro La Villa, Edward Hodges, Henry Van Dyke, Ludwig van Bethoven, Andres Ferriera}
 
-{comment: Intro Chorus}
-| F Gm F/A / | Dm / C/E / | F Gm7
-| F Gm F/A Dm | Gm7 / / / | To the King, give your worries
-Verse 1                                             To the [Bb2]King, lay your b[C4]urdens
-A modest en[Bb]trance for a [Csus]King                           He’s the h[F]op[Gm7]e,[F/A]         your heart [Gm7]needs
-Entered i[Dm]nto shame, stepped in[Csus]to your pain              Bring al[Bb2]l you are[F/A], befo[Csus]re the King
-Bb Csus Interlude
-Illumination, the world would see | Gm7 / / / | F/A / / / | Bb/D / / / | F/A / / / |
-The grace that[Dm] you would need
-Csus Bridge (2x)
-A light that’d never cease Gm7 F/A
-Joyful, joyful come receive Him
-Pre Chorus Bb/D F/A
-Bb Csus For His mercies never end
-When time had come, salvation arrived Gm7 F/A
-Dm7 Csus Lay your broken heart before Him
-His name is Jesus Bb/D F/A C*
+{comment: Intro}
+| F Gm F/A / | Dm / C/E / |
+| F Gm F/A Dm | Gm7 / / / |
+
+{comment: Verse 1}
+A modest e[Bb]ntrance for a [Csus]King
+Entered [Dm]into shame, stepped i[Csus]nto your pain
+Illumi[Bb]nation, the world would [Csus]see
+The grace that [Dm]you would need
+A light that’d [Csus]never cease
+
+{comment: Pre Chorus}
+When t[Bb]ime had come, salv[Csus]ation arrived
+His [Dm7]name is Jes[Csus]us
+
+{comment: Chorus}
+To the Ki[F]ng, give your w[Gm7]orries
+To the [Bb2]King, lay your bu[C4]rdens
+He’s the h[F]op[Gm7]e,[F/A]    your heart n[Gm7]eeds
+Bring al[Bb2]l you are[F/A], befo[Csus]re the King
+
+{comment: Interlude}
+| F Gm F/A / | Dm / C/E / |
+| F Gm F/A Dm | Gm7 / / / |
+
+{comment: Verse 2}
+From a [Bb]stable to His thro[Csus]ne
+He has s[Dm]ought the lost, He has p[F]aid your cost
+And in His w[Bb]onder, majes[Csus]ty
+He’s made a [Dm]home for you
+Making a[Csus]ll things new
+
+{comment: Chorus}
+To the Ki[F]ng, give your w[Gm7]orries
+To the [Bb2]King, lay your bu[C4]rdens
+He’s the h[F]op[Gm7]e,[F/A]    your heart n[Gm7]eeds
+Bring al[Bb2]l you are[F/A], befo[Csus]re the King
+
+{comment: Interlude}
+| Gm7 / / / | F/A / / / | Bb/D / / / | F/A / / / |
+
+{comment: Bridge}
+{ci: 2x}
+[Gm7]Joyful, joyful [F/A]come receive Him
+[Bb/D]For His mercies [F/A]never end
+[Gm7]Lay your broken [F/A]heart before Him
+Bb/D F/A C*
 From His love your lift begins
 
 {comment: Chorus}
-To the Ki[F]ng, give your w[Gm7]orries                                  [Chorus]G            Am7
-Bb2 C4 To the King, give your worries
-To the King, lay your burdens C D4
-F Gm7 F/A Gm7 To the King, lay your burdens
-He’s the hope, your heart needs G Am7 G/B Am7
-Bb2 F/A Csus He’s the hope, your heart needs
-Bring all you are, before the King C G/B Dsus Em
-Bring all you are, before the King
+To the Ki[G]ng, give your w[Am7]orries
+To the [C]King, lay your[D4] burdens
+He’s the h[G]op[Am7]e,[G/B]    your heart n[Am7]eeds
+Bring al[C]l you [G/B]are, be[Dsus]fore the [Em]King
 
-{comment: Interlude Tag}
-| F Gm F/A / | Dm / C/E / | C G/B Dsus Em
-| F Gm F/A Dm | Gm7 / / / | Bring all you are before the King
-Verse 2 C G/B Dsus
-Bb Csus Bring all you are before the King
-From a stable to His throne Outro
-Dm F | G Am G/B / | Em / D4 / |
-He has sought the lost, He has paid your cost | G Am G/B Em | Am7 / / / | G / / / |
-And in His [Bb]wonder, majes[Csus]ty
-He’s made a h[Dm]ome for you
-Making al[Csus]l things new
+{comment: Tag}
+Bring [C]all you a[G/B]re bef[Dsus]ore the K[Em]ing
+Bring a[C]ll you a[G/B]re bef[Dsus]ore the King
+
+{comment: Outro}
+| G Am G/B / | Em / D4 / |
+| G Am G/B Em | Am7 / / / | G / / / |
 UPCI Music 1

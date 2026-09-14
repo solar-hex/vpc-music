@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 74}
 {time: 4/4}
-{x_verified: number chart, 100% of 23 chords}
+{x_verified: number chart, 100% of 45 chords}
 {x_theme: grace-mercy, praise, blood, cross, healing}
 {x_source: pdf:UPCI Music/Hallelujah for the Cross/Hallelujah For The Cross - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FHallelujah%20for%20the%20Cross}
@@ -18,39 +18,60 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hallelujah-for-the-cross/charts/vocals.pdf}
 {x_album: Breakthrough}
 
-{comment: Intro Verse 3}
-||: D / / / | Dsus / / / | D / / / | Dsus / / / :|| D Dsus
-All my shame was met with mercy.
-Verse 1                                              Now Your mer[D]cy will be my[Dsus] song.
-I would be ho[D]peless                                   And oh, the g[Bm7]lory. Oh, the p[G2]ower of the cross[D]!
+{comment: Intro}
+||: D / / / | Dsus / / / | D / / / | Dsus / / / :||
+
+{comment: Verse 1}
+I would be ho[D]peless
 without Your goo[Dsus]dness.
-I would be des[D]p’rate with-out Your lov[Dsus]e[Chorus].
-Slave to the [Bm7]darkness, if it wa[G2]sn’t for the cross[D].           Bridge (Unison) (2x)
-[Bm]By Your stripes, I’m[G] healed.
-Verse 2 D
-Dsus D By Your death, I live.
-You have won me A
-Dsus The pow’r of sin is over-come.
-with Your kindness. It is finished,it is done.
-Chased me dow[D]n when I was lost[Dsus].                      Bm                  G
-Bm7 G2 D By Your stripes, I’m healed.
-Where would I be if it wasn’t for the cross? D
-By Your death, I live.
-Chorus                                              The pow’r of sin is over[A]-come.
-Bm G D A It is finished,it is done.
-Hallelujah, thank You Jesus.
-I was a p[Bm]ris’ner,[G] now I’m not[D].[A]                            Bridge (Parts) (2x)
-With Your [Bm]blood Yo[G]u  bought my [D]freedom[A].
-Bm G D Chorus (Breakdown)
-Hallelujah for the cross.
+I would be de[D]sp’rate with-out Your lov[Dsus]e.
+Slave to the [Bm7]darkness, if it w[G2]asn’t for the cross[D].
+
+{comment: Verse 2}
+[Dsus]You have w[D]on me
+with Your k[Dsus]indness.
+Chased me do[D]wn when I was lost[Dsus].
+Where would[Bm7] I be if it wa[G2]sn’t for the [D]cross?
+
+{comment: Chorus}
+Hallel[Bm]ujah,[G]    thank You [D]Jesus[A].
+I was a [Bm]pris’ner, [G]now I’m no[D]t.[A]
+With Your [Bm]blood Yo[G]u  bought my f[D]reedom[A].
+Halle[Bm]lujah f[G]or the cros[D]s.
+
+{comment: Interlude}
+| D / / / | Dsus / / / | D / / / | Dsus / / / |
+{ci: cross}
+
+{comment: Verse 3}
+All my sha[D]me was met with me[Dsus]rcy.
+Now Your m[D]ercy will be my[Dsus] song.
+And oh, the [Bm7]glory. Oh, the p[G2]ower of the cross[D]!
+
+{comment: Chorus}
+
+{comment: Bridge}
+{ci: Unison, 2x}
+[Bm]By Your stripes, I’m [G]healed.
+By Your death, I[D] live.
+The pow’r of sin is over-[A]come.
+It is finished,it is done.
+[Bm]By Your stripes, I’m [G]healed.
+By Your death, I[D] live.
+The pow’r of sin is over-[A]come.
+It is finished,it is done.
+
+{comment: Bridge}
+{ci: Parts, 2x}
+
+{comment: Chorus}
+{ci: Breakdown}
 
 {comment: Chorus}
 {ci: Flipped Parts}
 
 {comment: Interlude}
-| D / / / | Dsus / / / | D / / / | Dsus / / / |
-(cross) Interlude
 ||: Bm / G / | D / A / |
-Bm / G / | D / A / :||
+| Bm / G / | D / A / :||
 
 {comment: Ending Chorus}

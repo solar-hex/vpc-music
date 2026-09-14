@@ -2,7 +2,7 @@
 {key: C}
 {tempo: 140}
 {time: 6/8}
-{x_verified: number chart, 95% of 64 chords}
+{x_verified: number chart, 97% of 99 chords}
 {x_theme: christmas, praise, worship, healing, grace-mercy, heaven, name-of-jesus}
 {x_source: pdf:UPCI Music/2022/O Come Emmanuel/O-Come-Emmanuel-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FO%20Come%20Emmanuel}
@@ -18,59 +18,81 @@
 {x_album: O Come Emmanuel (Single)}
 {x_writers: Micah Pollock, Jonathan Stephens}
 
-Ramzi Ellasadi, Brandon Marin
-O Come Emmanuel Micah Pollock, Jonathan Stephens
-Intro F G C
-C / | F / | C / | C/G G | / / Let the whole world sing His name
-Verse 1                                             Let the[Dm] whole world[G] sing His[C] name
-[Am]Born into a m[C]anger                                   Chorus (Parts)
-[G]Far from Heaven’s’ [Am]throne                             [F]Je -[G] sus [C/E]Jesus
-[F]To a world of[C] danger                                  [F/A]Savior of the[G/B] world God[Bb/D] with  [C/E]us
-No p[Dm]lace to call Hi[Am]s home                              [F]Je -[G] sus [C/E]Jesus
-Verse 2 (Solo)                                       O [F]Come E- [G]mmanu - [Am]el
-Am7 C F G (C)
-Shepherd’s gathered round him O Come E- mmanu – el
-A [G]miracle pro[Am]claimed                                  Interlude
-F C C / | / / | / / | / /
-Mary mused in wonder
-Dm G C Bridge 1 (2x)
-The angels sang His praise F C
-He came to take all sin
-Chorus (Solo) G Am G/B C
-C Dm Gave peace on earth to men an - d
-Jesus Jesus F C
-C/E F Hope that never ends 2nd time:
-Savior of the world God with us G C G/B - C – Dm - C/E
-C Dm Let us rejoice in Him (Him)
-Jesus Jesus
-F G Am Bridge 2
-O Come E- mmanu - el F C
-Dm G (C) He came to live with-in
-O Come E- mmanu - el G Am G/B C
-Now let new life be-gin
-Interlude F C
-C / | F / | C / | C/G G His kingdom has no end
-Verse 3                                             He’s coming [G]back a – [C]gain
-[Am]He was [G/B]born to [C]save us                               Bridge 2
-Re-[Am]deemer [G/B]of our [F]shame                                [F]He came to live with-[C]in
-[Am]Mercy [G/B]to the [C]hopeless                                 Now l[G]et new life be-[Am]gi[G/B]n[C]
-Ramzi Ellasadi, Brandon Marin
-O Come Emmanuel Micah Pollock, Jonathan Stephens
-[F]His kingdom has no [C]end
-G C F - C/E - Dm - C
-He’s coming back a – gain
+{comment: Intro}
+| C / | F / | C / | C/G G | / /
+
+{comment: Verse 1}
+[Am]Born into a m[C]anger
+[G]Far from Heaven’s’ [Am]throne
+[F]To a world of [C]danger
+No [Dm]place to call His [Am]home
+
+{comment: Verse 2}
+{ci: Solo}
+[Am7]Shepherd’s gathered [C]round him
+A [G]miracle pro[Am]claimed
+[F]Mary mused in [C]wonder
+The [Dm]angels s[G]ang His [C]praise
+
+{comment: Chorus}
+{ci: Solo}
+[C]Jesus [Dm]Jesus
+[C/E]Savior of the world God [F]with us
+[C]Jesus [Dm]Jesus
+O [F]Come E- [G]mmanu -[Am] el
+O [Dm]Come E- [G]mmanu -[(C)] el
+
+{comment: Interlude}
+| C / | F / | C / | C/G G
+
+{comment: Verse 3}
+[Am]He was [G/B]born to [C]save us
+Re-[Am]deemer[G/B] of our s[F]hame
+[Am]Mercy[G/B] to the h[C]opeless
+Let the [F]whole world [G]sing His [C]name
+Let the [Dm]whole world [G]sing His [C]name
 
 {comment: Chorus}
 {ci: Parts}
-[F]Je -[G] sus [C/E]Jesus
+[F]Je - [G]sus [C/E]Jesus
 [F/A]Savior of the[G/B] world God[Bb/D] with  [C/E]us
-[F]Je -[G] sus [C/E]Jesus
-O [F]Come E- [G]mmanu - [Am]el
-F G C /
+[F]Je - [G]sus [C/E]Jesus
+O [F]Come E- [G]mmanu -[Am] el
+O [F]Come E- [G]mmanu – [(C)]el
+
+{comment: Interlude}
+| C / | / / | / / | / /
+
+{comment: Bridge 1}
+{ci: 2x}
+He[F] came to take all [C]sin
+Gave[G] peace on earth to[Am] men  [G/B]an - [C]d
+[F]Hope that never [C]ends    2nd time:
+Let us r[G]ejoice in [C]Him    ([G/B]Him)[C][Dm][C/E]
+
+{comment: Bridge 2}
+[F]He came to live with-[C]in
+Now [G]let new life be-[Am]gin[G/B][C]
+[F]His kingdom has no [C]end
+He’s coming [G]back a –[C] gain
+
+{comment: Bridge 2}
+[F]He came to live with-[C]in
+Now [G]let new life be-[Am]gin[G/B][C]
+[F]His kingdom has no [C]end
+He’s coming [G]back a –[C] gain[F][C/E][Dm][C]
+
+{comment: Chorus}
+{ci: Parts}
+[F]Je - [G]sus [C/E]Jesus
+[F/A]Savior of the[G/B] world God[Bb/D] with  [C/E]us
+[F]Je - [G]sus [C/E]Jesus
+O [F]Come E- [G]mmanu -[Am] el
+| F G C /
 O Come E- mmanu – el
 
 {comment: Outro}
 O [C2(no3)]Come let us adore Him
 O Come and bow before Him
 We long for His returning
-[F] [G] [C]
+O C[F]ome Emm[G]anue[C]l

@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 95}
 {time: 4/4}
-{x_verified: number chart, 83% of 40 chords}
+{x_verified: number chart, 91% of 58 chords}
 {x_theme: worship, heaven, faith-trust}
 {x_source: pdf:UPCI Music/2024/That's My King/Thats-My-King-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FThat's%20My%20King}
@@ -18,43 +18,74 @@
 {x_album: More Than This}
 {x_writers: Jess Russ, Kellie Gamble, Lloyd Nicks, Taylor Agan}
 
-{comment: Intro Verse 2}
-{ci: cont.}
-| Ab / / / | Gb2 / / / | Db / / / | Ab / / / | Gb
-Through all of the ages
-Verse 1 Db Ab
-Ab Gb2 It’s all of the earth and Heaven’s symphony
-I wish I could tell you, wish I could describe it Pre Chorus > Chorus
-But I can’t cont[Db]ain it, can’t keep it to my[Ab]self               Interlude
-Ab | Ab / / / | Gb Db / / | Ab / / / | Gb Db / / |
-There aren’t enough colors
-To paint the whole [Gb]picture                              Bridge 1
-Not enough w[Db]ords to ever say what I [Ab]found              That’s my K[Ab]ing, that’s my G[Gb/Ab]od
-Pre Chorus                                          That’s my Sh[Db/Ab]epherd, my Prot[Dbm/Ab]ector
-[Ab]Wonderful and beautiful and g[Gb2]lorious and holy            That’s my K[Ab]ing, thats my R[Gb/Ab]ock
-Ab Db/Ab (Db-Eb-Fb-Gb)
-He is merciful and powerful That’s my Anchor, my Defender
-[Gb2]Who we talkin’ about, that’s my King                  Bridge 2
-Chorus                                             That’s my K[Ab]ing, that’s my G[Gb2]od
-[Ab]W[Gb2]e declare the glory                              That’s my Sh[Db/F]epherd, my Pro[Dbm/Fb]tector
-[Db/F]G[Db]ive Him all the hono[Ab]r, a[Gb2]ltogether worthy           That’s my K[Ab]ing, thats my R[Gb2]ock
-[Db/F]Who we talkin’[Fb] about, thats My King                 That’s my A[Db/F]nchor, my Def[Fb]ender
-Ab Gb2 Who we talkin’ about, that’s my King
-There’s no one before You
-[Db/F]Y[Db]es, we will adore You[Ab], all[Gb2] of this is for You        Chorus (cut - bass only)
-Db/F Fb We declare the glory
-Who we talkin’ about, that’s My King Give Him all the honor, altogether worthy
-Who we talkin’ about, thats My King
+{comment: Intro}
+| Ab / / / | Gb2 / / / | Db / / / | Ab / / / |
+
+{comment: Verse 1}
+I wish I could t[Ab]ell you, wish I could des[Gb2]cribe it
+But I can’t con[Db]tain it, can’t keep it to my[Ab]self
+There aren’t enough [Ab]colors
+To paint the whole [Gb]picture
+Not enough [Db]words to ever say what I [Ab]found
+
+{comment: Pre Chorus}
+[Ab]Wonderful and beautiful and [Gb2]glorious and holy
+He is [Ab]merciful and powerful
+[Gb2]Who we talkin’ about, that’s my King
+
+{comment: Chorus}
+[Ab]W[Gb2]e declare the glory
+[Db/F]G[Db]ive Him all the hon[Ab]or, a[Gb2]ltogether worthy
+[Db/F]Who we talkin’[Fb] about, thats My King
+[Ab]T[Gb2]here’s no one before You
+[Db/F]Y[Db]es, we will adore Y[Ab]ou, a[Gb2]ll of this is for You
+[Db/F]Who we talkin’[Fb] about, that’s My King
 
 {comment: Interlude}
-| Ab / / / | Gb Db / / | Ab / Gb / | Db / / / | Chorus
+| Ab / / / | Gb Db / / | Ab / Gb / | Db / / / |
 
-{comment: Verse 2 Tag}
+{comment: Verse 2}
+I’m not letting the r[Ab]ocks cry
+Without joining the c[Gb2]horus
+There aren’t enough no[Db]tes to make the harmon[Ab]y
+It’s the sound of the a[Ab]ngels
+
+{comment: Verse 2}
+{ci: cont.}
+Through all of the a[Gb]ges
+It’s all of the e[Db]arth and Heaven’s symphon[Ab]y
+{ci: Pre Chorus → Chorus}
+
+{comment: Interlude}
+| Ab / / / | Gb Db / / | Ab / / / | Gb Db / / |
+
+{comment: Bridge 1}
+That’s my K[Ab]ing, that’s my G[Gb/Ab]od
+That’s my Sh[Db/Ab]epherd, my Prot[Dbm/Ab]ector
+That’s my K[Ab]ing, thats my R[Gb/Ab]ock
+That’s my A[Db/Ab]nchor, my De[(Db-Eb-Fb-Gb)]fender
+
+{comment: Bridge 2}
+That’s my K[Ab]ing, that’s my G[Gb2]od
+That’s my Sh[Db/F]epherd, my Pr[Dbm/Fb]otector
+That’s my K[Ab]ing, thats my R[Gb2]ock
+That’s my A[Db/F]nchor, my Def[Fb]ender
+Who we talkin’ about, that’s my King
+
+{comment: Chorus}
+{ci: cut - bass only}
+We declare the glory
+Give Him all the honor, altogether worthy
+Who we talkin’ about, thats My King
+
+{comment: Chorus}
+
+{comment: Tag}
 {ci: 2x}
-I’m not letting the [Ab]rocks cry                                [Ab]Who we talkin’ a[Gb2]bout, thats My King
-Without joining the c[Gb2]horus                                 [Db/F]Who we talkin’[Db] about, thats My King
-There aren’t enough no[Db]tes to make the harmony[Ab]             [Ab]Who we talkin’ a[Gb2]bout, thats My King
-It’s the sound of the [Ab]angels                                [Db/F]Who we talkin’[Fb] about, thats My King
+[Ab]Who we talkin’ a[Gb2]bout, thats My King
+[Db/F]Who we talkin’[Db] about, thats My King
+[Ab]Who we talkin’ a[Gb2]bout, thats My King
+[Db/F]Who we talkin’[Fb] about, thats My King
 
 {comment: Ending}
 | - Ab / / / |

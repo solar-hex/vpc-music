@@ -3,6 +3,7 @@
 {key: Bb}
 {tempo: 100}
 {time: 4/4}
+{x_verified: number chart, 99% of 95 chords}
 {x_theme: holy-spirit, revival, altar, baptism, name-of-jesus}
 {x_source: pdf:UPCI Music/See Revival/See Revival - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FSee%20Revival}
@@ -18,62 +19,80 @@
 {x_album: See Revival}
 
 {comment: Intro}
-{ci: Eb-D-Eb-F-G-Bb-C-D-Eb}
-Eb/G / Eb / | Bb / / / | Eb/Bb / / / | oh, We’re gonna
-Bb / / / | Eb/G / Eb / |
+| Eb/G / Eb / | Bb / / / | Eb/Bb / / / |
+| Bb / / / | Eb/G / Eb / |
+
+{comment: Chorus}
+{ci: Solo}
+[Bb]See revival,[Eb/Bb]    we’re gonna [Bb]see revival,
+[Eb/Bb]We’re gonna [F2]see revival[Eb2]    in our
+[Bb]Days.[Eb/Bb]    We’re gonna
+[Bb]See revival,[Eb/G]    we’re gonna [Bb]see revival,
+[Eb/G]We’re gonna s[F2]ee revival[Eb2]    in our
+
+{comment: Interlude}
+| Bb / / / | Eb/G / Eb / | Bb / / / | Eb/G / Eb / |
+Days.
+
+{comment: Verse 1}
+[Bb]Like a fire can’t b[Eb/Bb]e contained,
+[Bb]like the cleansing brought by[Eb/Bb] the rain,
+[Gm9]like a mighty wind ru[Eb2]shing through, we wanna
+[Bb]see you    [Eb/Bb]in this room.
+
+{comment: Verse 2}
+[Bb]We’re all gathered in o[Eb/Bb]ne accord
+[Bb]Through Your spirit and b[Eb/Bb]y Your word
+[Gm7]All un - [F]ited[Bb/D]  in   [Eb2]Jesus  [Eb2/G]name,
+we are Your [Bb]dwelling place so
+[(Bb-Bb-G)]have Your way. Oh,…[F2].
+oh,[(Eb-D-Eb-F-G-Bb-C-D-Eb)]    We’re gonna
 
 {comment: Chorus 1}
 {ci: Parts}
-Chorus (Solo) Bb Eb/Bb Bb
-Bb Eb/Bb Bb See revival, we’re gonna see revival,
-See revival, we’re gonna see revival, Eb/Bb F2 Eb2
-Eb/Bb F2 Eb2 We’re gonna see revival in our
-We’re gonna see revival in our Bb Eb/Bb
-Bb Eb/Bb Days.
-Days. We’re gonna
-[Bb]See revival,[Eb/G]         we’re gonna s[Bb]ee revival,            Chorus 2
-[Eb/G]We’re gonna se[F2]e revival[Eb2]       in our                    [Eb/Bb]You’re holy s[Bb]pirit poured out
-[Eb/G]F[Eb]alling on[Bb] sons and daughters.
-Interlude Eb/G Eb F
-Bb / / / | Eb/G / Eb / | Bb / / / | Eb/G / Eb / | We’re gonna see revival
-Days. Eb
-In this
+[Bb]See revival,[Eb/Bb]    we’re gonna [Bb]see revival,
+[Eb/Bb]We’re gonna [F2]see revival[Eb2]    in our
+[Bb]Days.[Eb/Bb]
 
-{comment: Verse 1}
-Bb Eb/Bb Interlude
-Like a fire can’t be contained, ||: Eb / / F | Gm7 / / F/A |
-Bb Eb/Bb place.
-like the cleansing brought by the rain, | Bb / Eb / | / / Gm7 F :||
-[Gm9]like a mighty wind r[Eb2]ushing through, we wanna
-Bb Eb/Bb Bridge (Unison) 2x
-see you in this room. Eb F Gm7 F/A
-Open up the windows, open up the flood-gates.
-Verse 2                                              [Bb]Pour [Eb]out    Your s[Gm7]pir – i[F]t.
-[Bb]We’re all gathered in o[Eb/Bb]ne accord
-Bb Eb/Bb Bridge (Parts) 2x
-Through Your spirit and by Your word
-[Gm7]All un - [F]ited[Bb/D]  in   [Eb2]Jesus  [Eb2/G]name,
-we are Your [Bb]dwelling place so
-(Bb – Bb – G) F2
-have Your way. Oh,….
-Bridge (Flipped Parts) Ending Chorus (Repeat as Dir)
-[Eb]Open up the wind[F]ows, o[Gm7]pen up the flood-[F/A]gates.           We’re gonna S[Bb]ee revival[Fm7/Bb],
-[Bb]Pour [Eb]out    Your s[Gm7]pir – i[F]t.
-[Eb]Open up the wind[F]ows, o[Gm7]pen up the flood-[F/A]gates.
+{comment: Chorus 2}
+[Eb/Bb]You’re holy [Bb]spirit poured out
+[Eb/G]F[Eb]alling on [Bb]sons and daughters.
+[Eb/G]W[Eb]e’re gonna see r[F]evival
+[Eb]In this
+
+{comment: Interlude}
+||: Eb / / F | Gm7 / / F/A |
+place.
+| Bb / Eb / | / / Gm7 F :||
+Bridge (Unison)
+{ci: 2x}
+[Eb]Open up the wind[F]ows, [Gm7]open up the flood-[F/A]gates.
+[Bb]Pour [Eb]out    Your [Gm7]spir – [F]it.
+Bridge (Parts)
+{ci: 2x}
+
+{comment: Bridge}
+{ci: Flipped Parts}
+[Eb]Open up the wind[F]ows, [Gm7]open up the flood-[F/A]gates.
+[Bb]Pour [Eb]out    Your [Gm7]spir – [F]it.
+[Eb]Open up the wind[F]ows, [Gm7]open up the flood-[F/A]gates.
 [Bb]Pour [Cm7]out
 
 {comment: Vamp}
 {ci: Solo}
-We n[Gm7]eed Y[F]ou, L[Eb]ord.   We n[Gm7]eed Yo[F]u, L[Eb]ord.
-We [Gm7]need Yo[F]u, o[Eb]h, our God. We [Gm7]need Y[F]ou, [Eb]Lord.
+We [Gm7]need Y[F]ou, [Eb]Lord.   We n[Gm7]eed Y[F]ou, L[Eb]ord.
+We [Gm7]need Y[F]ou, [Eb]oh, our God. We [Gm7]need [F]You,[Eb] Lord.
 
 {comment: Vamp}
 {ci: Parts}
 
 {comment: Vamp}
 {ci: Flipped Parts}
-[Eb]Lord.[Gm7]            [F/A]We n[Bb]eed You, L[Eb]ord[Gm7].
-[F/A]We n[Bb]eed You,  [Eb]Oh,  ou[Gm7]r
-F/A (Bb-A-G-F----E-D-C-Bb) F/A
-God. We need You, Lord
-Eb/G / / /
+[Eb]Lord.[Gm7]    [F/A]We [Bb]need You, L[Eb]ord.[Gm7]
+[F/A]We [Bb]need You,  [Eb]Oh,  ou[Gm7]r
+[F/A]God.[(Bb-A-G-F-E-D-C-Bb)]    We need You,   [F/A]Lord
+| Eb/G / / /
+
+{comment: Ending Chorus}
+{ci: Repeat as Dir}
+We’re gonna [Bb]See revival,[Fm7/Bb]

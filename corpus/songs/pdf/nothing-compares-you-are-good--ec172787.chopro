@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 142}
 {time: 4/4}
-{x_verified: number chart, 100% of 24 chords}
+{x_verified: number chart, 100% of 64 chords}
 {x_theme: praise, grace-mercy}
 {x_source: pdf:UPCI Music/2020/Nothing Compares/Nothing-Compares-You-are-Good-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FNothing%20Compares}
@@ -18,67 +18,83 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/nothing-compares/charts/vocals.pdf}
 {x_album: Victory}
 
-{comment: Intro Verse}
-{ci: Parts}
-Am / / / | / / / / | Bb / / / | / / / / | C (C-D) (D-E-F)
-Dm / / / | / / / / | F / / / / | / / / (E-F-C) | Nothing compares to You, Lord, oh
-{ci: D) Csus (Bb - Bb - A}
-Nothing compares to Your loving kindness.
-Verse (Solo) C Gm7 F2 F2/Eb
-C Am You give life to me, life to me.
-Nothing compares to You, Lord, oh (C-G-C) Am
-Bb F And when I think about it all, oh
-Nothing compares to Your loving kindness. Bb F
-C Am Bb When I think about Your endless mercies,
-You give life to me, life to me. C Am F/D G/E F2/Eb
-C Am I just can’t hold it back. I gotta shout it out.
-And when I think about it all, oh
-[Bb]When I think about Your [F]endless mercies,              Chorus
-[C]I just can’t hold it[Am] back. I gotta [Bb]shout it out.              You are [C]good, You are [Bb]good
-And Your m[F]ercy’s everlasting.
-[Chorus]C            Bb/C                           You are [C]good,
-You are good, You are good Bb/G /E /F /G /B /C /D
-F/C You are so wonderful Oh There is
-And Your mercy’s everlasting. C Bb /C /E /C /D /D
-C no-one who stands beside You,
-You are good, Bb F C/E
-Bb/G F nothing in between. We give glory
-You are so wonderful Bb/G F
-C Bb/D to You and You alone, You are good.
-There is no-one who stands beside You,
-[F]nothing in between. We give [C/E]glory                       Interlude
-Bb/G F Am / / / | / / / / | Bb / / / | / / / / |
-to You and You alone, You are good. Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
+{comment: Intro}
+| Am / / / | / / / / | Bb / / / | / / / / |
+| Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
+
+{comment: Verse}
+{ci: Solo}
+[C]Nothing compares to You, [Am]Lord, oh
+[Bb]Nothing compares to Your [F]loving kindness.
+[C]You give life to[Am] me, life to me[Bb].
+[C]And when I think about it[Am] all, oh
+[Bb]When I think about Your [F]endless mercies,
+[C]I just can’t hold it [Am]back. I gotta [Bb]shout it out.
+
+{comment: Chorus}
+You are [C]good, You are [Bb/C]good
+And Your [F/C]mercy’s everlasting.
+You are [C]good,
+You are[Bb/G] so wonder[F]ful
+There is [C]no-one who stands be[Bb/D]side You,
+[F]nothing in between. We give [C/E]glory
+to [Bb/G]You and You alo[F]ne, You are good.
 
 {comment: Interlude}
-Am / / / | / / / / | Bb / / / | / / / / |
-Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
-Bridge (Solo) 1x (Unison) 1x (Two Parts) 1x Ending
-C Am Bb Am / / / | / / / / | Bb / / / | / / / / |
-I will bless You, I will give You all the praise. Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
-F You are good.
-Let my life reflect the greatness of Your name. (Cut)
-/ / / / | (E-F-D-E-F) C Bb | / / / C Bb/D |
-Bridge (Parts) / / / C/G F | / / / / |
-[Am]I will bless You,[Bb]     I will give You all the praise.
-[Dm]Let my life reflect the gre[F]atness of Your name.
+| Am / / / | / / / / | Bb / / / | / / / / |
+| Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
+
+{comment: Verse}
+{ci: Parts}
+[C]Nothing compares to You, Lord, [(C-D)]oh[(D-E-F)]
+[(D)]Not[Csus]hing compares to Your lo[(Bb-Bb-A)]ving kindness.
+You [C]give life to me, life to [Gm7]me.[F2][F2/Eb]
+[(C-G-C)]And when I think about it [Am]all, oh
+[Bb]When I think about Your [F]endless mercies,
+[C]I just can’t hold it b[Am]ack. I gotta[F/D] shou[G/E]t it  o[F2/Eb]ut.
+
+{comment: Chorus}
+You are [C]good, You are [Bb]good
+And Your [F]mercy’s everlasting.
+You are [C]good,
+You are[Bb/G] so wonderful  [/E]O[/F]h[/G]    [/B]T[/C]h[/D]ere is
+[C]no-one who stands be[Bb]side [/C]You[/E],[/C][/D][/D]
+[Bb]nothing in bet[F]ween. We give [C/E]glory
+to [Bb/G]You and You alo[F]ne, You are good.
+
+{comment: Interlude}
+| Am / / / | / / / / | Bb / / / | / / / / |
+| Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
+Bridge (Solo) 1x (Unison) 1x (Two Parts)
+{ci: 1x}
+[C]I will bless You,[Am]    I will give You all the prai[Bb]se.
+Let my life reflect the grea[F]tness of Your name.
+
+{comment: Bridge}
+{ci: Parts}
+[Am]I will bless You,[Bb]    I will give You all the praise.
+[Dm]Let my life reflect the grea[F]tness of Your name.
 
 {comment: Chorus}
 {ci: cut music}
 You are good, You are good
 And Your mercy’s everlasting.
 You are good,
-(G-C-D-E) /Bb /E /F /G /B /C /D
-You are so wonderful There is
-{ci: C-C) (D-D) (Bb-Bb}
-no-one who stands beside You,
-[Bb]nothing in be[F]tween. We give [C/E]glory
-to[Bb/G] You and You alo[F]ne
-Bridge (Flipped Parts) 2xs
-{ci: A-A) (D-E) (Bb-Bb) (D-E-F}
-I will bless You,
-{ci: D-D) (E-F) (F-G) (G-A) (A-A}
-I will give You all the praise
-{ci: D-E) (Bb-Bb) (D-E}
-Let my life reflect the
-[Dm/F]Great -[C/E] ness[Dm] of [C]Your[F] name
+[(G-C-D-E)]You are so [/Bb]wonderful[/E] [/F]    [/G]T[/B]h[/C]ere[/D] is
+no-on[(C-C)]e    who stands[(D-D)] beside You[(Bb-Bb)],
+[Bb]nothing in bet[F]ween. We give [C/E]glory
+to [Bb/G]You and You alo[F]ne
+Bridge (Flipped Parts)
+{ci: 2xs}
+[(A-A)]I[(D-E)] will bl[(Bb-Bb)]ess    Y[(D-E-F)]ou,
+[(D-D)]I[(E-F)] will giv[(F-G)]e You  a[(G-A)]ll the prais[(A-A)]e
+[(D-E)]Let my lif[(Bb-Bb)]e    refle[(D-E)]ct the
+[Dm/F]Great -[C/E] ness[Dm] of Y[C]our [F]name
+
+{comment: Ending}
+| Am / / / | / / / / | Bb / / / | / / / / |
+| Dm / / / | / / / / | F / / / / | / / / (E-F-C) |
+You are good.
+{ci: Cut}
+| / / / / | (E-F-D-E-F) C Bb | / / / C Bb/D |
+| / / / C/G F | / / / / |

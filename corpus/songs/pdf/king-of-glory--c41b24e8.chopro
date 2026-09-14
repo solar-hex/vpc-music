@@ -3,7 +3,7 @@
 {key: E}
 {tempo: 82}
 {time: 6/8}
-{x_verified: number chart, 92% of 38 chords}
+{x_verified: number chart, 97% of 116 chords}
 {x_theme: praise, healing, joy, worship}
 {x_source: pdf:UPCI Music/King of Glory/King of Glory - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FKing%20of%20Glory}
@@ -17,75 +17,112 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/king-of-glory--6971e83a/charts/vocals.pdf}
 {x_album: Your Great Name}
 
-{comment: Intro Pre Chorus}
-{ci: Parts}
-| C#m7 | E | A | F#m7 | A B/A A
-| C#m7 | E | A | A | So let’s start right now.
-Verse 1 (Solo)                                        Why w[B]ould  [C#m/B]we   [B]wait.
-Yes, the[C#m7] world wil[F#m7]l bow down and[E] say                    We can [A/C#]praise[B/C#] You  [A]now in[B/D#] vic  -[Cm#/D#]  to  -  [B/D#]ry
-You are [B]God. Every [C#m7]man will[F#m7] bow down
-E B Chorus (Parts)
-And say that You are King E C#m7
-King of glory, fill this place.
-Pre Chorus (Solo)                                    Just wanna [B]be with You, just wanna [A]be with You.
-So let’s [A]start[B/A] right[A] now                                [E/G#]King of glory, f[C#m7]ill this place.
-Why [B]would[C#m/B]  we   w[B]ait                                Just wanna b[B]e with You, just wanna [A]be with You.
-[F#m7] [E] [B/D#] [F#m]
+{comment: Intro}
+| C#m7 | E | A | F#m7 |
+| C#m7 | E | A | A |
+
+{comment: Verse 1}
+{ci: Solo}
+Yes, the [C#m7]world will [F#m7]bow down and [E]say
+You are [B]God. Every [C#m7]man will [F#m7]bow down
+And [E]say that You are [B]King
+
+{comment: Pre Chorus}
+{ci: Solo}
+So let’s [A]start [B/A]right n[A]ow
+Why [B]would[C#m/B]  we   [B]wait
 
 {comment: Chorus}
 {ci: Solo}
-[E]King of glory, f[C#m7]ill this place.                             Bridge (Solo)
-Just wanna b[B]e with You,                               We will s[E]ing hallelujah ‘til You come a - g[A]ain.
-Just want to [A]be with You                               Yes, we’ll[C#m] dance in Your presence
-‘til You come a - g[A]ain.
+[E]King of glory, [C#m7]fill this place.
+Just wanna [B]be with You,
+Just want to [A]be with You
 
 {comment: Chorus}
 {ci: Duet}
-[E]King of glory, f[C#m7]ill this place.                             Bridge (Duet)
-Just wanna b[B]e with You,                               We will s[E]ing hallelujah ‘til You come a - g[A]ain.
-Just want to[A] be with You                               Yes, we’ll[C#m] dance in Your presence
-‘til You come a - g[A]ain.
+[E]King of glory, [C#m7]fill this place.
+Just wanna [B]be with You,
+Just want to [A]be with You
 
 {comment: Verse 1}
 {ci: Parts}
-Yes, the[C#m7] world wil[F#m7]l bow down and [E]sa[F#m7]y[E][B/D#][F#m]
-You are G[B]od. Every ma[C#m7]n will[F#m7] bow down
-And sa[E]y You are Ki[B]ng.
-Bridge (Parts) E C#m7
-E A/F# King of my peace fill this place
-We will sing hallelujah ‘til You come a - gain. B A
-C#m King of my joy fill this place
-Yes, we’ll dance in Your presence E C#m7
-A King of power King of glory
-‘til You come a - gain. B A
-King of glory King of glory
+Yes, the [C#m7]world will [F#m7]bow down and [E]say
+You are G[B]od. Every m[C#m7]an will [F#m7]bow down
+And s[E]ay You are Ki[B]ng.
+
+{comment: Pre Chorus}
+{ci: Parts}
+So let’s [A]start [B/A]right  [A]now.
+Why [B]would  [C#m/B]we   [B]wait.
+We can [A/C#]praise[B/C#] You  [A]now in[B/D#] vic  -[Cm#/D#]  to  -  [B/D#]ry
+
+{comment: Chorus}
+{ci: Parts}
+[E]King of glory,[C#m7] fill this place.
+Just wanna [B]be with You, just wanna [A]be with You.
+[E/G#]King of glory, [C#m7]fill this place.
+Just wanna [B]be with You, just wanna [A]be with You.
+[F#m7] [E] [B/D#] [F#m]
+
+{comment: Bridge}
+{ci: Solo}
+We will [E]sing hallelujah ‘til You come a - g[A]ain.
+Yes, we’ll [C#m]dance in Your presence
+‘til You come a - g[A]ain.
+
+{comment: Bridge}
+{ci: Duet}
+We will [E]sing hallelujah ‘til You come a - g[A]ain.
+Yes, we’ll [C#m]dance in Your presence
+‘til You come a - g[A]ain.
+[F#m7] [E] [B/D#] [F#m]
+
+{comment: Bridge}
+{ci: Parts}
+We will [E]sing hallelujah ‘til You come a - [A/F#]gain.
+Yes, we’ll [C#m]dance in Your presence
+‘til You come a - g[A]ain.
 
 {comment: Vamp}
 {ci: Flipped Parts}
-E/B F#m7 Tag 1 (Duet, Parts)
-We will sing hallelujah ‘til You come a - gain. E
-F#m7 E B/D# C#m Dance in your presence dance in your presence
-Yes, we’ll dance in Your presence, C#m7
-A Dance in your presence dance in your presence
-Dance in Your presence, dance in Your presence, B
-A Dance in your presence dance in your presence
-Dance in Your presence. A
-Dance in your presence dance in your presence
+We will [E/B]sing hallelujah ‘til You come a - g[F#m7]ain.
+[F#m7]Y[E]e[B/D#]s, we’ll d[C#m]ance in Your presence,
+Dance in Your presence, [A]dance in Your presence,
+[A]Dance in Your presence.
 
 {comment: Chorus}
-E C#m7 Tag 2
-King of glory, fill this place. E
-B Sing hallelujah sing hallelujah
-Just wanna be with You, C#m7
-A Sing hallelujah sing hallelujah
-Just want to be with You B
-Sing hallelujah sing hallelujah
-[E/G#]King of glory, fi[C#m7]ll this place.                             [A]Sing hallelujah
-Just wanna b[B]e with You,
-[A#m7]J[D#m7]ust want to [A]be with You                          [Ending]E           C#m7
-King of glory, fill this place.
-Interlude (Solo)                                       Just wanna b[B]e with You,
-[E]King of glory[C#m7]  fill this place                             Just want to[A] be with You
+[E]King of glory, [C#m7]fill this place.
+Just wanna [B]be with You,
+Just want to [A]be with You
+[E/G#]King of glory, fi[C#m7]ll this place.
+Just wanna [B]be with You,
+[A#m7]J[D#m7]ust want to [A]be with You
+
+{comment: Interlude}
+{ci: Solo}
+[E]King of glory[C#m7]  fill this place
 [B]King of glory  [A]fill this place
 [E]King of glory[C#m7]  fill this place
-[B]King of healing f[A]ill this place
+[B]King of healing [A]fill this place
+[E]King of my peace[C#m7] fill this place
+[B]King of my joy f[A]ill this place
+[E]King of power [C#m7]King of glory
+[B]King of glory [A]King of glory
+
+{comment: Tag 1}
+{ci: Duet, Parts}
+[E]Dance in your presence dance in your presence
+[C#m7]Dance in your presence dance in your presence
+[B]Dance in your presence dance in your presence
+[A]Dance in your presence dance in your presence
+
+{comment: Tag 2}
+[E]Sing hallelujah sing hallelujah
+[C#m7]Sing hallelujah sing hallelujah
+[B]Sing hallelujah sing hallelujah
+[A]Sing hallelujah
+
+{comment: Ending}
+[E]King of glory, [C#m7]fill this place.
+Just wanna [B]be with You,
+Just want to [A]be with You

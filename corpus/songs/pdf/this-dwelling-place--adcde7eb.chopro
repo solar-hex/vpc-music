@@ -3,7 +3,7 @@
 {key: F}
 {tempo: 76}
 {time: 6/8}
-{x_verified: number chart, 96% of 80 chords}
+{x_verified: number chart, 96% of 99 chords}
 {x_theme: worship, joy, heaven}
 {x_source: pdf:UPCI Music/2020/This Dwelling Place/This-Dwelling-Place-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FThis%20Dwelling%20Place}
@@ -21,59 +21,85 @@
 {x_album: This Dwelling Place (Single)}
 {x_writers: Nakota Blue, Laura Payne}
 
-Alayna McClintock
+{comment: Intro}
+||: Dm7 / | / / | Gm7 / | / / :||
 
-{comment: Intro Pre Chorus 2}
-{ci: Unison}
-||: Dm7 / | / / | Gm7 / | / / :|| Gm7 Bb
-All who run in find safety within,
-Verse 1                                              [Dm7]welcomed with arms open [C]wide.
-[Dm7]Sing to the one who inhabits all of the [Bb]heavens
-Dm7 Gm7 Chorus (men sing 8bv) (2xs)
-His mighty voice thunders from the sky F Dm7
-Dm7 Bb He invites me in to His holy place,
-He is the Lord, strength and joy fill his dwelling Csus C F/A Bb
-this dwell - ing place. We enter in.
-Pre Chorus 1                                         I[F] find my rest in His[Dm7] holiness,
-[Gm7]Ancient of days,[Bb] mighty He reigns                       this [Csus]dwell -[C] ing place[F/A]. We ente[Bb]r in.
-To[Dm7]day and forever the[C] same
+{comment: Verse 1}
+[Dm7]Sing to the one who inhabits all of the h[Bb]eavens
+[Dm7]His mighty voice thunders from th[Gm7]e sky
+[Dm7]He is the Lord, strength and joy fill h[Bb]is dwelling
 
-{comment: Interlude}
-| Bb / | / / | Dm7 / | / / | F / | / / |
+{comment: Pre Chorus 1}
+[Gm7]Ancient of days,[Bb] mighty He reigns
+T[Dm7]oday and forever the [C]same
 
 {comment: Chorus}
 {ci: men sing 8bv}
-F Dm7 | Am / | / / |
-He invites me in to His holy place,
-this [Csus]dwell -[C] ing place. We ente[Bb]r in.                       Bridge 1 (Solo)
-I[F] find my rest in His[Dm7] holiness,                           He o[Bb]pens up the door, inv[Dm7]ites us to His courts.
-this [Csus]dwell -[C] ing place. We ente[Bb]r in.                           [C/E]In [F]awe we stand before our God and wors[Am]hip.
-He o[Bb]pens up the door, inv[Dm7]ites us to His courts.
-Verse 2 (Unison) C/E F C
-Dm7 Bb In awe we stand before our God and worship.
-This is the place where the orphan finds his father.
+[F]He invites me in to His[Dm7] holy place,
+this [Csus]dwell -[C] ing place. We ent[Bb]er in.
+I [F]find my rest in His [Dm7]holiness,
+this [Csus]dwell -[C] ing place. We ent[Bb]er in.
+
+{comment: Verse 2}
+{ci: Unison}
+[Dm7]This is the place where the orphan finds his fa[Bb]ther.
 [Dm7]This is the place where the helpless find th[Gm7]eir hope.
-[Dm7]He is the Lord who bows[Dm7] low[C/E]  and [F]meets our
+[Dm7]He is the Lord who bows[Dm7] low  [C/E]and [F]meets our
 [Bb]sorrow.
-Alayna McClintock
-Bridge 1 (men sing 8vb) Chorus (men sing 8bv) (2xs)
-He o[Bb]pens up the door, inv[Dm7]ites us to His courts.            [F]He invites me in to His[Dm7] holy place,
-[C/E]In [F]awe we stand before our God and wors[C]hip.        this [Csus]dwell -[C] ing place[F/A]. We ente[Bb]r in.
-He o[Bb]pens up the door, inv[Dm7]ites us to His courts.            I[F] find my rest in His[Dm7] holiness,
-[C/E]In [F]awe we stand before our God and wors[Am]hip.        this [Csus]dwell -[C] ing place[F/A]. We ente[Bb]r in.
-Bridge 1 (Parts) Outro
-He o[Bb]pens up the door, inv[Dm7]ites us to His courts.            He o[Bb]pens up the door, inv[Dm7]ites us to His courts.
-[C/E]In [F]awe we stand before our God and wors[C]hip.            [C/E]In [F]awe we stand before our God and wors[Am]hip.
-He o[Bb]pens up the door, inv[Dm7]ites us to His courts.
-[C/E]In [F]awe we stand before our God and wors[Am]hip.
+
+{comment: Pre Chorus 2}
+{ci: Unison}
+[Gm7]All who run in find [Bb]safety within,
+[Dm7]welcomed with arms open[C] wide.
+
+{comment: Chorus}
+{ci: men sing 8bv, 2xs}
+[F]He invites me in to His[Dm7] holy place,
+this [Csus]dwell -[C] ing place.[F/A] We ent[Bb]er in.
+I [F]find my rest in His [Dm7]holiness,
+this [Csus]dwell -[C] ing place.[F/A] We ent[Bb]er in.
+
+{comment: Interlude}
+| Bb / | / / | Dm7 / | / / | F / | / / |
+| Am / | / / |
+
+{comment: Bridge 1}
+{ci: Solo}
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[Am]ship.
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[C]ship.
+
+{comment: Bridge 1}
+{ci: men sing 8vb}
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[C]ship.
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[Am]ship.
+
+{comment: Bridge 1}
+{ci: Parts}
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[C]ship.
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[Am]ship.
 
 {comment: Bridge 2}
-He o[Gm7]pens up the door, invit[Bb]es us to His courts.
-In[Dm7] awe we stand before our God and wo[C]rship[G/B].
+He [Gm7]opens up the door, invi[Bb]tes us to His courts.
+In [Dm7]awe we stand before our God and w[C]orship[G/B].
 
 {comment: Vamp}
-Bb C (D-E-A-F-G-F-C-Bb-A)
-This is God, this is God.
+[Bb]This is God, [C]this is G[(D-E-A-F-G-F-C-Bb-A)]od.
 [Bb]This is God, [C]this is God.
-Gm11 Csus9 (D-E-A-F-G-F-C-Bb-A)
-This is God, this is God.
+[Gm11]This is God, [Csus9]this is G[(D-E-A-F-G-F-C-Bb-A)]od.
+
+{comment: Chorus}
+{ci: men sing 8bv, 2xs}
+[F]He invites me in to His[Dm7] holy place,
+this [Csus]dwell -[C] ing place.[F/A] We ent[Bb]er in.
+I [F]find my rest in His [Dm7]holiness,
+this [Csus]dwell -[C] ing place.[F/A] We ent[Bb]er in.
+
+{comment: Outro}
+He [Bb]opens up the door, in[Dm7]vites us to His courts.
+[C/E]In [F]awe we stand before our God and wor[Am]ship.

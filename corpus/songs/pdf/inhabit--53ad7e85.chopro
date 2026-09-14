@@ -7,31 +7,37 @@
 {x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/inhabit/charts/chord-chart.pdf}
 {x_chart_other: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/inhabit/charts/other.pdf}
 
-Intro (C-D-E-G) BbM7 Am7 FM7 Dm7 Am7
-(C-D-E-G) BbM7 Am7 FM7 Dm7 C
+{comment: Intro}
+{ci: C-D-E-G}
+[BbM7] [Am7] [FM7] [Dm7] [Am7]
+[(C-D-E-G)] [BbM7] [Am7] [FM7] [Dm7] [C]
 
 {comment: Chorus}
-[F/A]G[G/B]od inha[C]bit the p[Bb/D]raise [C/E]of Your peo[F]ple as we li[Dm7]ft You hi[C/E]gh Lord be g[D2/F#]lori - f[G11]ied
-G[G#o7]od inh[Am7]abit the pr[Gm7]aise o[C7]f Your pe[FM7]ople s[Am7]et our h[Dm7]earts on f[C/E]ire
-D2/F# G11 To chorus F/A G/B FM7 To verse (C-D-E-G) BbM7 Am7 FM7 Dm7 C
-This is our desire God In – habit Lord_________________
+[F/A]G[G/B]od inh[C]abit the [Bb/D]praise[C/E] of Your pe[F]ople as we [Dm7]lift You [C/E]high Lord be[D2/F#] glori - f[G11]ied
+[G#°7]God in[Am7]habit the p[Gm7]raise o[C7]f Your p[FM7]eople [Am7]set our h[Dm7]earts on [C/E]fire
+{ci: To chorus}
+{ci: To verse}
+This i[D2/F#]s our de[G11]sire    [F/A]God [G/B]In – h[FM7]abit    [(C-D-E-G)]L[BbM7]ord__[Am7]_____[FM7]____[Dm7]_____[C]_
 
 {comment: Verse}
-He[C]arts are sin[E+7]ging m[Am11]elodies unto[FM7] You for You oh [C]God
-Ha[C]nds are lift[E+7]ed ev[Am11]erywhere unto[FM7] You for You oh[C] Go[C#o7]d
+H[C]earts are sin[E+7]ging m[Am11]elodies unto [FM7]You for You oh [C]God
+H[C]ands are lifte[E+7]d ever[Am11]ywhere unto[FM7] You for You oh [C]God[C#°7]
 Dm7 C/E FM 7 Am11 Dm11 C/E Bb13(#11) Ab13(#11) G11
 With expectation this Holy na – tion cries
 
 {comment: Chorus}
-[F/A]God i[G/B]nhabi[C]t the p[Bb/D]raise [C/E]of Your peo[F]ple as we li[Dm7]ft You h[C/E]igh Lord be g[D2/F#]lori - f[G11]ied
-G[G#o7]od inh[Am7]abit the pr[Gm7]aise o[C7]f Your pe[FM7]ople s[Am7]et our h[Dm7]earts on f[C/E]ire
-This [D2/F#]is our d[G11]esire[G11] Lor[F/A]d____[G/B]_____[C#o7]____
+[F/A]God[G/B] inha[C]bit the [Bb/D]praise[C/E] of Your pe[F]ople as we [Dm7]lift You [C/E]high Lord be[D2/F#] glori - [G11]fied
+[G#°7]God in[Am7]habit the p[Gm7]raise o[C7]f Your p[FM7]eople [Am7]set our h[Dm7]earts on [C/E]fire
+This i[D2/F#]s our de[G11]sire Lo[G11]rd_[F/A]____[G/B]____[C#°7]____
 
 {comment: Vamp}
-[Dm7]We lif[C/E]t  we lift[FM7]  we lift You hig[Am7]her      [Dm7]we lif[C/E]t  we lift[FM7]  we lift You hi[Am7]gher (8x)
-[Dm7]We lif[C/E]t  we lift[FM7]  we lift You hi[Am7]gher__[Dm7]_____[F]___[F/A]_____[G/B]___
+[Dm7]We lif[C/E]t  we lift[FM7]  we lift You hig[Am7]her    [Dm7]we lif[C/E]t  we lift[FM7]  we lift You hi[Am7]gher
+{ci: 8x}
+[Dm7]We lif[C/E]t  we lift[FM7]  we lift You high[Am7]er____[Dm7]_____[F]__[F/A]____[G/B]___
 
 {comment: Chorus}
 {ci: same as above}
-Outro (C-D-E-G) BbM7 Am7 FM7 Dm7 Am7
-(C-D-E-G) BbM7 Am7 FM7 Dm7 C D/C Fm6/C C UPCI Music Ministry
+
+{comment: Outro}
+{ci: C-D-E-G}
+(C-D-E-G) [BbM7]BbM7 [Am7]Am7 [FM7]FM7 [Dm7]Dm7 [Am7]C    D/C  Fm6/C  C    UPCI Music Ministry

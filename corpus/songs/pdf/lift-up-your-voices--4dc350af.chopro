@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 116}
 {time: 4/4}
-{x_verified: number chart, 96% of 83 chords}
+{x_verified: number chart, 97% of 118 chords}
 {x_theme: praise, worship}
 {x_source: pdf:UPCI Music/2020/Lift Up Your Voices/Lift-Up-Your-Voices-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FLift%20Up%20Your%20Voices}
@@ -17,66 +17,111 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/lift-up-your-voices/charts/vocals.pdf}
 {x_album: Jesus is Born}
 
-Chorus (men sing 8vb) D/F# E/G# A A/C#
-D2 Sing prais – es unto God.
-Lift up your voices now, D2 A E / / / | F#m7 / / Em9
-A E We lift our voices to God
-sing praises unto God D2 A E / / / | F#m7 / Em9 /A
-F#m7 We lift our voices to God
-for all the things that He has done.
-[D2]Offer it all to Him,                                      Vamp 1 (Tenors)
-[A]He is the morning sun[E].                               [Bm7]Oh, we prais[Dmaj9]e You, Lord[E].
-Sing [F#m7]praises unto God.                                 [Bm7]Oh, we prais[Dmaj9]e You, L[A]or -[E/G#] d[D/F#].[E][A#dim7]
-D2 A E / / / | F#m7 / / / | Bm7 Dmaj9 E/G# A#dim7
-We lift our voices to God Oh, we praise You, Lord.
-[Bm7]Oh, we prais[Dmaj9]e You, L[A]or -[E/G#] d[D/F#].[E][A#dim7]
+{comment: Chorus}
+{ci: men sing 8vb}
+[D2]Lift up your voices now,
+[A]sing praises unto Go[E]d
+fo[F#m7]r all the things that He has done.
+[D2]Offer it all to Him,
+[A]He is the morning sun[E].
+Sing [F#m7]praises unto God.
+| D2 A E / / / | F#m7 / / / |
+We lift our voices to God
 
 {comment: Chorus}
 {ci: Parts}
-[D2]Lift up your voices now,                                Vamp 2 (Altos) 2xs
-[A]sing praises unto God[E]                                   [Bm7]We worship,[Dmaj9]     we praise You,
-fo[F#m7]r all the things that He has done.                          [E]adore You, we love
-[D2]Offer it all to Him,                                      [Bm7]You, We worshi[Dmaj9]p    We praise You,
-[A]He is the [B/D#]morning sun[E/G#].                                   [E]adore You, we love
+[D2]Lift up your voices now,
+[A]sing praises unto Go[E]d
+fo[F#m7]r all the things that He has done.
+[D2]Offer it all to Him,
+[A]He is the [B/D#]morning su[E/G#]n.
 Sing [D/F#]prais [E/G#]– es  u[A]nto  [A/C#]God.
-D2 A E / / / | F#m7 / / Em9 Vamp 3 (Sopranos)
-We lift our voices to God Bm7 Dmaj9 E
-D2 A E / / / | F#m7 / Em9 /A For all of the things You have done
-We lift our voices to God Bm7 Dmaj9 E
-For all of the things You have done
-Chorus (Cut)                                         For[Bm7] all of the things[Dmaj9]     You have don[E]e
-[D2]Lift up your voices now,                                For[Gmaj9] all of the things[Dmaj9]     You have don[E]e
+| D2 A E / / / | F#m7 / / Em9
+We lift our voices to God
+| D2 A E / / / | F#m7 / Em9 /A
+We lift our voices to God
+
+{comment: Chorus}
+{ci: Cut}
+[D2]Lift up your voices now,
 sing praises unto God
 for all the things that He has done.
 Offer it all to Him,
 He is the morning sun.
-Vamp 2 (Parts) Bm7 Dmaj9 E
-Bm7 A/C# Dmaj9 For all of the things You have done
-We worship, we praise You, Gmaj9 Dmaj9 E
-A E/G# E/C# E/F# For all of the things You have done
-adore You, we love
-[Bm7]We worship[A/C#],         [Dmaj9]we praise You,                Vamp 2
-[A]a[E]dore You, we love                                   [Bm7]We worship[A/C#],         [Dmaj9]we praise You,
-[Gmaj9]We worship,[Dmaj9]     we praise You,                            [A]a[E]dore You, we [E/C#]lov[E/F#]e
-[E]adore You, we love                                    [Gmaj9]We worship[A/C#],         [Dmaj9]we praise You,
-[Gmaj9]We worship,[Dmaj9]     we praise You,                         [A]a[E]dore You, we love
-[E]adore You, we love                                    [Gmaj9]We worship,[Dmaj9]     we praise You,
+Sing [D/F#]prais [E/G#]– es  u[A]nto  [A/C#]God.
+| D2 A E / / / | F#m7 / / Em9
+We lift our voices to God
+| D2 A E / / / | F#m7 / Em9 /A
+We lift our voices to God
+
+{comment: Vamp 1}
+{ci: Tenors}
+[Bm7]Oh, we prais[Dmaj9]e You, Lord[E].
+[Bm7]Oh, we prais[Dmaj9]e You, [A]Lor [E/G#]- d.[D/F#][E][A#dim7]
+[Bm7]Oh, we prais[Dmaj9]e You, Lord[E/G#].[A#dim7]
+[Bm7]Oh, we prais[Dmaj9]e You, [A]Lor [E/G#]- d.[D/F#][E][A#dim7]
+Vamp 2 (Altos)
+{ci: 2xs}
+[Bm7]We worship,[Dmaj9]    we praise You,
 [E]adore You, we love
-Vamp 2 (Flipped Parts) Gmaj9 Dmaj9
-Bm7 Dmaj9 We worship, we praise You,
-We worship, we praise You, E
-E/G# adore You, we love
-adore You, we love
-[Bm7]You, We worshi[Dmaj9]p    We praise You,                    Interlude
-E Bm7 / / / | Dmaj9 / / / | E / / / | / / / / |
-adore You, we love
-[Gmaj9]We worship,[Dmaj9]     we praise You,                     Vamp 3 (Sopranos)
-[E]adore You, we love                                 For[Bm7] all of the things[Dmaj9]     You have don[E]e
-[Gmaj9]We worship,[Dmaj9]     we praise You,                     For[Bm7] all of the things[Dmaj9]     You have don[E]e
+[Bm7]You, We worshi[Dmaj9]p    We praise You,
 [E]adore You, we love
 
 {comment: Vamp 3}
+{ci: Sopranos}
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Gmaj9] all of the things[Dmaj9]    You have don[E]e
+
+{comment: Vamp 2}
+{ci: Parts}
+[Bm7]We worshi[A/C#]p,[Dmaj9]    we praise You,
+[A]a[E/G#]dore You, we[E/C#] love[E/F#]
+[Bm7]We worshi[A/C#]p,[Dmaj9]    we praise You,
+[A]a[E]dore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+
+{comment: Vamp 2}
+{ci: Flipped Parts}
+[Bm7]We worship,[Dmaj9]    we praise You,
+[E/G#]adore You, we love
+[Bm7]You, We worshi[Dmaj9]p    We praise You,
+[E]adore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+
+{comment: Vamp 3}
+{ci: Sopranos}
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Gmaj9] all of the things[Dmaj9]    You have don[E]e
+
+{comment: Vamp 2}
+[Bm7]We worshi[A/C#]p,[Dmaj9]    we praise You,
+[A]a[E]dore You, we [E/C#]love[E/F#]
+[Gmaj9]We worship[A/C#],    [Dmaj9]we praise You,
+[A]a[E]dore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+[Gmaj9]We worship,[Dmaj9]    we praise You,
+[E]adore You, we love
+
+{comment: Interlude}
+| Bm7 / / / | Dmaj9 / / / | E / / / | / / / / |
+
+{comment: Vamp 3}
+{ci: Sopranos}
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+
+{comment: Vamp 3}
 {ci: men sing 8vb}
-Vamp 3 (Sopranos)                                   For[Bm7] all of the things[Dmaj9]     You have don[E]e
-For[Bm7] all of the things[Dmaj9]     You have done[E]                  For[Gmaj9] all of the things[Dmaj9]     You have don[E]e
-For[Bm7] all of the things[Dmaj9]     You have don[E]e
+For[Bm7] all of the things[Dmaj9]    You have don[E]e
+For[Gmaj9] all of the things[Dmaj9]    You have don[E]e

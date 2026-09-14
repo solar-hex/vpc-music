@@ -3,47 +3,64 @@
 {key: A}
 {tempo: 126}
 {time: 4/4}
+{x_verified: number chart, 90% of 62 chords}
 {x_theme: praise, faith-trust, joy, worship}
 {x_source: pdf:UPCI Music/2019/Oh Come All Ye Faithful (Sing to the King)/O-Come-All-Ye-Faithful-Chord-Chart.pdf}
 {x_album: Believe}
 
-Intro (3xs) Chorus
+{comment: Intro}
+{ci: 3xs}
 ||: A5 / / / | / / / / | / / / / | D E A / / :||
 
-{comment: Chorus 2}
-Verse 1 A
-A So come, let us sing a song,
-O come, all ye faithful, Bm7
-F#m7 Esus A song declaring we belong to
-Joyful and tri - um – phant. G2 D Asus A Asus A Asus A
-F#m7 E B7sus/F# E Je-sus. He is all we need
-O come ye, O come ye to Beth - le – hem. A
-F#m7 A Lift up a heart of praise,
-Come and behold Him Bm7
-Bm7 Sing now with voices raised to
-born the King of Angels. G2 D Asus A Asus A Asus A
-Je-sus. Sing to the King
+{comment: Verse 1}
+O c[A]ome, all ye faithful,
+Joyful and tri [F#m7]- um – [Esus]phant.
+O [F#m7]come ye, O [E]come ye to B[B7sus/F#]eth - le – [E]hem.
+[F#m7]Come and be[A]hold Him
+[Bm7]born the King of Angels.
 
 {comment: Chorus}
-O c[F#m7]ome, let us adore Him.                              Interlude 2
-B7sus | A5 / / / | / / / / | Bm7 / / / | / / / / |
-O come, let us adore Him.
-Dma9 Esus A/C# D | G2 / / / | D / / / | Asus A Asus | A Asus A |
-O come, let us a - dore Him,
-A/E E (A)
-Christ the Lord. Chorus 2
+O c[F#m7]ome, let us adore Him.
+O [B7sus]come, let us adore Him.
+O [Dma9]come, let us a -[Esus] dore [A/C#]Him,[D]
+[A/E]Christ[E]    the [(A)]Lord.
+
+{comment: Interlude}
+||: A5 / / / | / / / / | / / / / | D E A / / :||
+{ci: Lord}
+
+{comment: Verse 2}
+O [A]Sing, choirs of angels,
+Sing in exu[F#m7]l – ta - [Esus]tion
+O[F#m7] sing, all ye [E]bright host of he[B7sus/F#]av – en  a[E]bove.
+[F#m7]Glory to [A]God, all
+[Bm7]glory in the highest.
+
+{comment: Chorus}
+
+{comment: Chorus 2}
 [A]So come, let us sing a song,
-Interlude Bm7
-||: A5 / / / | / / / / | / / / / | D E A / / :|| A song declaring we belong to
-(Lord) G2 D Asus A Asus A Asus A
-Je-sus. He is all we need
-Verse 2                                              [A]Lift up a heart of praise,
-O S[A]ing, choirs of angels,                               Si[Bm7]ng now with voices raised to
-Sing in exul[F#m7] – ta - [Esus]tion                                Je[G2]-sus.[D]         Sing to t[Asus]he Ki[A]n[Asus]g[A][Asus][A]
-O [F#m7]sing, all ye [E]bright host of h[B7sus/F#]eav – en  a[E]bove.           [A]So come, let us sing a song,
-[F#m7]Glory to [A]God, all                                       A [Bm7]song declaring we belong to
-Bm7 G2 D (As)
-glory in the highest. Je-sus. Sing to the King.
+A [Bm7]song declaring we belong to
+Je[G2]-sus.[D]    He is all w[Asus]e nee[A]d[Asus][A][Asus][A]
+[A]Lift up a heart of praise,
+Si[Bm7]ng now with voices raised to
+Je[G2]-sus.[D]    Sing to th[Asus]e Kin[A]g[Asus][A][Asus][A]
+
+{comment: Interlude 2}
+| A5 / / / | / / / / | Bm7 / / / | / / / / |
+| G2 / / / | D / / / | Asus A Asus | A Asus A |
+
+{comment: Chorus 2}
+[A]So come, let us sing a song,
+A [Bm7]song declaring we belong to
+Je[G2]-sus.[D]    He is all w[Asus]e nee[A]d[Asus][A][Asus][A]
+[A]Lift up a heart of praise,
+Si[Bm7]ng now with voices raised to
+Je[G2]-sus.[D]    Sing to th[Asus]e Kin[A]g[Asus][A][Asus][A]
+[A]So come, let us sing a song,
+A [Bm7]song declaring we belong to
+Je[G2]-sus.[D]    Sing to the King.
+{ci: As}
 
 {comment: Interlude}
 ||: A5 / / / | / / / / | / / / / | D E A / / :||

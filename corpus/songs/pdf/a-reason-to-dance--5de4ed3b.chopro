@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 130}
 {time: 4/4}
-{x_verified: number chart, 90% of 105 chords}
+{x_verified: number chart, 99% of 136 chords}
 {x_theme: praise, victory, easter}
 {x_source: pdf:UPCI Music/2020/A Reason to Dance/A-Reason-to-Dance-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FA%20Reason%20to%20Dance}
@@ -18,59 +18,98 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/a-reason-to-dance/charts/vocals.pdf}
 {x_album: Hear Us From Heaven}
 
-{comment: Intro Verse}
+{comment: Intro}
+||: Ab Bbm7 Ab/C Db Db/F Gb2 | / / / / :||
+{ci: 4xs}
+
+{comment: Verse 1}
+He be[Db]came sin, who knew no sin
+that we migh[Ab/C]t be -[Gb/Bb] come
+His righteousn[Db]ess
+His body was [Db]broken for our transgressions
+but I’m so [Ab/C]glad  [Gb/Bb]that’s not where the
+story [Db]ends
+
+{comment: Pre Chorus}
+{ci: Solo}
+The Lamb that was [Gb]slain that day
+rose in victo [Db/F]- ry.
+Since that [Gb]day, sin has lost its grip on[Bbm7] me.
+[Ab]Halle[Ab/C] - lu  [Gb/Bb]- jah,    He’s al[Bbm7]ive.
+[Db/F]Halle - [Gb]lujah,[Absus]    He’s alive.
+
+{comment: Interlude}
+||: Ab Bbm7 Ab/C Db Db/F Gb2 | / / / / :||
+{ci: 4xs}
+{ci: - live}
+
+{comment: Chorus}
+He [Ab]gav[Bbm7]e  me[Ab/C]  a   [Db]reas[Db/F]on   [Gb2]to dance, hallelujah
+[Ab]gav[Bbm7]e   me[Ab/C]  a   [Db]rea[Db/F]son   [Gb2]to dance
+He [Ab]gav[Bbm7]e  me[Ab/C]  a   [Db]reas[Db/F]on   [Gb2]to dance, hallelujah
+[Ab]gav[Bbm7]e   me[Ab/C]  a   [Db]rea[Db/F]son   [Gb2]to dance
+
+{comment: Verse}
 {ci: Unison}
-||: Ab Bbm7 Ab/C Db Db/F Gb2 | / / / / :|| 4xs Db Absus/Db
-He became sin,
-Verse 1                                              who knew [Db]no si[Absus/Db]n
-He bec[Db]ame sin, who knew no sin                        that we might[Db/Bb] becom[Absus/Db]e
-that we migh[Ab/C]t be -[Gb/Bb] come                              His righteous[Gb2]ness
-His righteous[Db]ness                                     His body was [Db]broke[Absus/Db]n
-His body was b[Db]roken for our transgressions              for our trans[Db]gression[Absus/Db]s
-but I’m so [Ab/C]glad  [Gb/Bb]that’s not where the                    but I’m so [Db/Bb]glad  that’s not[Absus] where
-story[Db] ends                                            the story[Db]  ends
-Pre Chorus (Solo) Pre Chorus (men sing 8vb)
-The Lamb that was s[Gb]lain that day
-Db/F Chorus 2xs à Chorus (Flipped Parts) 2xs
-rose in victo - ry. Db Ebm7
-Gb Bbm7 He gave me a reason to dance, hallelujah
-Since that day, sin has lost its grip on me. Bbm7 Gb
-Ab Ab/C Gb/Bb Bbm7 gave me a reason to dance
-Halle - lu - jah, He’s alive.
-[Db/F]Halle - [Gb]lujah,[Absus]       He’s alive.                     Bridge (Solo)
+He be[Db]came sin,[Absus/Db]
+who knew[Db] no sin[Absus/Db]
+that we might [Db/Bb]become[Absus/Db]
+His righteousn[Gb2]ess
+His body was [Db]broken[Absus/Db]
+for our transg[Db]ressions[Absus/Db]
+but I’m so [Db/Bb]glad  that’s not [Absus]where
+the story[Db]  ends
+
+{comment: Pre Chorus}
+{ci: men sing 8vb}
+Chorus 2xs à Chorus (Flipped Parts)
+{ci: 2xs}
+He [Db]gave me a reason to dance, halle[Ebm7]lujah
+[Bbm7]gave me a reason to dance[Gb]
+
+{comment: Bridge}
+{ci: Solo}
 [Db]Dancing out of my grave cl[Ebm7]othes,
-Interlude Bbm7 Gb
-||: Ab Bbm7 Ab/C Db Db/F Gb2 | / / / / :|| 4xs Who the Son sets free is free indeed
-( - live) Db Ebm7
-Morning’s here and I’m grateful
-Chorus                                                [Bbm7]For the Savior got up in[Gb] victory
-He [Ab]gave[Bbm7]  me[Ab/C]  a   [Db]reas[Db/F]on   [Gb2]to dance, hallelujah
-Ab Bbm7 Ab/C Db Db/F Gb2 Bridge (Unison)
-gave me a reason to dance
-He [Ab]gave[Bbm7]  me[Ab/C]  a   [Db]reas[Db/F]on   [Gb2]to dance, hallelujah
-[Ab]gave[Bbm7]   me[Ab/C]  a   [Db]rea[Db/F]son   [Gb2]to dance
-Bridge (Parts) Ending
-[Ab]Danc -[Bbm7] ing out of my grav[Db/F]e  clot[Gb]hes,                           [Db/F]H[Gb]alle [Ab/C]- lu – [Db]jah[Db/F]         [Gb]He’s alive,
-[Ab]Who t[Bbm7]he Son sets free is [Db/F]free i[Gb]ndeed                         [Ab]H[Bbm7]e’s alive
-[Ab/C]Morning’s h[Db]ere and I’m gr[Db/F]ateful[Gb]                               [Db/F]H[Gb]alle [Ab/C]- lu – [Db]jah[Db/F]         [Gb]He’s alive,
-[Ab]For t[Bbm7]he Savior got u[Db/F]p in  [Gb]victory                           [Ab]H[Bbm7]e’s alive
-Bridge (Parts)                                                  [Db/F]H[Gb]ey!  Hey!  Hey[Gb]!
-[Ab/C]Dancing [Db]out of my gra[Db/F]ve  clo[Gb]thes,
-[Ab]Who t[Bbm7]he Son sets free is [Db/F]free i[Gb]ndeed
-[Ab/C]Morning’s h[Db]ere and I’m gr[Db/F]atefu[Gb]l
-[Ab]For t[Bbm7]he Savior got u[Db/F]p in  [Gb]victory
+[Bbm7]Who the Son sets free is[Gb] free indeed
+[Db]Morning’s here and I’m grat[Ebm7]eful
+[Bbm7]For the Savior got up in[Gb] victory
+
+{comment: Bridge}
+{ci: Unison}
+
+{comment: Bridge}
+{ci: Parts}
+[Ab]Danc [Bbm7]- ing out of my grav[Db/F]e  clo[Gb]thes,
+[Ab]Who [Bbm7]the Son sets free is [Db/F]free in[Gb]deed
+[Ab/C]Morning’s [Db]here and I’m g[Db/F]ratefu[Gb]l
+[Ab]For [Bbm7]the Savior got u[Db/F]p in  [Gb]victory
+
+{comment: Bridge}
+{ci: Parts}
+[Ab/C]Dancing[Db] out of my grav[Db/F]e  clo[Gb]thes,
+[Ab]Who [Bbm7]the Son sets free is [Db/F]free in[Gb]deed
+[Ab/C]Morning’s [Db]here and I’m g[Db/F]ratefu[Gb]l
+[Ab]For [Bbm7]the Savior got u[Db/F]p in  [Gb]victory
 
 {comment: Interlude}
 ||: Db / / / | / / Ebm7 / | Bbm7 / / / | / / Gb / :||
-Vamp (Solo) 2xs
+Vamp (Solo)
+{ci: 2xs}
 {ci: Db - - - - - - - -)(Db-F-Ab-Ab-Ab-F-Eb-Db-Db-Db}
-[Db]Hallelujah,                     He’s alive,
+[Db]Hallelujah,    He’s alive,
 {ci: Db - - - - - - - -)(Db-F-Ab-Ab-Ab-F-Eb-Db-Db-Db}
 [Bbm7]He’s alive
 
 {comment: Vamp}
 {ci: Parts}
-Hal[Ab]lelu[Bbm7]jah,[Db/F]            [Gb]He’s alive,
+Ha[Ab]llel[Bbm7]ujah,[Db/F]    [Gb]He’s alive,
 [Ab]H[Bbm7]e’s alive
-[Db/F]H[Gb]alle [Ab/C]- lu – [Db]jah[Db/F]         [Gb]He’s alive,
+[Db/F]H[Gb]alle[Ab/C] - lu – j[Db]ah[Db/F]    [Gb]He’s alive,
 [Ab]H[Bbm7]e’s alive
+
+{comment: Ending}
+[Db/F]H[Gb]alle[Ab/C] - lu – j[Db]ah[Db/F]    [Gb]He’s alive,
+[Ab]H[Bbm7]e’s alive
+[Db/F]H[Gb]alle[Ab/C] - lu – j[Db]ah[Db/F]    [Gb]He’s alive,
+[Ab]H[Bbm7]e’s alive
+[Db/F]H[Gb]ey!  Hey!  Hey[Gb]!

@@ -3,6 +3,7 @@
 {key: D}
 {tempo: 82}
 {time: 4/4}
+{x_verified: number chart, 99% of 73 chords}
 {x_theme: name-of-jesus, praise, easter}
 {x_source: pdf:UPCI Music/We Bless The Name/We Bless the Name - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FWe%20Bless%20The%20Name}
@@ -16,46 +17,61 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-bless-the-name/charts/vocals.pdf}
 {x_album: Love Like Fire}
 
-{comment: Intro Tag}
-[Drum]|  /[Fill]  /  /  /  |  /  /  /  /  |  /  /  /  /  |                   [D5]Oh[D/F#]            [G]Oh      [Bm]Oh
-| / / / / | / / / / | / / / / | G
+{comment: Intro}
+Drum Fill
+| / / / / | / / / / | / / / / |
+| / / / / | / / / / | / / / / |
 | D5 | D5 | D5 |
-we bless the name, the name of Jesus
 | D5 5
-(G-A-C-B-A-G-F-C-) | D |
+| (G-A-C-B-A-G-F-C) | D |
 | D5 | D5 | D5 |
+
+{comment: Verse 1}
+[D5]Sov’reign God, you are l[G]ifted up.
+Still You’re [A]here with us
+Blessed [G]be Your name
+[D5]Jesus Christ You were [G]sacrificed
+Risen g[Bm]lorified
+Blessed [G]be Your name.
+
+{comment: Pre Chorus}
+[A]We sing hallel[G]ujah  W[A]e sing hallelu[Em]jah
+
+{comment: Chorus}
+{ci: Unison}
+[D5]Blessed be the n[D/F#]ame of the o[G]ne who saves us
+[D5]Blessed be the n[D/F#]ame, oh the [G]name of Jesus
+[D5]Blessed [Em]be the name of the [G]one who reigns
+And we [Bm]bless the name we [D5]bless the name
+We b[G]less the name, the name of Jesus
+
+{comment: Tag}
+[D5]Oh[D/F#]    [G]Oh    [Bm]Oh
+[G]we bless the name, the name of Jesus
 
 {comment: Interlude}
 | D5 | D5 | D5 |D5 |
 
-{comment: Verse 1 Verse 2}
-D5 G 5
-Sov’reign God, you are lifted up.                        [D]Sov’reing one, You are [G]all we want
-Still You’re [A]here with us                                For everyt[A]hing You’ve done. Blessed[G] be Your
-Blessed [G]be Your name                                 name. J[D5]esus Christ, You are [G]ever mine.
-[D5] [G]
-Jesus Christ You were sacrificed                        All wit[Bm]hin me cries blessed[G] be Your name.
-Risen gl[Bm]orified
-G Pre Chorus
-Blessed be Your name. A G A Em
-We sing hallelujah We sing hallelujah
-Pre Chorus A G A Em (hold)
-A G A Em We sing hallelujah We sing hallelujah
-We sing hallelujah We sing hallelujah
+{comment: Verse 2}
+[D5]Sov’reing one, You are [G]all we want
+For everyt[A]hing You’ve done. Blessed [G]be Your
+name. J[D5]esus Christ, You are [G]ever mine.
+All withi[Bm]n me cries blessed [G]be Your name.
+
+{comment: Pre Chorus}
+[A]We sing hallel[G]ujah  [A]We sing hallelu[Em]jah
+[A]We sing hallel[G]ujah  [A]We sing hallelu[Em(hold)]jah
 
 {comment: Chorus}
 {ci: Parts}
-Chorus (Unison)                                      [D5]Blessed be the [D/F#]name of the [G]one who saves us
-[D5] [D/F#] [G]
-Blessed be the name of the one who saves us            [D5]Blessed be the [D/F#]name, oh the[G] name of Jesus
-5
-[D]Blessed be the [D/F#]name, oh the[G] name of Jesus              [D5]Blessed [Em]be the name of the [G]one who reigns
-[D5] [Em] [G]
-Blessed be the name of the one who reigns              And we [Bm]bless the name we [D5]bless the name
-[Bm] [D5]
-And we bless the name we bless the name               We bl[G]ess the name, the name of Jesus
-We bl[G]ess the name, the name of Jesus                  Tag
-[D5]Oh[D/F#]            [G]Oh      [Bm]Oh
+[D5]Blessed be the n[D/F#]ame of the o[G]ne who saves us
+[D5]Blessed be the n[D/F#]ame, oh the [G]name of Jesus
+[D5]Blessed [Em]be the name of the [G]one who reigns
+And we [Bm]bless the name we [D5]bless the name
+We b[G]less the name, the name of Jesus
+
+{comment: Tag}
+[D5]Oh[D/F#]    [G]Oh    [Bm]Oh
 [G]we bless the name, the name of Jesus
 
 {comment: Bridge}
@@ -66,7 +82,7 @@ We bl[G]ess the name, the name of Jesus                  Tag
 [Em]inside of me
 [D5]Bless the Lord, oh my soul and [A]everything
 [G]inside of me
-We b[Bm]less the name, we [D5]bless the name,
+We [Bm]bless the name, we [D5]bless the name,
 [G]we bless the name of Jesus
 
 {comment: Bridge}
@@ -77,17 +93,18 @@ We b[Bm]less the name, we [D5]bless the name,
 
 {comment: Vamp}
 {ci: 2xs}
-We b[Bm]less the name, we b[D5]less the name
+We [Bm]bless the name, we b[D5]less the name
 We [G]bless the name, the name of Jesus
 
 {comment: Outro}
 | / / / / | / / / / |
 | D5 | D5 | D5 |
 | D5
-(G-A-C-B-A-G-F) |
+| (G-A-C-B-A-G-F) |
 | D5 | D5 | D5 |
 | D5
-(G-A-C-B-A-G-F) |
+| (G-A-C-B-A-G-F) |
 | D5 | D5 | D5 |
 | D5 5
-(G-A-B-A-G---|----F) D
+{ci: G-A-B-A-G---|----F}
+[D]

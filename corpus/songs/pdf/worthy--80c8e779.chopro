@@ -18,75 +18,118 @@
 {x_album: Jesus}
 {x_writers: Eddie James}
 
-{comment: Intro Chorus}
-{ci: men sing 8vb}
-Eb / | Bbsus/Eb / | / / Eb Ab
-Worthy worthy
-Verse 1 (Solo) Eb/Bb Bbsus Bb
-Eb Ab Worthy to be praised
-From the rising of the sun You’re worthy Eb/C Eb/G Ab
-Eb/G Bbsus Bb Worth - y worthy
-To the setting of the same You’re worthy Eb/Bb Bb Eb Ab/Eb
-Eb/G Ab You are worthy to be praised
-From age to age for the rest of my days
-Eb/Bb Bb (Eb) Key Change
-You are worthy to be praised E / | A/E /
+{comment: Intro}
+| Eb / | Bbsus/Eb / | / /
 
-{comment: Interlude Verse 2}
-Eb / | Ab/Eb / | Eb / | Bbsus/Eb / | E A
-And to the Lamb who was slain You’re worthy
-Chorus (Solo)                                        My Red[E/G#]eemer and King You’re [Bsus]worth[B]y
-[Eb]Worthy  [Ab]worthy                                       From a[E/G#]ge to age for the [A]rest of my days
-[Eb/Bb]Worthy to be [Bbsus]praise[Bb]d                                   You are w[E/B]orthy t[B]o be [E]praise[A/E]d
-[Eb/C]Worth [Eb/G]- y     [Ab]worthy
-Eb/Bb Bb (Eb) Chorus (Solo)
-You are worthy to be praised E A
-Worthy worthy
-Interlude                                             [E/B]Worthy to be [Bsus]praise[B]d
-Eb / | Ab/Eb / | Eb / | Bbsus/Eb / | E/C# E/G# A
-Worth - y worthy
-Verse 1 (men sing 8vb)                                You are [E/B]worthy  [B]to be [E]praise[A/E]d
+{comment: Verse 1}
+{ci: Solo}
 From the r[Eb]ising of the sun You’re[Ab] worthy
-Eb/G Bbsus Bb Verse 1 (Parts)
-To the setting of the same You’re worthy E A
-Eb/G Ab From the rising of the sun You’re worthy
-From age to age for the rest of my days E/G# Bsus B
-Eb/Bb Bb Eb Ab/Eb To the setting of the same You’re worthy
-You are worthy to be praised E/G# A
-From age to age for the rest of my days
-You are [E/B]worthy  [B]to be [E]praise[A/E]d
-Key Change Verse 1 (Key Change)
-F / | Bb/F / Gb Cb
-From the rising of the sun You’re worthy
-Verse 3 Gb/Bb Dbsus Db
-F Bb To the setting of the same You’re worthy
-To open the seals You’re worthy Gb/Bb Cb
-F/A Csus C From age to age for the rest of my days
-By whose stripes we are healed You’re worthy Gb/Db Db Gb Cb/Gb
-F/A Bb You are worthy to be praised
-From age to age for the rest of my days
-You are w[F/C]orthy t[C]o be [F]praised[Bb/F]                           Chorus
+To the [Eb/G]setting of the same You’re[Bbsus] worthy[Bb]
+From[Eb/G] age to age for the r[Ab]est of my days
+You are [Eb/Bb]worthy  [Bb]to be [(Eb)]praised
+
+{comment: Interlude}
+| Eb / | Ab/Eb / | Eb / | Bbsus/Eb / |
+
+{comment: Chorus}
+{ci: Solo}
+[Eb]Worthy  [Ab]worthy
+[Eb/Bb]Worthy to be [Bbsus]praise[Bb]d
+[Eb/C]Worth[Eb/G] - y    [Ab]worthy
+You are [Eb/Bb]worthy  [Bb]to be [(Eb)]praised
+
+{comment: Interlude}
+| Eb / | Ab/Eb / | Eb / | Bbsus/Eb / |
+
+{comment: Verse 1}
+{ci: men sing 8vb}
+From the r[Eb]ising of the sun You’re[Ab] worthy
+To the [Eb/G]setting of the same You’re[Bbsus] worthy[Bb]
+From[Eb/G] age to age for the r[Ab]est of my days
+You are [Eb/Bb]worthy  [Bb]to be [Eb]praised[Ab/Eb]
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[Eb]Worthy  [Ab]worthy
+[Eb/Bb]Worthy to be [Bbsus]praise[Bb]d
+[Eb/C]Worth[Eb/G] - y    [Ab]worthy
+You are [Eb/Bb]worthy  [Bb]to be [Eb]praised[Ab/Eb]
+{ci: Key Change}
+| E / | A/E /
+
+{comment: Verse 2}
+And to the [E]Lamb who was slain You’re [A]worthy
+My Re[E/G#]deemer and King You’re [Bsus]worth[B]y
+From [E/G#]age to age for the [A]rest of my days
+You are [E/B]worthy t[B]o be [E]praise[A/E]d
+
+{comment: Chorus}
+{ci: Solo}
+[E]Worthy  [A]worthy
+[E/B]Worthy to be [Bsus]praise[B]d
+[E/C#]Worth [E/G#]- y    [A]worthy
+You are [E/B]worthy  [B]to be [E]praised[A/E]
+
+{comment: Verse 1}
+{ci: Parts}
+From the r[E]ising of the sun You’re [A]worthy
+To the [E/G#]setting of the same You’re [Bsus]worth[B]y
+From[E/G#] age to age for the r[A]est of my days
+You are [E/B]worthy  [B]to be [E]praised[A/E]
+{ci: Key Change}
+| F / | Bb/F /
+
+{comment: Verse 3}
+To [F]open the seals You’re [Bb]worthy
+By whose [F/A]stripes we are healed You’re [Csus]worth[C]y
+From [F/A]age to age for the [Bb]rest of my days
+You are [F/C]worthy t[C]o be [F]praise[Bb/F]d
+
+{comment: Chorus}
+{ci: Solo}
+[F]Worthy  [Bb]worthy
+[F/C]Worthy to be [Csus]praise[C]d
+[F/D]Worth [F/A]- y    [Bb]worthy
+You are [F/C]worthy  [C]to be [F]praised[Bb/F]
+
+{comment: Verse 1}
+From the r[F]ising of the sun You’re [Bb]worthy
+To the [F/A]setting of the same You’re [Csus]worth[C]y
+From [F/A]age to age for the [Bb]rest of my days
+You are [F/C]worthy  [C]to be [F]praised[Bb/F]
+
+{comment: Chorus}
+[F]Worthy  [Bb]worthy
+[F/C]Worthy to be [Csus]praise[C]d
+[F/D]Worth [F/A]- y    [Bb]worthy
+{ci: Key Change}
+You are [F/C]worthy  [C]to be [F]praised[Cb/Gb]
+
+{comment: Verse 1}
+{ci: Key Change}
+From the r[Gb]ising of the sun You’re [Cb]worthy
+To the [Gb/Bb]setting of the same You’re [Dbsus]worth[Db]y
+Fro[Gb/Bb]m age to age for the [Cb]rest of my days
+You are[Gb/Db] worthy  [Db]to be [Gb]praised[Cb/Gb]
+
+{comment: Chorus}
 [Gb]Worthy  [Cb]worthy
-Chorus (Solo) Gb/Db Dbsus Db
-F Bb Worthy to be praised
-Worthy worthy Gb/Eb Gb/Bb Cb
-F/C Csus C Worth - y worthy
-Worthy to be praised Gb/Db Db Gb Cb/Gb
-F/D F/A Bb You are worthy to be praised
-Worth - y worthy
-You are [F/C]worthy  [C]to be [F]praised[Bb/F]                          Chorus (Cut music)
+[Gb/Db]Worthy to be [Dbsus]praise[Db]d
+[Gb/Eb]Worth  -[Gb/Bb] y    w[Cb]orthy
+You are[Gb/Db] worthy  [Db]to be [Gb]praised[Cb/Gb]
+
+{comment: Chorus}
+{ci: Cut music}
 [Gb]Worthy  worthy
-Verse 1 Worthy to be praised
-From the r[F]ising of the sun You’re[Bb] worthy                 [Ebm7]Worth  [Bbm7(b5)]-  y      [Abm7]worthy
-To the [F/A]setting of the same You’re[Csus] worthy[C]                 You are [Gb/Db]worthy  [Db]to be [Gb]praise[Cb/Gb]d
-From a[F/A]ge to age for the [Bb]rest of my days
-You are [F/C]worthy  [C]to be [F]praised[Bb/F]                          [Chorus]Gb  Gbmaj7/Bb  Cb
-Wor - thy worthy
-Chorus                                              [Gb/Db]Worthy to be [Dbsus]praise[Ddim7]d
-[F]Worthy  [Bb]worthy                                       [Gb/Eb]Worth  -[Gb/Bb] y     w[Cb]or - [Cb/Ab]thy
-[F/C]Worthy to be [Csus]praise[C]d                                   [Gb/Bb]You   [Cb]are  [Gb/Db]worthy  [Db]to be [Gb13]praised
-[F/D]Worth -[F/A] y     w[Bb]orthy           (Key Change)
-You are [F/C]worthy  [C]to be [F]praise[Cb/Gb]d
+Worthy to be praised
+[Ebm7]Worth  [Bbm7(b5)]-  y    [Abm7]worthy
+You are[Gb/Db] worthy  [Db]to be [Gb]praised[Cb/Gb]
+
+{comment: Chorus}
+[Gb]Wor  [Gbmaj7/Bb]-  thy    [Cb]worthy
+[Gb/Db]Worthy to be [Dbsus]praise[Ddim7]d
+[Gb/Eb]Worth  -[Gb/Bb] y    w[Cb]or - [Cb/Ab]thy
+[Gb/Bb]You   [Cb]are  [Gb/Db]worthy  [Db]to be p[Gb13]raised
 
 {comment: Interlude}
 | Gb Dbm/Gb | Cb/Gb Cbm/Gb |
@@ -96,7 +139,5 @@ You are [F/C]worthy  [C]to be [F]praise[Cb/Gb]d
 
 {comment: Tag}
 {ci: Rep. as directed}
-Gb/Bb Abm/Cb (F-Gb) Abm7(b5)
-You are worthy
-Gb/Bb Abm/Cb (F-Gb) Abm7(b5)
-You are worthy
+[Gb/Bb]You    [Abm/Cb]are    worth[(F-Gb)]y[Abm7(b5)]
+[Gb/Bb]You    [Abm/Cb]are    worth[(F-Gb)]y[Abm7(b5)]

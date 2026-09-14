@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 80}
 {time: 6/8}
-{x_verified: number chart, 91% of 95 chords}
+{x_verified: number chart, 91% of 158 chords}
 {x_theme: worship, praise, healing, heaven, revival}
 {x_source: pdf:UPCI Music/2019/We Want You/We-Want-You-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWe%20Want%20You}
@@ -30,79 +30,121 @@
 {x_chart_we_want_you_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-want-you/charts/we-want-you-vocals-with-chords.pdf}
 {x_album: We Want You}
 
-{comment: Intro Verse 2}
-{ci: Unison}
-| / Am7 D7 | G / | D / | A / | G Bm7 A
-Lord, there’s a hunger, a holy desire.
-| / Am7 D7 | G / | Bm7 D | A / | / / | G Bm7 A A/C# D
-Move in this place, take us up high – er.
-Tag                                                  [G]Our hearts are lo[Bm7]nging [A]to feel Your presence,
-[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---                      [G]Lost in Your[Bm7] love,[A] consumed by [F#m7]heav – [Em9]en
+{comment: Intro}
+| / Am7 D7 | G / | D / | A / |
+| / Am7 D7 | G / | Bm7 D | A / | / / |
+
+{comment: Tag}
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
 Oh   ---  [A]---
-Am7 D7 G Bm7 Chorus (Parts) 2xs
-Oh --- --- --- Oh --- --- --- Am7 D7 G D
-D A Let our worship rise to meet You.
-Oh --- --- A Bm7
-Let our praises touch Your heart.
-Verse 1 (Solo)                                        [C/D]Lift [D/F#]- ed  [G]hands and grateful v[D]oices praise in
-[G]Father we [Bm7]come t[A]o give you thanks                      [A]Awe of who You [Bm7]are
-[G]Honor and m[Bm7]ajesty, g[A]lory and praise                     Tag
-[G]You are all [Bm7]powerful, [A]loving and kind                     [Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
-So w[G]e join in [Bm7]unity t[A]o lift You high                       Oh   ---  [A]---
 [Am7]Oh   [D7]---  [G]--- --- Oh   ---  [Bm7]--- ---
-Chorus (men sing 8vb) D A
-Am7 D7 G D Oh --- ---
-Let our worship rise to meet You.
-A Bm7 Bridge (Solo)
-Let our praises touch Your heart. D C/E D/F# G Bm7 A
-A G D Fa – ther we lift our hands to You
-Lifted hands and grateful voices praise in D C/E D/F# G Bm7 A
-A Bm7 We lift our voices to
-Awe of who You are (G - F# - E - D)
-You a – lone. We
-Tag (Unison) Bridge (Parts)
-[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---                      [G]lift ou[Bm7]r hands to[A] You
-Oh   ---  [A]---                                          [D]Fa[C/E]-the[D/F#]r we  [G]lift ou[Bm7]r voices[A] to
-{ci: G - F# - E - D}
-You a – lone. We
-Bridge (Flipped Parts) Tag (Parts)
-[G]lift ou[Bm7]r hands to[A] You                                   [Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
-[D]Fa[C/E]-the[D/F#]r we  [G]lift ou[Bm7]r voices[A] to                         Oh   ---  [A]---
-(G - F# - E - D) Am7 D7 G Bm7
-You a – lone. We Oh --- --- --- Oh --- --- ---
 [D]Oh   ---  [A]---
 
-{comment: Interlude}
-| G / | / / | G / | D D/F# | A / | Interlude
-||: G / | D / | A / | F#m / :||
-| Bm7 A | G / | Bm7 D | A / |
-{ci: Repeat / Build as Directed}
-| Bm7 D | Last x
-| G / | D / | A / | F#m / |
-Vamp (Solo) (cut music) Let our
-G (cut)
-We want to see You we want to feel You,
+{comment: Verse 1}
+{ci: Solo}
+[G]Father we [Bm7]come t[A]o give you thanks
+[G]Honor and [Bm7]majesty, [A]glory and praise
+[G]You are all [Bm7]powerful, l[A]oving and kind
+So [G]we join in[Bm7] unity [A]to lift You high
 
 {comment: Chorus}
-{ci: Solo}
-Encounter miracles. G D
-Let our worship rise to meet You.
-Open the heavens, pour out Your presence, A Bm7
-Let our praises touch Your heart.
-the supernatural. A G D
-Lifted hands and grateful voices praise in
-Vamp (Parts) 2xs A Bm7
-D C/E D/F# G D Awe of who You are
-We want to see You we want to feel You,
-Encounter m[A]ira - [Bm7]cles.                                            [A/B]L[D/B]e[Am7]t  [D7]our [G]worship rise to[D] meet You.
-[D]Open the [G]heavens, pour out Your [Bm7]presence,              Let our [A]praises touch Your [Bm7]heart.
-the super[A]natur[Bm7]al.                                      [A]Lifted[G] hands and grateful v[D]oices praise in
+{ci: men sing 8vb}
+[Am7]Let   [D7]our  [G]worship rise to [D]meet You.
+Let our [A]praises touch Your [Bm7]heart.
+[A]Lifted [G]hands and grateful [D]voices praise in
 [A]Awe of who You [Bm7]are
+
+{comment: Tag}
+{ci: Unison}
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
+Oh   ---  [A]---
+
+{comment: Verse 2}
+{ci: Unison}
+[G]Lord, there’s a [Bm7]hunger, a[A] holy desire.
+[G]Move in this [Bm7]place,  t[A]ake us up [A/C#]high – [D]er.
+[G]Our hearts are lo[Bm7]nging [A]to feel Your presence,
+[G]Lost in Your [Bm7]love, [A]consumed by [F#m7]heav –[Em9] en
+Chorus (Parts)
+{ci: 2xs}
+[Am7]Let   [D7]our  [G]worship rise to [D]meet You.
+Let our [A]praises touch Your [Bm7]heart.
+[C/D]Lift -[D/F#] ed  [G]hands and grateful v[D]oices praise in
+[A]Awe of who You [Bm7]are
+
+{comment: Tag}
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
+Oh   ---  [A]---
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [Bm7]--- ---
+[D]Oh   ---  [A]---
+
+{comment: Bridge}
+{ci: Solo}
+[D]Fa –[C/E] ther  [D/F#]we  [G]lift our[Bm7] hands to[A] You
+[D]W[C/E]e[D/F#]  [G]lift our [Bm7]voices [A]to
+[(G-F#-E-D)]You a – lone. We
+
+{comment: Bridge}
+{ci: Parts}
+[G]lift our [Bm7]hands to [A]You
+[D]F[C/E]a-the[D/F#]r we  [G]lift our[Bm7] voices[A] to
+[(G-F#-E-D)]You a – lone. We
+
+{comment: Bridge}
+{ci: Flipped Parts}
+[G]lift our [Bm7]hands to [A]You
+[D]F[C/E]a-the[D/F#]r we  [G]lift our[Bm7] voices[A] to
+[(G-F#-E-D)]You a – lone. We
+
+{comment: Interlude}
+| G / | / / | G / | D D/F# | A / |
+| Bm7 A | G / | Bm7 D | A / |
+| Bm7 D |
+
+{comment: Vamp}
+{ci: Solo, cut music}
+We want to [G(cut)]see You we want to feel You,
+Encounter miracles.
+Open the heavens, pour out Your presence,
+the supernatural.
+Vamp (Parts)
+{ci: 2xs}
+[D]We [C/E]wan[D/F#]t to  [G]see You we want to [D]feel You,
+Encounter [A]mira - [Bm7]cles.
+[D]Open the [G]heavens, pour out Your [Bm7]presence,
+the supe[A]rnatu[Bm7]ral.
 
 {comment: Vamp}
 {ci: Flipped Parts}
-We want to s[G/E]ee You we want to f[D/F#]eel You,               Optional Ending (repeat as dir.)
-(C#-D-A-G-F#-E-D-A-G-F#-E-D-G) ||: G / | Bm7 / | A / | / / :||
-Encounter miracles. Open the heavens
+We want to [G/E]see You we want to [D/F#]feel You,
+Encounter mir[(C#-D-A-G-F#-E-D-A-G-F#-E-D-G)]acles.    Open the heavens
 pour out Your prese[Em7]nce,
-the super[A/C#]natural[Bm7].
+the supe[A/C#]rnatural[Bm7].
+
+{comment: Tag}
+{ci: Parts}
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [D]--- ---
+Oh   ---  [A]---
+[Am7]Oh   [D7]---  [G]--- --- Oh   ---  [Bm7]--- ---
+[D]Oh   ---  [A]---
+
+{comment: Interlude}
+||: G / | D / | A / | F#m / :||
+{ci: Repeat / Build as Directed}
+Last x
+| G / | D / | A / | F#m / |
+Let our
+
+{comment: Chorus}
+{ci: Solo}
+Let our [G]worship rise to [D]meet You.
+Let our [A]praises touch Your [Bm7]heart.
+[A]Lifted [G]hands and grateful [D]voices praise in
+[A]Awe of who You [Bm7]are
+[A/B]L[D/B]e[Am7]t[D7]  our [G]worship rise to [D]meet You.
+Let our [A]praises touch Your [Bm7]heart.
+[A]Lifted [G]hands and grateful [D]voices praise in
+[A]Awe of who You [Bm7]are
+Optional Ending
+{ci: repeat as dir.}
+||: G / | Bm7 / | A / | / / :||

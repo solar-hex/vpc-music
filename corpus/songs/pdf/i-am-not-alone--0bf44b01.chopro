@@ -18,46 +18,73 @@
 {x_album: I Am Not Alone (Single)}
 {x_writers: Jeremy Daigle}
 
-{comment: Intro Chorus}
-{ci: Parts}
-G/F / F2 | Dm7 / / / | Csus / C / | / / / / | G/F F Dm7
-You’re always with me
-G/F / F2 | Gsus / / / | Csus / C / | / / / / | Dm/C C
-You’re right be - side me
-Verse 1                                             You’re always[G/F] with [F]m[Gsus]e
-Dm7 G2/B C / / Csus | C
-When life overwhelms I am not alone
-And I have no [C]peace[Csus] [C]                                 Bridge (Solo)
-When trouble over[Dm7]takes[G2/B]                               Even when my [G/F]enemy[F]’s sur[G/F]round[F] me
-And all my strength is[C] gone[G/B]                            You are[Dm/C] with  [C]me
-[Am7]I don’t have to [F]fear                                    Even when I f[G/F]eel af[F]raid and I’ve[G/F] lost my w[F]ay
-For I[Dm] know You are [Gsus]near                               I am[Dm/C] not  a[C]lone
-Chorus (Unison) Bridge (Unison)
-You’re always[G/F] with [F]me[Dm7]                                Even when my [G/F]enemy[F]’s sur[G/F]round[F] me
-You’re right be -[Dm/C] side  [C]me                             You are[Dm/C] with  [C]me
-You’re always[G/F] with [F]me[Gsus]                                Even when I f[G/F]eel af[F]raid and I’ve[G/F] lost my w[F]ay
-C / / Csus | C Dm/C C Dm7 C/E
-I am not alone I am not alone
+{comment: Intro}
+| G/F / F2 | Dm7 / / / | Csus / C / | / / / / |
+| G/F / F2 | Gsus / / / | Csus / C / | / / / / |
 
-{comment: Verse 2 Bridge}
-{ci: Parts}
-When pressure and [Dm7]pain[G2/B]                              Even when my [G/F]enemy[F]’s sur[G/F]round[F] me
-They try to steal my [C]joy[Csus] [C]                               You are[Dm/C] with  [C]me
-When heartache and g[Dm7]rief[G2/B]                             Even when I f[G/F]eel af[F]raid and I’ve[G/F] lost my w[F]ay
-They try to take my l[C]ife[G/B]                                I am[Dm/C] not  a[C]lon[Dm7]e[C/E]
+{comment: Verse 1}
+When life over[Dm7]whelms[G2/B]
+And I have no [C]peace[Csus][C]
+When trouble overt[Dm7]akes[G2/B]
+And all my strength is [C]gone[G/B]
 [Am7]I don’t have to [F]fear
-For I[Dm] know You are [Gsus]near
-
-{comment: Bridge}
-{ci: Parts}
-Even when my [G/F]enemy[F]’s sur[G/F]round[F] me
-You are[Dm/C] with  [C]me
-Even when I f[G/A]eel af[F/A]raid and I’ve[G/F] lost my w[F]ay
-[Dm/C] [C]
+For I [Dm]know You are [Gsus]near
 
 {comment: Chorus}
 {ci: Unison}
-You’re always[G/F] with [F]m[Dm7]e
-You’re right be -[Dm/C] side  [C]me
-You’re always[G/F] with [F]m[Gsus]e
-[C]
+You’re always [G/F]with [F]me[Dm7]
+You’re right be [Dm/C]- side  [C]me
+You’re always [G/F]with [F]me[Gsus]
+| C / / Csus | C
+I am not alone
+
+{comment: Verse 2}
+When pressure and [Dm7]pain[G2/B]
+They try to steal my [C]joy[Csus][C]
+When heartache and [Dm7]grief[G2/B]
+They try to take my [C]life[G/B]
+[Am7]I don’t have to [F]fear
+For I [Dm]know You are [Gsus]near
+
+{comment: Chorus}
+{ci: Parts}
+You’re always [G/F]with [F]me[Dm7]
+You’re right be [Dm/C]- side  [C]me
+You’re always [G/F]with [F]me[Gsus]
+| C / / Csus | C
+I am not alone
+
+{comment: Bridge}
+{ci: Solo}
+Even when my[G/F] enem[F]y’s sur[G/F]round [F]me
+You are[Dm/C] with  [C]me
+Even when I [G/F]feel a[F]fraid and I’ve [G/F]lost my w[F]ay
+I am[Dm/C] not  a[C]lone
+
+{comment: Bridge}
+{ci: Unison}
+Even when my[G/F] enem[F]y’s sur[G/F]round [F]me
+You are[Dm/C] with  [C]me
+Even when I [G/F]feel a[F]fraid and I’ve [G/F]lost my w[F]ay
+I am[Dm/C] not  a[C]lone[Dm7][C/E]
+
+{comment: Bridge}
+{ci: Parts}
+Even when my[G/F] enem[F]y’s sur[G/F]round [F]me
+You are[Dm/C] with  [C]me
+Even when I [G/F]feel a[F]fraid and I’ve [G/F]lost my w[F]ay
+I am[Dm/C] not  a[C]lone[Dm7][C/E]
+
+{comment: Bridge}
+{ci: Parts}
+Even when my[G/F] enem[F]y’s sur[G/F]round [F]me
+You are[Dm/C] with  [C]me
+Even when I [G/A]feel af[F/A]raid and I’ve [G/F]lost my w[F]ay
+I am[Dm/C] not  a[C]lone
+
+{comment: Chorus}
+{ci: Unison}
+You’re always [G/F]with [F]me[Dm7]
+You’re right be [Dm/C]- side  [C]me
+You’re always [G/F]with [F]me[Gsus]
+I am not alon[C]e

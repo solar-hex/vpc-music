@@ -2,7 +2,7 @@
 {artist: Indiana Bible College (IBC)}
 {key: Bb}
 {time: 4/4}
-{x_verified: number chart, 95% of 22 chords}
+{x_verified: number chart, 100% of 46 chords}
 {x_theme: praise, healing, revival, faith-trust}
 {x_source: pdf:UPCI Music/2021/Anthem We Raise/Anthem-We-Raise-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FAnthem%20We%20Raise}
@@ -18,62 +18,79 @@
 {x_album: Worthy}
 {x_writers: & Keiko Grove}
 
-Travis Rigney, Alena Blaylock,
-Anthem We Raise Mark Carlberg, Adrien Gonzalez,
-& Keiko Grove
+{comment: Intro}
+| Bb / / / | / / / / | / / / / | / / / / |
 
-{comment: Intro Chorus}
-{ci: Parts}
-Bb / / / | / / / / | / / / / | / / / / | Bb
-Be welcomed in this place,
-Verse F
-Bb come inhabit all our praise
-With expectation we’re waiting, Gm7
-Eb Lord You are worthy, God of all glory
-our hearts are anticipating for You to come down, Eb
-Bb This is the anthem we will raise
-for You to come down Bb
-Bb Be welcomed in this place,
-We’ve come together believing, revival’s here F
-Eb come inhabit all our praise
-we’re receiving all You have promised, Gm7
-Bb Lord You are worthy, God of all glory
-all You have promised Bb/D Eb
-This is the anthem we will raise
+{comment: Verse}
+[Bb]With expectation we’re waiting,
+our hearts are anticipating for You to com[Eb]e down,
+for You to com[Bb]e down
+[Bb]We’ve come together believing, revival’s here
+we’re receiving all You have p[Eb]romised,
+all You have p[Bb]romised
 
 {comment: Pre Chorus}
-Gm7 F Tag
-We want You, we need You Bb F Gm7 Gm/D /Bb /D (cut)
-Oh, oh, oh, this is the anthem we will
-Chorus (men sing 8vb) raise.
-Be we[Bb]lcomed in this place,                             Interlude
-F Bb / / / | / / / / | / / / / | / / / / |
-come inhabit all our praise
-Gm7 Bridge 1 (Solo) (2xs)
-Lord You are worthy, God of all glory Bb
-Eb I can feel You moving, moving,
-This is the anthem we will raise I can feel You moving, moving.
-Be we[Bb]lcomed in this place,                             Bridge 1 (Unison) (2xs)
-come inhab[F]it all our praise                               [Bb]I can feel You moving, moving,
-Gm7 I can feel You moving, moving.
-Lord You are worthy, God of all glory
-Bb/D(cut) Bridge 2 (Two Parts) (2xs)
-This is the anthem we will raise Bb
-I can see You working, working,
-Interlude I can see You working, working.
-Bb / / / | / / / / | / / / / | / / / / |
-Bridge 3 (Parts) (2xs)
-Verse (ladies 8va) à  Pre Chorus (Two Parts            [Bb]Atmosphere is changing, changing,
+[Gm7]We want You,[F]    we need You
+
+{comment: Chorus}
+{ci: men sing 8vb}
+Be w[Bb]elcomed in this place,
+come inh[F]abit all our praise
+Lord You are w[Gm7]orthy, God of all glory
+This is the a[Eb]nthem we will raise
+Be w[Bb]elcomed in this place,
+come inh[F]abit all our praise
+Lord You are w[Gm7]orthy, God of all glory
+This[Bb/D(cut)] is the anthem we will raise
+
+{comment: Interlude}
+| Bb / / / | / / / / | / / / / | / / / / |
+Verse (ladies 8va) à Pre Chorus (Two Parts
+
+{comment: Chorus}
+{ci: Parts}
+Be w[Bb]elcomed in this place,
+come inh[F]abit all our praise
+Lord You are w[Gm7]orthy, God of all glory
+This is the a[Eb]nthem we will raise
+Be w[Bb]elcomed in this place,
+come inh[F]abit all our praise
+Lord You are w[Gm7]orthy, God of all glory
+Thi[Bb/D]s is the [Eb]anthem we will raise
+
+{comment: Tag}
+[Bb]Oh,[F]  oh[Gm7],  oh,[Gm/D]    [/Bb]this is [/D(cut)]the anthem we will
+raise.
+
+{comment: Interlude}
+| Bb / / / | / / / / | / / / / | / / / / |
+
+{comment: Bridge 1}
+{ci: Solo, 2xs}
+[Bb]I can feel You moving, moving,
+I can feel You moving, moving.
+
+{comment: Bridge 1}
+{ci: Unison, 2xs}
+[Bb]I can feel You moving, moving,
+I can feel You moving, moving.
+
+{comment: Bridge 2}
+{ci: Two Parts, 2xs}
+[Bb]I can see You working, working,
+I can see You working, working.
+
+{comment: Bridge 3}
+{ci: Parts, 2xs}
+[Bb]Atmosphere is changing, changing,
 Atmosphere is changing, changing.
-Travis Rigney, Alena Blaylock,
-Anthem We Raise Mark Carlberg, Adrien Gonzalez,
-& Keiko Grove
-Bridge 4 (Flipped Parts) Tag (Parts)
-[Bb]Miracles are stirring, stirring,                           [Bb]Oh[Gm7],  oh,[Ab]  oh,  this is the a[Cm7]nthem we will raise
+
+{comment: Bridge 4}
+{ci: Flipped Parts}
+[Bb]Miracles are stirring, stirring,
 Miracles are stirring, stirring.
-Bb (D-C-Bb) Ab Bb Gm7 (D-C-Bb) Ab (C-D) Eb
-Miracles are stirring, stirring, Oh, oh, oh,
-I believe it,[Cm7]   I receive it.                              this is the a[Cm7(cut)]nthem we will rais[Bb]e
+[Bb]Miracles are stirring, s[(D-C-Bb)]tirring,[Ab]
+I believe it,[Cm7]   I receive it.
 
 {comment: Bridge 5}
 [Bb]I can feel You moving, moving,
@@ -93,3 +110,9 @@ I believe it,[Cm7]   I receive it.                              this is the a[Cm
 [Gm7]I believe it, I believe it.
 [Ab]I receive it, I receive it,
 [Cm7]I receive it, I receive it.
+
+{comment: Tag}
+{ci: Parts}
+[Bb]O[Gm7]h,  oh[Ab],  oh,  this is the an[Cm7]them we will raise
+[Bb]O[Gm7]h,  oh[(D-C-Bb)],    [Ab]oh[(C-D)],[Eb]
+this is the a[Cm7(cut)]nthem we will raise[Bb]

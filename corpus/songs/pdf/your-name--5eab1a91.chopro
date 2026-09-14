@@ -2,7 +2,7 @@
 {key: A}
 {tempo: 74}
 {time: 4/4}
-{x_verified: number chart, 100% of 56 chords}
+{x_verified: number chart, 100% of 61 chords}
 {x_theme: praise, prayer}
 {x_source: pdf:UPCI Music/2023/Your Name/Your-Name-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FYour%20Name}
@@ -23,37 +23,61 @@
 {x_album: Your Name (Single)}
 {x_writers: Blake McLaughlin, Ramzi Elassadi}
 
-{comment: Intro Vamp}
-| Bm7 A / E/G# | / / / / | A G
-| F#m7 E / D | / / / / | When I call Your name, You are breaking chains
-Verse                                                 [D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
-[D]Mountains have to mo[F#m7]ve[E]                               [A/E]When I call Your nam[G]e, You are breaking chains
-[D]When we call on You[F#m7] [E]                                 [D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
-[D]My chains have to bre[F#m7]ak[E]                            Tag
-[D]At the sound of Your [F#m7]name[E]                             [A]When I call Your name[G], You are breaking chains
-Pre Chorus                                            [D/F#]So we cry ou[Bm7(b5)]t
-[Bm7]When it’s hard to [F#m7]break thro[A]ugh                     Chorus
-[Bm7]I still ca[F#m7]ll on You[A]                                 Refrain (3x)
-Chorus                                                [D]Oh[E],[F#m7]       o[Amaj7]h
-Your name is [A]Jesus, You conquered the g[E2/G#]rave            Ending
-Your name is J[F#m7]esus, You wash s[A2/C#]ins away[D2]                  [D]Oh[E],[F#m7]       o[C#m7]h
-I will fo[A]rever lift up Your[E2/G#] name                            [D]Oh[E],[F#m7]       o[Amaj7]h[D]
-Your name is J[D]esu[F#m7]s[E]
+{comment: Intro}
+| Bm7 A / E/G# | / / / / |
+| F#m7 E / D | / / / / |
+
+{comment: Verse}
+[D]Mountains have to mo[F#m7]ve[E]
+[D]When we call on You[F#m7][E]
+[D]My chains have to bre[F#m7]ak[E]
+[D]At the sound of Your n[F#m7]ame[E]
+
+{comment: Pre Chorus}
+[Bm7]When it’s hard to [F#m7]break thro[A]ugh
+[Bm7]I still call[F#m7] on You[A]
+
+{comment: Chorus}
+Your name is [A]Jesus, You conquered the g[E2/G#]rave
+Your name is J[F#m7]esus, You wash si[A2/C#]ns awa[D2]y
+I will fore[A]ver lift up Your n[E2/G#]ame
+Your name is J[D]esus[F#m7][E]
 
 {comment: Interlude}
 | Bm7 A / E/G# | / / / / |
 | (A-B-C#) E/G# F#m7 Bm7 | / / / / |
-Verse > Pre Chorus
+{ci: Verse → Pre Chorus}
 
 {comment: Chorus}
 Your name is [A]Jesus, You conquered the g[E2/G#]rave
-Your name is J[F#m7]esus, You wash s[A2/C#]ins awa[D2]y
-I will fo[A]rever lift up Your[E2/G#] name
-I will fo[D]rever give You[F#m7] prais[E]e
+Your name is J[F#m7]esus, You wash si[A2/C#]ns awa[D2]y
+I will fore[A]ver lift up Your n[E2/G#]ame
+I will for[D]ever give You [F#m7]praise[E]
 
 {comment: Bridge}
 {ci: 3x}
 [A]When I call Your nam[Bm7]e, circumstances change
 [F#m7]So we cry out, Je[E]sus, Jesus
-{ci: Last time: | A / / / | G / / / | D/F# / / / | D / / / |}
+{ci: Last time}
+| A / / / | G / / / | D/F# / / / | D / / / |
+
+{comment: Vamp}
+[A]When I call Your name[G], You are breaking chains
+[D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
+[A/E]When I call Your nam[G]e, You are breaking chains
+[D/F#]So we cry out, Je[Bm7(b5)]sus, Jesus
+
+{comment: Tag}
+[A]When I call Your name[G], You are breaking chains
+[D/F#]So we cry out[Bm7(b5)]
+
+{comment: Chorus}
+
+{comment: Refrain}
+{ci: 3x}
+[D]Oh[E],[F#m7]    o[Amaj7]h
+
+{comment: Ending}
+[D]Oh[E],[F#m7]    o[C#m7]h
+[D]Oh[E],[F#m7]    o[Amaj7]h[D]
 UPCI Music 1

@@ -24,71 +24,107 @@
 {x_album: I Will Rejoice (Single)}
 {x_writers: Isabel Davis, Preshea Hillard}
 
-{comment: Intro Verse 1}
+{comment: Intro}
+{ci: guitar/drums}
+| E / / / | / / / / | / / / / | / / / / |
+| E / / / | / / / / | / / / / | / / / / |
+
+{comment: Verse 1}
+{ci: Solo}
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+All t[A]hat i[(F#-F#)]s    within[(A-A)]   m[(C#-C#)]e
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+And [A]all that is within me
+
+{comment: Verse 1}
 {ci: men sing 8vb}
-(guitar/drums) E B D2
-E / / / | / / / / | / / / / | / / / / | Oh my soul will bless the Lord
-E / / / | / / / / | / / / / | / / / / | A
-Verse 1 (Solo) All that is within me
-[E] [B] [D2]
-[E]Oh    my so[B]ul    will [D2]bless the Lord                   Oh    my soul    will bless the Lord
-A (F#-F#) (A-A) (C#-C#) (F# - E - B - C#)
-All that is within me And all that is within me
-[E]Oh    my so[B]ul    will [D2]bless the Lord                   Verse 2 (Parts)
-And a[A]ll that is within me                               [E/G#]Oh    my so[B]ul    will [D/F#]bless the Lord
-Verse 1 (men sing 8vb)                               [A/C#]All that is within me
-[E]Oh    my so[B]ul    will [D2]bless the Lord                   [E]Oh    my so[B]ul    will [D/F#]bless the Lord
-All [A]that is within me                                   [A]All that is within me
-[E]Oh    my so[B]ul    will [D2]bless the Lord                   [B/A]All that is within me
-And a[A]ll that is within me                               [A]All that is within me
-Pre Chorus (men sing 8vb) Pre Chorus (men sing 8vb)
-And for -[F#m7] getting[A] not what You’ve[B] done                  And for -[F#m7] getting[A] not what You’ve[B] done
-[B/D#]E[E]very [F#m7]battle  [A]You have [B]won                           [B/D#]E[E]very [F#m7]battle  [A]You have [B]won
-Chorus (men sing 8vb) Chorus (men sing 8vb)
-[B]I wil[B]l bless the[A] Lord[B], oh[C#m7], oh___[B/D#]__                       [B]I wil[B]l bless the[A] Lord[B], oh[C#m7], oh___[B/D#]__
-I wi[E]ll bless the[F#m7] Lord,  [E/G#]oh,   [A]oh__[E]___                   I wi[E]ll bless the[F#m7] Lord,  [E/G#]oh,   [A]oh__[E]___
-I wil[B]l bless th[A]e Lord[B], o[C#m7]h, oh___[B/D#]__                       I wil[B]l bless th[A]e Lord[B], o[C#m7]h, oh___[B/D#]__
-E F#m7 A2/C# / / | / / (C#-C#-C#-B-A)
-E F#m7 A2/C# / / | / / / B/D#
-I will bless the Lord, oh, I will bless the Lord, oh,
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+All t[A]hat is within me
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+And [A]all that is within me
+
+{comment: Pre Chorus}
+{ci: men sing 8vb}
+And for - [F#m7]getting [A]not what You’ve [B]done
+[B/D#]E[E]very[F#m7] battle  [A]You have [B]won
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[B]I will [B]bless the [A]Lord, [B]oh, [C#m7]oh____[B/D#]_
+I wil[E]l bless the [F#m7]Lord,  [E/G#]oh,   [A]oh__[E]___
+I will [B]bless the [A]Lord, [B]oh[C#m7], oh___[B/D#]__
+| E F#m7 A2/C# / / | / / / B/D#
+I will bless the Lord, oh,
+
+{comment: Verse 1}
+{ci: men sing 8vb}
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+All t[A]hat is within me
+[E]Oh    my so[B]ul    will b[D2]less the Lord
+[(F#-E-B-C#)]And all that is within me
+
+{comment: Verse 2}
+{ci: Parts}
+[E/G#]Oh    my so[B]ul    will b[D/F#]less the Lord
+[A/C#]All that is within me
+[E]Oh    my so[B]ul    will b[D/F#]less the Lord
+[A]All that is within me
+[B/A]All that is within me
+[A]All that is within me
+
+{comment: Pre Chorus}
+{ci: men sing 8vb}
+And for - [F#m7]getting [A]not what You’ve [B]done
+[B/D#]E[E]very[F#m7] battle  [A]You have [B]won
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[B]I will [B]bless the [A]Lord, [B]oh, [C#m7]oh____[B/D#]_
+I wil[E]l bless the [F#m7]Lord,  [E/G#]oh,   [A]oh__[E]___
+I will [B]bless the [A]Lord, [B]oh[C#m7], oh___[B/D#]__
+| E F#m7 A2/C# / / | / / (C#-C#-C#-B-A)
+I will bless the Lord, oh,
 
 {comment: Interlude}
 {ci: music breakdown/guitar/drums}
-Esus / / / | / / / / | / / / / | / / / / |
-Bridge (Solo) Ending
-E/G# A C#m B Gb Db/Gb (Db-Eb-Gb-Gb)
-With my hands I will give You praise Oh my soul
-[E/G#]With my v[A]oice I wil[C#m]l shout Yo[B]ur name                    will[Fb/Gb] bless the Lord
-E/G# A C#m B Cb/Gb (Db-Eb-Gb-Gb)
-With my dance I will rejoice And all that is within me
-D2 B (Db-C-Bb) Db/F Db
-I will I will Oh my soul
-{ci: Db - E - Ab}
-Bridge (Unison) will bless the Lord
-[E/C#]With  [E/G#]my    [A/E]h -  [A]ands I wil[C#m]l give You p[B]raise            All that is within[B2] me
-[E/G#]With my v[A/F#]oice I will[C#m] shout You[B/D#]r name
-(G#-F#-E) A C#m B
-With my dance I will re - joice
-C#m D2 C#m B (A-Bb) C11
-I will I will
+| Esus / / / | / / / / | / / / / | / / / / |
+
+{comment: Bridge}
+{ci: Solo}
+[E/G#]With my [A]hands I will[C#m] give You [B]praise
+[E/G#]With my [A]voice I will [C#m]shout You[B]r name
+[E/G#]With my [A]danc[C#m]e I will re[B]joice
+I [D2]will   I [B]will
+
+{comment: Bridge}
+{ci: Unison}
+[E/C#]With  [E/G#]my    [A/E]h -  [A]ands I will[C#m] give You p[B]raise
+[E/G#]With my [A/F#]voice I will [C#m]shout Your [B/D#]name
+[(G#-F#-E)]With    [A]my   dan[C#m]ce I will re -[B] joice
+[C#m]I    [D2]will   [C#m]I    [B]will[(A-Bb)][C11]
 
 {comment: Bridge}
 {ci: Key Change}
-[F/A]With my h[Bb]ands I will [Dm]give You [C]praise
-[F/A]With my v[Gm7]oice I wil[Dm7]l shout Yo[C]ur name
-[F/A]With my d[Bb]ance I[Dm] will re – j[C]oice,
-Dm Eb Dm C (Bb-B) Db11
-I will I will
+[F/A]With my [Bb]hands I will [Dm]give You [C]praise
+[F/A]With my [Gm7]voice I will [Dm7]shout You[C]r name
+[F/A]With my [Bb]danc[Dm]e I will re – [C]joice,
+[Dm]I    [Eb]will   [Dm]I    [C]will[(Bb-B)][Db11]
 
 {comment: Bridge}
 {ci: Key Change}
-[Gb/Bb]With my h[Cb]ands I will[Ebm7] give You [Db/Gb]praise
-(Eb-Bb) Abm7 Ebm7 Db Cb
-With my voice I will shout Your name
-(Bb-Ab-Gb) Abm7 Ebm7 Db
-With my dance I will re – joice,
-[Ebm]I    [Fb]will       [Ebm7]I     [Dbsus]will
+[Gb/Bb]With my [Cb]hands I will [Ebm7]give You [Db/Gb]praise
+Wit[(Eb-Bb)]h   my v[Abm7]oice I will shout [Ebm7]Your  [Db]name[Cb]
+[(Bb-Ab-Gb)]With my[Abm7] dance   [Ebm7]I will re – [Db]joice,
+[Ebm]I    [Fb]will    [Ebm7]I    [Dbsus]will
 
 {comment: Tag}
-[Ebm]I    [Fb]will       [Ebm]I     [Dbsus]will
-[Ebm]I    [Fb]will[Gb] [Fb/Ab]            [Ebm]I     [Dbsus]will
+[Ebm]I    [Fb]will    [Ebm]I    [Dbsus]will
+[Ebm]I    [Fb]will[Gb] [Fb/Ab]    [Ebm]I    [Dbsus]will
+
+{comment: Ending}
+[Gb]Oh    my[Db/Gb] soul[(Db-Eb-Gb-Gb)]
+will [Fb/Gb]bless the Lord
+An[Cb/Gb]d all that is[(Db-Eb-Gb-Gb)]    within   me
+[(Db-C-Bb)]Oh    my [Db/F]soul[Db]
+will[(Db-E-Ab)] bless the Lord
+All that is within [B2]me

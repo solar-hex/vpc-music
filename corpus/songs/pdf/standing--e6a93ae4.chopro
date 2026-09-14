@@ -3,7 +3,7 @@
 {key: E}
 {tempo: 87}
 {time: 4/4}
-{x_verified: number chart, 100% of 58 chords}
+{x_verified: number chart, 99% of 73 chords}
 {x_theme: faith-trust}
 {x_source: pdf:UPCI Music/Standing/Standing - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FStanding}
@@ -18,49 +18,71 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/standing/charts/vocals.pdf}
 {x_album: Arise}
 
-{comment: Intro Verse 3}
-E / / / | E2 / E / | Emaj7 / / / | E E2
-E / / / | E2 / E / | A / / / | We will face the darkness around us
-F#m7 / / / | E / / / | / / / / | E Emaj7 E
-As we break the chains that have bound us
-Verse 1                                              Oh, yes, it's t[A]rue, we can[F#m7] do
-Can you h[E]ear the voice of the [E2]Father                    the impossib[E]le
-[E]Inviting you t[Emaj7]o walk the water?[E]                          Verse 4
-Risk it all[A],  answer the [F#m7]call, and enter in.                   [Cmaj9]So [D2]we sta[E]nd with keys of the kin[E2]gdom
-Verse 2                                                  [E]To decl[Emaj7]are the day of our fre[E]edom
-Now we [E]stand on every p[E2]romise                        When we believe[A], we're gonna se[F#m7]e
-[E]We're not afra[Emaj7]id, our faith goes bef[E]ore us                supernatural[E].
-When we belie[A]ve, we're gonna s[F#m7]ee
-E Chorus (Parts)
-The supernatural
+{comment: Intro}
+| E / / / | E2 / E / | Emaj7 / / / |
+| E / / / | E2 / E / | A / / / |
+| F#m7 / / / | E / / / | / / / / |
 
-{comment: Bridge}
-{ci: Solo}
-Chorus (Unison) E B D A
-E We are standing, standing.
-We're gonna see what we're praying for E B D2
-B Standing on the promise of Christ our Savior.
-We believe every single word
-Stronger than we've [F#m7]ever been,                         Bridge (Parts)
-Standing on His [A]promises,                              We are stan[E/B]ding,[B]     [Bm7]stand--[F#m7]ing.
-We're gonna se[E]e the impossible                        [E/G#]Standing on the promise of Christ our Sav[D2]io[A]r
-We releas[B]e the supernatural
-Stronger than we've[F#7] ever been,
-We are s[A]tanding on his promise[E]s
+{comment: Verse 1}
+Can you [E]hear the voice of the [E2]Father
+[E]Inviting you to[Emaj7] walk the water?[E]
+Risk it all[A],  answer the[F#m7] call, and enter in.
+
+{comment: Verse 2}
+Now we[E] stand on every pr[E2]omise
+[E]We're not afr[Emaj7]aid, our faith goes befo[E]re us
+When we belie[A]ve, we're gonna s[F#m7]ee
+The supernatu[E]ral
 
 {comment: Chorus}
-{ci: Breakdown}
-We're gonna see [E]what we're praying for
+{ci: Unison}
+We're gonna se[E]e what we're praying for
 We believ[B]e every single word
 Stronger than we've [F#m7]ever been,
 Standing on His [A]promises,
-We're gonna se[E]e the impossible
-We releas[B]e the supernatural
+We're gonna s[E]ee the impossible
+We relea[B]se the supernatural
 Stronger than we've[F#7] ever been,
-We are s[A]tanding on his promise[E]s[C#m7]
+We are [A]standing on his promises[E]
+
+{comment: Verse 3}
+We will f[E]ace the darkness [E2]around us
+[E]As we [Emaj7]break the chains that have[E] bound us
+Oh, yes, it's tru[A]e, we can[F#m7] do
+the impossib[E]le
+
+{comment: Verse 4}
+[Cmaj9]So [D2]we sta[E]nd with keys of the king[E2]dom
+[E]To decl[Emaj7]are the day of our freed[E]om
+When we believ[A]e, we're gonna se[F#m7]e
+supernatura[E]l.
+
+{comment: Chorus}
+{ci: Parts}
+
+{comment: Bridge}
+{ci: Solo}
+We are stan[E]ding[B],    [D]standing[A].
+Stand[E]ing on the promise of[B] Christ our Savior[D2].
+
+{comment: Bridge}
+{ci: Parts}
+We are stan[E/B]ding,[B]    [Bm7]stand--[F#m7]ing.
+[E/G#]Standing on the promise of Christ our Sav[D2]ior[A]
+
+{comment: Chorus}
+{ci: Breakdown}
+We're gonna se[E]e what we're praying for
+We believ[B]e every single word
+Stronger than we've [F#m7]ever been,
+Standing on His [A]promises,
+We're gonna s[E]ee the impossible
+We relea[B]se the supernatural
+Stronger than we've[F#7] ever been,
+We are [A]standing on his promises[E][C#m7]
 
 {comment: Tag}
-Stronger than we've [F#7]ever been,
-We are s[A]tanding on his promise[E]s[C#m7]
-Stronger than we've [F#7]ever been,
-We are s[A]tanding on his promise[E]s
+Stronger than we've e[F#7]ver been,
+We are [A]standing on his promises[E][C#m7]
+Stronger than we've e[F#7]ver been,
+We are [A]standing on his promises[E]

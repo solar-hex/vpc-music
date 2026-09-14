@@ -3,6 +3,7 @@
 {key: A}
 {tempo: 68}
 {time: 4/4}
+{x_verified: number chart, 100% of 78 chords}
 {x_theme: healing, grace-mercy}
 {x_source: pdf:UPCI Music/2022/Answer is Jesus/Answer-is-Jesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FAnswer%20is%20Jesus}
@@ -19,64 +20,67 @@
 {x_album: 2:22}
 {x_writers: Kenna Turner West}
 
-Lee Black, Karen Peck-Gooch,
-Answer is Jesus Kenna Turner West
-Intro A2
-||: F#m / Dmaj7 / | A2 / E2 / :|| The answer is Je-sus,
+{comment: Intro}
+||: F#m / Dmaj7 / | A2 / E2 / :||
 
-{comment: Refrain}
-Verse 1 E2 F#m D2
-F#m Dmaj7 A2 E2 ooh, ooh
-Hard to believe what the world’s come to
-F#m Verse 3
-Hard to wrap my head around F#m Dmaj7
-Dmaj7 A2 E2 Time for the church to go
-Everything I see on the news A2 E2
-F#m Dmaj7 A2 E2 And be salt and light
-Hard to sit back and do nothing in all this mess F#m Dmaj7 A2 E2
-F#m Dmaj7 Time for us to be the hands and feet of Christ
-What’s it gonna take to fix F#m Dmaj7
-A2 Time to speak healing and truth
-this brokenness A2 E2
-wherever we go
-Verse 2 F#m Dmaj7
-F#m Dmaj7 And pour out grace and mercy because we
-Tired of watching politics making us A2 E2
-A/E E2 know
-enemies
-F#m Dmaj7 Chorus 1
-Tired of seeing anger and violence spilling out A2
-A/E E2 The answer is Jesus
-in the street E2
-F#m Dmaj7 The answer is love
-And I’m tired of addiction taking lives way too F#m
-A/E E2 And for everything we’re needing
-young D2
-F#m Dmaj7 I believe that He will be enough
-What’s it gonna take to fix
-A2 Chorus 2
-What this world’s become A2
-The answer is Jesus
-Chorus 1 E2
-A2 The answer is Him
-The answer is Jesus F#m
-E2 For everyone who wonders how to heal this broken
-The answer is love D2
-F#m world we’re in
-And for everything we’re needing
-I believe that He will be [D2]enough
-Lee Black, Karen Peck-Gooch,
-Answer is Jesus Kenna Turner West
+{comment: Verse 1}
+[F#m]Hard to believe[Dmaj7]    what the world’s come [A2]to[E2]
+[F#m]Hard to wrap my head around
+[Dmaj7]Everything I see on the [A2]news[E2]
+[F#m]Hard to sit back and do [Dmaj7]nothing in all this [A2]mess[E2]
+[F#m]What’s it gonna take to [Dmaj7]fix
+this bro[A2]kenness
 
-{comment: Tag}
-The answer is [A2]Jesus[E2],
-The answer is [F#m]Jesu[D2]s
+{comment: Verse 2}
+[F#m]Tired of watching politics [Dmaj7]making us
+enemie[A/E]s[E2]
+[F#m]Tired of seeing anger and[Dmaj7] violence spilling out
+[A/E]in the street[E2]
+And I’m [F#m]tired of addiction [Dmaj7]taking lives way too
+[A/E]young[E2]
+[F#m]What’s it gonna take to [Dmaj7]fix
+What this world’s be[A2]come
 
 {comment: Chorus 1}
 The answer is [A2]Jesus
-The answer is [E2]love
+The answer is l[E2]ove
 And for [F#m]everything we’re needing
-I believe that He will be[D2] enough
+I believe that He will be e[D2]nough
+The answer is Je-[A2]sus,
+
+{comment: Refrain}
+oo[E2]h, oo[F#m]h[D2]
+
+{comment: Verse 3}
+[F#m]Time for the church to[Dmaj7] go
+And be salt and [A2]light[E2]
+[F#m]Time for us to be the[Dmaj7] hands and feet of [A2]Christ[E2]
+[F#m]Time to speak healing and[Dmaj7] truth
+wherever we [A2]go[E2]
+And [F#m]pour out grace and [Dmaj7]mercy because we
+[A2]know[E2]
+
+{comment: Chorus 1}
+The answer is [A2]Jesus
+The answer is l[E2]ove
+And for [F#m]everything we’re needing
+I believe that He will be [D2]enough
+
+{comment: Chorus 2}
+The answer is [A2]Jesus
+The answer is [E2]Him
+For [F#m]everyone who wonders how to heal this broken
+world we’re [D2]in
+
+{comment: Tag}
+The answer is [A2]Jesus,[E2]
+The answer is J[F#m]esus[D2]
+
+{comment: Chorus 1}
+The answer is [A2]Jesus
+The answer is l[E2]ove
+And for [F#m]everything we’re needing
+I believe that He will be [D2]enough
 
 {comment: Chorus 2}
 The answer is [A2]Jesus
@@ -85,5 +89,5 @@ For [F#m]everyone who wonders how to heal this broken
 world we’re [D2]in
 
 {comment: Outro}
-The answer is [A2]Jesus[E2],
-The answer is [F#m]Jesu[D2]s[A2]
+The answer is [A2]Jesus,[E2]
+The answer is [F#m]Jesus[D2][A2]

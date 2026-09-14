@@ -3,7 +3,7 @@
 {key: B}
 {tempo: 80}
 {time: 4/4}
-{x_verified: number chart, 100% of 72 chords}
+{x_verified: number chart, 99% of 162 chords}
 {x_theme: healing, heaven}
 {x_source: pdf:UPCI Music/2023/Even Now/Even-Now-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FEven%20Now}
@@ -19,98 +19,122 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/even-now/charts/vocals.pdf}
 {x_album: Even Now (Single)}
 
-Jeremy Doyley | Samone Doyley
-Intro E B
-E / B/D# / | G#m F# / / | E E2 B / | When You walk into the room
-G#m F# / / | E/C# / B/E / | G#m F#               Every d[G#m]ead thing has to mo[F#]ve even
-C#m F#/A# G#m7 / | F# / / /
-(C#-B#-C#-D#) | C#m B / / G#m | F# / / / | / / / / now
+{comment: Intro}
+| E / B/D# / | G#m F# / / | E E2 B / |
+| G#m F# / / | E/C# / B/E / | G#m F#
+| (C#-B#-C#-D#) | C#m B / / G#m | F# / / / | / / / /
 
-{comment: Verse Interlude}
-B E/C# B/E / G#m | F# / D#m7 / |
-Broken hearted
-E/B B C#m B / G#m7 | F# / / / |
-Bruised and torn
-F#/A# F# E Verse
-Battered you’re not a - lone B
-B Broken hearted
-God can fix it E/B B
-E/B B F#/A# Bruised and torn
-He can heal you even now F#/A# F#/A# E
-F# E Battered you’re not a - lone
-He is the One B
-God can fix it
-Pre Chorus E/B B F#/A#
-E F#/E He can heal you even now
-To raise the dead F#/A# E
-B/D# He is the One
-Walk across the sea
-E D#7/A# G#m7 Pre Chorus
-It is Jesus can’t you see (B D# F#) E F#/E
-F#/A# B B/D# E To raise the dead
-Heal the lame B/D#
-F#/E B/D# Walk across the sea
-cause the blind to see E D#7/A# G#m7
-F# B / / / It is Jesus can’t you see
-It is Jesus the King of kings F# B C#/E# Edim7 B/D#
-Heal the lame cause the blind to see
-| E F# B/D# (D#-C#) | (D#-F#-F#-E-D#-C#-B) C#m F#
-It is Jesus
-Chorus B / / /
-E B G#m F# the King of kings
-Even now lives are chang - ing
-Even [E]now[B]   bones are r[G#m]ais  - [F#]ing
-Jeremy Doyley | Samone Doyley
+{comment: Verse}
+Broken [B]hearted
+[E/B]Bruised and [B]torn
+[F#/A#]Battered you’re  [F#]not  a - [E]lone
+God can [B]fix it
+[E/B]He can [B]heal you even [F#/A#]now
+[F#]He is the [E]One
 
-{comment: Chorus Bridge}
-Even [E]now[B]   lives are[G#m] chang - [F#]ing                         [E/B]Your pre-[B]sence[D#m7]      here we feel[E2] You now
-Even [E]now[B]   bones are r[G#m]ais  - [F#]ing                        [E/B]We will re[B]-spond as w[D#m7]e   lift u[E2]p a sound
-When You wa[E]lk into the ro[B]om                            [E/B]Lord we [B]surrender[D#7]   to Your [G#m7]pow’r
-Every d[G#m]ead thing has to mo[F#]ve                           [E/C#]Here as i[B/D#]n Heaven    [F#]we declare it [E2]now
-(E-F#-G#-B-C#-D#-E-C#-B-B B) / | F# / / /
-even now Bridge
-Chorus                                               [E/B]Your pre-[B]sence[D#m7]      here we feel[E2] You now
-Even [E]now[B]   lives are[G#m] chang - [F#]ing                        [E/B]We will re[B]-spond as w[D#m7]e   lift u[E2]p a sound
-Even [E]now[B]   bones are r[G#m]ais  - [F#]ing                        [E/B]Lord we [B]surrender[D#7]   to Your [G#m7]pow’r
-E B E/C# B/D# (D#-E-F#-D#-C#-B-F#-G#-B-C#-B-B)
-When You walk into the room Here as in Heaven we declare it now
-Every [G#m]dead thing has to m[F#]ove even                     Bridge (Flipped Parts)
-E B | F# / / / / E/B B B2 B
-now Your pre-sence here we feel You now
-Interlude                                             [E/B]We will re[B]-spond as we[B2]   lift u[B]p a sound
-||: E/B B / / | B2 B5 / / | E/B B | B2 B / / :|| E/B B B2 B
-Lord we surrender to Your pow’r
-[Bridge]E/B       B     B2                  B                [E/B]Here as[B] in Heaven  [A]we declare it [E]now
-Your pre-sence here we feel You now
-E/B B B2 B Vamp
-We will re-spond as we lift up a sound B A E
-E/B B D#7 G#m7 Declare it now we declare it now
-Lord we surrender to Your pow’r B A E
-E/B B B2 B Declare it now we declare it now
-Here as in Heaven we declare it now B A E
-Declare it now we declare it now
-[B/D#]Declare i[G#m]t now   [A]we declare it[E] now
-Jeremy Doyley | Samone Doyley
+{comment: Pre Chorus}
+To raise the [E]dea[F#/E]d
+Walk across the[B/D#] sea
+It is J[E]esus[D#7/A#]    can’t you[G#m7] see
+[F#/A#]H[B]eal [B/D#]the   [E]lame
+[F#/E]cause the blind to [B/D#]see
+| F# B / / /
+It is Jesus the King of kings
+| E F# B/D# (D#-C#) |
+
+{comment: Chorus}
+Even [E]now[B]   lives are [G#m]chang - [F#]ing
+Even [E]now[B]   bones are [G#m]rais  - i[F#]ng
+When You wal[E]k into the roo[B]m
+Every d[G#m]ead thing has to mo[F#]ve even
+| C#m F#/A# G#m7 / | F# / / /
+now
+
+{comment: Interlude}
+| E/C# B/E / G#m | F# / D#m7 / |
+| C#m B / G#m7 | F# / / / |
+
+{comment: Verse}
+Broken [B]hearted
+[E/B]Bruised and [B]torn
+[F#/A#]Battered you’re[F#/A#]  not  a - [E]lone
+God can [B]fix it
+[E/B]He can [B]heal you even [F#/A#]now
+[F#/A#]He is the [E]One
+
+{comment: Pre Chorus}
+[(B-D#-F#)]To raise the d[E]ead[F#/E]
+Walk across the[B/D#] sea
+It is J[E]esus[D#7/A#]    can’t you[G#m7] see
+[F#]Heal [B]the [C#/E#]lame[Edim7]    cause the blind t[B/D#]o see
+[(D#-F#-F#-E-D#-C#-B)]It[C#m] is Jes[F#]us
+| B / / /
+the King of kings
+
+{comment: Chorus}
+Even [E]now[B]   lives are [G#m]chang - [F#]ing
+Even [E]now[B]   bones are [G#m]rais  - i[F#]ng
+When You w[E]alk into the roo[B]m
+Every d[G#m]ead thing has to mo[F#]ve
+| (E-F#-G#-B-C#-D#-E-C#-B-B-B) / | F# / / /
+even now
+
+{comment: Chorus}
+Even [E]now[B]   lives are [G#m]chang - [F#]ing
+Even [E]now[B]   bones are [G#m]rais  - i[F#]ng
+When You wal[E]k into the roo[B]m
+Every [G#m]dead thing has to m[F#]ove even
+[E]now[B]
+| F# / / / /
+
+{comment: Interlude}
+||: E/B B / / | B2 B5 / / | E/B B | B2 B / / :||
+
+{comment: Bridge}
+[E/B]Your pre-[B]sence[B2]    here we feel You [B]now
+[E/B]We will re[B]-spond as we[B2]   lift up [B]a sound
+[E/B]Lord we [B]surrende[D#7]r   to Your [G#m7]pow’r
+[E/B]Here as[B] in Heaven[B2]    we declare [B]it now
+
+{comment: Bridge}
+[E/B]Your pre-[B]sence[D#m7]    here we feel [E2]You now
+[E/B]We will re[B]-spond as w[D#m7]e   lift up [E2]a sound
+[E/B]Lord we [B]surrende[D#7]r   to Your [G#m7]pow’r
+[E/C#]Here as i[B/D#]n Heaven    [F#]we declare it n[E2]ow
+
+{comment: Bridge}
+[E/B]Your pre-[B]sence[D#m7]    here we feel [E2]You now
+[E/B]We will re[B]-spond as w[D#m7]e   lift up [E2]a sound
+[E/B]Lord we [B]surrende[D#7]r   to Your [G#m7]pow’r
+[E/C#]Here as in[B/D#] Heav[(D#-E-F#-D#-C#-B-F#-G#-B-C#-B-B)]en    we declare it now
+
+{comment: Bridge}
+{ci: Flipped Parts}
+[E/B]Your pre-[B]sence here[B2]   we feel [B]You now
+[E/B]We will re[B]-spond as we[B2]   lift up [B]a sound
+[E/B]Lord we [B]surrender[B2]  to Your [B]pow’r
+[E/B]Here as[B] in Heaven  [A]we declare it n[E]ow
+
+{comment: Vamp}
+[B]Declare it now [A]we declare it [E]now
+[B]Declare it now [A]we declare it [E]now
+[B]Declare it now [A]we declare it [E]now
+[B/D#]Declare it[G#m] now   [A]we declare it [E]now
 
 {comment: Vamp}
 {ci: Parts}
-(D#-F#-G#-F#-D#-C#-B-B-B) A E
-Declare it now we declare it now
-(D#-F#-G#-F#-D#-C#-B-B-B) A E
-Declare it now we declare it now
+[(D#-F#-G#-F#-D#-C#-B-B-B)]Declare it now    [A]we declare it [E]now
+[(D#-F#-G#-F#-D#-C#-B-B-B)]Declare it now    [A]we declare it [E]now
 
 {comment: Vamp}
 {ci: Parts}
-(D#-F#-G#-F#-D#-C#-B-B-B) A E
-Declare it now we declare it now
-(D#-F#-G#-F#-D#-C#-B-B-B) A E
-Declare it now we declare it now
-(D#-E-E#-F#) B A E
-Declare it now we declare it now
-B/D# B/G# A E / | B | B |
+[(D#-F#-G#-F#-D#-C#-B-B-B)]Declare it now    [A]we declare it [E]now
+[(D#-F#-G#-F#-D#-C#-B-B-B)]Declare it now    [A]we declare it [E]now
+[(D#-E-E#-F#)]Declare it [B]now    [A]we declare it [E]now
+| B/D# B/G# A E / | B | B |
 Declare it now we declare it now
 
 {comment: Outro}
 {ci: Rep as dir}
 [E/B]Oh, [B]Oh, [D#m]Oh,  [E2]Oh,
-[E/B]Oh, O[B]h, , [D#m]we dec[E2]lare it now
+[E/B]Oh, [B]Oh, , [D#m]we de[E2]clare it now

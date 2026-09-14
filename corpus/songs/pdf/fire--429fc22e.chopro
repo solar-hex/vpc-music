@@ -3,7 +3,7 @@
 {key: E}
 {tempo: 134}
 {time: 4/4}
-{x_verified: number chart, 94% of 112 chords}
+{x_verified: number chart, 99% of 182 chords}
 {x_theme: holy-spirit, grace-mercy, heaven, revival}
 {x_source: pdf:UPCI Music/2022/Fire/Fire-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FFire}
@@ -18,78 +18,114 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/fire/charts/vocals.pdf}
 {x_album: Believe For It}
 
-Chorus (2x) Chorus (2x)
-E2 Bridge (2x)
-Fire, fire, fall on us A Bsus E/G# C#m7
-E2 You, You’re the only one
-Start a new revival, fire, fall on us A Bsus C#m7
-Who can bring new life
-Verse 1 A Bsus E/G# C#m7
-A Bsus E/G# You, You’re the only one
-Like You did on the day of Pentecost A Bsus C#m7
-A Bsus E/G# Who can light this fire
-Rushing in like a mighty wind
-A Bsus E/G# Chorus (4x - piano only first time)
-Fill us up with Your presence and Your power
-A Bsus C#m7 Interlude
-Lord do it again ||: (A-C#-B-G#-B-C#-C#) (A-C#-B-G#-B-C#-E-C#) :||
-{ci: A-C#-B-G#-B-C#-C#) (A-C#-B-G#-B-C#-E-C#}
-Verse 2 (A-C#-B-G#-B-C#-C#) (A-G#-F#-B-G#-B-C#-E-C#)
-We are her[A]e cry[Bsus]ing out on[E/G#] one accord                Vamp 1
-A Bsus E/G# (A-C#-B - G# - B-C#-C#)
-Let the heavens touch the earth Just like You did it before
-A Bsus E/G# (A-C#-B - G# - B-C#-E-C#)
-Come ignite a passion in our hearts Lord we are ready for more
-A Bsus E (A-C#-B - G# - B-C#-C#)
-And Lord let it burn Just like You did it before
-{ci: A-G#-F#-B - G# - B-C#-E-C#}
-Chorus Lord we are ready for more
-A Bsus E/G# B C#m7 A Bsus E/G# B Tag
-Fi - re, fi - re, fall on us (A-G#-F#-B - G# - B-C#-E-C#)
-C#m7 A Bsus E/G# B C#m7 Lord we are ready for more
-Start a new re - viv - al, fi - re (A-G#-F#-B - G# - B-C#-E-C#)
-A Bsus E Lord we are ready for more
-Fall on us (A-G#-F#-B - G# - B-C#-E-C#)
-Lord we are ready for more
-Interlude (A-G#-F#-B) D#7(#9#11) E/G# C#m11 Bm11 Amaj7
-| A Bsus / E/G# | / / C#m7 | A Bsus / E/G# | / / / / | Lord we are ready for more
+{comment: Chorus}
+{ci: 2x}
+[E2]Fire, fire, fall on us
+[E2]Start a new revival, fire, fall on us
 
-{comment: Verse 3 Interlude}
-A Bsus E/G# B C#m7 ||: A Bsus / E/G# | / Bsus C#m7 |
-Overwhelmed by Your glory and Your grace | A Bsus / E/G# | / Bsus C#m7 :||
-You consu[A]me us[Bsus] with Your lo[E/G#]ve[B] [C#m7]                     Vamp 2
-Give us mo[A]re a[Bsus]nd more o[E/G#]f who You are[B] [C#m7]                  [A]I[Bsus] need [E/G#]the Holy Gh[Bsus]os[C#m7]t
-We ca[A]n’t [Bsus]get enough[E]                                   [A]I[Bsus] need [E/G#]the Holy Ghost[Bsus] and   [C#m7]fire
-[A]F[Bsus]ill me with[E/G#] the Holy Gh[Bsus]os[C#m7]t
-[A]F[Bsus]ill me with[E/G#] the Ho - ly Ghost [Bsus]and   [C#m7]fire
+{comment: Verse 1}
+Like You d[A]id on [Bsus]the day of[E/G#] Pentecost
+Rushing i[A]n like [Bsus]a mighty wi[E/G#]nd
+Fill us up[A] with [Bsus]Your presenc[E/G#]e and Your power
+Lord [A]do [Bsus]it again[C#m7]
 
-{comment: Vamp 2 Tag}
-[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]                                [A]F[Bsus]ill me with[E/G#] the Holy Ghost and f[C#m7]ire
-[A]I[Bsus] need [E/G#]the Holy Ghost[Bsus] and   [C#m7]fire                       [A]F[Bsus]ill me with[E/G#] the Holy Ghost and f[C#m7]ire
-[A]F[Bsus]ill me with[E/G#] the Holy Gh[Bsus]ost[C#m7]                            [A]F[Bsus]ill me with[E/G#] the Holy Ghost and f[C#m7]ire
-[A]Ama[Bsus]j7[D#7(#9#11)] [E/G#] [C#m11]                                               [Bm11]F[A]i[Bsus]ll me with [D#7(#9#11)]the
-Fill me with the Ho - ly Ghost and fire E/G# C#m11 Bm11 Amaj7
-Ho - ly Ghost and fire
+{comment: Verse 2}
+We are he[A]re cry[Bsus]ing out on[E/G#] one accord
+Let the hea[A]vens [Bsus]touch the ear[E/G#]th
+Come ignit[A]e a [Bsus]passion[E/G#] in our hearts
+And [A]Lord l[Bsus]et it bur[E]n
+
+{comment: Chorus}
+[A]Fi - [Bsus]re,    [E/G#]fi  -  [B]re,[C#m7]    f[A]all [Bsus]on us[E/G#][B]
+[C#m7]Start a new re -[A] viv - [Bsus]al,    [E/G#]fi  -  [B]re[C#m7]
+F[A]all  [Bsus]on us[E]
+
+{comment: Interlude}
+| A Bsus / E/G# | / / C#m7 | A Bsus / E/G# | / / / / |
+
+{comment: Verse 3}
+Overwhel[A]med by [Bsus]Your glo[E/G#]ry and Your grac[B]e[C#m7]
+You consu[A]me [Bsus]us with Your lo[E/G#]ve[B][C#m7]
+Give us mo[A]re a[Bsus]nd more o[E/G#]f who You ar[B]e[C#m7]
+We c[A]an’t g[Bsus]et enough[E]
+
+{comment: Chorus}
+{ci: 2x}
+
+{comment: Bridge}
+{ci: 2x}
+Y[A]ou,[Bsus]    You’re the [E/G#]only   [C#m7]one
+Who can br[A]ing new [Bsus]life[C#m7]
+Y[A]ou,[Bsus]    You’re the [E/G#]only   [C#m7]one
+Who can lig[A]ht this [Bsus]fire[C#m7]
+
+{comment: Chorus}
+{ci: 4x - piano only first time}
+
+{comment: Interlude}
+||: (A-C#-B-G#-B-C#-C#) (A-C#-B-G#-B-C#-E-C#) :||
+[(A-C#-B-G#-B-C#-C#)] [(A-C#-B-G#-B-C#-E-C#)]
+[(A-C#-B-G#-B-C#-C#)] [(A-G#-F#-B-G#-B-C#-E-C#)]
+
+{comment: Vamp 1}
+[(A-C#-B-G#-B-C#-C#)]Just like You did it before
+[(A-C#-B-G#-B-C#-E-C#)]Lord we are ready for more
+[(A-C#-B-G#-B-C#-C#)]Just like You did it before
+[(A-G#-F#-B-G#-B-C#-E-C#)]Lord we are ready for more
+
+{comment: Tag}
+[(A-G#-F#-B-G#-B-C#-E-C#)]Lord we are ready for more
+[(A-G#-F#-B-G#-B-C#-E-C#)]Lord we are ready for more
+[(A-G#-F#-B-G#-B-C#-E-C#)]Lord we are ready for more
+[(A-G#-F#-B)]Lord we[D#7(#9#11)] are  rea[E/G#]dy   fo[C#m11]r  mor[Bm11]e[Amaj7]
+
+{comment: Interlude}
+||: A Bsus / E/G# | / Bsus C#m7 |
+| A Bsus / E/G# | / Bsus C#m7 :||
 
 {comment: Vamp 2}
-[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]                         [Ending]A     Bsus      E/G#             C#m7
-A Bsus E/G# Bsus C#m7 Fill me with the Holy Ghost and fire
-I need the Holy Ghost and fire | A Bsus / E/G# | / C#m7 / / |
-A Bsus E/G# Bsus C#m7 | A Bsus / E/G# | / C#m7 / / |
-Fill me with the Holy Ghost | A Bsus / D#7(#9#11) |
-A Bsus E/G# Bsus C#m7 | E/G# C#m11 Bm11 Amaj7 | / / / / |
-Fill me with the Ho - ly Ghost and fire
+[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]I[Bsus] need [E/G#]the Holy Ghost [Bsus]and   [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]F[Bsus]ill me with [E/G#]the Ho - ly Ghost [Bsus]and   [C#m7]fire
 
 {comment: Vamp 2}
-[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]os[C#m7]t
-[A]I[Bsus] need [E/G#]the Holy Ghost[Bsus] and   [C#m7]fire
-[A]F[Bsus]ill me with[E/G#] the Holy Gh[Bsus]os[C#m7]t
+[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]I[Bsus] need [E/G#]the Holy Ghost [Bsus]and   [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A] [Bsus] [D#7(#9#11)] [E/G#] [C#m11] [Bm11]
+[Amaj7]Fill me with the Ho - ly Ghost and fire
+
+{comment: Vamp 2}
+[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]I[Bsus] need [E/G#]the Holy Ghost [Bsus]and   [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]F[Bsus]ill me with [E/G#]the Ho - ly Ghost [Bsus]and   [C#m7]fire
+
+{comment: Vamp 2}
+[A]I[Bsus] need [E/G#]the Holy Gh[Bsus]ost[C#m7]
+[A]I[Bsus] need [E/G#]the Holy Ghost [Bsus]and   [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Gh[Bsus]ost[C#m7]
 [A]F[Bsus]ill me with[D#7(#9#11)] the
-Ho - [E/G#]ly Ghost [C#m11]and fir[Bm11]e[Amaj7]
+Ho - [E/G#]ly Ghost[C#m11] and fire[Bm11][Amaj7]
 
 {comment: Vamp 2}
 {ci: Flipped Parts}
-[A]I[Bsus] need [E/G#]the Holy Ghos[C#m7]t
+[A]I[Bsus] need t[E/G#]he Holy Ghos[C#m7]t
 [A]I[Bsus] need t[E/G#]he Holy Ghost [C#m7]and fire
-[A]F[Bsus]ill me with[E/G#] the Holy Ghos[C#m7]t
-[A]F[Bsus]ill me with[E/G#] the Holy Ghost and f[C#m7]ire
+[A]F[Bsus]ill me with [E/G#]the Holy Ghos[C#m7]t
+[A]F[Bsus]ill me with [E/G#]the Holy Ghost and [C#m7]fire
+
+{comment: Tag}
+[A]F[Bsus]ill me with [E/G#]the Holy Ghost and [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Ghost and [C#m7]fire
+[A]F[Bsus]ill me with [E/G#]the Holy Ghost and [C#m7]fire
+[A]F[Bsus]ill me with [D#7(#9#11)]the
+Ho - [E/G#]ly Ghost[C#m11] and fir[Bm11]e[Amaj7]
+
+{comment: Ending}
+[A]F[Bsus]ill me with [E/G#]the Holy Ghost and [C#m7]fire
+| A Bsus / E/G# | / C#m7 / / |
+| A Bsus / E/G# | / C#m7 / / |
+| A Bsus / D#7(#9#11) |
+| E/G# C#m11 Bm11 Amaj7 | / / / / |

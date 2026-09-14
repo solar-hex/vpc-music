@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 158}
 {time: 4/4}
-{x_verified: number chart, 100% of 77 chords}
+{x_verified: number chart, 100% of 106 chords}
 {x_theme: joy, name-of-jesus, healing, jubilee}
 {x_source: pdf:UPCI Music/2022/Strong Tower/Strong-Tower-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FStrong%20Tower}
@@ -19,39 +19,66 @@
 {x_album: Songs for the Nations}
 {x_writers: James Wilson}
 
-{comment: Chorus Bridge}
-The n[G]ame of the Lord is a [C]strong [G]tower               When I speak Your [G]name
-A [C]strong [G]tower for m[D]e                              Captives are [Gsus]set    [G]free
-Refrain                                          Deliverance [Gsus]is   re[G]leased when I [D]speak
-That I run to and I’m s[C]afe[G] [D] [Em7]                         When I speak Your [Em7]name, demons [Gsus]trem  -  [G]ble
-There is no ot[D/F#]her[G]       [C]name[G] [D]                     Mountains [C2/A]crumble [G/B]when I [D]speak
+{comment: Chorus}
+The [G]name of the Lord is a [C]strong [G]tower
+A [C]strong [G]tower for m[D]e
 
-{comment: Verse Bridge}
-There is a [C]place where [G]freedom can be found         When I speak Your [G/B]name
-It’s in the[Am7] name, it’s in the [C2]name                     Captives are [C2]set free
-[D]There is a s[Em7]helter[D/F#]  where [G]joy and peace abound      Del[D]iverance [Em7]is released when I s[D]peak
-C D Em7 (G-A - B) C G
-It’s in the name, it’s in the name When I speak Your name, de - mons trem - ble
-Chorus                                          Mountains c[Am7]rum - [G/B]ble  [C2]when I[Em7]   spe[D]ak
-The n[G]ame of the Lord is a [C]strong [G]tower               Vamp 1 (2x)
-A [C]strong [G]tower for m[D]e                              So I’m running [C]i[D/C]n[C][D/C]
-The n[Em7]ame of the Lord is a [C]strong [G]tower                 [C]So I’m running [Em]i[D/E]n[Em][D/E]
-A [C]strong [G]tower for m[D]e                                [Em]So I’m running [C]i[D/C]n[C][D/C]
-C G C G* *1st time only
-Refrain Into the strong tower
+{comment: Refrain}
+That I run to and I’m s[C]afe[G][D][Em7]
+There is no ot[D/F#]her[G]    [C]name[G][D]
 
 {comment: Verse}
-C G Vamp 2
-There is a place where freedom can be found D/F# G Am7 G/B C G/B C
-Am7 C2 (D-E-B-A) Jesus is,
-It’s in the name, it’s in the name D Em7 D/F# G D Em7
-Em7 D/F# G Jesus is
-There is a shelter where joy and peace abound (A-B-A-G-E-D) C G/B C D/F# G C
-Am7 D Jesus is, is the strong tower
-It’s in the name, it’s in the name
+There is a p[C]lace where f[G]reedom can be found
+It’s in the [Am7]name, it’s in the na[C2]me
+[D]There is a s[Em7]helter[D/F#]  where [G]joy and peace abound
+It’s in the n[C]ame, it’s in the na[D]me
+
+{comment: Chorus}
+The [G]name of the Lord is a [C]strong [G]tower
+A [C]strong [G]tower for m[D]e
+The [Em7]name of the Lord is a [C]strong [G]tower
+A [C]strong [G]tower for m[D]e
+
+{comment: Refrain}
+
+{comment: Verse}
+There is a p[C]lace where f[G]reedom can be found
+It’s in the [Am7]name, it’s in the na[C2]me[(D-E-B-A)]
+There is a s[Em7]helter[D/F#]  where [G]joy and peace abound
+It’s in the n[Am7]ame, it’s in the na[D]me
+
+{comment: Chorus}
+
+{comment: Refrain}
+
+{comment: Bridge}
+When I speak Your n[G]ame
+Captives are [Gsus]set    [G]free
+Deliverance [Gsus]is   re[G]leased when I [D]speak
+When I speak Your [Em7]name, demons [Gsus]trem  -  [G]ble
+Mountains [C2/A]crumble [G/B]when I s[D]peak
+
+{comment: Bridge}
+When I speak Your n[G/B]ame
+Captives are [C2]set free
+De[D]liverance [Em7]is released when I sp[D]eak
+When I speak Your [Em7]name,[(G-A-B)] de - mons t[C]rem  -  [G]ble
+Mountains [Am7]crum - [G/B]ble  [C2]when I[Em7]   spe[D]ak
+
+{comment: Vamp 1}
+{ci: 2x}
+So I’m running [C]in[D/C][C][D/C]
+[C]So I’m running [Em]in[D/E][Em][D/E]
+[Em]So I’m running [C]in[D/C][C][D/C]
+C G C G* *1st time only
+Into the strong tower
 
 {comment: Vamp 2}
-[Chorus]Refrain                                                 [D/F#]J[G]esu[Am7]s is[G/B],[C][G/B][C]
+[D/F#]J[G]es[Am7]us is[G/B],[C][G/B][C]
 Jes[D]us i[Em7]s[D/F#][G][D][Em7]
-G/B C G/B C (E-F#-G-A-B) Em7 D D/F# G
-Jesus is, is the strong tow - er
+Jes[(A-B-A-G-E-D)]us is,    [C]i[G/B]s[C] the [D/F#]strong [G]towe[C]r
+
+{comment: Vamp 2}
+[D/F#]J[G]es[Am7]us is[G/B],[C][G/B][C]
+Jes[D]us i[Em7]s[D/F#][G][D][Em7]
+[G/B]Jesu[C]s is,[G/B] [C] [(E-F#-G-A-B)]    is [Em7]the st[D]rong[D/F#] tow - [G]er

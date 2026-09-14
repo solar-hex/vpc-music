@@ -3,7 +3,8 @@
 {key: F}
 {tempo: 142}
 {time: 4/4}
-{x_theme: praise, grace-mercy, heaven, blood, revival}
+{x_verified: number chart, 93% of 60 chords}
+{x_theme: grace-mercy, heaven, praise, blood, revival}
 {x_source: pdf:UPCI Music/2020/We Want You/We-Want-You-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWe%20Want%20You}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-want-you/audio/alto.wav}
@@ -30,63 +31,78 @@
 {x_album: Faith Is}
 {x_writers: Mae Whitley}
 
-{comment: Intro Verse 3}
-F / / / | / / / / | / / / / | / / / / | Bb2/D C2/E
-Shower mercy, shower grace
-Bb2 / / / | / / / / | Bb / / / | / / Bb2/D C2/E | F
-Let Your presence saturate
-Chorus (Solo) (2xs)                                   We lift Your name in p[G2/B]raise
+{comment: Intro}
+| F / / / | / / / / | / / / / | / / / / |
+| Bb2 / / / | / / / / | Bb / / / | / / Bb2/D C2/E |
+
+{comment: Chorus}
+{ci: Solo, 2xs}
 [F]Open up Heaven’s doors
-C2 Pre Chorus 2 (men sing 8vb)
-We want more of You, Lord Bb C/Bb Bb
-Bb2/D Pour out on us
-You’re the greatest reward C/Bb C/Bb
-Bb Eb Pour out on us
-We want You, we want You
+[C2]We want more of You, Lord
+[Bb2/D]You’re the greatest reward
+[Bb]We want You[Eb],   we want You
+
+{comment: Verse 1}
+[Bb2/D]Open up Your gates O [C2/E]Lord
+Release Your blessings let it [F]pour
+We won’t stop cause we need[G2/B] more
+
+{comment: Verse 2}
+[Bb]Rain down on us like a f[C]lood
+With Your mercy by Your[Bb2/D] blood
+Overwhelm us with Your[G2/B] love
+
+{comment: Pre Chorus}
+{ci: men sing 8vb}
+| Bb C/Bb Bb / | / / / / | / / / / |
+Pour out on us
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+
+{comment: Verse 3}
+[Bb2/D]Shower mercy, shower g[C2/E]race
+Let Your presence saturat[F]e
+We lift Your name in p[G2/B]raise
+
+{comment: Pre Chorus 2}
+{ci: men sing 8vb}
+[Bb]Pour [C/Bb]out on[Bb] us
+[C/Bb]Pour out on[C/Bb] us
 
 {comment: Chorus}
 {ci: 2xs}
-Verse 1 F
-Bb2/D C2/E Open up Heaven’s doors
-Open up Your gates O Lord C2
-F We want more of You, Lord
-Release Your blessings let it pour Bb2/D
-G2/B You’re the greatest reward
-We won’t stop cause we need more Bb Eb
-We want You, we want You
+[F]Open up Heaven’s doors
+[C2]We want more of You, Lord
+[Bb2/D]You’re the greatest reward
+[Bb]We want You[Eb],   we want You
 
-{comment: Verse 2}
-Bb C Interlude
-Rain down on us like a flood F / / / | / / / / | Bb/D / / / | / / / / |
-With Your mercy by Your[Bb2/D] blood                         F2/A / / / | / / / / | Bb / / / | / / / / |
-Overwhelm us with Your [G2/B]love
+{comment: Interlude}
+| F / / / | / / / / | Bb/D / / / | / / / / |
+| F2/A / / / | / / / / | Bb / / / | / / / / |
 
 {comment: Bridge}
 {ci: Solo}
-Pre Chorus (men sing 8vb)                               [F]We need, we want an outpour,[Bb/D] outpour of You
-Bb C/Bb Bb / | / / / / | / / / / | F2/A Bb Eb
-Pour out on us We need You, we want more and more
+[F]We need, we want an outpour[Bb/D], outpour of You
+[F2/A]We need You, we want [Bb]more and [Eb]more
 
 {comment: Bridge}
 {ci: men sing 8vb}
-Chorus (Parts) (2xs)
 
 {comment: Bridge}
 {ci: Parts}
-Bridge (Parts) Chorus
-[F]We need, we want an outpour,[Bb/D] outpour of You           [F]Open up Heaven’s doors
-[F2/A]We need You, we want                                [C2]We want more of You, Lord
-Bb       Eb Cm/Ab Bbm/Gb                          [Bb2/D]You’re the greatest reward
-more and more Bb Eb7
-We want You, we want You
+
+{comment: Bridge}
+{ci: Parts}
+[F]We need, we want an outpour[Bb/D], outpour of You
+[F2/A]We need You, we want
+[Bb]more and [Eb]mor[Cm/Ab]e[Bbm/Gb]
 
 {comment: Bridge}
 {ci: Flipped Parts}
-[F]We need, we want an outpour,[Bb/D] outpour of You          [Ending]Bb/D           Bb
-F2/A We want You, we want You,
-We need You, we want (F - Bb - A) Bb
-Bb Eb Cm/Eb Bbm/Db we want You.
-more and more
+[F]We need, we want an outpour[Bb/D], outpour of You
+[F2/A]We need You, we want
+[Bb]more and [Eb]mor[Cm/Eb]e[Bbm/Db]
 
 {comment: Bridge}
 [F/C]We need, we want an outpour, [Bb/D]outpour of You
@@ -94,13 +110,22 @@ more and more
 
 {comment: Pre Chorus 2}
 {ci: men sing 8vb}
-[Bb]Pour [C/Bb]out on [Bb]us
+[Bb]Pour [C/Bb]out on[Bb] us
 [C/Bb]Pour out on[C/Bb] us
 
 {comment: Chorus}
 {ci: cut music}
 Open up Heaven’s doors
-{ci: E - F - C - Bb - A - F - G - A}
-We want more of You, Lord
+[(E-F-C-Bb-A-F-G-A)]We want more of You, Lord
 [F2/A]You’re the greatest reward
-[Bb]We want You,[Eb]   we want You
+[Bb]We want You[Eb],   we want You
+
+{comment: Chorus}
+[F]Open up Heaven’s doors
+[C2]We want more of You, Lord
+[Bb2/D]You’re the greatest reward
+[Bb]We want You[Eb7],   we want You
+
+{comment: Ending}
+[Bb/D]We want You[Bb],  we want You,
+[(F-Bb-A)]we want You[Bb].

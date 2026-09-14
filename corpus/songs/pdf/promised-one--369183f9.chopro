@@ -3,6 +3,7 @@
 {key: F#}
 {tempo: 82}
 {time: 4/4}
+{x_verified: number chart, 100% of 59 chords}
 {x_theme: praise, heaven, name-of-jesus, salvation}
 {x_source: pdf:UPCI Music/Promised One/Promised One - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FPromised%20One}
@@ -18,34 +19,52 @@
 {x_album: Million Lifetimes}
 
 {comment: Intro}
-F# / / / | / / / / | / / / / | / / / / | F#
-Behold heavens power
+| F# / / / | / / / / | / / / / | / / / / |
 
 {comment: Verse 1}
-As the [F#]prophets foretold[C#]                                Chorus 2xs
-you broke the [D#m7]silenc[B]e
-F# C# Interlude
-Born of Mary alone D#m7 / / / | B / / / | F#/A# / / / |
-Conceived by the s[D#m7]pirit                                 C# / / / | G#m7 / / F#/A# | B / / / |
-From the [B]promise you spoke                            F# / / / | C# / / / |
-Now w[C#]e see the f[D#m7]ullness
-Heir to [F#]king Davids throne[C#]                              [Bridge]D#m7               B
-F# Jesus Christ no name above
-messiah anointed F#/A# C#
-Word of God you’re here with us
-Chorus                                                    [G#m7]He who was[F#/A#]  and  [B]is to come
-Only [D#m7]Je      -[C#]      [B]sus only[F#/A#] Je     -   [C#]sus           You are[F#] the promised[C#] one
-Oh that[D#m7] name that saved[C#] my  s[B]oul                           [D#m7]Praise the name sing [B]oh my soul
-Jesus C[C#]hrist the Lord of all[F#]                                   [F#/A#]First and last my al[C#]l in all
+As the [F#]prophets foretold[C#]
+you broke the [D#m7]silence[B]
+Born of Mary[F#] alone[C#]
+Conceived by the [D#m7]spirit
+From the [B]promise you spoke
+Now [C#]we see the [D#m7]fullness
+Heir to [F#]king Davids throne[C#]
+messiah a[F#]nointed
+
+{comment: Chorus}
+Only [D#m7]Je    -[C#]    [B]sus only [F#/A#]Je    -   [C#]sus
+Oh that [D#m7]name that saved [C#]my  s[B]oul
+Jesus [C#]Christ the Lord of al[F#]l
+
+{comment: Verse 2}
+As the [F#]prophets foretold[C#]
+you were fo[D#m7]rsaken[B]
+Heavens [F#]eyes turned away[C#]
+As You cried out i[D#m7]n anguish
+But on the t[B]hird you arose
+In [C#]glorious [D#m7]wonder
+Son of [F#]God lifted high[C#]
+Behold heavens [F#]power
+Chorus
+{ci: 2xs}
+
+{comment: Interlude}
+| D#m7 / / / | B / / / | F#/A# / / / |
+| C# / / / | G#m7 / / F#/A# | B / / / |
+| F# / / / | C# / / / |
+
+{comment: Bridge}
+[D#m7]Jesus Christ no [B]name above
+[F#/A#]Word of God you’re [C#]here with us
+[G#m7]He who was[F#/A#]  and  [B]is to come
+You are[F#] the promised [C#]one
+[D#m7]Praise the name sing [B]oh my soul
+[F#/A#]First and last my [C#]all in all
 [G#m7]I will sing[F#/A#]  no   [B]other song
-Verse 2 F# C#
-F# C# You are the promised one
-As the prophets foretold
-you were fo[D#m7]rsaken[B]                                     Chorus 2xs
-Heavens e[F#]yes turned awa[C#]y
-As You cried out i[D#m7]n anguish                                   [Ending]D#m7          C#  B
-B Oh that name that saved my soul
-But on the third you arose C# F#
-C# D#m7 Jesus Christ the Lord of all
-In glorious wonder
-Son of G[F#]od lifted hig[C#]h
+You are[F#] the promised on[C#]e
+Chorus
+{ci: 2xs}
+
+{comment: Ending}
+Oh that[D#m7] name that saved[C#] my s[B]oul
+Jesus C[C#]hrist the Lord of al[F#]l

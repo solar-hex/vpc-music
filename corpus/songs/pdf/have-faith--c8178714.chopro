@@ -2,7 +2,7 @@
 {key: D}
 {tempo: 73}
 {time: 4/4}
-{x_verified: number chart, 100% of 21 chords}
+{x_verified: number chart, 100% of 33 chords}
 {x_theme: faith-trust, blood, praise}
 {x_source: pdf:UPCI Music/2023/Have Faith/Have-Faith-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FHave%20Faith}
@@ -18,39 +18,60 @@
 {x_album: Have Faith (Single)}
 {x_writers: Claire Barlar, Mike Hudson}
 
-{comment: Verse 1 Bridge}
-{ci: 2x}
-I am w[Gmaj7]eak while He is s[D]trong                           There is no[Gmaj7]thing too hard
-I’m tossed a[Bm7]bout while He calms [D]the storm               Or too[A] great for our God
-Pre Chorus 1                                        We can tru[G2/B]st in His word
-Even th[Em7]ough I don’t know ho[D]w this all will [A]end            By His b[A]lood we overcome
-Gmaj7 D (C#-D-F#) (B-A-F#) Gmaj7
-Don’t let go ‘cause He’s still working Through the highs and the lows
-| A2/C# G2/B / / | A
-We can praise Him through it all
-[Chorus]Gmaj7                                   Just bel[Bm7]ieve, just bel[A]ieve
-Trust in the leading of His hand
-He hasn’t left y[D]o[Chorus]u
-In spite of your[Gmaj7] current circumstance                    [Build]| D / / / | Dsus / / / | D / / / | Dsus / / / |
-Have fa[D]ith                                           Bridge (2x)
-When it f[Em7]eels like hope is g[D]one                         Interlude
-Bm A G | Gmaj7 / / / | A / / / | G2/B / / / |
-You can take Him at His word | A / (B-A-F#) | Gmaj7 / / / | A / / / |
-A D | Bm7 / / / | A / / / |
-And have faith in Him
-*to verse 2 Ending
-(C#-D-F#) | A2/C# G2/B / / | Gmaj7
+{comment: Verse 1}
+I am [Gmaj7]weak while He is s[D]trong
+I’m tossed a[Bm7]bout while He calms [D]the storm
+
+{comment: Pre Chorus 1}
+Even t[Em7]hough I don’t know h[D]ow this all will e[A]nd
+Don’t let [Gmaj7]go ‘cause He’s still wo[D]rkin[(C#-D-F#)]g
+| A2/C# G2/B / / |
+
+{comment: Chorus}
+Trust in the l[Gmaj7]eading of His hand
+He hasn’t left y[D]ou
+In spite of your [Gmaj7]current circumstance
+Have fa[D]ith
+When it f[Em7]eels like hope is go[D]ne
+You can t[Bm]ake Him [A]at His [G]word
+And have fai[A]th in Him[D]
+*to verse 2
+| (C#-D-F#) | A2/C# G2/B / / |
 
 {comment: Verse 2}
-When you’re af[Gmaj7]raid, Jesus is[D] rest
-Put your tr[Bm7]ust in His fait[D]hfulness
+When you’re [Gmaj7]afraid, Jesus is[D] rest
+Put your tr[Bm7]ust in His faith[D]fulness
 
 {comment: Pre Chorus}
-Even th[Em7]ough I don’t know ho[D]w this all will [A]end
-Gmaj7 D (A-F#-A)
-Don’t let go ‘cause He’s still working
+Even t[Em7]hough I don’t know h[D]ow this all will e[A]nd
+Don’t let [Gmaj7]go ‘cause He’s still wo[D]rkin[(A-F#-A)]g
 | A2/C# G2/B / / |
 
 {comment: Chorus}
 {ci: 2x}
+
+{comment: Bridge}
+{ci: 2x}
+There is no[Gmaj7]thing too hard
+Or too[A] great for our God
+We can tru[G2/B]st in His word
+By His bl[A]ood we overcome
+[(B-A-F#)]Through the hi[Gmaj7]ghs and the lows
+We can pr[A]aise Him through it all
+Just be[Bm7]lieve, just bel[A]ieve
+
+{comment: Chorus}
+Build
+| D / / / | Dsus / / / | D / / / | Dsus / / / |
+
+{comment: Bridge}
+{ci: 2x}
+
+{comment: Interlude}
+| Gmaj7 / / / | A / / / | G2/B / / / |
+| A / (B-A-F#) | Gmaj7 / / / | A / / / |
+| Bm7 / / / | A / / / |
+
+{comment: Ending}
+Have fait[Gmaj7]h
 UPCI Music 1

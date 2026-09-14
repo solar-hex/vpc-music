@@ -24,79 +24,116 @@
 {x_album: Covered (Single)}
 {x_writers: Mark Yandris}
 
-{comment: Intro Verse 1}
-{ci: Parts}
-| Eb / / / | / / / / Cm7 | Cm7 / / / / | (cut music) Cm7 Cm7
-| / / / / Cm7 | Cm7 / / / / | / / / / | No more sacrificing lambs,
-| Dbmaj7 Eb/G / Ab/C | Bb/D / / / Abmaj7 Abmaj7
-no more bullocks, goats, or rams.
-Verse 1 (Unison) Cm7 Cm7
-Eb ‘Cause Jesus paid it all for me,
-No more sacrificing lambs, Cm7 Bb/D Bb Eb Eb
-Cm7 the shed blood on calvary.
-no more bullocks, goats, or rams. (cut music) Cm7 Cm7
-Abmaj7 No more sending burnt off’-rings,
-‘Cause Jesus paid it all for me, Abmaj7 Abmaj7
-Cm7 Bb/D works and rituals discarding.
-the shed blood on calvary. Bb Cm7 (build)
-Eb We have access to the throne
-No more sending burnt off’-rings, Bb/D
-Cm7 through the precious blood atoned.
-works and rituals discarding.
-Abmaj7 Chorus 1
-We have access to the throne Eb
-Cm7 Bb/D Covered, covered by the blood of
-through the precious blood atoned. Cm7
-Jesus, covered by the blood of
-Chorus 1 Abmaj7
-Eb Jesus, covered by the blood of
-Covered, covered by the blood of Cm7 Bb/D
-Cm7 the Lamb.
-Jesus, covered by the blood of
-Abmaj7 Chorus 1
-Jesus, covered by the blood of Eb
-Cm7 Bb/D Covered, covered by the blood of
-the Lamb. Cm7
-Jesus, covered by the blood of
-Chorus 1 Abmaj7
-Eb Jesus, covered by the blood of
-Covered, covered by the blood of Cm7 Bb/D | / / / Bb/C (key change)
-Cm7 the Lamb.
-Jesus, covered by the blood of
+{comment: Intro}
+| Eb / / / | / / / / Cm7 | Cm7 / / / / |
+| / / / / Cm7 | Cm7 / / / / | / / / / |
+| Dbmaj7 Eb/G / Ab/C | Bb/D / / /
+
+{comment: Verse 1}
+{ci: Unison}
+[Eb]No more sacrificing lambs,
+[Cm7]no more bullocks, goats, or rams.
+‘Cause [Abmaj7]Jesus paid it all for me,
+[Cm7]the shed blood on c[Bb/D]alvary.
+[Eb]No more sending burnt off’-rings,
+[Cm7]works and rituals discarding.
+[Abmaj7]We have access to the throne
+[Cm7]through the precious b[Bb/D]lood atoned.
+
+{comment: Chorus 1}
+[Eb]Covered, covered by the blood of
+[Cm7]Jesus, covered by the blood of
 [Abmaj7]Jesus, covered by the blood of
-Cm7 Bb/D Eb (cut)
-the Lamb.
-Verse 2 (Key Change) (Parts) Bridge 2 (Unison)
-[F(cut)]What can wash away my sins?                             [Dm7]Thank You,[C]  Thank You,
-[Dm7(cut)]What can make me whole again?                           [Bb]Thank You, T[Bb]hank You for the blood of the
-Bbmaj7(cut) Lamb.
-Oh how precious is the flow
-Dm7(cut) C/E (cut) Bridge 1 (Parts) (2xs)
-that has made us white as snow. Dm7 (hits) C(hits)
-Covered, covered
-Chorus 2 Bb(hits) Gm7 Am7
-F covered, covered by the blood of the Lamb.
-Nothing, nothing but the blood of
-Dm7 Bridge 2 (Parts)
-Jesus, nothing but the blood of Dm7 C
-Bbmaj7 Thank You, Thank You,
-Jesus, covered by the blood of Bb Gm7 Am7
-Dm7 C/E Thank You, Thank You for the blood of the
-the Lamb. Lamb.
-Chorus 3                                               [Dm7]Thank You,[C]  Thank You,
-[F]Thank You, thank You for [Em7(b5)]the cros[A9]s of [Dm7]Calvary               [Bb]Thank You, T[Gm7]hank You for [Am7]the blood of the
-Bbmaj7 Dm / / / | / / / / |
-Thank you that you bled and died for me Lamb.
-Thank You for the blood of the[Dm7] Lamb.[C/E]                   Ending
-Eb Bb Db | Ab / / / | Bb/C / / / |
-Interlude (4xs) | / / / Bb/C Bbmaj7 |
+the [Cm7]Lamb.[Bb/D]
+
+{comment: Chorus 1}
+[Eb]Covered, covered by the blood of
+[Cm7]Jesus, covered by the blood of
+[Abmaj7]Jesus, covered by the blood of
+the [Cm7]Lamb.[Bb/D][Eb(cut)]
+
+{comment: Verse 1}
+{ci: Parts}
+{ci: cut music}
+No more sacrificing lambs[Cm7],[Cm7]
+no more bullocks, goats, or ram[Abmaj7]s.[Abmaj7]
+‘Cause Jesus paid it all for m[Cm7]e,[Cm7]
+the shed blood o[Cm7]n    [Bb/D]calvary.[Bb][Eb][Eb]
+{ci: cut music}
+No more sending burnt off’-rings[Cm7],[Cm7]
+works and rituals discarding.[Abmaj7][Abmaj7]
+We have access to the thron[Bb]e[Cm7]
+{ci: build}
+through the precious [Bb/D]blood atoned.
+
+{comment: Chorus 1}
+[Eb]Covered, covered by the blood of
+[Cm7]Jesus, covered by the blood of
+[Abmaj7]Jesus, covered by the blood of
+the [Cm7]Lamb.[Bb/D]
+
+{comment: Chorus 1}
+[Eb]Covered, covered by the blood of
+[Cm7]Jesus, covered by the blood of
+[Abmaj7]Jesus, covered by the blood of
+the [Cm7]Lamb.[Bb/D]
+| / / / Bb/C
+{ci: key change}
+
+{comment: Verse 2}
+{ci: Key Change, Parts}
+[F(cut)]What can wash away my sins?
+[Dm7(cut)]What can make me whole again?
+[Bbmaj7(cut)]Oh how precious is the flow
+[Dm7(cut)]that has made us whi[C/E(cut)]te as snow.
+
+{comment: Chorus 2}
+[F]Nothing, nothing but the blood of
+[Dm7]Jesus, nothing but the blood of
+[Bbmaj7]Jesus, covered by the blood of
+the [Dm7]Lamb.[C/E]
+
+{comment: Chorus 3}
+[F]Thank You, thank You fo[Em7(b5)]r the cro[A9]ss of [Dm7]Calvary
+Thank you that you bled and [Bbmaj7]died for me
+Thank You for the blood of the [Dm7]Lamb.[C/E]
+
+{comment: Interlude}
+{ci: 4xs}
 ||: Dm7 / / / | C / / / | Bb / / / | / / / / :||
-Bridge 1 (Unison) (2xs)
+
+{comment: Bridge 1}
+{ci: Unison, 2xs}
 [Dm7]Covered,[C]   covered
 [Bb]covered, [Gm7]covered by [Am7]the blood of the Lamb.
 
 {comment: Bridge 2}
 {ci: Unison}
 [Dm7]Thank You,[C]  Thank You,
-[Bb]Thank You, [Gm7]Thank You for [Am7]the blood of the
+[Bb]Thank You,[Gm7] Thank You for[Am7] the blood of the
 Lamb.
+
+{comment: Bridge 2}
+{ci: Unison}
+[Dm7]Thank You,[C]  Thank You,
+[Bb]Thank You, [Bb]Thank You for the blood of the
+Lamb.
+
+{comment: Bridge 1}
+{ci: Parts, 2xs}
+[Dm7(hits)]Covered,   [C(hits)]covered
+[Bb(hits)]covered, c[Gm7]overed by [Am7]the blood of the Lamb.
+
+{comment: Bridge 2}
+{ci: Parts}
+[Dm7]Thank You,[C]  Thank You,
+[Bb]Thank You, [Gm7]Thank You for[Am7] the blood of the
+Lamb.
+[Dm7]Thank You,[C]  Thank You,
+[Bb]Thank You, [Gm7]Thank You for[Am7] the blood of the
+| Dm / / / | / / / / |
+Lamb.
+
+{comment: Ending}
+| Eb Bb Db | Ab / / / | Bb/C / / / |
+| / / / Bb/C Bbmaj7 |

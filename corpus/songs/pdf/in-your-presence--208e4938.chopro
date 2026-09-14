@@ -17,34 +17,41 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/in-your-presence/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/in-your-presence/charts/vocals.pdf}
 
-Intro Db
+{comment: Intro}
+[Db]
 
 {comment: Chorus}
-[Db]Everything we    [Bbm]need is     [Ab]here in Your[Gb] presence, oh.
+[Db]Everything we    [Bbm]need is    [Ab]here in Your[Gb] presence, oh.
 Db Bbm Ab Gb Ebm7 (do not play if repeating the Chorus
 Everything we need is here in Your presence, Jesus. or ending the song)
-Interlude Ab Ebm7 Ab Ebm7 Ab Db/F Gb
+
+{comment: Interlude}
+[Ab] [Ebm7] [Ab] [Ebm7] [Ab] [Db/F] [Gb]
 
 {comment: Verse}
-My [Db]Healer,     Pro[Bbm]vider,   my [Ab]Savior     i[Gb]s here.
-Sust[Db]ainer,      Re[Bbm]deemer,    [Ab]Jesus      is[Gb] here.
+My [Db]Healer,    Pr[Bbm]ovider,   my [Ab]Savior    is[Gb] here.
+Sus[Db]tainer,    Re[Bbm]deemer,    [Ab]Jesus    is[Gb] here.
 
 {comment: Pre-Chorus}
 [Ebm7]There’s no place [Bbm7]like Your    [Ab]presence,  [Ebm7]Lord. No place we’d   [Bbm7]rather [Ab]be.
 {ci: Repeat Chorus, Interlude, Verse, Pre-Chorus, & Chorus 2x}
-Interlude Ab Ebm7 Ab Ebm7 Ab Db/F Gb
+
+{comment: Interlude}
+[Ab] [Ebm7] [Ab] [Ebm7] [Ab] [Db/F] [Gb]
 
 {comment: Bridge}
 [Ab]Meet every need uns[Ebm7]poken,   [Ab]heal every broken [Ebm7]heart.
-[Ab]Lift every[Db/F] burden in Your    [Gb]presence, Je[Ebm7]sus.
-[Ab]Restore what has been s[Ebm7]tolen.[Ab]   Speak peace to every [Ebm7]storm.
-[Ab]Let there be[Db/F] freedom in Your  [Gb]presence, Je[Ebm7]sus.
+[Ab]Lift every [Db/F]burden in Your    [Gb]presence, Je[Ebm7]sus.
+[Ab]Restore what has been [Ebm7]stolen.[Ab]   Speak peace to every [Ebm7]storm.
+[Ab]Let there be [Db/F]freedom in Your  [Gb]presence, Je[Ebm7]sus.
 {ci: Repeat Bridge}
 
 {comment: Interlude}
-Ab Gb/Bb Ab/C Ebm7 Ab Db/F Gb Ebm7 (2x)
+[Ab] [Gb/Bb] [Ab/C] [Ebm7] [Ab] [Db/F] [Gb] [Ebm7]
+{ci: 2x}
 
 {comment: Vamp}
 {ci: 1st time only:}
-[Ab]Oh…[Gb/Bb] [Ab/C] [Ebm7]                                                                               [Ab]([Db/F]2[Gb]x[Ebm7])
+[Ab]Oh…[Gb/Bb][Ab/C][Ebm7][Ab][Db/F][Gb][Ebm7]
+{ci: 2x}
 {ci: Repeat Chorus to end}

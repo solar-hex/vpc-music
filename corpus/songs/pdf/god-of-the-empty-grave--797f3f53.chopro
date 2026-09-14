@@ -3,8 +3,8 @@
 {key: C}
 {tempo: 116}
 {time: 4/4}
-{x_verified: number chart, 100% of 41 chords}
-{x_theme: easter, cross, praise}
+{x_verified: number chart, 100% of 63 chords}
+{x_theme: easter, praise, cross}
 {x_source: pdf:UPCI Music/2024/God of the Empty Grave/God-of-the-Empty-Grave-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FGod%20of%20the%20Empty%20Grave}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/god-of-the-empty-grave/audio/alto.mp3}
@@ -19,68 +19,89 @@
 {x_album: God of the Empty Grave (Single)}
 {x_writers: Matt Faircloth, Nathan}
 
-French, Sean Hill, and Shelly E Johnson
+{comment: Intro}
+| C / / / | / / / / | Csus / / / | / / / / |
 
-{comment: Intro Verse 3}
+{comment: Verse 1}
+[C]On the cross it was finished
+[Csus]Our redemption completed
+[Am]For the grave could not hold you
+[G]You cannot be defeated
+
+{comment: Verse 2}
+[C]Now forever in glory
+[Csus]On the throne You are seated
+[Am]For the grave could not hold you
+[C/E]You can[F]not be de[G]feated
+[C/E]You can[F]not be de[G]feated
+
+{comment: Chorus}
+[C]Hallelujah [Dm]Jesus is risen
+[Am]You have over[G]come the world
+[C/E]Death is conquered, [G]we are triu[G#°]mphant
+[Am]The tomb is shouting[G]
+
+{comment: Refrain}
+You’re the God of the emp[C/E]ty gr[F]ave
+O[Am]h, th[G]e tomb is shouting[C/E], oh,[F] oh[Am][G]
+
+{comment: Verse 3}
+[C/E]W[F]e can live resurrected
+[Am]I[G]n the power of Jesus
+[C/E]E[F]ven death could not hold You
+
+{comment: Verse 3}
 {ci: cont.}
-| C / / / | / / / / | Csus / / / | / / / / | C/E F G
-You cannot be defeated
-Verse 1 C/E F G
-C Now we can’t be defeated
-On the cross it was finished Chorus (2x)
-[Csus]Our redemption completed                          [C]Hallelujah [Dm]Jesus is risen
-[Am]For the grave could not hold you                        [Am]You have over[G]come the world
-[G]You cannot be defeated                             [C/E]Death is conquered, [F]we are triumphant
-Verse 2 Am G
-C The tomb is shouting
-Now forever in glory Refrain
-[Csus]On the throne You are seated                        Instrumental
-Am | C / / / | / / / / | Csus / / / | / / / / |
-For the grave could not hold you
-[C/E]You cann[F]ot be de[G]feated                             Bridge (2x)
-[C/E]You cann[F]ot be de[G]feated                             [C]Out of the grave You have called us
-Chorus                                             [F]Into the hope of Your promise
-[C]Hallelujah [Dm]Jesus is risen                               [Am]Here in the light of Your goodness
-[Am]You have over[G]come the world                        [F]We are alive, we’re fully alive
-C/E G G#º
-Death is conquered, we are triumphant Bridge
-[Am]The tomb is shouting[G]                               [C/E]Out of the grave You have called us
-Refrain                                             [G]Into the hope of Your promise
-x C/E F Am
-You’re the God of the empty grave Here in the light of Your goodness
-Oh[Am], the[G] tomb is shouting[C/E], oh,[F] oh[Am] [G]                      [F]We are alive, we’re fully alive
+[C/E]You can[F]not be de[G]feated
+[C/E]Now we[F] can’t be [G]defeated
 
-{comment: Verse 3 Chorus}
-C/E F x
-We can live resurrected Hallelujah Jesus is risen
-Am G You have overcome the world
-In the power of Jesus C/E F
-C/E F Death is conquered, we are triumphant
-Even death could not hold You Am G
-The tomb is shouting
+{comment: Chorus}
+{ci: 2x}
+[C]Hallelujah [Dm]Jesus is risen
+[Am]You have over[G]come the world
+[C/E]Death is conquered, [F]we are triumphant
+[Am]The tomb is shouting[G]
+
+{comment: Refrain}
+
+{comment: Instrumental}
+| C / / / | / / / / | Csus / / / | / / / / |
+
+{comment: Bridge}
+{ci: 2x}
+[C]Out of the grave You have called us
+[F]Into the hope of Your promise
+[Am]Here in the light of Your goodness
+[F]We are alive, we’re fully alive
+
+{comment: Bridge}
+[C/E]Out of the grave You have called us
+[G]Into the hope of Your promise
+[Am]Here in the light of Your goodness
+[F]We are alive, we’re fully alive
+
+{comment: Chorus}
+x
+Hallelujah Jesus is risen
+You have overcome the world
+[C/E]Death is conquered, [F]we are triumphant
+[Am]The tomb is [G]shouting
 UPCI Music 1
-French, Sean Hill, and Shelly E Johnson
 
 {comment: Chorus}
 [C]Hallelujah [Dm]Jesus is risen
 [Am]You have over[G]come the world
 [C/E]Death is conquered, [F]we are triumphant
-[Am]The tomb is shoutin[G+7(#9)]g
+[Am]The tomb is shouting[G+7(#9)]
 
 {comment: Vamp}
-C/E F F#º C/G
-You’re the God of the empty grave
-C/E F F#º C/G
-You’re the God of the empty grave
-[Bb] [F/A] [G+7(#9)]
-{ci: Eb - D - C D - C - C) Bb F/A G+7(#9}
-The tomb is shouting, oh
-C/E F F#º C/G
-You’re the God of the empty grave
-C/E F F#º C/G
-You’re the God of the empty grave
-(Eb - D  -  C D - C - C) B[Bb]b F[F/A]/A G[G+7(#9)]11
-The tomb is shouting, oh
-x C
-You’re the God of the empty grave
+You’re the God of the empt[C/E]y gra[F]v[F#°]e[C/G]
+You’re the God of the empt[C/E]y gra[F]v[F#°]e[C/G]
+God of the empty grave[Bb][F/A][G+7(#9)]
+[(Eb-D-C-D-C-C)]The tomb is shouting, o[Bb]h[F/A][G+7(#9)]
+You’re the God of the empt[C/E]y gra[F]v[F#°]e[C/G]
+You’re the God of the empt[C/E]y gra[F]v[F#°]e[C/G]
+God of the empty grave[Bb][F/A][G+7(#9)]
+[(Eb-D-C-D-C-C)]The tomb is shouting, o[Bb]h[F/A][G11]
+You’re the God of the empty g[C]rave
 UPCI Music 2

@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 50}
 {time: 4/4}
-{x_verified: number chart, 88% of 86 chords}
+{x_verified: number chart, 97% of 107 chords}
 {x_theme: joy}
 {x_source: pdf:UPCI Music/2019/For Your Glory/For-Your-Glory-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FFor%20Your%20Glory}
@@ -16,39 +16,64 @@
 {x_source_for_your_glory_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/for-your-glory/source/For-Your-Glory-Vocal-Parts.zip}
 {x_album: Grace}
 
-{comment: Intro Chorus}
+{comment: Intro}
+| / / / maj13
+(Ab-C)| Db Ab/C / / |
+| Gbmaj7 Fm9 / Db(add2) Ab/Bb |
+| Eb/G Db/Eb Bb/D Dbm6 |
+
+{comment: Verse}
+{ci: Solo}
+[Ab]Lord,[Bbm7]   if    [Ab/C]I    find[Db] fav[Ab/C]or in Your si[Eb]ght.
+[Ab]Lord,[Bbm7]    [Ab/C]please, [Db]hear my hearts [Eb]cry.
+[Db]I’m desp’rately [Ab/C]waiting to [Db]be where You [Fm7]are.
+I’ll [Db]cross the hottest [Ab/C]desert,
+I’ll t[Db]ravel [Fm7]near or [Eb/G]far.
+Chorus (Solo)
+{ci: 2xs}
+For Your g[Db]lo  -[Ab/C]  ry,   I will[Db] do an[Fm7]ything[Eb/G].
+Just to [Db]see  [Ab/C]You,  to be[Db]hold You[Fm7] as my [Eb]King.
+
+{comment: Verse}
+{ci: men sing 8vb}
+[Ab]Lord,[Bbm7]   if    [Ab/C]I    find [Db]favor in[Ab] You[Eb/G]r sight.
+[Ab]Lord,[Bbm7]    [Ab/C]please, [Db]hear my hearts [Eb]cry.
+I’m [Db]desp’rately w[Ab/C]aiting to [Db]be where You ar[Fm7]e.
+I’ll [Db]cross the hottest [Ab/C]desert,
+I’ll t[Db]ravel [Bbm7]near or [Eb]far.
+Chorus (Parts)
+{ci: 2xs}
+
+{comment: Chorus}
 {ci: Parts}
-| / / / maj13 7
-(Ab-C)| Db Ab/C / / | Db Ab/C (Ab-G) Db Eb Fm Eb
-For Your glo - ry, I will do an – y - thing.
-| Gbmaj7 Fm9 / Db(add2) Ab/Bb | Db Eb Fm Eb/G Ab
-Just to see You,
-| Eb/G Db/Eb Bb/D Dbm6 | Db Fm Eb/G
-to behold You as my King.
-Verse (Solo) Bridge 1 (Solo)
-[Ab]Lord,[Bbm7]   if     [Ab/C]I     find[Db] fav[Ab/C]or in Your si[Eb]ght.             Wanna be whe[Db]re you a[Eb]re, gotta be wh[Eb]ere You [Fm7]are.
-[Ab]Lord,[Bbm7]       [Ab/C]please, [Db]hear my hearts c[Eb]ry.                 Wanna be whe[Eb]re You a[Db]re, gotta be wh[Eb/G]ere You [Fm7]are.
-[Db]I’m desp’rately [Ab/C]waiting t[Db]o be where You [Fm7]are.              Bridge 1 (Unison) 2xs
-I’ll[Db] cross the hottest [Ab/C]desert,                             Bridge 2 (Solo)
-I’ll[Db] travel[Fm7] near or [Eb/G]far.                                 Bridge 2 (men sing 8vb)
-Wanna be whe[Db]re you a[Eb]re, gotta be wh[Eb]ere You [Fm7]are.
-Chorus (Solo) 2xs Eb Db Gm11 C7(alt) Fm9
-[Db]W[Ab/C]a[Db]n[Fm7]n[Eb/G]a be where You are, gotta be where You are.
-For Your glo - ry, I will do anything. Db Eb Eb Fm7
-[Db]W[Ab/C]a[Db]n[Fm7]n[Eb]a be where you are, gotta be where You are.
-Just to see You, to behold You as my King. Eb Db Eb/G Fm7
-Wanna be where You are, gotta be where You are.
-Verse (men sing 8vb)                                  Wanna be whe[Db]re you a[Eb]re, gotta be wh[Eb]ere You [Fm7]are.
-Ab Bbm7 Ab/C Db Ab Eb/G 11 7(alt) 9
-Lord,   if     I     find favor in Your sight.              Wanna be whe[Eb]re You a[Db]re, gotta be [Gm]where[C] You [Fm]are.
-Ab Bbm7 Ab/C Db Eb 7
-Lord,       please, hear my hearts cry.                 Wanna be whe[Db]re you a[Eb]re, gotta be wh[Eb]ere You [Fm]are.
-Db Ab/C Db Fm7 11 7(alt) 9
-I’m desp’rately waiting to be where You are.              Wanna be whe[Eb]re You a[Db]re, gotta be [Gm]where[C] You [Fm]are.
-I’ll[Db] cross the hottest [Ab/C]desert,                             Ending
-Db Bbm7 Eb 7
-I’ll travel near or far.                                 For Your [Db]glo  [Ab/C]-  ry,   I wil[Db]l do [Fm]anythi[Eb/G]ng.
-Just to [Db]see  [Ab/C]You,  to b[Db]ehold You[Fm7] as my [Eb/G]King.
-Chorus (Parts) 2xs Db Eb Eb Fm7
-Wanna be where you are, peace is where You are.
-joy is[Eb] where You ar[Db]e, and love is[Eb/G] who You[Fm7] are.
+Db Ab/C 7
+For Your glo  -  ry,    [(Ab-G)]I  will [Db]do  [Eb]an –[Fm] y -  [Eb]thing.
+Just to s[Db]ee[Eb] [Fm]    [Eb/G]Y[Ab]ou,
+to be[Db]hold You [Fm]as my [Eb/G]King.
+
+{comment: Bridge 1}
+{ci: Solo}
+Wanna be w[Db]here you [Eb]are, gotta be wh[Eb]ere You[Fm7] are.
+Wanna be w[Eb]here You[Db] are, gotta be wh[Eb/G]ere You[Fm7] are.
+Bridge 1 (Unison)
+{ci: 2xs}
+
+{comment: Bridge 2}
+{ci: Solo}
+
+{comment: Bridge 2}
+{ci: men sing 8vb}
+Wanna be w[Db]here you [Eb]are, gotta be wh[Eb]ere You[Fm7] are.
+Wanna be w[Eb]here You[Db] are, gotta be [Gm11]where[C7(alt)] You [Fm9]are.
+Wanna be w[Db]here you [Eb]are, gotta be wh[Eb]ere You[Fm7] are.
+Wanna be w[Eb]here You[Db] are, gotta be w[Eb/G]here You[Fm7] are.
+Wanna be w[Db]here you [Eb]are, gotta be wh[Eb]ere You[Fm7] are.
+Wanna be w[Eb]here You[Db] are, gotta be [Gm11]where[C7(alt)] You [Fm9]are.
+Wanna be w[Db]here you [Eb]are, gotta be wh[Eb]ere You[Fm7] are.
+Wanna be w[Eb]here You[Db] are, gotta be [Gm11]where[C7(alt)] You [Fm9]are.
+
+{comment: Ending}
+For Your [Db]glo  [Ab/C]-  ry,   I will[Db] do [Fm7]anythi[Eb/G]ng.
+Just to [Db]see  [Ab/C]You,  to be[Db]hold You[Fm7] as my [Eb/G]King.
+Wanna be w[Db]here you [Eb]are, peace is wh[Eb]ere You[Fm7] are.
+joy is [Eb]where You ar[Db]e, and love is [Eb/G]who Yo[Fm7]u are.

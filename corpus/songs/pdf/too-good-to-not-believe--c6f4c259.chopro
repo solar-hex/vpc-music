@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 72}
 {time: 4/4}
-{x_verified: number chart, 100% of 50 chords}
+{x_verified: number chart, 100% of 72 chords}
 {x_theme: healing, faith-trust, revival, easter, salvation}
 {x_source: pdf:UPCI Music/2022/Too Good to Not Believe/Too-Good-to-Not-Believe-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FToo%20Good%20to%20Not%20Believe}
@@ -19,56 +19,71 @@
 {x_album: Too Good to Not Believe (Single)}
 {x_writers: Brandon Lake}
 
-Chris Davenport, Cody Carnes,
-Josh Silverberg
-
 {comment: Intro}
-| Fmaj9 / / / | C / / / | Am7 / / / | G / / / | Tag 2
-Verse 1                                             You’re too good to not be[Fmaj9]lieve
-I’ve lived[F] stories that have proved Your faithfu[C]lness       Too good to n[G]ot beli[Am7]eve, too good to[G/B] not bel[C]ieve
-I’ve seen[Am] miracles my mind can’t compr[G4]ehend            After everything I’ve [G]seen
-And there is [F]beauty in what I can’t under[Am7]stand            You’re too good to not be[Fmaj9]lieve
-Jesus it’s [C]You, Jesus it’s [G4]You                           Too good to n[G]ot beli[Am7]eve, too good to[G/B] not bel[C]ieve
+| Fmaj9 / / / | C / / / | Am7 / / / | G / / / |
 
-{comment: Chorus Interlude}
-Fmaj9 C | F / / / | Am7 / / / | C / / / | G / / / |
-I believe You’re the wonder working God
-Am7 Bridge 1
-You’re the wonder working God F
-G Fmaj9 We’ve seen cancer disappear
-All the miracles I’ve seen, too good to not believe Am7
-Am7 We’ve seen broken bodies healed
-You’re the wonder working God C
-C Don’t you tell me He can’t do it
-And You heal because You love G4
-G4 Don’t you tell me He can’t do it
-Oh, the miracles we’ll see F
-We’ve seen real life resurrection
-Tag 1 Am7
-Fmaj9 We’ve seen mental health restored
-You’re too good to not believe C
-Am7 C G Don’t you tell me He can’t do it
-Too good to not believe, too good to not believe G4
-Don’t you tell me He can’t do it
+{comment: Verse 1}
+I’ve lived [F]stories that have proved Your faithful[C]ness
+I’ve seen [Am]miracles my mind can’t compre[G4]hend
+And there is [F]beauty in what I can’t under[Am7]stand
+Jesus it’s Y[C]ou, Jesus it’s Y[G4]ou
 
-{comment: Verse 2 Bridge 2}
-I can’t[F] resurrect a man with my own[C] hands               We’ve seen fa[F]milies reunited
-But just the[Am7] mention of Your name                      We’ve seen pr[Am7]odigals return
-Can raise the [Gsus]dead[G]                                   Don’t you t[C]ell me He can’t do it
-All the [F]glory to the only One who[Am7] can                    Don’t you te[G]ll me He can’t do it
-Jesus it’s [C]You, Jesus it’s [G]You                           We’ve seen tr[F]oubled souls delivered
-Chorus 1 G Am7
-We’ve seen addicts finally free
-Chris Davenport, Cody Carnes,
-Josh Silverberg
+{comment: Chorus}
+I b[Fmaj9]elieve You’re the wonder working G[C]od
+You’re the wonder working G[Am7]od
+All the miracles I’ve s[G]een, too good to not b[Fmaj9]elieve
+You’re the wonder working [Am7]God
+And You heal because You l[C]ove
+Oh, the miracles we’ll [G4]see
+
+{comment: Tag 1}
+You’re too good to not be[Fmaj9]lieve
+Too good to not bel[Am7]ieve, too good to not be[C]lieve[G]
+
+{comment: Verse 2}
+I can’t [F]resurrect a man with my own [C]hands
+But just the [Am7]mention of Your name
+Can raise the [Gsus]dead[G]
+All the [F]glory to the only One who [Am7]can
+Jesus it’s [C]You, Jesus it’s Y[G]ou
+
+{comment: Chorus 1}
+
+{comment: Tag 2}
+You’re too good to not be[Fmaj9]lieve
+Too good to [G]not beli[Am7]eve, too good to[G/B] not bel[C]ieve
+After everything I’ve s[G]een
+You’re too good to not be[Fmaj9]lieve
+Too good to [G]not beli[Am7]eve, too good to[G/B] not bel[C]ieve
+
+{comment: Interlude}
+| F / / / | Am7 / / / | C / / / | G / / / |
+
+{comment: Bridge 1}
+We’ve seen c[F]ancer disappear
+We’ve seen b[Am7]roken bodies healed
+Don’t you t[C]ell me He can’t do it
+Don’t you t[G4]ell me He can’t do it
+We’ve seen r[F]eal life resurrection
+We’ve seen [Am7]mental health restored
+Don’t you t[C]ell me He can’t do it
+Don’t you t[G4]ell me He can’t do it
+
+{comment: Bridge 2}
+We’ve seen f[F]amilies reunited
+We’ve seen p[Am7]rodigals return
+Don’t you t[C]ell me He can’t do it
+Don’t you t[G]ell me He can’t do it
+We’ve seen t[F]roubled souls delivered
+[G]We’ve seen [Am7]addicts finally free
 [G/B]Don’t you t[C]ell me He can’t do it
-Don’t you te[G]ll me He can’t do it
+Don’t you t[G]ell me He can’t do it
 
 {comment: Bridge 3}
 We’ll see citie[Dm7]s in revival
 And salvation[Am7] flood the streets
 Don’t you t[C]ell me He can’t do it
-Don’t you te[G]ll me He can’t do it
+Don’t you t[G]ell me He can’t do it
 We’ll see glor[Dm7]y fill the nations
 Like the worl[C/E]d has never seen
 Don’t you t[Am7]ell me He can’t do it
@@ -78,7 +93,7 @@ Don’t you t[Am7]ell me He can’t do it
 
 {comment: Tag 3}
 You’re too good to not be[F]lieve
-Too good to n[G]ot beli[Am7]eve, too good to[G/B] not bel[C]iev[G]e
+Too good to [G]not beli[Am7]eve, too good to[G/B] not bel[C]ieve[G]
 | Fmaj9 / / G | Am7 / / G/B | C / / / | G / / / |
 
 {comment: Ending}

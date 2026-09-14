@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { classifyChartLine, mergeByPosition } from "../corpus/pdfSong.js";
-import { itemToElement, readChartHeader } from "../corpus/pdfTextLocal.js";
+import { transposeChordPro } from "@vpc-music/shared";
+import { chartBody, classifyChartLine, mergeByPosition, readChartRow } from "../corpus/pdfSong.js";
+import { charOffsets, coalesceRuns, itemToElement, readChartHeader } from "../corpus/pdfTextLocal.js";
 
 describe("classifyChartLine", () => {
   it("recognises section headers as these charts actually write them", () => {
@@ -288,5 +289,221 @@ describe("artistFromLine", () => {
     expect(artistFromLine("Intro Chorus (Parts) (2x)")).toBeNull();
     expect(artistFromLine("| Dm C/E Dm |")).toBeNull();
     expect(artistFromLine("Key: C Tempo: 104")).toBeNull();
+  });
+});
+
+describe("section names as the charts write them", () => {
+  it("keeps every note a section name carries", () => {
+    expect(classifyChartLine("Verse 2 (Key Change) (Parts)")).toMatchObject({ type: "section", name: "Verse 2", note: "Key Change, Parts" });
+    expect(classifyChartLine("Bridge 1 (Unison) (2xs)")).toMatchObject({ type: "section", name: "Bridge 1", note: "Unison, 2xs" });
+  });
+
+  it("reads a dash before a note as punctuation, not part of the name", () => {
+    expect(classifyChartLine("Intro – (loop only)")).toMatchObject({ type: "section", name: "Intro", note: "loop only" });
+  });
+
+  it("reads how a section is played, written after its name", () => {
+    expect(classifyChartLine("Interlude Guitars riffing")).toMatchObject({ name: "Interlude", note: "Guitars riffing" });
+    expect(classifyChartLine("Intro (2x) Guitars riffing")).toMatchObject({ name: "Intro", note: "2x, Guitars riffing" });
+    expect(classifyChartLine("Vamp 1& 2 same as Chorus")).toMatchObject({ name: "Vamp 1 & 2", note: "same as Chorus" });
+    expect(classifyChartLine("Chorus 1 1st time: 2x 2nd time: 1x")).toMatchObject({ name: "Chorus 1", note: "1st time: 2x 2nd time: 1x" });
+    expect(classifyChartLine("Interlude to Chorus")).toMatchObject({ type: "section", name: "Interlude to Chorus" });
+  });
+
+  it("still reads a lyric that opens with a section word as a lyric", () => {
+    expect(classifyChartLine("Bridge over troubled water carries me home today").type).toBe("lyric");
+    expect(classifyChartLine("Chorus all the earth").type).toBe("lyric");
+  });
+
+  it("reads a road map as a note, whichever arrow arrived", () => {
+    // The arrow is a symbol-font glyph that pdf.js hands back as "à".
+    expect(classifyChartLine("Pre-Chorus à Chorus")).toEqual({ type: "note", text: "Pre-Chorus → Chorus" });
+  });
+
+  it("answers at once on a line built to make the match backtrack", () => {
+    for (const hostile of ["Chorus " + "& ".repeat(40) + "x", "Chorus " + "1st time ".repeat(12) + "zz", "Bridge " + "(".repeat(40) + " x"]) {
+      const started = performance.now();
+      expect(classifyChartLine(hostile).type).toBe("lyric");
+      expect(performance.now() - started).toBeLessThan(50);
+    }
+  });
+});
+
+describe("reading a row of a chart", () => {
+  /** Words laid out as pdf.js gives them: each run with its own x. */
+  const words = (...parts) =>
+    parts.map(([text, x]) => ({ text, x, y: 0, width: text.length * 6, height: 11, fontSize: 11, pageIndex: 0 }));
+  const kinds = (...parts) => readChartRow(words(...parts)).map((t) => `${t.kind}:${t.text}`);
+
+  it("rejoins a bracketed note pdf.js split into words", () => {
+    expect(kinds(["(cut", 324], ["music)", 354], ["Cm7", 456], ["Cm7", 480])).toEqual(["note:cut music", "chord:Cm7", "chord:Cm7"]);
+  });
+
+  it("makes a cue part of the chord it follows", () => {
+    expect(kinds(["Dm7", 324], ["(hits)", 350], ["C(hits)", 400])).toEqual(["chord:Dm7(hits)", "chord:C(hits)"]);
+  });
+
+  it("peels a count off the chord it is stuck to", () => {
+    expect(kinds(["Intro", 36], ["B", 80], ["G#11(2x)", 100])).toEqual(["word:Intro", "chord:B", "chord:G#11", "note:2x"]);
+  });
+
+  it("reads quick chords linked by dashes, and a hit mark, as music", () => {
+    expect(kinds(["C#/E#", 36], ["-", 72], ["D#m", 84], ["-", 110], ["C#", 122], ["x", 150])).toEqual([
+      "chord:C#/E#", "dash:-", "chord:D#m", "dash:-", "chord:C#", "dash:x",
+    ]);
+    expect(kinds(["G#m-", 36], ["Eb/G", 70])).toEqual(["chord:G#m", "dash:-", "chord:Eb/G"]);
+  });
+
+  it("reads directions written among the chords as notes", () => {
+    expect(kinds(["To", 36], ["Verse:", 54], ["E2/G#", 100], ["F#/A#", 140])).toEqual(["note:To Verse", "chord:E2/G#", "chord:F#/A#"]);
+    expect(kinds(["Gm7", 36], ["2nd", 70], ["time", 92], ["only:", 122], ["Cb2", 160])).toEqual(["chord:Gm7", "note:2nd time only", "chord:Cb2"]);
+  });
+
+  it("reads a passing-chord run in brackets as one chord the transposer can move", () => {
+    const [run] = readChartRow(words(["(Ab", 36], ["–", 60], ["G)", 72]));
+    expect(run).toMatchObject({ kind: "chord", text: "(Ab-G)" });
+    expect(transposeChordPro(`[${run.text}]`, 2)).toBe("[(Bb-A)]");
+  });
+
+  it("writes every chord the way the transposer reads it", () => {
+    const tokens = readChartRow(words(["G#o7", 36], ["Dº", 70], ["A#Ø7", 100], ["C7(b9/#5)", 140], ["/Ab", 210], ["Cm-G7", 240]));
+    expect(tokens.map((t) => t.text)).toEqual(["G#°7", "D°", "A#ø7", "C7(b9#5)", "/Ab", "Cm-G7"]);
+    for (const token of tokens) expect(transposeChordPro(`[${token.text}]`, 2)).not.toBe(`[${token.text}]`);
+  });
+
+  it("does not take the words Go and Do for chords", () => {
+    expect(kinds(["Go", 36], ["Do", 60])).toEqual(["word:Go", "word:Do"]);
+  });
+});
+
+describe("the body of a chart", () => {
+  const row = (y, parts, { page = 0, region = "body" } = {}) => ({
+    y,
+    pageIndex: page,
+    columnRank: 0,
+    elements: parts.map(([text, x, width]) => ({ text, x, y, width: width ?? text.length * 6, height: 11, fontSize: 11, pageIndex: page, region })),
+  });
+  const plain = (line) => line.replace(/\[[^\]]*\]/g, "");
+
+  it("reads a note ahead of the chords first, and one after them after the lyric", () => {
+    const { body } = chartBody([
+      row(10, [["(cut", 36], ["music)", 66], ["Cm7", 120]]),
+      row(22, [["No more sacrificing lambs,", 36]]),
+      row(40, [["Bb", 36], ["Cm7", 100], ["(build)", 200]]),
+      row(52, [["We have access to the throne", 36]]),
+    ]);
+    expect(body[0]).toBe("{ci: cut music}");
+    expect(plain(body[1])).toBe("No more sacrificing lambs,");
+    expect(body[1]).toContain("[Cm7]");
+    expect(plain(body[2])).toBe("We have access to the throne");
+    expect(body[3]).toBe("{ci: build}");
+  });
+
+  it("puts chords ahead of a bar line on the lyric below, then the bar, then its note", () => {
+    const { body } = chartBody([
+      row(10, [["Cm7", 36], ["Bb/D", 70], ["|", 110], ["/", 120], ["/", 130], ["/", 140], ["Bb/C", 150], ["(key", 190], ["change)", 222]]),
+      row(22, [["the Lamb.", 36]]),
+    ]);
+    expect(plain(body[0])).toBe("the Lamb.");
+    expect(body[0]).toMatch(/\[Cm7\].*\[Bb\/D\]/);
+    expect(body.slice(1)).toEqual(["| / / / Bb/C", "{ci: key change}"]);
+  });
+
+  it("splits a section name from the chords on its row", () => {
+    expect(chartBody([row(10, [["Intro", 36], ["D", 90], ["Bm7", 120], ["A", 160], ["G", 190]])]).body).toEqual([
+      "{comment: Intro}",
+      "[D] [Bm7] [A] [G]",
+    ]);
+  });
+
+  it("keeps a chorus line that sings the title, and drops the title above the music", () => {
+    const { body, dropped } = chartBody(
+      [
+        row(0, [["Speak The Name", 36]]),
+        row(20, [["Chorus", 36]]),
+        row(40, [["Db", 90]]),
+        row(52, [["Speak the Name", 36]]),
+      ],
+      { title: "Speak The Name" },
+    );
+    expect(dropped).toBe(1);
+    expect(body[0]).toBe("{comment: Chorus}");
+    expect(plain(body[1])).toBe("Speak the Name");
+    expect(body[1]).toContain("[Db]");
+  });
+
+  it("drops the credit block on every page it repeats on", () => {
+    // The performer-and-album row carries no label, so only its place in the
+    // header says it is not a lyric.
+    const { body } = chartBody([
+      row(86, [["Mark Yandris – Covered (Single)", 36]], { region: "header" }),
+      row(120, [["Verse 1", 36]]),
+      row(86, [["Mark Yandris – Covered (Single)", 36]], { page: 1, region: "header" }),
+      row(120, [["No more sacrificing lambs,", 36]], { page: 1 }),
+    ]);
+    expect(body).toEqual(["{comment: Verse 1}", "No more sacrificing lambs,"]);
+  });
+
+  it("puts quick chords linked by dashes on the lyric below, dropping the dashes", () => {
+    const { body } = chartBody([
+      row(10, [["C#/E#", 36], ["-", 90], ["D#m", 110], ["-", 150], ["C#", 170]]),
+      row(22, [["before my first step, my first step", 36]]),
+    ]);
+    expect(body).toHaveLength(1);
+    expect(plain(body[0])).toBe("before my first step, my first step");
+    expect(body[0].match(/\[[^\]]+\]/g)).toEqual(["[C#/E#]", "[D#m]", "[C#]"]);
+  });
+
+  it("reads a section carried from the foot of one column to the head of the next as one", () => {
+    const { body } = chartBody([row(700, [["Chorus", 36]]), row(128, [["Chorus", 324]]), row(141, [["Covered, covered", 324]])]);
+    expect(body).toEqual(["{comment: Chorus}", "Covered, covered"]);
+  });
+
+  it("closes up a lyric spaced out on tab stops, leaving a held beat where chords sit", () => {
+    expect(chartBody([row(0, [["B", 36], ["A", 144]]), row(12, [["Oh,", 36], ["oh.", 144]])]).body).toEqual(["[B]Oh,    [A]oh."]);
+    // With no chords over it there is nothing to hold room for.
+    expect(chartBody([row(10, [["Oh,", 36], ["oh.", 144]])]).body).toEqual(["Oh, oh."]);
+  });
+
+  it("lifts an instruction off the end of a lyric into a note", () => {
+    expect(chartBody([row(10, [["Reign, reign, reign.", 36], ["(repeat)", 180]])]).body).toEqual(["Reign, reign, reign.", "{ci: repeat}"]);
+    expect(chartBody([row(10, [["Oh we worship You.", 36], ["2x", 180]])]).body).toEqual(["Oh we worship You.", "{ci: 2x}"]);
+  });
+});
+
+describe("chord placement past the words", () => {
+  it("puts a chord printed after the last word after it, not on its last letter", () => {
+    const lyric = { elements: [{ text: "the Lamb.", x: 36, width: 54, fontSize: 11 }] };
+    expect(mergeByPosition({ tokens: [{ text: "Bb/D", x: 200, width: 24 }] }, lyric)).toBe("the Lamb.[Bb/D]");
+  });
+});
+
+describe("letter positions inside a run", () => {
+  it("shares a run's width by letter, so a narrow letter takes less of it", () => {
+    // "i" is about a quarter the width of "m". Even spacing put chords two
+    // letters out by the end of a lyric.
+    const [start, afterI, afterM, end] = charOffsets({ text: "imi", x: 0, width: 100 });
+    expect(start).toBe(0);
+    expect(afterI).toBeLessThan(100 / 3);
+    expect(afterM).toBeGreaterThan((2 * 100) / 3);
+    expect(end).toBeCloseTo(100);
+  });
+
+  it("never fuses two chords across a space written inside a run", () => {
+    // pdf.js gave "Gm" "11 " "Gm" "7": the superscript's own space measured
+    // under the joining threshold, and "Gm11" fused with "Gm7".
+    const runs = [
+      { text: "Gm", x: 100, width: 14 },
+      { text: "11 ", x: 114, width: 9 },
+      { text: "Gm", x: 123.5, width: 14 },
+      { text: "7", x: 137.5, width: 5 },
+    ].map((r) => ({ ...r, y: 0, height: 11, fontSize: 11, pageIndex: 0 }));
+    expect(coalesceRuns(runs).map((t) => t.text)).toEqual(["Gm11", "Gm7"]);
+  });
+
+  it("carries the page width, so columns are found from the page's real centre", () => {
+    const item = { str: "x", transform: [10, 0, 0, 10, 5, 700], width: 5, fontName: "f" };
+    expect(itemToElement(item, 792, 0, {}, 612).pageWidth).toBe(612);
+    expect(itemToElement(item, 792, 0)).not.toHaveProperty("pageWidth");
   });
 });

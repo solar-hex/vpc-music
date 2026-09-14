@@ -17,39 +17,55 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/hymn-of-praise/charts/vocals.pdf}
 {x_album: Sounds of Revival}
 
-{comment: Intro Chorus 3}
-| Ab / / Cm7 | Db / Bbm/Db / | (Break) Bb Bb F/Bb Eb/Bb Cm/Bb
-| Ab/Eb / Eb / | Ab / / Eb/Db | Hal – le – lu – jah, Lord we
-| Ab/C / / Cm7 | Db / Bbm/Db / | Bb/F F Bb F/A Bb/G Eb
-| Ab/Eb / Eb / | Ab / / Eb/Db | give You praise.
-Bb/D Abma7/Bb Eb2 Eb(Break)
-Hal – le – lu – jah, Lord we
-Chorus 1 (Solo) Bb/F F
-Ab/C Cm7 Db Bbm Ab/Eb Eb give You
-We give You praise. Lord, we give You
-Ab Bbm7 Db/Eb Eb/Db Ab/C Bbm Cm7 Interlude
-praise. We give You | Bb / Bb F/A | Gm7 / / / | Eb / / / |
-Db Bbm Ab/Eb Eb Ab Absus Eb/Db praise.
-praise. Lord, we give You praise. | Bb/F / F / | Bb / Bb F/A | Gm7 / / F |
-| Eb / / / | Bb/F / F / | Bb /
+{comment: Intro}
+| Ab / / Cm7 | Db / Bbm/Db / |
+| Ab/Eb / Eb / | Ab / / Eb/Db |
+| Ab/C / / Cm7 | Db / Bbm/Db / |
+| Ab/Eb / Eb / | Ab / / Eb/Db |
+
+{comment: Chorus 1}
+{ci: Solo}
+[Ab/C]We  give [Cm7]You   [Db]praise.[Bbm] Lord, we  [Ab/Eb]give   [Eb]You
+[Ab]praise.[Bbm7] [Db/Eb]    [Eb/Db]W[Ab/C]e   [Bbm]give   [Cm7]You
+[Db]praise.  [Bbm]Lord, we[Ab/Eb]  give   [Eb]You [Ab]praise[Absus].[Eb/Db]
 
 {comment: Chorus 1}
 {ci: Unison}
-[Ab/C]We  give[Cm7] You   [Db]praise[Bbm/Db]. Lord, we  [Ab/Eb]give   [Eb]You         Bridge (Solo) 2xs
-[Ab]praise.[Eb/Db]           [Ab/C]We  give  [Cm7]You                      [Bb]I   [F/A]can  [Gm7]feel[F]           [Eb]Your spirit  [Bb/F]in   t[F]his
-[Db]praise.  [Bbm/Db]Lord, we   [Ab/Eb]give   [Eb]You p[Ab]raise.[Eb/Db]                 [Bb]place   [Bb]I   [F/A]can  [Gm7]feel[F]         [Eb]Your presence
-[Bb/F]In     [F]this [Bb]place.
+[Ab/C]We  give [Cm7]You   [Db]praise[Bbm/Db]. Lord, we  [Ab/Eb]give   [Eb]You
+[Ab]praise.[Eb/Db]    [Ab/C]We  give  [Cm7]You
+[Db]praise.  [Bbm/Db]Lord, we   [Ab/Eb]give   [Eb]You [Ab]praise[Eb/Db].
 
 {comment: Chorus 1}
 {ci: Unison to Key Change}
-[Ab/C]We  give[Cm7] You   [Db]praise[Bbm/Db]. Lord, we  [Ab/Eb]give   [Eb]You         Bridge (Unison) 4xs
-[Ab]praise.[Eb/Db]           [Ab/C]We  give  [Cm7]You
-[Db]praise.  [Bbm/Db]Lord, we   [Ab/Eb]give   [Eb]You p[E/D]raise.
+[Ab/C]We  give [Cm7]You   [Db]praise[Bbm/Db]. Lord, we  [Ab/Eb]give   [Eb]You
+[Ab]praise.[Eb/Db]    [Ab/C]We  give  [Cm7]You
+[Db]praise.  [Bbm/Db]Lord, we   [Ab/Eb]give   [Eb]You [E/D]praise.
 
 {comment: Chorus 2}
 {ci: Parts}
-[A/C#]For     all[C#m7] You’ve  [D]done,  [Bm/D]Lord,  we [A/E]give [E]you
-[A]praise.[E/D]        [A/C#]For   all  [C#m7]You’ve
-[D]Done,  [Bm/D]Lord, we  [A/E]give  [E]you p[A]raise[E/D].
-[A/C#]For     all[C#m7] You’ve  [D]done,  [Bm/D]Lord,  we [A/E]give [E]you
+[A/C#]For    all [C#m7]You’ve  [D]done,  [Bm/D]Lord,  we [A/E]give [E]you
+[A]praise.[E/D]    [A/C#]For   all  [C#m7]You’ve
+[D]Done,  [Bm/D]Lord, we  [A/E]give  [E]you p[A]raise.[E/D]
+[A/C#]For    all [C#m7]You’ve  [D]done,  [Bm/D]Lord,  we [A/E]give [E]you
 [F/Eb]praise.
+
+{comment: Chorus 3}
+{ci: Break}
+Hal   [Bb]–   [Bb]le –[F/Bb] lu  –[Eb/Bb]  jah,   [Cm/Bb]Lord   we
+[Bb/F]give   [F]You  [Bb]praise[F/A].[Bb/G][Eb]
+[Bb/D]Hal   –[Abma7/Bb]  le – lu  –  [Eb2]jah,[Eb]    Lord we
+{ci: Break}
+[Bb/F]give   [F]You
+
+{comment: Interlude}
+| Bb / Bb F/A | Gm7 / / / | Eb / / / |
+praise.
+| Bb/F / F / | Bb / Bb F/A | Gm7 / / F |
+| Eb / / / | Bb/F / F / | Bb /
+Bridge (Solo)
+{ci: 2xs}
+[Bb]I   [F/A]can  [Gm7]feel[F]    [Eb]Your spirit  [Bb/F]in   t[F]his
+[Bb]place   [Bb]I   [F/A]can  [Gm7]feel[F] [Eb]    Your presence
+[Bb/F]In    [F]this [Bb]place.
+Bridge (Unison)
+{ci: 4xs}

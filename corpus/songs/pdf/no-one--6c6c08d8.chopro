@@ -3,8 +3,8 @@
 {key: F}
 {tempo: 78}
 {time: 4/4}
-{x_verified: number chart, 100% of 42 chords}
-{x_theme: healing, grace-mercy, praise}
+{x_verified: number chart, 100% of 57 chords}
+{x_theme: healing, grace-mercy}
 {x_source: pdf:UPCI Music/2021/No One/No-One-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FNo%20One}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/no-one/audio/alto.mp3}
@@ -19,65 +19,96 @@
 {x_album: Live at the Upper Room}
 {x_writers: Anthony Trimble}
 
-{comment: Intro Verse 3}
-(E-F) | Fmaj7(sus4)/Bb / / / | / / (E-F) | Fmaj7(sus4)/Bb F2/A
-There’s no other like His name
-| F2/A / / / | / / (E-F) | Fmaj7(sus4)/Bb / / / | Fmaj7(sus4)/Bb F2/A
-When He speaks the whole earth shakes
-| / / (A-A-G-G-F) | F2 / / / | Gm7
-Who can move the mountains
-Verse 1 C7sus
-Fmaj7(sus4)/Bb F2/A Raise life from the grave
-There is no one else for me F2
-Fmaj7(sus4)/Bb F2/A There’s no one like our God
-No one else can set me free
-Gm7 Chorus (optional parts) (2x)
-Who can stop the ocean Bb2 C
-C7sus There’s no one like Je - hovah Jireh
-Calm the raging sea Dm7 F2/A
-F2 There’s no one like you Abba Fath - er
-There’s no one like our God Bb2
-Hs power gives me strength
-Verse 2 C
-Fmaj7(sus4)/Bb F2/A His grace it covers me
-There’s no other like His name F2
-Fmaj7(sus4)/Bb F2/A There’s no one like our God
-When He speaks the whole earth shakes
-Gm7 Interlude
-Who can move the mountains | Bb2 | Csus | Dm7 | F2/A |
-Raise life from the[C7sus] grave                               | Bb2   | Csus   | F2/A   | Dm7  |
-There’s no one like our[F2]  God                          Bridge 1 (Solo)
-Chorus (men sing 8vb)                               I see Him on the [Bb2]clouds
-There’s no one like Je - [Bb2]hovah Jireh[C]                     I see Him magni- [Csus]fied
-There’s no one like you [Dm7]Abba Fath - [F2/A]er                  His majesty en - t[Dm7]hroned His glory fills the[F2/A] sky
-Hs power gives m[Bb2]e strength                           He’s loosing every [Bb2]heart
-His grace it cove[C]rs me                                He’s healing every [Csus]tear
-There’s no one like our[F2] God                            He is [F2/A]here, He is[Dm7] here
-Bridge 1 (men sin |g 8vb) Chorus
-I see Him on the [Bb2]clouds                               There’s no one like Je - [Bb2]hovah Jire[Csus]h
-I see Him magni- [Csus]fied                                 There’s no one like you [Dm7]Abba Fath - [F2/A]er
-His majesty en - t[Dm7]hroned His glory fills the[F2/A] sky            Hs power gives m[Bb2]e strength
-He’s loosing every [Bb2]heart                               His grace it cove[Csus]rs me
-Csus F2 / / / | / / (E – F) |
-He’s healing every tear There’s no one like our God
-He is [F2/A]here, He is[Dm7] here                                 Outro
-| Bb2 / / / | F2/A / / / | Bb2 / / / |
+{comment: Intro}
+| (E-F) | Fmaj7(sus4)/Bb / / / | / / (E-F) |
+| F2/A / / / | / / (E-F) | Fmaj7(sus4)/Bb / / / |
+| / / (A-A-G-G-F) | F2 / / / |
+
+{comment: Verse 1}
+There is no [Fmaj7(sus4)/Bb]one   else   for  [F2/A]me
+No one else [Fmaj7(sus4)/Bb]can   set   me  [F2/A]free
+Who can stop the[Gm7] ocean
+Calm the ragin[C7sus]g  sea
+There’s no one like our [F2]God
+
+{comment: Verse 2}
+There’s no ot[Fmaj7(sus4)/Bb]her    like  His  [F2/A]name
+When He speaks th[Fmaj7(sus4)/Bb]e  whole  earth s[F2/A]hakes
+Who can move the [Gm7]mountains
+Raise life from the [C7sus]grave
+There’s no one like our[F2]  God
+
+{comment: Chorus}
+{ci: men sing 8vb}
+There’s no one like Je - [Bb2]hovah Jireh[C]
+There’s no one like you [Dm7]Abba Fath - [F2/A]er
+Hs power gives m[Bb2]e strength
+His grace it cove[C]rs me
+There’s no one like our [F2]God
+
+{comment: Verse 3}
+There’s no ot[Fmaj7(sus4)/Bb]her    like  His  [F2/A]name
+When He speaks th[Fmaj7(sus4)/Bb]e  whole  earth s[F2/A]hakes
+Who can move the [Gm7]mountains
+Raise life from the [C7sus]grave
+There’s no one like our[F2]  God
+
+{comment: Chorus}
+{ci: optional parts, 2x}
+There’s no one like Je - [Bb2]hovah Jireh[C]
+There’s no one like you [Dm7]Abba Fath - [F2/A]er
+Hs power gives m[Bb2]e strength
+His grace it cove[C]rs me
+There’s no one like our [F2]God
+
+{comment: Interlude}
+| Bb2 | Csus | Dm7 | F2/A |
+| Bb2 | Csus | F2/A | Dm7 |
+
+{comment: Bridge 1}
+{ci: Solo}
+I see Him on the [Bb2]clouds
+I see Him magni- [Csus]fied
+His majesty en - [Dm7]throned His glory fills the [F2/A]sky
+He’s loosing every [Bb2]heart
+He’s healing every[Csus] tear
+He is [F2/A]here, He is[Dm7] here
+
+{comment: Bridge 1}
+{ci: men sin |g 8vb}
+I see Him on the [Bb2]clouds
+I see Him magni- [Csus]fied
+His majesty en - [Dm7]throned His glory fills the [F2/A]sky
+He’s loosing every [Bb2]heart
+He’s healing every[Csus] tear
+He is [F2/A]here, He is[Dm7] here
 
 {comment: Bridge 2}
 {ci: men sing 8vb}
-Bb2 | F2/A / / / | Gm7 / / / | Csus / (A-A-G-G-F) |
-I see Him on the clouds
-Csus | F / / / |
-I see Him magni- fied
-His majesty en - t[Dm7]hroned His glory fills the[F2/A] sky
+I see Him on the [Bb2]clouds
+I see Him magni- [Csus]fied
+His majesty en - [Dm7]throned His glory fills the [F2/A]sky
 He’s loosing every [Bb2]heart
-He’s healing every [Csus]tear
+He’s healing every[Csus] tear
 He is [F2/A]here, He is[Dm7] here
 
 {comment: Chorus}
 {ci: Duet / men sing 8vb}
-There’s no one like Je - [Bb2]hovah Jire[C]h
+There’s no one like Je - [Bb2]hovah Jireh[C]
 There’s no one like you [Dm7]Abba Fath - [F2/A]er
 Hs power gives m[Bb2]e strength
 His grace it cove[C]rs me
-There’s no one like our[F2] God
+There’s no one like our [F2]God
+
+{comment: Chorus}
+There’s no one like Je - [Bb2]hovah Jireh[Csus]
+There’s no one like you [Dm7]Abba Fath - [F2/A]er
+Hs power gives m[Bb2]e strength
+His grace it cove[Csus]rs me
+| F2 / / / | / / (E-F) |
+There’s no one like our God
+
+{comment: Outro}
+| Bb2 / / / | F2/A / / / | Bb2 / / / |
+| F2/A / / / | Gm7 / / / | Csus / (A-A-G-G-F) |
+| F / / / |

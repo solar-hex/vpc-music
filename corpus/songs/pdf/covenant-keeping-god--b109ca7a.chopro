@@ -18,21 +18,21 @@
 {x_album: Sanctuary}
 {x_writers: Victoria Orenze}
 
-{comment: Intro Tag}
-| Abm9 / / / | Cbmaj9 / / / | Ebm7 / / / | Db / / / | Abm7 Cbmaj7 Gb
-Oh! Yahweh
-Verse 1 (2x) Db
-Abm9 The covenant keeping God
-You’ll never leave me Chorus (2x - full cut after first half of first chorus)
-You said that You woh’t[Cbmaj9] forsake me
+{comment: Intro}
+| Abm9 / / / | Cbmaj9 / / / | Ebm7 / / / | Db / / / |
+
+{comment: Verse 1}
+{ci: 2x}
+You’ll never [Abm9]leave me
+You said that You woh’t [Cbmaj9]forsake me
 You’re right be[Ebm7]side me
-And that is all that[Db] matters
+And that is all that [Db]matters
 
 {comment: Chorus}
-[Cb]You are the covenant keeping[Ebm7] God
-[Gb]You are the covenant keeping[Db] God
-[Cb]Yahweh, the covenant keeping[Ebm7] God
-[Gb]Yahweh, the covenant keeping[Db] God
+[Cb]You are the covenant keeping [Ebm7]God
+[Gb]You are the covenant keeping [Db]God
+[Cb]Yahweh, the covenant keeping [Ebm7]God
+[Gb]Yahweh, the covenant keeping [Db]God
 
 {comment: Interlude}
 | Abm9 / / / | Cbmaj9 / / / | Ebm7 / / / | Db / / / |
@@ -45,8 +45,8 @@ And that is all that[Db] matters
 
 {comment: Verse 2}
 The sun won’t [Abm9]smite me
-And the moon, it will not[Cbmaj9] hurt me
-The flood won’t[Ebm7] sweep me
+And the moon, it will not [Cbmaj9]hurt me
+The flood won’t [Ebm7]sweep me
 Db Last time:(Db/F)
 The Lord is my anchor
 
@@ -56,3 +56,10 @@ The Lord is my anchor
 {ci: 2x}
 [Abm7]Y[Cbmaj7]o[Gb]u are the covenant
 Keeping [Db]God, oh
+
+{comment: Tag}
+[Abm7]Oh![Cbmaj7]    [Gb]Yahweh
+The covenant keeping [Db]God
+
+{comment: Chorus}
+{ci: 2x - full cut after first half of first chorus}

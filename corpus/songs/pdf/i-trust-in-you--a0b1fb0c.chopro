@@ -2,7 +2,7 @@
 {key: Bb}
 {tempo: 129}
 {time: 4/4}
-{x_verified: number chart, 100% of 65 chords}
+{x_verified: number chart, 100% of 80 chords}
 {x_theme: faith-trust}
 {x_source: pdf:UPCI Music/2023/I Trust in You/I-Trust-In-You-Chord-Chart-.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FI%20Trust%20in%20You}
@@ -18,39 +18,61 @@
 {x_album: I Trust In You (Single)}
 {x_writers: Sarah Bledsoe}
 
-{comment: Verse 1 Interlude}
-Bb2 Bb | (Bb-Db-C-G) | - | (Bb-Db-C-G - | -Db-C-Ab-|
-’Tis so sweet to trust in Jesus | (Bb-Db-C-G) | - | (Bb-Db-C-G) | - G13 Ab13 A13 |
-[Bb2]Just to take Him [Bb]at His word                           Bridge (3x)
-Bb2 Bb (Bb-Db-C-G)
-Just to rest upon His promise You always make a way when there is no way
-Bb2 Bb (Bb-Db-C-G - Db-C-Ab)
-Just to know thus saith the Lord You always make a way when there is no way
-{ci: Bb-Db-C-G}
-Chorus 1 You always make a way when there is no way
-Bb Bb/D Eb F (Bb-Db-C-G) G13 Ab13 A13
-I trust in You, I trust in You I trust You, I trust You
-[Bb/D]Y[Eb]o[F]u are my h[Bb/D]ope, Yo[Eb]u are my [F]peace          Tag
-And [Gm]in the mid[Cm]dle of the raging se[F]a                     [Eb9]I trust You, I trust You, I trust You, I trust You
-I trust in You[Bb/D],           [Eb]I[F] trust in You                   I trust You, I trust You, I trust You,[Db13] I trus[C13]t Yo[B13]u
-[Bb/D]Y[Eb]o[F]u are the [Bb/D]rock on [Eb]which I st[F]and            Interlude
-Gm Cm F | Eb9 / / / | / / / / | / / / / | / Db13 C13 B13 |
-All other ground is sinking sand | Eb9 / / / | / / / / | / / / / |
+{comment: Verse 1}
+[Bb2]’Tis so sweet to t[Bb]rust in Jesus
+[Bb2]Just to take Him [Bb]at His word
+[Bb2]Just to rest upon[Bb] His promise
+[Bb2]Just to know thu[Bb]s saith the Lord
 
-{comment: Interlude Chorus 3}
-I trust in Y[Bb2]ou,[Bb]       I trust in[Bb2] You[Bb]                         [Bb]I trust in You[Bb/D],          [Eb]I[F] trust in You
-Verse 2                                                       [Bb/D]Y[Eb]o[F]u are my h[Bb/D]ope, Yo[Eb]u are my [F]peace
-[Bb/D]’Tis so sweet to tr[Eb]ust in Jesus                          And [Gm]in the mid[Cm]dle of the raging se[F]a
-[F]Just to take Him a[Gm7]t His word                           I trust in You[Bb/D],           [Eb]I[F] trust in You
-Bb/D Eb Bb/D Eb F Bb/D Eb Gbº
-Just to rest upon His promise You are the rock on which I stand
-[F]Just to know thus s[Bb]aith the Lord                        All o[Gm]ther gro[Cm]und is sinking s[F]and, I[Bb] trust in You
+{comment: Chorus 1}
+[Bb]I trust in You[Bb/D],    [Eb]I[F] trust in You
+[Bb/D]Y[Eb]o[F]u are my h[Bb/D]ope, Yo[Eb]u are my p[F]eace
+And [Gm]in the mi[Cm]ddle of the raging se[F]a
+I trust in You[Bb/D],    [Eb]I[F] trust in You
+[Bb/D]Y[Eb]o[F]u are the [Bb/D]rock on [Eb]which I sta[F]nd
+All o[Gm]ther gro[Cm]und is sinking s[F]and
+
+{comment: Interlude}
+I trust in Y[Bb2]ou,[Bb]    I trust in Y[Bb2]ou[Bb]
+
+{comment: Verse 2}
+[Bb/D]’Tis so sweet to tr[Eb]ust in Jesus
+[F]Just to take Him a[Gm7]t His word
+[Bb/D]Just to rest u[Eb]pon His promise
+[F]Just to know thus s[Bb]aith the Lord
 
 {comment: Chorus 2}
 {ci: same as Chorus 1 - hits}
 
 {comment: Refrain}
-I trust in You[Bb/D],[Eb]          [F]I trust in Yo[Bb/D]u[Eb][F]
-I trust in You[Bb/D],      [Eb]I t[F]rust in Yo[Bb/D]u[Eb]
+I trust in You[Bb/D],[Eb]    [F]I trust in Yo[Bb/D]u[Eb][F]
+I trust in You[Bb/D],    [Eb]I tr[F]ust in You[Bb/D][Eb]
 | Eb13 D13 Db7(#5#9) F7(#5#9) |
+
+{comment: Interlude}
+| (Bb-Db-C-G) | - | (Bb-Db-C-G - | -Db-C-Ab-|
+| (Bb-Db-C-G) | - | (Bb-Db-C-G) | - G13 Ab13 A13 |
+
+{comment: Bridge}
+{ci: 3x}
+[(Bb-Db-C-G)]You always make a way when there is no way
+[(Bb-Db-C-G-Db-C-Ab)]You always make a way when there is no way
+[(Bb-Db-C-G)]You always make a way when there is no way
+[(Bb-Db-C-G)]I trust You,   [G13]I trus[Ab13]t You[A13]
+
+{comment: Tag}
+[Eb9]I trust You, I trust You, I trust You, I trust You
+I trust You, I trust You, I trust You,[Db13] I trust [C13]You[B13]
+
+{comment: Interlude}
+| Eb9 / / / | / / / / | / / / / | / Db13 C13 B13 |
+| Eb9 / / / | / / / / | / / / / |
+
+{comment: Chorus 3}
+[Bb]I trust in You[Bb/D],    [Eb]I[F] trust in You
+[Bb/D]Y[Eb]o[F]u are my h[Bb/D]ope, Yo[Eb]u are my p[F]eace
+And [Gm]in the mi[Cm]ddle of the raging se[F]a
+I trust in You[Bb/D],    [Eb]I[F] trust in You
+[Bb/D]Y[Eb]o[F]u are the [Bb/D]rock on [Eb]which I sta[Gb°]nd
+All o[Gm]ther gro[Cm]und is sinking s[F]and, [Bb]I trust in You
 UPCI Music 1

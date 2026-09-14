@@ -19,79 +19,108 @@
 {x_source_he_is_vocal_parts_1: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/he-is/source/He-Is-Vocal-Parts-1.zip}
 {x_album: In His Name}
 
-{comment: Intro Bridge}
-{ci: Rounds}
-| Bm7 / / / | / / / / | / / / / | / / / / | Bm7 E/B G/B Bm7
-Yeah Yeah He is, He is, He is, He is, mighty.
+{comment: Intro}
+| Bm7 / / / | / / / / | / / / / | / / / / |
+Yeah Yeah
 (E-D-B-A-F#-E) / / | (B-B-B-B-B-B-B-B |
-| B-B-B-B-B-B-B-B | B-B-B-B-B-B-B-B) |                     [Bm7]Mighty[E/B]    mighty,[G/B]     mighty[Bm7]      mighty.
-He is, He is, He is, He is, mighty.
+| B-B-B-B-B-B-B-B | B-B-B-B-B-B-B-B) |
 | Em11 F#m7
-[Bm11]All Powerful [Gma9]incredible  [Ama9/B]supernatural[Gma9/B]      mighty.
-Chorus (2xs) Mighty mighty, mighty mighty.
-(D-B) Bm7 He is, He is, He is, He is, mighty.
-He is mighty, He is mighty, He is mighty,
-Em11 F#m7 (D-B)                               [G]All Powerful [Em7]incredible  [Bm7]supernatural[A]      mighty[G].
-He is mighty Mighty mighty, mighty mighty.
-He is, He is, He is, He is, mighty.
+
+{comment: Chorus}
+{ci: 2xs}
+[(D-B)]He is [Bm7]mighty, He is mighty, He is mighty,
+He is [Em11]might[F#m7]y[(D-B)]
 
 {comment: Verse 1}
-(D-B) (A - B)(D-E) Vamp 1
-King of kings and Lord of lords, Bm7
-(E – F#) (D - B) (A - B) (E-D-E-F# Mighty in battle, the Rock of Salvation,
-my re - fuge in the time of storm D
-D - B) (D-B) (A-B) (D-E) My King and Redeemer, Ruler and Keeper.
-Rock of a-ges my reward, Em7
-(E - F#) (B -A-F# - G - G#-E-D) Em11 F#m11 Sovereign, Most Holy, Defender behind me,
-Good Shepherd and the open door G F#
-Shepherd he leads me in the valley
+King of kin[(D-B)]gs and Lord of lords,
+{ci: A - B)(D-E}
+(E – F#) (D - B) (A - B) (E-D-E-F#
+my re - fuge in the time of storm
+[D]Rock [B)]of[(D-B)]  a-ges  [(A-B)]my  re[(D-E)]ward,
+[(E-F#)]Good She[(B-A-F#-G-G#-E-D)]pherd  and the open doo[Em11]r[F#m11]
 
 {comment: Chorus}
 
-{comment: Vamp 2}
-{ci: Flipped Parts}
-Verse 2                                              [Bm7]Lion of Judah, Protector, Strong Tower,
-Forever faith[G]ful in time of need,                         [D]Conquering King over all of
-A Em7 (E-F#-A-E-D-B-D-C#-A-F#-A-E-D-B-A)
-my shelter from the enemy. my enemies
-Chorus (Parts) (2xs)
-(D-B) Bm7
-He is mighty, He is mighty, He is mighty,
+{comment: Verse 2}
+Forever faith[G]ful in time of need,
+my shelt[A]er from the enemy.
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+[(D-B)]He is m[Bm7]ighty, He is mighty, He is mighty,
 Em11 F#m7 (play C2 nd
 2 x)
 He is mighty
 
-{comment: Chorus Vamp 1}
-He is [Bm7]mighty, He is might[D]y, He is migh[Em7]ty,                 [Bm7]Mighty in battle, the Rock of Salvation,
-He is mi[G]ghty[F#]                                          My Ki[D]ng and Redeemer, Ruler and Keeper.
-He is [Bm7]mighty, He is mig[E/G#]hty, He is mig[Em7]hty,                 [Em7]Sovereign, Most Holy, Defender behind me,
-He is mi[G]ghty[F#] [Bm7]                                         S[G]hepherd he leads me i[F#]n the valley
+{comment: Bridge}
+{ci: Rounds}
+[Bm7]He is,    [E/B]He is,    [G/B]He is,    [Bm7]He is, mighty.
+[Bm7]Mighty[E/B]    mighty,[G/B]    mighty[Bm7]    mighty.
+He is, He is, He is, He is, mighty.
+[Bm11]All Powerful [Gma9]incredible  [Ama9/B]supernatura[Gma9/B]l    mighty.
+Mighty mighty, mighty mighty.
+He is, He is, He is, He is, mighty.
+[G]All Powerful [Em7]incredible  [Bm7]supernatural[A]    might[G]y.
+Mighty mighty, mighty mighty.
+He is, He is, He is, He is, mighty.
 
-{comment: Interlude Vamp 2}
+{comment: Vamp 1}
+Mighty in [Bm7]battle, the Rock of Salvation,
+My Ki[D]ng and Redeemer, Ruler and Keeper.
+[Em7]Sovereign, Most Holy, Defender behind me,
+S[G]hepherd he leads me [F#]in the valley
+
+{comment: Vamp 2}
 {ci: Flipped Parts}
-| (B-B-B-B-B-B-B-B) Dma9 | (B-B-B-B-B-B-B-B) Gma9 | Bm7
-Lion of Judah, Protector, Strong Tower,
-| (B-B-B-B-B-B-B-B) Ama9 | (B-B-B-B-B-B-B-B) Gma9 | D
-Conquering King over all of
-Em7 (E-F#-A-E-D-B-D-C#-A-F#-A-E-D-B-A)
-Bridge (play Bridge like the Instrumental) my enemies
-He is,[Dma9]      He is,[Gma9]      He is,      [Ama9]He is, mig[Gma9]hty.
+[Bm7]Lion of Judah, Protector, Strong Tower,
+[D]Conquering King over all of
+m[Em7]y ene[(E-F#-A-E-D-B-D-C#-A-F#-A-E-D-B-A)]mies
+
+{comment: Chorus}
+He is [Bm7]mighty, He is migh[D]ty, He is mig[Em7]hty,
+He is mig[G]hty[F#]
+He is [Bm7]mighty, He is mig[E/G#]hty, He is mig[Em7]hty,
+He is mig[G]hty[F#][Bm7]
+
+{comment: Interlude}
+| (B-B-B-B-B-B-B-B) Dma9 | (B-B-B-B-B-B-B-B) Gma9 |
+| (B-B-B-B-B-B-B-B) Ama9 | (B-B-B-B-B-B-B-B) Gma9 |
+
+{comment: Bridge}
+{ci: play Bridge like the Instrumental}
+He is,[Dma9]    He is,[Gma9]    He is,    [Ama9]He is, mig[Gma9]hty.
+Mig[Dma9]hty    mig[Gma9]hty,    might[Ama9]y    mig[Gma9]hty
+He is, He is, He is, He is, mighty.
+[Bm11]All Powerful [E/B]incredible  [G/B]supernatural[Bm7]    mighty.
+Mighty mighty, mighty mighty.
+He is, He is, He is, He is, mighty.
+[G]All Powerful [Em7]incredible  [Bm7]supernatural[A]    might[G]y.
+Mighty mighty, mighty mighty.
+He is, He is, He is, He is, mighty.
+
+{comment: Vamp 1}
+[Bm7]Mighty in battle, the Rock of Salvation,
+My Ki[D]ng and Redeemer, Ruler and Keeper.
+[Em7]Sovereign, Most Holy, Defender behind me,
+S[G]hepherd he leads me [F#]in the valley
+
+{comment: Vamp 2}
+{ci: Flipped Parts}
+[Bm7]Lion of Judah, Protector, Strong Tower,
+[D]Conquering King over all of
+m[Em7]y ene[(E-F#-A-E-D-B-D-C#-A-F#-A-E-D-B-A)]mies
 
 {comment: Chorus}
 {ci: Breakdown}
-Dma9 Gma9 Ama9 Gma9 (cut)
-Mighty mighty, mighty mighty He is mighty, He is mighty, He is mighty,
-He is, He is, He is, He is, mighty. Em11 (E-D-C#-F#)
-He is mighty (G-F#-F-E)
-[Bm11]All Powerful [E/B]incredible  [G/B]supernatural[Bm7]      mighty.
-Mighty mighty, mighty mighty. Chorus
-He is, He is, He is, He is, mighty. Bm7 D
-He is mighty, He is mighty,
-[G]All Powerful [Em7]incredible  [Bm7]supernatural[A]      mighty[G].       [Em7]He is mighty, He is mig[G]ht[F#]y
-Mighty mighty, mighty mighty. Bm7 D
-He is, He is, He is, He is, mighty. He is mighty, He is mighty,
-[Em7]He is mighty, He is mig[G]ht[F#]y
+{ci: cut}
+He is mighty, He is mighty, He is mighty,
+He is [Em11]mighty  [(E-D-C#-F#)](G-F#-F-E)
+
+{comment: Chorus}
+He is [Bm7]mighty, He is mi[D]ghty,
+[Em7]He is mighty, He is mig[G]hty[F#]
+He is [Bm7]mighty, He is mi[D]ghty,
+[Em7]He is mighty, He is mig[G]hty[F#]
 
 {comment: Ending}
-{ci: D-B-A-B-D-E-B) (B-B-B-B-B-B}
-He is mighty.
+He is mig[(D-B-A-B-D-E-B)]hty.[(B-B-B-B-B-B)]

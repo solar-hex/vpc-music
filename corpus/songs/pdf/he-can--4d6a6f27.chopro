@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 76}
 {time: 4/4}
-{x_verified: number chart, 100% of 14 chords}
+{x_verified: number chart, 100% of 61 chords}
 {x_theme: faith-trust}
 {x_source: pdf:UPCI Music/2021/He Can/He-Can-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FHe%20Can}
@@ -19,52 +19,68 @@
 {x_album: He Can (Single)}
 {x_writers: Anthony Trimble}
 
-{comment: Intro Chorus}
+{comment: Intro}
 ||: Db / / Db Ab | / / / Ab Eb |
+| / / / Fm/Eb Eb | / / / / :||
+
+{comment: Verse 1}
+[Eb]Hope seems to have [Bb]left long ago
+[Ab]No help coming [Ab]down your [Bb]dusty [Eb]road
+[Eb]But my Lord who f[Bb]aithful and is true
+[Ab]He’s here and He’s [Ab]come to [Bb]carry [Eb]you
+Cause I know that
 
 {comment: Chorus}
-| / / / Fm/Eb Eb | / / / / :|| Eb
-Verse 1 Bb
-Eb Bb He can
-Hope seems to have left long ago Ab
-Ab Ab Bb Eb He can
-No help coming down your dusty road Ab Bb Eb
-Eb Bb God can make a way
-But my Lord who faithful and is true Ab Bb Eb
-Ab Ab Bb Eb God can make a way
-He’s here and He’s come to carry you
+{ci: 2xs}
+[Eb]He can
+[Bb]He can
+[Ab]He can
+[Ab]God can [Bb]make a [Eb]way
 
-{comment: Bridge}
-{ci: 3xs}
-Cause I know that Db Db Ab
-He He can
-Chorus (2xs) Eb
-Eb He can make a way
-He can Fm/Eb Eb
-Bb He can make a way
-Ab Chorus (Solo)
-Ab Bb Eb Chorus (Parts)
-God can make a way
-
-{comment: Bridge}
-{ci: 3xs}
-Verse 2 Db Db Ab
-Eb Bb He He can
-Lift your eyes and get them off the storm Eb
-Ab He can make a way
-Cause God has come with the Fm/Eb Eb
-Ab Bb Eb He can make a way
-strength to carry on
-Eb Bb Interlude
-So I’m speaking faith directly to your soul ||: Db / / Db Ab | / / / Ab Eb |
-[Ab]Knowing that my God is gonna                   | / / / Fm/Eb Eb | / / / / :||
-[Ab]work a m[Bb]ira - [Eb]cle
+{comment: Verse 2}
+[Eb]Lift your eyes and [Bb]get them off the storm
+[Ab]Cause God has come with the
+[Ab]strength to [Bb]carry [Eb]on
+[Eb]So I’m speaking faith di[Bb]rectly to your soul
+[Ab]Knowing that my God is gonna
+[Ab]work a [Bb]mira - [Eb]cle
 See I know that
-Bridge (Flipped Parts)(2xs)
-[Db]He     [Db]He  [Ab]can
+
+{comment: Chorus}
+[Eb]He can
+[Bb]He can
+[Ab]He can
+[Ab]God can [Bb]make a [Eb]way
+[Ab]God can [Bb]make a [Eb]way
+
+{comment: Bridge}
+{ci: 3xs}
+[Db]He    [Db]He  [Ab]can
+He can make a wa[Eb]y
+He can ma[Fm/Eb]ke  a  [Eb]way
+
+{comment: Chorus}
+{ci: Solo}
+
+{comment: Chorus}
+{ci: Parts}
+
+{comment: Bridge}
+{ci: 3xs}
+[Db]He    [Db]He  [Ab]can
+He can make a wa[Eb]y
+He can ma[Fm/Eb]ke  a  [Eb]way
+
+{comment: Interlude}
+||: Db / / Db Ab | / / / Ab Eb |
+| / / / Fm/Eb Eb | / / / / :||
+
+{comment: Bridge}
+{ci: Flipped Parts, 2xs}
+[Db]He    [Db]He  [Ab]can
 He can make a wa[Eb]y
 He can ma[Fm/Eb]ke  a  [Eb]way
 
 {comment: Ending}
-[Db]He     [Db]He  [Ab]can
+[Db]He    [Db]He  [Ab]can
 He can make a wa[Eb]y

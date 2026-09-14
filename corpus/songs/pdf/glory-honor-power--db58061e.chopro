@@ -3,8 +3,8 @@
 {key: E}
 {tempo: 78}
 {time: 4/4}
-{x_verified: number chart, 100% of 5 chords}
-{x_theme: worship, praise, christmas, heaven}
+{x_verified: number chart, 100% of 40 chords}
+{x_theme: worship, praise, heaven}
 {x_source: pdf:UPCI Music/2023/Glory, Honor, Power/Glory-Honor-Power-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FGlory%2C%20Honor%2C%20Power}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/glory-honor-power--c9d22cc5/audio/alto.mp3}
@@ -18,45 +18,57 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/glory-honor-power--c9d22cc5/charts/rhythm-chart.pdf}
 {x_album: Ages}
 
-Jeff Pardo | Melody Noel | Tiffany Hammer
+{comment: Intro}
+| E / / / | / / / / |
 
-{comment: Intro Bridge}
-{ci: 2xs}
-E / / / | / / / / | A B C#m B
-Hallelujah to the one who came and made a way
-Verse 1 A B C#m E
-E C#m Hallelujah to the one who died and rose again
-Most worthy, worthy of praise A B C#m B
-A Hallelujah to the only name above all names
-Exalted above all things my God, You are my God A E B C#m B
-Glory and honor and power forever
+{comment: Verse 1}
+[E]Most worthy, worthy of [C#m]praise
+Exalted above all th[A]ings my God, You are my God
 
 {comment: Verse 2}
-E C#m Tag
-Your splendor and majesty A E B C#m B | A / / / |
-A Glory and honor and power for ever
-Your wonder fills everything
-F#m Chorus (Solo / Parts)
-my God, you are my God E
-Holy is the Lord, Holy is the Lord Almighty
-Chorus (men sing 8vb) C#m
-E Seated on the throne, seated on the throne of Glory
-Holy is the Lord, Holy is the Lord Almighty A
-C#m High and lifted up, Your presence fills the temple
-Seated on the throne, seated on the throne of Glory B
-A When we worship You oh, we worship You
-High and lifted up, Your presence fills the temple
-When we w[B]orship You oh, we worship Yo[Bridge]u
+[E]Your splendor and majes[C#m]ty
+Your wonder fills everyth[A]ing
+my God, you [F#m]are my God
 
-{comment: Ending}
-Verse 3 A E B C#m B
-E C#m Glory and honor and power for ever
-Creation points to the King A E B C#m B A
-A Glory and honor and power for ever
-The heavens can’t help but sing to You,
-To [F#m]You, our God
-Chorus (Parts) (2xs)
+{comment: Chorus}
+{ci: men sing 8vb}
 [E]Holy is the Lord, Holy is the Lord Almighty
 [C#m]Seated on the throne, seated on the throne of Glory
 [A]High and lifted up, Your presence fills the temple
-When we w[B]orship You oh, we worship You
+When we [B]worship You oh, we worship You
+
+{comment: Verse 3}
+[E]Creation points to the[C#m] King
+The heavens can’t help but [A]sing to You,
+To [F#m]You, our God
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+[E]Holy is the Lord, Holy is the Lord Almighty
+[C#m]Seated on the throne, seated on the throne of Glory
+[A]High and lifted up, Your presence fills the temple
+When we [B]worship You oh, we worship You
+
+{comment: Bridge}
+{ci: 2xs}
+[A]Hallelujah to the [B]one who came and [C#m]made a [B]way
+[A]Hallelujah to the [B]one who died and [C#m]rose a[E]gain
+[A]Hallelujah to the [B]only name [C#m]above all [B]names
+[A]Glory and [E]honor and [B]power [C#m]forev[B]er
+
+{comment: Tag}
+[A]Glory and [E]honor and [B]power[C#m]  for  [B]ever
+| A / / / |
+
+{comment: Chorus}
+{ci: Solo / Parts}
+[E]Holy is the Lord, Holy is the Lord Almighty
+[C#m]Seated on the throne, seated on the throne of Glory
+[A]High and lifted up, Your presence fills the temple
+When we [B]worship You oh, we worship You
+
+{comment: Bridge}
+
+{comment: Ending}
+[A]Glory and [E]honor and [B]power[C#m]  for  [B]ever
+[A]Glory and [E]honor and [B]power[C#m]  for  [B]ever[A]

@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 68}
 {time: 4/4}
-{x_verified: number chart, 100% of 17 chords}
+{x_verified: number chart, 100% of 94 chords}
 {x_theme: healing, prayer, worship, faith-trust}
 {x_source: pdf:UPCI Music/2022/Already Done/Already-Done-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FAlready%20Done}
@@ -18,64 +18,73 @@
 {x_album: Already Done (Single)}
 {x_writers: Kristen Sangary}
 
-Already Done Kristen Sangary
+{comment: Intro}
+| Eb Bb/D Bb | F/A / Eb/G / |
+| / Cm7 Ebmaj7 Gm7 | F / / /
 
-{comment: Intro Verse 2}
-Eb Bb/D Bb | F/A / Eb/G / | Bb Bbsus Gm7
-Is there a past you can’t erase?
-| / Cm7 Ebmaj7 Gm7 | F / / / Eb
-I know you have already washed it away
-Verse 1 Bb Gm7
-Bb Bbsus Bb Is there a debt that cannot be paid
-Is there a promise you haven’t kept? Eb
-Gm7 Eb You already bought it when you robbed that grave
-I know you’ll finish what you started
-Bb Bbsus Pre Chorus 2
-And is there is there a mountain you cannot Ebmaj7 F Bb
-Gm7 Eb I may not see it now
-climb? I know there isn’t one that is too high Ebmaj7 Gm7 F
-But I know You’ll make a way
-Pre Chorus 1 (men sing 8vb) Ebmaj7 F Bb
-Ebmaj7 F Bb You’ll work it out some-how
-I may not see it now Ebmaj7 Gm7 F
-Ebmaj7 Gm7 F For I know You never fail
-But I know You’ll make a way
-[Ebmaj7]You’ll work i[F]t out some[Bb]-how                               [Chorus]Eb      Bb
-Ebmaj7 Gm7 F I will pray for a miracle
-For I know You never fail Cm7 Gm7 F
-I be - lieve in Your word
-[Chorus]Eb      Bb                                    I wil[Eb]l worship like it’[Bb]s already done
-I will pray for a miracle Cm7 Eb F
-Cm7 Gm7 F Like it’s already done
-I be - lieve in Your word Eb Bb
-Eb Bb I will pray for the prodigal
-I will worship like it’s already done Cm7 Gm7 F
-Cm7 Eb F I be - lieve they’ll re - turn
-Like it’s already done Eb Bb
-Eb Bb I will worship like it’s already done
-I will pray for the prodigal Cm7 Eb F
-Cm7 Gm7 F Like it’s already done
-I be - lieve they’ll re - turn
-Eb Bb Interlude
-I will worship like it’s already done ||: Eb / F/Eb | Eb / F/Eb :||
-Like it’[Cm7]s already[Eb] don[F]e
-Already Done Kristen Sangary
+{comment: Verse 1}
+[Bb]Is there a [Bbsus]promise you[Bb] haven’t kept?
+[Gm7]I know you’ll finish what you star[Eb]ted
+[Bb]And is there is there a [Bbsus]mountain you cannot
+clim[Gm7]b?   I know there isn’t one that is too [Eb]high
+
+{comment: Pre Chorus 1}
+{ci: men sing 8vb}
+[Ebmaj7]I may not [F]see it [Bb]now
+But I [Ebmaj7]know You’ll [Gm7]make a [F]way
+[Ebmaj7]You’ll work it [F]out some-[Bb]how
+For I [Ebmaj7]know You [Gm7]never [F]fail
+
+{comment: Chorus}
+I will [Eb]pray for a[Bb] miracle
+I be - [Cm7]lieve in [Gm7]Your  [F]word
+I will [Eb]worship like it’s [Bb]already done
+Like it’s [Cm7]already [Eb]done[F]
+I will [Eb]pray for the [Bb]prodigal
+I be - [Cm7]lieve they’ll [Gm7]re  -  [F]turn
+I will [Eb]worship like it’s [Bb]already done
+Like it’s [Cm7]already [Eb]done[F]
+
+{comment: Verse 2}
+[Bb]Is there a [Bbsus]past you can’t erase[Gm7]?
+I know you have already washed it [Eb]away
+[Bb]Is there a debt that cannot be pai[Gm7]d
+You already bought it when you robbed that gr[Eb]ave
+
+{comment: Pre Chorus 2}
+[Ebmaj7]I may not [F]see it [Bb]now
+But I [Ebmaj7]know You’ll [Gm7]make a [F]way
+[Ebmaj7]You’ll work it [F]out some-[Bb]how
+For I [Ebmaj7]know You [Gm7]never [F]fail
+
+{comment: Chorus}
+I will [Eb]pray for a[Bb] miracle
+I be - [Cm7]lieve in [Gm7]Your  [F]word
+I will [Eb]worship like it’s [Bb]already done
+Like it’s [Cm7]already [Eb]done[F]
+I will [Eb]pray for the [Bb]prodigal
+I be - [Cm7]lieve they’ll [Gm7]re  -  [F]turn
+I will [Eb]worship like it’s [Bb]already done
+Like it’s [Cm7]already [Eb]done[F]
+
+{comment: Interlude}
+||: Eb / F/Eb | Eb / F/Eb :||
 
 {comment: Bridge}
-[Eb]You’re there behind the sc[Gm7]enes
-You’re working where[F/A] I  [Bb]can’t[Eb] see
-You’re moving and I be[Gm7]lieve
+[Eb]You’re there behind the sce[Gm7]nes
+You’re working wher[F/A]e I  [Bb]can’t[Eb] see
+You’re moving and I b[Gm7]elieve
 I believ[F]e
 
 {comment: Vamp}
 {ci: 2x}
 [Eb]It’s already happened
-[Gm7]It’s already happene[F/A]d[Bb]
+[Gm7]It’s already happened[F/A][Bb]
 [Eb]You’re moving and I belie[Gm7]ve
 I believ[F]e
 
 {comment: Outro}
-Eb / / / | / / / / |
-Gm7 / / / | / / / / |
-Eb / / / | / / / / |
-Gm7 / / / | / / / / |
+| Eb / / / | / / / / |
+| Gm7 / / / | / / / / |
+| Eb / / / | / / / / |
+| Gm7 / / / | / / / / |

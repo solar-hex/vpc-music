@@ -3,7 +3,6 @@
 {key: Ab}
 {tempo: 158}
 {time: 4/4}
-{x_verified: number chart, 92% of 12 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/2021/Praise Break/Praise-Break-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FPraise%20Break}
@@ -18,71 +17,96 @@
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/praise-break/charts/vocals-with-chords.pdf}
 {x_album: Dream Again (Live From Rock City)}
 
-{comment: Intro Bridge 1}
-Ab / / / | / / / / When I think about Jesus
-Vamp 1 (7xs)                                    [Ab13]what he’s done for me
-(Ab-Ab) (Eb-F-Ab-Ab) (Eb-F-Ab-Ab) Ab13
-When I think about Jesus
-(Eb-F) Db/Ab Ab7 Ab13
-how he’s set me free, I can
-To Vamp 2 Gb13 Gb13 Gb13 Gb13
-(Ab-Ab) (Eb-F-Ab-Ab) (Eb-F-Ab-Ab) Dance, dance, dance, dance
-Ab/Eb G/D Bbm/Db                             [Gb13]Dance, d[Gb13]ance, d[Gb13]ance a[G13]ll ni[Ab13]ght
+{comment: Intro}
+| Ab / / / | / / / /
 
-{comment: Vamp 2 Tag}
-| Ab7 / / / | / / / / | Ab7 / / / | / / / / | Ab13
-All night all night all night
-||: Ab7 / / / | / / / / | Ab7 / / / | / / / / :|| C7(#9#5) Db13 Ddim Ab/Eb F13 Gb13 G13
-all night
-| Ab7 / / / | / / / / | Ab7 / / / | Ab13 Ab/C Db7 Ddim Ab/Eb
-All night all night
-| (Ab-Ab-Ab-Ab) | Ab/C Db7 Ddim Ab/Eb
-All night all night
-Vamp 3 Ab/C Db7 Ddim Ab/Eb
-||: Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / | All night all night
-|  Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / :||[C7(#9#5)] [Db13] [Ddim]                                     [Ab/Eb]T[F13]o[Gb13][G13]
-||: Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / | Bridge 2
-|  Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / :||      [Ab]God[C7(#9#5)]       be th[Eb/Db]e glo  - [Db]r[Db7]y[C7][B7]
-|  Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / |       T[Abmaj7/Bb]o Go[Bb7/D]d
-(Eb-Eb-F-Gb-G-Bb-C-Bb) Eb
-| Ab/C Db Ab/Eb / | Gb Db/F / / | be the glo-------------------------------ry
-Eb7 D7 Db7 C7 (C-D-E-F-G-Bb)
+{comment: Vamp 1}
+{ci: 7xs}
+[(Ab-Ab)] [(Eb-F-Ab-Ab)] [(Eb-F-Ab-Ab)]
+[(Eb-F)]To Vam[Db/Ab]p 2[Ab7]
+[(Ab-Ab)] [(Eb-F-Ab-Ab)] [(Eb-F-Ab-Ab)]
+[Ab/Eb] [G/D] [Bbm/Db]
+
+{comment: Vamp 2}
+| Ab7 / / / | / / / / | Ab7 / / / | / / / / |
+||: Ab7 / / / | / / / / | Ab7 / / / | / / / / :||
+| Ab7 / / / | / / / / | Ab7 / / / |
+| (Ab-Ab-Ab-Ab) |
+
+{comment: Vamp 3}
+||: Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / |
+| Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / :||
+||: Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / |
+| Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / :||
+| Ab/C Db Ab/Eb / | Gb Db/F Ab/Eb / |
+| Ab/C Db Ab/Eb / | Gb Db/F / / |
 
 {comment: Vamp 4}
-{ci: C-B-Bb-A-G-E}
-| Ab/C / Db Ddim Ab/Eb | / / / / | / / / / | To God be the
-| / / / / | Ab/C  /  Db Ddim Ab/Eb |              [Fm11]glo  -[Gb13] ry
+| Ab/C / Db Ddim Ab/Eb | / / / / | / / / / |
 | / / / / | Ab/C / Db Ddim Ab/Eb |
-Ab/C Bbm/Db G/D Ab/Eb Edim7 Fm7 Bridge 3
-For all the things He’s done (Ab-Gb-Ab-Gb-Ab)
-Ab/C Bbm/Db G/D Ab/Eb Edim7 Fm7 I, I got a praise
-For all the things He’s done (Gb-Ab-Gb-Ab - Gb-Eb-Gb-Gb-Eb-Db-Eb)
-Ab/C Bbm/Db G/D Ab/Eb Edim7 Fm7 I got a praise and I gotta get it out
-For all the things He’s done (Gb-Ab-Gb-Ab)
-dim7 7 I got a praise
-[Ab/C]For      [Bbm/Db]all     [G/D]the[Ab/Eb]  things   [E]He’s [Fm]don[C7(#9#5)]e[Db13][Ddim][Ab/Eb][F13][Gb13][G13]
+| / / / / | Ab/C / Db Ddim Ab/Eb |
 
-{comment: Bridge 3}
-Bridge 2 Ab Gb Ab
-Ab C7(#9#5) Eb/Db Db Db7 C7 B7 I, I got a praise
-God be the glo - ry Gb Ab Gb/Db B Bb7(Alt) A7(alt)
-Abmaj7Bb Bb7/D I got a praise and I gotta get it out
-To God Ab7
-Ab/Eb Eb7 I got a praise
-be the  glo---------r[C7(#9#5)]y[Db13][Ddim][Ab/Eb][F13][Gb13][G13]
-Eb7 D7 Db7 C7 (C-D-E-F) Ddim7 Edim7
-{ci: C-B-Bb-A) (Ab-Gb-Ab-Gb-Ab}
-To God be the I, I got a praise
-{ci: Gb-Ab-Gb-Ab - Gb-Eb-Gb-Gb-Eb-Db) Eb7(#9}
-[Fm11]I[Gb13]  got a praise and I  got a  get it  out
-glo - ry
+{comment: Bridge 1}
+When I think about Jesus
+[Ab13]what he’s done for me
+[Ab13]When I think about Jesus
+[Ab13]how he’s set me free, I can
+[Gb13]Dance, [Gb13]dance, [Gb13]dance, [Gb13]dance
+[Gb13]Dance, [Gb13]dance, [Gb13]dance [G13]all n[Ab13]ight
 
-{comment: Vamp 5 Ending}
-| (Ab-Ab) (Ab-Ab-Ab) | Db/Eb B/D Bbm/Ab Db13 B13
-I got a praise.
+{comment: Tag}
+[Ab13]All night  all night  all night
+[C7(#9#5)]a[Db13]l[Ddim]l   [Ab/Eb]night[F13][Gb13][G13]
+[Ab13]A[Ab/C]ll    [Db7]night   [Ddim]all    [Ab/Eb]night
+[Ab/C]All    [Db7]night   [Ddim]all    [Ab/Eb]night
+[Ab/C]All    [Db7]night   [Ddim]all    [Ab/Eb]night
+[C7(#9#5)]T[Db13]o[Ddim][Ab/Eb][F13][Gb13][G13]
+
+{comment: Bridge 2}
+[Ab]God[C7(#9#5)]    be th[Eb/Db]e glo  - [Db]ry[Db7][C7][B7]
+T[Abmaj7/Bb]o God[Bb7/D]
+be the[(Eb-Eb-F-Gb-G-Bb-C-Bb)]  glo------------------------------[Eb]-ry
+[Eb7] [D7] [Db7] [C7] [(C-D-E-F-G-Bb)]
+To   God[(C-B-Bb-A-G-E)]    be the
+[Fm11]glo  - [Gb13]ry
+[Ab/C]For[Bbm/Db]    all    [G/D]the[Ab/Eb]  things   [Edim7]He’s [Fm7]done
+[Ab/C]For[Bbm/Db]    all    [G/D]the[Ab/Eb]  things   [Edim7]He’s [Fm7]done
+[Ab/C]For[Bbm/Db]    all    [G/D]the[Ab/Eb]  things   [Edim7]He’s [Fm7]done
+[Ab/C]For[Bbm/Db]    all    [G/D]the[Ab/Eb]  things   [Edim7]He’s [Fm7]done
+
+{comment: Bridge 2}
+[Ab]God[C7(#9#5)]    be th[Eb/Db]e glo  - [Db]ry[Db7][C7][B7]
+Abmaj7Bb Bb7/D
+To God
+be the  [Ab/Eb]glo---------[Eb7]ry
+[Eb7] [D7] [Db7] [C7] [(C-D-E-F)] [Ddim7] [Edim7]
+To   God[(C-B-Bb-A)]    be the
+[Fm11]glo  - [Gb13]ry
+
+{comment: Vamp 5}
+| (Ab-Ab) (Ab-Ab-Ab) |
 ||:(Ab-Ab) (Ab-Ab-Ab) | (Ab-Ab) (Ab-Ab-Ab) |
-| (Ab-Ab) (Ab-Ab) Bbm/Ab | Ab (Ab-Ab-Ab-Ab) :|| | Bb7(#9#5) / Eb7(#9#5) / | Ab13 / C7(#9#5) |
-| (Ab-Ab) (Ab-Ab-Ab) | (Ab-Ab) (Ab-Ab-Ab) | | Db13 / Ddim7 / | Ebm9 / Ab13 / |
+| (Ab-Ab) (Ab-Ab) Bbm/Ab | Ab (Ab-Ab-Ab-Ab) :||
+| (Ab-Ab) (Ab-Ab-Ab) | (Ab-Ab) (Ab-Ab-Ab) |
 | (Ab-Ab) (Ab-Ab) Bbm/Ab | Ab (Ab-Ab-Ab-Ab) |
 | (Ab-Ab) (Ab-Ab-Ab) | (Ab-Ab) (Ab-Ab-Ab) |
 | (Ab-Ab) (Ab-Ab-Ab) |
+
+{comment: Bridge 3}
+[(Ab-Gb-Ab-Gb-Ab)]I,  I  got  a  praise
+[(Gb-Ab-Gb-Ab-Gb-Eb-Gb-Gb-Eb-Db-Eb)]I  got a praise and I  gotta  get it  out
+[(Gb-Ab-Gb-Ab)]I  got a  praise
+[C7(#9#5)] [Db13] [Ddim] [Ab/Eb] [F13] [Gb13] [G13]
+
+{comment: Bridge 3}
+[Ab]I,  [Gb]I  got  a  [Ab]praise
+[Gb]I  [Ab]got[Gb/Db]   a    [B]praise and I [Bb7(Alt)]gotta get it [A7(alt)]out
+I got a [Ab7]praise
+[C7(#9#5)] [Db13] [Ddim] [Ab/Eb] [F13] [Gb13] [G13]
+[(Ab-Gb-Ab-Gb-Ab)]I,  I  got  a  praise
+[(Gb-Ab-Gb-Ab-Gb-Eb-Gb-Gb-Eb-Db)]I  got a praise and I  got a  get it  [Eb7(#9)]out
+
+{comment: Ending}
+[Db/Eb]I[B/D] got[Bbm/Ab]  a    [Db13]praise[B13].
+| Bb7(#9#5) / Eb7(#9#5) / | Ab13 / C7(#9#5) |
+| Db13 / Ddim7 / | Ebm9 / Ab13 / |

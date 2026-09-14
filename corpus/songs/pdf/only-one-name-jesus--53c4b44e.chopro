@@ -3,7 +3,7 @@
 {key: B}
 {tempo: 87}
 {time: 4/4}
-{x_verified: number chart, 100% of 56 chords}
+{x_verified: number chart, 100% of 80 chords}
 {x_theme: praise, salvation}
 {x_source: pdf:UPCI Music/2020/Only One Name/Only-One-NameJesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FOnly%20One%20Name}
@@ -32,35 +32,63 @@
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one/charts/vocals-with-chords.pdf}
 {x_album: Only One Name}
 
-{comment: Intro Bridge}
-B / / / | B / / / | B / / / | B / / / | F# G#m7
-There is no salvation in any other
-B / / / | F# / / / | E / F# / | B / / / | E B
-All we need is in Your name
-Verse 1                                              [F#]There is no denying You[G#m]r awesome[F#/A#] pow - [B]er
-[B]You’re the one seated on the throne                       [C#m]Jesus for[B]ever You will r[F#]eign
-[G#m]Every praise is to You alone                            Bridge
-[F#]Who was and [E]is and is to come                         [F#]There is no salvation i[G#m7]n any other
-[E]All we need is in Yo[B]ur name
-Pre Chorus (Solo) F# G#m F#/A# B
-C#m There is no denying Your awesome pow - er
-All the fullness C#m B F# F#/A# B
-B/D# Jesus forever You will reign oh oh
-All the glory C#m B F#
-E B/D# F#sus Jesus forever You will reign
-It belongs to You
+{comment: Intro}
+| B / / / | B / / / | B / / / | B / / / |
+| B / / / | F# / / / | E / F# / | B / / / |
+
+{comment: Verse 1}
+[B]You’re the one seated on the throne
+[G#m]Every praise is to You alone
+[F#]Who was and[E] is and is to come
+
+{comment: Pre Chorus}
+{ci: Solo}
+[C#m]All the fullness
+[B/D#]All the glory
+[E]It be[B/D#]longs to Y[F#sus]ou
+
+{comment: Chorus}
+{ci: Unison}
+There’s only one na[B]me given to u[F#]s
+That can [G#m]save our soul that can [E]make us whole
+[B]Jesus, J[F#]esus[E]  no other[F#] Name [B]I know
+
+{comment: Verse 2}
+[B]The great I am You stepped down to Earth
+[G#m]Humbled Yourself to a lowly birth
+[F#]You gave Your life to re[E]deem our worth
+
+{comment: Pre Chorus}
+{ci: Two Parts}
+
+{comment: Chorus}
+{ci: Two Parts}
+
+{comment: Bridge}
+[F#]There is no salvation in[G#m7] any other
+[E]All we need is in You[B]r name
+[F#]There is no denying Your[G#m] awesome[F#/A#] pow - [B]er
+[C#m]Jesus for[B]ever You will r[F#]eign
+
+{comment: Bridge}
+[F#]There is no salvation in[G#m7] any other
+[E]All we need is in You[B]r name
+[F#]There is no denying Your[G#m] awesome[F#/A#] pow - [B]er
+[C#m]Jesus fore[B]ver You will re[F#]ign   [F#/A#]oh    [B]oh
+[C#m]Jesus fore[B]ver You will re[F#]ign
 
 {comment: Chorus}
 {ci: Breakdown}
-Chorus (Unison)                                      There’s only one n[B]ame given to [F#]us
-There’s only one na[B]me given to u[F#]s                      That can s[G#m]ave our soul that can m[E]ake us whole
-That can [G#m]save our soul that can[E] make us whole           [B]Jesus, Jes[F#]us [E]no other n[F#]ame I k[B]now
-[B]Jesus, [F#]Jesus[E]  no other[F#] Name [B]I know                  Chorus 2
-Verse 2                                              There’s only one n[B]ame given t[F#/A#]o us
-[B]The great I am You stepped down to Earth               That can s[G#m]ave our soul that can m[E]ake us whole
-[G#m]Humbled Yourself to a lowly birth                        Je[B]sus,[F#/A#] Jesus  [E]no other n[F#]ame I k[B]now
-[F#]You gave Your life to r[E]edeem our worth                  Tag
-[E]Je[B/D#]sus,  J[G#m]esus  [F#]no  [E]other na[F#]me I kn[G#m]ow
-Pre Chorus (Two Parts) E F# G#m
-No other name I know
-Chorus (Two Parts)                                   [E]No other [F#]name I k[B]now
+There’s only one n[B]ame given to [F#]us
+That can s[G#m]ave our soul that can m[E]ake us whole
+[B]Jesus, Jes[F#]us [E]no other na[F#]me I kn[B]ow
+
+{comment: Chorus 2}
+There’s only one n[B]ame given t[F#/A#]o us
+That can s[G#m]ave our soul that can m[E]ake us whole
+Je[B]sus,[F#/A#] Jesus  [E]no other na[F#]me I kn[B]ow
+
+{comment: Tag}
+[E]Je[B/D#]sus,  [G#m]Jesus  [F#]no  [E]other na[F#]me I kn[G#m]ow
+[E]No other [F#]name I kn[G#m]ow
+[E]No other [F#]name I kn[B]ow

@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 74}
 {time: 4/4}
-{x_verified: number chart, 100% of 36 chords}
+{x_verified: number chart, 98% of 49 chords}
 {x_source: pdf:UPCI Music/2019/Wait on the Lord/Wait-on-the-Lord-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWait%20on%20the%20Lord}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/wait-on-the-lord--9f137f76/audio/alto.m4a}
@@ -19,31 +19,62 @@
 {x_source_wait_on_the_lord_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/wait-on-the-lord--9f137f76/source/Wait-On-The-Lord-vocal-parts.zip}
 {x_album: Wait on the Lord}
 
-Verse 1 Interlude 2xs
-Em D/F# G C / / / | Am7 / / / | Em7 / / / | D6 / D / |
-There’s not a mountain too tall
-[C]There’s not a[G] problem [D]so small                       Bridge 2 (Parts)
-[C]That Jesus [G]can’t resolve                             I’m gonna wai[C]t on You, Jesus, I’m gonna wait on
-[Em]In time He’ll [D]get involved                            You, Jesus, I’m gonna wa[Em7]it on You Jesus
-[C]Our God He c[D]ares about [G]us                          I’m gonna wai[D6]t on You, Jesus[D],
-Chorus (Solo)                                        I’m not tur[C]ning back now,  I’m not turning back
-(So) [C]wait on the Lo[G]rd                                  now. I’m not tu[Em7]rning back now,
-[Em]Wait on the Lo[D]rd                                      I’m not tur[D6]ning back now[D].
-[C]C/E    D[G]          C                              Bridge 2 (Flipped Parts)
-And He’ll renew your strength
-Verse 2 Interlude 4xs
-Em D/F# G C / / / | Am7 / / / | Em7 / / / | D / / / |
-There’s not a night too dark
-[C]A journey[G] too long to[D] embark                         Bridge 2
-[C]Jesus will[G] see you through
-Em D Bridge 2 (Flipped Parts)
-In time He’ll make you new
-[C]Our God He c[D]ares about [G]us                          Interlude 2xs
-C / / / | Am7 / / / | Em7 / / / | D / / / |
-Chorus (Parts) 2xs
-Bridge 1 2xs Bridge 2 (Flipped Parts)
+{comment: Verse 1}
+[Em]There’s not a [D/F#]mountain[G]   too tall
+[C]There’s not a [G]problem [D]so small
+[C]That Jesus [G]can’t resolve
+[Em]In time He’ll [D]get involved
+[C]Our God He [D]cares about [G]us
+
+{comment: Chorus}
+{ci: Solo}
+(So) [C]wait on the Lo[G]rd
+[Em]Wait on the Lo[D]rd
+[C]Wait on the Lo[G]rd
+And [C/E]He’ll ren[D]ew your stre[C]ngth
+
+{comment: Verse 2}
+[Em]There’s not a [D/F#]night t[G]oo dark
+[C]A journey[G] too long to [D]embark
+[C]Jesus will [G]see you through
+[Em]In time He’ll [D]make you new
+[C]Our God He c[D]ares about [G]us
+Chorus (Parts)
+{ci: 2xs}
+Bridge 1
+{ci: 2xs}
 He’s or[C]dering,
-Em D Outro (Repeat as directed)
-He’s ordering your steps C / / / | Am7 / / / | Em7 / / / | D6 / D / |
+He’s or[Em]dering your ste[D]ps
 You’ve gotta wai[Cmaj7]t,
 You’ve gotta wai[Em]t[D]
+Interlude
+{ci: 2xs}
+| C / / / | Am7 / / / | Em7 / / / | D6 / D / |
+
+{comment: Bridge 2}
+{ci: Parts}
+I’m gonna wa[C]it on You, Jesus, I’m gonna wait on
+You, Jesus, I’m gonna wa[Em7]it on You Jesus
+I’m gonna wai[D6]t on You, Jesus[D],
+I’m not turn[C]ing back now,  I’m not turning back
+now. I’m not tur[Em7]ning back now,
+I’m not tur[D6]ning back now.[D]
+
+{comment: Bridge 2}
+{ci: Flipped Parts}
+Interlude
+{ci: 4xs}
+| C / / / | Am7 / / / | Em7 / / / | D / / / |
+
+{comment: Bridge 2}
+{ci: Flipped Parts}
+Interlude
+{ci: 2xs}
+| C / / / | Am7 / / / | Em7 / / / | D / / / |
+
+{comment: Bridge 2}
+{ci: Flipped Parts}
+
+{comment: Outro}
+{ci: Repeat as directed}
+| C / / / | Am7 / / / | Em7 / / / | D6 / D / |

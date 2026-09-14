@@ -3,6 +3,7 @@
 {key: C}
 {tempo: 82}
 {time: 4/4}
+{x_verified: number chart, 81% of 116 chords}
 {x_theme: healing, testimony}
 {x_source: pdf:UPCI Music/2023/Miracles/Miracles-Never-Thought-That-Id-Be-One-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FMiracles}
@@ -17,85 +18,109 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/miracles/charts/vocals.pdf}
 {x_writers: Cristian Murphy, Rayne Libby, Kaitlyn Lapierre, Draylin Young}
 
-{comment: Intro Verse 2}
-| Am7 / / / | F / / / | C / / / | Em7 / / / Am7 F
-| Am7 / / / | F / / / | C / / / | Em7 / / / Perfect, You were perfect from the start
-Verse 1                                  [C]Helpful, when You
-[Am]Broken, I was broken from the [F]start         pulled me out of the[Em7] dark
-[C]Helpless, left alone in the[Em7] dark              [Am7]Stronger, picked me up when I fell[F] apart
-[Am]Defenseless, my life was falling[F] apart        [C]Hopeful, 'cause You showed me
-[C]Hopeless, unaware of who You [Em7]are          who You [Em7]are
+{comment: Intro}
+| Am7 / / / | F / / / | C / / / | Em7 / / /
+| Am7 / / / | F / / / | C / / / | Em7 / / /
 
-{comment: Pre Chorus Pre Chorus}
-So glad I don't [Dm7]look like what I have         So glad I don't [Dm7]look like what I have
-[C/E]been through, I can't im[F]agine my life        [C/E]been through, I can't im[F]agine my life
-with[G]out You                              with[G]out You
+{comment: Verse 1}
+[Am]Broken, I was broken from the [F]start
+[C]Helpless, left alone in the [Em7]dark
+[Am]Defenseless, my life was falling[F] apart
+[C]Hopeless, unaware of who You [Em7]are
 
-{comment: Chorus Chorus}
-[Am7]I believed in miracles,                      [Am7]I believed in miracles,
-never t[F]hought that I'd be one               never t[F]hought that I'd be one
-You came and chang[C]ed me,                You came and chang[C]ed me,
-all for Your gl[Em7]ory                           all for Your gl[Em7]ory
-[Am7]I believed in miracles,                      [Am7]I believed in miracles,
-never though[F]t that I'd be one               never though[F]t that I'd be one
-You came and mad[C]e me a test[Em7]imony        You came and mad[C]e me a test[Em7]imony
+{comment: Pre Chorus}
+So glad I don't [Dm7]look like what I have
+[C/E]been through, I can't im[F]agine my life
+with[G]out You
+
+{comment: Chorus}
+[Am7]I believed in miracles,
+never t[F]hought that I'd be one
+You came and chang[C]ed me,
+all for Your gl[Em7]ory
+[Am7]I believed in miracles,
+never thoug[F]ht that I'd be one
+You came and ma[C]de me a testi[Em7]mony
 
 {comment: Interlude}
 | Am7 / / / | F / / / | C / / / | Em7 / / / |
 
-{comment: Chorus Bridge 2}
-Am7                                     This is my [C]story[Dm7],
-I believed in miracles, C/E F
-F this is my song
-never thought that I'd be one C/G Am7
-C This is my story,
-You came and changed me, C/E F
-Em7 this is my song
-all for Your glory
-Am7 Vamp 1
-I believed in miracles, C F C
-F I've got a testimony, I've got a testimony
-never thought that I'd be one Am7 F C
-C/E G I've got a testimony, I've got a testimony
-You came and made me a testimony C F C
-I've got a testimony, I've got a testimony
-Interlude Dm7 C/E F G
-| Am7 / / / | F / / / | C / / / | Em7 / / / I've got a testimony, I've got a testimony
+{comment: Verse 2}
+[Am7]Perfect, You were perfect from the[F] start
+[C]Helpful, when You
+pulled me out of the[Em7] dark
+[Am7]Stronger, picked me up when I fell[F] apart
+[C]Hopeful, 'cause You showed me
+who You [Em7]are
+
+{comment: Pre Chorus}
+So glad I don't [Dm7]look like what I have
+[C/E]been through, I can't im[F]agine my life
+with[G]out You
+
+{comment: Chorus}
+[Am7]I believed in miracles,
+never t[F]hought that I'd be one
+You came and chang[C]ed me,
+all for Your gl[Em7]ory
+[Am7]I believed in miracles,
+never thoug[F]ht that I'd be one
+You came and ma[C]de me a testi[Em7]mony
+
+{comment: Chorus}
+[Am7]I believed in miracles,
+never t[F]hought that I'd be one
+You came and chang[C]ed me,
+all for Your gl[Em7]ory
+[Am7]I believed in miracles,
+never thoug[F]ht that I'd be one
+You came and [C/E]made me a testi[G]mony
+
+{comment: Interlude}
+| Am7 / / / | F / / / | C / / / | Em7 / / /
 | Am7 / / / | F / / / | C / / / | G / / / |
 
-{comment: Vamp 2}
-Bridge 1 C
-C C7 F If He did it for me
-This is my story, Dm7
-C C7 F He can do it for you!
-this is my song C/E
-Am F If He did it for me
-I'm praising my savior F
-C C7 F He can do it for you!
-all the day long C/G
-C F If He did it for me
-This is my story, F/A
-C F He can do it for you!
-this is my song C/E
-Dm C/E If He did it for me
-I'm praising my savior F
-F G He can do it for you!
-all the day long
+{comment: Bridge 1}
+This is my [C]story,[C7][F]
+this is my [C]song[C7][F]
+I'm praising my [Am]savior[F]
+all the day l[C]ong[C7][F]
+This is my [C]story,[F]
+this is my [C]song[F]
+I'm praising my [Dm]savior[C/E]
+all the day l[F]ong[G]
 
-{comment: Vamp 3 Interlude}
-C G/C D-E | Am7 / / / | F / / / | C / / / | Em7 / / /
-He can do it for you!
-F Outro
-He can do it for you! Am7
-C G/C D-E I believed in miracles,
-He can do it for you! F
-F never thought that I'd be one
-He can do it for you! C G
-C G/C D-E You came and made me a testimony
-He can do it for you!
-He can d[Am7]o it for you[C]!
-[C/E]He can d[Am7]o it for you[Dm7]!
-He can d[C]o it for you!
+{comment: Bridge 2}
+This is my [C]story,[Dm7]
+this is my [C/E]song[F]
+This is my [C/G]story,[Am7]
+this is my [C/E]song[F]
+
+{comment: Vamp 1}
+[C]I've got a testimo[F]ny, [C]I've got a testimony
+[Am7]I've got a testimon[F]y, [C]I've got a testimony
+[C]I've got a testimo[F]ny, [C]I've got a testimony
+[Dm7]I've got a testim[C/E]ony, I'[F]ve got a testimon[G]y
+
+{comment: Vamp 2}
+If He [C]did it for me
+He can[Dm7] do it for you!
+If He d[C/E]id it for me
+He can[F] do it for you!
+If He d[C/G]id it for me
+He can[F/A] do it for you!
+If He [C/E]did it for me
+He can[F] do it for you!
+
+{comment: Vamp 3}
+[C]He can do it for you![G/C][D-E]
+He can [F]do it for you!
+[C]He can do it for you![G/C][D-E]
+He can [F]do it for you!
+[C]He can do it for you![G/C][D-E]
+He can [Am7]do it for you!
+[C/E]He can [Am7]do it for you![Dm7]
+He can[C] do it for you!
 
 {comment: Interlude}
 | C / / / | Fm6 / / / | C / / / | Fm6 / / /
@@ -109,6 +134,14 @@ He can d[C]o it for you!
 [C]Let Him do it for you,
 [C]let Him do it for you!
 [Am7]Let Him do it for you,
-[C/E]let Him d[Am7]o it for you!
-Dm7 C-B-G
-Let Him do it for you,
+[C/E]let Him [Am7]do it for you!
+[Dm7]Let Him do it for you,[C-B-G]
+
+{comment: Interlude}
+| Am7 / / / | F / / / | C / / / | Em7 / / /
+
+{comment: Outro}
+[Am7]I believed in miracles,
+never thoug[F]ht that I'd be one
+You came and ma[C]de me a test[G]imony
+[C]

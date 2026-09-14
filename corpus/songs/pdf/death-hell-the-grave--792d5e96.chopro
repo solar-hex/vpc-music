@@ -2,8 +2,8 @@
 {key: D}
 {tempo: 83}
 {time: 4/4}
-{x_verified: number chart, 100% of 34 chords}
-{x_theme: blood, easter, healing, salvation, testimony, praise}
+{x_verified: number chart, 97% of 115 chords}
+{x_theme: blood, easter, healing, salvation, testimony}
 {x_source: pdf:UPCI Music/2023/Death Hell + The Grave/Death-Hell-The-Grave-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FDeath%20Hell%20%2B%20The%20Grave}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/death-hell-the-grave/audio/alto.m4a}
@@ -16,78 +16,87 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/death-hell-the-grave/charts/vocals.pdf}
 {x_album: Death, Hell + The Grave (Single)}
 
-Jonathan Stephens | Elenee Young | Brittani Scott
+{comment: Intro}
+| D / / / | Dsus / Asus/D /
 
-{comment: Intro Chorus}
+{comment: Verse 1}
+[(Asus/D)]You took the [D]keys
+To [Dsus]death, hell, and the [D]grave[Asus/D]
+Thinking of[D] me
+A [Dsus]sinner needing [D]saved[Asus/D]
+You trans[Bm7]-formed my s[A]tory
+In-[G]to a testimony
+Cause you took the[D] keys
+To [A]death, hell, and the [(D)]grave
+
+{comment: Interlude}
+| D / / / | Dsus / Asus/D /
+
+{comment: Verse 2}
+[(Asus/D)]You took my [D]fear
+And [Dsus]gave me perfect [D]peace[Asus/D]
+You healed my [D]body
+And[Dsus] all   Anxie -[D] ty[Asus/D]
+You trans[Bm7]-formed my [A]story
+In-[G]to a testimony
+Cause You took my [D]fear
+And [A]gave me perfect[(D)] peace
+
+{comment: Interlude}
+| D / / / | Dsus / Asus/D /
+
+{comment: Chorus}
 {ci: men sing 8vb}
-D / / / | Dsus / Asus/D / D
-We WIN!
-Verse 1 By the blood of the lamb
-(Asus/D) D Dsus
-You took the keys And the word of our testimony
-To [Dsus]death, hell, and the [D]grave[Asus/D]                           WE [D]WIN!
-Thinking of[D] me                                       By the lamb that was s[D]lai[D]n
-A [Dsus]sinner needing [D]saved[Asus/D]                               And [Dsus]risen again in glor[D]y[D]
-You trans[Bm7]-formed my s[A]tory                             WE [Bm7]WIN!
-G By the blood of the lamb
-In-to a testimony A
-D And the word of our testimony
-Cause you took the keys D
-A (D) WE WIN!
-To death, hell, and the grave D D
-By the lamb that was slain
-Interlude Dsus
-D / / / | Dsus / Asus/D / And risen again in glory
+We [D]WIN!
+By the blood of the lamb
+And the [Dsus]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glor[D]y[D]
+WE[Bm7] WIN!
+By the blood of the lamb
+And the [A]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glory
 
-{comment: Verse 2 Interlude}
-(Asus/D) D D / / / | Dsus / Asus/D /
-You took my fear
-Dsus D Asus/D Verse 1 (Two Parts)
-And gave me perfect peace (Asus/D) D
-D You took the keys
-You healed my body Dsus D Asus /D
-Dsus D Asus/D To death, hell, and the grave
-And all Anxie - ty D
-Bm7 A Thinking of me
-You trans-formed my story Dsus D Asus/D
-G A sinner needing saved
-In-to a testimony Bm7 A
-D You trans-formed my story
-Cause You took my fear G
-A (D) In-to a testimony
-And gave me perfect peace D
-Cause you took the keys
-Interlude A D
-D / / / | Dsus / Asus/D / To death, hell, and the grave
-Jonathan Stephens | Elenee Young | Brittani Scott
-Chorus (Parts) (2xs) Bridge (Last x)
-WE [D]WIN!                                            [Bm7]Oh,  Oh,  Oh,   Oh
-By the blood of the lamb A
-Dsus Oh, Oh, Oh, Oh
-And the word of our testimony Gmaj7
-D Oh, Oh, Oh We Win
-WE WIN!
-D D Verse 3 (Music Breakdown)
-By the lamb that was slain D
-Dsus D D You took my life
-And risen again in glory Em7 D/F#
-Bm7 Re-stored the broken things
-WE WIN! Bm7
-By the blood of the lamb You take my questions
-And the [A]word of our testimony                          And d[A]on’t give up on[G] me
-WE [D]WIN!                                            You trans[Bm7]-formed my s[A]tory
-By the lamb that was s[D]lain[D]                             In-[G]to a testimony
-And [Dsus]risen again in glory                               You trans[Bm7]-formed my s[A]tory
-Interlude                                            In-[G]to a testimony
-Bm7 / / / | A / / / | Gmaj9 / / / | Em9 / / / Bm7 A
-You trans-formed my story
-Bridge (men sing 8vb) G
-D In-to a testimony
-Oh, Oh, Oh, Oh D
-Gmaj7 Cause you took the keys
-Oh, Oh, Oh, Oh A D Em/D D
-Em7 To death, hell, and the gra - ve
-Oh, Oh, Oh
+{comment: Interlude}
+| D / / / | Dsus / Asus/D /
+
+{comment: Verse 1}
+{ci: Two Parts}
+[(Asus/D)]You took the [D]keys
+To [Dsus]death, hell, and the [D]grave[Asus][/D]
+Thinking of[D] me
+A [Dsus]sinner needing [D]saved[Asus/D]
+You trans[Bm7]-formed my s[A]tory
+In-[G]to a testimony
+Cause you took the[D] keys
+To [A]death, hell, and the [D]grave
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+WE[D] WIN!
+By the blood of the lamb
+And the [Dsus]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glor[D]y[D]
+WE[Bm7] WIN!
+By the blood of the lamb
+And the [A]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glory
+
+{comment: Interlude}
+| Bm7 / / / | A / / / | Gmaj9 / / / | Em9 / / /
+
+{comment: Bridge}
+{ci: men sing 8vb}
+[D]Oh,  Oh,  Oh,   Oh
+[Gmaj7]Oh,  Oh,  Oh,   Oh
+[Em7]Oh, Oh, Oh
 We [D]Win
 
 {comment: Bridge}
@@ -95,29 +104,57 @@ We [D]Win
 
 {comment: Bridge}
 {ci: Parts}
-Jonathan Stephens | Elenee Young | Brittani Scott
-Chorus (Flipped Parts) (Half-time feel) Chorus (Full Groove)
-NC D D
-WE WIN! WE WIN!
-D By the blood of the lamb
-By the blood of the lamb Dsus
-Dsus And the word of our testimony
-And the word of our testimony D
-Dsus D WE WIN!
-WE WIN! D D
-D By the lamb that was slain
-By the lamb that was slain Dsus D D
-Dsus And risen again in glory
-And risen again in glory Bm7
-Dsus Bm7 WE WIN!
-WE WIN! By the blood of the lamb
-By the blood of the lamb A
-A And the word of our testimony
-And the word of our testimony D
-D WE WIN!
-WE WIN! D D
-By the lamb that was slain By the lamb that was slain
-And [Dsus]risen again in glory                               And [Dsus]risen again in glory
+
+{comment: Bridge}
+{ci: Last x}
+[Bm7]Oh,  Oh,  Oh,   Oh
+[A]Oh,  Oh,  Oh,   Oh
+[Gmaj7]Oh, Oh, Oh We Win
+
+{comment: Verse 3}
+{ci: Music Breakdown}
+You took my [D]life
+Re-[Em7]stored the broken [D/F#]things
+You take my [Bm7]questions
+And [A]don’t give up on [G]me
+You trans[Bm7]-formed my s[A]tory
+In-[G]to a testimony
+You trans[Bm7]-formed my s[A]tory
+In-[G]to a testimony
+You trans[Bm7]-formed my s[A]tory
+In-[G]to a testimony
+Cause you took the[D] keys
+To [A]death, hell, and the [D]gra[Em/D]  -   [D]ve
+
+{comment: Chorus}
+{ci: Flipped Parts, Half-time feel}
+[NC]WE WIN![D]
+By the blood of the [D]lamb
+And the word of our [Dsus]testimony
+[Dsus]WE WIN![D]
+By the lamb that was [D]slain
+And risen [Dsus]again in glory
+[Dsus]WE [Bm7]WIN!
+By the blood of the lamb
+And the [A]word of our testimony
+WE [D]WIN!
+By the lamb that was slain
+And [Dsus]risen again in glory
+
+{comment: Chorus}
+{ci: Full Groove}
+WE [D]WIN!
+By the blood of the lamb
+And the [Dsus]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glor[D]y[D]
+WE[Bm7] WIN!
+By the blood of the lamb
+And the [A]word of our testimony
+WE [D]WIN!
+By the lamb that was s[D]lain[D]
+And [Dsus]risen again in glory
 
 {comment: Ending}
 {ci: Rep as dir}

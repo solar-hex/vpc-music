@@ -3,8 +3,8 @@
 {key: A}
 {tempo: 57}
 {time: 4/4}
-{x_verified: number chart, 100% of 61 chords}
-{x_theme: altar, holy-spirit, praise}
+{x_verified: number chart, 100% of 101 chords}
+{x_theme: altar, holy-spirit}
 {x_source: pdf:UPCI Music/2021/Have Your Way/How-Your-Way-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FHave%20Your%20Way%20-%20Draylin%20Young}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/have-your-way-draylin-young/audio/alto.mp3}
@@ -21,62 +21,104 @@
 {x_album: Miracle Worker}
 {x_writers: Miah White, J.J. Hairston}
 
-Have Your Way Miah White, J.J. Hairston
+{comment: Intro}
+| F#m7 / / / | D / / / | A / / / | E / / /
 
-{comment: Intro Vamp 1}
-F#m7 / / / | D / / / | A / / / | E / / / F#m7
-Send Your glory
-Verse 1(Solo) D
-F#m7 Send Your power
-Lord we need A E
-D We won’t move until You do
-An outpour of Your spirit
-A/E Vamp 2
-Fill this place F#m7
-E We need Your spirit
-Have your way D
-F#m7 We need Your presence
-Lord we need A E
-D Bm7 Fill this place Have Your way
-An outpour of Your spirit
-A F#m7 Chorus(Parts)
-Fill this place F#m7 D
-E Have Your way Have Your way
-Have your way A E
-Have Your way Have Your way
-Verse 1(men sing 8vb) (2xs) F#m7 D
-F#m7 Have Your way Have Your way
-Lord we need A/E E
-D Have Your way Have Your way
-An outpour of Your spirit
-A Tag(Solo)
-Fill this place F#m7 D A E
-E Oh oh oh oh
+{comment: Verse 1}
+{ci: Solo}
+Lord we [F#m7]need
+An outpour of Your [D]spirit
+Fill this [A/E]place
+Have your [E]way
+Lord we [F#m7]need
+An outpour of Your [D]spiri[Bm7]t
+Fill this [A]plac[F#m7]e
+Have your [E]way
+
+{comment: Verse 1}
+{ci: men sing 8vb, 2xs}
+Lord we [F#m7]need
+An outpour of Your [D]spirit
+Fill this [A]place
+Have your [E]way
+
+{comment: Chorus}
+{ci: men sing 8vb, 2xs}
+Have Your[F#m7] way    Have Your [D]way
+Have Your [A]way    Have Your[E] way
+
+{comment: Vamp 1}
+Send Your[F#m7] glory
+Send Your [D]power
+We won’t [A]move until You [E]do
+
+{comment: Vamp 2}
+We need Your [F#m7]spirit
+We need Your [D]presence
+Fill this pla[A]ce   Have Your [E]way
+
+{comment: Chorus}
+{ci: Parts}
+Have Your[F#m7] way    Have Your [D]way
+Have Your [A]way    Have Your[E] way
+Have Your[F#m7] way    Have Your [D]way
+Have Your [A/E]way    Have Your [E]way
+
+{comment: Tag}
+{ci: Solo}
+Oh[F#m7]    oh[D]    oh[A]    oh[E]
 
 {comment: Tag}
 {ci: Unison}
-Chorus(men sing 8vb)(2xs) F#m7 D A E
-F#m7 D Oh oh oh oh
-Have Your way Have Your way
-Have Your [A]way     Have Your[E] way
-Have Your Way Miah White, J.J. Hairston
-Vamp 3(Solo) Vamp 6
-Let Your f[F#m7]ire fall                                     [F#m7]Your   [F#m7]power, [F#m7]Your po[F#m7]wer,
-Let Your [D]winds blow Lord                             [D]Your [D]power, [D]Your[D] power
-Fill this[A] place                                       [A]Your [A]power, [A]Your[A] power
-Have your [E]way                                      [E]Your [E]power, [C#m7]Your p[C#m7]ower
-Vamp 3(Parts)(2xs)                                  [F#m7]Your   [F#m7]power, [F#m7]Your po[F#m7]wer,
-Let Your f[F#m7]ire fall                                     [D]Your [D]power, [D]Your[D] power
-Let Your [D]winds blow Lord                             [A/E]Your power, Your power
-Fill this[A] place                                       [E]Your power, Your power
-Have your [E]way                                    Chorus(Flipped Parts)
-Vamp 4                                          Have[C#m7] Your [F#m7]way     Have Your[D] way
-[F#m7]We need Your glory                             [Bm7]Have Your [A]way     Have Your[E] way
-[D]We need Your power                            Have Your[F#m7] way     Have Your[D] way
-[A]We need Your glory                             Have Your [A/E]way     Have Your[E] way
-[E]We need Your power                            Chorus(Solo)
-Vamp 5                                          Have Your[F#m7] way     Have Your[D] way
-[F#m7]Your glory, your glory                           Have Your [A]way     Have Your[E] way
-[D]Your g[F#m7]lory,[Bm7]     Your  glory                      Ending - Chorus(Parts Flipped Down)
-[A/C#]Your glory,[A]     Your glory
+Oh[F#m7]    oh[D]    oh[A]    oh[E]
+
+{comment: Vamp 3}
+{ci: Solo}
+Let Your [F#m7]fire fall
+Let Your [D]winds blow Lord
+Fill this [A]place
+Have your [E]way
+
+{comment: Vamp 3}
+{ci: Parts, 2xs}
+Let Your [F#m7]fire fall
+Let Your [D]winds blow Lord
+Fill this [A]place
+Have your [E]way
+
+{comment: Vamp 4}
+[F#m7]We need Your glory
+[D]We need Your power
+[A]We need Your glory
+[E]We need Your power
+
+{comment: Vamp 5}
+[F#m7]Your glory, your glory
+[D]Your g[F#m7]lory,[Bm7]    Your  glory
+[A/C#]Your glory,[A]    Your glory
 [E/G#]Your glory, Your glory
+
+{comment: Vamp 6}
+[F#m7]Your   [F#m7]power, [F#m7]Your po[F#m7]wer,
+[D]Your [D]power, [D]Your [D]power
+[A]Your [A]power, [A]Your [A]power
+[E]Your [E]power, [C#m7]Your p[C#m7]ower
+[F#m7]Your   [F#m7]power, [F#m7]Your po[F#m7]wer,
+[D]Your [D]power, [D]Your [D]power
+[A/E]Your power, Your power
+[E]Your power, Your power
+
+{comment: Chorus}
+{ci: Flipped Parts}
+Hav[C#m7]e Your [F#m7]way    Have Your[D] way
+[Bm7]Have Your [A]way    Have Your [E]way
+Have Your[F#m7] way    Have Your [D]way
+Have Your [A/E]way    Have Your[E] way
+
+{comment: Chorus}
+{ci: Solo}
+Have Your[F#m7] way    Have Your [D]way
+Have Your [A]way    Have Your[E] way
+
+{comment: Ending - Chorus}
+{ci: Parts Flipped Down}

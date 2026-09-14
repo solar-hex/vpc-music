@@ -3,7 +3,7 @@
 {key: F}
 {tempo: 115}
 {time: 4/4}
-{x_verified: number chart, 100% of 2 chords}
+{x_verified: number chart, 98% of 89 chords}
 {x_theme: healing, name-of-jesus, faith-trust, heaven, praise, victory}
 {x_source: pdf:UPCI Music/2020/Greater Works/Greater-Works-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FGreater%20Works}
@@ -18,44 +18,64 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/greater-works/charts/vocals.pdf}
 {x_album: Greater Works (Single)}
 
-{comment: Intro Bridge}
-{ci: Ladies}
-F / / / | / / / / ||: F / C/F F | F / C/F F :|| F C/F F Bb F/Bb Bb
-Rise up and walk Depression will flee
-Verse 1 F/D C/D F/D F/C C
-F The ruler of darkness get thee behind me
-At the name of the Lord every knee will bow F C/F F Bb F/Bb Bb
-Bb/F Gm7 My healing is here I claim victory
-All creation will cry out His greatness Dm7 F/C C
-F All by the power of Jesus in me
-And your songs and your daughters are fill
-With power Bridge (Parts)
-[Bb/F]That is found in the[C] name of Jesus                     [F]Rise up and [C/F]walk[F]  De[Bb]pression will f[F/Bb]le[Bb]e
-F / / / | / / / Bb-Bb-Bb | F/D C/D F/D F/C C
-The ruler of darkness get thee behind me
-Verse 2 F/A C/A F/A Bb F/Bb Bb
-F My healing is here I claim victory
-At the name of the Lord we are singing praise F/D C/D F/D C/E C/E
-Bb Gm7 All by the power of Je - sus in me
-For the things that he has done for us
-F Chorus (2xs)
-Now in faith we unite and we give Him thanks
-Bb C Bridge (Flipped Parts)
-For the goodness that he’ll do F C/F F Bb F/Bb Bb
-Bb / / / | / / / / | Rise up and walk Depression will flee
-through us F/D C/D F/D F/C Dm C Bb
-The ruler of darkness get thee behind me
-[Chorus]F      Gm7           Bb               C            My h[F/A]ealing is[C/A] here[F/A]     I[Bb] claim victo[F/Bb]r[Bb]y
-Greater works shall we do in the name of Jesus Dm7 C/E
-F Gm7 Bb All by the power of Jesus in me
-Signs and miracles on the earth as it is in
-[C]Heaven Heaven                                      [Ending]F                   Bb
-Rise up and walk Depression will flee
-Interlude Dm7 C
-F / / / | / / / Bb-Bb-Bb | The ruler of darkness get thee behind me
-My h[F/A]ealing is here     I [Bb]claim victory
-Verse 2 (Parts) > Chorus (Parts) Dm7 C/E C/E Bb
-All by the power of Je - sus in me
+{comment: Intro}
+| F / / / | / / / / ||: F / C/F F | F / C/F F :||
+
+{comment: Verse 1}
+[F]At the name of the Lord every knee will bow
+[Bb/F]All creation will [Gm7]cry out His greatness
+[F]And your songs and your daughters are fill
+With power
+[Bb/F]That is found in the [C]name of Jesus
+| F / / / | / / / Bb-Bb-Bb |
+
+{comment: Verse 2}
+[F]At the name of the Lord we are singing praise
+[Bb]For the things that he[Gm7] has done for us
+[F]Now in faith we unite and we give Him thanks
+[Bb]For the goodness that [C]he’ll do
+| Bb / / / | / / / / |
+through us
+
+{comment: Chorus}
+[F]Greater [Gm7]works shall we d[Bb]o  in the name of J[C]esus
+[F]Signs and [Gm7]miracles on the earth[Bb]  as it is in
+[C]Heaven Heaven
 
 {comment: Interlude}
-F / / / | / / / / |
+| F / / / | / / / Bb-Bb-Bb |
+Verse 2 (Parts) > Chorus
+{ci: Parts}
+
+{comment: Interlude}
+| F / / / | / / / / |
+
+{comment: Bridge}
+{ci: Ladies}
+[F]Rise up and [C/F]walk[F]  De[Bb]pression will [F/Bb]flee[Bb]
+The [F/D]ruler of [C/D]darkne[F/D]ss get [F/C]thee behind m[C]e
+My h[F]ealing i[C/F]s he[F]re  I [Bb]claim victo[F/Bb]ry[Bb]
+[Dm7]All by the power of J[F/C]esus in [C]me
+
+{comment: Bridge}
+{ci: Parts}
+[F]Rise up and [C/F]walk[F]  De[Bb]pression will [F/Bb]flee[Bb]
+The [F/D]ruler of [C/D]darkne[F/D]ss get [F/C]thee behind m[C]e
+My [F/A]healing is[C/A] here[F/A]    I [Bb]claim victor[F/Bb]y[Bb]
+[F/D]All by the [C/D]pow[F/D]er of[C/E] Je  -[C/E] sus in me
+
+{comment: Chorus}
+{ci: 2xs}
+
+{comment: Bridge}
+{ci: Flipped Parts}
+[F]Rise up and [C/F]walk[F]  De[Bb]pression will [F/Bb]flee[Bb]
+The [F/D]ruler of [C/D]darkne[F/D]ss get [F/C]thee behind m[Dm]e[C][Bb]
+My [F/A]healing is[C/A] here[F/A]    I [Bb]claim victor[F/Bb]y[Bb]
+[Dm7]All by the power of J[C/E]esus in me
+
+{comment: Ending}
+[F]Rise up and walk  De[Bb]pression will flee
+The r[Dm7]uler of darkness get [C]thee behind me
+My [F/A]healing is here    I [Bb]claim victory
+[Dm7]All by the power of[C/E] Je  -[C/E] sus    in [Bb]me

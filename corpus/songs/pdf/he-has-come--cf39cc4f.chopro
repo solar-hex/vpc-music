@@ -3,6 +3,7 @@
 {key: F}
 {tempo: 111}
 {time: 4/4}
+{x_verified: number chart, 100% of 44 chords}
 {x_theme: joy, heaven, name-of-jesus, christmas}
 {x_source: pdf:UPCI Music/2023/He Has Come/He-Has-Come-Chord-Chart-1.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FHe%20Has%20Come}
@@ -17,67 +18,92 @@
 {x_album: Emmanuel}
 {x_writers: Jason White}
 
-Intro F13 E13 Eb13 D13
-| - (A-Bb-B-| -C-C-C-C-C-B-C-C#)| D7sus / D7 / | He’s the star that shines so bright
-| Gm7 C7 F / | (A-Bb-B-C)C+7(#9) | Gm F/A Bb6
-The everlasting light
-Chorus (2x) (A-Bb-B-C-C-C-C-C-B-C-C#)
-F7 Bº7 F7 A7 He has come (He has come)
-Joy to the world, the Lord is come D7sus D7
-Dm7 G7 C7 He has come (He has come)
-Come see what God has sent to us Gm7 C7 F (A-Bb-B-C)C+7(#9)
-Am7 D7 Gm7 C7 F Eb D Let heaven and earth rejoice, the Lord has come
-He is God in flesh, Emmanuel, God with us Chorus (2x)
-(A-Bb-B-C-C-C-C-C-B-C-C#) F7
-He has come (He has come) Joy to the world, the Lord is come
-D7sus D7 Come see what God has sent to us
-He has come (He has come) He is God in flesh, Emmanuel, God with us
-Gm7 C7 F (A-Bb-B-C)C+7(#9)
-Let heaven and earth rejoice, the Lord has come (A-Bb-B-C-C-C-C-C-B-C-C#)
-He has come (He has come)
-Verse D7sus D7
-F7 Bb7 Bº7 F7 He has come (He has come)
-The baby Jesus was a precious sight to see Gm7 C7 F (A-Bb-B-C)C+7(#9)
-A7 Dm7 G7 C7 Let heaven and earth rejoice, the Lord has come
-He came to save a sinful wretch like you and me Interlude (2x)
-F7 F11 Bb7 Bº7 | F7 / Bb7 / | F7 / Bb7 / |
-It’s good to know He’s come to rescue me
-{ci: A-Bb-B-C-C-C-C-C-B-C-C#}
-He has come (He has come) Vamp 1 (2x)
-He has com[D7sus]e (He h[D7]as come)                            [F7]Joy,[Bb7]   He’s come to bring us joy
-Gm7 C7 F (A-Bb-B-C)C+7(#9) F7 Bb7
-Let heaven and earth rejoice, the Lord has come Joy, He’s come to bring us joy
-Chorus (2x) Vamp 2
-F7 Bº7 F7 A7 F7 Bb7
-Joy to the world, the Lord is come Peace, He’s come to bring us peace
-[Dm7]Come see what Go[G7]d has sent to u[C7]s                    [F7]Peace[Bb7],   He’s come to bring us peace
-Am7 D7 Gm7 C7 F Eb D Vamp 3 (2x)
-He is God in flesh, Emmanuel, God with us F7 Bb7
-(A-Bb-B-C-C-C-C-C-B-C-C#) Power, He’s come to bring us pow’r
-He has come (He has come) F7 Bb7
-D7sus D7 Power, He’s come to bring us pow’r
-He has come (He has come)
-Gm7 C7 F F Gm Fº/Ab Refrain (4x)
-Let heaven and earth rejoice, the Lord has come
-{ci: A-Bb-B-C-C-C-C-C-B-C-C#}
-Bridge He has come (He has come)
-{ci: D-D-D-D-D}
-Bb7 G+7(#9) C11 He has come (He has come)
-He has come to bring us joy
+{comment: Intro}
+| - (A-Bb-B-| -C-C-C-C-C-B-C-C#)| D7sus / D7 / |
+{ci: A-Bb-B-C)C+7(#9}
+| Gm7 C7 F / | |
+
+{comment: Chorus}
+{ci: 2x}
+[F7]Joy to the world, the [B°7]Lord is c[F7]ome[A7]
+[Dm7]Come see what G[G7]od has sent to u[C7]s
+[Am7]He   [D7]is  [Gm7]God in f[C7]lesh, Emmanuel, [F]God [Eb]with [D]us
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+He has com[D7sus]e (He h[D7]as come)
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lord has come
+{ci: A-Bb-B-C)C+7(#9}
+
+{comment: Verse}
+[F7]The baby Jesus was a [Bb7]precious [B°7]sight to s[F7]ee
+He [A7]came to [Dm7]save a sinful [G7]wretch like you and [C7]me
+[F7]It’s good to [F11]know He’s [Bb7]come to rescue [B°7]me
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+He has com[D7sus]e (He h[D7]as come)
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lord has come
+{ci: A-Bb-B-C)C+7(#9}
+
+{comment: Chorus}
+{ci: 2x}
+[F7]Joy to the world, the [B°7]Lord is c[F7]ome[A7]
+[Dm7]Come see what G[G7]od has sent to u[C7]s
+[Am7]He   [D7]is  [Gm7]God in f[C7]lesh, Emmanuel, [F]God [Eb]with [D]us
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+He has com[D7sus]e (He h[D7]as come)
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lor[F]d ha[Gm]s co[F°/Ab]me
+
+{comment: Bridge}
+He has [Bb7]come to bring us joy[G+7(#9)][C11]
 [F7]He has [Bb7]come to bring us peac[G+7(#9)]e[C11]
+[F13]H[E13]e[Eb13]’s the s[D13]tar that shines so bright
+The [Gm]everla[F/A]sting [Bb6]light
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+He has com[D7sus]e (He h[D7]as come)
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lord has come
+{ci: A-Bb-B-C)C+7(#9}
+
+{comment: Chorus}
+{ci: 2x}
+[F7]Joy to the world, the Lord is come
+Come see what God has sent to us
+He is God in flesh, Emmanuel, God with us
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+He has com[D7sus]e (He h[D7]as come)
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lord has come
+{ci: A-Bb-B-C)C+7(#9}
+
+{comment: Interlude}
+{ci: 2x}
+| F7 / Bb7 / | F7 / Bb7 / |
+
+{comment: Vamp 1}
+{ci: 2x}
+[F7]Joy,[Bb7]   He’s come to bring us joy
+[F7]Joy,[Bb7]   He’s come to bring us joy
+
+{comment: Vamp 2}
+[F7]Peace[Bb7],   He’s come to bring us peace
+[F7]Peace[Bb7],   He’s come to bring us peace
+
+{comment: Vamp 3}
+{ci: 2x}
+[F7]Power[Bb7],   He’s come to bring us pow’r
+[F7]Power[Bb7],   He’s come to bring us pow’r
+
+{comment: Refrain}
+{ci: 4x}
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
+[(D-D-D-D-D)]He has come (He has come)
 UPCI Music 1
 
 {comment: Tag}
 {ci: 2x}
-{ci: A-Bb-B-C}
-He has come, He’s come, He’s come, He’s come
-[A+7(#9)]He’s come[Dm7], He’s come, He’s come, He’s come
-[Gm7]He’s [C11(add13)]come, He’s come, He’s come, He’s come
-[A+7(#9)]He’s come[Dm7], He’s come, He’s come, He’s come
+[(A-Bb-B-C)]He has come, He’s come, He’s come, He’s come
+[A+7(#9)]He’s com[Dm7]e, He’s come, He’s come, He’s come
+[Gm7]He’s c[C11(add13)]ome, He’s come, He’s come, He’s come
+[A+7(#9)]He’s com[Dm7]e, He’s come, He’s come, He’s come
 
 {comment: Ending}
-{ci: A-Bb-B-C-C-C-C-C-B-C-C#}
-He has come (He has come)
+[(A-Bb-B-C-C-C-C-C-B-C-C#)]He has come (He has come)
 He has com[D7sus]e (He h[D7]as come)
-Let [Gm7]heaven and e[C7]arth [F]rejoice, the Lord has[C+7(#9)] come
+Let [Gm7]heaven and [C7]earth [F]rejoice, the Lord has [C+7(#9)]come
 UPCI Music 2

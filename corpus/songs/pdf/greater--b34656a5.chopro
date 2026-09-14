@@ -3,6 +3,7 @@
 {key: G}
 {tempo: 112}
 {time: 4/4}
+{x_verified: number chart, 91% of 65 chords}
 {x_theme: praise, worship}
 {x_source: pdf:UPCI Music/2023/Greater/Greater-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FGreater}
@@ -25,40 +26,50 @@
 {x_chart_other: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/greater/charts/other.pdf}
 {x_album: Jesus You Alone}
 
-Chris Griffin | Nicole McLean | Michah Massey | Jesse Reeves
-Intro Chorus (Flipped Parts) (2xs)
-G5 / / / | / / / / | / / / / | / / / / | G/B C
-All the praise, all the thanks
-Am/G G / / | / / / / | G/D D / / | / / / / | Am7/D Em7
-All the glory to Your name
-G/C C2 / / | / / / / | G / / / / | D/F# G Am7 D
-All for You, Je - sus
+{comment: Intro}
+| G5 / / / | / / / / | / / / / | / / / / |
+| Am/G G / / | / / / / | G/D D / / | / / / / |
+| G/C C2 / / | / / / / | G / / / / |
 
 {comment: Verse}
 {ci: Solo}
-C/G G G/D D Turnaround
-Jesus You’re great - er, here we sur - ren - der G/B C2 / / / | C2 / / / | C2/ / / | C2/
-G/C C G Oh, Je - sus
-You are the Sav - ior, Lord of all
-C/G G G/D D Verse (Flipped Parts)
-Be lifted high - er, as we bow low - er Am/G G G/D D
-G/C C G Jesus You’re great - er, here we sur - ren - der
-You are the Sav - ior, great - er G/C C G
-You are the Sav - ior, Lord of all
-Chorus (Two Parts) Am/G G G/D D
-G/B C Be lifted high - er, as we bow low - er
-All the praise, all the thanks G/C C Am7 G
-Am7/D Em7 You are the Sav - ior, great - er
-All the glory to Your name
-[D/F#]All for[G] You, Je -[D] sus
+Jesus You’re [C/G]great - [G]er, here we sur -[G/D] ren - [D]der
+You are the[G/C] Sav - [C]ior, Lord of a[G]ll
+Be lifted [C/G]high -[G] er, as we bow[G/D] low - [D]er
+You are the[G/C] Sav - [C]ior,   great - [G]er
+
+{comment: Chorus}
+{ci: Two Parts}
+[G/B]All the[C] praise, all the thanks
+[Am7/D]All the [Em7]glory to Your name
+[D/F#]All for [G]You, Je - [D]sus
 
 {comment: Verse}
 {ci: Parts}
-Jesus You’re [Am/G]great - [G]er, here we sur - [G/D]ren - [D]der
-You are the S[G/C]av - io[C]r, Lord of a[G]ll
-Be lifte[Am/G]d high -[G] er, as we bow [G/D]low - e[D]r
-You are the [G/C]Sav - i[C]or,   [Am7]great - [G]er
-Chorus (Parts) (2xs)
+Jesus You’re[Am/G] great -[G] er, here we sur -[G/D] ren - [D]der
+You are the[G/C] Sav - [C]ior, Lord of [G]all
+Be lifte[Am/G]d high - [G]er, as we bow[G/D] low - [D]er
+You are the[G/C] Sav - [C]ior,   [Am7]great - [G]er
+
+{comment: Chorus}
+{ci: Parts, 2xs}
 [G/B]All the[C] praise, all the thanks
-[Am7/D]All the[Em7] glory to Your name
-[D/F#]All for[G] You, Je -[D] sus
+[Am7/D]All the [Em7]glory to Your name
+[D/F#]All for [G]You, Je - [D]sus
+
+{comment: Chorus}
+{ci: Flipped Parts, 2xs}
+[G/B]All the[C] praise, all the thanks
+[Am7/D]All the [Em7]glory to Your name
+[D/F#]All for [G]You,[Am7]  Je - [D]sus
+
+{comment: Turnaround}
+G/B C2 / / / | C2 / / / | C2/ / / | C2/
+Oh, Je - sus
+
+{comment: Verse}
+{ci: Flipped Parts}
+Jesus You’re[Am/G] great -[G] er, here we sur -[G/D] ren - [D]der
+You are the[G/C] Sav - [C]ior, Lord of [G]all
+Be lifte[Am/G]d high -[G] er, as we bow[G/D] low - [D]er
+You are the[G/C] Sav - [C]ior,   [Am7]great - [G]er

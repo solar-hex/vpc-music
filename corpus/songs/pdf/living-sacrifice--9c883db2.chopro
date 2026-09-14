@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 72}
 {time: 6/8}
-{x_verified: number chart, 100% of 10 chords}
+{x_verified: number chart, 100% of 42 chords}
 {x_theme: altar, worship}
 {x_source: pdf:UPCI Music/Living Sacrifice/Living Sacrifice - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FLiving%20Sacrifice}
@@ -18,47 +18,56 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/living-sacrifice/charts/vocals.pdf}
 {x_album: Majesty Displayed}
 
-{comment: Intro Bridge}
-{ci: Unison}
-Ab / | Fm7 / | Cm7 / | / / |
-Ab / | Fm7 / | Bb / | / / |
-
-{comment: Bridge}
-{ci: Parts}
+{comment: Intro}
+| Ab / | Fm7 / | Cm7 / | / / |
+| Ab / | Fm7 / | Bb / | / / |
 
 {comment: Verse}
 {ci: Solo}
-Cm7 Bb Ab Cm7 Bb Ab Vamp
-Lord, let my life be a living sacrifice. Eb/G Ab Cm7 Bb
-Cm7 Bb Ab Fm7 Here I bow. Consume me now.
-Holy and acceptable in Your eyes. Eb/G Ab Cm7 Bb
-Cm7 Bb Ab Cm7 Bb Ab Here I am as a sacrifice, living sacrifice.
-Make my heart a flame, the altar to Your name. Eb/G Ab Cm7 Bb
-Fm7 Eb2/G Abma7 Dbma9 Gm7 Here I bow. Consume me now.
-Let Your perfect will be done in me. Eb/G Ab Gbma9 Fm7
-Here I am as a sacrifice, living sacrifice.
+[Cm7]Lord, let[Bb] my lif[Ab]e be a[Cm7] living [Bb]sacri[Ab]fice.
+[Cm7]Holy a[Bb]nd [Ab]acceptable[Fm7] in Your eyes.
+[Cm7]Make my [Bb]heart a f[Ab]lame, the[Cm7] altar  [Bb]to Your n[Ab]ame.
+[Fm7]Let Your[Eb2/G] perfect[Abma7]  will be[Dbma9] done  in [Gm7]me.
 
 {comment: Chorus}
 {ci: Solo}
-Abma7 Fm9 Eb/Bb Bb Chorus (Ladies)
-I worship You with a sacrifice of my life
-[Eb/Bb]Y[Bb]ielding [Abma7]all of me as an [Fm9]offering            Outro
-Eb/Bb Bb Eb/Bb Bb Gbma9 / | Fm7 / | Gbma9 / |
-Fm7 / | Bb / |
+[Abma7]I worship You with a [Fm9]sacrifice of my[Eb/Bb] life[Bb]
+[Eb/Bb]Y[Bb]ielding[Abma7] all of me as an [Fm9]offering
+Living [Eb/Bb]sacrifice[Bb][Eb/Bb][Bb]
 
 {comment: Chorus}
 {ci: Unison}
 
 {comment: Interlude}
-Ab / | Fm7 / | Cm7 / | / / |
-Ab / | Fm7 / | Bb / |
+| Ab / | Fm7 / | Cm7 / | / / |
+| Ab / | Fm7 / | Bb / |
 
 {comment: Verse}
 {ci: Unison}
-Chorus (Parts) – 2xs
+Chorus (Parts) –
+{ci: 2xs}
 
 {comment: Bridge}
 {ci: Solo}
-Set me apar[Eb]t for Yours[Fm7]elf, for Your wi[Cm7]ll,
-for Your pur[Eb/Bb]pose in m[Bb]e, Purif[Eb]y all my hear[Fm7]t
-Cons[Cm7]ume my life as a sac[Eb/Bb]rifice[Bb].
+Set me ap[Eb]art for You[Fm7]rself, for Your [Cm7]will,
+for Your pur[Eb/Bb]pose in [Bb]me, Purif[Eb]y all my hear[Fm7]t
+Con[Cm7]sume my life as a sa[Eb/Bb]crifice.[Bb]
+
+{comment: Bridge}
+{ci: Unison}
+
+{comment: Bridge}
+{ci: Parts}
+
+{comment: Vamp}
+[Eb/G]Here I [Ab]bow. Con[Cm7]sume me [Bb]now.
+[Eb/G]Here I [Ab]am as a [Cm7]sacrifice, living [Bb]sacrifice.
+[Eb/G]Here I [Ab]bow. Con[Cm7]sume me [Bb]now.
+[Eb/G]Here I [Ab]am as a [Gbma9]sacrifice, living [Fm7]sacrifice.
+
+{comment: Chorus}
+{ci: Ladies}
+
+{comment: Outro}
+| Gbma9 / | Fm7 / | Gbma9 / |
+| Fm7 / | Bb / |

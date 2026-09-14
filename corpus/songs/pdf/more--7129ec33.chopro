@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 140}
 {time: 4/4}
-{x_verified: number chart, 98% of 103 chords}
+{x_verified: number chart, 98% of 110 chords}
 {x_theme: heaven, praise, worship, prayer}
 {x_source: pdf:UPCI Music/2021/More/More-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FMore}
@@ -19,55 +19,83 @@
 {x_album: Powerful Grace}
 {x_writers: Chris Degen}
 
-{comment: Intro Intro}
-||: C / / / | C2/E / / / | F / / / | Gsus / / / :|| | C / / / | C2/E / / / | F / / / | Gsus / / / |
-| C / / / | C2/E / / Dm7 C Bb Dm7 Gsus | C / / / | C2/E / / / Dm C Bb Dm7 Gsus
+{comment: Intro}
+||: C / / / | C2/E / / / | F / / / | Gsus / / / :||
+| C / / / | C2/E / / Dm7 C Bb Dm7 Gsus
 
-{comment: Verse 1 Verse 2}
-Father [C]we [C]ask You for Your[C2/E] presence                   [C13]We h[F]un – g[F/G]er fo[C]r the living[C2/E] God
-Here on [F]earth we call down[Gsus] Heaven                     Tasted and [F]see that You are[Gsus] good
-We are c[C2/E]alling out for[F] more                            We are [C2/E]crying out for[F] more
-We are c[G]alling out for more                            We are c[G]rying out for more
-[F/G]So let your g[C]lory fill this[C2/E] place                          [F/G]There’s noth - [C]ing like being wit[C2/E]h You
-God satur[F]ate and over[Gsus]take                             When we draw [F]near
-There is[Dm7] nothin[C/E]g we want[F] more than                    You’re drawn near[Gsus] too
-more of[Bbmaj9] You                                         There is [Dm7]nothin[C/E]g we want[F] more
+{comment: Verse 1}
+Father [C]we[C] ask You for Your[C2/E] presence
+Here on [F]earth we call down [Gsus]Heaven
+We are [C2/E]calling out for [F]more
+We are [G]calling out for more
+[F/G]So let your [C]glory fill this [C2/E]place
+God satu[F]rate and ove[Gsus]rtake
+There is [Dm7]nothing[C/E] we want [F]more than
+more of [Bbmaj9]You
+
+{comment: Chorus}
+Lifted [C]hands burning [G]hearts
+Reaching [Dm7]out for You [F]God
+We cry [C]out
+Holy [G]One for more of [F]You
+[F]G[G]a[Am7] –[G/B] thered [C]here in Your [G]name
+Giving [Dm7]worship and [F]praise
+Open[C/E] wide Heaven’s [G/B]gates with more of
+[F]You[(G-A-F-E-C-G-A)]
+
+{comment: Intro}
+| C / / / | C2/E / / / | F / / / | Gsus / / / |
+| C / / / | C2/E / / / Dm C Bb Dm7 Gsus
+
+{comment: Verse 2}
+[C13]We [F]hun – [F/G]ger f[C]or the living [C2/E]God
+Tasted and [F]see that You are[Gsus] good
+We are[C2/E] crying out for [F]more
+We are [G]crying out for more
+[F/G]There’s noth - [C]ing like being with[C2/E] You
+When we draw [F]near
+You’re drawn near[Gsus] too
+There is [Dm7]nothing[C/E] we want [F]more
 than[Cmaj9] more[Bmaj9]    of  [Bbmaj9]You
 
 {comment: Chorus}
-Lifted[C] hands burning [G]hearts                            Chorus
-Reaching [Dm7]out for You[F] God                             Lifted[C] hands burning [G]hearts
-We cry o[C]ut                                           Reaching [Dm7]out for You[F] God
-Holy [G]One for more of[F] You                              We cry o[C]ut
-[F]G[G]a[Am7] – [G/B]thered [C]here in Your[G] name                    Holy [G]One for more of[F] You
-Giving [Dm7]worship and [F]praise                                  [F]G[G]a[Am7] – [G/B]thered [C]here in Your[G] name
-Open [C/E]wide Heaven’s g[G/B]ates with more of                 Giving [Dm7]worship and [F]praise
-F (G-A-F-E-C-G-A) C/E G/B
-You Open wide Heaven’s gates with more of
-F / / / | / / / / |
+Lifted [C]hands burning [G]hearts
+Reaching [Dm7]out for You [F]God
+We cry [C]out
+Holy [G]One for more of [F]You
+[F]G[G]a[Am7] –[G/B] thered [C]here in Your [G]name
+Giving [Dm7]worship and [F]praise
+Open[C/E] wide Heaven’s [G/B]gates with more of
+| F / / / | / / / / |
 You
-Bridge (Solo) (2x) Outro
-F G | C / / / | C2/E / / / | F / / / | Gsus / / / |
-We want more
-F2/A G/B C | C / / / | C2/E / / / | F / / / |
-Give us more Lord
-/ Gsus Gsus G C
-Bridge (Unison) (2x)
+
+{comment: Bridge}
+{ci: Solo, 2x}
+[F]We want [G]more
+[F2/A]Give us [G/B]more [C]Lord
+
+{comment: Bridge}
+{ci: Unison, 2x}
 
 {comment: Bridge}
 {ci: Parts}
 [F]We want [G]more
 [F2/A]Give us [G/B]more [C]Lord
 [F2]We want [G]more
-[F2/A]Give us [Em7]more L[Dm7]or------[Bbmaj9]-d
+[F2/A]Give us [Em7]more [Dm7]Lor------[Bbmaj9]-d
 
 {comment: Chorus}
-Lifted[C] hands burning [G]hearts
-Reaching [Dm7]out for You[F] God
-We cry o[C]ut
-Holy [G]One for more of[F] You
-[F]G[G]a[Am7] – [G/B]thered [C]here in Your[G/B] name
+Lifted [C]hands burning [G]hearts
+Reaching [Dm7]out for You [F]God
+We cry [C]out
+Holy [G]One for more of [F]You
+[F]G[G]a[Am7] –[G/B] thered [C]here in Your [G/B]name
 Giving [Dm7]worship and [F]praise
-Open wid[C/E]e    [Dm]Heav-e[C]n’s [G/B]gates[Am7]    with[G] mor[C/E]e
-F / / / / | / (G – A – F – E – C – G – A )
+Open wid[C/E]e    [Dm]Heav-[C]en’s [G/B]gates[Am7]    with [G]mor[C/E]e
+| F / / / / | / (G-A-F-E-C-G-A)
 of You
+
+{comment: Outro}
+| C / / / | C2/E / / / | F / / / | Gsus / / / |
+| C / / / | C2/E / / / | F / / / |
+| / Gsus Gsus G C

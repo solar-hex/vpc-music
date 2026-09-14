@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 152}
 {time: 6/8}
-{x_verified: number chart, 100% of 78 chords}
+{x_verified: number chart, 100% of 82 chords}
 {x_theme: faith-trust, holy-spirit}
 {x_source: pdf:UPCI Music/2021/Never Lost/Never-Lost-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FNever%20Lost}
@@ -18,56 +18,95 @@
 {x_album: Hear Us from Heaven}
 {x_writers: Rita Springer, Catherine Mullins}
 
-Verse 1 (Solo) Tag 1 cont.
-He is my f[Db]aithful Father                                    [Db]And He never will, He never will
-Calling me o[Gb2]ut of the dark                                 [Gb2]And He never will, He never will
-[Bbm7]Night cannot whisper aw[Db/F]ay                            Bridge (2x)
-What He said in the li[Gb2]ght                                  [Db]Our great defender,[Gb2]     our strong tower
-Verse 2 (men sing 8vb)                                   [Bbm7]He has never lost a battle
-He is my [Db]firm foundation                                  [Gb2]He has never lost a battle
-My anchor [Gb2]won’t be moved                            Chorus
-[Bbm7]Storms may collide but m[Db/F]y soul                         [Db]Wind listen to the sound of [Gb2]power on my lips
-Is on fire with His wor[Gb2]d                                [Bbm7]Jesus has broken the curse
-Chorus                                             He has n[Gb2]ever lost a battle
-[Db]Wind listen to the sound of [Gb2]power on my lips             Vamp 1
-[Bbm7]Jesus has broken the curse                            [Db]Who are you great mountain
-He has n[Absus]ever lost a battle                              [Gb2]Who are you great mountain
-[Db/F]Who are you great mountain                           [Ab]Who are you great mountain
-That [Gb2]you should not bow low                           [Bbm7]Who are you great [Gb2]mountain
-[Bbm7]Jesus defeated the darkness                           Vamp 2
-He has n[Absus]ever lost a battle                              [Db]Who are you great mountain
-Tag 1 Who are you great mountain
-[Db]And He never will, He never will                    [Db]Who are you great mountain
-[Gb2]And He never will, He never will                    [Bbm7]Who are you great [Gb2]mountain
-[Db/F]And He never will, He never will                    Interlude
-Gb2 Bbm7 | Db / / / / / | / / / / / / | Gb2 / / / / / | / / / / / / |
-And He never will, He never will | Bbm7 / / / / / | / / / / / / | Gb2 / / / / / | / / / / / / |
-Db | Db / / / / / | / / / / / / | Ebm7 / / / / / | / / / / / / |
-And He never will, He never will | Db/F / / / / / | / / / / / / | Bbm7 / / / / / | Gb2 / / / / / |
+{comment: Verse 1}
+{ci: Solo}
+He is my [Db]faithful Father
+Calling me [Gb2]out of the dark
+[Bbm7]Night cannot whisper aw[Db/F]ay
+What He said in the li[Gb2]ght
+
+{comment: Verse 2}
+{ci: men sing 8vb}
+He is my [Db]firm foundation
+My anchor [Gb2]won’t be moved
+[Bbm7]Storms may collide but m[Db/F]y soul
+Is on fire with His wor[Gb2]d
+
+{comment: Chorus}
+[Db]Wind listen to the sound of p[Gb2]ower on my lips
+[Bbm7]Jesus has broken the curse
+He has [Absus]never lost a battle
+[Db/F]Who are you great mountain
+That [Gb2]you should not bow low
+[Bbm7]Jesus defeated the darkness
+He has [Absus]never lost a battle
+
+{comment: Tag 1}
+[Db]And He never will, He never will
 [Gb2]And He never will, He never will
-Interlude (2x) Chorus cont.
-| Gb2 / / / / Ab | Bbm7 / / / / Ab/C | Db/F
-| Db / / / / Db/F | Gb2 / / / / / | Who are you great mountain
-Tag 1 (2x)                                           That [Gb2]you should not bow low
-[Gb2]A[Ab]nd He ne[Bbm7]ver will, He never wil[Ab/C]l                    [Bbm7]Jesus defeated the darknes[Db]s
-[Db]A[Db/F]nd He nev[Gb2]er will, He never will                    He has n[Absus]ever lost a battle
+[Db/F]And He never will, He never will
+[Gb2]And He [Bbm7]never will, He never will
+[Db]And He never will, He never will
+[Gb2]And He never will, He never will
+Tag 1 cont.
+[Db]And He never will, He never will
+[Gb2]And He never will, He never will
+
+{comment: Bridge}
+{ci: 2x}
+[Db]Our great defender,[Gb2]    our strong tower
+[Bbm7]He has never lost a battle
+[Gb2]He has never lost a battle
+
+{comment: Chorus}
+[Db]Wind listen to the sound of p[Gb2]ower on my lips
+[Bbm7]Jesus has broken the curse
+He has [Gb2]never lost a battle
+
+{comment: Vamp 1}
+[Db]Who are you great mountain
+[Gb2]Who are you great mountain
+[Ab]Who are you great mountain
+[Bbm7]Who are you great [Gb2]mountain
+
+{comment: Vamp 2}
+[Db]Who are you great mountain
+Who are you great mountain
+[Db]Who are you great mountain
+[Bbm7]Who are you great [Gb2]mountain
+
+{comment: Interlude}
+| Db / / / / / | / / / / / / | Gb2 / / / / / | / / / / / / |
+| Bbm7 / / / / / | / / / / / / | Gb2 / / / / / | / / / / / / |
+| Db / / / / / | / / / / / / | Ebm7 / / / / / | / / / / / / |
+| Db/F / / / / / | / / / / / / | Bbm7 / / / / / | Gb2 / / / / / |
+
+{comment: Interlude}
+{ci: 2x}
+| Gb2 / / / / Ab | Bbm7 / / / / Ab/C |
+| Db / / / / Db/F | Gb2 / / / / / |
+
+{comment: Tag 1}
+{ci: 2x}
+[Gb2]A[Ab]nd He [Bbm7]never will, He never w[Ab/C]ill
+[Db]A[Db/F]nd He n[Gb2]ever will, He never will
 
 {comment: Tag 1}
 [Db]And He never will, He never will
 [Ebm7]And He never will, He never will
 [Db/F]And He never will, He never will
-[Bbm7]And He neve[Gb2]r will, He never will
+[Bbm7]And He ne[Gb2]ver will, He never will
 
 {comment: Tag 2}
 {ci: 2x}
-[Gb2]A[Bbm7]n[Ab/C]d[Db] He n[Db/F]ever wi[Gb2]ll, He never will
-[Gb2]A[Bbm7]n[Ab/C]d[Db] He n[Db/F]ever wi[Gb2]ll, He never will
+[Gb2]A[Bbm7]n[Ab/C]d[Db] He [Db/F]never [Gb2]will, He never will
+[Gb2]A[Bbm7]n[Ab/C]d[Db] He [Db/F]never [Gb2]will, He never will
 
 {comment: Verse 1}
 
 {comment: Verse 2}
 He is my [Db]firm foundation
-My anchor [Gb2]won’t be move[Ab]d
+My anchor [Gb2]won’t be moved[Ab]
 [Bbm7]Storms may collide [Ab]but [Gb]my s[Db/F]oul
 Is on fire with His wor[Gb2]d
 
@@ -75,3 +114,8 @@ Is on fire with His wor[Gb2]d
 [Db5]Wind listen to the sound of power on my lips
 Jesus has broken the curse
 He has never lost a battle
+Chorus cont.
+[Db/F]Who are you great mountain
+That [Gb2]you should not bow low
+[Bbm7]Jesus defeated the darkness[Db]
+He has [Absus]never lost a battle

@@ -18,40 +18,47 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/welcome-in/charts/vocals.pdf}
 
 {comment: Intro}
-{ci: F#-G#-A-C#-F#-G#-A) (G#-F#-E-D#-E-F#-E#-D#-C#) (D E F#}
+[(F#-G#-A-C#-F#-G#-A)] [(G#-F#-E-D#-E-F#-E#-D#-C#)] [(D-E-F#)]
 [D/F#] [A/C#] [B/D#] [F#/A#] [G/B] [A/C#] [B/D#]
 
 {comment: Verse}
-F#m D A E 1st time: 2nd time:
-Lord, let Your kingdom come on earth. (4x) (2x)
+[F#m]Lord, let Your [D]kingdom come on [A]earth.[E]    (4x)
+{ci: 1st time}
+{ci: 2nd time}
+{ci: 2x}
 
 {comment: Pre-Chorus}
-[F#m]This is my prayer,  [D]this is my plea.    [A]Let Your will be [E]done in me.         (2x)
-Chorus 1 1st time: 2x 2nd time: 1x
-[F#m]Most high Go[D]d,   in [A]all the earth we [E]sing Your praise.
-[F#m]Most high Go[D]d,   we sing w[A]elcome in[E] this place.
+[F#m]This is my prayer,  [D]this is my plea.    [A]Let Your will be [E]done in me.
+{ci: 2x}
+
+{comment: Chorus 1}
+{ci: 1st time: 2x 2nd time: 1x}
+[F#m]Most high Go[D]d,   in [A]all the earth we s[E]ing Your praise.
+[F#m]Most high Go[D]d,   we sing [A]welcome i[E]n this place.
 
 {comment: Tag}
 [F#m]Welcome   [D]in,    [A]welcome   [E]in,    [F#m]welcome   [D]in,    [A]welcome   [E]in this place.
 
 {comment: Interlude}
-F#m D A (E-C#-B-A) C#5
+[F#m] [D] [A] [(E-C#-B-A)] [C#5]
 {ci: Repeat Verse, Pre-Chorus, Chorus 1, and Tag}
 
 {comment: Bridge}
-[F#m]My Father[D]        in heaven,[A]        hallowed   [E]be Thy name.
-[F#m]Thy kingdom come, [D]Thy will be d[A]one even as it i[E]s in heaven.
+[F#m]My Father[D]    in heaven,[A]    hallowed   [E]be Thy name.
+[F#m]Thy kingdom come[D], Thy will be [A]done even as it [E]is in heaven.
 [F#m]Give us this [D]day our daily[A] bread. Forgive our s[E]ins as we forgive.
-[F#m]And lead us n[D]ot into tempta[A]tion but deliv[E/G#]er us from evil.
-[F#m]For Th[D]ine is the ki[A]ngdom, the po[E]wer, the [F#m]glory.
+[F#m]And lead us [D]not into tempt[A]ation but deli[E/G#]ver us from evil.
+[F#m]For Th[D]ine is the kin[A]gdom, the p[E]ower, the [F#m]glory.
 
 {comment: Chorus 2}
-[F#m]Most h[A]igh [Bm7]God,   we [E/G#]sing     [D]we[E]lco[F#m]me   [E/G#]in[Bm7]          this place.
+[F#m]Most h[A]igh [Bm7]God,   we [E/G#]sing    [D]we[E]lco[F#m]me   [E/G#]in[Bm7]    this place.
 
 {comment: Ending}
-F#m D A 1st time: E F#m D A E
-Welcome in, welcome in, welcome in, welcome in this place. (2x)
-{ci: 2nd time: E/G#}
+{ci: 1st time}
+[F#m]Welcome   [D]in,    [A]welcome   [E]in,    [F#m]welcome   [D]in,    [A]welcome   [E]in this place.
+{ci: 2x}
+{ci: 2nd time}
+[E/G#]
 [F#m]Welcome   [D]in,    [A]welcome   [E]in,    [F#m]welc[F#m11]ome   [D]in,
-{ci: C#-D-E) (A-B-C#) (G#-A-B) (A-G#-F#}
-[A]welcome in[A]   this[F#m] place[D].[Bm][F#m]
+[(C#-D-E)] [(A-B-C#)] [(G#-A-B)] [(A-G#-F#)]
+[A]welcome in[A]   this [F#m]place.[D][Bm][F#m]

@@ -17,61 +17,80 @@
 {x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/the-blood-still-works/audio/soprano.m4a}
 {x_album: Triumphant}
 
-{comment: Intro Chorus}
-Bbm Ab Gdim7 | Fm Fm7 C/E Ab/Eb | Bb Gm7
-| Fm/D Bbm/Eb | Ab / | His blood still works and I'm
-[F]glad to report that [D7(b9)]it    [Gm7]never [C7/E]lost
-Chorus (2x) Cm/F Bb/D Bb
-Ab Fm7 its pow’r Yes, it works,
-His blood still works and I'm Eb Cm7
-Eb C7(b9) Fm7 Bb7/D I've been re – deemed by the
-glad to report that it never lost Eb/F F Eb/F Bb Eb/F
-Bbm/Eb Ab/C Ab blood of the Lamb
-its pow’r Yes, it works,
-[Db]I've been re [Bbm7]– deemed by the                          Bridge
-[Db/Eb]blood   [Eb]of   [Db/Eb]the    [Ab]Lamb[Db/Eb]                             [Bb]Oh,[Cm/Bb]  the   [Bb]blood[Cm/Bb]  of
-[Bb]Je[Cm/Bb]      -    [Bb]sus
-Verse 1 F Gm/F F Cm/F
-Ab Fm7 Bbm/Eb Oh, the blood of
-His blood still works and I'm here to Bb Cm/Bb Bb
-Ab/Eb Db/Eb Eb Je - sus
-testify God is not dead, C/D D7
-Ab Gb/Bb Ab/C Oh, oh the blood, oh, the blood
-He's still alive the same blood that was shed Gm7
-Db Bbm Ab Gdim7 Fm7 Bb7 Oh, the blood, oh, the blood of
-way back at Calvary Is the same blood G7(#9#5)
-Eb Db/Eb Ab D/E Jesus Yes, it does
-that's working now for me Cm7 Dm7 Gm7
-It still works,
-Verse 2                                              [Cm7]It  still  w[Dm7]orks,[Gm7]     the
-[A]His blood r[F#m7]edeems me f[Bm/E]rom the stain of sin               [Cm7]blood  [Cm]Je[Bb/D]    -     [Cm/Eb]sus
-[A/E]And [D/E]His blood [E]cleanses me[A]                         [Gb9]shed st[F9]ill
-deep down within[G/B] So, if you ask me [A/C#]how I
-made it[D]   and how I've ove[Bm]rcom[A]e[G#dim7]
-[F#m7]I can te[B7]ll y[E]ou it's because o[D/E]f the [A]bloo[Eb/F]d
+{comment: Intro}
+| Bbm Ab Gdim7 | Fm Fm7 C/E Ab/Eb |
+| Fm/D Bbm/Eb | Ab / |
 
-{comment: Vamp 1 Ending}
-[Bb7]H[Bb7/D]is blood still[Eb9] works[Eb9]                              [Cm7]It  still  w[Dm7]orks[Gm7],
-[Bb7]H[Bb7]is blood still [Eb9]works[Eb9]                              [Cm7]It  still  w[Dm7]orks,[Gm7]     the
-[Bb7]H[Bb7]is blood still [Eb9]works[C7(b9/#5)]                              [Cm7]blood  [Cm]Je[Bb/D]    -     [Cm/Eb]sus
-[Fm11]H[Bb/D]is blood still [Eb9]works[F/G] [Gb/Ab] [F7(#5)]                            [Gb9]shed st[F9]ill[Bb7] works
+{comment: Chorus}
+{ci: 2x}
+[Ab]His blood still [Fm7]works and I'm
+[Eb]glad to report tha[C7(b9)]t it   [Fm7]never [Bb7/D]lost
+its [Bbm/Eb]pow’r    [Ab/C]Yes, it w[Ab]orks,
+[Db]I've been re –[Bbm7] deemed by the
+[Db/Eb]blood   [Eb]of   [Db/Eb]the    [Ab]Lamb[Db/Eb]
+
+{comment: Verse 1}
+[Ab]His blood still [Fm7]works and I'm[Bbm/Eb] here to
+testify[Ab/Eb] [Db/Eb]    God is not [Eb]dead,
+[Ab]He's still aliv[Gb/Bb]e the same[Ab/C] blood that was shed
+way [Db]back at Calv[Bbm]ary[Ab]    [Gdim7]Is the [Fm7]same bloo[Bb7]d
+[Eb]that's working now[Db/Eb] for    [Ab]me[D/E]
+
+{comment: Verse 2}
+[A]His blood re[F#m7]deems me[Bm/E] from the stain of sin
+[A/E]And [D/E]His blood c[E]leanses me[A]
+deep down withi[G/B]n So, if you ask me [A/C#]how I
+made it[D]   and how I've over[Bm]com[A]e[G#dim7]
+[F#m7]I can te[B7]ll yo[E]u it's because of[D/E] the [A]blood[Eb/F]
+
+{comment: Chorus}
+[Bb]His blood still [Gm7]works and I'm
+[F]glad to report that[D7(b9)] it    [Gm7]never [C7/E]lost
+its [Cm/F]pow’r    [Bb/D]Yes, it [Bb]works,
+[Eb]I've been re –[Cm7] deemed by the
+[Eb/F]blood   [F]of   [Eb/F]the    [Bb]Lamb[Eb/F]
+
+{comment: Bridge}
+[Bb]Oh,[Cm/Bb]  the   [Bb]blood[Cm/Bb]  of
+[Bb]Je[Cm/Bb]    -    [Bb]sus
+[F]Oh,  [Gm/F]the  [F]blood  [Cm/F]of
+[Bb]Je    [Cm/Bb]-    [Bb]sus
+[C/D]Oh,    [D7]oh the blood, oh, the blood
+[Gm7]Oh, the blood, oh, the blood of
+[G7(#9#5)]Jesus Yes, it does
+[Cm7]It  still  [Dm7]works[Gm7],
+[Cm7]It  still  [Dm7]works,[Gm7]    the
+[Cm7]blood  [Cm]Je    [Bb/D]-    [Cm/Eb]sus
+[Gb9]shed s[F9]till
+
+{comment: Vamp 1}
+[Bb7]H[Bb7/D]is blood still [Eb9]works[Eb9]
+[Bb7]H[Bb7]is blood still [Eb9]works[Eb9]
+[Bb7]H[Bb7]is blood still [Eb9]works[C7(b9#5)]
+[Fm11]H[Bb/D]is blood still [Eb9]works[F/G][Gb/Ab][F7(#5)]
 
 {comment: Vamp 2}
-[Bb7]Y[Bb7/D]es  it  [Eb9]works[Eb9],
-[Bb7]Y[Bb7/D]es  it  [Eb9]works[Eb9],
-[Bb7]Y[Bb7/D]es  it  [Eb9]works[C7(b9/#5)],
-[Fm11]Y[Bb/D]es  it  [Eb9]works[F/G]     [Gb/Ab]never lost i[F7(#5)]ts
+[Bb7]Y[Bb7/D]es  it  [Eb9]works,[Eb9]
+[Bb7]Y[Bb7/D]es  it  [Eb9]works,[Eb9]
+[Bb7]Y[Bb7/D]es  it  [Eb9]works,[C7(b9#5)]
+[Fm11]Y[Bb/D]es  it  [Eb9]works[F/G]    [Gb/Ab]never lost [F7(#5)]its
 
 {comment: Vamp 3}
-[Bb7]pow’r[Bb7/D]             [Eb9]n[Edim7]ever lost its
-[Fm11]pow’r[Bb/D]              [Eb9]n[Edim7]ever lost its
-[Fm7]pow’r[Em7],[Ebm7][Bb/D]
-[Eb9]n[Edim7]ever lost it[Fm11]s pow’r[Bb/D]   Yes, it
-[Eb9]works[F/G]      [Gb/Ab]never lost [F7(#5)]its
+[Bb7]pow’r[Bb7/D]    [Eb9]n[Edim7]ever lost its
+[Fm11]pow’r[Bb/D]    [Eb9]n[Edim7]ever lost its
+[Fm7]pow’[Em7]r,[Ebm7][Bb/D]
+[Eb9]n[Edim7]ever lost its[Fm11] pow’r[Bb/D]   Yes, it
+[Eb9]works[F/G]    [Gb/Ab]never lost[F7(#5)] its
 
 {comment: Vamp 4}
-[Bb7]pow’r,[Bb7/D] yes  it  [Eb9]works n[Edim7]ever lost its
-[Fm11]pow’r,[Bb/D] yes  it  [Eb9]works ne[Edim7]ver lost its
-[Fm7]pow’r[Em7],[Ebm7]           [Bb/D]yes i[Eb9]t[C7(b9/#5)]
-[Eb9]works  [C7(b9/#5)]never lost its
-[Fm11]pow’r,[Bb/D] yes  it  [Eb9]work[G7(#9/#5)]s
+[Bb7]pow’r,[Bb7/D] yes  it  [Eb9]works [Edim7]never lost its
+[Fm11]pow’r,[Bb/D] yes  it  [Eb9]works n[Edim7]ever lost its
+[Fm7]pow’[Em7]r,[Ebm7]    [Bb/D]yes i[Eb9]t[C7(b9#5)]
+[Eb9]works  [C7(b9#5)]never lost its
+[Fm11]pow’r,[Bb/D] yes  it  [Eb9]works[G7(#9#5)]
+
+{comment: Ending}
+[Cm7]It  still  [Dm7]works[Gm7],
+[Cm7]It  still  [Dm7]works,[Gm7]    the
+[Cm7]blood  [Cm]Je    [Bb/D]-    [Cm/Eb]sus
+[Gb9]shed s[F9]till [Bb7]works

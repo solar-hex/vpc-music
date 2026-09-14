@@ -3,7 +3,7 @@
 {key: B}
 {tempo: 74}
 {time: 4/4}
-{x_verified: number chart, 100% of 38 chords}
+{x_verified: number chart, 100% of 53 chords}
 {x_theme: name-of-jesus, victory, revival}
 {x_source: pdf:UPCI Music/2022/I Speak Victory/I-Speak-Victory-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FI%20Speak%20Victory}
@@ -25,60 +25,98 @@
 {x_album: Welcome Home}
 {x_writers: Brittani Scott}
 
-David Jennings &
-I Speak Victory Brittani Scott
-Intro G#m7
-||: E / / / | F# / / / | G#m7 / / / | B2 / / / :|| I speak victory
-Verse 1                                                [E]Over every situ[B]ation
-I speak [G#m7]victory                                       Over every [F#(4)]nation
-[E]Over every lif[B]e                                     Chorus 1 (Unison)  à  Chorus 1 (Two Parts)
-Over every fa[F#(4)]mily                                     Chorus 2 (Parts)
-I speak [G#m7]victory                                       The kingdom of Go[E]d is moving forward
-[E]Over every situ[B]ation                                Revival is h[F#]ere it’s all around
-Over every [F#(4)]nation                                    I speak [G#m7]victory
-Chorus 1                                            I speak [B/D#]victory
-Every e[E]nemy is conquered                             There’s nothing to f[E]ear our steps are ordered
-Every strong[F#] – hold is brought down                    Nothing can st[F#]and against us now
-I speak [G#m7]victory                                       I speak [G#m7]victory
-I speak [B/D#]victory                                       I speak [B/D#]victory
-We’re bring home eve [E]– ry son and daughter             Interlude
-F# | E / / / | / / / / | / / / / | / / / / |
-Rulers of dark – ness have to bow
-G#m7 ||: G#m7 / / / | F# / / / | E / / / :||
-B/D# Bridge (Solo)
-I speak victory, victory in the name of G#m7
-Vict’ry in the name of Jesus
-Tag F#
-E / / / | / / / Vict’ry in the name of Jesus
-Jesus E
-Vict’ry in the name of Jesus
-Verse 1 E
-G#m7 Vict’ry in the name
+{comment: Intro}
+||: E / / / | F# / / / | G#m7 / / / | B2 / / / :||
+
+{comment: Verse 1}
+I speak[G#m7] victory
+[E]Over every lif[B]e
+Over every fa[F#(4)]mily
+I speak[G#m7] victory
+[E]Over every situ[B]ation
+Over every[F#(4)] nation
+
+{comment: Chorus 1}
+Every e[E]nemy is conquered
+Every strong[F#] – hold is brought down
+I speak[G#m7] victory
+I speak[B/D#] victory
+We’re bring home eve [E]– ry son and daughter
+Rulers of dark [F#]– ness have to bow
+I speak[G#m7] victory
+I speak[B/D#] victory, victory in the name of
+
+{comment: Tag}
+| E / / / | / / /
+Jesus
+
+{comment: Verse 1}
+I speak[G#m7] victory
 [E]Over every li[B]fe
 Over every f[F#(4)]amily
-David Jennings &
-I Speak Victory Brittani Scott
-Bridge (Parts) Verse 1
-Vict’ry in the name of J[G#m7]esus                            I speak [G#m7]victory
-Vict’ry in the name of J[F#]esus                               [E]Over every lif[B]e
-Vict’ry in the name of J[E]esus                            Over every fa[F#(4)]mily
-E G#m7 / F#/A# B
-Vict’ry in the name I speak victory
+I speak[G#m7] victory
 [E]Over every situ[B]ation
-Bridge (Flipped Parts) (2x) F#(4)
-G#m7 Over every nation
-Vict’ry in the name of Jesus
-F# Outro
-Vict’ry in the name of Jesus G#m7 / / / | E / / / | B / / / | F# / / / |
-Vict’ry in the name of J[E]esus                            G#m7 / / / | E6/9 / / / | B / / / | F# / / / |
-Vict’ry in the nam[C#m7]e
+Over every [F#(4)]nation
+Chorus 1 (Unison) à Chorus 1
+{ci: Two Parts}
+
+{comment: Chorus 2}
+{ci: Parts}
+The kingdom of G[E]od is moving forward
+Revival is h[F#]ere it’s all around
+I speak[G#m7] victory
+I speak[B/D#] victory
+There’s nothing to f[E]ear our steps are ordered
+Nothing can st[F#]and against us now
+I speak[G#m7] victory
+I speak [B/D#]victory
+
+{comment: Interlude}
+| E / / / | / / / / | / / / / | / / / / |
+||: G#m7 / / / | F# / / / | E / / / :||
+
+{comment: Bridge}
+{ci: Solo}
+Vict’ry in the name of J[G#m7]esus
+Vict’ry in the name of J[F#]esus
+Vict’ry in the name of J[E]esus
+Vict’ry in the name[E]
+
+{comment: Bridge}
+{ci: Parts}
+Vict’ry in the name of J[G#m7]esus
+Vict’ry in the name of J[F#]esus
+Vict’ry in the name of J[E]esus
+Vict’ry in the name[E]
+
+{comment: Bridge}
+{ci: Flipped Parts, 2x}
+Vict’ry in the name of J[G#m7]esus
+Vict’ry in the name of J[F#]esus
+Vict’ry in the name of J[E]esus
+Vict’ry in the name[C#m7]
 
 {comment: Vamp}
 {ci: 2x}
 [G#m7]Jesus
 [B/D#]Jesus
 [C#m7]Vict’ry in the nam[E]e
-Vamp (Flipped Parts) (2x)
+
+{comment: Vamp}
+{ci: Flipped Parts, 2x}
 [G#m7]Jesus
 [B/D#]Jesus
 [C#m7]Vict’ry in the nam[E]e
+
+{comment: Verse 1}
+I speak[G#m7] victory
+[E]Over every lif[B]e
+Over every fa[F#(4)]mily
+| G#m7 / F#/A# B
+I speak victory
+[E]Over every situ[B]ation
+Over every[F#(4)] nation
+
+{comment: Outro}
+| G#m7 / / / | E / / / | B / / / | F# / / / |
+| G#m7 / / / | E6/9 / / / | B / / / | F# / / / |

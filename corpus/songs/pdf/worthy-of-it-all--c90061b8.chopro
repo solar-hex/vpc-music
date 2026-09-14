@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 71}
 {time: 4/4}
-{x_verified: number chart, 97% of 33 chords}
+{x_verified: number chart, 98% of 41 chords}
 {x_theme: worship}
 {x_source: pdf:UPCI Music/2021/Worthy of it All/Worthy-of-it-All-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FWorthy%20of%20it%20All}
@@ -18,34 +18,64 @@
 {x_album: Believe For It}
 {x_writers: David Brymer, Ryan Hall}
 
-{comment: Intro Interlude}
-||: Ab / / / | Bbsus / / / | Ab / / / | Bbsus / / / :|| | Eb / / / | Gm7 / / / | Cm / / / | Ab / / / |
-| Eb/Bb / / / | Bb / / / | Fm7 / / / | Ab / / / |
-Verse 1 (Solo) Bridge 1 (Solo / men sing 8vb)
-[Ab]All the saints and[Bbsus] angels                               [Eb]Day and night, night and day let[Gm7] incense arise
-They [Ab]bow before Your [Bbsus]throne                          [Cm]Day and night, night and day let [Ab]incense arise
-[Ab]All the elders[Bbsus] cast their[Eb/G] crowns                           [Eb/Bb]Day and night, night and day let[Bb] incense arise
-Before the [Ab]Lamb of [Bb]God and [Eb]sing                       [Fm7]Day and night, night and day let[Ab] incense arise
-Chorus (Solo) Bridge (Parts)
-You are worthy of it al[Eb]l                                [Eb]Day and night, night and day let[Gm7] incense arise
-Bbsus / / / | Bb / Cm Ab
-You are worthy of it all Day and night, night and day let incense arise
-For from You [Eb/G]are all [Ab]things                              [Eb/Bb]Day and night, night and day let[Bb] incense arise
-And to You are all [Bb]things                              [Fm7]Day and night, night and da[Ab]y
-You deserve the glo[Eb] - ry                               Chorus
-Interlude                                            You are worthy of it al[Eb]l
-(Eb) / / / | / / / / | Ab / / / | Bb / / / | Bbsus / / / | Bb /
+{comment: Intro}
+||: Ab / / / | Bbsus / / / | Ab / / / | Bbsus / / / :||
+
+{comment: Verse 1}
+{ci: Solo}
+[Ab]All the saints and[Bbsus] angels
+They [Ab]bow before Your[Bbsus] throne
+[Ab]All the elders [Bbsus]cast their [Eb/G]crowns
+Before the [Ab]Lamb of [Bb]God and [Eb]sing
+
+{comment: Chorus}
+{ci: Solo}
+You are worthy of it a[Eb]ll
+| Bbsus / / / | Bb /
 You are worthy of it all
-| Ab / / / | Bb / / / | Eb/G Ab
-For from You are all things
-Verse 1 (men sing 8vb) Cm Bb
-And to You are all things
-Chorus (Parts) (2x) Eb
-Eb You deserve the glo - ry
+For from Yo[Eb/G]u are all [Ab]things
+And to You are all [Bb]things
+You deserve the gl[Eb]o - ry
+
+{comment: Interlude}
+| (Eb) / / / | / / / / | Ab / / / | Bb / / / |
+| Ab / / / | Bb / / / |
+
+{comment: Verse 1}
+{ci: men sing 8vb}
+
+{comment: Chorus}
+{ci: Parts, 2x}
+You are worthy of it a[Eb]ll
+| Bbsus / / / | Bb /
 You are worthy of it all
-Bbsus / / / | Bb /
-You are worthy of it all
-For from You [Eb/G]are all [Ab]things
+For from Yo[Eb/G]u are all [Ab]things
 And to You are all[Bb] things
-Eb / / Ebsus | Eb
+| Eb / / Ebsus | Eb
 You deserve the glo – ry
+
+{comment: Interlude}
+| Eb / / / | Gm7 / / / | Cm / / / | Ab / / / |
+| Eb/Bb / / / | Bb / / / | Fm7 / / / | Ab / / / |
+
+{comment: Bridge 1}
+{ci: Solo / men sing 8vb}
+[Eb]Day and night, night and day let[Gm7] incense arise
+[Cm]Day and night, night and day let [Ab]incense arise
+[Eb/Bb]Day and night, night and day let [Bb]incense arise
+[Fm7]Day and night, night and day let [Ab]incense arise
+
+{comment: Bridge}
+{ci: Parts}
+[Eb]Day and night, night and day let[Gm7] incense arise
+[Cm]Day and night, night and day let [Ab]incense arise
+[Eb/Bb]Day and night, night and day let [Bb]incense arise
+[Fm7]Day and night, night and da[Ab]y
+
+{comment: Chorus}
+You are worthy of it a[Eb]ll
+| Bbsus / / / | Bb /
+You are worthy of it all
+For from Yo[Eb/G]u are all [Ab]things
+And to You[Cm] are all [Bb]things
+You deserve the gl[Eb]o - ry

@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 162}
 {time: 6/8}
-{x_verified: number chart, 100% of 16 chords}
+{x_verified: number chart, 100% of 79 chords}
 {x_theme: worship, communion}
 {x_source: pdf:UPCI Music/2021/Making Room/Making-Room-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FMaking%20Room}
@@ -19,29 +19,46 @@
 {x_album: Dwell: Christmas}
 {x_writers: David Binion, Mitch Wong}
 
-{comment: Verse 1 Verse 3}
-[Em7]No r[D]oom in the [C2]inn for the Savior                        [Em7]The f[D]irst thing I’[C2]ll do in the morning
-[Em7]S[D]adly they [C2]turned Him away                           [Em7]The l[D]ast thing I’l[C2]l do every night
-[Em7]S[D]end ‘em on o[C2]ut to the stable                         [Em7]Is[D] build You a[C2] throne with my worship
-[Em7]Let Him be[D] born with the s[C2]heep and the hay              I[Em7] live for commu[D]nion no m[C2]atter the price
-[Em7]No r[D]oom for [C2]Jesus                                  [Em7]There’s [D]room for [C2]Jesus[Em7],  always [D]room for [C2]Jesus
+{comment: Verse 1}
+[Em7]No r[D]oom in the[C2] inn for the Savior
+[Em7]S[D]adly they t[C2]urned Him away
+[Em7]S[D]end ‘em on[C2] out to the stable
+[Em7]Let Him be[D] born with the sh[C2]eep and the hay
+[Em7]No r[D]oom for J[C2]esus
 
-{comment: Verse 2 Chorus}
-Em7 D C2 Interlude
-No room in our worship for Jesus Bridge (4x)
-[Em7]Fors[D]aking His wi[C2]ll for a stage                     I de[G]light, I de[Bm7]light in[C2] You
-[Em7]Con[D]tent to just [C2]go through the motions             All that [G]I want is[Bm7] found in[C2] You
-[Em7]Get through the li[D]st and we’ll c[C2]all it a day                 Tag
-[Em7]No [D]room for J[C2]esus,[Em7]  no [D]room for [C2]Jesus            Come and dw[Am]ell i[G]n [D/F#]me, Jesus n[G]ev - [Bm7]er   l[C2]eave
+{comment: Verse 2}
+[Em7]No [D]room in our [C2]worship for Jesus
+[Em7]For[D]saking His [C2]will for a stage
+[Em7]Con[D]tent to just [C2]go through the motions
+[Em7]Get through the l[D]ist and we’ll [C2]call it a day
+[Em7]No [D]room for J[C2]esus[Em7],  no [D]room for J[C2]esus
 
 {comment: Chorus}
 [G]I have decide[D]d
-I’m making[Em] room, [D]I’m making[C2] room
+I’m making [Em]room, [D]I’m making [C2]room
 [G]Here in my heart, oh [D]Lord
-I’m making[Em] room, [D]I’m making[C2] room
-Come and dw[Am]ell i[G]n [D/F#]me, Jesus n[G]ev - [Bm7]er   l[C2]eave
-{ci: G2/B}
-I’m making room
+I’m making [Em]room, [D]I’m making [C2]room
+Come and [Am]dwell[G] in [D/F#]me, Jesus [G]nev -[Bm7] er   l[C2]eave
+I’m making [(G2/B)]room
 
 {comment: Interlude}
 ||: G2/B / / C2 / / | D4 / / / / / :||
+
+{comment: Verse 3}
+[Em7]The[D] first thing I’ll[C2] do in the morning
+[Em7]The l[D]ast thing I’ll[C2] do every night
+[Em7]Is [D]build You a t[C2]hrone with my worship
+I [Em7]live for commu[D]nion no [C2]matter the price
+[Em7]There’s [D]room for J[C2]esus[Em7],  always [D]room for J[C2]esus
+
+{comment: Chorus}
+
+{comment: Interlude}
+
+{comment: Bridge}
+{ci: 4x}
+I de[G]light, I del[Bm7]ight in [C2]You
+All that I [G]want is f[Bm7]ound in [C2]You
+
+{comment: Tag}
+Come and [Am]dwell[G] in [D/F#]me, Jesus [G]nev -[Bm7] er   l[C2]eave

@@ -3,8 +3,8 @@
 {key: G}
 {tempo: 80}
 {time: 6/8}
-{x_verified: number chart, 96% of 108 chords}
-{x_theme: praise, grace-mercy, healing, name-of-jesus, victory, blood}
+{x_verified: number chart, 98% of 163 chords}
+{x_theme: grace-mercy, praise, healing, name-of-jesus, victory, blood}
 {x_source: pdf:UPCI Music/2023/One Name/One-Name-Jesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FOne%20Name}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/alto.mp3}
@@ -31,86 +31,149 @@
 {x_album: One Name (Jesus)}
 {x_writers: Naomi Raine}
 
-{comment: Intro Chorus}
-{ci: Parts}
-||: G / | / / | C / | / / :|| G G/B C
-I owe it all, all to Jesus all
-Verse 1 D Em7 C
-G C Ev’ry part of me, lying at His feet
-Loved before I had a name G G/B C
-G C I owe it all, let every breath I take
-Washed before I knew my shame D Em7
-G D/F# Rise to bring Him praise
-O the Lamb was slain G C Am
-C To the glory of the one name,
-Before the earth was laid
-G D/F# G C Bridge 1 (Solo)
-What an awesome price He paid C
-Blinded eyes will one day see
-Chorus (Solo) D Em
-G C Ev’ry loss made victory
-I owe it all, all to Jesus all D/F# G Em Dsus
-Em7 C There is healing in one name, one name
-Ev’ry part of me, lying at His feet
-G C Bridge 2 (Solo)
-I owe it all, let every breath I take G/B C
-D Em7 He has silenced every foe
-Rise to bring Him praise D Em
-G C Am Ev’ry high thing brought down low
-To the glory of the one name, Jesus D/F# G Em Dsus
-There is freedom in one name, one name
+{comment: Intro}
+||: G / | / / | C / | / / :||
+
+{comment: Verse 1}
+[G]Loved before I had a[C]  name
+[G]Washed before I knew my[C]  shame
+[G]O the[D/F#] Lamb was slain
+[C]Before the earth was laid
+[G]What an[D/F#] awesome [G]price He[C]  paid
+
+{comment: Chorus}
+{ci: Solo}
+I owe it [G]all, all to Jesus [C]all
+Ev’ry part of[Em7] me, lying at His [C]feet
+I owe it [G]all, let every breath I [C]take
+Rise to [D]bring Him [Em7]praise
+To the [G]glory of the one [C]name, [Am]Jesus
 
 {comment: Interlude}
-||: G / | / / | C / | / / :|| Bridge 3 (men sing 8vb)
-Verse 2                                             [G/B]And soon e[C]v’ry one will know
-[G]Nail-pierced hands are holding[C]  mine                 [D]There still[Em] lives a blessed hope
-[G]A crown of thorns has freed my[C]  mind                 [D/F#]Our sal-[G]vation’s in one Name,[Em] one[Dsus] name
-[G]Sin can-[D/F#]not ex -[G] haust                               Bridge 4 (men sing 8vb)
-[C]The grace shown on that [D]cross                       [G/B]He will[C] one day come again
-[Em]Mercy [D/F#]bought back [G]what was[C]  lost                   [D]To the [Em]praises of all men
-[D/F#]Halle –[G] lujah to one name[Em], one[Dsus] name
-Vamp (Solo) Vamp
-x X
-(I’m talkin’ ‘bout) Jesus, Jesus (We’re singing out) Jesus
-(We’re singing out) Jesus
-Vamp (Parts) X
-x (We’re calling on ) Jesus
-(I’m talkin’ ‘bout) Jesus, Jesus (We’re leaning on) Jesus
-Vamp (2xs) Vamp
-(We’re singing out)[Am] Je -[G/B] sus,  [D/F#]Jes  -[Em] us               (There’s healing in th[D/F#]e name[G] of)[Am] Je [G/B]- sus
-Bridge 1 (Parts)                                      (There’s power in the name of) [D/F#]Je - s[Em]us
-Blinded [C]eyes will one day see                           (There’s freedom in th[D/F#]e name [G]of)[Am] Je -[G/B] sus
-[D]Ev’ry[Em] loss made victory                                (Jesus)[D/F#] Je - [Em]sus
-[D/F#]There is[G] healing in one name,[Em] one[D] name                Bridge 1
-Bridge 2 (Parts)                                      Blinded [C]eyes will one day see
-[Bm7]He has s[C]ilenced every foe                             [D]Ev’ry[Em] loss made victory
-[D]Ev’ry[Em] high thing brought down low                      [D/F#]There is[G] healing in one name,[Em] one[D] name
-[D/F#]There is[G] freedom in on[Cma7]e name,[Em] one[D] name                Bridge 2
-Bridge 3 (Parts)                                      [G/B]He has [C]silenced every [Am7]foe
-And soon e[C]v’ry one will know                           Ev’ry [Em]high thing brought down low
-[D]There still[Em] lives a blessed hope                         [D/F#]There is[G/B] freedom in one name,[Em] one[D] name
-[D/F#]Our sal-[G]vation’s in one Name,[Em] one[D] name                 Tag
-Bridge 4 (Parts)                                      [Am]And soon ev’ry one will know
-[G/B]He will[C] one day come again                            [D]There still[Em] lives a blessed hope
-[D]To the [Em]praises of all men                              [Em]And s[D]oon e[C]v’ry one will know
-[D/F#]Halle –[G] lujah to o[Cma7]ne name[Em], one[D] name                    [D]There still[Em] lives a blessed hope
+||: G / | / / | C / | / / :||
+
+{comment: Verse 2}
+[G]Nail-pierced hands are holding[C]  mine
+[G]A crown of thorns has freed my[C]  mind
+[G]Sin can-[D/F#]not ex -[G] haust
+[C]The grace shown on that [D]cross
+[Em]Mercy [D/F#]bought back [G]what was[C]  lost
+
+{comment: Chorus}
+{ci: Parts}
+I owe it [G]all, all to [G/B]Jesus [C]all
+Ev’ry [D]part o[Em7]f me, lying at His [C]feet
+I owe it [G]all, let every[G/B] breath I[C] take
+Rise to [D]bring Him [Em7]praise
+To the [G]glory of the one [C]name[Am],
+
+{comment: Bridge 1}
+{ci: Solo}
+Blinded [C]eyes will one day see
+[D]Ev’ry [Em]loss made victory
+[D/F#]There is [G]healing in one name, [Em]one [Dsus]name
+
+{comment: Bridge 2}
+{ci: Solo}
+[G/B]He has [C]silenced every foe
+[D]Ev’ry [Em]high thing brought down low
+[D/F#]There is [G]freedom in one name, [Em]one [Dsus]name
 
 {comment: Bridge 3}
-[Em]And s[D]oon e[C]v’ry one will know
-[D]There still[Em] lives a blessed hope
-[D/F#]Our sal-[G]vation’s in o[Cma9]ne name[Em], one[D] name
+{ci: men sing 8vb}
+[G/B]And soon [C]ev’ry one will know
+[D]There still [Em]lives a blessed hope
+[D/F#]Our sal-[G]vation’s in one Name, [Em]one [Dsus]name
+
+{comment: Bridge 4}
+{ci: men sing 8vb}
+[G/B]He will [C]one day come again
+[D]To the [Em]praises of all men
+[D/F#]Halle – [G]lujah to one name, [Em]one [Dsus]name
 
 {comment: Vamp}
-N.C.
-Jesus, Jesus, Jesus
+{ci: Solo}
+x
+(I’m talkin’ ‘bout) Jesus, Jesus
+
+{comment: Vamp}
+{ci: Parts}
+x
+(I’m talkin’ ‘bout) Jesus, Jesus
+
+{comment: Vamp}
+{ci: 2xs}
+(We’re singing out[Am]) Je -[G/B] sus,  [D/F#]Jes  - [Em]us
+
+{comment: Bridge 1}
+{ci: Parts}
+Blinded [C]eyes will one day see
+[D]Ev’ry [Em]loss made victory
+[D/F#]There is [G]healing in one name, [Em]one [D]name
+
+{comment: Bridge 2}
+{ci: Parts}
+[Bm7]He has [C]silenced every foe
+[D]Ev’ry [Em]high thing brought down low
+[D/F#]There is [G]freedom in one [Cma7]name, [Em]one [D]name
+
+{comment: Bridge 3}
+{ci: Parts}
+And soon [C]ev’ry one will know
+[D]There still [Em]lives a blessed hope
+[D/F#]Our sal-[G]vation’s in one Name, [Em]one [D]name
+
+{comment: Bridge 4}
+{ci: Parts}
+[G/B]He will [C]one day come again
+[D]To the [Em]praises of all men
+[D/F#]Halle – [G]lujah to one[Cma7] name, [Em]one [D]name
+
+{comment: Vamp}
+X
+(We’re singing out) Jesus
+(We’re singing out) Jesus
+X
+(We’re calling on ) Jesus
+(We’re leaning on) Jesus
+
+{comment: Vamp}
+(There’s healing in th[D/F#]e nam[G]e of[Am]) Je [G/B]- sus
+(There’s power in the name of)[D/F#] Je - s[Em]us
+(There’s freedom in th[D/F#]e nam[G]e of)[Am] Je -[G/B] sus
+(Jesus[D/F#]) Je - [Em]sus
+
+{comment: Bridge 1}
+Blinded [C]eyes will one day see
+[D]Ev’ry [Em]loss made victory
+[D/F#]There is [G]healing in one name, [Em]one [D]name
+
+{comment: Bridge 2}
+[G/B]He has [C]silenced every [Am7]foe
+Ev’ry [Em]high thing brought down low
+[D/F#]There is [G/B]freedom in one name, [Em]one [D]name
+
+{comment: Tag}
+[Am]And soon ev’ry one will know
+[D]There still [Em]lives a blessed hope
+[Em]And [D]soon [C]ev’ry one will know
+[D]There still [Em]lives a blessed hope
+
+{comment: Bridge 3}
+[Em]And [D]soon [C]ev’ry one will know
+[D]There still [Em]lives a blessed hope
+[D/F#]Our sal-[G]vation’s in one[Cma9] name, [Em]one [D]name
+
+{comment: Vamp}
+[N.C.]Jesus,   Jesus,  Jesus
 Jesus, Jesus, Jesus
 
 {comment: Vamp}
-Jesus,[G]     [D/F#]Je - s[Em7]us,
-[C/G]Je - [G]sus,  [D/F#]Je - [Em7]sus,
-[Am]Je - [G/B]sus,  [D/F#]Je - s[Em]us,
-[Am]Je - [G/B]sus,  [D/F#]Je - s[Em]us,
-[Am]Je - [G/B]sus,  [D/F#]Je - s[Em]us,
+Jesus,[G]    [D/F#]Je - s[Em7]us,
+[C/G]Je - s[G]us,  [D/F#]Je - [Em7]sus,
+[Am]Je - [G/B]sus,  [D/F#]Je - [Em]sus,
+[Am]Je - [G/B]sus,  [D/F#]Je - [Em]sus,
+[Am]Je - [G/B]sus,  [D/F#]Je - [Em]sus,
 
 {comment: Outro}
 ||: Am G/B | / / | D/F# Em | / / :|| Am G |

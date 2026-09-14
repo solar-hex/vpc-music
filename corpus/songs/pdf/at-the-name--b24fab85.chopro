@@ -2,7 +2,7 @@
 {key: F#}
 {tempo: 76}
 {time: 4/4}
-{x_verified: number chart, 85% of 62 chords}
+{x_verified: number chart, 86% of 125 chords}
 {x_theme: name-of-jesus, healing}
 {x_source: pdf:UPCI Music/2023/At The Name/At-The-Name-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FAt%20The%20Name}
@@ -14,68 +14,99 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/at-the-name/charts/vocals.pdf}
 {x_writers: Christyana Blake}
 
-{comment: Intro Chorus}
-| D#m7 / / / | F# sus2 / / / | C# / / / | B / / / D#m7 B F#
-| D#m7 / / / | F# sus2 / / / | C# / / / | B / / / Every fear is silenced when you speak
-Verse                                     Every ene[C#]my will have to flee
-[B]I know a name that’s [G#m7]stronger               [D#m7]Every chain is[B] broken at Your[F#] name
-than any other n[D#m7]ame                       Yours a[C#]lone, the name of Jesus
-It’s the one I[C#] run to and I’m safe            Interlude
-B G#m7 | D#m7 / / / | F# sus2 / / / | C# / / / | B / / /
-There is just one name,
-F# C# Verse
-Jesus, Jesus B G#m7
-B G#m7 I know a name that’s stronger
-I know a name that’s higher D#m7
-D#m7 than any other name
-than any other name C#
-C# It’s the one I run to and I’m safe
-At the mention, every knee will B G#m7
-There is just one name,
-bow one day F# C#
-B G#m7 Jesus, Jesus
-There is just one name, B G#m7
-F# C# I know a name that’s higher
-Jesus, Jesus D#m7
-than any other name
-Pre-Chorus C#
-C# D#m B At the mention, every knee will
-All power is given to Your name
-C# D#m B bow one day
-When we call You, things begin to change B G#m7
-There is just one name,
+{comment: Intro}
+| D#m7 / / / | F# sus2 / / / | C# / / / | B / / /
+| D#m7 / / / | F# sus2 / / / | C# / / / | B / / /
+
+{comment: Verse}
+[B]I know a name that’s [G#m7]stronger
+than any other na[D#m7]me
+It’s the one I [C#]run to and I’m safe
+[B]There is just one n[G#m7]ame,
 J[F#]esus, J[C#]esus
-Pre-Chorus G#m7
-C# D#m B They must bow at Your feet
-All power is given to Your name F#
-C# D#m B Every chain is broken
-When we call You, things begin to change C#
-at the name of Jesus
-[Chorus]D#m7       B                F#         [B]Fear and anxiety
-Every fear is silenced when you speak G#m7
-C# They have no hold on me
-Every enemy will have to flee
-[D#m7]Every chain is[B] broken at Your[F#] name         [F#]Every chain is broken
-Yours a[C#]lone, the name of Jesus             [C#]at the name of Jesus
-[D#m7]Every fear is[B] silenced when you [F#]speak       [B]I curse the enemy
-Every ene[C#]my will have to flee               [G#m7]They must bow at Your feet
-[D#m7]Every chain is[B] broken at Your[F#] name         [F#]Every chain is broken
-Yours a[C#]lone                              [C#]at the name of Jesus
-Tag                                       [B]Fear and anxiety
-At the name of [D#m7]Jesus[B]                      [G#m7]They have no hold on me
-At the name of [F#]Jesus[C#]                      [F#]Every chain is broken
-At the name of [D#m7]Jesus[B]                      [C#]at the name of Jesus
-At the name of [F#]Jesus[C#]                     Bridge 2
-Interlude                                  [B]Depression and disease,
-| B / / / | G#m7 / / / | F# / / / | C# / / / G#m7
-| B / / / | G#m7 / / / | F# / / / | C# / / / | I take authority
-Bridge 1                                  [F#]Every chain is broken
-[B]I curse the enemy                         [C#]at the name of Jesus
-[B]Hope for my family                                       [Ending]B    G#m7  F#  C#
-G#m7 At the name of Jesus
-My whole house will be free B G#m7 F# C#
-F# At the name of Jesus
-Every chain is broken B
+[B]I know a name that’s h[G#m7]igher
+than any other [D#m7]name
+At the mention, every k[C#]nee will
+bow one day
+[B]There is just one n[G#m7]ame,
+J[F#]esus, J[C#]esus
+
+{comment: Pre-Chorus}
+All p[C#]ower is [D#m]given to You[B]r name
+When we [C#]call You, [D#m]things begin[B] to change
+
+{comment: Chorus}
+[D#m7]Every fear is [B]silenced when you s[F#]peak
+Every en[C#]emy will have to flee
+[D#m7]Every chain is [B]broken at Your [F#]name
+Yours a[C#]lone, the name of Jesus
+
+{comment: Interlude}
+| D#m7 / / / | F# sus2 / / / | C# / / / | B / / /
+
+{comment: Verse}
+[B]I know a name that’s [G#m7]stronger
+than any other na[D#m7]me
+It’s the one I [C#]run to and I’m safe
+[B]There is just one n[G#m7]ame,
+J[F#]esus, J[C#]esus
+[B]I know a name that’s h[G#m7]igher
+than any other [D#m7]name
+At the mention, every k[C#]nee will
+bow one day
+[B]There is just one n[G#m7]ame,
+J[F#]esus, J[C#]esus
+
+{comment: Pre-Chorus}
+All p[C#]ower is [D#m]given to Your[B] name
+When we [C#]call You, [D#m]things begin[B] to change
+
+{comment: Chorus}
+[D#m7]Every fear is [B]silenced when you s[F#]peak
+Every en[C#]emy will have to flee
+[D#m7]Every chain is [B]broken at Your [F#]name
+Yours a[C#]lone, the name of Jesus
+[D#m7]Every fear is [B]silenced when you s[F#]peak
+Every en[C#]emy will have to flee
+[D#m7]Every chain is [B]broken at Your [F#]name
+Yours a[C#]lone
+
+{comment: Tag}
+At the name of J[D#m7]esus[B]
+At the name of J[F#]esus[C#]
+At the name of J[D#m7]esus[B]
+At the name of J[F#]esus[C#]
+
+{comment: Interlude}
+| B / / / | G#m7 / / / | F# / / / | C# / / /
+| B / / / | G#m7 / / / | F# / / / | C# / / / |
+
+{comment: Bridge 1}
+[B]I curse the enemy
+[G#m7]They must bow at Your feet
+[F#]Every chain is broken
+[C#]at the name of Jesus
+[B]Fear and anxiety
+[G#m7]They have no hold on me
+[F#]Every chain is broken
+[C#]at the name of Jesus
+[B]I curse the enemy
+[G#m7]They must bow at Your feet
+[F#]Every chain is broken
+[C#]at the name of Jesus
+[B]Fear and anxiety
+[G#m7]They have no hold on me
+[F#]Every chain is broken
+[C#]at the name of Jesus
+
+{comment: Bridge 2}
+[B]Depression and disease,
+[G#m7]I take authority
+[F#]Every chain is broken
+[C#]at the name of Jesus
+[B]Hope for my family
+[G#m7]My whole house will be free
+[F#]Every chain is broken
 [C#]at the name of Jesus
 [B]Depression and disease,
 [G#m7]I take authority
@@ -87,7 +118,12 @@ Every chain is broken B
 [C#]at the name of Jesus
 
 {comment: Chorus}
-[D#m7]Every fear is[B] silenced when you [F#]speak
-Every ene[C#]my will have to flee
-[D#m7]Every chain is[B] broken at Your[F#] name
+[D#m7]Every fear is [B]silenced when you s[F#]peak
+Every en[C#]emy will have to flee
+[D#m7]Every chain is [B]broken at Your [F#]name
 Yours a[C#]lone
+
+{comment: Ending}
+At the name of J[B]esus[G#m7][F#][C#]
+At the name of J[B]esus[G#m7][F#][C#]
+[B]

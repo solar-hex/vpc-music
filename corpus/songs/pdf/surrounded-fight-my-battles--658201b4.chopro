@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 70}
 {time: 4/4}
-{x_verified: number chart, 96% of 25 chords}
+{x_verified: number chart, 98% of 40 chords}
 {x_theme: victory}
 {x_source: pdf:UPCI Music/Surrounded (Fight My Battles)/Surrounded - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FSurrounded%20(Fight%20My%20Battles)}
@@ -18,31 +18,56 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/surrounded-fight-my-battles/charts/vocals.pdf}
 {x_album: Surrounded}
 
-Intro Chorus 3 (Parts / Flipped Parts) (2x)
-Bb / / / Bb
-This is how I fight my battles
-Chorus 1 (2x)                                        This is how I [Bbsus]fight my battles
-This is how I [Bb]fight my battles[Eb/Bb]                            This is how I [Bb]fight my battles
-This is how I [Bb]fight my battles[Eb/Bb]                            This is how I [Bbsus]fight my battles
-Verse (Unison) (2x) Verse (Parts) (2x)
-[Bb/D]It may look like[Eb2] I’m surrounded
-Fsus Gm7 Chorus 2 (Parts / Flipped Parts) (2x)
-But I’m surrounded by You Bb/D Eb2
-Bb/D Eb2 This is how I fight my battles,
-It may look like I’m surrounded Fsus Gm7
-Fsus Gm7 This is how I fight my battles
-But I’m surrounded by You Bb/D Eb2
-This is how I fight my battles,
-Chorus 2 (Parts) (2x)                                 This is how I [Fsus]fight my battle[Gm7]s
-This is how I [Bb/D]fight my battles[Eb2],
-Fsus Gm7 Interlude (3x)
-This is how I fight my battles Bb/D / Eb / | Fsus / Gm7 / | Bb/D / Eb / |
-This is how I [Bb/D]fight my battles,[Eb2]                           Fsus / Gm7 / |
-This is how I [F]fight my battle[Gm7]s
+{comment: Intro}
+| Bb / / /
+
+{comment: Chorus 1}
+{ci: 2x}
+This is how I [Bb]fight my battles[Eb/Bb]
+This is how I [Bb]fight my battles[Eb/Bb]
+
+{comment: Verse}
+{ci: Unison, 2x}
+[Bb/D]It may look like I[Eb2]’m surrounded
+But [Fsus]I’m surrounded by You[Gm7]
+[Bb/D]It may look like I[Eb2]’m surrounded
+But [Fsus]I’m surrounded by You[Gm7]
+
+{comment: Chorus 2}
+{ci: Parts, 2x}
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [Fsus]fight my battles[Gm7]
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [F]fight my battles[Gm7]
+
+{comment: Verse}
+{ci: Parts, 2x}
+
+{comment: Chorus 3}
+{ci: Parts / Flipped Parts, 2x}
+This is how I [Bb]fight my battles
+This is how I [Bbsus]fight my battles
+This is how I [Bb]fight my battles
+This is how I [Bbsus]fight my battles
+
+{comment: Verse}
+{ci: Parts, 2x}
+
+{comment: Chorus 2}
+{ci: Parts / Flipped Parts, 2x}
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [Fsus]fight my battles[Gm7]
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [Fsus]fight my battles[Gm7]
+
+{comment: Interlude}
+{ci: 3x}
+| Bb/D / Eb / | Fsus / Gm7 / | Bb/D / Eb / |
+| Fsus / Gm7 / |
 
 {comment: Chorus 2}
 {ci: 2x}
-Verse (Parts) (2x)                                     This is how I [Bb/D]fight my battles[Eb2],
-This is how I [Fsus]fight my battle[Gm7]s
-This is how I [Bb/D]fight my battles[Eb2],
-This is how I [Fsus]fight my battle[Gm7]s
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [Fsus]fight my battles[Gm7]
+This is how I [Bb/D]fight my battles,[Eb2]
+This is how I [Fsus]fight my battles[Gm7]

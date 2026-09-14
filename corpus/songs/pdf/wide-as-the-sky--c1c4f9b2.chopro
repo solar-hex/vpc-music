@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 65}
 {time: 4/4}
-{x_verified: number chart, 88% of 24 chords}
+{x_verified: number chart, 84% of 57 chords}
 {x_source: pdf:UPCI Music/2019/Wide as the Sky/Wide-as-the-Sky-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWide%20as%20the%20Sky}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/wide-as-the-sky/audio/alto.m4a}
@@ -19,36 +19,57 @@
 {x_source_wide_as_the_sky_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/wide-as-the-sky/source/Wide-as-the-Sky-Vocal-Parts.zip}
 {x_album: Wide as the Sky (Live)}
 
-Chorus (Solo) Eb Ab
-Ab Eb Cm7 Bb Ab Jesus take Your place
-Hands up, hearts open wide as the sky Bb
-Eb Cm7 Bb Jesus take Your place
-We lift You high, we lift You high. Ab/C
-Ab Eb Cm7 Bb Ab Jesus take Your place,
-Hands up, hearts open wide as we cry Bb/D
-Eb Cm7 Bb Jesus take Your place
-God we lift Your name high
+{comment: Chorus}
+{ci: Solo}
+[Ab]Hands[Eb] up, hearts [Cm7]open w[Bb]ide as the sk[Ab]y
+We [Eb]lift You high[Cm7],    we l[Bb]ift You high.
+[Ab]Hands[Eb] up, hearts [Cm7]open w[Bb]ide as we cry[Ab]
+[Eb]God we[Cm7] lift Your name hig[Bb]h
+Chorus (Unison)
+{ci: 2xs}
+
+{comment: Bridge}
+{ci: Unison}
+[Ab]Let all the other names [Cm7]fade a[Bb]way[Eb/G]
+[Ab]Let all the other names [Cm7]fade a[Bb]way
+[Bb/D]till   t[Eb]here’s o[/G]n - l[Eb]y
+[Ab]You. Let all the other name[Cm7]s fade [Bb]away
+Jesus [Eb/G]take Yo[Ab]ur place, [Cm7]Jesus take Your [Bb]place
+Bridge (Parts) à Bridge
+{ci: Flipped Parts}
+
+{comment: Tag}
+Jesus take You[Ab/C]r place,
+Jesus take Yo[Bb/D]ur place
+Jesus t[Eb]ake You[Ab]r place
+Jesus take Your [Bb]place
+
+{comment: Tag}
+{ci: Parts}
+Jesus take You[Ab/C]r place,
+Jesus take Yo[Bb/D]ur place
+Jesus t[Eb]ake You[Ab]r place
+Jesus take Your [Bb]place
+Jesus take You[Ab/C]r place,
+Jesus take Yo[Bb/D]ur place
 
 {comment: Vamp 1}
 {ci: men sing 8vb}
-Chorus (Unison) 2xs Ab Cm7
-We lift You high,
-Bridge (Unison)                                           [Bb]we lift You[Eb/G] high,
-[Ab]Let all the other names[Cm7] fade a[Bb]way[Eb/G]                       [Ab]We lift You [Cm7]high,
-[Ab]Let all the other names[Cm7] fade a[Bb]way                       [Bb]we lift You[Eb/G] high,
-Bb/D Eb /G Eb
-till there’s on - ly
-Ab Cm7 Bb Vamp 1 (Parts)
-You. Let all the other names fade away
-Jesus [Eb/G]take You[Ab]r place, [Cm7]Jesus take Your [Bb]place            Vamp 2 (Parts) 2xs
 [Ab]We lift You [Cm7]high,
-Bridge (Parts) à Bridge (Flipped Parts) Bb Eb/G
-we lift You high,
-Tag                                                      [Ab]We lift You [Cm7]high,
-Jesus take Your[Ab/C] place,                                     [Bb]we lift You[Eb/G] high,
-Jesus take You[Bb/D]r place                                     [Ab]We lift You [Cm7]high,
-Jesus t[Eb]ake Your[Ab] place                                     [Bb]we lift You[Eb/G] high
-Jesus take Your [Bb]place                                 [Ab]Hand up, [Cm7]God we l[Bb]ift Your name high.
-Tag (Parts) Bridge 2xs
-Jesus take Your[Ab/C] place,
-Jesus take You[Bb/D]r place
+[Bb]we lift You[Eb/G] high,
+[Ab]We lift You [Cm7]high,
+[Bb]we lift You[Eb/G] high,
+
+{comment: Vamp 1}
+{ci: Parts}
+Vamp 2 (Parts)
+{ci: 2xs}
+[Ab]We lift You [Cm7]high,
+[Bb]we lift You[Eb/G] high,
+[Ab]We lift You [Cm7]high,
+[Bb]we lift You[Eb/G] high,
+[Ab]We lift You [Cm7]high,
+[Bb]we lift You[Eb/G] high
+[Ab]Hand up, [Cm7]God we [Bb]lift Your name high.
+Bridge
+{ci: 2xs}

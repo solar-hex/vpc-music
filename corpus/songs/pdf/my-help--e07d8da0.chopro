@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 77}
 {time: 4/4}
-{x_verified: number chart, 100% of 40 chords}
+{x_verified: number chart, 100% of 60 chords}
 {x_theme: healing, heaven, joy, salvation, worship}
 {x_source: pdf:UPCI Music/2020/My Help/My-Help-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FMy%20Help}
@@ -27,37 +27,47 @@
 {x_source_my_help_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/my-help/source/My-Help-Chord-Chart-TXT.txt}
 {x_album: Glory Forever}
 
-Intro Am7 G D/F#
-||: C / / / | D / / / | C / / / | D / / / :|| There is none like the help of the Lord
+{comment: Intro}
+||: C / / / | D / / / | C / / / | D / / / :||
 
-{comment: Verse Bridge}
-[C]Our Father[D]    [C]You hold all[D] power in heaven            There’s no help[C]  like our help
-[C]Our savior[D]     [C]You purchased [D]my salvation             There’s no hop[Em7]e     like our hop[D]e
-[C]Our healer[D]     [C]all sickness h[D]as to flee                 There is non[Am7]e   like the help of the Lor[G]d[D/F#]
-There’s no joy[C]  like our Joy
-Pre-Chorus Em7 D
-C D C/E There’s no love like Your love
-We will worship we are thankful Am7 G D
-C/E D/F# There is none like the help of the Lord
-We will sing unto thee
+{comment: Verse}
+[C]Our Fathe[D]r    [C]You hold all [D]power in heaven
+[C]Our savior[D]    [C]You purchased [D]my salvation
+[C]Our healer[D]    [C]all sickness h[D]as to flee
 
 {comment: Pre-Chorus}
-{ci: 3xs}
-[Chorus] [C] [D] [C/E]
-[G]W[D]e[Em7] [C]will worship    we are thankful
-My Help cometh from, cometh from, from the Lord C/E D/F#
-[G]W[D]e[Em7] [C]will sing unto thee
-My Help cometh from, cometh from, from the Lord
+[C]We will worship    [D]we are thankful[C/E]
+[C/E]We will sing unto the[D/F#]e
 
-{comment: Chorus - Ending}
-Interlude G D Em7 C
-| C / / / | D / / / | C / / / | D / / / | My Help cometh from, cometh from, from the Lord
-My H[G]elp cometh f[D]rom, cometh f[Em7]rom, from the L[C]ord
-Verse à Pre-Chorus à Chorus
+{comment: Chorus}
+My [G]Help cometh f[D]rom, cometh [Em7]from, from the L[C]ord
+My [G]Help cometh f[D]rom, cometh [Em7]from, from the L[C]ord
+
+{comment: Interlude}
+| C / / / | D / / / | C / / / | D / / / |
+{ci: Verse → Pre-Chorus → Chorus}
 
 {comment: Bridge}
 There’s no help[C]  like our help
-There’s no hop[Em7]e     like our hop[D]e
-There is non[Am7]e   like the help of the Lor[G]d[D/F#]
+There’s no hop[Em7]e    like our hop[D]e
+There is none[Am7]   like the help of the Lor[G]d[D/F#]
 There’s no joy[C]  like our Joy
-There’s no lo[Em7]ve     like Your lov[D]e
+There’s no lov[Em7]e    like Your love[D]
+There is non[Am7]e  like the help of the Lo[G]rd[D/F#]
+
+{comment: Bridge}
+There’s no help[C]  like our help
+There’s no hop[Em7]e    like our hop[D]e
+There is none[Am7]   like the help of the Lor[G]d[D/F#]
+There’s no joy[C]  like our Joy
+There’s no lov[Em7]e    like Your love[D]
+There is non[Am7]e  like the help of the Lo[G]rd[D]
+
+{comment: Pre-Chorus}
+{ci: 3xs}
+[C]We will worship    [D]we are thankful[C/E]
+[C/E]We will sing unto the[D/F#]e
+
+{comment: Chorus - Ending}
+My [G]Help cometh f[D]rom, cometh [Em7]from, from the L[C]ord
+My [G]Help cometh f[D]rom, cometh [Em7]from, from the L[C]ord

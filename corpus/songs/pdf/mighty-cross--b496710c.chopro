@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 72}
 {time: 4/4}
-{x_verified: number chart, 100% of 65 chords}
+{x_verified: number chart, 100% of 73 chords}
 {x_theme: easter, blood, cross, name-of-jesus}
 {x_source: pdf:UPCI Music/Mighty Cross/Mighty Cross - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FMighty%20Cross}
@@ -18,39 +18,69 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/mighty-cross/charts/vocals.pdf}
 {x_album: There is a Cloud}
 
-Intro (2x) C G
-G/B / Cma7 / | D / / / | G/B / Cma7 / | To break and we arise
-D / / /
-
-{comment: Verse 1 Chorus 2}
-On the [G]day that death surrendered                      Oh the c[D]ross of[G/B] Je – [C]sus Christ
-To the [Em]mighty cross of Jesus Christ                      Is the [D/F#]reason [G]I’m [C]alive
-The earth[D] would shake beneath [C]the weight               For His [D]blood has set[Em] me free
-Of [G/B]darkened skies[Cma7]                                     It wil[C]l never[G/B] lose it[D]s power fo[G]r me
-
-{comment: Intro Bridge}
+{comment: Intro}
 {ci: 2x}
-Verse 2                                                  [G/B]Halle – [C]lujah,[G/D]      halle – [D]lujah
-On His [G]brow a crown of sorrow                           [C]Christ my v[Em]icto – [D]ry
-For a [Em]king whose weakness was our strength                [G/B]Halle – [C]lujah,[G/D]      halle – [D]lujah
-No word [D]He spoke                                      [C]It i[D]s won[G] for me
-His love [C]was shown for a[G]ll to see                        Intro (2x)
+| G/B / Cma7 / | D / / / | G/B / Cma7 / |
+| D / / /
 
-{comment: Chorus 1 Verse 4}
-Oh the c[D]ross of Je – [C]sus Christ                         On the [G]day he comes in glory
-Is the [D]reason I’m [C]alive                                  To re – v[Em]eal the fullness of His reign
-For His [D]blood has set[Em] me free                           All hearts [D]will bow be – f[G/B]ore
-It wil[C]l never[G/B] lose it[D]s power[G/B] for me[Cma7]                        [C]The sound of [G]Jesus name
+{comment: Verse 1}
+On the [G]day that death surrendered
+To the [Em]mighty cross of Jesus Christ
+The earth [D]would shake beneath [C]the weight
+Of [G/B]darkened skie[Cma7]s
 
-{comment: Intro Chorus 2}
+{comment: Intro}
 
-{comment: Verse 3 Chorus 3}
-Now the [G]dawn of resurrection                           [D]Oh the c[G/B]ross [C]of Je – sus Christ
-Floods the [Em]night as hope prevails to shine                Is the [D/F#]reason [G]I’m [C]alive
+{comment: Verse 2}
+On His [G]brow a crown of sorrow
+For a [Em]king whose weakness was our strength
+No word [D]He spoke
+His love [C]was shown for [G]all to see
+
+{comment: Chorus 1}
+Oh the [D]cross of Je –[C] sus Christ
+Is the [D]reason I’m [C]alive
+For His [D]blood has set [Em]me free
+It will [C]never l[G/B]ose its [D]power [G/B]for me[Cma7]
+
+{comment: Intro}
+
+{comment: Verse 3}
+Now the [G]dawn of resurrection
+Floods the[Em] night as hope prevails to shine
 Salva – t[D]ion wakes our [G/B]chains
-For His [D]blood has set[Em] me free
-It wil[C]l never[G/B] lose it[D]s power fo[Em]r me
+[C]To break and[G] we arise
+
+{comment: Chorus 2}
+Oh the [D]cross of[G/B] Je –[C] sus Christ
+Is the [D/F#]reason [G]I’m [C]alive
+For His [D]blood has set [Em]me free
+It will [C]never l[G/B]ose its [D]power for[G] me
+
+{comment: Bridge}
+{ci: 2x}
+[G/B]Halle – [C]lujah,[G/D]    halle – [D]lujah
+[C]Christ my [Em]victo – [D]ry
+[G/B]Halle – [C]lujah,[G/D]    halle – [D]lujah
+[C]It is [D]won [G]for me
+
+{comment: Intro}
+{ci: 2x}
+
+{comment: Verse 4}
+On the [G]day he comes in glory
+To re – [Em]veal the fullness of His reign
+All hearts [D]will bow be – f[G/B]ore
+[C]The sound of [G]Jesus name
+
+{comment: Chorus 2}
+
+{comment: Chorus 3}
+[D]Oh the [G/B]cross[C] of Je – sus Christ
+Is the [D/F#]reason [G]I’m [C]alive
+For His [D]blood has set [Em]me free
+It will [C]never l[G/B]ose its [D]power for[Em] me
 
 {comment: Ending}
-It will[C] never[G/B] lose it[D]s power for[Em] me
-It will[C] never[G/B] lose it[D]s power for[G] me
+It will n[C]ever l[G/B]ose its [D]power for [Em]me
+It will n[C]ever l[G/B]ose its [D]power for [G]me

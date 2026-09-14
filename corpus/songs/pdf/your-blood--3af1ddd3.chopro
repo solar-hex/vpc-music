@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 69}
 {time: 4/4}
-{x_verified: number chart, 100% of 13 chords}
+{x_verified: number chart, 100% of 33 chords}
 {x_theme: healing, blood, faith-trust}
 {x_source: pdf:UPCI Music/2019/Your Blood (Live)/Your-Blood-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FYour%20Blood%20(Live)}
@@ -18,39 +18,57 @@
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/your-blood-live/charts/vocals-with-chords.pdf}
 {x_album: Show Us Your Glory}
 
-{comment: Intro Verse 1}
-{ci: Parts}
+{comment: Intro}
 | A / / / | / / / E/G# | F#m7 / / / | / / / / |
-| E / / / | D / / / | A / / D/A | A / / D/A | Verse 2 (Parts)
+| E / / / | D / / / | A / / D/A | A / / D/A |
 
-{comment: Verse 1 Chorus}
-Your b[A]lood is a rescue to the sin stained lif[E/G#]e
-F#m7 Tag 2 (men sing 8vb)
-Your blood is healing to the hopeless and broken (A) D
-E D More than enough
-Your blood is enough E D
-A D/A A D/A More than enough
-Jesus it’s enough E D
-More than enough
-E D / / / | E / / / /
-Verse 2 More than enough
-Your b[A]lood is a shelter in the middle of a stor[E/G#]m
-F#m7 Chorus (2xs)
-Your blood is my refuge when I’m hurting and alone
-Your bloo[E]d is enough[D]                                  Tag 1 (men sing 8vb)
-A D/A A (A) D
-Jesus it’s enough More than enough
-[E]More than enoug[D]h
-[Chorus](A)        D               E                             [E]More than enoug[D]h
-It’s renewing, restoring, saving and healing. E D / / / | E / / / / | A
-F#m7 E/G# A More than enough
-Delivering captives, setting us free.
-It is l[D]ife everlasting, a[E]ll who receive it,
-Your blood[F#m7].[E/G#][A]
+{comment: Verse 1}
+Your [A]blood is a rescue to the sin stained lif[E/G#]e
+Your [F#m7]blood is healing to the hopeless and broken
+Your bloo[E]d is enough[D]
+Jesus it’s enoug[A]h[D/A][A][D/A]
+
+{comment: Verse 2}
+Your [A]blood is a shelter in the middle of a storm[E/G#]
+Your [F#m7]blood is my refuge when I’m hurting and alone
+Your bloo[E]d is enough[D]
+Jesus it’s enoug[A]h[D/A][A]
+
+{comment: Chorus}
+[(A)]It’s rene[D]wing, restoring, s[E]aving and healing.
+Deliv[F#m7]ering captives, s[E/G#]etting us [A]free.
+It is lif[D]e everlasting, al[E]l who receive it,
+Your bloo[F#m7]d.[E/G#][A]
 
 {comment: Tag 1}
 {ci: men sing 8vb}
-(A) D
+[(A)]More than enoug[D]h
+| E D / / / | E / / / |
 More than enough
-E D / / / | E / / / |
+
+{comment: Verse 1}
+{ci: Parts}
+
+{comment: Verse 2}
+{ci: Parts}
+
+{comment: Chorus}
+
+{comment: Tag 2}
+{ci: men sing 8vb}
+[(A)]More than enoug[D]h
+[E]More than enoug[D]h
+[E]More than enoug[D]h
+| E D / / / | E / / / /
+More than enough
+
+{comment: Chorus}
+{ci: 2xs}
+
+{comment: Tag 1}
+{ci: men sing 8vb}
+[(A)]More than enoug[D]h
+[E]More than enoug[D]h
+[E]More than enoug[D]h
+| E D / / / | E / / / / | A
 More than enough

@@ -3,7 +3,7 @@
 {key: E}
 {tempo: 152}
 {time: 4/4}
-{x_verified: number chart, 97% of 58 chords}
+{x_verified: number chart, 92% of 112 chords}
 {x_theme: revival, faith-trust, healing, heaven, holy-spirit, praise}
 {x_source: pdf:UPCI Music/2020/Come Move/Come-Move-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FCome%20Move}
@@ -18,73 +18,102 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/come-move/charts/vocals.pdf}
 {x_album: Fight For Us}
 
-{comment: Intro Tag}
-(Push Chords on the & of 4) B E Bm7 Dmaj9 A2
+{comment: Intro}
+{ci: Push Chords on the & of 4}
 | E / / / / | Bm7 / / / | Dmaj9 / / / | A2 / / / |
-E Bm7 A2 (C#-D#-E-F#-E)
 | E / / / / | Bm7 / / / | A2 / / / | A2 / / B E |
 
-{comment: Verse 1 Verse 2}
-(E) F#m (E) F#m11
-Praying in expectation, desperate for revelation Moving ahead in freedom, nothing can stop
-E/G# A B Your Kingdom
-We want to see Your will be done E/G# A B
-E F#m Faith will arise, right here, right now
-Give us glimpse of glory, a new and a E F#m11
-fresh outpouring Break every chain and shackle, make every
-E/G# A lie unravel
-We want to see revival come E/G# A
-We lift You high as walls fall down
+{comment: Verse 1}
+[(E)]Praying in expectation[F#m],   desperate for revelation
+[E/G#]We want to see Your will be don[A]e[B]
+[E]Give us glimpse of glory,[F#m]    a new and a
+fresh outpouring
+[E/G#]We want to see revival com[A]e
 
 {comment: Pre Chorus}
-A E/G# F#m7 Pre Chorus
-Our hearts are open wide B C#m7 F#m7
-A Dmaj7 Our hearts are open wide
-Lord fill us with Your fire A Bm(-C#-D-E-F#-A)
-Lord, fill us with Your fire
+[A]O[E/G#]ur he[F#m7]arts  are open wide
+Lord [A]fill us with Your [Dmaj7]fire
 
 {comment: Chorus}
-Come [E]move  like a[Bm7] rushing win[Chorus]d
-[Dmaj9]Sweep over this [A2]church again                           Bridge
-E Bm7 A2 (B-B-B-C#) A2 C#m7
-And prove You are all You say You are Move in power, wonders
-[B]Come [E]move  Change the[Bm7] atmosphere                  Sings and mi[E]racles
-Till[Dmaj9] all of heave[A2]n meets us here                         In Your p[A2]resence [C#m7]nothing is imp[B]ossible
-And [E/G#]do,    [F#m11]do what You want to d[A2]o                         [B]M[C#m7]ove in [A2]power,[C#m7] wonders
-Sings and mi[E]racles
-In Your p[A2]resence [C#m7]nothing is imp[B]ossible
-Bridge (Parts) A2 A2 C#m7 B
-B C#m7 A2 C#m7 Till all of heaven meets us here
-Move in power, wonders A2 E/G# Bm7 A2
-E And do, do what You want to do
-Sings and miracles
-In Your p[A2]resence [C#m7]nothing is imp[B]ossible                  Vamp 1
-Move in [A2]power, [C#m7]wonders                               [B]Come m[E]ove, d[Bm7]o what You want to [A2]do
-Sings and m[E]iracles                                    [G#m7]Come m[C#m7]ove, do[Bm7] what You want to [A2]do
-In Your pr[A2]esence n[C#m7]othing is im - [B/D#]poss - i[E] - [F#m7]ble
+Come [E]move  like a [Bm7]rushing wind
+[Dmaj9]Sweep over this [A2]church again
+And [E]prove You are[Bm7] all You say You [A2]are
+[B]Come [E]move  Change the[Bm7] atmosphere
+Till [Dmaj9]all of heaven [A2]meets us here
+And [E/G#]do,    [F#m11]do what You want to d[A2]o
 
 {comment: Tag}
-Interlude                                             [B]Come [E]mov[Bm7]e[Dmaj9][A2]
-(Push Chords on the & of 4) E Bm7 A2
-A2 / / / | C#m7 / / / | E / / / | / / / / |
-A2 / / / | C#m7 / / / | F#m / / / | / / B/D# E | Come move
-Chorus 1 (Cut) Vamp 2
-Come move like a rushing win[E/G#]d[A2][Dmaj9]
-Sweep over this church again Come move, move, move, move
-E/G# A2 Dmaj9 (D-C#-B-A)
-D2 E2 (Cut) A2
-And prove You are all You say You are Come move, move, move, move
-E A2 Dmaj9 (D-C#-B-A)
-(A-G#-F#-C#-B) E
-Come move Come move, move, move, move
-E A2 Dmaj9 (D-C#-B-A)
-Change the [Bm7]atmosphere                               Come move, move, move, move
-Till[Dmaj9] all of heaven[A2] meets us here
-[E] [Bm7] [A2] [Ending]
-And do,  do what You want to d[E]o[Bm7][A2]
-Come move, do what You want to do
-Chorus 2                                             [B]Come[E] move
-[B]Come [E]move  like a[Bm7] rushing wind
+[B]Come [E]move[Bm7][Dmaj9][A2]
+Come [E]move[Bm7][A2][(C#-D#-E-F#-E)]
+
+{comment: Verse 2}
+[(E)]Moving ahead in freedom,[F#m11]    nothing can stop
+Your Kingdom
+[E/G#]Faith will arise, right here, right no[A]w[B]
+[E]Break every chain and shackle,[F#m11]    make every
+lie unravel
+[E/G#]We lift You high as walls fall dow[A]n
+
+{comment: Pre Chorus}
+[B]O[C#m7]ur  hea[F#m7]rts are open wide
+Lord, [A]fill us with Your[Bm(-C#-D-E-F#-A)] fire
+
+{comment: Chorus}
+
+{comment: Bridge}
+[(B-B-B-C#)]Move in [A2]power, [C#m7]wonders
+Sings and m[E]iracles
+In Your p[A2]resence[C#m7] nothing is imp[B]ossible
+[B]M[C#m7]ove in [A2]power, [C#m7]wonders
+Sings and m[E]iracles
+In Your p[A2]resence[C#m7] nothing is imp[B]ossible
+
+{comment: Bridge}
+{ci: Parts}
+[B]Move[C#m7]  in   [A2]power,[C#m7] wonders
+Sings and [E]miracles
+In Your p[A2]resence[C#m7] nothing is imp[B]ossible
+Move in p[A2]ower, [C#m7]wonders
+Sings and [E]miracles
+In Your p[A2]resence[C#m7] nothing is im -[B/D#] poss -[E] i -[F#m7] ble
+
+{comment: Interlude}
+{ci: Push Chords on the & of 4}
+| A2 / / / | C#m7 / / / | E / / / | / / / / |
+| A2 / / / | C#m7 / / / | F#m / / / | / / B/D# E |
+
+{comment: Chorus 1}
+{ci: Cut}
+Come move like a rushing wind
+Sweep over this church again
+[D2]And [E2(Cut)]prove You are all You say You [A2]are
+[(A-G#-F#-C#-B)]Come [E]move
+Change the [Bm7]atmosphere
+Till [Dmaj9]all of heaven [A2]meets us here
+And [E]do,  [Bm7]do what You want to d[A2]o
+
+{comment: Chorus 2}
+[B]Come [E]move  like a [Bm7]rushing wind
 [Dmaj9]Sweep over this c[A2]hurch again
-And pr[E]ove You are [Bm7]all You say You a[A2]re
+And pr[E]ove You are[Bm7] all You say You a[A2]re
 [B]Come [E]move  Change the [Bm7]atmosphere
+Till [A2]all of heaven[A2] meets[C#m7] us   h[B]ere
+[A2]And[E/G#] do,    [Bm7]do what You want to d[A2]o
+
+{comment: Vamp 1}
+[B]Come [E]move, [Bm7]do what You want to [A2]do
+[G#m7]Come [C#m7]move, [Bm7]do what You want to [A2]do
+
+{comment: Tag}
+[B]Come [E]move[Bm7][Dmaj9][A2]
+Come [E]move[Bm7][A2]
+
+{comment: Vamp 2}
+Come[E/G#] move, [A2]move, [Dmaj9]move, move
+Come[E/G#] move, [A2]move, [Dmaj9]move,[(D-C#-B-A)] move
+Come[E] move, [A2]move, [Dmaj9]move,[(D-C#-B-A)] move
+Come[E] move, [A2]move, [Dmaj9]move,[(D-C#-B-A)] move
+
+{comment: Ending}
+Come[E] move[Bm7], do what You want to [A2]do
+[B]Come[E] move

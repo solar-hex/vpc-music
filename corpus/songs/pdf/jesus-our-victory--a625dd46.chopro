@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 130}
 {time: 4/4}
-{x_verified: number chart, 100% of 9 chords}
+{x_verified: number chart, 100% of 67 chords}
 {x_theme: victory, praise, name-of-jesus}
 {x_source: pdf:UPCI Music/2023/Jesus Our Victory/Jesus-Our-Victory-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FJesus%20Our%20Victory}
@@ -18,43 +18,61 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus-our-victory/charts/vocals.pdf}
 {x_album: Jesus Our Victory}
 
-Arianna Ramirez | Brooke Arceo | Luke Barbosa | Pearl Vivian Castro
+{comment: Verse 1}
+[Fm]I see an [Db]army stand a[Ab]gainst me
+[Fm]I stand a[Db]lone, but not a[Ebsus]lone[Eb]
+[Fm]The Lord of [Db]hosts will go be[Ab]fore me
+[Fm]The fight is [Db]His, and not my [Ebsus]own[Eb]
 
-{comment: Verse 1 Chorus}
-{ci: Parts}
-[Fm]I see an[Db] army stand a[Ab]gainst me                      Interlude
-Fm Db Ebsus Eb ||: Db | Eb Ab/C / / | / / Fm / / Eb | / / / / :||
-I stand alone, but not alone
-Fm Db Ab Bridge (Solo)
-The Lord of hosts will go before me Db Eb Ab/C Fm Eb
-Fm Db Ebsus Eb Praise like we’ve already - y won
-The fight is His, and not my own Db Eb Ab/C Fm Eb
-Praise him, He has o - ver - come
-Pre Chorus Db Eb Ab/C Fm Eb
-Db Eb Ab/C Fm Eb Praise like we’ve already - y won
-Praise like we’ve alread - y won Db Eb Ab/C Fm Eb
-Db Eb Ab/C Fm Eb Praise him, He has o - ver - come
-Praise Him, He has ov – er - come
-Bridge (Parts) à Bridge (Flipped Parts)
+{comment: Pre Chorus}
+[Db]Praise like[Eb] we’ve [Ab/C]alread [Fm]- y  [Eb]won
+[Db]Praise Him,[Eb] He  [Ab/C]has ov –[Fm] er - [Eb]come
 
 {comment: Chorus}
 {ci: men sing 8vb}
-Ab Chorus - (Cut music)
-The name of the Lord be glorified The name of the Lord be glorified
-Db The name of the Lord be lifted high
-The name of the Lord be lifted high The name of the Lord be magnified
-The [Fm]name of the Lord be magnified                     [Fm]Be  [Eb]magni -[Db] fied
-[Db]Jesus our victory                                     The n[Ab]ame of the Lord be glorified
-The n[Ab]ame of the Lord be glorified                       The [Db]name of the Lord be lifted high
-The [Db]name of the Lord be lifted high                     The [Fm]name of the Lord be magnified
-The [Fm]name of the Lord be magnified                     [Ab/C]Je   - [Eb]sus our v[Db]ict -[Db] ory
-Ab/C Eb Db Db / / / | / / / / Ab/C Eb Db Db
-Je - sus our vict - ory Je - sus our vict - ory
+The [Ab]name of the Lord be glorified
+The [Db]name of the Lord be lifted high
+The [Fm]name of the Lord be magnified
+[Db]Jesus our victory
+The [Ab]name of the Lord be glorified
+The [Db]name of the Lord be lifted high
+The [Fm]name of the Lord be magnified
+| Ab/C Eb Db Db / / / | / / / /
+Je - sus our vict - ory
 
-{comment: Verse 2 Ending}
-Fm Bbm Ab | (C-Eb-Ab-G-Eb) Db | / Db / / / |
-We sing a song of future glo - ry
-Fm Db Ebsus Eb (Ab-G-Eb) | Fm Eb Ab/C | / Db / / |
-Prophetic praise is on our lips
-[Fm]We know the au[Db]thor of this sto[Ab]r - y
-[Db]His Word declares that we will[Ebsus] wi[Eb]n
+{comment: Verse 2}
+[Fm]We sing a [Bbm]song of future g[Ab]lo - ry
+[Fm]Prophetic [Db]praise is on our lip[Ebsus]s[Eb][(Ab-G-Eb)]
+[Fm]We know the [Db]author of this st[Ab]or - y
+[Db]His Word declares that we will [Ebsus]win[Eb]
+
+{comment: Chorus}
+{ci: Parts}
+
+{comment: Interlude}
+||: Db | Eb Ab/C / / | / / Fm / / Eb | / / / / :||
+
+{comment: Bridge}
+{ci: Solo}
+[Db]Praise like [Eb]we’ve [Ab/C]already -[Fm] y   [Eb]won
+[Db]Praise him[Eb], He[Ab/C] has  o -[Fm] ver - [Eb]come
+[Db]Praise like [Eb]we’ve [Ab/C]already -[Fm] y   [Eb]won
+[Db]Praise him[Eb], He[Ab/C] has  o -[Fm] ver - [Eb]come
+Bridge (Parts) à Bridge
+{ci: Flipped Parts}
+
+{comment: Chorus}
+{ci: Cut music}
+The name of the Lord be glorified
+The name of the Lord be lifted high
+The name of the Lord be magnified
+[Fm]Be  [Eb]magni [Db]- fied
+The [Ab]name of the Lord be glorified
+The [Db]name of the Lord be lifted high
+The [Fm]name of the Lord be magnified
+[Ab/C]Je   - [Eb]sus our [Db]vict - [Db]ory
+[Ab/C]Je   - [Eb]sus our [Db]vict - [Db]ory
+
+{comment: Ending}
+| (C-Eb-Ab-G-Eb) Db | / Db / / / |
+| Fm Eb Ab/C | / Db / / |

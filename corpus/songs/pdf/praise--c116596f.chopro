@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 127}
 {time: 4/4}
-{x_verified: number chart, 100% of 61 chords}
+{x_verified: number chart, 100% of 100 chords}
 {x_theme: praise, faith-trust, easter, victory}
 {x_source: pdf:UPCI Music/2023/Praise/Praise-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FPraise}
@@ -19,52 +19,69 @@
 {x_album: Can You Imagine?}
 {x_writers: Pat Barrett, Steven Furtick}
 
-Brandon Lake, Chandler Moore,
-Praise Chris Brown, Cody Carnes,
-Pat Barrett, Steven Furtick
-Intro (Drums only) A
-That brings Jericho down
-Refrain (2x) E D
-A5(no3) As long as I’m breathing, I’ve got a reason to
-Let ev’rything that has breath
-Praise the Lord, praise the Lord Chorus 1 (Parts)
-Verse 1                                              [F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
-I’ll[A] praise in the vally                                   [F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
-[Bm/A]Praise on the[A] mountain                                Chorus 2
-I’l[E/A]l praise when I’m sure[D/A]                                [F#m]I won’t be quiet, my [D]God is alive
-Praise when I’m [A]doubting                              So h[A]ow could I keep it in[E]side
-I’l[A]l praise when outnumbered                           [F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
-[Bm/A]Praise when su[A]rrounded                               Interlude
-E/A D/A A / / / | Bm/A / / / | A / / / | Bm/A / / / |
-‘Cause praise is the waters
-A A / / / | Bm/A / / / | A / / / | / / /
-My enemies drown in
-E D Bridge (Solo)
-As long as I’m breathing, I’ve got a reason to A
-I’ll praise ‘cause You’re sov’reign
-Chorus 1 (Unison) Bm/A
-F#m D A E Praise ‘cause You rein
-Pra – ise the Lord, oh my soul E/A Bm/A
-F#m D A E Praise ‘cause you rose and de - feated the grave
-Pra – ise the Lord, oh my soul A
-I’ll praise ‘cause You’re faithful
-Verse 2 Bm/A
-A Praise ‘cause You’re true
-I’ll praise when I feel it E/A Bm/A
-Bm/A A Praise ‘cause there’s nobody greater than You
-And I’ll praise when I don’t
-E/A D/A Bridge (Parts)
-I’ll praise ‘cause I know A
-A I’ll praise ‘cause You’re sov’reign
-You’re still in control Bm
-A Bm/A A Praise ‘cause You rein
-My praise is a weapon, it’s more than a sound F#m7 D2
-E D Praise ‘cause you rose and de - feated the grave
-My praise is the shout
-Brandon Lake, Chandler Moore,
-Praise Chris Brown, Cody Carnes,
-Pat Barrett, Steven Furtick
-I’l[A]l praise ‘cause You’re faithful
+{comment: Intro}
+{ci: Drums only}
+
+{comment: Refrain}
+{ci: 2x}
+[A5(no3)]Let ev’rything that has breath
+Praise the Lord, praise the Lord
+
+{comment: Verse 1}
+I’ll [A]praise in the vally
+[Bm/A]Praise on the [A]mountain
+I’ll [E/A]praise when I’m sur[D/A]e
+Praise when I’m [A]doubting
+I’ll [A]praise when outnumbered
+[Bm/A]Praise when sur[A]rounded
+‘Cause [E/A]praise is the water[D/A]s
+My enemies [A]drown in
+As [E]long as I’m breathing, [D]I’ve got a reason to
+
+{comment: Chorus 1}
+{ci: Unison}
+[F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
+[F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
+
+{comment: Verse 2}
+I’ll [A]praise when I feel it
+And I’ll [Bm/A]praise when I [A]don’t
+I’ll [E/A]praise ‘cause I kno[D/A]w
+You’re still in con[A]trol
+[A]My praise is a weapon, it’s[Bm/A] more than a [A]sound
+My [E]praise is the shou[D]t
+That brings Jericho [A]down
+As [E]long as I’m breathing, [D]I’ve got a reason to
+
+{comment: Chorus 1}
+{ci: Parts}
+[F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
+[F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
+
+{comment: Chorus 2}
+[F#m]I won’t be quiet, my [D]God is alive
+So [A]how could I keep it in[E]side
+[F#m]Pra –[D] ise the [A]Lord, oh my [E]soul
+
+{comment: Interlude}
+| A / / / | Bm/A / / / | A / / / | Bm/A / / / |
+| A / / / | Bm/A / / / | A / / / | / / /
+
+{comment: Bridge}
+{ci: Solo}
+I’ll [A]praise ‘cause You’re sov’reign
+[Bm/A]Praise ‘cause You rein
+[E/A]Praise ‘cause you rose and de -[Bm/A] feated the grave
+I’ll [A]praise ‘cause You’re faithful
+[Bm/A]Praise ‘cause You’re true
+[E/A]Praise ‘cause there’s nobody [Bm/A]greater than You
+
+{comment: Bridge}
+{ci: Parts}
+I’ll [A]praise ‘cause You’re sov’reign
+[Bm]Praise ‘cause You rein
+[F#m7]Praise ‘cause you rose and de - [D2]feated the grave
+I’ll [A]praise ‘cause You’re faithful
 [Bm]Praise ‘cause You’re true
 [F#m7]Praise ‘cause there’s nobody [D2]greater than You
 
@@ -89,10 +106,9 @@ So [A]how could I keep it in[E]side
 
 {comment: Instrumental}
 {ci: 2x}
-F#m / / / | D / / / | A / / / | E / / / |
+| F#m / / / | D / / / | A / / / | E / / / |
 
 {comment: Refrain}
 {ci: 4x}
-N.C.
-Let ev’rything that has breath
+[N.C.]Let ev’rything that has breath
 Praise the Lord, praise the Lord

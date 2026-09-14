@@ -3,7 +3,7 @@
 {key: C}
 {tempo: 69}
 {time: 4/4}
-{x_verified: number chart, 100% of 37 chords}
+{x_verified: number chart, 96% of 71 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/2021/Hallelujah Jesus Reigns/Hallelujah-Jesus-Reigns-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FHallelujah%20Jesus%20Reigns}
@@ -19,58 +19,86 @@
 {x_album: Hallelujah, Jesus Reigns (Single)}
 {x_writers: Angie Pearson}
 
-{comment: Intro Verse 1}
-{ci: Parts}
-C / / / | Em / / / | Am / G / | F2 / / /
+{comment: Intro}
+| C / / / | Em / / / | Am / G / | F2 / / /
+
+{comment: Verse}
+{ci: Solo}
 [C]We cry out
-Verse (Solo) Em
-C in this des’prate hour
-We cry ou[Am]t[G][F2]
-Em Lord come
-in this des’prate hour C
-Am G F2 We need You
-Lord come Em
-C Come and breath Your power
-We need Yo[Am]u[G][F2]
-Em right now
-Come and breath Your power
-[Am]r[G]ight now[F2]                                    Pre Chorus(Parts)
-[F/A]Over the [G/B]lies,   [C/E]darkness and [F2]fear.
-Pre Chorus(Solo) F/A G/B C/E F/D / F F/A
-F/A G/B C/E F2 Over in - justice, we declare.
-Over the lies, darkness and fear.
-[F/A]Over in [G/B]- justice,[C/E] we decla[F2]re.                         Chorus(Parts)
-[G]Hallelujah,[Am] Je - [G]sus [F2]reigns
-Chorus(men sing 8vb) G Am G F2/ / / | / / / Am
-G Am G F2 Hallelujah, Je - sus reigns
+[Em]in this des’prate hour
+[Am]L[G]ord come[F2]
+[C]We need You
+[Em]Come and breath Your power
+[Am]r[G]ight now[F2]
+
+{comment: Pre Chorus}
+{ci: Solo}
+[F/A]Over the[G/B] lies,   [C/E]darkness and[F2] fear.
+[F/A]Over in [G/B]- justice, [C/E]we decla[F2]re.
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[G]Hallelujah, [Am]Je - [G]sus [F2]reigns
+[G]Hallelujah, [Am]Je - [G]sus [F2]reigns
+
+{comment: Verse 1}
+{ci: Parts}
+[C]We cry out
+[Em]in this des’prate hour
+[Am]L[G]ord come[F2]
+[C]We need You
+[Em]Come and breath Your power
+[Am]r[G]ight now[F2]
+
+{comment: Pre Chorus}
+{ci: Parts}
+[F/A]Over the[G/B] lies,   [C/E]darkness and[F2] fear.
+| F/A G/B C/E F/D / F F/A
+Over in - justice, we declare.
+
+{comment: Chorus}
+{ci: Parts}
+[G]Hallelujah, [Am]Je - [G]sus [F2]reigns
+G Am G F2/ / / | / / / Am
 Hallelujah, Je - sus reigns
-[G]Hallelujah,[Am] Je - [G]sus [F2]reigns                           Chorus
-[G]Hallelujah,[Am] Je - [G]sus [F2]reigns
+
+{comment: Chorus}
+[G]Hallelujah, [Am]Je - [G]sus [F2]reigns
 G/B Am Em7 F2/ / / | / / / /
 Hallelujah, Je - sus reigns
-Bridge(Solo) Ending
-[C]You’ve got this[Am] whole world[G] in Your hands[F2]              [C]You’ve got this[Am] whole world [G]in Your
-C Am G F2 D/F# / / / | Fm6
-You’ve got this whole world in Your hands hands
-Bridge(men sing 8vb)                                 [C/E]You’ve [D2/F#]got  th[E2/G#]is  who[G2/B]le w[F2/A]orld [C2/E]in Yo[C/E]ur
-[C/E]You’ve got this[Am] whole world [G]in Your hands[F2]           [Dm11]Hands
-[C/E]You’ve got this[Am] whole world [G]in Your hand[F2]s
+
+{comment: Bridge}
+{ci: Solo}
+[C]You’ve got this [Am]whole world [G]in Your hand[F2]s
+[C]You’ve got this [Am]whole world [G]in Your hand[F2]s
+
+{comment: Bridge}
+{ci: men sing 8vb}
+[C/E]You’ve got this [Am]whole world [G]in Your hand[F2]s
+[C/E]You’ve got this [Am]whole world [G]in Your hand[F2]s
 
 {comment: Bridge}
 {ci: Parts}
-[Am7]You’ve got this[G/B] whole world[C/E] in Your hand[F2]s
-(C – B) Am7 G/B C/E
-You’ve got this whole world in Your
-F2/ / / | / / / (cut)
+[Am7]You’ve got this [G/B]whole world[C/E] in Your hand[F2]s
+[(C-B)]Y[Am7]ou’ve got this [G/B]whole world[C/E] in Your
+F2/ / / | / / /
+{ci: cut}
 hands
 
 {comment: Chorus}
 {ci: Parts}
-[G]Hallelujah,[Am] Je - [G]sus [F2]reigns
-[G/B]Hallelujah, [Am]Je - [Em7]sus  [F2]reigns
+[G]Hallelujah, [Am]Je - [G]sus [F2]reigns
+[G/B]Hallelujah, [Am]Je - s[Em7]us  [F2]reigns
 
 {comment: Chorus}
 {ci: Flipped Parts}
 G/B Am Em7 F2/ / / | F G F/A C
 Hallelujah, Je - sus reigns
-[G/B]Hallelujah, [Am]Je - [Em7]sus  [F/D]reigns
+[G/B]Hallelujah, [Am]Je - s[Em7]us  [F/D]reigns
+
+{comment: Ending}
+[C]You’ve got this[Am] whole world [G]in Your
+| D/F# / / / | Fm6
+hands
+[C/E]You’ve[D2/F#] got  th[E2/G#]is  wh[G2/B]ole w[F2/A]orld[C2/E] in Yo[C/E]ur
+[Dm11]Hands

@@ -3,6 +3,7 @@
 {key: A}
 {tempo: 148}
 {time: 4/4}
+{x_verified: number chart, 86% of 153 chords}
 {x_theme: name-of-jesus, heaven, salvation}
 {x_source: pdf:UPCI Music/2022/Jesus/Jesus-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FJesus}
@@ -38,113 +39,129 @@
 {x_source_jesus_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/source/Jesus-Chord-Chart-TXT.txt}
 {x_album: See Revival}
 
-Intro (acapella) F#m7 E/G# A Bm7
-Whoa,_____ Whoa,_____ Je - sus we call on You
-Whoa,_____ Whoa,_____ A E/G#
-We call on You great name
+{comment: Intro}
+{ci: acapella}
+Whoa,_____ Whoa,_____
+Whoa,_____ Whoa,_____
 
 {comment: Intro}
 {ci: full band}
-D F#m A E Interlude
-Whoa,_____ Whoa,_____ | D / / F#m | / / / / | A / / E |
-[D]W[F#m]hoa,_____[A]      [E]Whoa,_____                     D    F#m          A    E
-Whoa,_____ Whoa,_____
+[D]W[F#m]hoa,_____[A]    [E]Whoa,_____
+[D]W[F#m]hoa,_____[A]    [E]Whoa,_____
 
 {comment: Verse 1}
-E F#m7 D F#m7 Verse 1
-No other Name in Heaven or in earth E F#m7 D F#m7
-E F#m7 D F#m7 No other Name in Heaven or in earth
-Where men can be saved E F#m7 D F#m7
-E F#m7 D F#m7 Where men can be saved
-Strong tow’r for all who call on it E F#m7 D F#m7
-E F#m7 D Strong tow’r for all who call on it
-Safety in His name E F#m7 D
-(Safety in his name) Safety in His name
+[E]No other Name in [F#m7]Heaven or [D]in earth[F#m7]
+[E]Where men c[F#m7]an    be  save[D]d[F#m7]
+[E]Strong tow’r for[F#m7] all  who call [D]on it[F#m7]
+[E]Safety[F#m7]  in   His [D]name
 
 {comment: Pre Chorus}
 {ci: Solo}
-A/C# D Pre Chorus (Solo)
-Tell me who can stand before us A/C# D
-Bm7 Tell me who can stand before us
-When we call on F#m E B/D# A/C# B
-E When we call on
-That great Name E F#m/B E F#m/B F#m E
-That great Name
+[A/C#]Tell me who can [D]stand before us
+[Bm7]When we call on
+[E]That great Name
 
 {comment: Chorus 1}
-F#m7 E/G# A Chorus 2
-Je - sus F#m7 E/G# A
-Bm7 Je - sus
-There’s no name higher Bm7
-A/C# D There’s no name higher
-There’s no name higher than A/C# D
-F#m7 E/G# A Bm7 There’s no name higher than
-Je - sus we call on You F#m7 E/G# A Bm7
-D Je - sus we call on You
-We call on You D
-F#m7 E/G# A We call on You
-Je - sus F#m7 E/G# A
-Bm7 Je - sus
-There’s no name higher Bm7
-A/C# D There’s no name higher
-There’s no name higher than A/C# D
-There’s no name higher than
-F#m7 E/G# A Bm7 Refrain
-Je - sus we call on You E/G# A D F#m
-A E/G# Je - sus
-We call on You great name A E
-Oh – oh – oh We call You
-Bridge (Solo) (2x) D F#m
-D F#m Je - sus
-Every knee will bow A E
-A E At the Name of our God, at the Name of
-Every tongue confess
-D F#m Refrain
-Demons have to flee E/G# A D F#m
-A Je - sus
-At the Name of our God A E
-E Oh – oh – oh We call You
-At the Name of Jesus D F#m
-Je - sus
-Bridge (men sing 8vb) A E
-D F#m At the Name of our God, at the Name of
-Every knee will bow E/G# A
-A E Je - sus
-Every tongue confess
-D F#m Bridge (Key Change – men sing 8vb)
-Demons have to flee Bb13 (cut music) Eb Eb
-A Every knee will bow
-At the Name of our God (cut music) Gm7 Gm7 F
-E Every tongue confess
-At the Name of Jesus (cut music)
-Demons have to flee
+[F#m7]Je    [E/G#]-    [A]sus
+There’[Bm7]s no name higher
+[A/C#]There’s [D]no name higher than
+[F#m7]Je    [E/G#]-    [A]sus   we call on Y[Bm7]ou
+We call on [D]You
+[F#m7]Je    [E/G#]-    [A]sus
+There’[Bm7]s no name higher
+[A/C#]There’s [D]no name higher than
+[F#m7]Je    [E/G#]-    [A]sus   we call on [Bm7]You
+We [A]call on [E/G#]You great name
+
+{comment: Interlude}
+| D / / F#m | / / / / | A / / E |
+[D]W[F#m]hoa,_____[A]    [E]Whoa,_____
+
+{comment: Verse 1}
+[E]No other Name in [F#m7]Heaven or [D]in earth[F#m7]
+[E]Where men c[F#m7]an    be  save[D]d[F#m7]
+[E]Strong tow’r for[F#m7] all  who call [D]on it[F#m7]
+[E]([F#m7]Safety in his name) [D]Safety in His name
+
+{comment: Pre Chorus}
+{ci: Solo}
+[A/C#]Tell me who can [D]stand before us
+[F#m]W[E]h[B/D#]en we[A/C#]    [B]call on
+[E]That [F#m/B]great  [E]Nam[F#m/B]e[F#m][E]
+
+{comment: Chorus 2}
+[F#m7]Je    [E/G#]-    [A]sus
+There’[Bm7]s no name higher
+[A/C#]There’s [D]no name higher than
+[F#m7]Je    [E/G#]-    [A]sus   we call on Y[Bm7]ou
+We call on [D]You
+[F#m7]Je    [E/G#]-    [A]sus
+There’[Bm7]s no name higher
+[A/C#]There’s [D]no name higher than
+[F#m7]Je    [E/G#]-    [A]sus   we call on [Bm7]You
+We [A]call on [E/G#]You great name
 
 {comment: Bridge}
-{ci: A-Bb}
-D F#m At the Name of our God
-Every knee will bow (A-G-F-D-C-Bb)
-A E At the Name of Jesus
-Every tongue confess Eb /F Gm
-D F#m Every knee will bow
-Demons have to flee /A Bb /C F
-A Every tongue confess
-At the Name of our God /Bb Eb /F Gm
-E Demons have to flee
-At the Name of /A Bb
-At the Name of our God
-/C F
-At the Name of
+{ci: Solo, 2x}
+[D]Every knee [F#m]will bow
+[A]Every tongue [E]confess
+[D]Demons hav[F#m]e to flee
+At the [A]Name of our God
+[E]At the Name of Jesus
+
+{comment: Bridge}
+{ci: men sing 8vb}
+[D]Every knee [F#m]will bow
+[A]Every tongue [E]confess
+[D]Demons hav[F#m]e to flee
+At the [A]Name of our God
+[E]At the Name of Jesus
+
+{comment: Bridge}
+[D]Every knee [F#m]will bow
+[A]Every tongue [E]confess
+[D]Demons hav[F#m]e to flee
+At the [A]Name of our God
+[E]At the Name of
 
 {comment: Refrain}
-[F/A]Je    [Bb]-  [Eb]su[Gm7]s
+[E/G#]Je    [A]-  [D]su[F#m]s
+[A]Oh – oh – [E]oh   We call You
+[D]Je    -  [F#m]sus
+At the [A]Name of our God, [E]at the Name of
+
+{comment: Refrain}
+[E/G#]Je    [A]-  [D]su[F#m]s
+[A]Oh – oh – [E]oh   We call You
+[D]Je    -  [F#m]sus
+At the [A]Name of our God, [E]at the Name of
+[E/G#]Je  - [A]sus
+
+{comment: Bridge}
+{ci: Key Change – men sing 8vb}
+{ci: cut music}
+[Bb13]Every knee will bow[Eb][Eb]
+{ci: cut music}
+Every tongue confes[Gm7]s[Gm7][F]
+{ci: cut music}
+Demons have to flee
+At the Name of[(A-Bb)] our God
+At t[(A-G-F-D-C-Bb)]he Name of Jesus
+[Eb]Every knee [/F]wil[Gm]l bow
+[/A]E[Bb]very tongue [/C]co[F]nfess
+[/Bb]D[Eb]emons have[/F] to[Gm]    flee
+[/A]At [Bb]the Name of our God
+[/C]At [F]the Name of
+
+{comment: Refrain}
+[F/A]Je    [Bb]-  [Eb]sus[Gm7]
 [Bb]Oh – oh – [F]oh   We call You
 [Eb]Je    -  [Gm7]sus
 At the [Bb]Name of our God, [F]at the Name of
 
 {comment: Refrain}
-[F/A]Je    [Bb]-  [Eb]su[Gm7]s
+[F/A]Je    [Bb]-  [Eb]sus[Gm7]
 [Bb]Oh – oh – [F]oh   We call You
 [Eb]Je    -  [Gm7]sus
 At the [Bb]Name of our God, [F]at the Name of
-(C Bb) Eb
-Je - sus
+[(C-Bb)]Je  - sus[Eb]

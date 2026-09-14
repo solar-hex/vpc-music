@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 120}
 {time: 6/8}
-{x_verified: number chart, 100% of 23 chords}
+{x_verified: number chart, 98% of 103 chords}
 {x_theme: altar}
 {x_source: pdf:UPCI Music/2022/All to You/All-To-You-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FAll%20to%20You}
@@ -19,68 +19,80 @@
 {x_album: All To You (Single)}
 {x_writers: Bryan Pound, Tevia Alfter, Natalie Bunner}
 
-Bryan Pound,
-All To You Tevia Alfter, Natalie Bunner
+{comment: Intro}
+| A Bm7 | G2 / | A Bm7 | Gmaj7 / |
 
-{comment: Intro Chorus 2}
-A Bm7 | G2 / | A Bm7 | Gmaj7 / | D Gmaj7
-I lift up my hands
-Verse 1 D Gmaj7 G
-A Bm7 G I lift up my heart
-You ask for all, D Gmaj7 Gm6
-A Bm7 G Surrendering all
-so I hold back nothing | F#m7 Bm7 | Gmaj7 / |
-A Bm7 Gmaj7 to You
-It’s not too much
-A Bm7 G Bridge (Unison)
-to give my everything D/F# D/F# Em7 D
-Here I am,
-Pre Chorus (Solo) Gmaj7
-A Bm7 D/F# G unafraid,
-So I’m letting go not looking back anymore D/A Asus
-Em7 Cmaj7 / trusting You each step I take
-My life is Yours D/F# D/F# Em7 D
-Here I stand,
-Chorus 1 Gmaj7
-D Gmaj7 all of me,
-I lift up my hands D/A Asus
-D Gmaj7 G my life is Yours, my everything
-I lift up my heart
-D Gmaj7 Gm6 Bridge (Parts)
-Surrendering all D D Em7 D/F#
-| F#m7 Bm7 | Gmaj7 / | Here I am,
-to You Em7
-unafraid,
-Verse 2 Bm7 Asus A A A/G
-A D/F# Gmaj7 trusting You each step I take
-You gave Your all D/F# D/F# Em/G D/A
-A Bm7 Gmaj7 G A/B D Here I stand,
-You held back nothing Gmaj7
-A Bm7 Gmaj7 all of me,
-It’s not too much D/A Asus
-A Bm7 Gmaj7 my life is Yours, my everything
-to give my everything
+{comment: Verse 1}
+[A]You [Bm7]ask for[G] all,
+[A]so I [Bm7]hold back [G]nothing
+[A]It’s [Bm7]not too[Gmaj7] much
+[A]to [Bm7]give my[G] everything
+
+{comment: Pre Chorus}
+{ci: Solo}
+[A]So I’m letting [Bm7]go not looking[D/F#] back anymor[G]e
+| Em7 Cmaj7 /
+My life is Yours
+
+{comment: Chorus 1}
+[D]I lift up my[Gmaj7] hands
+[D]I lift up my [Gmaj7]heart[G]
+[D]Surrendering [Gmaj7]all[Gm6]
+| F#m7 Bm7 | Gmaj7 / |
+to You
+
+{comment: Verse 2}
+[A]You [D/F#]gave Your [Gmaj7]all
+[A]You[Bm7] held back [Gmaj7]nothin[G]g[A/B][D]
+[A]It’s [Bm7]not too[Gmaj7] much
+[A]to [Bm7]give my[Gmaj7] everything
+
+{comment: Pre Chorus}
+{ci: Unison}
+[A]So I’m letting [Bm7]go not looking[D/F#] back anymor[G]e
+| Em7 Cmaj7 /
+My life is Yours
+
+{comment: Chorus 2}
+[D]I lift up my[Gmaj7] hands
+[D]I lift up my [Gmaj7]heart[G]
+[D]Surrendering [Gmaj7]all[Gm6]
+| F#m7 Bm7 | Gmaj7 / |
+to You
+
+{comment: Bridge}
+{ci: Unison}
+[D/F#]Here I am[D/F#],[Em7][D]
+[Gmaj7]unafraid,
+[D/A]trusting You each[Asus] step I take
+[D/F#]Here I stand[D/F#],[Em7][D]
+[Gmaj7]all of me,
+my[D/A] life is Yours, my [Asus]everything
+
+{comment: Bridge}
+{ci: Parts}
+[D]Here I am[D],[Em7][D/F#]
+[Em7]unafraid,
+[Bm7]trusting You each [Asus]step I tak[A]e[A][A/G]
+[D/F#]Here I stan[D/F#]d,[Em/G][D/A]
+[Gmaj7]all of me,
+my[D/A] life is Yours, my [Asus]everything
 
 {comment: Chorus 2}
 {ci: Flipped Parts}
-Pre Chorus (Unison) D(hit)
-A Bm7 D/F# G I lift up my hands
-So I’m letting go not looking back anymore D (hit) Gmaj7 G
-Em7 Cmaj7 / I lift up my heart
-My life is Yours D (hit) D13(b9) Gmaj7 Gm6
-Sur - rendering all
-Bryan Pound,
-All To You Tevia Alfter, Natalie Bunner
+[D(hit)]I lift up my hands
+[D(hit)]I lift up my[Gmaj7] heart[G]
+[D(hit)]Sur - [D13(b9)]rendering   [Gmaj7]all[Gm6]
 | F#m7 Bm7 | G / |
 to You
 
 {comment: Chorus 3}
-[D]I[D] lift[Em7] up   [D/F#]my   h[Gmaj7]ands
-[D]I lift[Em7] up   [D/F#]my   [Gmaj7]hear[G]t[Bm7]
-Su[E9]rrend[Am9]ering[D7]     [Gmaj7]al[Gm6]l
-to[F#m7] Yo[Bm7]u[Gmaj7]
+[D]I [D]lift [Em7]up   [D/F#]my   h[Gmaj7]ands
+[D]I lift [Em7]up   [D/F#]my   [Gmaj7]heart[G][Bm7]
+Su[E9]rren[Am9]dering[D7]    [Gmaj7]all[Gm6]
+to [F#m7]You[Bm7][Gmaj7]
 
 {comment: Ending}
-To [D/F#]Yo[Bm7]u[A]
-To [D/F#]Yo[Dm7(b5)/F]u[Em7][A]
+To [D/F#]You[Bm7][A]
+To [D/F#]You[Dm7(b5)/F][Em7][A]
 To [D]You

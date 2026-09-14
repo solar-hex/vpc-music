@@ -3,6 +3,7 @@
 {key: Ab}
 {tempo: 107}
 {time: 6/8}
+{x_verified: number chart, 100% of 87 chords}
 {x_theme: worship}
 {x_source: pdf:UPCI Music/My Worship/My Worship - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FMy%20Worship}
@@ -16,36 +17,69 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/my-worship/charts/vocals.pdf}
 {x_album: My Worship – Single}
 
-Intro | Fm7 / | / Db2 | Ab / | / / | Chorus 1 (flipped parts)
-| Db2 / | / Eb | Ab / | Ab Eb/G | Bridge (unison)
-And I[Fm7] will not[Eb/G]  be   s[Ab]ilent
-Verse Ab/C Db2 Fm7 Eb
-Fm9 Db2 Ab I will always wor—ship You
-You are, You are worthy Fm7 Eb/G Ab
-Db2 Eb Ab Eb/G As long as I am breathing
-And no one can worship You for me Ab/C Db2 Fm7 Eb
-[Fm9]I[Db2] [Ab] will  always wor—ship  You
-For all the things You’ve done for me
-And n[Db2]o one can worship [Eb]You for[Ab] me                    Bridge (parts) (music build)
-Chorus 1 (unison) Bridge (flipped parts) (8th note build)
-Ab/C Db2 Fm7 Eb m7
-Here’s my  wor----ship   All of my wor---ship            And I[F] will not  [Eb/G]be   si[Ab]lent
-Receive my [Ab/C]wor---s[Db2]hip   All of my [Fm/D]wor----s[Eb]hip            I[Ab/C]  will  a[Db2]lways wor—s[Fm7]hip  [Eb]Yo[C/E]u
-Here’s my  [Ab/C]wor---[Db2]ship   All of my w[Fm7]or----sh[Eb]ip            As  [Fm7]long as I  [Eb/G]am    [Ab]breathing
-Ab/C Bbm7 Fm/D Eb Ab/C Db2 (cut) Bbm7 Db2 Eb/G / / (cut)
-Receive my wor---ship All of my wor----ship I will al-------ways wor—ship You
-Verse (band all in) Chorus (stay in flipped parts)
-Here’s my  w[Ab/C]or----s[Db2]hip All of my w[Fm7]or---s[Eb]hip
-Chorus 2 (parts) Ab/C Db2
-[Ab/C]R[Db2]e[Fm7]c[Eb]eive my wor---ship
-Here’s my wor----ship All of my wor---ship Fm/D Eb Fm/D Eb/Db
-[Ab/C]A[Db2]l[Fm/D]l[Eb] of my wor---ship
-Receive my wor---ship All of my wor----ship Ab/C Db2 Fm7 Eb
-[Ab/C]H[Db2]e[Fm7]r[Eb]e’s my  wor---ship  All of my wor----ship
-Here’s my wor---ship All of my wor----ship Ab/C Bbm7 / (off)
-[Ab/C]R[Bbm7]e[Fm/D]c[Eb]eive my wor---ship
-Receive my wor---ship All of my wor----ship Fm/D Eb / /
-RH - | F - G - Ab - Bb - C - Db | All of my wor----ship
+{comment: Intro}
+| Fm7 / | / Db2 | Ab / | / / |
+| Db2 / | / Eb | Ab / | Ab Eb/G |
+
+{comment: Verse}
+[Fm9]You are, You are [Db2]worth[Ab]y
+And [Db2]no one can worship [Eb]You for [Ab]me[Eb/G]
+For a[Fm9]ll the things You’ve [Db2]done for[Ab] me
+And [Db2]no one can worship [Eb]You for [Ab]me
+
+{comment: Chorus 1}
+{ci: unison}
+Here’s my  [Ab/C]wor----[Db2]ship   All of my [Fm7]wor---shi[Eb]p
+Receive my[Ab/C] wor---s[Db2]hip   All of my [Fm/D]wor----s[Eb]hip
+Here’s my  [Ab/C]wor---[Db2]ship   All of my w[Fm7]or----sh[Eb]ip
+Receive my[Ab/C] wor---[Bbm7]ship   All of my [Fm/D]wor----sh[Eb]ip
+
+{comment: Verse}
+{ci: band all in}
+
+{comment: Chorus 2}
+{ci: parts}
+Here’s my  [Ab/C]wor----[Db2]ship   All of my w[Fm7]or---shi[Eb]p
+Receive my[Ab/C] wor---s[Db2]hip   All of my w[Fm/D]or----s[Eb]hip
+Here’s my  [Ab/C]wor---[Db2]ship   All of my w[Fm7]or----sh[Eb]ip
+Receive my[Ab/C] wor---[Bbm7]ship   All of my w[Fm/D]or----sh[Eb]ip
+RH - | F - G - Ab - Bb - C - Db |
 LH - | Db - Eb - F - G - Eb - Db |
-(Here’s my) Ending
+{ci: Here’s my}
+
+{comment: Chorus 1}
+{ci: flipped parts}
+
+{comment: Bridge}
+{ci: unison}
+And [Fm7]I will not[Eb/G]  be   s[Ab]ilent
+I[Ab/C]  will  a[Db2]lways wor—[Fm7]ship  [Eb]You
+As  [Fm7]long as I  [Eb/G]am    [Ab]breathing
+I[Ab/C]  will  a[Db2]lways wor—[Fm7]ship  [Eb]You
+
+{comment: Bridge}
+{ci: parts, music build}
+
+{comment: Bridge}
+{ci: flipped parts, 8th note build}
+And [Fm7]I will not  [Eb/G]be   si[Ab]lent
+I[Ab/C]  will  a[Db2]lways wor—[Fm7]ship  [Eb]You[C/E]
+As  [Fm7]long as I  [Eb/G]am    [Ab]breathing
+| Ab/C Db2(cut) Bbm7 Db2 Eb/G / /
+{ci: cut}
+I will al-------ways wor—ship You
+
+{comment: Chorus}
+{ci: stay in flipped parts}
+Here’s my  [Ab/C]wor----s[Db2]hip All of my w[Fm7]or---s[Eb]hip
+Receive my [Ab/C]wor---s[Db2]hip
+All of my [Fm/D]wor---s[Eb]hip[Fm/D][Eb/Db]
+Here’s my  [Ab/C]wor---sh[Db2]ip  All of my w[Fm7]or----s[Eb]hip
+| Ab/C Bbm7 /
+{ci: off}
+Receive my wor---ship
+| Fm/D Eb / /
+All of my wor----ship
+
+{comment: Ending}
 [Fm7]You are, You are [Db2]wor----[Ab]-thy

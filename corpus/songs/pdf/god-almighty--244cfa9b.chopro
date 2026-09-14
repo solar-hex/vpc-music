@@ -17,49 +17,55 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/god-almighty/charts/vocals.pdf}
 
 {comment: Intro}
-{ci: D-C-Bb-A}
-{ci: Bb-C-D-Eb-F) (Bb-A-G-F}
+[(D-C-Bb-A)]
+[(Bb-C-D-Eb-F)] [(Bb-A-G-F)]
 [Eb] [Gm7] [Eb] [Bb] [F/A] [Gm7]
 
 {comment: Verse}
-[Eb]God Almighty,    [Bb]Lord of glory.     [F/A]Oh we worship    [Gm7]You.        2x
+[Eb]God Almighty,    [Bb]Lord of glory.    [F/A]Oh we worship    [Gm7]You.
+{ci: 2x}
 
 {comment: Chorus}
-[Eb]Oh,              [Bb]oh.               [F/A]Oh we worship    [Gm7]You.        2x
+[Eb]Oh,    [Bb]oh.    [F/A]Oh we worship    [Gm7]You.
+{ci: 2x}
 {ci: Repeat Verse}
 
 {comment: Chorus}
-[Eb]Oh,              [Bb]oh.               [F/A]Oh we worship    [Gm7]You.
-[Cm7]Oh,              [Eb]oh.               [F]Oh we worship    [Gm7]You[B/D#].
+[Eb]Oh,    [Bb]oh.    [F/A]Oh we worship    [Gm7]You.
+[Cm7]Oh,    [Eb]oh.    [F]Oh we worship    [Gm7]You.[B/D#]
 
 {comment: Verse}
 {ci: 2nd time:}
-E B F#/A# G#m7 (B/D#)
-God Almighty, Lord of glory. Oh we worship You. 2x
+[E]God Almighty,    [B]Lord of glory.    [F#/A#]Oh we worship    [G#m7]You.[(B/D#)]
+{ci: 2x}
 
 {comment: Chorus}
-[E]Oh,              [B]oh.               [F#/A#]Oh we worship    [G#m7]You.
-[C#m7]Oh,              [E]oh.               [F#]Oh we worship    [G#m7]You[C/E].
+[E]Oh,    [B]oh.    [F#/A#]Oh we worship    [G#m7]You.
+[C#m7]Oh,    [E]oh.    [F#]Oh we worship    [G#m7]You.[C/E]
 
 {comment: Verse}
 {ci: 2nd time:}
-F C G/B Am7 (C/E)
-God Almighty, Lord of glory. Oh we worship You. 2x
+[F]God Almighty,    [C]Lord of glory.    [G/B]Oh we worship    [Am7]You.[(C/E)]
+{ci: 2x}
 
 {comment: Chorus}
-[F]Oh,              [C]oh.               [G/B]Oh we worship    [Am7]You.        3x
-[Dm7]Oh,              [F]oh.               [G]Oh we worship    [Am7]You.
+[F]Oh,    [C]oh.    [G/B]Oh we worship    [Am7]You.
+{ci: 3x}
+[Dm7]Oh,    [F]oh.    [G]Oh we worship    [Am7]You.
 
 {comment: Bridge}
-Only Y[Dm7]ou,   only Y[F]ou.   Only Y[G]ou are [Am7]God.      4x
+Only Y[Dm7]ou,   only Y[F]ou.   Only Y[G]ou are [Am7]God.
+{ci: 4x}
 
 {comment: Chorus}
-[F]Oh,              [C]oh.               [Em7]Oh we worship    [Am7]You.
-F C (C C B B G) G/B C Am G F
-Oh, oh. There’s no one like You. Oh we wor- ship You.
-[Dm7]Oh,              [F]oh.               [G/B]Oh we worship    [Am7]You.        2x
-{ci: 2nd time: G}
+[F]Oh,    [C]oh.    [Em7]Oh we worship    [Am7]You.
+[F]Oh,    [C]oh.   The[(C-C-B-B-G)]re’s no one like You.    [G/B]Oh   [C]we   [Am]wor-  [G]ship  [F]You.
+[Dm7]Oh,    [F]oh.    [G/B]Oh we worship    [Am7]You.
+{ci: 2x}
+{ci: 2nd time}
+[G]
 
 {comment: Verse}
-F (cut 1st time) C G/B Am7
-God Almighty, Lord of glory. Oh we worship You. 2x
+{ci: cut 1st time}
+[F]God Almighty,    [C]Lord of glory.    [G/B]Oh we worship    [Am7]You.
+{ci: 2x}

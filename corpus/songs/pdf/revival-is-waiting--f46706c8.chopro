@@ -2,7 +2,7 @@
 {key: D}
 {tempo: 56}
 {time: 6/8}
-{x_verified: number chart, 92% of 13 chords}
+{x_verified: number chart, 95% of 111 chords}
 {x_theme: salvation, revival, baptism, healing, heaven, name-of-jesus, worship}
 {x_source: pdf:UPCI Music/2023/Revival is Waiting/Revival-Is-Waiting-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FRevival%20is%20Waiting}
@@ -18,96 +18,124 @@
 {x_album: NAYC 2023}
 {x_writers: Dylan Woodward}
 
-Revival Is Waiting Dylan Woodward
-Intro G
-D / | A / | Bm / | G / | God we will be Your laborers
-D / | A / | Bm A | G / | D
-The time is short but our steps are ordered
-Verse 1 A
-D A/D Greater works are still yet to come
-I feel a shift in the atmosphere Bm
-G Re-vival is waiting
-The heavens are open and revival is here G
-D A/D Now is the time to be Your church
-With expectation we're crying out
-G Interlude
-Our hearts are open, we’re ready for it now D / | A / | Bm / | G / |
-D / | A / | Bm A | G / |
+{comment: Intro}
+| D / | A / | Bm / | G / |
+| D / | A / | Bm A | G / |
+
+{comment: Verse 1}
+I [D]feel a shift in the [A/D]atmosphere
+The [G]heavens are open and revival is here
+With [D]expectation we're [A/D]crying out
+Our [G]hearts are open, we’re ready for it now
 
 {comment: Interlude}
-D / | A / | Bm / | G / | Verse 3
-Verse 2                                             We’ll [D]keep believing with[A/D] one accord
-You’ve [D]set before us an[A/D] open door                      Un-t[G]il we take hold of everything you have in store
-For a [G]fresh outpouring like we’ve never seen before       Bind [D]us together in [A/D]unity
-We're p[D]raying for healing, lost[A/D] souls to be saved          [G]Give us Your heart, let revival start in me
-You've [G]given us power when we call on Jesus            Pre-Chorus (Unison)
-name Em
-You are calling
-Pre-Chorus Bm G A/G G
-Em Your people to rise
-You are moving Em D/F#
-Bm G A/G G Prophecies are still being fulfilled
-revealing Your light G
-Em D/F# Dead dreams are coming to life
-Revival is here in this generation
-G Chorus (Parts)
-This is our time D
-We believe every word you’ve spoken
-Chorus (men sing 8vb) A
-D We’ll worship like it’s already done
-We believe every word you’ve spoken Bm
-A The harvest is ready
-We’ll worship like it’s already done G
-Bm God we will be Your laborers
-The harvest is ready
+| D / | A / | Bm / | G / |
+
+{comment: Verse 2}
+You’ve [D]set before us an [A/D]open door
+For a f[G]resh outpouring like we’ve never seen before
+We're [D]praying for healing, lost [A/D]souls to be saved
+You've [G]given us power when we call on Jesus
+name
+
+{comment: Pre-Chorus}
+[Em]You are moving
+[Bm]revealing Your [G]ligh[A/G]t[G]
+[Em]Revival is here in [D/F#]this generation
+[G]This is our time
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[D]We believe every word you’ve spoken
+[A]We’ll worship like it’s already done
+The [Bm]harvest is ready
+God we will be Your[G] laborers
+[D]The time is short but our steps are ordered
+[A]Greater works are still yet to come
+Re-[Bm]vival is waiting
+Now is the time to[G] be Your church
+
+{comment: Interlude}
+| D / | A / | Bm / | G / |
+| D / | A / | Bm A | G / |
+
+{comment: Verse 3}
+We’ll [D]keep believing with[A/D] one accord
+Un-[G]til we take hold of everything you have in store
+Bind [D]us together in [A/D]unity
+[G]Give us Your heart, let revival start in me
+
+{comment: Pre-Chorus}
+{ci: Unison}
+[Em]You are calling
+[Bm]Your people t[G]o ris[A/G]e[G]
+[Em]Prophecies are still[D/F#] being fulfilled
+[G]Dead dreams are coming to life
+
+{comment: Chorus}
+{ci: Parts}
+[D]We believe every word you’ve spoken
+[A]We’ll worship like it’s already done
+The [Bm]harvest is ready
+God we will be Your[G] laborers
 UPCI Music
-Revival Is Waiting Dylan Woodward
-D Bridge 3
-The time is short but our steps are ordered D A
-A We’re gonna love our brother
-Greater works are still yet to come Bm G
-Bm We’re gonna reach the sinner
-Re-vival is waiting D A
-G We'll see new signs and wonders
-Now is the time to be Your church G
-We’re gonna be the church
-Interlude D A
-D / | A / | Bm / | G / | We’re gonna see revival
-D / | A / | Bm A | G / | Bm A G
-In Jesus’ name In Jesus’ name
+[D]The time is short but our steps are ordered
+[A]Greater works are still yet to come
+Re-[Bm]vival is waiting
+Now is the time to[G] be Your church
+
+{comment: Interlude}
+| D / | A / | Bm / | G / |
+| D / | A / | Bm A | G / |
 
 {comment: Bridge 1}
 {ci: Solo}
-D A Bridge 1 (Flipped Parts)
-We're gonna see revival D/A A#dim7
-Bm G We're gonna see revival
-We're gonna see revival Bm A E/G# Gdim7
-D A We're gonna see revival
-We're gonna see revival D/F# Em D C#dim
-Bm A G We're gonna see re-vival
-In Jesus' name, in Jesus' name A#dim7 Bm A G
-In Jesus' name, in Jesus' name
+[D]We're gonna see reviva[A]l
+[Bm]We're gonna see reviva[G]l
+[D]We're gonna see reviva[A]l
+In Jesus' [Bm]name, in J[A]esus'[G] name
 
 {comment: Bridge 1}
 {ci: Parts}
-D A Interlude
-We're gonna see revival D / | A / | Bm / | G / |
-Bm G D / | A / | Bm A | G / | / /
-We're gonna see revival
-D A Chorus (men sing 8vb)
-We're gonna see revival D
-Bm A G We believe every word you’ve spoken
-In Jesus' name, in Jesus' name A
-We’ll worship like it’s already done
-Bridge 2 (Parts) Bm
-D A The harvest is ready
-We’re gonna reap the harvest G
-Bm G God we will be Your laborers
-We’re gonna reap the harvest D
-D A The time is short but our steps are ordered
-We’re gonna reap the harvest A
-Bm A G Greater works are still yet to come
-In Jesus’ name In Jesus’ name Bm
-Re-vival is waiting
+[D]We're gonna see reviva[A]l
+[Bm]We're gonna see reviva[G]l
+[D]We're gonna see reviva[A]l
+In Jesus' [Bm]name, in J[A]esus'[G] name
+
+{comment: Bridge 2}
+{ci: Parts}
+[D]We’re gonna reap the harves[A]t
+[Bm]We’re gonna reap the harves[G]t
+[D]We’re gonna reap the harves[A]t
+In Jesus’ [Bm]name  In [A]Jesus’ [G]name
+
+{comment: Bridge 3}
+[D]We’re gonna love our brothe[A]r
+[Bm]We’re gonna reach the sinne[G]r
+[D]We'll see new signs and wond[A]ers
+[G]We’re gonna be the church
+[D]We’re gonna see reviva[A]l
+In Jesus’ [Bm]name  In [A]Jesus’ [G]name
+
+{comment: Bridge 1}
+{ci: Flipped Parts}
+[D/A]We're gonna see revival[A#dim7]
+[Bm]We're gonna [A]see reviva[E/G#]l[Gdim7]
+[D/F#]We're gonna [Em]see re-[D]vival[C#dim]
+In J[A#dim7]esus'  [Bm]name, in J[A]esus' [G]name
+
+{comment: Interlude}
+| D / | A / | Bm / | G / |
+| D / | A / | Bm A | G / | / /
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[D]We believe every word you’ve spoken
+[A]We’ll worship like it’s already done
+The [Bm]harvest is ready
+God we will be Your[G] laborers
+[D]The time is short but our steps are ordered
+[A]Greater works are still yet to come
+Re-[Bm]vival is waiting
 Now is the time to[G] be Your church
 UPCI Music

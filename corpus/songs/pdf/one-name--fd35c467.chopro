@@ -27,18 +27,22 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/charts/vocals.pdf}
 
-Intro C F/C G/C F/C
+{comment: Intro}
+[C] [F/C] [G/C] [F/C]
 
 {comment: Verse}
-There is [C]power w[F/C]orking po[C]wer in the na[G]me of J[Csus]e - [C]sus
-And besi[C]de Him there [F/C]is no o[C]ther like the [G]name of the [C]Lor[C/E]d
+There is p[C]ower w[F/C]orking p[C]ower in the na[G]me of [Csus]Je - s[C]us
+And be[C]side Him ther[F/C]e is no o[C]ther like the n[G]ame of the L[C]ord[C/E]
 
 {comment: Chorus}
-[F]One name[Am7]       [G]one name by w[C/E]hich I’m s[F]aved
-[F]One name[Am7]       [G]brings life back[C/E] from the g[F]rave
-[F]I claim[Am7]        [G]the power[C/E] in the [F]name[Am7]  of  [G/B]Je - s[C]us
-[C/E]The na[F]me o[Am7]f the L[G]ord
-Interlude C F/C C G/C (2x)
+[F]One name[Am7]    [G]one name by w[C/E]hich I’m sa[F]ved
+[F]One name[Am7]    [G]brings life back [C/E]from the gr[F]ave
+[F]I claim[Am7]    [G]the powe[C/E]r in the n[F]ame[Am7]  of  [G/B]Je - s[C]us
+[C/E]The n[F]ame [Am7]of the L[G]ord
+
+{comment: Interlude}
+[C] [F/C] [C] [G/C]
+{ci: 2x}
 
 {comment: Bridge}
 [C/E]All grace[F]   all glory[C]   all praise[G]   and all authority

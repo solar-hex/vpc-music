@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 81}
 {time: 4/4}
-{x_verified: number chart, 89% of 103 chords}
+{x_verified: number chart, 88% of 108 chords}
 {x_theme: victory, easter, faith-trust}
 {x_source: pdf:UPCI Music/2020/Battle Belongs/Battle-Belongs-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FBattle%20Belongs}
@@ -19,43 +19,81 @@
 {x_album: Battle Belongs (Single)}
 {x_writers: Brian Johnson, Phil Wickham}
 
-{comment: Intro Interlude}
-Db / / / | / / Dbsus Db | / / / / | / / Dbsus Db / / / | / / Dbsus Db |
+{comment: Intro}
+| Db / / / | / / Dbsus Db | / / / / | / / Dbsus
 
-{comment: Verse 1 Verse 3}
-[Db]When all I see is the battle                             [Db]And if You are for me
-You see my v[Gb]ictory                                    Who can be a[Gb]gainst me
-[Bbm7]When all I see is the mountain                         [Bbm7]For Jesus
-You [Ab]see a[Gb] mountain moved                             There’s noting im[Ab]possible[Gb]   for You
+{comment: Verse 1}
+[Db]When all I see is the battle
+You see my [Gb]victory
+[Bbm7]When all I see is the mountain
+You [Ab]see a [Gb]mountain moved
 
-{comment: Verse 2 Verse 4}
+{comment: Verse 2}
+[Db]And as I walk the shadow
+Your love su[Gb]rrounds me
+[Bbm7]There’s nothing to fear now
+For I[Ab] am [Db]safe with You
+
+{comment: Chorus 1}
+So when I [Gb]fight, I’ll [Db]flight on my [Ab]knees
+With my [Bbm]hands lifted high[Gb]
+O [Db]God the battle b[Ab]elongs t[Bbm]o You
+And every [Gb]fear I [Db]lay at Your [Ab]feet
+I’ll [Bbm]sing through the [Gb]night
+O [Db]God, the battle be[Ab]longs to [Db]Yo[Dbsus]u
+
+{comment: Interlude}
+| Db / / / | / / Dbsus Db |
+
+{comment: Verse 3}
+[Db]And if You are for me
+Who can be [Gb]against me
+[Bbm7]For Jesus
+There’s noting im[Ab]possible[Gb]   for You
+
+{comment: Verse 4}
 {ci: Parts}
-[Db]And as I walk the shadow                              [Db]When all I see are the ashes
-Your love su[Gb]rrounds me                                You see[Db/F]  the  [Gb]beauty
-[Bbm7]There’s nothing to fear now                            [Bbm7]When all I see is a cross
-For [Ab]I am [Db]safe with You                                 God You [Ab]see the[Gb] empty tomb
+[Db]When all I see are the ashes
+You see[Db/F]  the  [Gb]beauty
+[Bbm7]When all I see is a cross
+God You [Ab]see the [Gb]empty tomb
 
-{comment: Chorus 1 Chorus}
-So when I f[Gb]ight, I’l[Db]l flight on my[Ab] knees                    So when I f[Gb]ight, I’l[Db]l flight on my[Ab] knees
-With my h[Bbm]ands lifted high[Gb]                               With my h[Bbm]ands lifted hig[Gb]h
-O [Db]God the battle b[Ab]elongs t[Bbm]o You                        O [Db]God the battle b[Ab]elongs t[Bbm]o You
-And every f[Gb]ear I [Db]lay at Your [Ab]feet                         And every f[Gb]ear I [Db]lay at Your [Ab]feet
-I’l[Bbm]l sing through the[Gb] night                               I’l[Bbm]l sing through the[Gb] night
-O [Db]God, the battle b[Ab]elongs to[Db] You[Dbsus]                        O [Db]God, the battle b[Ab]elongs to[Db] Yo[Dbsus]u
+{comment: Chorus}
+So when I [Gb]fight, I’ll [Db]flight on my [Ab]knees
+With my [Bbm]hands lifted high[Gb]
+O [Db]God the battle b[Ab]elongs t[Bbm]o You
+And every [Gb]fear I [Db]lay at Your [Ab]feet
+I’ll [Bbm]sing through the [Gb]night
+O [Db]God, the battle be[Ab]longs to [Db]Yo[Dbsus]u
 
-{comment: Interlude Chorus}
+{comment: Interlude}
+| Db / / / | / / Dbsus Db |
+
+{comment: Bridge 1}
+{ci: Unison}
+[Gb]Almighty [Db]fortress, You go be[Ab]fore us
+Nothing can [Bbm]stand against the [Ab]power of our [Gb]God
+You shine in the [Db]shadows, You win every [Ab]battle
+Noting can [Bbm]stand against the [Ab]power of our [Gb]God
+
+{comment: Bridge}
+{ci: Parts}
+[Gb]Almighty [Db]fortress, You go be[Ab]fore us
+Nothing can [Bbm]stand against the [Ab]power of our [Gb]God
+You shine in the [Db]shadows, You win every [Ab]battle
+Noting can [Bbm]stand against the [Ab]power of our [Gb]God
+
+{comment: Chorus}
 {ci: Flipped Parts}
-Db / / / | / / Dbsus Db | Gb Db Ab
-So when I fight, I’ll flight on my knees
-Bridge 1 (Unison)                                     With my h[Bbm]ands lifted high
-[Gb]Almighty [Db]fortress, You go be[Ab]fore us                    [G2]O G[Db]od the battle be[Ab]longs t[Bbm]o You
-Nothing can [Bbm]stand against the [Ab]power of our[Gb] God          And every f[Gb]ear I [Db]lay at Your [Ab]feet
-You shine in the[Db] shadows, You win every b[Ab]attle           I’l[Bbm]l sing through the[Gb] night
-Noting can [Bbm]stand against the[Ab] power of our[Gb] God
+So when I [Gb]fight, I’ll [Db]flight on my [Ab]knees
+With my [Bbm]hands lifted high
+[G2]O [Db]God the battle be[Ab]longs to[Bbm] You
+And every [Gb]fear I [Db]lay at Your [Ab]feet
+I’ll [Bbm]sing through the [Gb]night
 
 {comment: Tag}
-Bridge (Parts)                                        O [Db]God, the battle be[Ab]longs to[Bbm] Yo[Gb]u
-[Gb]Almighty [Db]fortress, You go be[Ab]fore us                   O [Db]God, the battle be[Ab]longs to[Db] You
-Nothing can [Bbm]stand against the[Ab] power of our[Gb] God
-You shine in the[Db] shadows, You win every b[Ab]attle           [Ending](Db) / / / | / / Dbsus Db | / / / /
-Noting can [Bbm]stand against the[Ab] power of our[Gb] God
+O [Db]God, the battle bel[Ab]ongs to [Bbm]You[Gb]
+O [Db]God, the battle bel[Ab]ongs to [Db]You
+
+{comment: Ending}
+| (Db) / / / | / / Dbsus Db | / / / /

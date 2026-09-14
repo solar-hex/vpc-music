@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 93}
 {time: 4/4}
-{x_verified: number chart, 100% of 43 chords}
+{x_verified: number chart, 100% of 51 chords}
 {x_theme: heaven, praise, salvation, victory, blood, easter}
 {x_source: pdf:UPCI Music/2021/When I Shout_Testify/When-I-Shout_Testify-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FWhen%20I%20Shout_Testify}
@@ -19,59 +19,88 @@
 {x_album: Victory}
 {x_writers: Jason Crabb, Wood}
 
-Michael Farren, & Tony
-When I Shout / Testify Wood
+{comment: Intro}
+| D / / / | / / / / | Bm / / / | / / / / |
+| D / / / | / / / / | Bm / / / | / / / G |
 
-{comment: Intro Verse 2}
-| D / / / | / / / / | Bm / / / | / / / / | D
-| D / / / | / / / / | Bm / / / | / / / G | For anyone who knows the hope that keeps them
-Verse 1                                          moving on through troubl[Bm]ed days
-For [D]anyone who’s ever seen                         For [D]anyone who knows they have a future and a
-the mountain of their sins just [Bm]disappear               hope beyon[Bm]d the grave
-For [D]anyone who’s ever felt the hand of heaven          Every [G]life’s a different story how he brough us out
-reach down through[Bm] their fears and dry their tears       of darkness int[Bm]o light
-For any [G]life that once was empty that now finds         There’s no [G]way to keep us silent every breath’s
-itself alive and full of son[Bm]gs, victory songs               another chance to t[D]estify
-Then you’l[G]l understand the reason for the way the       Chorus
-saints of God may carr[D]y on                          Chorus(Breakdown)
-G (cut)
-Chorus When I shout know I’m shouting from a heart
-G that’s been washed clean.
-When I shout know I’m shouting from a heart When I run know I’m running from a past that’s
-that’s been washed clean. been redeemed.
-D To the world it might look crazy
-When I run know I’m running from a past that’s Bm
-been redeemed. but there’s just no telling what You’re gonna do
-G G G/A (D)
-To the world it might look crazy In that moment Jesus gets a hold of you
-but there’s just no telling what You’re gonna [Bm]do         Interlude
-G G/A (D) | D / / / | / / D A/C# | Bm / / / | G / / / |
-In that moment Jesus gets a hold of you | D / / / | / / D A/C# |
-
-{comment: Interlude}
-| D / / / | / / / / | D / / / | / / / G |
-Michael Farren, & Tony
-When I Shout / Testify Wood
-Bridge(Solo) Bridge(Parts)
-My past [Bm]erased                                    My p[Bm]ast erased
-My n[G]ame he changes, let’s testi[D]fy                     My n[G]ame he changes, let’s testi[D]f[D]y[A/C#]
-Bm Bm (cut)
-My past erased My past erased
-My n[G]ame he changes, let’s testi[D]fy[D] [A/C#]                    My name he changes, let’s testi[D]f[D]y[A/C#]
-Bridge(Unison) Ending
-My past [Bm]erased                                    My p[Bm]ast erased
-My n[G]ame he changes, let’s testi[D]fy                     My n[G]ame he changes, let’s testi[D]f[D]y[A/C#]
-Bm Bm (cut)
-My past erased My past erased
-G D (cut) D
-My name he changes, let’s testify My name he changes, let’s testify
+{comment: Verse 1}
+For [D]anyone who’s ever seen
+the mountain of their sins just d[Bm]isappear
+For [D]anyone who’s ever felt the hand of heaven
+reach down throu[Bm]gh their fears and dry their tears
+For any[G] life that once was empty that now finds
+itself alive and full of song[Bm]s, victory songs
+Then you’[G]ll understand the reason for the way the
+saints of God may carr[D]y on
 
 {comment: Chorus}
 When I s[G]hout know I’m shouting from a heart
 that’s been washed clean.
-When I [D]run know I’m running from a past that’s
+When I[D] run know I’m running from a past that’s
 been redeemed.
 To the[G] world it might look crazy
 but there’s just no telling what You’re gonna [Bm]do
-G G/A (D)
-In that moment Jesus gets a hold of you
+In that [G]moment Jesus[G/A] gets a hold o[(D)]f you
+
+{comment: Interlude}
+| D / / / | / / / / | D / / / | / / / G |
+
+{comment: Verse 2}
+For [D]anyone who knows the hope that keeps them
+moving on through troubl[Bm]ed days
+For [D]anyone who knows they have a future and a
+hope beyo[Bm]nd the grave
+Every[G] life’s a different story how he brough us out
+of darkness in[Bm]to light
+There’s no[G] way to keep us silent every breath’s
+another chance to [D]testify
+
+{comment: Chorus}
+{ci: Breakdown}
+When I s[G(cut)]hout know I’m shouting from a heart
+that’s been washed clean.
+When I run know I’m running from a past that’s
+been redeemed.
+To the world it might look crazy
+but there’s just no telling what You’re gonna [Bm]do
+In that [G]moment Jesus[G/A] gets a hold o[(D)]f you
+
+{comment: Interlude}
+| D / / / | / / D A/C# | Bm / / / | G / / / |
+| D / / / | / / D A/C# |
+
+{comment: Bridge}
+{ci: Solo}
+My past [Bm]erased
+My [G]name he changes, let’s testi[D]fy
+My [Bm]past erased
+My [G]name he changes, let’s testi[D]fy[D][A/C#]
+
+{comment: Bridge}
+{ci: Unison}
+My past [Bm]erased
+My [G]name he changes, let’s testi[D]fy
+My [Bm]past erased
+My [G]name he changes, let’s testi[D(cut)]fy
+
+{comment: Chorus}
+When I s[G]hout know I’m shouting from a heart
+that’s been washed clean.
+When I[D] run know I’m running from a past that’s
+been redeemed.
+To the[G] world it might look crazy
+but there’s just no telling what You’re gonna [Bm]do
+In that [G]moment Jesus[G/A] gets a hold o[(D)]f you
+
+{comment: Bridge}
+{ci: Parts}
+My [Bm]past erased
+My [G]name he changes, let’s testi[D]fy[D][A/C#]
+My [Bm(cut)]past erased
+My name he changes, let’s testi[D]fy[D][A/C#]
+
+{comment: Ending}
+My [Bm]past erased
+My [G]name he changes, let’s testi[D]fy[D][A/C#]
+My [Bm(cut)]past erased
+My name he changes, let’s testi[D]fy

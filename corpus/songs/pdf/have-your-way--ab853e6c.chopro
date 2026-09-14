@@ -3,7 +3,7 @@
 {key: E}
 {tempo: 80}
 {time: 4/4}
-{x_verified: number chart, 100% of 62 chords}
+{x_verified: number chart, 100% of 76 chords}
 {x_theme: holy-spirit, altar}
 {x_source: pdf:UPCI Music/2021/Have Your Way - Draylin Young/Have-Your-Way-Chord-Chart-Draylin.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FHave%20Your%20Way%20-%20Draylin%20Young}
@@ -21,51 +21,89 @@
 {x_album: Have Your Way (Single)}
 {x_writers: Draylin Young}
 
-Verse (Solo) C#m A
-C#m A Like a rushing mighty wind
-Spirit of the living God E
-E Come and breathe again
-Come and move on us B
-F#m Come and breathe again
-Come and move on us
-Like a[C#m] rushing mighty win[A]d                             Chorus (Parts)(2xs)
-Come and b[E]reathe again
-F#m Interlude
-Come and breathe again ||: C#m / / / | A / / / | E / / / | B / / / :||
-Verse (Solo) Bridge (Solo)
-Spir[C#m]it of the living G[A]od                                 I su[C#m]rrender        I sur[A]render
-Come and [E]move on us                                to your[E] power     to your [B]power
-Come and [F#m]move on us                                I am [C#m]desperate    I am [A]desperate
-Like a[C#m] rushing mighty win[A]d                             for your [E]presence for your[B] presence
-Come and b[E]reathe again
-B Bridge (Parts)
-Come and breathe again C#m A
-I surrender I surrender
-Chorus (Solo)(2xs)                                   to your[E] power     to your [B]power
-Have your[C#m] way[A]                                       I am [C#m]desperate    I am [A]desperate
-Have your[E] way[B]                                       for your [E/G#]presence for your[B] presence
-Verse (Unison)                                       I su[C#m]rrender        I sur[A]render
-Spir[C#m]it of the living G[A]od                                 to your[E] power     to your [B]power
-Come and [E]move on us                                I am [C#m]desperate    I am [A]desperate
-Come and [F#m]move on us                                for your [E]presence for your[B] presence
-Vamp (3xs) Verse (Solo)
-[C#m]Oh, oh, oh, oh,                                       Spir[C#m]it of the living G[A]od
-[E]Oh, oh, oh, oh,                                       Come and [E]move on us
-[F#m]Oh, oh oh, oh                                        Come and [F#m]move on us
-[G#m]Oh, oh oh, oh                                        Like a[C#m] rushing mighty win[A]d
-Come and b[E]reathe again
-Vamp B
-C#m Come and breathe again
-Oh, oh, oh, oh,
+{comment: Verse}
+{ci: Solo}
+Spir[C#m]it of the living Go[A]d
+Come and [E]move on us
+Come and [F#m]move on us
+Like a[C#m] rushing mighty win[A]d
+Come and [E]breathe again
+Come and [F#m]breathe again
+
+{comment: Verse}
+{ci: Solo}
+Spir[C#m]it of the living Go[A]d
+Come and [E]move on us
+Come and [F#m]move on us
+Like a[C#m] rushing mighty win[A]d
+Come and [E]breathe again
+Come and [B]breathe again
+
+{comment: Chorus}
+{ci: Solo, 2xs}
+Have your [C#m]way[A]
+Have your [E]way[B]
+
+{comment: Verse}
+{ci: Unison}
+Spir[C#m]it of the living Go[A]d
+Come and [E]move on us
+Come and [F#m]move on us
+Like a[C#m] rushing mighty win[A]d
+Come and [E]breathe again
+Come and [B]breathe again
+
+{comment: Chorus}
+{ci: Parts, 2xs}
+
+{comment: Interlude}
+||: C#m / / / | A / / / | E / / / | B / / / :||
+
+{comment: Bridge}
+{ci: Solo}
+I sur[C#m]render    I sur[A]render
+to your [E]power    to your [B]power
+I am [C#m]desperate    I am [A]desperate
+for your p[E]resence for your [B]presence
+
+{comment: Bridge}
+{ci: Parts}
+I sur[C#m]render    I sur[A]render
+to your [E]power    to your [B]power
+I am [C#m]desperate    I am [A]desperate
+for your p[E/G#]resence for your [B]presence
+I sur[C#m]render    I sur[A]render
+to your [E]power    to your [B]power
+I am [C#m]desperate    I am [A]desperate
+for your p[E]resence for your [B]presence
+
+{comment: Vamp}
+{ci: 3xs}
+[C#m]Oh, oh, oh, oh,
+[E]Oh, oh, oh, oh,
+[F#m]Oh, oh oh, oh
+[G#m]Oh, oh oh, oh
+
+{comment: Vamp}
+[C#m]Oh, oh, oh, oh,
 [B/C#]Oh, oh, oh, oh,
 [A/C#]Oh, oh oh, oh
 Yea[B]h
 
 {comment: Verse}
 {ci: Solo}
-Spir[C#m]it of the living G[A]od
+Spir[C#m]it of the living Go[A]d
 Come and [E]move on us
 Come and [F#m]move on us
 Like a[C#m] rushing mighty win[A]d
-Come and b[E]reathe again
-Come and b[F#m]reathe again
+Come and [E]breathe again
+Come and [F#m]breathe again
+
+{comment: Verse}
+{ci: Solo}
+Spir[C#m]it of the living Go[A]d
+Come and [E]move on us
+Come and [F#m]move on us
+Like a[C#m] rushing mighty win[A]d
+Come and [E]breathe again
+Come and [B]breathe again

@@ -3,8 +3,8 @@
 {key: C}
 {tempo: 65}
 {time: 4/4}
-{x_verified: number chart, 99% of 69 chords}
-{x_theme: praise, healing, heaven, joy, revival}
+{x_verified: number chart, 93% of 161 chords}
+{x_theme: healing, heaven, joy, praise, revival}
 {x_source: pdf:UPCI Music/2022/Everything is Changing/Everything-is-Changing-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FEverything%20is%20Changing}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/everything-is-changing/audio/alto.mp3}
@@ -19,119 +19,162 @@
 {x_album: Here}
 {x_writers: Sarah Gerald}
 
-Andrew Holt, Austin Davis,
-Everything is Changing Sarah Gerald
-Intro F Gsus Am7
-||: Dm7 / C/E / | F / G Am7 :|| You bring re -surrection
-Verse 1                                                  [Dm7]Heaven is[C/E] coming down
-[Dm7]I[C/E] throw off despair                                    [F]T[Gsus]his is [Am7]revival
-[F]And put a[Gsus] garment[Am7] of praise on                         [Dm7]Your Kingdom [C/E]taking groun[Fma7]d
-[Dm7]I[C/E] let go of shame                                 Chorus (Parts)
-[F]And re- [Gsus]ceive my i[Am7]nheritance                        Bridge 1 (men sing 8vb)
-[Dm7]I won’t liv[C/E]e in the past                                 [C/E]There’s freedom [F]here in Your presence
-[F]‘cause[Gsus] You hold  [Am7]my  future                           [G]There’s hope and f[Am7]ullness of joy
-[Dm7]Your kingdom h[C/E]ere at last[Fma7]                               [C/E]There’s freedom [F]here in Your presence
-Chorus (men sing 8vb)                                 [G]In Your presence,[Am7]     in Your presence
-[G]Everything is changing[C] now                                [C/E]I’m trading[F] mourning for dancing
-Everything is changing[G] now                             [G]I’m trading [Am7]sorrow for joy
-The Spirit of the Lord [F]is here                              [C/E]There’s freedom [F]here in Your presence
-The Spirit of the Lord [G]is here                             [G]It’s in Your presence
-[E7/G#]Miracles are breaking [Am7]out                                  [Am7]It’s in Your presence
-Your presence is among us[Bbma7] now                        Bridge 2
-The Spirit of the Lord [F]is here                              [C/E]There’s freedom [F]here in Your presence
-The spirit of the Lord[Gsus]  is   here[G]                          [G]There’s hope and f[Am7]ullness of joy
-Verse 2 (men sing 8vb)                                   [C/E]There’s freedom [F]here in Your presence
-[Dm7]U[C/E]p from the ruins                                [G]In Your presence,[Am7]     in Your presence
-[F]C[Gsus]omes re - s[Am7]toration                                   [C/E]I’m trading[F] mourning for dancing
-[Dm7]O[C/E]ut of the grave                                [G]I’m trading [Am7]sorrow for joy
-[C/E]There’s freedom [F]here in Your presence
-Andrew Holt, Austin Davis,
-Everything is Changing Sarah Gerald
-G Vamp (Solo)
-It’s in Your presence (Am7) C/E
-Am7 G/B A/C# When He walks into the room
-It’s in Your pre - sence F
-We’re never the same
+{comment: Intro}
+||: Dm7 / C/E / | F / G Am7 :||
 
-{comment: Bridge 3}
-Dm7 C/E Vamp (men sing 8vb)
-There’s freedom here in Your presence G
-F Am7 G/B A/C# When He walks into the room
-There’s hope and fullness of joy Am7
-Dm7 C/E We’re never the same
-There’s freedom here in Your presence
-F Am7 G/B A/C# Vamp (Parts) (2x)
-In Your presence, in Your pres- ence (Am7) C/E
-Dm7 C/E When He walks into the room
-I’m trading mourning for dancing F
-F Am7 G/B A/C# We’re never the same
-I’m trading sorrow for joy G
-Dm7 C/E When He walks into the room
-There’s freedom here in Your presence Am7
-F We’re never the same
-It’s in Your presence
+{comment: Verse 1}
+[Dm7]I[C/E] throw off despair
+[F]And put a[Gsus] garmen[Am7]t of praise on
+[Dm7]I[C/E] let go of shame
+[F]And re- [Gsus]ceive my i[Am7]nheritance
+[Dm7]I won’t live[C/E] in the past
+[F]‘cause[Gsus] You hold  [Am7]my  future
+[Dm7]Your kingdom [C/E]here at las[Fma7]t
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[G]Everything is changing [C]now
+Everything is changing [G]now
+The Spirit of the Lord [F]is here
+The Spirit of the Lord [G]is here
+[E7/G#]Miracles are breaking [Am7]out
+Your presence is among us[Bbma7] now
+The Spirit of the Lord [F]is here
+The spirit of the Lord[Gsus]  is   her[G]e
+
+{comment: Verse 2}
+{ci: men sing 8vb}
+[Dm7]U[C/E]p from the ruins
+[F]C[Gsus]omes re - [Am7]storation
+[Dm7]O[C/E]ut of the grave
+[F]You[Gsus] bring re -[Am7]surrection
+[Dm7]Heaven is [C/E]coming down
+[F]T[Gsus]his is [Am7]revival
+[Dm7]Your Kingdom[C/E] taking groun[Fma7]d
+
+{comment: Chorus}
+{ci: Parts}
+
+{comment: Bridge 1}
+{ci: men sing 8vb}
+[C/E]There’s freedom [F]here in Your presence
+[G]There’s hope and [Am7]fullness of joy
+[C/E]There’s freedom [F]here in Your presence
+[G]In Your presence[Am7],    in Your presence
+[C/E]I’m trading [F]mourning for dancing
+[G]I’m trading [Am7]sorrow for joy
+[C/E]There’s freedom [F]here in Your presence
+[G]It’s in Your presence
+[Am7]It’s in Your presence
 
 {comment: Bridge 2}
-{ci: Parts}
-Chorus (2x) C/E F
-G C There’s freedom here in Your presence
-Everything is changing now G Am7
-G There’s hope and fullness of joy
-Everything is changing now C/E F
-F There’s freedom here in Your presence
-The Spirit of the Lord is here G Am7
-G In Your presence, in Your presence
-The Spirit of the Lord is here C/E F
-E7/G# Am7 I’m trading mourning for dancing
-Miracles are breaking out G Am7
-Bbma7 I’m trading sorrow for joy
-Your presence is among us now C/E F
-F There’s freedom here in Your presence
-The Spirit of the Lord is here G
-G It’s in Your presence
-The spirit of the Lord is here Am7 G/B A/C#
-It’s in Your pre - sence
+[C/E]There’s freedom [F]here in Your presence
+[G]There’s hope and [Am7]fullness of joy
+[C/E]There’s freedom [F]here in Your presence
+[G]In Your presence[Am7],    in Your presence
+[C/E]I’m trading [F]mourning for dancing
+[G]I’m trading [Am7]sorrow for joy
+[C/E]There’s freedom [F]here in Your presence
+[G]It’s in Your presence
+[Am7]It’s in[G/B] Your pre - [A/C#]sence
+
+{comment: Bridge 3}
+[Dm7]There’s freedom [C/E]here in Your presence
+[F]There’s hope and [Am7]fullness[G/B] of jo[A/C#]y
+[Dm7]There’s freedom [C/E]here in Your presence
+[F]In Your presence,[Am7]    in Y[G/B]our pres- [A/C#]ence
+[Dm7]I’m trading [C/E]mourning for dancing
+[F]I’m trading[Am7] sorrow[G/B]  for  [A/C#]joy
+[Dm7]There’s freedom he[C/E]re in Your presence
+[F]It’s in Your presence
+
+{comment: Chorus}
+{ci: 2x}
+[G]Everything is changing [C]now
+Everything is changing [G]now
+The Spirit of the Lord [F]is here
+The Spirit of the Lord [G]is here
+[E7/G#]Miracles are breaking [Am7]out
+Your presence is among us[Bbma7] now
+The Spirit of the Lord [F]is here
+The spirit of the Lord i[G]s here
 
 {comment: Refrain}
 {ci: 4x}
 ||: C/E / F / | G(4) / Am7 / :||
 {ci: When He walks}
-Andrew Holt, Austin Davis,
-Everything is Changing Sarah Gerald
-Bridge 3 (Flipped Parts) E7/G# Am7
-Dm7 C/E Miracles are breaking out
-There’s freedom here in Your presence Bbma7
-F Am7 G/B A/C# Your presence is among us now
-There’s hope and fullness of joy F
-Dm7 C/E The Spirit of the Lord is here
-There’s freedom here in Your presence Gsus G
-F Am7 G/B A/C# The spirit of the Lord is here
-In Your presence, in Your pres- ence
-Dm7 C/E Chorus (men sing 8vb)
-I’m trading mourning for dancing G C
-F Am7 G/B A/C# Everything is changing now
-I’m trading sorrow for joy G
-Dm7 C/E Everything is changing now
-There’s freedom here in Your presence F
-F The Spirit of the Lord is here
-It’s in Your presence G
-The Spirit of the Lord is here
-[Chorus]G                   C                              [E7/G#]Miracles are breaking [Am7]out
-Everything is changing now Bbma7
-G Your presence is among us now
-Everything is changing now F
-F The Spirit of the Lord is here
-The Spirit of the Lord is here Gsus G
-G The spirit of the Lord is here
-The Spirit of the Lord is here
-[E7/G#]Miracles are breaking [Am7]out                              [End]F
+
+{comment: Vamp}
+{ci: Solo}
+[(Am7)]When He walks [C/E]into the room
+We’re never t[F]he same
+
+{comment: Vamp}
+{ci: men sing 8vb}
+When He walks [G]into the room
+We’re never[Am7] the same
+
+{comment: Vamp}
+{ci: Parts, 2x}
+[(Am7)]When He walks [C/E]into the room
+We’re never t[F]he same
+When He walks [G]into the room
+We’re never[Am7] the same
+
+{comment: Bridge 2}
+{ci: Parts}
+[C/E]There’s freedom [F]here in Your presence
+[G]There’s hope and [Am7]fullness of joy
+[C/E]There’s freedom [F]here in Your presence
+[G]In Your presence[Am7],    in Your presence
+[C/E]I’m trading [F]mourning for dancing
+[G]I’m trading [Am7]sorrow for joy
+[C/E]There’s freedom [F]here in Your presence
+[G]It’s in Your presence
+[Am7]It’s in[G/B] Your pre - [A/C#]sence
+
+{comment: Bridge 3}
+{ci: Flipped Parts}
+[Dm7]There’s freedom [C/E]here in Your presence
+[F]There’s hope and [Am7]fullness[G/B] of jo[A/C#]y
+[Dm7]There’s freedom [C/E]here in Your presence
+[F]In Your presence,[Am7]    in Y[G/B]our pres- [A/C#]ence
+[Dm7]I’m trading [C/E]mourning for dancing
+[F]I’m trading[Am7] sorrow[G/B]  for  [A/C#]joy
+[Dm7]There’s freedom he[C/E]re in Your presence
+[F]It’s in Your presence
+
+{comment: Chorus}
+[G]Everything is changing [C]now
+Everything is changing [G]now
+The Spirit of the Lord [F]is here
+The Spirit of the Lord [G]is here
+[E7/G#]Miracles are breaking [Am7]out
 Your presence is among us[Bbma7] now
 The Spirit of the Lord [F]is here
 The spirit of the Lord i[G]s here
 
 {comment: Chorus}
 {ci: men sing 8vb}
-[G]Everything is changing[C] now
-Everything is changing[G] now
+[G]Everything is changing [C]now
+Everything is changing [G]now
 The Spirit of the Lord [F]is here
 The Spirit of the Lord [G]is here
+[E7/G#]Miracles are breaking [Am7]out
+Your presence is among us[Bbma7] now
+The Spirit of the Lord [F]is here
+The spirit of the Lord[Gsus]  is   her[G]e
+
+{comment: Chorus}
+{ci: men sing 8vb}
+[G]Everything is changing [C]now
+Everything is changing [G]now
+The Spirit of the Lord [F]is here
+The Spirit of the Lord [G]is here
+[E7/G#]Miracles are breaking [Am7]out
+Your presence is among us[Bbma7] now
+The Spirit of the Lord [F]is here
+The spirit of the Lord[Gsus]  is   her[G]e
+
+{comment: End}
+[F]

@@ -3,7 +3,7 @@
 {key: B}
 {tempo: 13}
 {time: 4/4}
-{x_verified: number chart, 97% of 35 chords}
+{x_verified: number chart, 98% of 58 chords}
 {x_theme: praise, heaven, worship}
 {x_source: pdf:UPCI Music/2019/Open the Heavens/Open-the-Heavens-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FOpen%20the%20Heavens}
@@ -16,65 +16,84 @@
 {x_source_open_the_heavens_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/open-the-heavens/source/Open-the-Heavens-Vocal-Parts.zip}
 {x_album: He is Here}
 
-Intro /B /C# /D# /E E
-B / / / | / / / / B/D# | / E / / | / / / / F# | we lift our voice to sing. He is worthy, praise
-/ G#m / / | / / / / F#/A# | / B / E / | / / / / B |       is rising[B] up,
-Verse (Solo) Chorus (Parts)
-B B (B) E F#
-Praise is rising to the One who set us free. Up to the heavens so rain Your presence
-/B /C# /D# /E G#m E C#m
-Praise is rising to the God of vic - to - ry down. Show us Your glory, we love when You
-Praise is rising[E], praise is rising.[B]  Praise is rising to        fill this[B] place.   Open the heaven[E]s
-/B /B F# G#m
-the King above all kings. Praise is rising as we lift and rain Your presence down.
-/B /C# /D# /E E (A#-B) E A
-our voice to sing. He is worthy, praise is We want Your glor - y, we need You
-rising [B]up,                                             to fill this[B] place.
-Chorus (Solo) Interlude
-(B) E F# B / / / | / / / / B/D# | / E / / | / / / / F# |
-Up to the heavens so rain Your presence
-G#m E C#m / G#m / / | / / / / F#/A# | / B / E / | / / / / B |
-down. Show us Your glory, we love when You
-fill this[B] place.                                          Bridge (Solo)
-[B]Reveal Your glory[B/D#],      [E]reveal Your glory[F#],
-Interlude G#m F#/A# B E
-B / / / | / / / / B/D# | / E / / | / / / / F# | we want Your glory. We love when
-/ G#m / / | / / / / F#/A# | / B / E / | / / / / B |       You fill this[B] place.
+{comment: Intro}
+| B / / / | / / / / B/D# | / E / / | / / / / F# |
+| / G#m / / | / / / / F#/A# | / B / E / | / / / / B |
+
+{comment: Verse}
+{ci: Solo}
+[B]Praise is rising to the One who set us[B] free.
+Praise is rising to the God o[/B]f vic -[/C#] to - [/D#]ry[/E]
+Praise is risin[E]g, praise is rising.[B]  Praise is rising to
+the King above [/B]all [/B]kings. Praise is rising as we lift
+our [/B]voice[/C#] to  [/D#]sing.[/E]    He is worthy[E],  praise is
+rising [B]up,
+
+{comment: Chorus}
+{ci: Solo}
+[(B)]Up to the heaven[E]s  so rain Your pres[F#]ence
+[G#m]down. Show us Your glory[E],  we love whe[C#m]n   You
+fill this [B]place.
+
+{comment: Interlude}
+| B / / / | / / / / B/D# | / E / / | / / / / F# |
+| / G#m / / | / / / / F#/A# | / B / E / | / / / / B |
+
+{comment: Verse}
+{ci: Unison}
+[(B)]Praise is rising to the One who set us fr[B]ee.
+Praise is rising to the God o[/B]f vic[/C#] - to -[/D#] ry[/E]
+Praise is rising[E],   praise is [(G#-B-C#)]rising.[B]    Praise is
+rising to the King above [/B]all ki[/B]ngs. Praise is rising as
+we lift our [/B]voice[/C#] to  [/D#]sing.[/E]    He is worthy[E],  praise
+is rising [B]up,
+
+{comment: Chorus}
+{ci: Parts}
+[(B)]Up to the heavens[E]  so rain Your prese[F#]nce
+[G#m]down. Show us Your glory[E],  we love whe[C#m]n   You
+fill this [B]place.   Open the heaven[E]s
+and rain Your pres[F#]ence [G#m]down.
+We want Your g[(A#-B)]lor - y,[E]    we need You[A]
+to fill this [B]place.
+
+{comment: Interlude}
+| B / / / | / / / / B/D# | / E / / | / / / / F# |
+| / G#m / / | / / / / F#/A# | / B / E / | / / / / B |
+
+{comment: Bridge}
+{ci: Solo}
+[B]Reveal Your glory[B/D#],    [E]reveal Your glory[F#],
+[G#m]we want Your glory[F#/A#].    [B]We love [E]when
+You fill this [B]place.
 
 {comment: Bridge}
 {ci: men sing 8vb}
-Verse (Unison) B B/D# E F#
-(B) B Reveal Your glory, reveal Your glory,
-Praise is rising to the One who set us free. G#m F#/A# B E
-/B /C# /D# /E we want Your glory. We love when
-Praise is rising to the God of vic - to - ry B
-E (G#-B-C#) B You fill this place.
-Praise is rising, praise is rising. Praise is
-/B /B
-rising to the King above all kings. Praise is rising as
+[B]Reveal Your glory[B/D#],    [E]reveal Your glory[F#],
+[G#m]we want Your glory[F#/A#].    [B]We love [E]when
+You fill this [B]place.
 
 {comment: Bridge}
 {ci: Parts}
-[B]Reveal Your glory[B/D#],      [A]reveal Your glory[B],
-[E/G#]we want Your glory.[F#]       [B]We love [A]when
+[B]Reveal Your glory[B/D#],    [A]reveal Your glory[B],
+[E/G#]we want Your glory.[F#]    [B]We love [A]when
 You fill this [E/G#]place.
 
 {comment: Interlude}
-/ / A / E/G# | / A / / E/G# | A E/G# A E/G# |
-A (D# - C# C#-B) B
-Praise is rising up.
+| / / A / E/G# | / A / / E/G# | A E/G# A E/G# |
+[A]P[(D#-C#-C#-B)]raise is rising [B]up.
 
 {comment: Chorus}
 {ci: cut}
 Up to the heavens[E]  so rain Your pres[F#]ence
-[G#m]down. Show us Your glory,[E]  we love whe[C#m]n   You
-fill this[B] place.   Open the heaven[E]s
-and rain Your pr[F#]esence[G#m] down.
-We want Your [F#/A#]glor - y[B],   we need Yo[A]u
-to fill this[B] place.
+[G#m]down. Show us Your glory[E],  we love whe[C#m]n   You
+fill this [B]place.   Open the heaven[E]s
+and rain Your pre[F#]sence [G#m]down.
+We want You[F#/A#]r glor - [B]y,   we need You[A]
+to fill this p[B]lace.
 
 {comment: Ending}
-/ / / / | / / / / / B/D# | / E / / / | / / / / F# |
-/ G#m / / | / / / / F#/A# | / B / A / |
+| / / / / | / / / / / B/D# | / E / / / | / / / / F# |
+| / G#m / / | / / / / F#/A# | / B / A / |
 | / / / / E/G# | A E/G# A E/G# |
 | A (G#-C#-B-G#-B) B |

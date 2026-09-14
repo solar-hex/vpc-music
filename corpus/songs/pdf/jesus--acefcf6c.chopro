@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 63}
 {time: 4/4}
-{x_verified: number chart, 86% of 28 chords}
+{x_verified: number chart, 100% of 114 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/2024/Jesus/Jesus-Chord-Chart-.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FJesus}
@@ -40,52 +40,65 @@
 {x_album: Lion of Judah}
 {x_writers: Phil Thompson}
 
-{comment: Intro Verse 3}
-| Ab5 / / / | / / / Ab/C | Dbmaj7 Eb Fm9
-Until the day I see Your face
-Verse 1 Bbm Ab Eb6 Ab2/C
-(Ab/C) Db Eb Fm And feel the warmth of Your embrace
-There is a name I love to call Db6 Eb Fm
-Bbm Ab Ab4 Eb Ab/C I’ll shout Your name through all the pain
-It stands alone and conquers all Bbm Ab Eb Ab
-Db Eb Fm No other name, Your precious name
-And every chain and every wall
-Bbm Ab4 Eb Ab Chorus 1
-Will be released and have to fall Eb Fm Bbm Ab Eb
-Jesus, Je - sus
-Chorus 1 Eb Fm Db Bbm (Bb-Ab)
-Eb Fm Bbm Ab Eb Jesus, Je - sus, Jesus
-Jesus, Je - sus
-Eb Fm Db Bbm (Bb-Ab) Chorus 3
-Jesus, Je - sus, Jesus Eb Fm Bbm Ab Eb
-Savior, Sav - ior
-Verse 2 Eb Fm Db Bbm (Bb-Ab)
-Ab/C Db Eb Fm Savior, Sav - ior, Savior
-There is a name I love to call
-Bbm Ab Ab4 Eb Ab/C Chorus 2 (2x)
-It stands alone and conquers all
-Db Eb Fm Chorus 1
-We call Your Name for every wall Eb Fm Bbm Ab Eb
-Bbm Ab4 Eb Ab Jesus, Je - sus
-And Jeri - cho will have to fall Eb Fm Db Bbm Bbm Ab
-Jesus, Je - sus, Je - sus
+{comment: Intro}
+| Ab5 / / / | / / / Ab/C |
 
-{comment: Chorus 1}
-Eb Fm Bbm Ab Eb Verse 1
-Jesus, Je - sus Db Eb Fm
-Eb Fm Db Bbm Bbm Ab There is a name I love to call
-Jesus, Je - sus, Je - sus Bbm Ab Ab4 Eb Ab/C
-It stands alone and conquers all
-Interlude Db Eb Fm
-| Eb / / / | Fm / / / | Bbm / Ab / | Eb / / / | And every chain and every wall
-| Eb / / / | Fm / / / | Db / Bbm / | Bbm Ab / / | Bbm Ab4 Eb Ab
-Will be released and have to fall
+{comment: Verse 1}
+Ther[(Ab/C)]e is a   [Db]name I l[Eb]ove to [Fm]call
+It [Bbm]stands a[Ab]lone and [Ab4]conquers [Eb]all[Ab/C]
+And every [Db]chain and [Eb]every [Fm]wall
+Will [Bbm]be rel[Ab4]eased[Eb]   and have to [Ab]fall
 
 {comment: Chorus 1}
 [Eb]Jesu[Fm]s,  [Bbm]Je   [Ab]-    [Eb]sus
-[Eb/G]Je[Eb/Ab]        -[Eb/Bb]        s[Fm]us, [Db]Je  -  [Bbm]sus,  [Bbm]Je  -  [Ab]sus
+[Eb]Jesu[Fm]s,   [Db]Je  -  [Bbm]sus,  [(Bb-Ab)]Jesus
+
+{comment: Verse 2}
+There[Ab/C] is a   [Db]name I l[Eb]ove to c[Fm]all
+It [Bbm]stands a[Ab]lone and [Ab4]conquers [Eb]all[Ab/C]
+We call Your [Db]Name for [Eb]every [Fm]wall
+And [Bbm]Jeri - c[Ab4]ho[Eb]    will have to [Ab]fall
+
+{comment: Chorus 1}
+[Eb]Jesu[Fm]s,  [Bbm]Je   [Ab]-    [Eb]sus
+[Eb]Jesu[Fm]s,   [Db]Je  -  [Bbm]sus,  [Bbm]Je  -  [Ab]sus
+
+{comment: Interlude}
+| Eb / / / | Fm / / / | Bbm / Ab / | Eb / / / |
+| Eb / / / | Fm / / / | Db / Bbm / | Bbm Ab / / |
+
+{comment: Chorus 1}
+[Eb]Jesu[Fm]s,  [Bbm]Je   [Ab]-    [Eb]sus
+[Eb/G]Je[Eb/Ab]    -[Eb/Bb]    [Fm]sus, [Db]Je  -  [Bbm]sus,  [Bbm]Je  -  [Ab]sus
 
 {comment: Chorus 2}
 [Eb]Yahw[Fm]eh,  [Bbm]Yah  [Ab]-   [Eb]weh
-[Eb]Yahweh[Fm],    [Db]Yah - [Bbm]weh,  [Bbm]Yah - [Ab]weh
+[Eb]Yahwe[Fm]h,    [Db]Yah - [Bbm]weh,  [Bbm]Yah - [Ab]weh
+
+{comment: Verse 3}
+Until the [Dbmaj7]day    I [Eb]see Your [Fm9]face
+And [Bbm]feel the [Ab]warmth of Your em[Eb6]brace[Ab2/C]
+I’ll shout Your [Db6]name [Eb]through all the [Fm]pain
+No o[Bbm]ther  [Ab]name, Your [Eb]precious [Ab]name
+
+{comment: Chorus 1}
+[Eb]Jesu[Fm]s,  [Bbm]Je   [Ab]-    [Eb]sus
+[Eb]Jesu[Fm]s,   [Db]Je  -  [Bbm]sus,  [(Bb-Ab)]Jesus
+
+{comment: Chorus 3}
+[Eb]Savi[Fm]or,  [Bbm]Sav  [Ab]-   [Eb]ior
+[Eb]Savi[Fm]or,   [Db]Sav - [Bbm]ior,   [(Bb-Ab)]Savior
+
+{comment: Chorus 2}
+{ci: 2x}
+
+{comment: Chorus 1}
+[Eb]Jesu[Fm]s,  [Bbm]Je   [Ab]-    [Eb]sus
+[Eb]Jesu[Fm]s,   [Db]Je  -  [Bbm]sus,  [Bbm]Je  -  [Ab]sus
+
+{comment: Verse 1}
+There is a [Db]name I l[Eb]ove to [Fm]call
+It [Bbm]stands a[Ab]lone and [Ab4]conquers [Eb]all[Ab/C]
+And every [Db]chain and [Eb]every [Fm]wall
+Will [Bbm]be rel[Ab4]eased[Eb]   and have to [Ab]fall
 UPCI Music 1

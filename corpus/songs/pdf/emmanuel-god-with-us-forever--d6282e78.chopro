@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 66}
 {time: 4/4}
-{x_verified: number chart, 100% of 22 chords}
+{x_verified: number chart, 100% of 41 chords}
 {x_theme: praise, salvation, heaven, joy}
 {x_source: pdf:UPCI Music/Emmanuel (God With Us Forever)/Emmanuel - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FEmmanuel}
@@ -21,38 +21,50 @@
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/emmanuel/charts/vocals-with-chords.pdf}
 {x_album: Christmas – EP}
 
-Intro G Bm
-| D / / / | Em / / / | Be - hold, behold the One,
-| Bm / / A | G / / / | A D/F#
-Our King has come
+{comment: Intro}
+| D / / / | Em / / / |
+| Bm / / A | G / / / |
 
 {comment: Verse 1}
-D Chorus 1
-Be – fore You set the edge of time
-Em Bridge (2x)
-Foun – dations of the earth and sky D
-Bm A G Em - manuel, God with us forever
-You saw it all and said that it was good G2 A
-D Em - manuel, Saviour of the world
-The joy was set before Your eyes Bm A G2
-Em Em - manuel, Em – manuel
-You knew that You would give Your life
-You s[Bm]aw it all and said that[A] it wa[G]s good                  Intro (2x)
+Be – f[D]ore You set the edge of time
+Foun – [Em]dations of the earth and sky
+You [Bm]saw it all and said that [A]it was [G]good
+The [D]joy was set before Your eyes
+You [Em]knew that You would give Your life
+You [Bm]saw it all and said that [A]it was[G] good
 
 {comment: Chorus 1}
-G Bm Chorus 1 (2x)
-Be – hold, behold the One
-Our l[A]ove has come[D/F#]                                    Bridge (3x)
-Be – [G]hold, behold the[Bm] One, our[A] King has come
+Be –[G] hold, behold the [Bm]One
+Our l[A]ove has come[D/F#]
+Be – [G]hold, behold the [Bm]One, our [A]King has come
 
 {comment: Verse 2}
 The [D]heavens warred, the earth stood still
 His f[Em]inal breath, He tore the veil
-The [Bm]angels sang, “Holy [A]is His[G] name”
+The [Bm]angels sang, “Holy [A]is His [G]name”
 De –[D] feated death, He broke the grave
 Our [Em]hope returned, the lost was saved
-We li[Bm]ft our voice in never –[A] ending [G]praise
+We l[Bm]ift our voice in never – [A]ending [G]praise
 
 {comment: Chorus 2}
-Be - [G]hold, behold the[Bm] One
-Our l[A]ove has com[D/F#]e
+Be - [G]hold, behold the [Bm]One
+Our l[A]ove has come[D/F#]
+Be - [G]hold, behold the [Bm]One,
+Our [A]King has come[D/F#]
+
+{comment: Chorus 1}
+
+{comment: Bridge}
+{ci: 2x}
+Em - [D]manuel, God with us forever
+Em - [G2]manuel, Saviour of the [A]world
+Em - [Bm]manuel, Em – [A]manuel[G2]
+
+{comment: Intro}
+{ci: 2x}
+
+{comment: Chorus 1}
+{ci: 2x}
+
+{comment: Bridge}
+{ci: 3x}

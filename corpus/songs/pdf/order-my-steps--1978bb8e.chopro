@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 80}
 {time: 4/4}
-{x_verified: number chart, 100% of 39 chords}
+{x_verified: number chart, 100% of 58 chords}
 {x_theme: praise, prayer}
 {x_source: pdf:UPCI Music/2020/Order My Steps/Order-My-Steps-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FOrder%20My%20Steps}
@@ -19,36 +19,57 @@
 {x_album: Wow Gospel 1998}
 {x_writers: Glen Burleigh}
 
-Intro (Free tempo) Ebm Gb/Ab
-Bbm / / / | Bbm/Ab / / / | / / / / | Gbmaj7 Ebm7 | please Order my steps in Your
-Fm7 Bbm7 | Ebm Ebm/Ab | Db Ebm Edim Db/F G7(b5)
-Intro (In-tempo) Word, please
-Db Ebm7 Edim7 Db/F G7(b5) | Ebm/Gb Ebm/Ab | Ebm/Gb Gb/Ab Db Cm7(b5) F7(#5#9)
-Db / Cm7(b5) F7(#5#9) | Order my steps in Your Word.
+{comment: Intro}
+{ci: Free tempo}
+| Bbm / / / | Bbm/Ab / / / | / / / / | Gbmaj7 Ebm7 |
+| Fm7 Bbm7 | Ebm Ebm/Ab |
 
-{comment: Chorus 1 Chorus 2}
-[Bbm]Order my steps in Your word, dear Lord.                 [Bbm]Order my steps in Your word, dear Lord.
-[Bbm/Ab]Lead me, guide me every day.                         [Bbm/Ab]Lead me, guide me every day.
-[Gb]Send Your ano[Ebm9]inting, F[Fm7]ather, I[Bbm7] pray,                     [Gb]Send Your ano[Ebm9]inting, F[Fm7]ather, I[Bbm7] pray,
-[Ebm]Order my [Gb/Ab]steps in Your [Db]word.[Cm7(b5)] [F7(#5#9)]                         [Ebm]Order my [Gb/Ab]steps in Your
-[Db]Wor[Ebm]d,[Edim]             [Db/F]p[G7(b5)]lease
-Verse 1 Ebm/Gb Gb/Ab Db
-Bbm Order my steps in Your Word.
-Humbly I ask Thee, teach me Your will.
-[Bbm/Ab]While You are working help me be still.                  Bridge
-'Cause [Gb]Satan is[Ebm9] busy,   [Fm7]God is [Bbm7]real,                    [Ebm/Db]I        [Db/Ab]want to  [Ebm/Ab]wal[C/Ab]k
-[Ebm]Order my [Gb/Ab]steps in Your[Db] Wo[Ebm]rd,[Edim] [Db/F]            [G7(b5)]please       [Db]worthy
-[Ebm/Gb]Order my s[Gb/Ab]teps in Your[Db] Word.[Cm7(b5)] [F7(#5#9)]                                 [Db7/F]my c[Gb]alling to fulfill[Db].
-Please, [Db/Ab]order   [Gb/Ab]m[Ab]y
-Verse 2 Db Cm7(b5) F7(#5#9)
-Bbm steps, Lord
-Bridle my tongue, let me words edify. Eb7 Ab
-Bbm/Ab and I'll do Your blessed will.
-Let the words of my mouth Db/Ab Ebm/Ab Db
-be acceptable in Thy sight. The world is ever - changing
-[Gb]Take charge of[Ebm9] my thoughts both [Fm7]day and [Bbm7]night                [Db7/F]but[Gb] You are s[F7(#5)]till the[Bbm7] same.
-If You order my [Ebm7]steps,
-I'[Db/Ab]ll praise[Ab] Your[Db] name[Cm7(b5)].[F7(#5#9)]
+{comment: Intro}
+{ci: In-tempo}
+| Db Ebm7 Edim7 Db/F G7(b5) | Ebm/Gb Ebm/Ab |
+| Db / Cm7(b5) F7(#5#9) |
+
+{comment: Chorus 1}
+[Bbm]Order my steps in Your word, dear Lord.
+[Bbm/Ab]Lead me, guide me every day.
+[Gb]Send Your an[Ebm9]ointing, [Fm7]Father, I[Bbm7] pray,
+[Ebm]Order my[Gb/Ab] steps in Your [Db]word.[Cm7(b5)][F7(#5#9)]
+
+{comment: Verse 1}
+[Bbm]Humbly I ask Thee, teach me Your will.
+[Bbm/Ab]While You are working help me be still.
+'Cause [Gb]Satan is[Ebm9] busy,   [Fm7]God is[Bbm7] real,
+[Ebm]Order my [Gb/Ab]steps in Your[Db] Wo[Ebm]rd,[Edim] [Db/F]    [G7(b5)]please
+[Ebm/Gb]Order my [Gb/Ab]steps in Your [Db]Word[Cm7(b5)].[F7(#5#9)]
+
+{comment: Verse 2}
+[Bbm]Bridle my tongue, let me words edify.
+[Bbm/Ab]Let the words of my mouth
+be acceptable in Thy sight.
+[Gb]Take charge o[Ebm9]f my thoughts both [Fm7]day and [Bbm7]night
+please [Ebm]Order my [Gb/Ab]steps in Your
+[Db]Wo[Ebm]rd,[Edim]    [Db/F]p[G7(b5)]lease
+[Ebm/Gb]Order my [Gb/Ab]steps in Your [Db]Word[Cm7(b5)].[F7(#5#9)]
+
+{comment: Chorus 2}
+[Bbm]Order my steps in Your word, dear Lord.
+[Bbm/Ab]Lead me, guide me every day.
+[Gb]Send Your an[Ebm9]ointing, [Fm7]Father, I[Bbm7] pray,
+[Ebm]Order my[Gb/Ab] steps in Your
+[Db]Wo[Ebm]rd,[Edim]    [Db/F]p[G7(b5)]lease
+[Ebm/Gb]Order my [Gb/Ab]steps in Your [Db]Word.
+
+{comment: Bridge}
+[Ebm/Db]I    [Db/Ab]want to  [Ebm/Ab]walk[C/Ab]
+[Db]worthy
+[Db7/F]my[Gb] calling to fulfil[Db]l.
+Please, [Db/Ab]order   [Gb/Ab]my[Ab]
+[Db]steps, Lo[Cm7(b5)]rd[F7(#5#9)]
+and I'll [Eb7]do Your blessed [Ab]will.
+The wor[Db/Ab]ld is   [Ebm/Ab]ever  -  [Db]changing
+[Db7/F]but[Gb] You are [F7(#5)]still the [Bbm7]same.
+If You order my[Ebm7] steps,
+I'll[Db/Ab] praise Y[Ab]our n[Db]ame.[Cm7(b5)][F7(#5#9)]
 
 {comment: Vamp}
 [Bbm7]Order my steps in Your word,
@@ -58,14 +79,14 @@ I'[Db/Ab]ll praise[Ab] Your[Db] name[Cm7(b5)].[F7(#5#9)]
 [F7]Show me how to walk in Your word,
 [Bbm7]show me how to walk in Your word,
 [Bbm7/Ab]show me how to talk in Your word.
-When [Gb]I need a brand new song to sing,
-[F7/C]show me how to let Your p[F7]raises ring.
+When[Gb] I need a brand new song to sing,
+[F7/C]show me how to let Your [F7]praises ring.
 
 {comment: Tag}
-In Your [Bbm7]word[Bbm/Ab],
-In Your[Gbmaj7] word,[Fm7]               [Bbm7]p[G7(b5)]lease
+In Your [Bbm7]word,[Bbm/Ab]
+In Your[Gbmaj7] word,[Fm7]    [Bbm7]p[G7(b5)]lease
 
 {comment: Ending}
-[Ebm]Order my [Gb/Ab]steps in Your
-[Db]Wor[Ebm]d,[Edim]             [Db/F]p[G7(b5)]lease
-[Ebm/Gb]Order my s[Gb/Ab]teps in Your[Db] Word.
+[Ebm]Order my[Gb/Ab] steps in Your
+[Db]Wo[Ebm]rd,[Edim]    [Db/F]p[G7(b5)]lease
+[Ebm/Gb]Order my [Gb/Ab]steps in Your [Db]Word.

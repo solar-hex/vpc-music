@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 131}
 {time: 4/4}
-{x_verified: number chart, 86% of 90 chords}
+{x_verified: number chart, 96% of 100 chords}
 {x_source: pdf:UPCI Music/2019/You're Doing It All Again/Youre-Doing-it-All-Again-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FYou're%20Doing%20It%20All%20Again}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/you-re-doing-it-all-again/audio/alto.m4a}
@@ -18,67 +18,87 @@
 {x_source_youre_doing_it_all_again: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/you-re-doing-it-all-again/source/Youre-Doing-it-All-Again.zip}
 {x_album: You’re Doing it All Again (Single)}
 
-Intro (Bb-Ab-F-Eb-Db) Ab/C Db
-| Gb / / / | Db / / / | Ab / / / | Bbm / / / | ‘Cause You’re doing it all
-| Gb / / / | Db / / / | Ab / / / | Gb Ab Db/F /F /Eb /Db Ab/C Bbm7
-| Bbm / (Ab-Bb-F-Eb-Db-Bb-Ab) | again oh oh
-‘Cause You’re[Bbm] doing[Ab/C]  it al[Db]l
-Verse 1 (Solo)                                        a[Gb]gain[Ab]          [Db]oh[Ab]      o[Bbm]h[Ab/C][Db][Db/F]
+{comment: Intro}
+| Gb / / / | Db / / / | Ab / / / | Bbm / / / |
+| Gb / / / | Db / / / | Ab / / / |
+| Bbm / (Ab-Bb-F-Eb-Db-Bb-Ab) |
+
+{comment: Verse 1}
+{ci: Solo}
 You make the [Gb]blind man se[Db]e
-Ab Bbm7 Bridge 1 (Solo)
-Make the lame man walk agai[Gb]n[Db][Ebm7]
-Gb Db You’re still saving
-You cause the dead to ris[Db]e[Ab][Bbm7]
-Ab Bbm7 You’re the same God
-(cut) 7 7
-And that’s why we dance in liberty Gb Bbm Ebm
-You’re still saving
-You’re the same Go[Db]d
+Make the [Ab]lame man walk a[Bbm7]gain
+You cause the [Gb]dead to ris[Db]e
+[Ab] [Bbm7]
+{ci: cut}
+And that’s why we dance in liberty
 
 {comment: Chorus}
 {ci: Solo}
-Cause You’re doing it all a[Gb]gain[Ab] [Db]                         Bridge 2 (Parts)
-7 Gb Ab Bbm Ebm7 Fm7 Ab Bbm
-[Ab]S[Bbm]t[Ab/C]i[Db]ll creating              same God
-[Gb] [Ab] [Bbm] [Ebm7] [Db]
-Cause You’re doing it all a[Gb2]gain[Ab]      [Db]oh[Ab] oh              Chain breaking              the same God
+Cause You’re doing it all a[Gb]gai[Ab]n[Db]
+[Ab] [Bbm7] [Ab/C] [Db]
+Cause You’re doing it all a[Gb2]gain[Ab]    [Db]o[Ab]h oh
 [Ab] [Bbm7]
 {ci: cut}
 
-{comment: Tag}
-Verse 2 (Unison)                                      Cause You’re doing it all[Dbsus] agai[Db]n[Dbsus][Db]
-Cause You’re doing it all agai[Dbsus]n[Db]
-[Bbm7] [Ab/C] [Db] [Gb]
+{comment: Verse 2}
+{ci: Unison}
 
 {comment: Chorus}
 {ci: Everyone}
-Cause You’re doing it all a[Gb2]gai[Ab]n[Db]
-oh[Ab]   oh[Bbm7]      ‘Cause You’re doing[Ab/C] it al[Db]l
-a[Gb]gain[Ab] [Db]         oh[Ab]   o[Bbm7]h
-Vamp 1 (2x) Tag (2xs)
-Dbsus (Ab-Bb-Db-Db-Eb-F) Db
-You won’t change Cause You’re doing it all again
-You’re the [Db]same God[Gb2/Bb] [Gb]                                        (Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)
-[Dbsus](Ab-Bb-Db-Db-Eb-F) Db
-Never-ending Cause You’re doing it all again
-the same G[Db]od[Bbm7] [Ab/C] [Db]                                                [Gb](Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)
-(Ab-Bb-Db-Db-Eb-F) Db
-Cause You’re doing it all again
+Cause You’re doing it all a[Gb2]gain[Ab][Db]
+oh[Ab]   oh[Bbm7]    ‘Cause You’re doi[Ab/C]ng it al[Db]l
+a[Gb]gain[Ab] [Db]    oh[Ab]   o[Bbm7]h
+[(Bb-Ab-F-Eb-Db)]‘Cause You’re do[Ab/C]ing it a[Db]ll
+a[Gb]gain[Ab] [Db/F]    [/F]oh[/Eb] [/Db]    [Ab/C]o[Bbm7]h
+‘Cause You’re[Bbm] doing[Ab/C]  it al[Db]l
+a[Gb]gain[Ab]    [Db]oh[Ab]    oh[Bbm][Ab/C][Db][Db/F]
+
+{comment: Bridge 1}
+{ci: Solo}
+You’re still savin[Gb]g[Db][Ebm7]
+You’re the same Go[Db]d[Ab][Bbm7]
+You’re still savin[Gb]g[Bbm7][Ebm7]
+You’re the same Go[Db]d
+
+{comment: Bridge 2}
+{ci: Parts}
+Still creat[Gb]ing[Ab] [Bbm]    [Ebm7]same Go[Fm7]d[Ab][Bbm]
+Chain brea[Gb]king[Ab] [Bbm]    [Ebm7]the same [Db]God
+
+{comment: Tag}
+Cause You’re doing it all [Dbsus]again[Db][Dbsus][Db]
+Cause You’re doing it all agai[Dbsus]n[Db]
+[Bbm7] [Ab/C] [Db] [Gb]
+
+{comment: Vamp 1}
+{ci: 2x}
+You won’t c[Dbsus]hange
+You’re the s[Db]ame God[Gb2/Bb][Gb]
+Never-endi[Dbsus]ng
+the same G[Db]od[Bbm7][Ab/C][Db][Gb]
 
 {comment: Vamp 2}
 {ci: Flipped Parts}
-Dbsus (Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)
-You are Jesus nd
-Db (Eb-F-Ab-Ab-Bb-Db) Gb2/Bb Gb2 Ending (2 x)
-the same Go[Bbm7]d[Ab/C][Db][Gb]
+You are [Dbsus]Jesus
+the same [Db]Go[(Eb-F-Ab-Ab-Bb-Db)]d[Gb2/Bb][Gb2]
 You are [Dbsus]Holy,
-Db (F-Ab-Bb-F-Eb-Db-Db)
-the same God
+the same [Db]Go[(F-Ab-Bb-F-Eb-Db-Db)]d
 [Bbm7] [Ab/C] [Db] [Gb2]
 My Re[Dbsus]deemer
-Db (Eb-F-Ab-Ab-Bb-Db) Gb2/Bb Gb2
-the same God
+the same [Db]Go[(Eb-F-Ab-Ab-Bb-Db)]d[Gb2/Bb][Gb2]
 My Pr[Dbsus]ovider
-Db (F-Ab-Bb-F-Eb-Db-Db)
-the same God
+the same [Db]Go[(F-Ab-Bb-F-Eb-Db-Db)]d
 [Bbm7] [Ab/C] [Db] [Ebm7]
+
+{comment: Tag}
+{ci: 2xs}
+Cause You’re doing it all a[(Ab-Bb-Db-Db-Eb-F)]gain[Db]
+[(Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)]
+Cause You’re doing it all a[(Ab-Bb-Db-Db-Eb-F)]gain[Db]
+[(Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)]
+Cause You’re doing it all a[(Ab-Bb-Db-Db-Eb-F)]gain[Db]
+[(Ab-Bb-Db-Db-Db-Ab-Bb-Db-Db-Db)]
+
+{comment: Ending}
+{ci: 2nd x}
+[Bbm7] [Ab/C] [Db] [Gb]

@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 88}
 {time: 4/4}
-{x_verified: number chart, 95% of 109 chords}
+{x_verified: number chart, 95% of 121 chords}
 {x_theme: heaven, praise, worship}
 {x_source: pdf:UPCI Music/2021/Ancient of Days/Ancient-of-Days-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FAncient%20of%20Days}
@@ -28,60 +28,88 @@
 {x_album: Lift Him Up}
 {x_writers: Jamie Harvill, Gary Sadler}
 
-Intro D
-/ / G Em7 | D / / Em/D | / D / / G/D | For none can compare to Your matchless worth,
-| / D / / Em/D | / D / / G/D D G/D |                [C/D]Sing un -[G/D] to th[Am/D]e an - c[Em/D]ient of[D] days.
+{comment: Intro}
+| / / G Em7 | D / / Em/D | / D / / G/D |
+| / D / / Em/D | / D / / G/D D G/D |
 
-{comment: Verse Chorus}
-[D]Blessing  [Em/D]and  hon - [D]or, glory and power                [G]Every tongue in[Em7] heaven and eart[A]h
-Be unto the ancient[A/C#] of days.[Bm] [Bm] [A/C#]                         Shall de-[D/F#]clare Your [F#m7]glory.
-[D]From eve [Em/D]- ry  na - [D]tion, all of creation                  [G]Every knee will[Em7] bow at Your thron[A]e
-[Bm]Bow before the ancient [A/C#]of    [D]days.                    in[D/F#] wor  –  [F#m7]ship
-Chorus                                             [G]You will be ex-[Em7]alted, oh Go[A]d
-[G]Every tongue in[Em7] heaven and earth[A]                      [D/F#]and    [F#m7]Your
-Shall de-[D/F#]clare Your [F#m7]glory.                              [G]Kingdom shall [Em7]not pass away[A],
-G Em7 A G/A D / / Em/D | / D
-Every knee will bow at Your throne Oh ancient of days.
-in[D/F#] wor  –  [F#m7]ship                                       Tag
-G Em7 A G A D / / Em/D | / D
-You will be ex-alted, oh God Oh ancient of days
-D/F# F#m7 G A D / / Em/D | / D
-and Your Oh ancient of days
-G Em7 A G A D / / Em/D | / D
-Kingdom shall not pass away, Oh ancient of days
-Oh a[G/A]ncient of days.                                   [A]Oh a[G]n - [D/F#]cient  [Em]of  [D]days
+{comment: Verse}
+[D]Blessing  [Em/D]and  hon - [D]or, glory and power
+Be unto the ancient[A/C#] of days[Bm].[Bm][A/C#]
+[D]From eve[Em/D] - ry  na - [D]tion, all of creation
+[Bm]Bow before the ancient[A/C#] of    [D]days.
 
-{comment: Interlude Instrumental}
-{ci: optional/as dir.}
-| / D / / Em/D | / D / / / | ||: D(omit3) / / / | / / / / | / / / / | / / / / :||
-Verse à Chorus à Interlude Bridge
-Bridge (1x Music) (2x add Voices)                      [D]Your kingdom shall reign over all the earth
-[D]Your kingdom shall reign over all the earth               [C/D]Sing un -[G/D] to th[Am/D]e an - c[Em/D]ient of[D] days.
-[C/D]Sing un -[G/D] to th[Am/D]e an - c[Em/D]ient of[D] days.
+{comment: Chorus}
+[G]Every tongue in [Em7]heaven and earth[A]
+Shall de-[D/F#]clare Your [F#m7]glory.
+[G]Every knee will [Em7]bow at Your thron[A]e
+in [D/F#]wor  –  [F#m7]ship
+[G]You will be ex-[Em7]alted, oh God[A]
+[D/F#]and    [F#m7]Your
+[G]Kingdom shall [Em7]not pass awa[A]y,
+Oh [G/A]ancient of days.
+
+{comment: Interlude}
+| / D / / Em/D | / D / / / |
+{ci: Verse → Chorus → Interlude}
+
+{comment: Bridge}
+{ci: 1x Music, 2x add Voices}
+[D]Your kingdom shall reign over all the earth
+[C/D]Sing un [G/D]- to th[Am/D]e an - [Em/D]cient of [D]days.
 For [D]none can compare to Your matchless worth,
-[C/A]Sing un -[G/B] to th[Am/C]e an -  [Em/C#]cient of [D]days.
+[C/D]Sing un [G/D]- to th[Am/D]e an - [Em/D]cient of [D]days.
+
+{comment: Chorus}
+[G]Every tongue in [Em7]heaven and earth[A]
+Shall de-[D/F#]clare Your [F#m7]glory.
+[G]Every knee will [Em7]bow at Your thron[A]e
+in [D/F#]wor  –  [F#m7]ship
+[G]You will be ex-[Em7]alted, oh God[A]
+[D/F#]and    [F#m7]Your
+[G]Kingdom shall [Em7]not pass awa[A]y,
+| G/A D / / Em/D | / D
+Oh ancient of days.
+
+{comment: Tag}
+| G A D / / Em/D | / D
+Oh ancient of days
+| G A D / / Em/D | / D
+Oh ancient of days
+| G A D / / Em/D | / D
+Oh ancient of days
+[A]Oh [G]an -[D/F#] cient  [Em]of  [D]days
+
+{comment: Instrumental}
+{ci: optional/as dir.}
+||: D(omit3) / / / | / / / / | / / / / | / / / / :||
+
+{comment: Bridge}
+[D]Your kingdom shall reign over all the earth
+[C/D]Sing un [G/D]- to th[Am/D]e an - [Em/D]cient of [D]days.
+For [D]none can compare to Your matchless worth,
+[C/A]Sing un [G/B]- to th[Am/C]e an -  [Em/C#]cient of [D]days.
 
 {comment: Bridge}
 {ci: cut music}
 Your kingdom shall reign over all the earth
 Sing unto the ancient of days.
 For none can compare to Your matchless worth,
-Am / / Am/C
+| Am / / Am/C
 Sing unto the ancient of days.
 
 {comment: Bridge}
 [D]Your kingdom shall reign over all the earth
-[C/A]Sing un -[G/A] to th[Am]e an - [Em/A]cient of
+[C/A]Sing un [G/A]- to th[Am]e an - [Em/A]cient of
 day[G]s[D/F#].[Em][G][D/F#][Em]
 For [D]none can compare to Your matchless worth,
-[C/A]Sing un -[G/A] to th[Am/C]e an -  [C]cient of
+[C/A]Sing un [G/A]- to th[Am/C]e an -  [C]cient of
 day[G]s[D/F#].[Em][G][D/F#][Em]
 
 {comment: Bridge}
 {ci: Last x}
-[D]Your kingdom shall reign over a[Bm7]ll the earth
-[C/A]Sing un -[G/A] to th[Am/C]e an - c[C]ient of
+[D]Your kingdom shall reign over [Bm7]all the earth
+[C/A]Sing un[G/A] - to th[Am/C]e an - [C]cient of
 day[C]s[G/B].[Am][G][D/F#]
 [Em]For  [D]none can compare to Your [Bm7]matchless
 worth[D/F#],[G]
-[Am7]Sing unto the[G] an -  [Em7]cient of[D] days.
+[Am7]Sing unto the[G] an -  [Em7]cient of [D]days.

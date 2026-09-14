@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 100}
 {time: 4/4}
-{x_verified: number chart, 100% of 75 chords}
+{x_verified: number chart, 100% of 80 chords}
 {x_theme: victory, faith-trust, healing}
 {x_source: pdf:UPCI Music/2022/Walls Come Down/Walls-Come-Down-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FWalls%20Come%20Down}
@@ -19,46 +19,75 @@
 {x_album: The Flow}
 {x_writers: G Morris Coleman, Naomi Raine}
 
-Walls Come Down Michael Perry Jr, Tamika Jackson
+{comment: Intro}
+{ci: Synths rhythmically}
+| F#m / / / | A / / / | E / / F#m | Bm7 / / / |
+
+{comment: Verse 1}
+[F#m]You’ve been moving mountains
+[A]Long before we started
+[E]Long before we kne[F#m]w they could [Bm7]move
+[F#m]You’ve been parting Jordans
+[A]Calling us to walk them
+Imp[E]ossible is jus[F#m]t what You[Bm7] do
+
+{comment: Pre Chorus}
+If Your [D]promis - [A]es are [F#m]yes and a[E]men
+We say y[D]es [A]Lord, [F#m]yes  [E]Lord
+Though our f[D]aith may [A]fail
+Your [F#m]Word will pre[E]vail
+We say [Bm7]yes  [A/C#]Lord, [F#m]yes  [E]Lord
+
+{comment: Chorus 1}
+’Til the [D]walls come[A] down
+[F#m]We’re trusti[E]ng and we’re taking
+[D]Higher[A] ground
+[F#m]No stopp[E]ing, we’ll keep shouting
+[D]Louder[A] now
+[F#m]You said [E]it, we believe it
+[Bm7]Walls com[A/C#]e down, [F#m]walls are c[E]oming down
+
+{comment: Interlude}
+| F#m / / / | A / / / | E / / / | Bm7 / / / |
 
 {comment: Verse 2}
-Intro (Synths rhythmically) F#m
-| F#m / / / | A / / / | E / / F#m | Bm7 / / / | Fighting from our victory
-Verse 1                                             [A]Taking territory
-[F#m]You’ve been moving mountains                         The e[E]nemy can’t stop what You’ve pl[Bm7]anned
-[A]Long before we started                                So w[F#m]e’ll keep pressing forward
-[E]Long before we kne[F#m]w they could [Bm7]move                  [A]To what You set before us
-[F#m]You’ve been parting Jordans                           [E]Never letting go of Your h[Bm7]and
-[A]Calling us to walk them                             Pre Chorus > Chorus 1
-Imp[E]ossible is ju[F#m]st what You[Bm7] do                          Chorus 2
-Pre Chorus                                          ’Til th[D]e walls com[A]e down
-If Your[D] promis -[A] es ar[F#m]e yes and [E]amen                       [F#m]We’re trusti[E]ng and we’re taking
-We say y[D]es L[A]ord, [F#m]yes  [E]Lord                           [D]Higher[A] ground
-Though our fa[D]ith may f[A]ail                                  [F#m]No stoppi[E]ng, we’ll keep shouting
-Your W[F#m]ord will prev[E]ail                                 [D]Louder[A/C#] now
-We say [Bm7]yes  [A/C#]Lord, [F#m]yes  L[E]ord                            [F#m]You said i[E]t, we believe it
-Chorus 1                                            [Bm7]Walls com[A/C#]e down, w[F#m]alls are[E] coming down
-’Til th[D]e walls com[A]e down                               Interlude
-F#m E | D / / / | Bm7 / / / | F#m7 / / / | E / / / |
-We’re trusting and we’re taking | D / / / | Bm7 / / / | F#m7 / / / | A / / / |
-[D]Higher[A] ground                                        Bridge (3x)
-[F#m]No stoppi[E]ng, we’ll keep shouting                    [D]We will not be troubled
-[D]Louder[A] now                                          [F#m7]We know giants tumble
-[F#m]You said i[E]t, we believe it                            [A]Victory is in Yo[E]u
-[Bm7]Walls com[A/C#]e down, w[F#m]alls are[E] coming down               [D]Lead us with Your glory
-Interlude                                            [F#m7]Even in in the valley
-| F#m / / / | A / / / | E / / / | Bm7 / / / | A E
-We find safety in You
-Walls Come Down Michael Perry Jr, Tamika Jackson
+[F#m]Fighting from our victory
+[A]Taking territory
+The [E]enemy can’t stop what You’ve pl[Bm7]anned
+So [F#m]we’ll keep pressing forward
+[A]To what You set before us
+[E]Never letting go of Your h[Bm7]and
+{ci: Pre Chorus → Chorus 1}
+
+{comment: Chorus 2}
+’Til the [D]walls come[A] down
+[F#m]We’re trusti[E]ng and we’re taking
+[D]Higher[A] ground
+[F#m]No stopp[E]ing, we’ll keep shouting
+[D]Louder[A/C#] now
+[F#m]You said [E]it, we believe it
+[Bm7]Walls com[A/C#]e down, [F#m]walls are c[E]oming down
+
+{comment: Interlude}
+| D / / / | Bm7 / / / | F#m7 / / / | E / / / |
+| D / / / | Bm7 / / / | F#m7 / / / | A / / / |
+
+{comment: Bridge}
+{ci: 3x}
+[D]We will not be troubled
+[F#m7]We know giants tumble
+[A]Victory is in Yo[E]u
+[D]Lead us with Your glory
+[F#m7]Even in in the valley
+[A]We find safety in Yo[E]u
 
 {comment: Vamp}
 {ci: 3x}
-(F#m7) (E) D2
-Oh, oh, oh, the walls are falling down right now
+[(F#m7)]Oh,    [(E)]oh, [D2]oh, the walls are falling down right now
 Walls are falling down right now
 [F#m7]Oh,   [E]oh, [D2]oh, strongholds coming down right now
 Chains have gotta break right now
-F#m7 E (D2)
+[F#m7] [E] [(D2)]
 {ci: Last Time:Oh, oh, oh}
 
 {comment: Interlude}
@@ -67,8 +96,7 @@ F#m7 E (D2)
 
 {comment: Tag 1}
 {ci: 3x}
-(F#m7) (E) D2
-Oh, oh, oh
+[(F#m7)]Oh,    [(E)]oh, [D2]oh
 
 {comment: Tag 2}
 {ci: 4x}

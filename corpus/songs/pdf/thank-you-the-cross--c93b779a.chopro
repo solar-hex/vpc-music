@@ -3,6 +3,7 @@
 {key: G}
 {tempo: 96}
 {time: 4/4}
+{x_verified: number chart, 100% of 38 chords}
 {x_theme: cross}
 {x_source: pdf:UPCI Music/2019/Thank You (The Cross)/Thank You (The Cross) - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FThank%20You%20(The%20Cross)}
@@ -30,24 +31,20 @@
 {x_album: Adoration}
 
 {comment: Verse 1}
-[G]He never s[D/F#]aid a [Em7]word, he didn’t even                    [Bridge]G/F                     C/E
-C D G You didn’t have to do it but you did
-turn away he was determined to pay the price. Cm/Eb G/D
-D/F# Em7 I’m so glad you gave your life that I might live.
-For our sins it grieved him deep within to see G/F C/E (B-A) E/G#
-C D I never can repay the love you dis - played
-us hurt to see us cry so he gave up his life Am7 D
-on the rugged cross to save us all
+[G]He never [D/F#]said a [Em7]word, he didn’t even
+[C]turn away he was det[D]ermined to pay the[G] price.
+For our sin[D/F#]s   it  [Em7]grieved him deep within to see
+us [C]hurt to see us cry so he g[D]ave up his life
 
-{comment: Pre-Chorus Chorus}
-So the b[C]lind [G/B]- ed  [Am7]eye  c[G]ould [D/F#]see
-C G/B Am7 G D Outro
-And the bound would be set free ||: C / / / | / / / / | D/C / / / | / / / / :||
-{ci: Rep. as dir. / Fade out}
-Chorus (Solo) ||: C / / / | / / / / | D / / / | / / / / :||
-[C/G]Thank y[G]ou, [Am/F]thank  [G/F]you,
+{comment: Pre-Chorus}
+So the [C]blind -[G/B] ed  [Am7]eye  [G]could [D/F#]see
+And the [C]bound [G/B]would[Am7] be  s[G]et  f[D]ree
+
+{comment: Chorus}
+{ci: Solo}
+[C/G]Thank [G]you,[Am/F] thank  [G/F]you,
 for the [C]cross, for the [D]cross.
-[C/G]Thank y[G]ou, [Am/F]thank  [G/F]you,
+[C/G]Thank [G]you,[Am/F] thank  [G/F]you,
 for the [C]cross, for the [D]cross.
 
 {comment: Verse 1}
@@ -56,3 +53,16 @@ for the [C]cross, for the [D]cross.
 
 {comment: Chorus}
 {ci: Parts}
+
+{comment: Bridge}
+You [G/F]didn’t have to do it but you [C/E]did
+I’m so[Cm/Eb] glad you gave your life that[G/D] I might live.
+I [G/F]never can repay the [C/E]love you d[(B-A)]is - p[E/G#]layed
+on the [Am7]rugged cross to s[D]ave us all
+
+{comment: Chorus}
+
+{comment: Outro}
+||: C / / / | / / / / | D/C / / / | / / / / :||
+{ci: Rep. as dir. / Fade out}
+||: C / / / | / / / / | D / / / | / / / / :||

@@ -3,7 +3,7 @@
 {key: A}
 {tempo: 80}
 {time: 6/8}
-{x_verified: number chart, 93% of 14 chords}
+{x_verified: number chart, 99% of 72 chords}
 {x_theme: name-of-jesus, worship}
 {x_source: pdf:UPCI Music/2022/Worthy/Worthy-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2022%2FWorthy}
@@ -19,61 +19,92 @@
 {x_album: Take Your Place}
 {x_writers: Mason Downs}
 
-{comment: Intro Pre Chorus 2}
-A/C# | D / | / F#m7 | E / | / / | D/F# / | / / | A/C# D
-En - circled the throne
-| E/G# / | / A/C# | D / | / F#m7 | E / | / / | F#m7 E
-and they put down their crowns
-| D/F# / | / / | E/G# / | / / | / / | / A/C# Bm7 D
-And creation cried worthy
-Verse 1 F#m7 E
-A/C# D F#m7 E And creation cried worthy
-I saw my savior seated on high
-A/C# D F#m7 E Chorus 1 (Parts)
-All power and riches what a glorious sight A
-Worthy is the Lamb
-Pre Chorus 1 E F#m/E E
-A/C# D That was slain to receive
-He sat on His throne Bm7 A/C#
-F#m7 E Power, riches, wisdom and strength
-With beauty like jasper He shown F#m7 E
-Bm7 D Honor, glory and blessing
-And the angles cried worthy, worthy
-F#m7 E Chorus 2
-The angles cried worthy, worth - y A /G# /A /E
-Jesus is the Name a – bove all names
-Chorus 1 (Unison) /F# Bm7
-A He holds all power, riches
-Worthy is the Lamb A/C#
-E Wisdom and strength
-That was slain to receive F#m7 E2
-Bm7 A/C# Honor, glory and blessing
-Power, riches, wisdom and strength
-F#m7 E Bridge (Solo)
-Honor, glory and blessing A
-Take Your throne, Holy One
-Verse 2 F#m7
-A/C# D Jesus You’re the only One found
-I saw a people D2 Bm7
-F#m7 E Worthy, only One found worthy
-Clothed in all white
-A/C# D Bridge (Trio) à Bridge (Parts)
-They cried with one voice
-F#m7 E Bridge (Flipped Parts)
-And hands lifted high
-Chorus 1 (Parts) Refrain (Solo)
-[A]Worthy is the Lamb                                   [F#m7]Worthy,         [E]worthy
-[E]That  [F#m/E]was  s[E]lain to receive                           [Dma9]Worthy[Bm7]         [C#m7]is   the  Lamb
-[Bm7]Power, riches,[A/C#] wisdom and strength                     Refrain (Parts)(3x)
-[F#m7]Honor, glory and [E]blessing                              [F#m7]Worthy,[B9/D#]         [F#m/G#]worth   -  [E/G#]y[C#m7]
-Chorus 2                                            [Dma9]Worthy[Bm7]         [C#sus]is   the  [C#]Lamb
-A /G# /A /E
-Jesus is the Name a – bove all names Refrain (Last x)
-/F# Bm7 F#m7 B9/D# (F#-G#-A-B-G#-E-F#) C#m7
-He holds all power, riches Worthy, worth - y
-[A/C#]Wisdom and strength                                 [Dma9]Worthy[Bm7]         [C#sus]is   the  [C#]La--------[F#]-mb
+{comment: Intro}
+| A/C# | D / | / F#m7 | E / | / / | D/F# / | / / |
+| E/G# / | / A/C# | D / | / F#m7 | E / | / / |
+| D/F# / | / / | E/G# / | / / | / / | /
+
+{comment: Verse 1}
+[A/C#]I saw my [D]savior [F#m7]seated on [E]high
+All [A/C#]power and [D]riches what a [F#m7]glorious [E]sight
+
+{comment: Pre Chorus 1}
+He[A/C#] sat on His t[D]hrone
+With beauty like [F#m7]jasper He [E]shown
+And the angles cried [Bm7]worthy, worthy[D]
+The angles cried[F#m7] worthy, worth - [E]y
+
+{comment: Chorus 1}
+{ci: Unison}
+[A]Worthy is the Lamb
+[E]That was slain to receive
+[Bm7]Power, riches, [A/C#]wisdom and strength
+[F#m7]Honor, glory and [E]blessing
+
+{comment: Verse 2}
+[A/C#]I saw a [D]people
+[F#m7]Clothed in all[E]  white
+[A/C#]They cried with [D]one voice
+And [F#m7]hands lifted[E]  high
+
+{comment: Pre Chorus 2}
+En -[A/C#] circled the[D] throne
+and they put [F#m7]down their [E]crowns
+And [A/C#]creation cried [Bm7]worthy[D]
+And creation cried [F#m7]worthy[E]
+
+{comment: Chorus 1}
+{ci: Parts}
+[A]Worthy is the Lamb
+[E]That  [F#m/E]was  [E]slain to receive
+[Bm7]Power, riches, [A/C#]wisdom and strength
+[F#m7]Honor, glory and [E]blessing
+
+{comment: Chorus 2}
+[A]Jesus is the Name a –[/G#] bove[/A] all [/E]names
+[/F#]He holds all [Bm7]power, riches
+[A/C#]Wisdom and strength
+[F#m7]Honor, glory and [E2]blessing
+
+{comment: Bridge}
+{ci: Solo}
+[A]Take Your throne, Holy One
+[F#m7]Jesus You’re the only One found
+[D2]Worthy, only One found [Bm7]worthy
+Bridge (Trio) à Bridge
+{ci: Parts}
+
+{comment: Bridge}
+{ci: Flipped Parts}
+
+{comment: Chorus 1}
+{ci: Parts}
+[A]Worthy is the Lamb
+[E]That  [F#m/E]was  [E]slain to receive
+[Bm7]Power, riches, [A/C#]wisdom and strength
+[F#m7]Honor, glory and [E]blessing
+
+{comment: Chorus 2}
+[A]Jesus is the Name a –[/G#] bove[/A] all [/E]names
+[/F#]He holds all [Bm7]power, riches
+[A/C#]Wisdom and strength
 [F#m7]Honor, glory and [E2]blessing
 
 {comment: Interlude}
 | F#m7 / | / / | C#m7 / | / / |
 | D2 / | / / | C#m7 / | / / |
+
+{comment: Refrain}
+{ci: Solo}
+[F#m7]Worthy,    [E]worthy
+[Dma9]Worthy[Bm7]    [C#m7]is   the  Lamb
+
+{comment: Refrain}
+{ci: Parts, 3x}
+[F#m7]Worthy,[B9/D#]    [F#m/G#]worth   -  [E/G#]y[C#m7]
+[Dma9]Worthy[Bm7]    [C#sus]is   the  [C#]Lamb
+
+{comment: Refrain}
+{ci: Last x}
+[F#m7]Worthy,[B9/D#]    [(F#-G#-A-B-G#-E-F#)]worth   -  y[C#m7]
+[Dma9]Worthy[Bm7]    [C#sus]is   the  [C#]La---------[F#]mb

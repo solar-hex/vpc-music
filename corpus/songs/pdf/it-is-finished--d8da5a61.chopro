@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 136}
 {time: 4/4}
-{x_verified: number chart, 100% of 61 chords}
+{x_verified: number chart, 100% of 82 chords}
 {x_theme: praise, victory, cross, salvation, faith-trust}
 {x_source: pdf:UPCI Music/2019/It Is Finished/It-Is-Finished-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FIt%20Is%20Finished}
@@ -20,55 +20,78 @@
 {x_source_it_is_finished_vocal_parts_1: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/it-is-finished/source/It-Is-Finished-Vocal-Parts-1.zip}
 {x_album: Victory Is Won}
 
-{comment: Intro Verse 2}
-{ci: men sing 8vb}
-||: Ab / / / | Eb / / / | Cm / / / | Bb / / / :|| Rep 4xs Ab Eb Cm
-Lord stands almighty before us. He cannot fail,
-Verse 1 (Solo)                                        [Bb]he cannot fail. The[Ab] Lord is my rock and my [Eb]shield.
-The [Ab]Lord is my light and sal[Eb]vation,[Cm] whom shall I           My h[Cm]eart will not be afraid[Bb].
-fear,[Bb] whom shall I fear. The [Ab]Lord is the strength of
-Eb Cm Bb Pre Chorus > Chorus
-my life of whom shall I be afraid.
+{comment: Intro}
+||: Ab / / / | Eb / / / | Cm / / / | Bb / / / :|| Rep
+{ci: 4xs}
 
-{comment: Interlude}
-Verse 1 (men sing 8vb) | Ab / / / | Eb/G / / / | Ab / / / | Eb/G / / / |
-| Ab / / / | Eb/G / / / | Cm / / / | Bb / / / |
+{comment: Verse 1}
+{ci: Solo}
+The [Ab]Lord is my light and sal[Eb]vation, [Cm]whom shall I
+fear, [Bb]whom shall I fear. The [Ab]Lord is the strength of
+my [Eb]life of [Cm]whom shall I be[Bb] afraid.
+
+{comment: Verse 1}
+{ci: men sing 8vb}
 
 {comment: Pre Chorus}
-Ab Cm Eb Fm Bridge (Solo)
-Oh Lord, You go before me. Ab Eb/G
-Ab Cm Eb Bb Forever stands Your eternal kingdom.
-Oh You already have the victory. Ab Eb/G
-Victorious, You reign undefeated.
-Chorus                                              [Ab]Lord of all, I [Eb/G]live in Your freedom. I[Cm]t is finished[Bb].
-[Ab]It is finished,[Cm] it is[Bb] done.
-Ab Cm Bb Bridge (Unison Men Sing 8vb)
-By the cross we over-come.
-He l[Ab]ifts my head when[Cm] troubles[Bb] come.                   Bridge (Parts)
-[Fm7]In this I[Eb] find my[Bb] praise.
+[Ab]Oh[Cm]    [Eb]Lord, You go bef[Fm]ore me.
+[Ab]Oh[Cm]    [Eb]You already have the[Bb] victory.
 
-{comment: Bridge}
-{ci: Parts}
-[Ab]It is finished,[Cm] it is[Bb] done.                                 Fore[Ab]ver stands You[Eb/G]r eternal kingdom.
-[Ab]By the cross we [Cm]over[Bb]-come.                            Vic[Ab]torious, You rei[Eb/G]gn undefeated.
-He l[Ab]ifts my head when[Cm] troubles[Bb] come.                   [Ab]Lord of all, I [Eb/G]live in Your freedom. [Cm]It is finished.
-[Fm7]In this I[Eb] find my[Bb] praise. The victory is                    It is f[Fm]inished   [Fm]it   [Cm]is  [Bb]done.
+{comment: Chorus}
+[Ab]It is finished, [Cm]it is [Bb]done.
+[Ab]By the cross we [Cm]over-[Bb]come.
+He l[Ab]ifts my head when[Cm] troubles [Bb]come.
+[Fm7]In this I [Eb]find my [Bb]praise.
+[Ab]It is finished, [Cm]it is [Bb]done.
+[Ab]By the cross we [Cm]over-[Bb]come.
+He l[Ab]ifts my head when[Cm] troubles [Bb]come.
+[Fm7]In this I [Eb]find my [Bb]praise. The victory is
 
 {comment: Interlude}
 ||: Ab / / / | Eb / / / | Cm / / / | Bb / / / :||
 won
 
+{comment: Verse 2}
+{ci: men sing 8vb}
+[Ab]Lord stands almighty bef[Eb]ore us.[Cm] He cannot fail,
+[Bb]he cannot fail. The [Ab]Lord is my rock and my [Eb]shield.
+My [Cm]heart will not be afraid[Bb].
+{ci: Pre Chorus → Chorus}
+
+{comment: Interlude}
+| Ab / / / | Eb/G / / / | Ab / / / | Eb/G / / / |
+| Ab / / / | Eb/G / / / | Cm / / / | Bb / / / |
+
+{comment: Bridge}
+{ci: Solo}
+For[Ab]ever stands Yo[Eb/G]ur eternal kingdom.
+Vic[Ab]torious, You reig[Eb/G]n undefeated.
+[Ab]Lord of all, I li[Eb/G]ve in Your freedom.[Cm] It is finished.[Bb]
+
+{comment: Bridge}
+{ci: Unison Men Sing 8vb}
+
+{comment: Bridge}
+{ci: Parts}
+
+{comment: Bridge}
+{ci: Parts}
+For[Ab]ever stands Yo[Eb/G]ur eternal kingdom.
+Vic[Ab]torious, You reig[Eb/G]n undefeated.
+[Ab]Lord of all, I li[Eb/G]ve in Your freedom.[Cm] It is finished.
+It is fin[Fm]ished   [Fm]it   [Cm]is  [Bb]done.
+
 {comment: Chorus}
 {ci: cut-unison}
 By the cross we overcome. He lifts my head when
-troubles come. In t[Fm7]his I [Eb]find my [Bb]praise.
+troubles come. In [Fm7]this I [Eb]find my [Bb]praise.
 
 {comment: Chorus}
 {ci: Parts}
-[Ab]It is finished,[Cm] it is[Bb] done.
-[Ab]By the cross we [Cm]over[Bb]-come.
-He l[Ab]ifts my head when[Cm] troubles[Bb] come.
-[Fm7]In this I[Eb] find my[Bb] praise. The victory is
+[Ab]It is finished, [Cm]it is [Bb]done.
+[Ab]By the cross we [Cm]over-[Bb]come.
+He l[Ab]ifts my head when[Cm] troubles [Bb]come.
+[Fm7]In this I [Eb]find my [Bb]praise. The victory is
 
 {comment: Outro}
 ||: Ab / / / | Eb / / / | Cm / / / | Bb / / / :|| Ab

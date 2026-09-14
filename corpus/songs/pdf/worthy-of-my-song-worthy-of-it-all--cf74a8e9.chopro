@@ -3,7 +3,7 @@
 {key: D}
 {tempo: 70}
 {time: 4/4}
-{x_verified: number chart, 100% of 66 chords}
+{x_verified: number chart, 100% of 73 chords}
 {x_theme: praise, worship, easter, faith-trust}
 {x_source: pdf:UPCI Music/2022/Worthy of my Song/Worthy-of-My-Song-Worthy-of-It-All-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FWorthy%20of%20it%20All}
@@ -19,56 +19,85 @@
 {x_album: Worthy of My Song (Worthy of It All)}
 {x_writers: Phil Wickham}
 
-Steven Furtick
-
 {comment: Intro}
-| D / / / | Em7(4) / / / | D/F# / / / | G2 / / / | Bridge 1
-Verse 1                                             When I s[D]at by that hospital bed, You were [Em7]worthy
-[D]I’m gonna sing ‘til my [Em7(4)]heart starts changing              When she could ba[D/F#]rely lift her head
-[D/F#]I’m gonna worship ‘til [G2]I mean every word                 You were w[G2]orthy
-‘Cause the w[D]ay I feel and the f[Em7(4)]ear I’m facing             After [D]all those tears were shed, You were [Em7]worthy
-Doesn’t [D/F#]change who You are or what[G2] You deserve        I’ll never stop singing Your [D/F#]praise
-Chorus 1                                            I’ll never stop singing Your[G2] prai[A]s[G2/B]e
-[D]I give You my worship[Em7],   You still deserve it           Bridge 2
-[D/F#]You’re worthy, You’re worthy                       In the [D]blessing and the pain, You are[Em7] worthy
-[G2]You’re worthy of my song                            Whether You say [D/F#]yes or no or wait, You are [G2]worthy
-[D]I pour out Your praise[Em7]s  in blessing and breaking       Through it [D]all I choose to say You are [Em7]worthy
-[D/F#]You’re worthy, You’re worthy                       I’ll never stop singing Your [D/F#]praise
-[G2]You’re worthy of my song                            I’ll never stop singing Your[G2] praise
-Interlude (same as INTRO) Bridge 3
-Verse 2                                             When I fi[D]nally see Your face, I’ll cry[Em7] worthy
-[D]I’m gonna live like my [Em7(4)]King is risen                      When You wi[D/F#]pe these tears away, I’ll cry[G2] worthy
-Gonna p[D/F#]reach to my soul that You’ve[G2] already won        Above [D/A]every other name, You are [Em7]worthy
-Even though I[D] can’t see it, I’m gonna[Em7(4)] keep believing       I’ll never stop singing Your [Bm]praise
-That every[Bm7] promise You made is as [A]good as done        I’l[A]l never stop singing Your[G2] praise
-Chorus 1                                            I’ll never stop singing Your [Bm]praise
-Tag                                                 I’l[A]l never stop singing Your[G2] praise
+| D / / / | Em7(4) / / / | D/F# / / / | G2 / / / |
+
+{comment: Verse 1}
+[D]I’m gonna sing ‘til my [Em7(4)]heart starts changing
+[D/F#]I’m gonna worship ‘til I [G2]mean every word
+‘Cause the [D]way I feel and the [Em7(4)]fear I’m facing
+Doesn’t c[D/F#]hange who You are or what[G2] You deserve
+
+{comment: Chorus 1}
+[D]I give You my worship[Em7],   You still deserve it
+[D/F#]You’re worthy, You’re worthy
+[G2]You’re worthy of my song
+[D]I pour out Your praise[Em7]s  in blessing and breaking
+[D/F#]You’re worthy, You’re worthy
+[G2]You’re worthy of my song
+
+{comment: Interlude}
+{ci: same as INTRO}
+
+{comment: Verse 2}
+[D]I’m gonna live like my [Em7(4)]King is risen
+Gonna [D/F#]preach to my soul that You’ve [G2]already won
+Even though [D]I can’t see it, I’m gonna[Em7(4)] keep believing
+That every [Bm7]promise You made is as [A]good as done
+
+{comment: Chorus 1}
+
+{comment: Tag}
 [A]You’re worthy,[Bm7]   You’re worthy
-G2 Chorus 1 (2x) > Interlude (3x)
-You’re worthy of my song (3x)
-[A]You’re worthy,[Bm7]   You’re worth[G2]y
-Steven Furtick
+[G2]You’re worthy of my song
+{ci: 3x}
+[A]You’re worthy,[Bm7]   You’re worthy[G2]
+
+{comment: Bridge 1}
+When I [D]sat by that hospital bed, You were [Em7]worthy
+When she could [D/F#]barely lift her head
+You were [G2]worthy
+After [D]all those tears were shed, You were [Em7]worthy
+I’ll never stop singing Your [D/F#]praise
+I’ll never stop singing Your[G2] prais[A]e[G2/B]
+
+{comment: Bridge 2}
+In the b[D]lessing and the pain, You are [Em7]worthy
+Whether You say[D/F#] yes or no or wait, You are [G2]worthy
+Through it [D]all I choose to say You are [Em7]worthy
+I’ll never stop singing Your [D/F#]praise
+I’ll never stop singing Your[G2] praise
+
+{comment: Bridge 3}
+When I f[D]inally see Your face, I’ll cry [Em7]worthy
+When You[D/F#] wipe these tears away, I’ll cry [G2]worthy
+Above [D/A]every other name, You are [Em7]worthy
+I’ll never stop singing Your [Bm]praise
+I’ll [A]never stop singing Your[G2] praise
+I’ll never stop singing Your [Bm]praise
+I’ll [A]never stop singing Your[G2] praise
+Chorus 1 (2x) > Interlude
+{ci: 3x}
 
 {comment: Vamp}
 {ci: 3x}
-I’ll[D] sing Your praise, I’ll[Em7(4)] sing Your praise
-I’ll[D/F#] sing Your praise, I’l[G2]l sing Your praise
+I’ll [D]sing Your praise, I’ll s[Em7(4)]ing Your praise
+I’ll [D/F#]sing Your praise, I’ll [G2]sing Your praise
 
 {comment: Interlude}
 {ci: 2x}
 
 {comment: Chorus 2}
-D Bm A /G D/F#
-You’re worthy of it all, You’re worthy of it all
+You’re worthy of it a[D]ll, You’re [Bm]worthy of it [A]al[/G]l[D/F#]
 For from You are all [G2]things
-And t[Em]o You ar[Bm7]e all [A]things
-You deserve the [D/F#]glor[G2]y[A][Bm][A][G2]
+And [Em]to You [Bm7]are all [A]things
+You deserve the [D/F#]glory[G2][A][Bm][A][G2]
 
 {comment: Chorus 2}
-You’re w[D/F#]orthy of[Em] it a[D]ll, You’re worthy of it [A/C#]all
-For from You a[D/F#]re all [G2]things
+You’re [D/F#]worthy [Em]of it [D]all, You’re worthy of it[A/C#] all
+For from You [D/F#]are all [G2]things
 And to You are all [A]things
-You deserve the [D]glor[Dsus]y
+You deserve the [D]glory[Dsus]
 
 {comment: Chorus 2}
 x

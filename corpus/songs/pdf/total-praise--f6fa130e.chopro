@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 48}
 {time: 4/4}
-{x_verified: number chart, 94% of 48 chords}
+{x_verified: number chart, 88% of 66 chords}
 {x_theme: praise}
 {x_source: pdf:UPCI Music/2021/Total Praise/Total-Praise-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FTotal%20Praise}
@@ -19,36 +19,42 @@
 {x_album: Adoration: Live in Atlanta}
 {x_writers: Richard Smallwood}
 
-{comment: Intro Bridge}
-||: Db / / / | / / / / :|| Cb9 Db/Cb
-[A-men--------------------------------]
+{comment: Intro}
+||: Db / / / | / / / / :||
 
 {comment: Verse}
-Db Bbm Ab Db Ab7/Eb Db/F | Gbm/A Db/Ab Gbm Db/F Gbm |
-Lord I will lift mine eyes
-Gb Db/F Bb7/D Ebm Cb Bb7 Db / Cb9 Db/Cb
-to the hills----------- A - men--------------------------------
-[Ebm]know - [Cb]ing[F7]     [Bb7/D]my    [Ebm]help[Ab]       [Db]is                   | Gbm/A Db/Ab Gbm Db/F Gbm |
-[Gb]Com[Gb(b5)]   -   [Db/F]ing   f[Eb9]rom [Ab]You[Ab/Gb]                           Db /  Cb9 Db/Cb
-Db/F F7(#5) F7 Ab/Gb Gb Bb7/D A - men--------------------------------
-Your peace You give me in
-Eb Fm Eb7/G Cb9 | Gbm/A Db/Ab Gbm Db/F Gbm | Db
-times of the storm A - men.
+[Db]Lord[Bbm]  I   [Ab]will l[Db]ift    [Ab7/Eb]mine  [Db/F]eyes
+[Gb]to  [Db/F]the    [Bb7/D]hills----[Ebm]-------[Cb][Bb7]
+[Ebm]know - [Cb]ing[F7]    [Bb7/D]my    [Ebm]help[Ab]    [Db]is
+[Gb]Com[Gb(b5)]   -   [Db/F]ing   [Eb9]from [Ab]You[Ab/Gb]
+[Db/F]Your  [F7(#5)]peace [F7]You[Ab/Gb] give  [Gb]me    [Bb7/D]in
+[Eb]times  [Fm]of   [Eb7/G]the   [Cb9]storm
 [Gbm6/Eb] [Db/F] [Gbm6] [Gbm6/Eb]
 
 {comment: Chorus}
 [Db/Ab]You are the [Ebm7]source of my strengt[Cm7(b5)]h[F7(#9#5)]
-[Bbm7]Y[Eb9]ou a[Abm9]re    [Db9]the str[Gbmaj9]ength of my
-[Cb7]lif[Gbm6/Eb]e[Db/F][Gbm6][Gbm6/Eb]
-[Db/Ab]I  l[Abm9]ift    [Db9]my  [Ab/Gb]hands  [Gb]in
-[Ddim7]to  -   [Ebm7(b5)]tal     [Db/Ab]praise----[Gm7(b5)]-------
-[Ab]to------[Ab7]----  [Db]Yo[Gbm6/Eb]u[Db/F][Gbm6][Gbm6/Eb]
+[Bbm7]Y[Eb9]ou [Abm9]are    [Db9]the str[Gbmaj9]ength of my
+[Cb7]life[Gbm6/Eb][Db/F][Gbm6][Gbm6/Eb]
+[Db/Ab]I  [Abm9]lift    [Db9]my  [Ab/Gb]hands[Gb]  in
+[Ddim7]to  -   [Ebm7(b5)]tal    [Db/Ab]praise--[Gm7(b5)]---------
+[Ab]to------[Ab7]----  [Db]You[Gbm6/Eb][Db/F][Gbm6][Gbm6/Eb]
 
 {comment: Chorus}
 [Db/Ab]You are the [Ebm7]source of my strengt[Cm7(b5)]h[F7(#9#5)]
-[Bbm7]Y[Eb9]ou a[Abm9]re    [Db9]the str[Gbmaj9]ength of my
-[Cb7]lif[Gbm6/Eb]e[Db/F][Gbm6][Gbm6/Eb]
-[Db/Ab]I  l[Abm9]ift    [Db9]my  [Ab/Gb]hands  [Gb]in
-[Ddim7]to  -   [Ebm7(b5)]tal     [Db/Ab]praise----[Gm7(b5)]-------
-Ab Ab7 Db /
+[Bbm7]Y[Eb9]ou [Abm9]are    [Db9]the str[Gbmaj9]ength of my
+[Cb7]life[Gbm6/Eb][Db/F][Gbm6][Gbm6/Eb]
+[Db/Ab]I  [Abm9]lift    [Db9]my  [Ab/Gb]hands[Gb]  in
+[Ddim7]to  -   [Ebm7(b5)]tal    [Db/Ab]praise--[Gm7(b5)]---------
+| Ab Ab7 Db /
 to---------- You
+
+{comment: Bridge}
+A[Cb9]-men[Db/Cb]--------------------------------
+| Gbm/A Db/Ab Gbm Db/F Gbm |
+| Db / Cb9 Db/Cb
+A - men--------------------------------
+| Gbm/A Db/Ab Gbm Db/F Gbm |
+| Db / Cb9 Db/Cb
+A - men--------------------------------
+| Gbm/A Db/Ab Gbm Db/F Gbm | Db
+A - men.

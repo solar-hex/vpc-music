@@ -3,7 +3,7 @@
 {key: Am}
 {tempo: 150}
 {time: 4/4}
-{x_theme: praise, worship, joy, name-of-jesus, salvation}
+{x_theme: praise, name-of-jesus, worship, joy, salvation}
 {x_source: pdf:UPCI Music/2019/We've Come to Glorify the Lord/Weve-Come-to-Glorify-the-Lord-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FWe've%20Come%20to%20Glorify%20the%20Lord}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-ve-come-to-glorify-the-lord/audio/alto.m4a}
@@ -18,30 +18,44 @@
 {x_source_weve_come_to_glorify_the_lord_vocal_parts_1: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/we-ve-come-to-glorify-the-lord/source/Weve-Come-To-Glorify-The-Lord-Vocal-Parts-1.zip}
 {x_album: Show Us Your Glory}
 
-Intro Bridge (Sopranos) 2xs
-||: G/A / / / A9 | / / / / | F/G / / / G9 | / / / / :|| rep 4xs G/A A9
-Holy is the Father,
-Chorus (2xs)                                         the re[F/D]deemed sing His praises,
-[G/A]We’ve come to gl[A9]orify the Lor[F/G]d                      Let’s [G9]lift Him high-er
-G/A               [G9]A9          F/G                    Bridge (Add Altos) 2xs
-We’ve come to glorify the Lord His name is worthy to be lifted higher
-We’ve come to g[G9]lorify Him
-G/A A9 F/D Bridge (Everyone) 4xs
-We’ve come to lift our voice and make Come on and lift your hands, let’s lift the name of
-G9 G/A A9 Jesus
-A joyful sound We’ve come to give
-Him praise for[F/D] He   [G/C]a – [Am/Bb]lone     [G/F]is   [C/E]worthy             Chorus
+{comment: Intro}
+||: G/A / / / A9 | / / / / | F/G / / / G9 | / / / / :|| rep
+{ci: 4xs}
+
+{comment: Chorus}
+{ci: 2xs}
+[G/A]We’ve come to [A9]glorify the Lor[F/G]d
+We’ve come to [G9]glorify the Lord
+[G/A]We’ve come to [A9]glorify the Lor[F/G]d
+We’ve come to [G9]glorify Him
+[G/A]We’ve come to [A9]lift our voice and m[F/D]ake
+A joyful [G9]sound[G/A]    We’ve come to g[A9]ive
+Him praise for [F/D]He   [G/C]a – [Am/Bb]lone    [G/F]is   [C/E]worthy
 
 {comment: Verse}
 [Bm7(b5)]I know a [E7]savior who is [G/A]worthy to be [A/C#]praised
 [Bm7(b5)]No other [E7]name is so de[G/A]serving to be[A/C#] raised
 [Bm7(b5)]There is a reason ton[E7]ight you should be
 [G/A]standing to your [A/C#]feet
-so lets[Dm] fill this house with[F/C] worship
-And there is n[F]othing we can’t d[E7]o to glorify him
+so lets [Dm]fill this house with [F/C]worship
+And there is [F]nothing we can’t d[E7]o to glorify him
 
 {comment: Chorus}
 
 {comment: Verse}
+
+{comment: Chorus}
+Bridge (Sopranos)
+{ci: 2xs}
+[G/A]Holy is the [A9]Father,
+the re[F/D]deemed sing His praises,
+Let’s[G9] lift Him high-er
+Bridge (Add Altos)
+{ci: 2xs}
+His name is worthy to be lifted higher
+Bridge (Everyone)
+{ci: 4xs}
+Come on and lift your hands, let’s lift the name of
+Jesus
 
 {comment: Chorus}

@@ -13,55 +13,52 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/the-king-s-house/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/the-king-s-house/charts/vocals.pdf}
 
-Intro Gm F/A Bb Bb C Dm (G D-C) 2x
+{comment: Intro}
+[Gm] [F/A] [Bb] [Bb] [C] [Dm] [(G-D-C)]
+{ci: 2x}
 
 {comment: Verse}
-Gm F/A Bb Bb C Dm (C Bb-A)
-Great and mighty King You sit in majesty
-Gm F/A Bb Bb C Dm (F-G D)
-The Heavens are Your throne You are God alone
-Gm F/A Bb Bb C Dm (C Bb-A)
-Exalted still on high You’re kingdom never dies
-Your ch[Gm]ildren [F/A]enter[Bb] in and the s[C]ound of praise begins
+G[Gm]reat and m[F/A]ighty K[Bb]ing You [Bb]sit in [C]maj[Dm]esty[(C-Bb-A)]
+The He[Gm]avens ar[F/A]e Your [Bb]throne Yo[Bb]u are [C]God a[Dm]lon[(F-G-D)]e
+E[Gm]xalted s[F/A]till on [Bb]high You’re kin[Bb]gdom ne[C]ver [Dm]dies[(C-Bb-A)]
+Your c[Gm]hildren[F/A] enter[Bb] in and the so[C]und of praise begins
 
 {comment: Chorus}
-[Dm]Hear the sound of pra[F2]ise rising from the s[C2]aved here in the K[G]ing’s house
-[Dm]We’re lifting up Your [F2]name You forever r[C2]eign Here in the K[G]ing’s house
-[Dm]Freedom in this p[F2]lace victory t[C2]oday Here in the K[G]ing’s house
+[Dm]Hear the sound of pr[F2]aise rising from the sa[C2]ved here in the Ki[G]ng’s house
+[Dm]We’re lifting up Your n[F2]ame You forever r[C2]eign Here in the Ki[G]ng’s house
+[Dm]Freedom in this p[F2]lace victory to[C2]day Here in the K[G]ing’s house
 To verse - Intro (A G-F-D-C-C-D)(C-D)
-Dm F2 C2 To bridge - BbM7
-Because You’ve made a way we can celebrate this is the King’s house
+{ci: To bridge}
+[Dm]Because You’ve made a w[F2]ay we can cele[C2]brate this is the King’s hou[BbM7]se
 
 {comment: Verse 2}
-Gm F/A Bb Bb C Dm (C Bb-A)
-Your power can defeat every enemy Oh oh oh
-Gm F/A Bb Bb C Dm (F-G D)
-Darkness has no pace it’s chased away by grace
-Gm F/A Bb Bb C Dm (C Bb-A)
-You lead us from despair You’re greatness we declare
-The o[Gm]nes you[F/A] libe[Bb]rate re[C]turn and give you praise
+Your p[Gm]ower [F/A]can d[Bb]efeat e[Bb]very [C]ene[Dm]my  [(C-Bb-A)]Oh oh oh
+Da[Gm]rkness h[F/A]as no [Bb]pace it’s c[Bb]hased aw[C]ay by g[Dm]rac[(F-G-D)]e
+You l[Gm]ead us f[F/A]rom de[Bb]spair You’re gre[Bb]atness [C]we d[Dm]ecla[(C-Bb-A)]re
+The [Gm]ones y[F/A]ou libe[Bb]rate re[C]turn and give you praise
 
 {comment: Bridge}
 {ci: solo}
-[BbM7]You reign her[Dm7]e  oh______  [BbM7]my life is changed he[Dm7]re oh_______
+[BbM7]You reign her[Dm7]e  oh______  [BbM7]my life is changed her[Dm7]e oh_______
 [BbM7]You reign here my life is changed here[Dm7]  nothing’s the same here
 [BbM7]You reign here my life is changed here[Dm7]  nothing’s the same here in the king’s house
 
 {comment: Bridge}
 {ci: choir}
 [BbM7]You reign here my life is changed here[Dm7]   nothing’s the same here
-[BbM7]You reign here my life is changed here[Dm7]   nothing’s the same here in the [C/E]King’s h[F]ouse
+[BbM7]You reign here my life is changed here[Dm7]   nothing’s the same here in the K[C/E]ing’s ho[F]use
 
 {comment: Interlude}
-BbM7 Dm7 C/E F (Bb-A-G-A) G Bb E Dm7
+[BbM7] [Dm7] [C/E] [F] [(Bb-A-G-A)] [G] [Bb] [E] [Dm7]
 
 {comment: Chorus}
 [Bb]Hear the sound of praise rising from the saved here in the King’s house
-[Dm]We’re lifting up Your [F2]name You forever r[C2]eign Here in the [G/B]King’s house
-[Dm]Freedom in this p[F2]lace victory t[C2]oday Here in the K[G]ing’s house
-Dm F2 C2 (Outro)
-Because You’ve made a way we can celebrate this is the King’s house
+[Dm]We’re lifting up Your n[F2]ame You forever r[C2]eign Here in the K[G/B]ing’s house
+[Dm]Freedom in this p[F2]lace victory to[C2]day Here in the K[G]ing’s house
+[Dm]Because You’ve made a w[F2]ay we can cele[C2]brate this is the King’s house
+{ci: Outro}
 
 {comment: Outro}
-Gm F/A Bb Bb C Dm (G D-C)
-Gm F/A Bb Bb C Dm (A G-F-D-C-C-D)(C-D)
+[Gm] [F/A] [Bb] [Bb] [C] [Dm] [(G-D-C)]
+[Gm] [F/A] [Bb] [Bb] [C] [Dm]
+{ci: A G-F-D-C-C-D)(C-D}

@@ -7,39 +7,35 @@
 {x_album: Live From Orlando}
 
 {comment: Intro}
-{ci: F-Eb-Db-Eb-F-Bb}
+[(F-Eb-Db-Eb-F-Bb)]
 ||: Bbm7 Bbm7 (G-Ab-G-Ab-G-Ab-Bb)
-Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7 :|| (rep as dir)
+Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7 :||
+{ci: rep as dir}
 
 {comment: Chorus}
-Bbm7 Bbm7 (G-Ab-G-Ab-G-Ab-Bb)
-Prais - in’
+[Bbm7]Prais -[Bbm7] in’[(G-Ab-G-Ab-G-Ab-Bb)]
 Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7
 Prais - in’ the power down
-Bbm7 Bbm7 (G-Ab-G-Ab-G-Ab-Bb)
-Prais - in’
+[Bbm7]Prais -[Bbm7] in’[(G-Ab-G-Ab-G-Ab-Bb)]
 Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7
 Prais - in’ the power down
 
 {comment: Tag}
-[Eb]We are not [F]ashamed
-We’re li[D7(sus)]fting    [D7/F#]up   His[Gm7] nam[G7/B]e
-[Cm7]Prais - [Bb/D]in’,
-Eb/F (Ab-G-Ab-G-Ab-G-Ab-Bb)
-Pras - in’, the power down
+[Eb]We are not a[F]shamed
+We’re l[D7(sus)]ifting    [D7/F#]up   His [Gm7]nam[G7/B]e
+[Cm7]Prais -[Bb/D] in’,
+[Eb/F]Pras - in’, the power [(Ab-G-Ab-G-Ab-G-Ab-Bb)]down
 Bbm7Bbm7 (G-Ab-G-Ab-G-F)
-Chorus à Tag
+{ci: Chorus → Tag}
 
 {comment: Bridge}
-Bbm7 (cut) Eb Bbm7 Bbm7
-I’m gonna clap my hands my hands
-(cut) Eb Bbm7 Bbm7
-I’m gonna stomp my feet my feet
-(cut) Eb Bbm7 Bbm7
-I’m gonna shout for joy for joy
-Come on everybody and [F7(#5)]sin[F13]g[G13][Ab13][A13]
-Chorus à Bridge à Chorus à Tag
+[Bbm7(cut)]I’m gonna clap my hands   [Eb]my [Bbm7]hands[Bbm7]
+{ci: cut}
+I’m gonna stomp my feet   [Eb]my [Bbm7]feet[Bbm7]
+{ci: cut}
+I’m gonna shout for joy    [Eb]for [Bbm7]joy[Bbm7]
+Come on everybody and [F7(#5)]sing[F13][G13][Ab13][A13]
+{ci: Chorus → Bridge → Chorus → Tag}
 
 {comment: Outro}
-{ci: Ab-G-Ab-G-Ab-G-Ab-Bb}
-Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7
+[(Ab-G-Ab-G-Ab-G-Ab-Bb)]Bbm7Bbm7 (G-Ab-G-Ab-G-F) Bbm7

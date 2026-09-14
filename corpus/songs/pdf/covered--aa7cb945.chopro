@@ -23,52 +23,86 @@
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/covered/charts/vocals-with-chords.pdf}
 {x_album: Generations}
 
-{comment: Intro Verse 3}
-{ci: Key Change}
-| Eb / / / | / / / / | Cm7 / / / | / / / / | F
-What can wash away my sins?
-| Ab / / / | / / / / | Cm7 / / / | Bb/D / / / | Dm7
-What can make me whole again?
-Verse 1 (Unison)                                      [Bbmaj7]Oh how precious is the flow
-[Eb]No more sacrificing lambs,                             [Dm7]that has made us whit[C/E]e as snow.
+{comment: Intro}
+| Eb / / / | / / / / | Cm7 / / / | / / / / |
+| Ab / / / | / / / / | Cm7 / / / | Bb/D / / / |
+
+{comment: Verse 1}
+{ci: Unison}
+[Eb]No more sacrificing lambs,
 [Cm7]no more bullocks, goats, or rams.
-Abmaj7 Chorus 2 (2x)
-Jesus paid it all for me, F
-Cm7 Bb/D Nothing, nothing but the blood of
-the shed blood on calvary. Dm7
-Jesus, nothing but the blood of
-Verse 2 (Unison)                                      Jes[Bbmaj7]us, covered by the blood of
-[Eb]No more sending burnt off’-rings,[G7(#5#9)]                        the Lamb[Dm7].[C/E]
+[Abmaj7]Jesus paid it all for me,
+[Cm7]the shed blood on ca[Bb/D]lvary.
+
+{comment: Verse 2}
+{ci: Unison}
+[Eb]No more sending burnt off’-rings[G7(#5#9)],
 [Cm7]works and rit-‘uals discarding.
-Abmaj7 Verse 3
-We have access to the throne
-[Cm7]through the precious [Bb/D]blood atoned.                      Chorus 2 (2x)
-Chorus 1 (2x) Interlude
-Eb | F / / / | / / / / | Dm7 / / / | / / / / |
-Covered, covered by the blood of
-Cm7 | Bbmaj7 / / / | / / / / | Dm7 / / / | C/E / / / |
-Jesus, covered by the blood of
-Je[Abmaj7]sus, covered by the blood of                          Vamp 1
-the Lam[Cm7]b.[Bb/D]                                                [F]Covered,   covered
-[Dm7]covered,   covered
-Verse 1 (Parts) Bbmaj7
-covered, covered by the blood of
-Verse 2 (Parts) Dm7 C/E
-the Lamb.
+[Abmaj7]We have access to the throne
+[Cm7]through the precious [Bb/D]blood atoned.
+
+{comment: Chorus 1}
+{ci: 2x}
+Co[Eb]vered, covered by the blood of
+Je[Cm7]sus, covered by the blood of
+Je[Abmaj7]sus, covered by the blood of
+the Lam[Cm7]b.[Bb/D]
+
+{comment: Verse 1}
+{ci: Parts}
+
+{comment: Verse 2}
+{ci: Parts}
 
 {comment: Chorus 1}
 {ci: 2x}
 
-{comment: Vamp 2 Ending - Chorus 1}
+{comment: Verse 3}
+{ci: Key Change}
+[F]What can wash away my sins?
+[Dm7]What can make me whole again?
+[Bbmaj7]Oh how precious is the flow
+[Dm7]that has made us whit[C/E]e as snow.
+
+{comment: Chorus 2}
 {ci: 2x}
-[F]Nothing,   nothing                                Co[F]vered, covered by the blood of
-[Dm7]nothing,   nothing                                 Je[Dm7]sus, covered by the blood of
-[Bbmaj7]nothing,   nothing but the blood of                  Je[Bbmaj7]sus, covered by the blood of
-Dm7 C/E Dm7 C/E (last x) F / / /
-the Lamb. the Lamb.
+No[F]thing, nothing but the blood of
+Jes[Dm7]us, nothing but the blood of
+Jes[Bbmaj7]us, covered by the blood of
+the Lamb[Dm7].[C/E]
+
+{comment: Verse 3}
+
+{comment: Chorus 2}
+{ci: 2x}
+
+{comment: Interlude}
+| F / / / | / / / / | Dm7 / / / | / / / / |
+| Bbmaj7 / / / | / / / / | Dm7 / / / | C/E / / / |
+
+{comment: Vamp 1}
+[F]Covered,   covered
+[Dm7]covered,   covered
+[Bbmaj7]covered,   covered by the blood of
+the Lam[Dm7]b.[C/E]
+
+{comment: Vamp 2}
+[F]Nothing,   nothing
+[Dm7]nothing,   nothing
+[Bbmaj7]nothing,   nothing but the blood of
+the Lam[Dm7]b.[C/E]
 
 {comment: Vamp 3}
-T[F]hank y[F]ou ,   [F]thank [F]you
-t[Dm7]hank y[Dm7]ou,    [Dm7]thank [Dm7]you
-T[Bbmaj7]hank you ,   thank you for the blood of
-the Lam[Cm7]b[C/E].
+[F]Thank [F]you ,   [F]thank [F]you
+t[Dm7]hank [Dm7]you,    [Dm7]thank [Dm7]you
+[Bbmaj7]Thank you ,   thank you for the blood of
+the Lam[Cm7]b.[C/E]
+
+{comment: Ending - Chorus 1}
+{ci: 2x}
+Co[F]vered, covered by the blood of
+Je[Dm7]sus, covered by the blood of
+Je[Bbmaj7]sus, covered by the blood of
+{ci: last x}
+| Dm7 C/E F / / /
+the Lamb.

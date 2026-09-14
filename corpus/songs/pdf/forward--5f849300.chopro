@@ -3,7 +3,7 @@
 {key: Ab}
 {tempo: 79}
 {time: 6/8}
-{x_verified: number chart, 89% of 47 chords}
+{x_verified: number chart, 96% of 111 chords}
 {x_theme: blood}
 {x_source: pdf:UPCI Music/2021/Forward/Forward-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FForward}
@@ -19,67 +19,94 @@
 {x_album: Forward (Single)}
 {x_writers: Jeremy Daigle}
 
-{comment: Intro Verse 2}
-Db / | / / | Fm / | Eb / | Ab
-Db / | / / | Fm / | Eb/G / | / / | We are Your people
-From [Bbm7]every   [Ab/C]tribe, every[Db/F] tongue
-Verse 1 Ab/C
-Ab Called by Your purpose
-Every nation Bbm7 Ab/C
-Bbm7 Ab/C Db Bought by Your blood
-Will know You are God and You reign Eb/G
-Ab/C We are one
-All generations
-Bbm7 Ab/C Eb/G Pre Chorus
-Will know the power of Your Name Db Fm7
-We are una - shamed
-Pre Chorus Db Fm7 Eb (C-Db-Eb-F-Ab-Bb
-Db Fm7 To de - clare Your name
-Without com-pro-mise
-Db Fm7 Eb (C-Db-Eb-F-Ab-Bb)
-Let Your church a - rise Chorus
+{comment: Intro}
+| Db / | / / | Fm / | Eb / |
+| Db / | / / | Fm / | Eb/G / | / / |
+
+{comment: Verse 1}
+Every [Ab]nation
+Will [Bbm7]know You are[Ab/C] God and Y[Db]ou reign
+All gen[Ab/C]erations
+Will [Bbm7]know the [Ab/C]power of Yo[Eb/G]ur Name
+
+{comment: Pre Chorus}
+Without [Db]com-pro-[Fm7]mise
+Let Your [Db]church  [Fm7]a - r[Eb]ise[(C-Db-Eb-F-Ab-Bb)]
+
+{comment: Chorus}
 [Ab/C]Forwar - [Db]d
-[Chorus]Ab/C   Db                                          (We’re moving)[Fm7] forwa[Eb/G]r[Ab]d
-Forwar - d Bbm7 Db Eb
-Fm7 Eb/G Ab Declaring Your greatness and fame
-(We’re moving) forward Ab/C Db
-Bbm7 Db Eb We’re moving forward
-Declaring Your greatness and fame Ebm7 Ebm/Bb Ebm/Gb Eb/G F/A
-Ab/C Db Pressing forward---------------------------
-We’re moving forward Bbm7 Db Eb
-Ebm7 Ebm/Bb Ebm/Gb Eb/G F/A Your kingdom forever will reign
-Pressing forward--------------------------- Bbm7 Ab Eb/G
-Bbm7 Db Eb Your matchless and glorious name
-Your kingdom forever will reign
-Your [Bbm7]matchless and [Ab]glorious[Eb/G] name                     Interlude
-| Ab/C / | Db / | Fm7 / | Eb/G / |
-Moving forward
+(We’re moving)[Fm7] forwa[Eb/G]rd[Ab]
+De[Bbm7]claring Your[Db] greatness and [Eb]fame
+We’re movin[Ab/C]g forwar[Db]d
+Pressin[Ebm7]g   for[Ebm/Bb]ward-------[Ebm/Gb]--------------[Eb/G]------[F/A]
+Your [Bbm7]kingdom for[Db]ever will r[Eb]eign
+Your [Bbm7]matchless and [Ab]glorious [Eb/G]name
 
 {comment: Interlude}
 | Ab/C / | Db / | Fm7 / | Eb/G / |
 Moving forward
-Tag 1 (1x Unison) (2x Parts) Outro
-The g[Db]ates of hell will [Fm7]not prevail                        Forward [Bbm7]---[Ab/C]-[Db][Db][Eb][Fm7]
-[Eb]We’re moving forward                                 [Eb/G]Ohhh--[Ab]----[Db]Oh,
-The g[Db]ates of hell will [Fm7]not prevail                        Your [Gm7(b5)]kingdom[C7(alt)]    will[Fm7]  reign
-[Eb]We’re moving forward                                 Forward [Bbm7]---[Ab/C]-[Db][Db][Eb][Fm7]
-[Eb/G]Ohhh--[Ab]----[Db]Oh,
-Tag 2 Gm7(b5) C7(alt) Fm7
-Bbm7 Ab/C Db Declaring Your Name
-Tear down strongholds, curse every lie
-[Eb]Your c[Fm7]hurch will arise                              Forward [Bbm7]---[Ab/C]-[Db][Db][Eb][Fm7]
-[Eb]We’re moving forward                                 [Eb/G]Ohhh--[Ab]----[Db]Oh,
-Your [Gm7(b5)]kingdom[C7(alt)]    will[Adim7/F]  reig[Gdim7]n[Adim7]
-Tag 3 Bbm7 Ab/C Db Db Eb Fm7
-Db Bbm7 Forward ----
-Go before, Lord, open the door Eb/G Ab Db
-Fm11 Ohhh------Oh,
-Your church will arise Gm7(b5) C7(alt) Fm7
-Eb Declaring Your Name
-We’re moving forward
-[Db]Go before, Lord,[Bbm7] open the door                         [End]Db
-Your c[Fm11]hurch will aris[Forward]e
+
+{comment: Verse 2}
+We are Your [Ab]people
+From [Bbm7]every   [Ab/C]tribe, every [Db/F]tongue
+Called [Ab/C]by Your purpose
+[Bbm7]Bought by Your[Ab/C] blood
+We are[Eb/G] one
+
+{comment: Pre Chorus}
+We are [Db]una - [Fm7]shamed
+Db Fm7 Eb (C-Db-Eb-F-Ab-Bb
+To de - clare Your name
+
+{comment: Chorus}
+[Ab/C]Forwar - [Db]d
+(We’re moving)[Fm7] forwa[Eb/G]rd[Ab]
+De[Bbm7]claring Your[Db] greatness and [Eb]fame
+We’re movin[Ab/C]g forwar[Db]d
+Pressin[Ebm7]g   for[Ebm/Bb]ward-------[Ebm/Gb]--------------[Eb/G]------[F/A]
+Your [Bbm7]kingdom for[Db]ever will r[Eb]eign
+Your [Bbm7]matchless and [Ab]glorious [Eb/G]name
+
+{comment: Interlude}
+| Ab/C / | Db / | Fm7 / | Eb/G / |
+Moving forward
+
+{comment: Tag 1}
+{ci: 1x Unison, 2x Parts}
+The [Db]gates of hell will [Fm7]not prevail
 [Eb]We’re moving forward
-[Db]Go before, Lord,[Bbm7] open the door
-Your c[Fm11]hurch will arise
+The [Db]gates of hell will [Fm7]not prevail
+[Eb]We’re moving forward
+
+{comment: Tag 2}
+[Bbm7]Tear  [Ab/C]down s[Db]trongholds, curse every lie
+[Eb]Your c[Fm7]hurch will arise
+[Eb]We’re moving forward
+
+{comment: Tag 3}
+[Db]Go before, Lord, [Bbm7]open the door
+Your [Fm11]church will arise
+[Eb]We’re moving forward
+[Db]Go before, Lord, [Bbm7]open the door
+Your [Fm11]church will arise
+[Eb]We’re moving forward
+[Db]Go before, Lord, [Bbm7]open the door
+Your [Fm11]church will arise
 [Eb]We’re moving (forward)
+
+{comment: Outro}
+Forwar[Bbm7]d ----[Ab/C][Db][Db][Eb][Fm7]
+[Eb/G]Ohhh-[Ab]----[Db]-Oh,
+Your [Gm7(b5)]kingdom[C7(alt)]    will[Fm7]  reign
+Forwar[Bbm7]d ----[Ab/C][Db][Db][Eb][Fm7]
+[Eb/G]Ohhh-[Ab]----[Db]-Oh,
+De[Gm7(b5)]claring  [C7(alt)]Your [Fm7]Name
+Forwar[Bbm7]d ----[Ab/C][Db][Db][Eb][Fm7]
+[Eb/G]Ohhh-[Ab]----[Db]-Oh,
+Your [Gm7(b5)]kingdom[C7(alt)]    will[Adim7/F]  reign[Gdim7][Adim7]
+Forwar[Bbm7]d ----[Ab/C][Db][Db][Eb][Fm7]
+[Eb/G]Ohhh-[Ab]----[Db]-Oh,
+De[Gm7(b5)]claring  [C7(alt)]Your [Fm7]Name
+
+{comment: End}
+[Db]Forward

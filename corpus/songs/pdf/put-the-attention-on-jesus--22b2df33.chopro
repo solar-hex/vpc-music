@@ -3,8 +3,8 @@
 {key: G}
 {tempo: 136}
 {time: 4/4}
-{x_verified: number chart, 100% of 38 chords}
-{x_theme: praise}
+{x_verified: number chart, 100% of 69 chords}
+{x_theme: praise, cross}
 {x_source: pdf:UPCI Music/2019/Put the Attention on Jesus/Put the Attention on Jesus - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FPut%20the%20Attention%20on%20Jesus}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/put-the-attention-on-jesus/audio/alto.m4a}
@@ -18,45 +18,62 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/put-the-attention-on-jesus/charts/vocals.pdf}
 {x_album: A Worshipper’s Heart}
 
-{comment: Intro Chorus 1}
-{ci: 2x}
-G / / / | / / / D/G | C/G / / / | / / / / | D C
-Put the attention on Je – sus
-G / / / | / / / D/G | C / / / | / / / / | G D
-‘cause that’s where it belongs.
-Verse 1 D C G
-G C Put the attention on Je – sus,
-It’s amazing how we’ve gone after the show D
-G C yeah, yeah.
-How we hardly say His name anymore
-I think it[G/D]’s strange how we love to jump and[C] shout         Bridge (Solo)
-But never w[D]anna tell the [C]world what it’s [G]about            If[C] I be lifted[G] up from all the e[D]arth, I’ll draw all
-Verse 2                                              [Em7]men unto me
+{comment: Intro}
+| G / / / | / / / D/G | C/G / / / | / / / / |
+| G / / / | / / / D/G | C / / / | / / / / |
+
+{comment: Verse 1}
+It’s a[G]mazing how we’ve gone after the [C]show
+How we [G]hardly say His name any[C]more
+I think it’s [G/D]strange how we love to jump and [C]shout
+But never w[D]anna tell the [C]world what it’s [G]about
+
+{comment: Verse 2}
 I’m a[G]mazed that One who gave His lif[C]e
-G C Bridge (men sing 8vb)
-Is not the feature of every single night
-I think it[G/D]’s sad how the man who paid the [C]price            Bridge (Parts)
-Is being [D]drowned out by al[C]l the fluff and l[G]ights
+Is not the [G]feature of every single [C]night
+I think it’s [G/D]sad how the man who paid the [C]price
+Is being [D]drowned out by [C]all the fluff and l[G]ights
+
+{comment: Pre-Chorus}
+[G]Let’s put the atten[G/D]tion   back where it belongs,
+[Em7]back up on the Son[C],  He is the on[Em7]e who died
+for u[D]s.    Let’s put the atte[G/D]ntion back up on the
+cross[C],    back upon the Lord[Am7],    He is the
+King,[Em7]    it’s why we sing[D].
+
+{comment: Chorus 1}
+{ci: 2x}
+[D]Put the attention on Je [C]– sus
+[G]‘cause [D]that’s where it belongs.
+[D]Put the attention on Je [C]– sus,[G]
+[D]yeah,  yeah.
+
+{comment: Bridge}
+{ci: Solo}
+If [C]I be lifted [G]up from all the [D]earth, I’ll draw all
+[Em7]men unto me
+
+{comment: Bridge}
+{ci: men sing 8vb}
+
+{comment: Bridge}
+{ci: Parts}
 
 {comment: Bridge}
 {ci: Flipped Parts}
-Pre-Chorus                                          If[C] I be lifted[G] up from all the e[D]arth, I’ll draw al[Em7]l
-[G]Let’s put the atten[G/D]tion   back where it belongs,
-Em7 C Em7 Chorus 2
-back up on the Son, He is the one who died Am C
-D G/D Put the attention on Je – sus
-for us. Let’s put the attention back up on the G D
-C Am7 forev – er, we lift You up.
-cross, back upon the Lord, He is the Am C G
-Em7 D Put the attention on Je – sus
-King, it’s why we sing. D
-yeah, yeah.
+If [C]I be lifted [G]up from all the [D]earth, I’ll draw al[Em7]l
 
 {comment: Chorus 2}
-[Am]Put the attention on Je[C] – sus
+[Am]Put the attention on Je [C]– sus
 [G]forev [D]– er, we lift You up.
-[Am]Put the attention on Je[C] – su[G]s
-[D]yeah,  yeah[Am].
+[Am]Put the attention on Je [C]– sus[G]
+[D]yeah,  yeah.
+
+{comment: Chorus 2}
+[Am]Put the attention on Je [C]– sus
+[G]forev [D]– er, we lift You up.
+[Am]Put the attention on Je [C]– sus[G]
+[D]yeah,  yeah.[Am]
 
 {comment: Vamp 1}
 {ci: Rep 3xs}
@@ -65,4 +82,4 @@ yeah, yeah.
 
 {comment: Vamp 2}
 {ci: Rep as dir.}
-[C]Jesus         [G]Jesus[D]      Jesus
+[C]Jesus    [G]Jesus[D]    Jesus

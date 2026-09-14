@@ -3,7 +3,7 @@
 {key: Db}
 {tempo: 72}
 {time: 4/4}
-{x_verified: number chart, 89% of 28 chords}
+{x_verified: number chart, 100% of 64 chords}
 {x_theme: faith-trust, praise, testimony}
 {x_source: pdf:UPCI Music/I Am Reminded/I Am Reminded - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FI%20Am%20Reminded}
@@ -18,53 +18,73 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/i-am-reminded/charts/vocals.pdf}
 {x_album: I Am Reminded (Live)}
 
-{comment: Intro Chorus}
-{ci: Parts}
-||: Db / / / | B/Db / / / | Gb/Db / / / | Db / / / :|| Abm7 Gb
-You enough or thank You enough for all
-Verse 1 Absus Db
-Db That You’ve done for me. I am reminded
-Lord I am reminded of all of your blessings Abm7 B
-Ebm7 You have been faithful for all that You’ve done,
-You have been good to me
-[Bbm7]Through every valley across every mountain             For a[Gb]ll that You’ve done for me[Db].
-[Ebm7]You’ve always been there for[Absus] me                                         [Abm7]I[Gb/Bb]’[B]ll never[Db] praise
+{comment: Intro}
+||: Db / / / | B/Db / / / | Gb/Db / / / | Db / / / :||
+
+{comment: Verse 1}
+[Db]Lord I am reminded of all of your blessings
+[Ebm7]You have been good to me
+[Bbm7]Through every valley across every mountain
+[Ebm7]You’ve always been there for[Absus] me
 
 {comment: Chorus}
 {ci: Solo}
-Db Abm7 Chorus (Parts)
-I’ll never praise you enough or thank You enough Abm7 Gb
-B Gb Db You enough or thank You enough for all
-for all that You’ve done for me. I am reminded Absus Db
-Abm7 B That You’ve done for me. I am reminded
-You have been faithful for all that You’ve done, Abm7 B
-Gb Db You have been faithful for all that You’ve done,
-For all that You’ve done for me. Gb Db / / /
+I’ll never [Db]praise you enough or [Abm7]thank You enough
+for al[B]l that You’ve done for [Gb]me.    I am re[Db]minded
+You have been fai[Abm7]thful    for al[B]l that You’ve done,
+For a[Gb]ll that You’ve done for me[Db].
+
+{comment: Interlude}
+| Db / / / | Abm7 / / / | B / / / | Gb / / / |
+{ci: me}
+
+{comment: Verse 2}
+[Db]When I was wand-‘ring, You came and found me,
+[Ebm7]Love came and rescued me.
+[Bbm7]Through every trial, Your arms they held me.
+[Ebm7]Jesus, You’re all I nee[Absus]d.    I’ll never [Db]praise
+
+{comment: Chorus}
+{ci: Parts}
+You enough or [Abm7]thank You enough for al[Gb]l
+That You’ve done for m[Absus]e.    I am remi[Db]nded
+You have been fai[Abm7]thful    for al[B]l that You’ve done,
+For a[Gb]ll that You’ve done for me[Db].
+[Abm7]I[Gb/Bb]’[B]ll never [Db]praise
+
+{comment: Chorus}
+{ci: Parts}
+You enough or tha[Abm7]nk You enough for a[Gb]ll
+That You’ve done for m[Absus]e.    I am remi[Db]nded
+You have been fai[Abm7]thful    for al[B]l that You’ve done,
+| Gb Db / / /
 For all that You’ve done for me.
 
 {comment: Interlude}
-| Db / / / | Abm7 / / / | B / / / | Gb / / / | Interlude
-(me) Abm7 / / / | B / / / | Gb / / / |
+| Abm7 / / / | B / / / | Gb / / / |
 
-{comment: Verse 2}
-Db Bridge (2x)
-When I was wand-‘ring, You came and found me, Db Abm7 B Gb
-Ebm7 Hallelu – jah, we sing praise to Your Name.
-Love came and rescued me.
-[Bbm7]Through every trial, Your arms they held me.             Bridge
-[Ebm7]Jesus, You’re all I nee[Absus]d.      I’ll never[Db] praise                  [Db]Hallel[B/Eb]u – jah, we sing pr[B]aise
+{comment: Bridge}
+{ci: 2x}
+[Db]Hallelu[Abm7] – jah, we sing pr[B]aise  to Your N[Gb]ame.
+
+{comment: Bridge}
+[Db]Hallel[B/Eb]u – jah, we sing pr[B]aise
 {ci: Pushed}
-Gb/Eb (Eb-F-Gb-F-Eb-Bb----F) Db/Ab
-to Your Name.
+to Your N[Gb/Eb]ame.[(Eb-F-Gb-F-Eb-Bb-F)][Db/Ab]
 
-{comment: Bridge Ending}
-(Db/Ab) Abm7 B Gb Db Abm7 B
-Hallelu – jah, we sing praise for me. For all that You’ve done,
-for al[Gb]l that You’ve done for me[Db].[Abm7]
-Chorus (Flipped Parts) B Gb Db
-{ci: Rit…… for me. For me}
-I’ll neve[Db]r praise you You enough
-or tha[Abm7]nk You enough for al[Gb]l
-That You’ve done for [Ebm7]me.[Db/F]           [Gb]I am r[Db]eminded
-You have been fait[Abm7]hful     for a[B]ll that You’ve done,
+{comment: Bridge}
+[(Db/Ab)]Hall[Abm7]elu – jah, we sing p[B]raise[Gb]
+
+{comment: Chorus}
+{ci: Flipped Parts}
+{ci: Rit……}
+I’ll never [Db]praise you You enough
+or tha[Abm7]nk You enough for a[Gb]ll
+That You’ve done for [Ebm7]me.[Db/F]    [Gb]I am re[Db]minded
+You have been fai[Abm7]thful    for al[B]l that You’ve done,
 For a[Gb]ll that You’ve done
+
+{comment: Ending}
+for [Db]me.[Abm7]    For al[B]l that You’ve done,
+for all[Gb] that You’ve done for me[Db].[Abm7]
+for me[B].[Gb]    For [Db]me

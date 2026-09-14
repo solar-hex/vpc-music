@@ -12,44 +12,51 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/how-majestic/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/how-majestic/charts/vocals.pdf}
 
-Intro (Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Ab13(sus4) Ab13(sus4) Bb13(sus4)
-{ci: Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Eb13 Eb13 F (2x}
+{comment: Intro}
+{ci: Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C}
+[Ab13(sus4)] [Ab13(sus4)] [Bb13(sus4)]
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)] [Eb13] [Eb13] [F]
+{ci: 2x}
 
 {comment: Verse}
-[Bb]Oh L[C]ord our L[F/C]ord oh L[Bb]ord our L[F]ord oh [C/E]Lord our[F/Eb] Lord
+[Bb]Oh L[C]ord our [F/C]Lord oh L[Bb]ord our L[F]ord oh [C/E]Lord our[F/Eb] Lord
 
 {comment: Chorus}
-How ma[C/G]jestic[F/A]    How exc[C/Bb]ellen[Dm7]t
-C/G F/A C/Bb Ddim C7/E Fm6 /D C/G F/G
-How glorious how wonderful how majestic is Thy name
-To verse (Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Ab13(sus4) Ab13(sus4) Bb13(sus4)
-{ci: Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) (Break}
-To bridge C (octaves) Cm7 B07 Bbm11 Eb13
+How m[C/G]ajestic[F/A]    How ex[C/Bb]cellen[Dm7]t
+How g[C/G]lorious[F/A]   how wo[C/Bb]nderful[Ddim] [C7/E]    [Fm6]how [/D]ma[C/G]jestic[F/G] is Thy name
+{ci: To verse}
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)] [Ab13(sus4)] [Ab13(sus4)] [Bb13(sus4)]
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)]
+{ci: Break}
+{ci: To bridge}
+{ci: octaves}
+[C] [Cm7] [B07] [Bbm11] [Eb13]
 
 {comment: Bridge}
-[Cm7]I[B07]n  [Bbm11]all    [Eb13]the  [Ab]ea –[Bb2] rth how exce[C2]llent[Cm7]      [B07]in[Bbm11]   all    [Eb13]the  [Ab]ea –[Bb2] rth how g[C2]lorious
+[Cm7]I[B07]n  [Bbm11]all    [Eb13]the  [Ab]ea –[Bb2] rth how exc[C2]ellent[Cm7]    [B07]in[Bbm11]   all    [Eb13]the  [Ab]ea –[Bb2] rth how g[C2]lorious
 {ci: G7#5#9 if going to vamp}
-Cm7 B07 Bbm11 Eb13 Ab Bb2 C2/E Ddim C/E Fm6 /D C/G F/G C
-In all the ea – rth how wonderful how majestic is Thy name
-To Vamp: (Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Ab13(sus4) Ab13(sus4) Bb13(sus4)
-(Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Eb13 Eb13 F
-{ci: Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) Ab13(sus4) Ab13(sus4) Bb13(sus4}
-{ci: Bb-B-C-Eb-C Bb-A F-Gb-G-Eb-C) (Break}
+[Cm7]I[B07]n   [Bbm11]all    [Eb13]the  [Ab]ea –[Bb2] rth how[C2/E] wond[Ddim]erful[C/E]    [Fm6]how [/D]ma[C/G]jestic[F/G]  is Thy [C]name
+{ci: To Vamp}
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)] [Ab13(sus4)] [Ab13(sus4)] [Bb13(sus4)]
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)] [Eb13] [Eb13] [F]
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)] [Ab13(sus4)] [Ab13(sus4)] [Bb13(sus4)]
+[(Bb-B-C-Eb-C-Bb-A-F-Gb-G-Eb-C)]
+{ci: Break}
 
 {comment: Vamp}
-[C]Exc[E7(#5#9)]ellent   [Bb]is  T[F]hy n[C]ame  [C]Glo[E7(#5#9)]rious   [Bb]is  [F]Thy n[C]ame [C]won[E7(#5#9)]derful [Bb]is [F]Thy [C]name
-[Fm9]In all the[Fm7] ea –[Gm7] rth
-[C]Exc[E7(#5#9)]ellent   [Bb]is  T[F]hy n[C]ame  [C]Glo[E7(#5#9)]rious   [Bb]is  [F]Thy n[C]ame [C]won[E7(#5#9)]derful [Bb]is [F]Thy [C]name
-Fm9 A7(#5#9) D7(#5#9) (key change to Db)
+[C]Exc[E7(#5#9)]ellent   [Bb]is  T[F]hy n[C]ame  [C]Glo[E7(#5#9)]rious   [Bb]is  [F]Thy n[C]ame[C] wo[E7(#5#9)]nderful [Bb]is T[F]hy n[C]ame
+[Fm9]In all the[Fm7] ea [Gm7]– rth
+[C]Exc[E7(#5#9)]ellent   [Bb]is  T[F]hy n[C]ame  [C]Glo[E7(#5#9)]rious   [Bb]is  [F]Thy n[C]ame[C] wo[E7(#5#9)]nderful [Bb]is T[F]hy n[C]ame
+[Fm9]In all th[A7(#5#9)]e ea – r[D7(#5#9)]th
+{ci: key change to Db}
+[Db]Exc[F7(#5#9)]ellent  [B]is  [Gb]Thy n[Db]ame  [Db]Glo[F7(#5#9)]rious   [B]is [Gb]Thy n[Db]ame  [Db]wo[F7(#5#9)]nderful  [B]is[Gb] Thy [Db]name
+Gbm7 Bb7(#9#11) Eb7(#5#9) Ab13 A13
+{ci: key change to D}
 In all the ea – rth
-[Db]Exce[F7(#5#9)]llent  [B]is  [Gb]Thy [Db]name  [Db]Glor[F7(#5#9)]ious   [B]is[Gb] Thy [Db]name  [Db]won[F7(#5#9)]derful  [B]is[Gb] Thy[Db] name
-Gbm7 Bb7(#9#11) Eb7(#5#9) Ab13 A13(key change to D)
-In all the ea – rth
-[D]Exc[F#7(#5#9)]ellent   [C]is  T[G]hy n[D]ame  [D]Glo[F#7(#5#9)]rious    [C]is [G]Thy [D]name  [D]wond[F#7(#5#9)]erful   [C]is [G]Thy [D]name
+[D]Exc[F#7(#5#9)]ellent   [C]is  T[G]hy n[D]ame  [D]Glo[F#7(#5#9)]rious    [C]is [G]Thy n[D]ame  [D]won[F#7(#5#9)]derful   [C]is [G]Thy n[D]ame
 [Gm9]In all the ea[C9] – rth
-[D]Je -[F#7(#5#9)] sus     [C]is[G] Thy [D]name  [D]Je -[F#7(#5#9)] sus     [C]is [G]Thy [D]name  [D]Je -[F#7(#5#9)] sus     [C]is [G]Thy [D]name
+[D]Je -[F#7(#5#9)] sus    [C]is [G]Thy n[D]ame  [D]Je -[F#7(#5#9)] sus    [C]is T[G]hy n[D]ame  [D]Je -[F#7(#5#9)] sus    [C]is T[G]hy n[D]ame
 [Gm9]In all the ea[C9] – rth
 
 {comment: Ending}
-D/A G/B D/C Em7(b5) D/F# Gm6 /E D/A G/A C#9-D9
-How majestic how majestic how majestic is Thy is Thy name
+How m[D/A]ajesti[G/B]c  how m[D/C]ajesti[Em7(b5)]c    [D/F#]h[Gm6]ow [/E]maje[D/A]stic    [G/A]is Thy  is Thy nam[C#9-D9]e

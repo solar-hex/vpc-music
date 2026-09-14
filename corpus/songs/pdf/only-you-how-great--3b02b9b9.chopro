@@ -3,6 +3,7 @@
 {key: E}
 {tempo: 72}
 {time: 4/4}
+{x_verified: number chart, 98% of 124 chords}
 {x_theme: healing, grace-mercy}
 {x_source: pdf:UPCI Music/Only You/Only You (How Great)- Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FHow%20Great}
@@ -28,58 +29,71 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-you/charts/vocals.pdf}
 {x_album: Revival}
 
-{comment: Intro Chorus}
-{ci: Flipped Parts}
-E / / / | B/E E A / |
+{comment: Intro}
+| E / / / | B/E E A / |
 
-{comment: Bridge 1}
-{ci: Solo}
-Verse 1 C#m7 B
-E B/D# The only one that can save
-I’ve been searching all my life for something E/G# A E
-E A C#m7 B/D# E A The only one that can heal
-that would satisfy B/D# C#m7 B E/G# A E
-E B/D# E A The only one that can deliver
-But all that I have left was only emptiness until B/D# C#m7 B
-C#m7 A B A B The only one that can restore,
-You, till I found You E/G# A E
-Bring the dead to life one more,
-Chorus (Unison)                                      The [B/D#]only  [C#m7]one      [B]who r[E/G#]eigns fore[A]ve[E]r[B/D#]
+{comment: Verse 1}
+[E]I’ve been searching all my life[B/D#] for something
+[E]that woul[A]d sat[C#m7]isfy[B/D#][E][A]
+But [E]all that I have left was [B/D#]only  e[E]mptine[A]ss until
+[C#m7]You,  till I found [A]You[B][A][B]
+
+{comment: Chorus}
+{ci: Unison}
 [A]Only You can satisfy,  [B]only You can
-C#m7 A Bridge 1 (Parts)
-heal the broken life. No-one else C#m7 B
-B The only one that can save
-can take my shame, erase my past and change my E/G# A E
-C#m7 A The only one that can heal
-name, only you B/D# C#m7 B E/G# A E
-The only one that can deliver
-Interlude                                             The [B/D#]only   [C#m7]one that can re[B]store,
-E / / / | B/E E A / | E/G# A E
-Bring the dead to life one more,
-Verse 2                                              The [B/D#]only  [C#m7]one      [B]who r[E/G#]eigns fore[A]ve[E]r
+heal the broken[C#m7]    life[A].    No-one else
+can take my shame, [B]erase my past and change my
+na[C#m7]me,   only  yo[A]u
+
+{comment: Interlude}
+| E / / / | B/E E A / |
+
+{comment: Verse 2}
 Who l[E]ifted me when I was down,
-B/D# E Vamp 1
-who searched for me ‘til B/D# C#m7
-A C#m7 B/D# A No - body but Je - sus,
-I was found. B E/G# A E
-E no - body but Je – sus.
-Who rearranged my destiny, B/D# C#m7
-B/D# E A C#m7 No - body but Je - sus, E
-whose grace and mercy follows me, B E/G# A
-A B A B no - body but Je – sus.
-Jesus, You, only You.
+who s[B/D#]earched for m[E]e ‘til
+I[A] was f[C#m7]ound.[B/D#][A]
+Who re[E]arranged my destiny,
+whose [B/D#]grace and [E]mercy [A]follows [C#m7]me,
+Jesus, Yo[A]u,[B]    only You[A].[B]
 
 {comment: Chorus}
 {ci: Parts}
 
+{comment: Chorus}
+{ci: Flipped Parts}
+
+{comment: Bridge 1}
+{ci: Solo}
+The only[C#m7] one that can s[B]ave
+The o[E/G#]nly   o[A]ne that can h[E]eal
+The o[B/D#]nly   [C#m7]one    [B]that[E/G#] can de[A]liver[E]
+The[B/D#] only   [C#m7]one that can re[B]store,
+[E/G#]Bring the [A]dead to life one [E]more,
+The[B/D#] only[C#m7]  one    [B]who r[E/G#]eigns fore[A]ver[E][B/D#]
+
+{comment: Bridge 1}
+{ci: Parts}
+The only[C#m7] one that can s[B]ave
+The o[E/G#]nly   o[A]ne that can h[E]eal
+The o[B/D#]nly   [C#m7]one    [B]that[E/G#] can de[A]liver[E]
+The[B/D#] only   [C#m7]one that can re[B]store,
+[E/G#]Bring the [A]dead to life one [E]more,
+The[B/D#] only[C#m7]  one    [B]who r[E/G#]eigns fore[A]ver[E]
+
+{comment: Vamp 1}
+No -[B/D#] body but J[C#m7]e - sus,
+[B]no - [E/G#]body but Je[A] – sus[E].
+No -[B/D#] body but J[C#m7]e - sus,   E
+[B]no - [E/G#]body but Je[A] – sus.
+
 {comment: Bridge 2}
 [E]N[B/D#]o-one els[C#m7]e can take my shame,
-[B]eras[E/G#]e my past[A] and
-change my name[E]    No[B/D#]body but J[C#m7]e-sus
-[B]nob[E/G#]ody but Je[A] – sus.
+[B]eras[E/G#]e my pas[A]t and
+change my name[E]    N[B/D#]obody but J[C#m7]e-sus
+[B]no[E/G#]body but Je[A] – sus.
 [E]No[B/D#]body but
 
 {comment: Vamp 2}
-Je[C#m7] – sus,[B]     No[E/G#]body but Je[A] – sus
+Je[C#m7] – sus,[B]    No[E/G#]body but Je[A] – sus
 [E]N[B/D#]obody but Je [C#m7]– sus
-[B]No[E/G#]body but Je – [A]su[E]s[B/D#][E]
+[B]N[E/G#]obody but Je – [A]sus[E][B/D#][E]

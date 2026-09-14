@@ -2,7 +2,7 @@
 {key: Eb}
 {tempo: 49}
 {time: 4/4}
-{x_verified: number chart, 100% of 11 chords}
+{x_verified: number chart, 97% of 30 chords}
 {x_source: pdf:UPCI Music/2019/Excellent/Excellent-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2019%2FExcellent}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/excellent/audio/alto.mp3}
@@ -15,36 +15,46 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/excellent/charts/vocals.pdf}
 {x_album: Jesus is Born}
 
-{comment: Intro Bridge}
-{ci: tenors and altos}
-| / / Ab/Bb Bb | Fm/Eb Eb F/Eb Abm/Eb | Eb/Db Ab/C F/A
-Earth, in all the earth in all the earth
-| Eb Bb/C C7(b9) F13 F7(b13) Ab/Bb Bb7(b9) | Abm6 Eb/G Abm6
-Oh,_________ In all the earth, Je - sus,
-[Eb/Bb] [Eb/G] [Bb/C] [C7(#9#5)]
-[Chorus]Eb   F/Eb Bb/D                                      [Bmaj7]is___[Fm11]____[C7(alt)]_____[Fm11]_____[Ab/Bb]_______[Bb]__
-Lord, how excellent, how Bb/Eb Eb (cut)
-Eb/Db Edim7 Abm6/F Eb/G Thy name. In all the
-excellent, how ex - cel - lent,
-Abm6 Eb/Bb /Ab Bb/G Bb/C C7(b9)
-how ex - cel - lent Bridge (everyone)
-[Fm11]is___[C7(#9#5)]_______[Fm11]_____[Ab/Bb]_______[Bb]_                          [Eb/Db]Earth,   in all the[Ab/C] earth  [C7(#9#5)]in      [B7(#9#5)]all      [Bb7(#9#5)]the
-Thy[Bb/Eb] name.[Eb] [F/Eb] [Abm/Eb]                                          [F/Eb]earth in all the [Abm6]earth,[Eb/G]  Je - [Abm6]sus,
-| Eb Gb7 F13 F7(b13) Ab/Bb Db/G |
-Oh,_______ Tag
-[Eb/Bb]Ex – cel - [Abm6]len[Eb/G]t[Bb/C][C7(#9#5)][Gb7]
-[Fm7] [Bb7(b9)] [Ebm7] [Db9] [Db/B]
+{comment: Intro}
+| / / Ab/Bb Bb | Fm/Eb Eb F/Eb Abm/Eb |
+| Eb Bb/C C7(b9) F13 F7(b13) Ab/Bb Bb7(b9) |
+Oh,_________
 
 {comment: Chorus}
-Cmaj7 C7(b9) F13 Ab/Bb Eb/G Je - sus,
-Lord,                     ho[Eb/Bb]w[Abm6][Eb/G][Bb/C][C7(#9#5)]
-Bb/D Eb/Db Ex – cel - lent
-Dbmaj9 Eb (cut)
-excellent, how excellent,
-Edim7 Abm6/F Eb/G Abm6 Jesus
-how   ex - cel - lent         ho[Eb/Bb]w[Eb/G][Bb/C][C7(b9)]
-Eb/Bb Eb/G Csus9 C7(b9) excellent
-Fm11 C7(#9#5) Fm11 Ab/Bb Bb                         [Dbmaj9]is____[C7(alt)]_____[Fm11]____[Ab/Bb]_______[Fm/Bb]______
-is______________________[Fm9]_[Bb7][Eb]
-Bb/Eb Eb (cut) Thy name
-Thy name. In all the
+[Eb]Lord, [F/Eb]how  [Bb/D]excellent, how
+[Eb/Db]excellent, how [Edim7]ex  -  cel[Abm6/F] - lent,[Eb/G]
+[Abm6]how   [Eb/Bb]ex - cel - l[/Ab]ent[Bb/G][Bb/C][C7(b9)]
+[Fm11]is____[C7(#9#5)]______[Fm11]_____[Ab/Bb]______[Bb]__
+Thy[Bb/Eb] name.[Eb][F/Eb][Abm/Eb]
+| Eb Gb7 F13 F7(b13) Ab/Bb Db/G |
+Oh,_______
+
+{comment: Chorus}
+[Cmaj7]Lord,[C7(b9)] [F13] [Ab/Bb]    [Eb/G]how
+[Bb/D]excellent, how [Eb/Db]excellent,
+how   [Edim7]ex - cel[Abm6/F] - lent[Eb/G]    [Abm6]how
+[Eb/Bb]excellen[Eb/G]t[Csus9][C7(b9)]
+[Fm11]is____[C7(#9#5)]______[Fm11]_____[Ab/Bb]______[Bb]__
+Thy[Bb/Eb] name.[Eb(cut)]    In all the
+
+{comment: Bridge}
+{ci: tenors and altos}
+[Eb/Db]Earth,   in all the[Ab/C] earth  in all the[F/A] earth
+[Abm6]In all the earth[Eb/G], Je - [Abm6]sus,
+[Eb/Bb]excellent[Eb/G][Bb/C][C7(#9#5)]
+[Bmaj7]is___[Fm11]_____[C7(alt)]_____[Fm11]____[Ab/Bb]______[Bb]___
+Thy[Bb/Eb] name.[Eb(cut)]    In all the
+
+{comment: Bridge}
+{ci: everyone}
+[Eb/Db]Earth,   in all the[Ab/C] earth  i[C7(#9#5)]n    [B7(#9#5)]all    [Bb7(#9#5)]the
+[F/Eb]earth in all the [Abm6]earth,[Eb/G]  Je - [Abm6]sus,
+
+{comment: Tag}
+[Eb/Bb]Ex – cel - l[Abm6]ent[Eb/G][Bb/C][C7(#9#5)][Gb7]
+[Fm7]J[Bb7(b9)]e[Ebm7] [Db9]- [Db/B]sus,
+[Eb/Bb]Ex – cel - l[Abm6]ent[Eb/G][Bb/C][C7(#9#5)]
+[Dbmaj9]J[Eb(cut)]esus
+[Eb/Bb]excellen[Eb/G]t[Bb/C][C7(b9)]
+[Dbmaj9]is____[C7(alt)]_____[Fm11]_____[Ab/Bb]______[Fm/Bb]______
+Thy name[Fm9][Bb7][Eb]

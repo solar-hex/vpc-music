@@ -183,7 +183,9 @@
       "songId": "f495072c-caaa-5c2f-af4b-9663d12a0474",
       "confidence": 0.8,
       "band": "medium",
-      "warnings": [],
+      "warnings": [
+        "1 section(s) reference another section rather than repeating it"
+      ],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -975,11 +977,9 @@
       "type": "pdf",
       "decision": "song",
       "songId": "a4cac43f-0fd2-582e-ae13-6193f127419d",
-      "confidence": 0.55,
-      "band": "low",
-      "warnings": [
-        "No sections detected"
-      ],
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -1243,11 +1243,9 @@
       "type": "pdf",
       "decision": "song",
       "songId": "707c06b0-03c1-5ddc-81dc-c4cd3a069cfc",
-      "confidence": 0.55,
-      "band": "low",
-      "warnings": [
-        "No sections detected"
-      ],
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -2351,11 +2349,9 @@
       "type": "pdf",
       "decision": "song",
       "songId": "1f39cd87-3b59-53c1-ad15-d005378717c7",
-      "confidence": 0.45,
-      "band": "low",
-      "warnings": [
-        "No chords found in the extracted text"
-      ],
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -2481,7 +2477,9 @@
       "songId": "cf74a8e9-260b-5b2e-933b-da7049ef4393",
       "confidence": 0.8,
       "band": "medium",
-      "warnings": [],
+      "warnings": [
+        "1 section(s) reference another section rather than repeating it"
+      ],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -2537,7 +2535,9 @@
       "songId": "fd3baa04-f184-578e-981c-8c82da73e73e",
       "confidence": 0.8,
       "band": "medium",
-      "warnings": [],
+      "warnings": [
+        "1 section(s) reference another section rather than repeating it"
+      ],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -2777,7 +2777,9 @@
       "songId": "c96b9b1f-052c-5032-885e-4251c2f7730c",
       "confidence": 0.8,
       "band": "medium",
-      "warnings": [],
+      "warnings": [
+        "1 section(s) reference another section rather than repeating it"
+      ],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -3663,7 +3665,9 @@
       "songId": "fccc3080-2055-5df3-b1e9-305a9e840435",
       "confidence": 0.8,
       "band": "medium",
-      "warnings": [],
+      "warnings": [
+        "1 section(s) reference another section rather than repeating it"
+      ],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -3675,11 +3679,9 @@
       "type": "pdf",
       "decision": "song",
       "songId": "cddb58bc-55ca-5dbf-b964-3f7edc2c4267",
-      "confidence": 0.55,
-      "band": "low",
-      "warnings": [
-        "No sections detected"
-      ],
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },

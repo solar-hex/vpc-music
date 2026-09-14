@@ -18,63 +18,90 @@
 {x_album: Live In London}
 {x_writers: Seth Worthen}
 
-Intro (bass only) Verse 2
-| /C / / / | / / / / | / / / / | / / / / | Db Cbmaj7/Db
-Enter his gates with thanksgiving
-Intro Gb Db
-| C / / / | Bb/C / / / | Abmaj7/C / / / | Enter his courts with praise
-| Bbmaj7/C / / / | C / / / | Bbmaj7 / / / | Bbm7 Cbmaj7
-| Abmaj7 / / / | Bbmaj7 / F / | Be thankful for all that He has done
-Verse 1                                             [Ebm7]And bless His [Ab]holy [Db]name
-C Bbmaj7/C Verse 3 (2x)
-Enter his gates with thanksgiving D Cmaj7/D
-F C Enter his gates with thanksgiving
-Enter his courts with praise G/D D C#m7 F#m7
-Am7 Bbmaj7 Enter his courts with praise
-Be thankful for all that He has done Bm7 Cmaj7
-Dm7 G C Be thankful for all that He has done
-And bless His holy name Em7 A D
-Verse 1 And bless His holy name
-[C]Enter his gates with t[Bbmaj7/C]hanksgiving                       Chorus
-[F]Enter his courts with p[C]raise[Bm7] [Em7]                           For the Lord is [G]goo[A]d
-Am7 Bbmaj7 D (D-E-F#-G-F#-E)#-E)
-Be thankful for all that He has done And His mercy endureth
-[Dm7]And bless His [G]holy [C]name                              His [G]goodness and [D/F#]kindness
-Chorus                                             Is [Bbdim7]for   -   [Bm7]eve[Cmaj7]r
-For the Lord is [F]good   [G]and His mercy end[C]ureth          Bridge (4x)
-[C/E]His [F]goodness and [C/E]kindness                          [D]He’s good[Cmaj7/D]        and His mercy
-Is [Abdim7]for   -   e[Am7]ver,[Bbmaj7]          give Him p[C]raise                 [G/D]Endureth[D]   forever
+{comment: Intro}
+{ci: bass only}
+| /C / / / | / / / / | / / / / | / / / / |
 
-{comment: Interlude Bridge}
-| (C) / / / | Bbmaj7/C / / / | Eb Dbmaj7/Eb
-| Db / / / | Db/Ab / Cb/Gb / | He’s good and His mercy
-Verse 2                                                   [Ab/Db]Endureth[Eb]   forever
-[Db]Enter his gates with th[Cbmaj7/Db]anksgiving                         [Cm7]He’s good[Bbm9]       and His mercy
-Gb Db Cm7 Fm7 Db (Gb-F-Eb-Bb-Ab-Gb-Gb-F-Eb-C-Bb)
-Enter his courts with praise Endureth forever
-Bbm7 Cb2/Eb Interlude
-Be thankful for all that He has done | Ebm / / / | Gb7 / / / | Ab7 / / / | F+7#9 / Bb7 |
-Ebm7 Ab Db | Ebm / / / | Gb7/Db / / / | Ab7/C / / / | F+7#9 / Bb7 |
-And bless His holy name
+{comment: Intro}
+| C / / / | Bb/C / / / | Abmaj7/C / / / |
+| Bbmaj7/C / / / | C / / / | Bbmaj7 / / / |
+| Abmaj7 / / / | Bbmaj7 / F / |
+
+{comment: Verse 1}
+[C]Enter his gates with th[Bbmaj7/C]anksgiving
+[F]Enter his courts with pr[C]aise
+[Am7]Be thankful for all that H[Bbmaj7]e has done
+[Dm7]And bless His [G]holy n[C]ame
+
+{comment: Verse 1}
+[C]Enter his gates with th[Bbmaj7/C]anksgiving
+[F]Enter his courts with pr[C]aise[Bm7][Em7]
+[Am7]Be thankful for all that H[Bbmaj7]e has done
+[Dm7]And bless His [G]holy n[C]ame
+
+{comment: Chorus}
+For the Lord is g[F]ood   [G]and His mercy end[C]ureth
+[C/E]His [F]goodness and[C/E] kindness
+Is [Abdim7]for   -   [Am7]ever,[Bbmaj7]    give Him [C]praise
+
+{comment: Interlude}
+| (C) / / / | Bbmaj7/C / / / |
+| Db / / / | Db/Ab / Cb/Gb / |
+
+{comment: Verse 2}
+[Db]Enter his gates with tha[Cbmaj7/Db]nksgiving
+[Gb]Enter his courts with pra[Db]ise[Cm7][Fm7]
+[Bbm7]Be thankful for all that He [Cb2/Eb]has done
+[Ebm7]And bless His h[Ab]oly n[Db]ame
+
+{comment: Verse 2}
+[Db]Enter his gates with tha[Cbmaj7/Db]nksgiving
+[Gb]Enter his courts with pra[Db]ise
+[Bbm7]Be thankful for all that He [Cbmaj7]has done
+[Ebm7]And bless His [Ab]holy n[Db]ame
+
+{comment: Verse 3}
+{ci: 2x}
+[D]Enter his gates with th[Cmaj7/D]anksgiving
+[G/D]Enter his courts with pra[D]ise[C#m7][F#m7]
+[Bm7]Be thankful for all that He[Cmaj7] has done
+[Em7]And bless His [A]holy [D]name
+
+{comment: Chorus}
+For the Lord is g[G]ood[A]
+And His mercy en[D]dureth[(D-E-F#-G-F#-E)#-E)]
+His [G]goodness and [D/F#]kindness
+Is [Bbdim7]for   -   [Bm7]ever[Cmaj7]
+
+{comment: Bridge}
+{ci: 4x}
+[D]He’s good[Cmaj7/D]    and His mercy
+[G/D]Endureth[D]   forever
+
+{comment: Bridge}
+[Eb]He’s good[Dbmaj7/Eb]    and His mercy
+[Ab/Db]Endureth[Eb]   forever
+[Cm7]He’s good[Bbm9]    and His mercy
+[Db]Endure[(Gb-F-Eb-Bb-Ab-Gb-Gb-F-Eb-C-Bb)]th forever
+
+{comment: Interlude}
+| Ebm / / / | Gb7 / / / | Ab7 / / / | F+7#9 / Bb7 |
+| Ebm / / / | Gb7/Db / / / | Ab7/C / / / | F+7#9 / Bb7 |
 UPCI Music 1
 
 {comment: Vamp}
 {ci: 2x}
-[Ebm]He is good,[Gb7]    He[Ab7] is goo[F+7#9]d[Bb7]
-The [Ebm]Lord’s been go[Gb7/Db]od       [Ab7/C]He is goo[F+7#9]d[Bb7]
+[Ebm]He is good,[Gb7]    H[Ab7]e is goo[F+7#9]d[Bb7]
+The [Ebm]Lord’s been go[Gb7/Db]od    [Ab7/C]He is goo[F+7#9]d[Bb7]
 
 {comment: Vamp}
 {ci: cut}
 [Ebm]He is good, He is good
-The Lord’s been good, He is goo[F+7#9]d[Bb7]
+The Lord’s been good, He is good[F+7#9][Bb7]
 
 {comment: Ending}
-Bb Bº7 Dº7 Ebm
-He is good
-Fº7 Bm6/Gb Fº7 Bb
-He is good
-B Cº
-The Lord’s been good
-Dº7 Fº7 Bb Ebm Bmaj7
-He is good
+[Bb]He is [B°7]goo[D°7]d[Ebm]
+H[F°7]e is g[Bm6/Gb]ood[F°7][Bb]
+The [B]Lord’s been g[C°]ood
+[D°7]He is [F°7]goo[Bb]d[Ebm][Bmaj7]
 UPCI Music 2

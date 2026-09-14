@@ -2,7 +2,7 @@
 {key: Eb}
 {tempo: 118}
 {time: 4/4}
-{x_verified: number chart, 82% of 22 chords}
+{x_verified: number chart, 100% of 52 chords}
 {x_source: pdf:UPCI Music/2024/How Great/How-Great-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FHow%20Great}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/how-great/audio/alto.m4a}
@@ -23,50 +23,69 @@
 {x_album: How Great (Single)}
 {x_writers: Hoku Racoma, Micah Pollock, Brandon Marin}
 
-Intro (2x) Chorus
-Guitars riffing Ebmaj7 Bbm11 Dbmaj7 Abmaj7
-| Eb7 / / / | / / / / | / / / / | / / / / | How great You are, how great You are
-Eb/G Fm7 Bbm7 (F-G-Ab-Bb-C-F)
-Verse 1 Every generation will sing
-Our sa[Eb5]crifices we bring[Bbm7]                                How gr[Dbmaj7]eat You a[Abmaj9]re
-To You,[Db]    our Ki[Ab]ng                                  Interlude (2x)
-Eb5 Bbm7 |
-You alone are highly exalted (Gb-Ab-Bb-Ab-Gb)| (Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)|
-Db Ab | (Gb-Ab-Bb-Ab-Gb)| Db / Ab/C / |
-Over everything
+{comment: Intro}
+{ci: 2x, Guitars riffing}
+| Eb7 / / / | / / / / | / / / / | / / / / |
+
+{comment: Verse 1}
+Our s[Eb5]acrifices we bring[Bbm7]
+To You,[Db]    our Kin[Ab]g
+You [Eb5]alone are highly exalte[Bbm7]d
+Ove[Db]r  everyth[Ab]ing
+
+{comment: Pre Chorus 1}
+[Fm9]And with one voice we decla[Eb2/G]re, our God
+None can com[Ab]pare, He’s eve[Dbmaj9]rlasting
+
+{comment: Chorus}
+How [Ebmaj7]great You are[Bbm11],    how[Dbmaj7] great You a[Abmaj7]re
+[Ebmaj7]Every generation will si[Bbm11]ng    h[Dbmaj7]ow great Y[Abmaj9]ou are
+
+{comment: Interlude}
+{ci: Guitars riffing}
+| Eb7 / / / | / / / / | / / / / | / / / / |
+
+{comment: Verse 2}
+All of [Eb5]the earth is the Lord[Bbm7]’s
+It all[Db]    belongs to You[Ab]
+Y[Gm]ou al[Fm7]one b[Bb2/D]rought li[Ab2/C]ght into dark[Bbm7]ness
+And make[Db]   all things ne[Ab]w[Cm9]
+
+{comment: Pre Chorus 2}
+[Fm9]And with one voice we decla[Eb2/G]re, our God
+None can com[Ab]pare, He’s eve[Dbmaj9]rlasting, oh
+
+{comment: Chorus}
+How [Ebmaj7]great You are[Bbm11],    how[Dbmaj7] great You a[Abmaj7]re
+[Eb/G]Every generation wi[Fm7]ll sing[Bbm7][(F-G-Ab-Bb-C-F)]
+How g[Dbmaj7]reat You a[Abmaj9]re
+
+{comment: Interlude}
+{ci: 2x}
+| (Gb-Ab-Bb-Ab-Gb)| (Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)|
+| (Gb-Ab-Bb-Ab-Gb)| Db / Ab/C / |
 
 {comment: Bridge}
 {ci: 4x}
-Pre Chorus 1 Ebm
-Fm9 Eb2/G Great is the Lord and greatly to be praised
-And with one voice we declare, our God Db Ab/C
-Ab Dbmaj9 Greatly, greatly to be praised
-None can compare, He’s everlasting
+[Ebm]Great is the Lord and greatly to be praised
+Greatly, gre[Db]atly to b[Ab/C]e praised
 
 {comment: Interlude}
 
-{comment: Chorus}
-Ebmaj7 Bbm11 Dbmaj7 Abmaj7 Vamp 1
-How great You are, how great You are (Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)
-Ebmaj7 Bbm11 Dbmaj7 Abmaj9 Great is the Lord
-Every generation will sing how great You are (Gb-Ab-Bb-Ab-Gb) Db Ab/C
-Great is the Lord
-Interlude Guitars riffing (Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)
-| Eb7 / / / | / / / / | / / / / | / / / / | Great is the Lord
-(Gb-Ab-Bb-Ab-Gb) Db Ab/C
-Verse 2 Great is the Lord and greatly to be praised
-All of[Eb5] the earth is the Lord[Bbm7]’s                            Vamp 2
-It all[Db]    belongs to You[Ab]                               [Ebm7]Great is the Lord,[Gb7]      [Ab]great is the Lor[Db]d[Ab/C]
-Yo[Gm]u al[Fm7]one br[Bb2/D]ought li[Ab2/C]ght into dar[Bbm7]kness                    [Ebm7]Great is the Lord,[Gb7]      [Cm7(b5)]great is the Lord
-And make[Db]   all things n[Ab]ew[Cm9]                            And g[Db]reatly[Ab] to be praised
+{comment: Vamp 1}
+Great [(Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)]is the Lord
+Great is[(Gb-Ab-Bb-Ab-Gb)] the Lord[Db][Ab/C]
+Great [(Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)]is the Lord
+Great is[(Gb-Ab-Bb-Ab-Gb)] the Lord   and [Db]greatl[Ab/C]y to be praised
 
-{comment: Pre Chorus 2 Vamp 1}
-Fm9 Eb2/G (Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)
-And with one voice we declare, our God Great is the Lord
-Ab Dbmaj9 (Gb-Ab-Bb-Ab-Gb) Db Ab/C
-None can compare, He’s everlasting, oh Great is the Lord
-{ci: Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb}
-Chorus Great is the Lord
-(Gb-Ab-Bb-Ab-Gb) Db Ab7 Eb
-Great is the Lord and greatly to be praised
+{comment: Vamp 2}
+[Ebm7]Great is the Lord,[Gb7]    [Ab]great is the Lord[Db][Ab/C]
+[Ebm7]Great is the Lord,[Gb7]    [Cm7(b5)]great is the Lord
+And [Db]greatly[Ab] to be praised
+
+{comment: Vamp 1}
+Great [(Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)]is the Lord
+Great is[(Gb-Ab-Bb-Ab-Gb)] the Lord[Db][Ab/C]
+Great [(Gb-Ab-Bb-Ab-Gb-Gb-Ab-Bb-Ab-Gb-Ab-Gb-Eb-Db-Eb)]is the Lord
+Great is[(Gb-Ab-Bb-Ab-Gb)] the Lord   and [Db]greatl[Ab7]y to be pr[Eb]aised
 UPCI Music 1

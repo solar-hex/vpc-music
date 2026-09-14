@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 103}
 {time: 4/4}
-{x_verified: number chart, 97% of 30 chords}
+{x_verified: number chart, 96% of 57 chords}
 {x_theme: healing, name-of-jesus, victory}
 {x_source: pdf:UPCI Music/Your Great Name/Your Great Name - Chord Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2FYour%20Great%20Name}
@@ -17,45 +17,62 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/your-great-name/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/your-great-name/charts/vocals.pdf}
 
-Intro | G5(no3rd) (pad) / / / | F5(no3rd) / / / | Bb5(no3rd) / / / |
-| Bb5(no3rd) / / (G-A) |
-Verse – (1x solo, 2x unison) Vamp 1 - (unison)
-Gm7 Bb2 Cm7 (F) Gm7 (Bb) Eb (F) Bb
-We love to call Your name When I call Your Name When I call Your Name
-Ebmaj7 Gm7 (F) Gm7 (Bb) Eb (F) Bb
-It’s something we cannot explain When I call Your Name When I call Your Name
-[Gm7]That happ[Bb2]ens when we proc[Cm7]laim
-Ebmaj7 Vamp 2
-Your great Name Your great Name (F) Gm7 (Bb) Eb (F) Bb/D (C) Bb
-Demons tremble at the Name When I call Your Name
-(A) Gm7 (F) Eb
-Chorus I feel much stronger when I call You
-[Eb2]King[Bb2]     Jesus    [F]No oth[Gm]er   n[Eb2]ame                         When I [Cm7]call  Y[Gm7]our   N[F]am[Bb/D]e
+{comment: Intro}
+{ci: no3rd}
+{ci: pad}
+{ci: no3rd}
+{ci: no3rd}
+| G5 / / / | F5 / / / | Bb5 / / / |
+{ci: no3rd}
+| Bb5 / / (G-A) |
+
+{comment: Verse}
+{ci: 1x solo, 2x unison}
+[Gm7]We love [Bb2]to   call Your na[Cm7]me
+It’s somet[Ebmaj7]hing we cannot exp[Gm7]lain
+[Gm7]That happ[Bb2]ens when we pro[Cm7]claim
+Your great [Ebmaj7]Name  Your great Name
+
+{comment: Chorus}
+[Eb2]King[Bb2]    Jesus    [F]No oth[Gm]er   n[Eb2]ame
 King[Bb2]   Jesus    N[F]one stro[Gm]nger  [Eb2]we can call [Bb2]on you
-F Gm Cm7 Eb2 Gm7 F Vamp 3
-Thing change yes when we call on your name Eb2 F/Eb Bb/Eb Ebmaj9
-I’m healed when I’m healed when When I call Your Name
-Chorus                                                      I’m s[Eb2]et free I’m set f[F/Eb]ree when      When I[Bb/Eb] call You[Ebmaj9]r Name
-I’m [Gm]Alive when I call[F/G] Your Name   When I[Gm] call You[Bb/G]r Name
-Bridge (solo) - 2x’s Gm Cm7 Gm7 F Bb/D
-Bb Yes God, Yes God When I call Your Name
-There is power in the Name of Jesus
-[Bb]Power in Your Name                                           Vamp 4 (bass notes only played on hits)
-Eb2 F/Eb (hits) Bb/Eb Ebmaj9
-I feel much better when I call When I call Your Name
-Bridge- (parts) - 2x’s Eb2 F/Eb (hits) Bb/Eb Ebmaj9
-I feel much stronger when I call When I call Your Name
-Gm F/G (hits) Gm Bb/G
-Chorus 2 –2xs I feel like blessing when I call When I call Your Name
-(F) Gm7 (Bb) Eb (F) Bb Gm Cm7 Gm7 F Bb/D
-Things change when we call you Jesus I feel my victory when I call When I call Your Name
-(F) Gm7 (Bb) Eb (F) Bb
-Things change when we call your Name
-Chorus 3 – (Parts Flipped) 2xs
-(F) Gm7 (Bb) Eb (F) Bb
-I’m free when I call You Jesus
-(F) Gm7 (Bb) Eb (F) Bb
-I’m free when I call Your Name
+[F]Thing ch[Gm]ange yes [Cm7]when we call[Eb2] on   [Gm7]your  nam[F]e
+
+{comment: Chorus}
+Bridge (solo) - 2x’s
+[Bb]There is power in the Name of Jesus
+[Bb]Power in Your Name
+Bridge- (parts) - 2x’s
+Chorus 2 –2xs
+[(F)]T[Gm7]hings[(Bb)]  cha[Eb]nge when we [(F)]call [Bb]you Jesus
+[(F)]T[Gm7]hings[(Bb)] chan[Eb]ge when we ca[(F)]ll y[Bb]our Name
+Chorus 3 – (Parts Flipped)
+{ci: 2xs}
+[(F)]I[Gm7]’m    [(Bb)]fre[Eb]e    when I  [(F)]call[Bb] You Jesus
+[(F)]I[Gm7]’m    [(Bb)]fre[Eb]e    when I  [(F)]call[Bb] Your Name
+
+{comment: Vamp 1}
+{ci: unison}
+When I[(F)] cal[Gm7]l    Your N[(Bb)]ame[Eb]  When [(F)]I ca[Bb]ll Your Name
+When I[(F)] cal[Gm7]l    Your N[(Bb)]ame[Eb]  When [(F)]I ca[Bb]ll Your Name
+
+{comment: Vamp 2}
+Demon[(F)]s tr[Gm7]emble at the[(Bb)] Na[Eb]me  When I[(F)] cal[Bb/D]l Your[(C)]  N[Bb]ame
+I feel much[(A)] stro[Gm7]nger when I c[(F)]all [Eb]You
+When I [Cm7]call  [Gm7]Your   N[F]ame[Bb/D]
+
+{comment: Vamp 3}
+I’m h[Eb2]ealed when I’m h[F/Eb]ealed when  When [Bb/Eb]I call You[Ebmaj9]r Name
+I’m s[Eb2]et free I’m set fre[F/Eb]e when    When [Bb/Eb]I call You[Ebmaj9]r Name
+I’m A[Gm]live when I call Y[F/G]our Name   When I[Gm] call Your [Bb/G]Name
+Yes [Gm]God, Yes God  When I [Cm7]call  [Gm7]Your  N[F]ame[Bb/D]
+
+{comment: Vamp 4}
+{ci: bass notes only played on hits}
+I feel m[Eb2]uch better w[F/Eb(hits)]hen I call    When[Bb/Eb] I call Your [Ebmaj9]Name
+I feel m[Eb2]uch stronge[F/Eb(hits)]r when I call  Whe[Bb/Eb]n I call Your [Ebmaj9]Name
+I feel lik[Gm]e blessing w[F/G(hits)]hen I call    When I c[Gm]all Your N[Bb/G]ame
+I feel my[Gm] victory when I call  When I[Cm7] call  [Gm7]Your N[F]am[Bb/D]e
 Music Interlude
 {ci: hits on beats 4-&}
 | Eb2 / F/Eb / | Bb/Eb / Ebmaj9 / |
@@ -66,11 +83,8 @@ Music Interlude
 | Gm / / / | Cm7 Gm7 F Bb/D |
 
 {comment: Ending}
-Eb2 F/Eb (hits) Bb/Eb Ebmaj9
-I feel a shifting when I call When I call Your Name
-Eb2 F/Eb (hits) Bb/Eb Ebmaj9
-I feel a breaking when I call When I call Your Name
-Gm F/G (hits) Gm Bb/G
-I feel a shifting when I call When I call Your Name
-I feel a b[Gm]reaking when I call   When I [Cm7]call  [Gm7]Your  [F]Name
-Bb/D Eb (hold)
+I feel a sh[Eb2]ifting when I[F/Eb(hits)] call    When I [Bb/Eb]call  Your[Ebmaj9] Name
+I feel a br[Eb2]eaking when[F/Eb(hits)] I call    When I [Bb/Eb]call  Your[Ebmaj9] Name
+I feel a sh[Gm]ifting when I [F/G(hits)]call    When I[Gm] call Your [Bb/G]Name
+I feel a br[Gm]eaking when I call   When I[Cm7] call  [Gm7]Your  [F]Name
+[Bb/D] [Eb(hold)]

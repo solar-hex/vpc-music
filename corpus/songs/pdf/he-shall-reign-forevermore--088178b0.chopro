@@ -3,7 +3,7 @@
 {key: Bb}
 {tempo: 122}
 {time: 4/4}
-{x_verified: number chart, 87% of 30 chords}
+{x_verified: number chart, 93% of 73 chords}
 {x_theme: christmas}
 {x_source: pdf:UPCI Music/2020/He Shall Reign Forevermore/He-Shall-Reign-Forevermore-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2020%2FHe%20Shall%20Reign%20Forevermore}
@@ -19,39 +19,57 @@
 {x_album: Adore: Christmas Songs of Worship}
 {x_writers: Chris Tomlin, Matt Maher}
 
-{comment: Intro Chorus 1}
-{ci: Parts}
-Gm / / / | Ebmaj7 / / / | Bb / / / | F / / / |
+{comment: Intro}
+| Gm / / / | Ebmaj7 / / / | Bb / / / | F / / / |
 
-{comment: Bridge 1}
-Verse 1 Gm Eb/G
-Gm Ebmaj7 Bb2 F Here within a manger lies
-In the bleak mid-winter, all creation groans Bb/F F
-Gm Eb Bb2 F The One who made the starry skies
-For a world in darkness, frozen like a stone Gm Eb/G
-This Baby born for sacrifice
-Pre Chorus 1 Bb/F F
-Cm7 Eb Bb F Christ the Mes – siah
-Light is breaking in a stable for a throne
+{comment: Verse 1}
+[Gm]In the bleak mid-[Ebmaj7]winter,   [Bb2]all creation [F]groans
+[Gm]For a world in d[Eb]arkness, [Bb2]frozen like a [F]stone
 
-{comment: Bridge 2}
-Chorus (Two Parts) Gm Eb
-Gm7 Eb2 Bb F/A In – to our hopes, in – to our fears
-And He shall reign forever – more, forever – more Bb F/A
-Gm7 Eb2 Bb F/A The Savior of the world appears
-And He shall reign forever – more, forever – more Gm Eb/G
-Gm7 Eb2 The Promise of e – ternal years
-Unto us a Child is born Bb/F F
-Bb F Christ the Mes – siah
-The King of Kings and Lord of Lords
-And [Gm7]He shall [Eb2]reign forever – [Bb]more, forever –[F/A] more         Refrain
-[Bb]He shall[Eb/Bb] reign forever –[Bb] more, forever [F/Bb]– more
-Interlude Bb/D Eb Bb/F
-Gm / / / | Ebmaj7 / / / | Bb / / / | F / / / | And He shall reign forever – more
-Forever – [F]more
+{comment: Pre Chorus 1}
+Light is [Cm7]breaking[Eb]    in a[Bb] stable for a [F]throne
+
+{comment: Chorus}
+{ci: Two Parts}
+And[Gm7] He shall [Eb2]reign forever – [Bb]more, forever – [F/A]more
+And[Gm7] He shall [Eb2]reign forever – [Bb]more, forever – [F/A]more
+[Gm7]Unto us a [Eb2]Child is born
+The [Bb]King of Kings and [F]Lord of Lords
+And[Gm7] He shall [Eb2]reign forever – [Bb]more, forever – [F/A]more
+
+{comment: Interlude}
+| Gm / / / | Ebmaj7 / / / | Bb / / / | F / / / |
 
 {comment: Verse 2}
-[Gm]If I were a[Eb] wise man, [Bb]I would travel [F/A]far                  Chorus (Flipped Parts)
-[Gm]If I were a [Eb]shepherd, [Bb]I would do my [Dm7]part                  Outro
-Pre Chorus 2                                                 [Gm]H[Eb]e shall [Bb]reig[F]n
-But poor as[Cm7] I   am[Eb]   I wil[Bb]l give Him my[F] heart            He shall [Gm]reign,[Eb]       He shall [Bb]reig[F]n[Eb]
+[Gm]If I were a [Eb]wise man,[Bb] I would travel[F/A] far
+[Gm]If I were a s[Eb]hepherd, I[Bb] would do my [Dm7]part
+
+{comment: Pre Chorus 2}
+But poor a[Cm7]s I   am[Eb]   I will [Bb]give Him my[F] heart
+
+{comment: Chorus 1}
+{ci: Parts}
+
+{comment: Bridge 1}
+[Gm]Here within a[Eb/G] manger lies
+The [Bb/F]One who made the [F]starry skies
+This [Gm]Baby born fo[Eb/G]r sacrifice
+[Bb/F]Christ the Mes – [F]siah
+
+{comment: Bridge 2}
+In –[Gm] to our hopes, in –[Eb] to our fears
+The [Bb]Savior of the [F/A]world appears
+The [Gm]Promise of e – [Eb/G]ternal years
+[Bb/F]Christ the Mes – [F]siah
+
+{comment: Refrain}
+[Bb]He shall[Eb/Bb] reign forever – [Bb]more, forever –[F/Bb] more
+An[Bb/D]d He shall [Eb]reign forever –[Bb/F] more
+Forever – [F]more
+
+{comment: Chorus}
+{ci: Flipped Parts}
+
+{comment: Outro}
+[Gm]H[Eb]e shall r[Bb]eign[F]
+He shall [Gm]reign,[Eb]    He shall r[Bb]eign[F][Eb]

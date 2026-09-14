@@ -2,7 +2,7 @@
 {key: G}
 {tempo: 86}
 {time: 4/4}
-{x_verified: number chart, 100% of 17 chords}
+{x_verified: number chart, 100% of 73 chords}
 {x_theme: praise, blood, cross, heaven}
 {x_source: pdf:UPCI Music/2024/Old Rugged Cross/Old-Rugged-Cross-Chord-Chart-.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2024%2FOld%20Rugged%20Cross}
@@ -18,50 +18,68 @@
 {x_album: Old Rugged Cross (Single)}
 {x_writers: James Simms}
 
-{comment: Verse 1 Bridge 1}
-On a hill far [G]away stood an[Em7] old r[C2]ugged[G] cross             [G]Oh, how precious is the blood that flowed
-Em7 C2 G Jesus, Savior bled and died for my sins
-Where my suffering and shame C/G G
-Em7 C2 G I will lift my voice up to the heavens and praise Him
-And all my sin was washed
+{comment: Verse 1}
+On a hill far a[G]way stood an [Em7]old ru[C2]gged[G] cross
+Where my [Em7]sufferi[C2]ng and s[G]hame
+And all my [Em7]sin wa[C2]s w[G]ashed
 
-{comment: Bridge 1}
-Verse 2 C2
-Em7 C2 G Em7 C2 G Oh, how precious is the blood that flowed
-How I love that cross where my Je - sus died D
-G/B Cmaj9 Jesus, Savior bled and died for my sins
-And for a world that’s broken C/E G D
-D G I will lift my voice up to the heavens and praise Him
-He brought it back to life
+{comment: Verse 2}
+How I[Em7] love t[C2]hat [G]cross where m[Em7]y Je - [C2]sus [G]died
+And for a [G/B]world that’s [Cmaj9]broken
+[D]He brought it back to lif[G]e
 
-{comment: Bridge 2}
-[Chorus]D                        Em9    Cmaj9       [Cmaj9]He hung upon that cross, my sin was broken
-So I’ll cherish that cross where my Jesus paid it all D
-D Em9 Cmaj9 Rose and we will live with You in Heaven
-So I’ll cherish that cross where my Jesus paid it all C/E G D
-Am7 G/B Hallelujah, hallelujah, amen
-So I lay my life down, down at Your feet
-Cmaj9 D Bridge 2
-Lord, I surrender everything Cmaj9
-He hung upon that cross, my sin was broken
-Verse 2 D
-G Bm7 Em7 Rose and we will live with You in Heaven
-How I love that cross where my Jesus died Em7 G D
-Em7 D Cmaj9 Hallelujah, hallelujah, amen
-And for a world that’s broken
-D G Tag
-He brought it back to life, back to life Cmaj9 D
-Hallelujah, hallelujah, amen
-[Chorus]D                        Em9    Cmaj9       [Em7]Hallelujah, hallelujah, [G]ame[D]n
-So I’ll cherish that cross where my Jesus paid it all
-D Em9 Cmaj9 Interlude
-So I’ll cherish that cross where my Jesus paid it all | G / / / | / / / / | / / / / | / / / / |
-So I lay my life[Am7] down, down at Your f[G/B]eet                 Ending
-Lord, I sur[Cmaj9]render everyth[D]ing                            How I love that[G] cross where my Jesus [Em7]died
-So I lay my life[Am7] down, down at Your f[G/B]eet                 And for a world that’s[Cmaj9] broken
-Lord, I sur[Cmaj9]render everyth[D]ing                            He brought it back to lif[G]e
+{comment: Chorus}
+So I’ll [D]cherish that cross where my J[Em9]esus pai[Cmaj9]d it all
+So I’ll [D]cherish that cross where my J[Em9]esus pai[Cmaj9]d it all
+So I lay my life d[Am7]own, down at Your f[G/B]eet
+Lord, I surr[Cmaj9]ender everyth[D]ing
+
+{comment: Verse 2}
+How I love that c[G]ross where my [Bm7]Jesus d[Em7]ied
+And for a [Em7]world [D]that’s [Cmaj9]broken
+[D]He brought it back to li[G]fe, back to life
+
+{comment: Chorus}
+So I’ll [D]cherish that cross where my J[Em9]esus pai[Cmaj9]d it all
+So I’ll [D]cherish that cross where my J[Em9]esus pai[Cmaj9]d it all
+So I lay my life d[Am7]own, down at Your f[G/B]eet
+Lord, I surr[Cmaj9]ender everyth[D]ing
+So I lay my life d[Am7]own, down at Your f[G/B]eet
+Lord, I surr[Cmaj9]ender everyth[D]ing
 
 {comment: Interlude}
 {ci: 2x}
 | G / / / | / / / / | / / / / | / / / / |
+
+{comment: Bridge 1}
+[G]Oh, how precious is the blood that flowed
+Jesus, Savior bled and died for my sins
+[C/G]I will lift my voice up to the heavens and [G]praise Him
+
+{comment: Bridge 1}
+[C2]Oh, how precious is the blood that flowed
+[D]Jesus, Savior bled and died for my sins
+[C/E]I will lift my voice up to the heavens and [G]praise Hi[D]m
+
+{comment: Bridge 2}
+[Cmaj9]He hung upon that cross, my sin was broken
+[D]Rose and we will live with You in Heaven
+[C/E]Hallelujah, hallelujah, a[G]men[D]
+
+{comment: Bridge 2}
+[Cmaj9]He hung upon that cross, my sin was broken
+[D]Rose and we will live with You in Heaven
+[Em7]Hallelujah, hallelujah, am[G]en[D]
+
+{comment: Tag}
+[Cmaj9]Hallelujah, hallelujah, a[D]men
+[Em7]Hallelujah, hallelujah, a[G]men[D]
+
+{comment: Interlude}
+| G / / / | / / / / | / / / / | / / / / |
+
+{comment: Ending}
+How I love that [G]cross where my Jesus [Em7]died
+And for a world that’s [Cmaj9]broken
+He brought it back to lif[G]e
 UPCI Music 1

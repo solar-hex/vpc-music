@@ -2,7 +2,7 @@
 {key: E}
 {tempo: 110}
 {time: 4/4}
-{x_verified: number chart, 100% of 32 chords}
+{x_verified: number chart, 100% of 59 chords}
 {x_theme: heaven, praise, grace-mercy, victory}
 {x_source: pdf:UPCI Music/2023/Heaven/Heaven-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2023%2FHeaven}
@@ -18,62 +18,79 @@
 {x_album: Heaven (Single)}
 {x_writers: James Simms}
 
-{comment: Intro Pre Chorus}
-E / / / | / / / / | C#m7 / / / | A2 / / / A2 E
-And I can see the light coming (yeah)
-Verse 1 A2 C#m7
-E And I can see the day dawning (yeah)
-Sing the wonderous love of Jesus
-Sing his mercy [B2]and grace                                       [Chorus]E
-C#m7 A2 When we all get to heaven
-In the mansions bright are blessed B
-E B What a day of rejoicing that will be
-He’ll prepare for us a place C#m7 A2
-When we all see Jesus
-Pre Chorus C#m7 A2
-A2 E Sing and shout the victory
-And I can see the light coming C#m7 A2
-A2 C#m7 Sing and shout the victory
-And I can see the day dawning
+{comment: Intro}
+| E / / / | / / / / | C#m7 / / / | A2 / / /
+
+{comment: Verse 1}
+[E]Sing the wonderous love of Jesus
+Sing his mercy [B2]and grace
+[C#m7]In the mansions [A2]bright are blessed
+[E]He’ll prepare for us a [B]place
+
+{comment: Pre Chorus}
+And I can [A2]see the light [E]coming
+And I can [A2]see the day [C#m7]dawning
+
+{comment: Chorus}
+When we [E]all get to heaven
+What a day of rejoicing that will [B]be
+When w[C#m7]e all see [A2]Jesus
+[C#m7]Sing and shout the [A2]victory
+[C#m7]Sing and shout the [A2]victory
 
 {comment: Interlude}
-Chorus C#m7 / / / | / / / / | A2 / / / | / / / /
-When we a[E]ll get to heaven                             Bridge (Solo / men sing 8vb)
-What a day of rejoicing that will [B]be                      [C#m7]Oh I can’t wait for tha[A2]t day when we rise up
-When we [C#m7]all see [A2]Jesus                                [E]Every tear will be[B] wiped from our eyes
-[C#m7]Sing and shout the [A2]victory                             [C#m7]We’re gonna see You and
-C#m7 A2 A2 E / / / | G#m7 / / /
-Sing and shout the victory sing holy ho - ly
-Interlude                                            [C#m7]Mountains will shake every c[A2]urse will be broken
-E / / / | / / / / | C#m7 / / / | A2 / / / | E B
-We’re gonna see every word You have spoken
-Verse 2 C#m7
-E All of the earth will be
-Onward to the prize before us A2 E / / / | G#m7 / / /
-B filled with Your glory
-Soon His beaty we’ll be - hold
+| E / / / | / / / / | C#m7 / / / | A2 / / / |
+
+{comment: Verse 2}
+[E]Onward to the prize before us
+Soon His beaty we’ll be -[B] hold
 [C#m7]Soon those pearly [A2]gates will open
-[E]We will walk on[B] streets of gold
+[E]We will walk o[B]n streets of gold
+
+{comment: Pre Chorus}
+And I can [A2]see the light coming ([E]yeah)
+And I can [A2]see the day dawning [C#m7](yeah)
+
+{comment: Chorus}
+When we [E]all get to heaven
+What a day of rejoicing that will [B]be
+When w[C#m7]e all see [A2]Jesus
+[C#m7]Sing and shout the [A2]victory
+[C#m7]Sing and shout the [A2]victory
+
+{comment: Interlude}
+| C#m7 / / / | / / / / | A2 / / / | / / / /
+
+{comment: Bridge}
+{ci: Solo / men sing 8vb}
+[C#m7]Oh I can’t wait for that [A2]day when we rise up
+[E]Every tear will be [B]wiped from our eyes
+[C#m7]We’re gonna see You and
+| A2 E / / / | G#m7 / / /
+sing holy ho - ly
+[C#m7]Mountains will shake every [A2]curse will be broken
+[E]We’re gonna see every [B]word You have spoken
+[C#m7]All of the earth will be
+| A2 E / / / | G#m7 / / /
+filled with Your glory
 
 {comment: Bridge}
 {ci: Parts}
-[C#m7]Oh I can’t wait for tha[A2]t day when we rise up
-[E]Every tear will be[B] wiped from our eyes
+[C#m7]Oh I can’t wait for that [A2]day when we rise up
+[E]Every tear will be [B]wiped from our eyes
 [C#m7]We’re gonna see You and
-A2 E / / / | G#m7 / / /
+| A2 E / / / | G#m7 / / /
 sing holy ho - ly
 [E]Mountains will shake every [A/E]curse will be broken
 [E]We’re gonna see every [B/E]word You have spoken
 [C#m7]All of the earth will be
-A2 E/B / / / | B / / /
+| A2 E/B / / / | B / / /
 filled with Your glory
 
 {comment: Chorus}
-N.C.
-When we all get to heaven
+[N.C.]When we all get to heaven
 What a day of rejoicing that will be
-{ci: E-D# - E-D#}
-When we all see Jesus (see we will, we will we will)
+When we all see Jesus (see we will, [(E-D#-E-D#)]we will we will)
 [C#m7]Sing and shout the [A2]victory
 [C#m7]Sing and shout the [A2]victory
 

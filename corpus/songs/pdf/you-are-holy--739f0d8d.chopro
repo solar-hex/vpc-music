@@ -3,7 +3,7 @@
 {key: G}
 {tempo: 76}
 {time: 4/4}
-{x_verified: number chart, 100% of 13 chords}
+{x_verified: number chart, 99% of 72 chords}
 {x_theme: worship, healing, praise}
 {x_source: pdf:UPCI Music/2019/You Are Holy/You-Are-Holy-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FYou%20Are%20Holy}
@@ -30,39 +30,59 @@
 {x_source_you_are_holy_vocal_parts_1: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/you-are-holy/source/You-Are-Holy-Vocal-Parts-1.zip}
 {x_album: At All Times}
 
-{comment: Intro Pre Chorus}
-Em / C / | D / / / | Em / C / | D / / / | G D Em C Em D
-Indescribable, undeniable, surrendering all I have
-Verse 1                                              to[C] you
-In your[Em] presence [C]never ending [D]gracious King
-Am7 G/B C Chorus (Parts) 2x’s
-At the feet of everlasting love Em C G D
-Em C D Holy you are Holy my soul longs to worship You
-Overwhelmed by all of who you are Em C G D
-Am7 G/B C Holy you are Holy I can’t help but worship You
-Captivated by the glory of it all
+{comment: Intro}
+| Em / C / | D / / / | Em / C / | D / / / |
+
+{comment: Verse 1}
+In your [Em]presence [C]never ending [D]gracious King
+At the [Am7]feet of everl[G/B]asting[C] love
+Over[Em]whelmed by [C]all of who you [D]are
+Capt[Am7]ivated by the glory[G/B] of  it [C]all
+
+{comment: Pre Chorus}
+{ci: Solo}
+[G]Inde[D]scribable, [Em]unden[C]iable, sur[Em]rendering [D]all I have
+to [C]you
+
+{comment: Chorus}
+{ci: Solo}
+[Em]Holy you are[C] Holy my soul[G] longs to worship Yo[D]u
+[Em]Holy you are[C] Holy I can’t h[G]elp but worship You[D]
+
+{comment: Interlude}
+| Em / C / | D / / / | Em / C / | D / / / |
+
+{comment: Verse 2}
+Before Your thro[Em]ne,  [C]flawed, unworthy
+and[D]  unclean. Yet, You wa[Am7]nt me in spite of
+[G/B]what I’ve done[C].   You resto[Em]re me, c[C]an’t deny I’m
+changed[D]. Fully grate[Am7]ful, washed my heart and
+[G/B]now I’m whol[C]e.
+
+{comment: Pre Chorus}
+[G]Inde[D]scribable, [Em]unden[C]iable, sur[Em]rendering [D]all I have
+to [C]you
+Chorus (Parts) 2x’s
+[Em]Holy you are[C] Holy my soul[G] longs to worship [D]You
+[Em]Holy you are[C] Holy I can’t h[G]elp but worship [D]You
 
 {comment: Bridge}
 {ci: Solo}
-Pre Chorus (Solo) Em C G
-G D Em C Em D With all I am, with lifted hands,
-Indescribable, undeniable, surrendering all I have D
-C I’m crying out You are holy.
-to you Em C G
-I’m bowing down to worship now.
-Chorus (Solo)                                        My heart will sing[D]    You are holy.
-[Em]Holy you are[C] Holy my soul [G]longs to worship Yo[D]u
-Em C G D Bridge (Parts)
-Holy you are Holy I can’t help but worship You
-Vamp 3xs
-Interlude Em C G D
-Em / C / | D / / / | Em / C / | D / / / | Holy, holy, holy, You are ho - ly, Lamb of God
-Verse 2 Chorus (Solo) 1x (Parts) 1x
-Before Your thro[Em]ne,  [C]flawed, unworthy
-D Am7 Ending - Chorus (Parts)
-and unclean. Yet, You want me in spite of Em C G D
-G/B C Em C Holy you are Holy my soul longs to worship You
-what I’ve done. You restore me, can’t deny I’m Em C G D
-D Am7 Holy you are Holy I can’t help but worship You
-changed. Fully grateful, washed my heart and C
-[G/B]now I’m whole[C].
+[Em]With all I am,[C]    with lifted hands[G],
+I’m crying out[D]    You are holy.
+[Em]I’m bowing down[C]    to worship now[G].
+My heart will sing[D]    You are holy.
+
+{comment: Bridge}
+{ci: Parts}
+Vamp
+{ci: 3xs}
+[Em]Holy, holy, [C]holy, You are [G]ho - ly, Lamb of Go[D]d
+Chorus (Solo) 1x (Parts)
+{ci: 1x}
+
+{comment: Ending - Chorus}
+{ci: Parts}
+[Em]Holy you are[C] Holy my soul[G] longs to worship Yo[D]u
+[Em]Holy you are[C] Holy I can’t h[G]elp but worship You[D]
+[C]

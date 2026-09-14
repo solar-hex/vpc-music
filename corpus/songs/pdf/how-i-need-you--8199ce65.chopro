@@ -3,7 +3,7 @@
 {key: Eb}
 {tempo: 84}
 {time: 6/8}
-{x_verified: number chart, 87% of 30 chords}
+{x_verified: number chart, 89% of 53 chords}
 {x_theme: faith-trust, healing, victory}
 {x_source: pdf:UPCI Music/2021/How I Need You/How-I-Need-You-Chord-Chart.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2021%2FHow%20I%20Need%20You}
@@ -19,41 +19,63 @@
 {x_album: Jesus You Alone}
 {x_writers: Chris Griffin, Micah Massey}
 
-How I Need You Bethany Phillips, Nicole McLean,
-Chris Griffin, Micah Massey
+{comment: Intro}
+||: Eb/Ab / | / / | Bbsus / | / Eb/G :||
 
-{comment: Intro Interlude}
-||: Eb/Ab / | / / | Bbsus / | / Eb/G :|| || : Abmaj7 / | / Eb/G | Bbsus / | / Eb/G :||
-
-{comment: Verse 1 Bridge 1}
-{ci: 2x}
-[Eb/Ab]Every day in Your[Bbsus] hands                           [Ab]You are powerful, God ab[Eb/G]ove it all
-You were there be-[Eb/G]fore time be[Eb/Ab]-gan                       [Bb]I believe in You, I [Eb/G]believe in You
-Sovereign one, I rest in Your [Bbsus]plan[Eb/G]                         [Ab]You do miracles, the [Eb/G]impossible
-[Eb/Ab]From the depths of the[Bbsus] dawn                       [Bb]I believe in You, I [Eb/G]believe in You
-You are there, Your [Eb/G]promise is [Eb/Ab]strong                   Bridge 2
-I will trust with all that [Bbsus]I am                               [Ab]You are powerful, God ab[Eb/G]ove it all
-Chorus                                               [Bb]I believe in You, I [Eb/G]believe in You
-[Eb]Jesus, Jesus,[Cm] oh how I need You                         [Ab]You do miracles, the [Eb/G]impossible
-[Ab]You stay the same, You are [Fm]good in Your ways             [Bb]I believe in You, yeah
-[Eb]Jesus, Jesus,[Cm] oh how I need You                       Chorus
-[Ab]You are enough, all my t[Fm]rust is in You, Lord              Bridge 1 (2x)
-Interlude                                              [Ab]You are powerful, God ab[Eb/G]ove it all
-Ab / | Ab / | Bb Eb/G
-I believe in You, I believe in You
-Verse 2 Ab Eb/G
-Ab Bb You do miracles, the impossible
-You fashioned me, formed my heart Bb Eb/G
-Eb/G Ab I believe in You, I believe in You
-Search my soul and know every thought
-Bb Eb/G Ending - Bridge 2
-Love so great, but never too far Ab Eb/G
-Ab Bb You are powerful, God above it all
-Through the storm You’re the calm Bb Eb/G
-Eb/G Ab I believe in You, I believe in You
-Every war You’ve already won Ab Eb/G
-Bb You do miracles, the impossible
-Life secure in Your loving arms Bb Ab
-I believe in You, I believe in You,
+{comment: Verse 1}
+[Eb/Ab]Every day in Your [Bbsus]hands
+You were there be[Eb/G]-fore time be-[Eb/Ab]gan
+Sovereign one, I rest in Your [Bbsus]plan[Eb/G]
+[Eb/Ab]From the depths of the [Bbsus]dawn
+You are there, Your [Eb/G]promise is [Eb/Ab]strong
+I will trust with all that I[Bbsus] am
 
 {comment: Chorus}
+[Eb]Jesus, Jesus, [Cm]oh how I need You
+[Ab]You stay the same, You are [Fm]good in Your ways
+[Eb]Jesus, Jesus,[Cm] oh how I need You
+[Ab]You are enough, all my [Fm]trust is in You, Lord
+
+{comment: Interlude}
+| Ab / | Ab / |
+
+{comment: Verse 2}
+[Ab]You fashioned me, formed my [Bb]heart
+Search my soul and [Eb/G]know every [Ab]thought
+Love so great, but never too [Bb]far[Eb/G]
+[Ab]Through the storm You’re the [Bb]calm
+Every war You’ve [Eb/G]already [Ab]won
+Life secure in Your loving [Bb]arms
+
+{comment: Chorus}
+
+{comment: Interlude}
+|| : Abmaj7 / | / Eb/G | Bbsus / | / Eb/G :||
+
+{comment: Bridge 1}
+{ci: 2x}
+[Ab]You are powerful, God [Eb/G]above it all
+[Bb]I believe in You, I b[Eb/G]elieve in You
+[Ab]You do miracles, the i[Eb/G]mpossible
+[Bb]I believe in You, I b[Eb/G]elieve in You
+
+{comment: Bridge 2}
+[Ab]You are powerful, God [Eb/G]above it all
+[Bb]I believe in You, I b[Eb/G]elieve in You
+[Ab]You do miracles, the i[Eb/G]mpossible
+[Bb]I believe in You, yeah
+
+{comment: Chorus}
+
+{comment: Bridge 1}
+{ci: 2x}
+[Ab]You are powerful, God [Eb/G]above it all
+[Bb]I believe in You, I b[Eb/G]elieve in You
+[Ab]You do miracles, the i[Eb/G]mpossible
+[Bb]I believe in You, I b[Eb/G]elieve in You
+
+{comment: Ending - Bridge 2}
+[Ab]You are powerful, God [Eb/G]above it all
+[Bb]I believe in You, I b[Eb/G]elieve in You
+[Ab]You do miracles, the i[Eb/G]mpossible
+[Bb]I believe in You, I believe in Y[Ab]ou,
