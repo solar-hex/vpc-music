@@ -5,7 +5,7 @@
       "songId": "096508fc-f7b2-599d-9674-0e7cafb011c0",
       "title": "Never Go A Day",
       "file": "songs/text/never-go-a-day--096508fc.chopro",
-      "contentSha256": "a715a9bc2af47c9687dd6664c0178d9a595854203b6ef03e2195caa7a8276577",
+      "contentSha256": "1bf83489d7b78401b40b625a5722bc09171e0163d0be5567557352bbf82e1843",
       "metadata": {
         "key": null,
         "artist": "Shawn Bigby",
@@ -38,7 +38,7 @@
       "songId": "1d560e84-1cc8-5352-aa1f-77b785636efe",
       "title": "He is More",
       "file": "songs/text/he-is-more--1d560e84.chopro",
-      "contentSha256": "dbad75d5cdb784bacb74b3afa68343109397380b78b72ffb62e90b951057935e",
+      "contentSha256": "d9c5d6e6ed9f14e6c82832bb8f1848cdeccebf5c0e12ff00f57136dd76679234",
       "metadata": {
         "key": null,
         "artist": "Lori Green",
@@ -65,16 +65,18 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c3c734dc-a7fd-5d55-9e3f-b8c63acbbd20",
+      "supersedeReason": "same song as the pdf chart (84% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "289089b7-5193-5668-a363-4481f704befe",
       "title": "My Help",
       "file": "songs/text/my-help--289089b7.chopro",
-      "contentSha256": "7a397812034ca3786503ac9aa5d81e43b3fc3fcd3acf3d9d9034474825cf842d",
+      "contentSha256": "32eee12d9540b96af3a43741c484c31a38d414c59411b5e28a723893fc3779df",
       "metadata": {
-        "key": null,
-        "artist": null,
+        "key": "G",
+        "artist": "James Simms",
         "year": null,
         "tempo": null,
         "isDraft": true
@@ -95,11 +97,9 @@
         }
       ],
       "confidence": {
-        "score": 0.8,
-        "band": "medium",
-        "reasons": [
-          "no key"
-        ]
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
       },
       "warnings": [],
       "decision": "song"
@@ -108,7 +108,7 @@
       "songId": "2d94ecac-7757-56fe-9538-fcdbb3f27c6c",
       "title": "Breakthrough",
       "file": "songs/text/breakthrough--2d94ecac.chopro",
-      "contentSha256": "5552191de6929c1781225b097654263fa4b4df9d7dba27507c24778270140b19",
+      "contentSha256": "e51a3c1a7483d60a6927b6059baff4d7c3fc428ce4ef0987a4372a987c7b3001",
       "metadata": {
         "key": null,
         "artist": "Eddie James",
@@ -139,16 +139,18 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "893a0ae4-cd9b-5373-89c6-0370488756fb",
+      "supersedeReason": "same song as the pdf chart (86% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "2fcb47d7-5e03-56f1-a5ce-78c4b656cfbe",
       "title": "Let’s Dance",
       "file": "songs/text/let-s-dance--2fcb47d7.chopro",
-      "contentSha256": "c5a0ad66f0e1b489d8bba9ed28018cef7127d14296024b86340be9f51fcc4415",
+      "contentSha256": "52a4b0f04aeea69b33ef4a39fd0751f29112529c69f53016495cce50e74e4ebf",
       "metadata": {
-        "key": null,
-        "artist": null,
+        "key": "E",
+        "artist": "Sarah Benibo",
         "year": null,
         "tempo": null,
         "isDraft": true
@@ -168,20 +170,20 @@
         }
       ],
       "confidence": {
-        "score": 0.8,
-        "band": "medium",
-        "reasons": [
-          "no key"
-        ]
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5685c996-e977-5df4-a81b-60e60ffe96de",
+      "supersedeReason": "same song as the pdf chart (100% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "3137824b-6321-5c48-881d-803a6315ef10",
       "title": "Mighty",
       "file": "songs/text/mighty--3137824b.chopro",
-      "contentSha256": "8a9f85e9b9995a6689b155d716848e54af0dee92096aa4647c301391cef2f279",
+      "contentSha256": "f71b64b9baa0fc666712094e1d40774a55aa9a479ba88b7eaf5bbe7a0ec0f134",
       "metadata": {
         "key": null,
         "artist": "Phase 2",
@@ -202,25 +204,22 @@
         }
       ],
       "confidence": {
-        "score": 0.2,
-        "band": "low",
+        "score": 0.8,
+        "band": "medium",
         "reasons": [
-          "no chords",
-          "no sections",
           "no key"
         ]
       },
-      "warnings": [
-        "No chord lines found",
-        "No sections detected"
-      ],
-      "decision": "song"
+      "warnings": [],
+      "decision": "supersede",
+      "supersededBy": "fccc3080-2055-5df3-b1e9-305a9e840435",
+      "supersedeReason": "same song as the pdf chart (98% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "36855a3d-e5b3-5ec5-bb20-f44dce726ece",
       "title": "We Worship You",
       "file": "songs/text/we-worship-you--36855a3d.chopro",
-      "contentSha256": "ef1ed14c89223840699079a5626bbd126c7056e5eda87911cf37780c906a8fc4",
+      "contentSha256": "6764328a9dbdfd623395eb292145a7bf4c4d788818fa410ba0f318d721f4b61a",
       "metadata": {
         "key": "Bb",
         "artist": "Bridgett Kern",
@@ -247,16 +246,18 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e",
+      "supersedeReason": "same song as the pdf chart (93% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "5121fa9e-b0d7-5cfb-9f21-a768244d0484",
       "title": "Jesus",
       "file": "songs/text/jesus--5121fa9e.chopro",
-      "contentSha256": "f99257f85315aaa7090a81950d09313253e8517e89948c730a8643c78ed6579e",
+      "contentSha256": "fa29f70bf45c9abf9ebe51ae69718b2f01e9c4c0b157d73abffee96917032abd",
       "metadata": {
-        "key": null,
-        "artist": null,
+        "key": "Cm",
+        "artist": "Phase II",
         "year": null,
         "tempo": null,
         "isDraft": true
@@ -275,20 +276,20 @@
         }
       ],
       "confidence": {
-        "score": 0.8,
-        "band": "medium",
-        "reasons": [
-          "no key"
-        ]
+        "score": 0.9,
+        "band": "high",
+        "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "626b765f-11e4-5ddd-8d75-7be47f58f46c",
+      "supersedeReason": "same song as the pdf chart (86% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "6401850d-ec4f-5e9f-91bb-873f8b1ef688",
       "title": "Hallelujah He is Here",
       "file": "songs/text/hallelujah-he-is-here--6401850d.chopro",
-      "contentSha256": "9b26c0b3d2c200988b345b0c6fa80ba6ee634aaaf782c7492afa18f9016f020c",
+      "contentSha256": "a6dbfe7a799ab18de0b02b40bc564f47851bb7a8618a8f33ab30171c68afe308",
       "metadata": {
         "key": null,
         "artist": null,
@@ -318,13 +319,15 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "064b864b-c49d-577b-b063-36a5c56a9c17",
+      "supersedeReason": "same song as the pdf chart (98% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "64f4344b-404b-52b2-8336-591fe72b2a99",
       "title": "Lord, You Reign",
       "file": "songs/text/lord-you-reign--64f4344b.chopro",
-      "contentSha256": "1bec8e510853c10d57e0279aa0ccfb5e97710f66688eb731276640f8495a8d67",
+      "contentSha256": "6f11689c538f7ab15285e3793fd772b8e9c866196b285a1f73f41b07e8a183bd",
       "metadata": {
         "key": "Ab",
         "artist": "Bishop Leonard Scott",
@@ -349,13 +352,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47",
+      "supersedeReason": "same song as the pdf chart (60% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "74c79ec1-c0d5-5a6b-86cf-943797b26e6c",
       "title": "Isnt the Name",
       "file": "songs/text/isnt-the-name--74c79ec1.chopro",
-      "contentSha256": "034deb234f00979c995e60e1ef5aa9fc035dd55d7e829c67041ec6d38a7e999b",
+      "contentSha256": "5694df10baa6bd6398a1f69dbd521eebf7e370185f952cdae64e769d97337cba",
       "metadata": {
         "key": null,
         "artist": "Covenant Worship",
@@ -385,13 +390,15 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "7b5765b8-28b6-5c1c-9acf-d203097bb22e",
+      "supersedeReason": "same song as the pdf chart (97% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "75049d26-c323-5186-ab47-7d8b8c946918",
       "title": "Complete Surrender",
       "file": "songs/text/complete-surrender--75049d26.chopro",
-      "contentSha256": "c7d19fd8397f116a5c4a87d1cfe88c3cf70f8a139415abf82675f57433fee382",
+      "contentSha256": "353450784eab864d5fc7a857ed5d779e4196ec817311cd25b474b71f5ed0008f",
       "metadata": {
         "key": "Bb",
         "artist": "Indiana Bible College (IBC)",
@@ -419,13 +426,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3eaaa8a7-3465-5e32-af02-916ff87b9330",
+      "supersedeReason": "same song as the pdf chart (96% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "896be5c4-73e4-5e6b-a4a3-e22c87e5c794",
       "title": "God Is Here",
       "file": "songs/text/god-is-here--896be5c4.chopro",
-      "contentSha256": "21e01bb9a896597816671e6f7a0406edb6a8fcf0d7194709c0dad707e6a48cf2",
+      "contentSha256": "0ed60c9c84bf0599810fa289675ccc9feef669954c995ef5cf5ded84ababe782",
       "metadata": {
         "key": null,
         "artist": "Keith Pace",
@@ -454,13 +463,15 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "5119a6d4-1efb-5a3c-b035-f5c4074a2a82",
+      "supersedeReason": "same song as the pdf chart (100% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "8e8b4084-92d6-5e7b-a7f3-6a9e2145c66a",
       "title": "One Name",
       "file": "songs/text/one-name--8e8b4084.chopro",
-      "contentSha256": "9d3b1377851e12d6fe4f52f56c29f03693518e932b7eb3d22893ae3b9f6dffdf",
+      "contentSha256": "5397cb3891119db8a9fa12422cf0a008759e8c12b1743d95b5ad38fc22b36532",
       "metadata": {
         "key": "C",
         "artist": "Anthony Trimble",
@@ -488,13 +499,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "fd35c467-49bd-5e61-88f1-bf7b9a29b883",
+      "supersedeReason": "same song as the pdf chart (97% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "941b07cf-3a67-5438-b53e-886bf1a15834",
       "title": "Free Indeed",
       "file": "songs/text/free-indeed--941b07cf.chopro",
-      "contentSha256": "7fe540218440a5d12625b95f023e5bc73a9bf46cca0647baa0b7d89b433c0325",
+      "contentSha256": "1893846bc0dd174e4287b42cd0533b10b7a8769012b297736d14d1efeda9f171",
       "metadata": {
         "key": "E",
         "artist": "Timothy Reddick",
@@ -523,7 +536,7 @@
       "songId": "98d26729-0684-54b3-8a59-0dab27af185d",
       "title": "How Great",
       "file": "songs/text/how-great--98d26729.chopro",
-      "contentSha256": "df53d7d61c16837aa32cf7d31a15f9b0528a8e6e2e6f212e9e1d006f64c4f356",
+      "contentSha256": "8b31969e0af9efb9d11071ebf6e8354b0093b96d8f1e17f701b48f1371ec5a6e",
       "metadata": {
         "key": "E",
         "artist": "Covenant Worship",
@@ -554,7 +567,7 @@
       "songId": "9c9bf4ba-287a-5f8a-b559-116e10520dab",
       "title": "Im Here to Worship",
       "file": "songs/text/im-here-to-worship--9c9bf4ba.chopro",
-      "contentSha256": "3f0ce07b4ba504396df9f900bcfccac315803cb7e0e26a4f24b2bd13b47a8071",
+      "contentSha256": "2c9f7d0e5894776fc1344f6310b1c2c39c489a025cf23876229551dc23cd4f64",
       "metadata": {
         "key": "G",
         "artist": "Anthony Trimble",
@@ -585,9 +598,9 @@
       "songId": "b25b33db-d245-53ae-aa74-b7a29ab4301e",
       "title": "Not The Same",
       "file": "songs/text/not-the-same--b25b33db.chopro",
-      "contentSha256": "3c95339bf92df1470a25dc7e00237630f84d80438e457771f4a92826f2834eab",
+      "contentSha256": "72b1309ab8b8034530475b3afaf7774fd182ba2a7cfc04ed6da699ec129d3a23",
       "metadata": {
-        "key": "C",
+        "key": "C#",
         "artist": "Jeff Walthall",
         "year": null,
         "tempo": null,
@@ -618,7 +631,7 @@
       "songId": "b5241dfd-f6b5-5b8e-a52b-cb2136b2414a",
       "title": "Somebody Give Him Some Praise",
       "file": "songs/text/somebody-give-him-some-praise--b5241dfd.chopro",
-      "contentSha256": "d50fa22819e43a3696a4031cf36419194d2721c6e610a85c3c3c588de3044b3d",
+      "contentSha256": "712e397583602265a372bf989feffc8bcfb3b2085f0c5d1317414ff511341c0b",
       "metadata": {
         "key": "F",
         "artist": "The Chandlers",
@@ -645,13 +658,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "09410ae5-3e4d-5238-8d1a-188cda6b5f4b",
+      "supersedeReason": "same song as the pdf chart (87% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "d217fb51-fbe4-5b02-89ae-964fd4dccc61",
       "title": "Noel, Christ is Born",
       "file": "songs/text/noel-christ-is-born--d217fb51.chopro",
-      "contentSha256": "21629fffeaa24fe55a7f6d902d4398fa6bd9ed4d9c6540eca243dba9758458a6",
+      "contentSha256": "f67a073299301c9c8e0092f87ec97ec8de4d2385e673807ba40c2a148e1ff207",
       "metadata": {
         "key": null,
         "artist": "Mark Yandris",
@@ -681,13 +696,15 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "8ec67746-e266-5dd2-bddc-0479b3334f15",
+      "supersedeReason": "same song as the pdf chart (96% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "f645a7f1-9293-5ddf-b61a-c385775d52fc",
       "title": "A Place of Healing",
       "file": "songs/text/a-place-of-healing--f645a7f1.chopro",
-      "contentSha256": "2e137a7856ef515343c2ec079395df0be9d858401035292f9f466c8a969c9716",
+      "contentSha256": "df7a2a5223e662175c9b32f934f6b1c5fd0e21401bfc9667a02c201cb605c311",
       "metadata": {
         "key": "D",
         "artist": "Jina McCool",
@@ -714,13 +731,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "699c012e-eeaa-5a85-b2ab-a4ddfa0e82d5",
+      "supersedeReason": "same song as the pdf chart (94% of the lyrics): the publisher's PDF and text of one chart"
     },
     {
       "songId": "fb1562ec-a677-5478-b94e-be48eb041b0c",
       "title": "What a Beautiful Name",
       "file": "songs/text/what-a-beautiful-name--fb1562ec.chopro",
-      "contentSha256": "c0c515a11eb52405ae6c3d2f0be1bcb7dafb25102fdaae699aa919d18829dc93",
+      "contentSha256": "10481672bb3fe9d5e29b136690cca2ebff21a9e5bcb587d076b2b2134b57cff8",
       "metadata": {
         "key": null,
         "artist": "Hillsong Worship",
@@ -750,7 +769,9 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "cace7122-f477-5262-ab91-77b29659f90f",
+      "supersedeReason": "same song as the chrd chart (85% of the lyrics): the church's own chart, with a converted copy"
     }
   ]
 }

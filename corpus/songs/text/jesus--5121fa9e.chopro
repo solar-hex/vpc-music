@@ -1,4 +1,6 @@
 {title: Jesus}
+{artist: Phase II}
+{key: Cm}
 {x_theme: grace-mercy, easter, healing}
 {x_source: text:UPCI Music/2016/Jesus/Jesus-Chord-Chart-TXT.txt}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FJesus}
@@ -33,9 +35,6 @@
 {x_chart_jesus_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/charts/jesus-vocals.pdf}
 {x_source_jesus_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/jesus/source/Jesus-Chord-Chart-TXT.txt}
 
-Phase II                                                                                   Key: Cm
-Key: Cm
-
 {comment: Intro}
 [Cm7] [Bb] [Ab7] [G7]
 
@@ -43,36 +42,32 @@ Key: Cm
 [Cm7]I never knew a [Bb]man who would [Ab7]give His life for [G7]me
 [Cm7]I never knew a [Bb]man who would [Ab7]die to set me [G7]free
 [Cm7]I never knew a [Bb]man who could [Ab7]calm the wind and [G7]sea
-Cm7            Bb            Ab7            G7 - A7- Bb7-B7
-I never knew a man who could give grace and mercy
+[Cm7]I never knew a [Bb]man who could [Ab7]give grace and [G7]merc[A7]y[Bb7-B7]
 
 {comment: Chorus}
-[C11(13)]His name is Jesus   [C11(13)]my Lord and Savior[Bsus/F][Bb11(13)]
-Bb11(13)               D+7(#9) /Gb       G7
-His name is Jesus   my rock my sword and shield
+[C11(13)]His name is Jesus   [C11(13)]my Lord and Savio[Bsus/F]r[Bb11(13)]
+[Bb11(13)]His name is Jesus   my [D+7(#9)]rock my [/Gb]sword and [G7]shield
 
 {comment: Bridge}
-No greater l[AbM7]ove than [Fm7]this that a [Gm7]man would [Bo7]give His l[Cm7]ife[Bb/D][Cm/G]
-No greater l[AbM7]ove than [Fm7]this that a [Gm7]man would [Bo7]give His l[Cm7]ife[Bb/D][Cm/Eb][Cm/G]
+No greater l[AbM7]ove than [Fm7]this that a [Gm7]man would [B°7]give His l[Cm7]ife[Bb/D][Cm/G]
+No greater l[AbM7]ove than [Fm7]this that a [Gm7]man would [B°7]give His l[Cm7]ife[Bb/D][Cm/Eb][Cm/G]
 [AbM7]No greater love than this that a man would give His life
 
 {comment: Vamp 1}
-C11(13)       C7  (G-A-C)                        C7    (G-A-C)
-His name is Jesus                  His name is Jesus
-C11(13)       C7  (G-A-C)                        C7    (G-A-C)
-His name is Jesus                  His name is Jesus
+[C11(13)]His name is Je[C7]sus[(G-A-C)]    His name is Je[C7]sus[(G-A-C)]
+[C11(13)]His name is Je[C7]sus[(G-A-C)]    His name is Je[C7]sus[(G-A-C)]
 
 {comment: Vamp 2}
 {ci: 2x}
-  [Eb]     [F]Jesus      [Eb]     [F]Jesus      [Eb]    J[F]esus       [Eb]   J[Ao]e - s[D7(b9)]us[G+7(#9)][Cm]
-[Eb]      [F]Jesus     [Eb]     [F] Jesus
+Eb F Eb F Eb F Eb Ao D7(b9) G+7(#9) Cm
+Jesus Jesus Jesus Je - sus
+[Eb]J[F]esus[Eb]    [F]Jesus
 
 {comment: Vamp 3}
-Cm7 (cut)
-King, great Jehovah, the lion of Judah, my healer, redeemer, He’s the risen savior
+[Cm7(cut)]King, great Jehovah, the lion of Judah, my healer, redeemer, He’s the risen savior
 
 {comment: Vamp 4}
 {ci: 2x}
-[Eb/Ab]        [F/Bb]Jesus      [Eb]      J[F]esus      [Eb/Ab]        [F/Bb]Jesus      [Eb]      [F]Jesus
-[Eb/Ab]        [F/Bb]Jesus      [Eb]      J[F]esus      [Eb/Ab]        [F/Bb]Jesus      [Eb]      [F]Jesus
+[Eb/Ab]J[F/Bb]esus[Eb]    J[F]esus[Eb/Ab]    [F/Bb]Jesus[Eb]    [F]Jesus
+[Eb/Ab]J[F/Bb]esus[Eb]    J[F]esus[Eb/Ab]    [F/Bb]Jesus[Eb]    [F]Jesus
 [C11(13)]His name is Je - [C7]sus

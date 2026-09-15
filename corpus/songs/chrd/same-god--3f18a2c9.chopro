@@ -1,5 +1,7 @@
 {title: Same God}
+{artist: Cross Worship}
 {key: Gb}
+{time: 4/4}
 {tempo: 73.5}
 {x_tempo_source: derived from media filename}
 {x_flag: unlisted}
@@ -17,6 +19,8 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/same-god--3f18a2c9/charts/vocals.pdf}
 {x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/same-god-elevation-worship/audio/loop.m4a}
 {x_source_same_god_elevation_vocal_part_mp3s: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/same-god-elevation-worship/source/Same-God-Elevation-Vocal-Part-Mp3s.zip}
+{x_album: Same God (Single)}
+{x_writers: Darius Byers, Jordan Mohilowski, Mia Fields, Troy Culbreth}
 
 {comment: Intro}
 [Ebm7]/      /      /      [Gb]/

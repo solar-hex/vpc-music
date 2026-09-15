@@ -1,5 +1,7 @@
 {title: Order My Steps}
+{artist: GMWA Women of Worship}
 {key: C}
+{time: 4/4}
 {tempo: 82}
 {x_tempo_source: derived from media filename}
 {x_theme: praise, prayer}
@@ -14,6 +16,8 @@
 {x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/order-my-steps--9f25f88a/charts/number-chart.pdf}
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/order-my-steps--9f25f88a/charts/rhythm-chart.pdf}
 {x_chart_vocals_with_chords: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/order-my-steps--9f25f88a/charts/vocals-with-chords.pdf}
+{x_album: Wow Gospel 1998}
+{x_writers: Glen Burleigh}
 
 {comment: Chorus}
 [Em]Order my steps in Your Word, dear Lord

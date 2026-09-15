@@ -1,5 +1,8 @@
 {title: Glory, Honor, Power}
+{artist: Influence Music}
 {key: E}
+{tempo: 78}
+{time: 4/4}
 {x_flag: unlisted}
 {x_theme: worship, praise, heaven}
 {x_source: chrd:~glory_honor_power.chrd}
@@ -13,6 +16,7 @@
 {x_chart_glory_honor_power_vocal_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/glory-honor-power--c9d22cc5/charts/glory-honor-power-vocal-chart.pdf}
 {x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/glory-honor-power--c9d22cc5/charts/number-chart.pdf}
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/glory-honor-power--c9d22cc5/charts/rhythm-chart.pdf}
+{x_album: Ages}
 
 {comment: Intro}
 [*gb]/     /     [*e]/     /

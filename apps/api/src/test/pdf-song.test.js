@@ -70,6 +70,19 @@ describe("mergeByPosition", () => {
     expect(out).toContain("[G]");
   });
 
+  it("puts several chords printed before the words ahead of them, keeping their gaps", () => {
+    // "B11   E   A      oh oh": squeezed onto letters this read "[B11]o[E]h[A] oh".
+    const chords = { tokens: [el("B11", 0, 3), el("E", 10, 1), el("A", 15, 1), el("C#", 26, 2)] };
+    const lyric = { rendered: { text: "oh oh oh", xs: [20, 21, 22, 23, 24, 25, 26, 27] } };
+    expect(mergeByPosition(chords, lyric)).toBe("[B11]       [E]    [A]    oh oh [C#]oh");
+  });
+
+  it("leaves one chord just before the words on the first letter", () => {
+    const chords = { tokens: [el("Eb", 0, 2), el("Gm7", 30, 3)] };
+    const lyric = { rendered: { text: "You're there behind the scenes", xs: [...Array(29).keys()].map((i) => i + 3) } };
+    expect(mergeByPosition(chords, lyric).startsWith("[Eb]You're")).toBe(true);
+  });
+
   it("returns null for an empty lyric rather than inventing a line", () => {
     expect(mergeByPosition({ elements: [el("C", 0, 8)] }, { elements: [] })).toBeNull();
   });

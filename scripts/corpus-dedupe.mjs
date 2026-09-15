@@ -1,18 +1,23 @@
 /**
- * corpus:dedupe — decide which copy of a song wins, and record it.
+ * corpus:dedupe — merge the copies of one song into the best of them.
  *
- * The same song arrives from several sources: a `.chrd` chart VPC typed, a
- * lyrics-only Word document of the same song, a UPCI chart, sometimes the same
- * UPCI chart filed under two years. 215 title groups are affected.
+ * The same song arrives from several sources: the chart VPC typed on the old
+ * site, a Word document of the lyrics, the publisher's PDF, the publisher's
+ * text file of that same PDF, sometimes the same PDF filed under two years.
+ * Kevin's rule for these: keep the best chart and pull the best of both — the
+ * chart from one copy, the artist, tempo and album from the other — and never
+ * merge two different songs because they share a title.
  *
- * Nothing is ever deleted. The loser is marked `supersede` with a pointer to
- * the winner, so the decision is visible in the manifest, reviewable in a diff,
- * and reversible by editing one field.
+ * A shared title proves nothing ("Thank You" is two songs by two writers), so
+ * copies are judged by their words. Two copies that share most of their lyrics
+ * are one song. Copies that share some of them, or two publisher charts by two
+ * different artists, go on a list for a person.
  *
- * It only decides on its own when the call is genuinely unambiguous — an
- * identical copy, or a chart with chords against the same song with none.
- * Everything else is left `review`, because choosing between two real charts is
- * a musician's judgement, not a script's.
+ * Nothing is ever deleted. A loser is marked `supersede` in its manifest with a
+ * pointer to the winner and the reason, and the details carried to the winner
+ * are written to `corpus/merges.json`, which `corpus:build` reads. Decisions
+ * already recorded are never undone by a re-run; only a person editing the
+ * manifest does that.
  *
  *   pnpm corpus:dedupe [--apply]
  */
@@ -22,157 +27,23 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
+import { parseHeader, splitHeader } from "../apps/api/src/corpus/enrich.js";
 import { hasChords } from "../shared/utils/library.js";
-import { numberSequenceFromChordPro } from "../apps/api/src/corpus/nashvilleCheck.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
 
-/**
- * Which source to trust when two copies are otherwise equal.
- * Columns typed by a person beat columns inferred from geometry; a chart of
- * any kind beats a lyrics-only sheet.
- */
-export const SOURCE_RANK = { text: 5, chrd: 4, onsong: 3, pdf: 2, docx: 1 };
+/** Copies sharing at least this much of their lyrics are one song. */
+export const SAME_SONG_OVERLAP = 0.6;
+/** Below this, two copies are different songs that happen to share a title. */
+export const DIFFERENT_SONG_OVERLAP = 0.25;
 
 /**
- * Rank the copies of one song, best first.
- *
- * More chords wins; then more secondary cues, because `[*ab]` is the old
- * site's `^` line and a chart carrying it is strictly richer than the same
- * chart without; then the more trusted source; then the fuller chart; then the
- * id, so the result never depends on directory order.
+ * Details a winner takes from its merged copies when it has none of its own.
+ * Never the key: a chart's key is a fact about that chart, and the app
+ * transposes anyway.
  */
-export function rankCopies(copies) {
-  return [...copies].sort(
-    (a, b) =>
-      b.chords - a.chords ||
-      (b.cues ?? 0) - (a.cues ?? 0) ||
-      (SOURCE_RANK[b.source] ?? 0) - (SOURCE_RANK[a.source] ?? 0) ||
-      b.lines - a.lines ||
-      a.songId.localeCompare(b.songId),
-  );
-}
-
-/** The ordered PRIMARY chord tokens in a chart — layout-independent. */
-export function chordSequence(content) {
-  const out = [];
-  for (const m of String(content).matchAll(/\[([^\]]+)\]/g)) {
-    const token = m[1].trim();
-    if (/^[A-G]/.test(token)) out.push(token);
-  }
-  return out;
-}
-
-/**
- * The same sequence written in Nashville numbers, so two copies of one
- * arrangement in different keys compare equal. Transposition is a URL
- * parameter in this app, so a second row that is only a transposition is
- * redundant — but only if it really is the same arrangement, which this is
- * what proves.
- */
-export function nashvilleSequence(content, key) {
-  if (!key) return null;
-  const seq = numberSequenceFromChordPro(String(content), key);
-  return seq && seq.length > 0 ? seq : null;
-}
-
-/**
- * Two copies whose chords are the same, in the same order.
- *
- * Placement can still differ by a character — "The[Ab] everlasting" against
- * "The [Ab]everlasting" — which is what stopped these being caught as
- * identical. A musician playing from either gets the same chords in the same
- * order, so keeping both is not a judgement call.
- *
- * The floor of eight tokens is the guard: two genuinely different songs could
- * share a title AND a four-chord loop, but not an eight-chord sequence.
- */
-export const SAME_ARRANGEMENT_MIN_CHORDS = 8;
-
-export function isSameArrangement(a, b) {
-  if (a.chordSeq.length < SAME_ARRANGEMENT_MIN_CHORDS) return null;
-  if (a.chordSeq.length === b.chordSeq.length && a.chordSeq.every((t, i) => t === b.chordSeq[i])) {
-    return "same chords, in the same order — only the placement differs";
-  }
-  // Same arrangement, different key: compare what the numbers say.
-  if (a.nashville && b.nashville && a.key && b.key && a.key !== b.key) {
-    if (a.nashville.length === b.nashville.length && a.nashville.every((t, i) => t === b.nashville[i])) {
-      return `the same arrangement in ${b.key} rather than ${a.key} — the app transposes`;
-    }
-  }
-  return null;
-}
-
-/**
- * Decide a group.
- * @returns {{ winner, losers: Array<{song, reason}>, auto: boolean, why: string }}
- */
-export function decideGroup(copies) {
-  const ranked = rankCopies(copies);
-  const [winner, ...rest] = ranked;
-
-  // Byte-identical copies: keeping one is not a judgement call.
-  const identical = rest.filter((s) => s.musicalSha256 === winner.musicalSha256);
-  const different = rest.filter((s) => s.musicalSha256 !== winner.musicalSha256);
-
-  if (different.length === 0) {
-    return {
-      winner,
-      losers: identical.map((s) => ({ song: s, reason: "identical copy" })),
-      auto: true,
-      why: "identical",
-    };
-  }
-
-  /*
-   * Everything that is redundant whatever else is in the group:
-   *  - a lyrics-only sheet against a real chart, which must never shadow it
-   *  - the same arrangement written out twice, differing only in placement
-   *    or in key
-   */
-  const sameArrangement = [];
-  const genuinelyDifferent = [];
-  for (const song of different) {
-    if (winner.chords > 0 && song.chords === 0) {
-      sameArrangement.push({ song, reason: `lyrics only, superseded by the ${winner.source} chart` });
-      continue;
-    }
-    const why = isSameArrangement(winner, song);
-    if (why) sameArrangement.push({ song, reason: why });
-    else genuinelyDifferent.push(song);
-  }
-
-  if (genuinelyDifferent.length === 0 && different.every((s) => s.chords === 0)) {
-    return {
-      winner,
-      losers: [...identical.map((s) => ({ song: s, reason: "identical copy" })), ...sameArrangement],
-      auto: true,
-      why: "chords beat lyrics-only",
-    };
-  }
-  const decided = [...identical.map((s) => ({ song: s, reason: "identical copy" })), ...sameArrangement];
-
-  if (genuinelyDifferent.length === 0 && sameArrangement.length > 0) {
-    return { winner, losers: decided, auto: true, why: "same arrangement" };
-  }
-
-  /*
-   * Two real charts that differ. A person decides BETWEEN THOSE — but any
-   * redundant copy inside the group is still redundant, so it is superseded
-   * now rather than waiting on an unrelated question. "Glory, Honor, Power"
-   * has two identical .chrd arrangements and a PDF that reads only 7 chords;
-   * the PDF is the question, the second .chrd is not.
-   */
-  return {
-    winner,
-    losers: decided,
-    auto: false,
-    why: "two or more charts with chords",
-    // What the person is actually choosing between.
-    open: [winner, ...genuinelyDifferent],
-  };
-}
+export const CARRIED_DIRECTIVES = ["artist", "tempo", "time", "year", "x_album", "x_writers"];
 
 export async function loadManifests(corpusRoot) {
   const dir = join(corpusRoot, "manifest");
@@ -187,11 +58,10 @@ export async function loadManifests(corpusRoot) {
 /**
  * Hash of the music alone.
  *
- * `contentSha256` covers the whole file, which now includes provenance — the
- * source path, the Dropbox link, the media URLs. Two byte-identical charts
- * that came from `song.chrd` and `~song.chrd` therefore hash differently, and
- * would be sent for review as if they were different arrangements. Compare
- * what a musician would call the same song instead.
+ * `contentSha256` covers the whole file, which includes provenance — the
+ * source path, the Dropbox link, the media URLs — so two byte-identical charts
+ * from `song.chrd` and `~song.chrd` hash differently. Compare what a musician
+ * would call the same chart instead.
  */
 export function musicalHash(content) {
   const body = String(content)
@@ -203,22 +73,60 @@ export function musicalHash(content) {
   return createHash("sha256").update(body).digest("hex");
 }
 
+/** The sung words of a chart, in order: no directives, chords or bar rows. */
+export function lyricWords(content) {
+  return String(content)
+    .split("\n")
+    .filter((line) => !/^\s*\{/.test(line) && !/^\s*\|/.test(line))
+    .map((line) => line.replace(/\[[^\]]*\]/g, ""))
+    .join(" ")
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z]+/g, " ")
+    .split(" ")
+    .filter((word) => word.length > 1);
+}
+
+/** Every run of three words, so word order counts but line breaks do not. */
+export function lyricShingles(content) {
+  const words = lyricWords(content);
+  const set = new Set();
+  for (let i = 0; i + 3 <= words.length; i += 1) set.add(words.slice(i, i + 3).join(" "));
+  return set;
+}
+
+/**
+ * How much of the shorter lyric appears in the longer one: 1 is all of it.
+ * Containment rather than similarity, because a lyrics sheet that prints the
+ * chorus once is still the same song as a chart that prints it three times.
+ */
+export function lyricOverlap(a, b) {
+  if (a.size === 0 || b.size === 0) return 0;
+  const [small, large] = a.size <= b.size ? [a, b] : [b, a];
+  let common = 0;
+  for (const shingle of small) if (large.has(shingle)) common += 1;
+  return common / small.size;
+}
+
 export function buildGroups(manifests, readContent) {
   const songs = [];
   for (const m of manifests) {
     for (const s of m.data.songs) {
       const content = readContent(s.file);
+      const header = parseHeader(splitHeader(content).header);
       songs.push({
         ...s,
         source: m.data.sourceType,
+        header,
         chords: (content.match(/\[[A-G][^\]]*\]/g) || []).length,
         hasChords: hasChords(content),
         musicalSha256: musicalHash(content),
         cues: (content.match(/\[\*[^\]]*\]/g) || []).length,
         key: s.metadata?.key ?? null,
-        chordSeq: chordSequence(content),
-        nashville: nashvilleSequence(content, s.metadata?.key ?? null),
         lines: content.split("\n").filter((l) => l.trim() && !l.startsWith("{")).length,
+        shingles: lyricShingles(content),
+        listed: !s.metadata?.isDraft,
+        unlisted: /\bunlisted\b/.test(header.get("x_flag") || ""),
       });
     }
   }
@@ -232,10 +140,267 @@ export function buildGroups(manifests, readContent) {
   return { songs, groups: [...groups.entries()].filter(([, v]) => v.length > 1) };
 }
 
+/** How much two copies agree: identical music counts as all of it. */
+function overlapOf(a, b) {
+  if (a.musicalSha256 === b.musicalSha256) return 1;
+  return lyricOverlap(a.shingles, b.shingles);
+}
+
+/**
+ * The copy that should stand for the song, first.
+ *
+ * A chart beats a lyrics sheet. Then the church's own chart, because that is
+ * the arrangement the band plays. Then a copy the old site listed over one it
+ * hid behind a `~`, a reviewed chart over a draft, and only then the fuller
+ * chart. The id breaks ties so the answer never depends on directory order.
+ */
+export function rankForMerge(copies) {
+  return [...copies].sort(
+    (a, b) =>
+      Number(b.chords > 0) - Number(a.chords > 0) ||
+      Number(b.source === "chrd") - Number(a.source === "chrd") ||
+      Number(a.unlisted) - Number(b.unlisted) ||
+      Number(b.listed) - Number(a.listed) ||
+      b.chords - a.chords ||
+      (b.cues ?? 0) - (a.cues ?? 0) ||
+      b.lines - a.lines ||
+      a.songId.localeCompare(b.songId),
+  );
+}
+
+/**
+ * Split the live copies of one title into songs.
+ *
+ * @returns {{ clusters: Array<Array<object>>, partial: Array<{a, b, overlap}> }}
+ *   `partial` pairs share some lyrics but not enough to call them one song.
+ */
+export function clusterCopies(copies) {
+  const parent = copies.map((_, i) => i);
+  const find = (i) => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+  const pairs = [];
+  for (let i = 0; i < copies.length; i += 1) {
+    for (let j = i + 1; j < copies.length; j += 1) {
+      const overlap = overlapOf(copies[i], copies[j]);
+      pairs.push({ i, j, overlap });
+      if (overlap >= SAME_SONG_OVERLAP) parent[find(i)] = find(j);
+    }
+  }
+  const byRoot = new Map();
+  copies.forEach((copy, i) => {
+    const root = find(i);
+    if (!byRoot.has(root)) byRoot.set(root, []);
+    byRoot.get(root).push(copy);
+  });
+  const partial = pairs
+    .filter((p) => find(p.i) !== find(p.j) && p.overlap >= DIFFERENT_SONG_OVERLAP)
+    .map((p) => ({ a: copies[p.i], b: copies[p.j], overlap: p.overlap }));
+  return { clusters: [...byRoot.values()], partial };
+}
+
+/**
+ * Whether a script may merge a song's copies, and why.
+ *
+ * Two publisher charts credited to two different artists are two recordings,
+ * and possibly two arrangements, even with the same words; a person picks.
+ * A copy that only reaches the winner through a third copy is a person's call
+ * too. Everything else is a copy of one chart.
+ */
+export function mergeKind(ranked) {
+  const [winner, ...losers] = ranked;
+  const artists = new Set(
+    ranked
+      .filter((c) => c.source === "pdf")
+      .map((c) => String(c.header?.get("artist") || "").trim().toLowerCase())
+      .filter(Boolean),
+  );
+  if (artists.size >= 2) return { auto: false, why: "two publisher charts by different artists" };
+  const weakest = Math.min(...losers.map((c) => overlapOf(winner, c)));
+  if (weakest < SAME_SONG_OVERLAP) return { auto: false, why: "copies that only partly match the best one" };
+
+  const sources = new Set(ranked.map((c) => c.source));
+  if (losers.every((c) => c.musicalSha256 === winner.musicalSha256)) return { auto: true, why: "identical copy" };
+  if (sources.size === 1 && sources.has("chrd")) return { auto: true, why: "the old site's draft and final chart" };
+  if (winner.source === "chrd") return { auto: true, why: "the church's own chart, with a converted copy" };
+  if (losers.every((c) => c.chords === 0)) return { auto: true, why: "a lyrics-only copy" };
+  if (sources.has("pdf") && sources.has("text")) return { auto: true, why: "the publisher's PDF and text of one chart" };
+  if (sources.size === 1 && sources.has("pdf")) return { auto: true, why: "the same publisher chart filed twice" };
+  return { auto: true, why: `the same song from ${[...sources].sort().join(" and ")}` };
+}
+
+/** Names a chart answers to, from its `{x_aka:}` (semicolon separated). */
+function akaNames(header) {
+  return String(header?.get("x_aka") || "")
+    .split(";")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+/**
+ * What the winner takes from the other copies: only what it lacks, from the
+ * best-ranked copy that has it. A tempo worked out from a media filename stays
+ * with the copy that worked it out; the build derives it again for the winner.
+ */
+export function carriedFields(winner, donors) {
+  const carry = {};
+  for (const name of CARRIED_DIRECTIVES) {
+    if (String(winner.header?.get(name) || "").trim()) continue;
+    for (const donor of donors) {
+      const value = String(donor.header?.get(name) || "").trim();
+      if (!value) continue;
+      if (name === "tempo" && donor.header?.get("x_tempo_source")) continue;
+      carry[name] = value;
+      break;
+    }
+  }
+  const have = new Set([winner.title, ...akaNames(winner.header)].map((n) => String(n).toLowerCase()));
+  const aka = [];
+  for (const donor of donors) {
+    for (const name of akaNames(donor.header)) {
+      if (have.has(name.toLowerCase())) continue;
+      have.add(name.toLowerCase());
+      aka.push(name);
+    }
+  }
+  if (aka.length > 0) carry.aka = aka.sort((a, b) => a.localeCompare(b));
+  return carry;
+}
+
+/** Where a recorded supersede chain ends. */
+function finalWinner(songId, byId) {
+  const seen = new Set();
+  let id = songId;
+  while (byId.get(id)?.decision === "supersede" && byId.get(id).supersededBy && !seen.has(id)) {
+    seen.add(id);
+    id = byId.get(id).supersededBy;
+  }
+  return id;
+}
+
+/**
+ * Plan every merge in the corpus.
+ *
+ * @returns {{ merges: Array<{key, winner, losers, why, overlaps, carry}>,
+ *             review: Array<{key, why, copies, overlap?}> }}
+ */
+export function planMerges(songs, groups) {
+  const byId = new Map(songs.map((s) => [s.songId, s]));
+  const merges = [];
+  const review = [];
+
+  for (const [key, copies] of groups) {
+    const live = copies.filter((c) => c.decision !== "supersede");
+    if (live.length < 2) continue;
+    const { clusters, partial } = clusterCopies(live);
+
+    for (const cluster of clusters) {
+      if (cluster.length < 2) continue;
+      const ranked = rankForMerge(cluster);
+      const kind = mergeKind(ranked);
+      if (!kind.auto) {
+        review.push({ key, why: kind.why, copies: ranked });
+        continue;
+      }
+      const [winner, ...losers] = ranked;
+      const members = new Set(ranked.map((c) => c.songId));
+      // Copies superseded before, into any member of this song, are copies of
+      // it too, and may hold a detail the winner lacks.
+      const earlier = copies.filter((c) => c.decision === "supersede" && members.has(finalWinner(c.songId, byId)));
+      merges.push({
+        key,
+        winner,
+        losers,
+        earlier,
+        why: kind.why,
+        overlaps: losers.map((c) => overlapOf(winner, c)),
+        carry: carriedFields(winner, [...losers, ...rankForMerge(earlier)]),
+      });
+    }
+    for (const pair of partial) {
+      review.push({ key, why: "copies that share some of their lyrics", copies: rankForMerge([pair.a, pair.b]), overlap: pair.overlap });
+    }
+  }
+  return { merges, review };
+}
+
+/**
+ * The manifests after a plan: losers marked, earlier chains pointed at the
+ * song's new winner. Returns the manifests it changed. Never un-supersedes.
+ */
+export function applyMerges(manifests, merges) {
+  const decisions = new Map();
+  for (const merge of merges) {
+    merge.losers.forEach((loser, i) => {
+      const pct = Math.round(merge.overlaps[i] * 100);
+      decisions.set(loser.songId, {
+        supersededBy: merge.winner.songId,
+        supersedeReason: `same song as the ${merge.winner.source} chart (${pct}% of the lyrics): ${merge.why}`,
+      });
+    });
+    for (const copy of merge.earlier) {
+      if (copy.supersededBy !== merge.winner.songId) decisions.set(copy.songId, { supersededBy: merge.winner.songId });
+    }
+  }
+  const changed = [];
+  for (const m of manifests) {
+    let touched = false;
+    for (const song of m.data.songs) {
+      const decision = decisions.get(song.songId);
+      if (!decision) continue;
+      if (song.decision === "supersede" && !decision.supersedeReason) {
+        if (song.supersededBy !== decision.supersededBy) {
+          song.supersededBy = decision.supersededBy;
+          touched = true;
+        }
+        continue;
+      }
+      song.decision = "supersede";
+      song.supersededBy = decision.supersededBy;
+      song.supersedeReason = decision.supersedeReason;
+      touched = true;
+    }
+    if (touched) changed.push(m);
+  }
+  return changed;
+}
+
+/**
+ * The committed merge ledger with this plan folded in. Earlier entries stay:
+ * a merge is recorded once and a re-run only adds to it or refreshes what a
+ * winner carries.
+ */
+export function mergeLedger(previous, merges) {
+  const songs = { ...(previous?.songs || {}) };
+  for (const merge of merges) {
+    const before = songs[merge.winner.songId];
+    const from = [...new Set([...(before?.from || []), ...merge.losers.map((c) => c.songId)])].sort();
+    songs[merge.winner.songId] = {
+      title: merge.winner.title,
+      from,
+      carry: { ...(before?.carry || {}), ...merge.carry },
+    };
+  }
+  const sorted = Object.fromEntries(Object.keys(songs).sort().map((id) => [id, songs[id]]));
+  return {
+    version: 1,
+    note: "Songs merged by corpus:dedupe. Each winner lists the copies it replaced and the details it took from them; corpus:build writes those into the winner's chart.",
+    songs: sorted,
+  };
+}
+
+/** Song id -> the details its chart carries from merged copies. */
+export function carryBySong(ledger) {
+  return new Map(Object.entries(ledger?.songs || {}).map(([id, entry]) => [id, entry.carry || {}]));
+}
+
+function describe(copy) {
+  const artist = copy.header?.get("artist") || "no artist";
+  const state = copy.unlisted ? "old site ~" : copy.listed ? "listed" : "draft";
+  return `${copy.source} · ${artist} · ${copy.chords} chords · ${state}`;
+}
+
 async function runCli() {
-  const argv = process.argv.slice(2);
-  const apply = argv.includes("--apply");
-  const corpusRoot = resolve(process.cwd(), join(repoRoot, "corpus"));
+  const apply = process.argv.slice(2).includes("--apply");
+  const corpusRoot = join(repoRoot, "corpus");
   if (!existsSync(corpusRoot)) throw new Error(`No corpus at ${corpusRoot}`);
 
   const manifests = await loadManifests(corpusRoot);
@@ -244,81 +409,37 @@ async function runCli() {
     if (!cache.has(file)) cache.set(file, readFileSync(join(corpusRoot, file), "utf8"));
     return cache.get(file);
   };
-
   const { songs, groups } = buildGroups(manifests, readContent);
-  const decisions = new Map();
-  let autoGroups = 0;
-  let reviewGroups = 0;
-  const reviewList = [];
+  const { merges, review } = planMerges(songs, groups);
+  const losers = merges.reduce((n, m) => n + m.losers.length, 0);
 
-  for (const [key, copies] of groups) {
-    const result = decideGroup(copies);
-    // Losers are recorded even in a group that still needs review: a redundant
-    // copy does not become less redundant because another copy is in question.
-    for (const loser of result.losers) {
-      decisions.set(loser.song.songId, { supersededBy: result.winner.songId, reason: loser.reason });
-    }
-    if (result.auto) autoGroups += 1;
-    else {
-      reviewGroups += 1;
-      reviewList.push({ key, copies: result.open ?? rankCopies(copies) });
-    }
+  console.log(`songs ${songs.length} | same-title groups ${groups.length}`);
+  console.log(`  merges: ${merges.length} songs, ${losers} copies superseded`);
+  for (const m of merges) {
+    const carry = Object.entries(m.carry).map(([k, v]) => `${k}=${Array.isArray(v) ? v.join("; ") : v}`).join(", ");
+    console.log(`    ${m.winner.title} — ${m.why}`);
+    console.log(`      keep   ${describe(m.winner)}`);
+    m.losers.forEach((c, i) => console.log(`      merge  ${describe(c)}  (${Math.round(m.overlaps[i] * 100)}%)`));
+    if (carry) console.log(`      carry  ${carry}`);
   }
-
-  console.log(`songs ${songs.length} | duplicate title groups ${groups.length}`);
-  console.log(`  decided automatically : ${autoGroups} groups, ${decisions.size} songs superseded`);
-  console.log(`  left for review       : ${reviewGroups} groups`);
-  console.log("");
-  console.log("Automatic decisions are only made when the call is unambiguous:");
-  console.log("an identical copy, or a chart with chords against the same song with none.");
-
-  if (reviewList.length > 0) {
-    console.log(`\nNeeds a person (${reviewList.length}) — two or more real charts:`);
-    for (const r of reviewList.slice(0, 20)) {
-      console.log(`  "${r.key}"`);
-      for (const c of r.copies) {
-        // Show what actually differs, so the reason for review is visible.
-        const bits = [
-          `chords ${String(c.chords).padStart(3)}`,
-          `key ${String(c.key ?? "—").padEnd(3)}`,
-          `lines ${String(c.lines).padStart(3)}`,
-          c.cues ? `cues ${String(c.cues).padStart(3)}` : "        ",
-        ];
-        console.log(`      ${c.source.padEnd(7)} ${bits.join("  ")}  ${c.title}`);
-      }
-    }
-    if (reviewList.length > 20) console.log(`  … and ${reviewList.length - 20} more`);
+  console.log(`\n  for a person: ${review.length}`);
+  for (const r of review) {
+    console.log(`    ${r.copies[0].title} — ${r.why}${r.overlap !== undefined ? ` (${Math.round(r.overlap * 100)}%)` : ""}`);
+    for (const c of r.copies) console.log(`      ${describe(c)}`);
   }
 
   if (!apply) {
     console.log("\nDRY RUN — nothing written. Re-run with --apply.");
     return;
   }
-
-  let written = 0;
-  for (const m of manifests) {
-    let touched = false;
-    for (const song of m.data.songs) {
-      const decision = decisions.get(song.songId);
-      if (decision) {
-        if (song.decision !== "supersede" || song.supersededBy !== decision.supersededBy) touched = true;
-        song.decision = "supersede";
-        song.supersededBy = decision.supersededBy;
-        song.supersedeReason = decision.reason;
-      } else if (song.decision === "supersede") {
-        // A copy that used to lose and now does not — never leave a stale flag.
-        delete song.supersededBy;
-        delete song.supersedeReason;
-        song.decision = "song";
-        touched = true;
-      }
-    }
-    if (touched) {
-      await writeFile(m.file, `${JSON.stringify(m.data, null, 2)}\n`, "utf8");
-      written += 1;
-    }
-  }
-  console.log(`\nWrote ${written} manifest(s). ${decisions.size} songs marked supersede; none deleted.`);
+  const changed = applyMerges(manifests, merges);
+  for (const m of changed) await writeFile(m.file, `${JSON.stringify(m.data, null, 2)}\n`, "utf8");
+  const ledgerPath = join(corpusRoot, "merges.json");
+  const previous = existsSync(ledgerPath) ? JSON.parse(readFileSync(ledgerPath, "utf8")) : null;
+  await writeFile(ledgerPath, `${JSON.stringify(mergeLedger(previous, merges), null, 2)}\n`, "utf8");
+  const rebuild = [...new Set(merges.filter((m) => Object.keys(m.carry).length > 0).map((m) => m.winner.source))].sort();
+  console.log(`\nWrote ${changed.length} manifest(s) and corpus/merges.json. Nothing deleted.`);
+  if (rebuild.length > 0) console.log(`Rebuild these sources so the winners carry what they took: ${rebuild.join(", ")}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

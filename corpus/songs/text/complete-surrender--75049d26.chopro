@@ -15,7 +15,9 @@
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/complete-surrender/charts/rhythm-chart.pdf}
 {x_source_complete_surrender_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/complete-surrender/source/Complete-Surrender-Chord-Chart-TXT.txt}
 
-Intro     Bb   Fsus   Gm7     Eb2  (2x)
+{comment: Intro}
+[Bb] [Fsus] [Gm7] [Eb2]
+{ci: 2x}
 
 {comment: Verse I}
 I have been b[Bb]roken I have been b[F2]ruised I’ve had my b[Gm7]attles I’ve been a[Eb2]ccused
@@ -51,11 +53,11 @@ I sur[Gm7]render com[Fsus]pletely to [Bb/D]You L[Eb2]ord
 
 {comment: Bridge}
 {ci: 8x}
-[Bb2/D]         Take m[Eb2]y mind, take my [Gm7]fears, take m[F2]y life, I s[Bb2/D]urrender
+[Bb2/D]Take m[Eb2]y mind, take my [Gm7]fears, take m[F2]y life, I s[Bb2/D]urrender
 To Y[Eb2]our will, to Your [Gm7]way, to Yo[F2]ur plan, I sur[Bb2/D]render
 
 {comment: Vamp}
-[Eb2]     [Gm7]     [F2]  I sur[Bb2/D]render  [Eb2]       [Gm7]      [F2]  I sur[Bb2/D]render  [Eb2]       [Gm7]      [F2]   I su[Bb2/D]rrender[Eb2][Gm7][F2]
+[Eb2]  [Gm7]  [F2] I sur[Bb2/D]render[Eb2]    [Gm7]I[F2] sur[Bb2/D]render[Eb2] [Gm7]    [F2]I su[Bb2/D]rrender[Eb2][Gm7][F2]
 
 {comment: Chorus}
 {ci: ending}

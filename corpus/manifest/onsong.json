@@ -66,7 +66,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "16ce24f6-2148-52f0-b123-7c5178bd3ef8",
+      "supersedeReason": "same song as the pdf chart (92% of the lyrics): the same song from onsong and pdf"
     }
   ]
 }

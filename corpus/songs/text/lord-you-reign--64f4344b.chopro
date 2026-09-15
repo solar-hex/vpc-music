@@ -12,22 +12,28 @@
 {x_source_lord_you_reign: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/lord-you-reign/source/Lord-You-Reign.txt}
 {x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/you-reign/audio/loop.wav}
 
-Intro	(Ab - G) DbM7 Ab2/C (Ab � G) DbM7 Fm11
-{ci: Ab - G) DbM7 Ab2/C  Db/F Ab Eb2/G (repeat first two lines}
-*2nd time: Db/F  Eb/G   Ab
+{comment: Intro}
+{ci: Ab � G}
+[(Ab-G)] [DbM7] [Ab2/C] [DbM7] [Fm11]
+[(Ab-G)] [DbM7] [Ab2/C] [Db/F] [Ab] [Eb2/G]
+{ci: repeat first two lines}
+{ci: *2nd time: Db/F Eb/G Ab}
 
 {comment: Chorus}
-Hall[DbM7]elujah[Ab/C],      [DbM7]halle[Fm11]lujah	H[DbM7]allelu[Ab/C]jah,  L[Fm7]ord  Y[Ab]ou r[Eb/G]eign
-[Ab]Hal[Ab/C]  le [DbM7]  lu [Ab/C] jah   [DbM7]hallel[Fm11]ujah   [DbM7]Hallel[Ab/C]ujah  [Db/F]Lord  [Eb/G]You  r[Ab]eign
+Hall[DbM7]elujah[Ab/C],    [DbM7]halle[Fm11]lujah[DbM7]    Hal[Ab/C]lelujah[Fm7],  Lor[Ab]d  Y[Eb/G]ou reign
+[Ab]Hal[Ab/C]  le[DbM7]   lu[Ab/C]  jah   [DbM7]hallel[Fm11]ujah   [DbM7]Hallel[Ab/C]ujah  [Db/F]Lord  [Eb/G]You  r[Ab]eign
 
 {comment: Verse}
-[Db]Lord [Eb]You r[Fm7]eign  [Eb]in   [Eb/Db]maje s[Db]ty   Lord [Eb]You [Fm7]reign [Eb]    v[Eb/Db]ictoriou[Db]sly
-Lord [Eb]You r[Fm7]eign  [Eb/Db]gloriou[Db]sly  [Db/F] Lord  [Eb/G]You  r[Ab]eign   [Eb/G]Reign
+[Db]Lord [Eb]You r[Fm7]eign  [Eb]in   [Eb/Db]maje s[Db]ty   Lord [Eb]You [Fm7]reign[Eb]    v[Eb/Db]ictoriou[Db]sly
+Lord [Eb]You r[Fm7]eign  [Eb/Db]gloriou[Db]sly   [Db/F]Lord  [Eb/G]You  r[Ab]eign   [Eb/G]Reign
 
 {comment: Bridge}
-[Db]Reign, r[Eb]eign,  r[Fm7]eign	[Eb] (repeat)
+[Db]Reign, r[Eb]eign,  r[Fm7]eign[Eb]
+{ci: repeat}
 [Db]Reign, r[Eb]eign,  r[Fm7]eign, r[Gm7]eign
-[Db]Reign, r[Eb]eign,  r[Fm7]eign	[Eb] (repeat as desired)
+[Db]Reign, r[Eb]eign,  r[Fm7]eign[Eb]
+{ci: repeat as desired}
 
 {comment: Interlude}
-Fm7	(Return to Chorus to end)
+[Fm7]
+{ci: Return to Chorus to end}

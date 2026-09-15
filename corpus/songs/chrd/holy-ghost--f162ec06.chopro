@@ -1,5 +1,7 @@
 {title: Holy Ghost}
+{artist: Taylor Fish}
 {key: Bb}
+{time: 4/4}
 {tempo: 150}
 {x_tempo_source: derived from media filename}
 {x_theme: holy-spirit, revival, baptism, healing, praise, victory}
@@ -14,6 +16,8 @@
 {x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/number-chart.pdf}
 {x_chart_rhythm_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/rhythm-chart.pdf}
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/holy-ghost--f162ec06/charts/vocals.pdf}
+{x_album: Holy Ghost (Single)}
+{x_writers: Taylor Fish}
 
 {comment: Intro}
 | [Gm7]/     /     /     /     | /     /     /     /     [Ebmaj9]| /     /     /     | /     /     /     /     |

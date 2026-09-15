@@ -20,22 +20,24 @@
 {x_chart_how_great_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/how-great/charts/how-great-vocals.pdf}
 {x_source_how_great_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/how-great/source/How Great - Chord Chart(txt).txt}
 
-Intro	A  (C# C# D# D# E E)	A/C#  (E E F# F#) B/D#	(G# G#)  E
+{comment: Intro}
+[A] [(C#-C#-D#-D#-E-E)] [A/C#] [(E-E-F#-F#)] [B/D#] [(G#-G#)] [E]
 
 {comment: Chorus}
-[A] My G[A/C#]od, how great[B/D#] You are  [E]   How great, how great You are
+[A]My God, how great You ar[A/C#]e    How great[B/D#], how grea[E]t You are
 
 {comment: Verse}
-[E]The heaven[B/D#]s are tellin[C#m7]g telling th[E/G#]e earth how great You are
-[A]  And we a[Bsus]re respon[E]ding to Your love
-Th[B/D#]e oceans a[C#m7]re rising risin[E/G#]g and falling at Your word
-[A]  A[Bsus]nd we ar[E]e responding to Your love
+[E]The heavens are [B/D#]telling telling[C#m7] the earth how g[E/G#]reat You are
+[A]And we are res[Bsus]ponding to Y[E]our love
+The oceans are r[B/D#]ising rising [C#m7]and falling at [E/G#]Your word
+[A]And we are res[Bsus]ponding to [E]Your love
 {ci: Repeat Chorus and Verse}
 
 {comment: Bridge}
-[A]Hal  [C#m7] le   [E/G#] lu	j[B]ah
-[A]Hal  [C#m7] le    [E]lu	jah
-[A]Hal  [C#m7] le   [E/G#] lu	j[B]ah
+[A]Hal   [C#m7]le    [E/G#]lu  [B]jah
+[A]Hal   [C#m7]le    [E]lu  jah
+[A]Hal   [C#m7]le    [E/G#]lu  [B]jah
 To Chorus:
-How gr[A]eat You are[B] how[A] great You are  [B/A]How great You are how great You are (2x)
+How gr[A]eat You are[B] how great You a[A]re  How great Yo[B/A]u are how great You are
+{ci: 2x}
 {ci: Repeat Chorus}

@@ -5598,11 +5598,9 @@
       "type": "docx",
       "decision": "song",
       "songId": "05720f5d-8949-53d7-b58a-0f7efc33af85",
-      "confidence": 0.5,
-      "band": "low",
-      "warnings": [
-        "Lyrics only — no chords in the source"
-      ],
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },

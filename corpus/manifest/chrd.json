@@ -2031,7 +2031,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f9220d26-875e-5cc8-9ee9-cb19e31cd50d",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "2b8772f2-6783-592d-8cd9-27088d5b4f25",
@@ -2809,7 +2811,7 @@
       "songId": "3f18a2c9-e1c0-51e7-8dc9-8517f9684334",
       "title": "Same God",
       "file": "songs/chrd/same-god--3f18a2c9.chopro",
-      "contentSha256": "0de1d58a7d722338b76bdec65c0564c648a190d22b9ac144ac16ee464b73362f",
+      "contentSha256": "17d63d72e29f4151901d9476101b9146e6571d4beffbef0281711aa25dd46ea5",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -4931,7 +4933,7 @@
       "songId": "6971e83a-0510-56bc-adc8-c892068565f8",
       "title": "King of Glory",
       "file": "songs/chrd/king-of-glory--6971e83a.chopro",
-      "contentSha256": "5379e3b6ecf1b0bac0d7cee7d1d18bddd0f2dccdd83024831e1a70d4ba1e9eb5",
+      "contentSha256": "f25f8d741873ba749e1d1b2472b01379f4f55a39ec69a60737776f40c8acf3fc",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -4965,7 +4967,7 @@
       "songId": "6a2f8538-3004-5390-903d-eeddce4665eb",
       "title": "Jesus Is",
       "file": "songs/chrd/jesus-is--6a2f8538.chopro",
-      "contentSha256": "dd31f08eb4cdff03d00ced42b92d801074b0b317ad401406c0199c8cdba91564",
+      "contentSha256": "b64f5c8e9d5f9526cb91ce3ae2d0c97277af2233c574f41ba0e51005af5f98e6",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -5027,7 +5029,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "96c37769-8658-551d-883e-802367640b62",
+      "supersedeReason": "same song as the chrd chart (93% of the lyrics): the old site's draft and final chart"
     },
     {
       "songId": "6e5f6ffa-400a-584c-927e-acc4cf28308a",
@@ -5156,7 +5160,7 @@
       "songId": "71997a3f-5001-54d1-831d-d0d8d899c99f",
       "title": "Still Everything",
       "file": "songs/chrd/still-everything--71997a3f.chopro",
-      "contentSha256": "43d0521e908712f0513bb3ed7d5064fa6b082f8f65bd707256e23ef0de323a06",
+      "contentSha256": "d174f1049d8bebff008ae8e503e744a1b1c57c50543fde26e40bb0b646117496",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -5469,7 +5473,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "af0c51e8-e4b7-5b3d-868d-18b535e38d11",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the old site's draft and final chart"
     },
     {
       "songId": "765ecbb1-411d-53b0-b054-05bbc7363839",
@@ -5537,7 +5543,7 @@
       "songId": "768cb222-2c9d-5a4f-86c1-89493df40b29",
       "title": "Anything Can Happen",
       "file": "songs/chrd/anything-can-happen--768cb222.chopro",
-      "contentSha256": "fde35fec3d7c060b0195fc9bfeda56b7b188f52c93b546c83f14956ab7a07b7c",
+      "contentSha256": "94cca0019237fbe056e336aa47775694f3a0fe9a88a9044235d8311e2b14b2c2",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -5821,7 +5827,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f782d8cd-ffe3-523d-b0f4-e183ac7de298",
+      "supersedeReason": "same song as the chrd chart (98% of the lyrics): the old site's draft and final chart"
     },
     {
       "songId": "7bbd5b2a-80da-551f-9feb-1d1fe9c2b8bb",
@@ -5861,7 +5869,9 @@
       "warnings": [
         "Unrecognized chord \"fm7\""
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f162ec06-76d3-548d-852b-c7beeb7494dd",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "7ca09651-fbde-5da0-8116-389a970f27d3",
@@ -6061,7 +6071,9 @@
       "warnings": [
         "Dropped \"*\" after chord \"Ebm\""
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "826f0b19-914d-5923-91a9-f801654cc235",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the old site's draft and final chart"
     },
     {
       "songId": "8128b381-b0da-51fa-a602-3d11ae61027e",
@@ -7478,7 +7490,7 @@
       "songId": "9cdccdd4-3115-5ea3-9d2e-e1d414d87d41",
       "title": "Hes In The Room",
       "file": "songs/chrd/hes-in-the-room--9cdccdd4.chopro",
-      "contentSha256": "56f333db3559fada25f6886e1dedc4092aea36aebaf288a0156da32b95ccda91",
+      "contentSha256": "e8bbed2c46e260c543c8cc59092cae647a7a6839ba1acd908ec4fb0575ed4764",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -7752,7 +7764,7 @@
       "songId": "9f137f76-ae5d-5530-b76b-8b571a4d001e",
       "title": "Wait On The Lord",
       "file": "songs/chrd/wait-on-the-lord--9f137f76.chopro",
-      "contentSha256": "df78f1144f031b3f6534b51193ee88f93ee2d384bac8549856eeb7a5332f96cf",
+      "contentSha256": "69986d2e1e15f7b5c6a00783d7873933f43f6e13a1b05dfc2aca13130b087929",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -7781,7 +7793,7 @@
       "songId": "9f25f88a-281a-5804-b7c9-1b3ee054801c",
       "title": "Order My Steps",
       "file": "songs/chrd/order-my-steps--9f25f88a.chopro",
-      "contentSha256": "683b70e60874855062b0ad74a25c89cea04be8f8856a15a33809f7fc70ab29a8",
+      "contentSha256": "0f6584f408023bf84a4002529cd8cbc8b25abf1b2929405e5e736318711ddd6a",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8042,7 +8054,7 @@
       "songId": "a1af8a74-8a63-5746-920c-0a6501bda832",
       "title": "This Place",
       "file": "songs/chrd/this-place--a1af8a74.chopro",
-      "contentSha256": "fec7d7fa075ef2757a1d040174738d2dfb1f76ba975cf9c545c925dd32cf1322",
+      "contentSha256": "42cda7af3b91d573d539d2145a1610a753bb8ba8557cd61b9c3b10ce28d77d21",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -9899,7 +9911,7 @@
       "songId": "c7299657-e6c4-5680-b0fe-f06716596248",
       "title": "Way Maker",
       "file": "songs/chrd/way-maker--c7299657.chopro",
-      "contentSha256": "a99b50d6de23d9902f50675f4fb9c7c557224c5d027aa51eceec73c50f0fcf16",
+      "contentSha256": "72bca0fb205688533608747df4ad85831a0001e9ee64c02488d05f9a8d4b398d",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -10055,7 +10067,7 @@
       "songId": "c9d22cc5-677d-5641-a71e-48cacb1062ca",
       "title": "Glory, Honor, Power",
       "file": "songs/chrd/glory-honor-power--c9d22cc5.chopro",
-      "contentSha256": "3726f3ab6eb13b8c6f45aa8338969217c8c818531b91bc5ca0440b6791c612c4",
+      "contentSha256": "a07f4525464d779b2bfc054e4fefbd8e499153c11f96d0f10163217fce09ec3f",
       "metadata": {
         "key": "E",
         "artist": null,
@@ -10088,7 +10100,7 @@
       "songId": "cace7122-f477-5262-ab91-77b29659f90f",
       "title": "What A Beautiful Name",
       "file": "songs/chrd/what-a-beautiful-name--cace7122.chopro",
-      "contentSha256": "32a67686da1bfdc1366fdd993ce71b18baee239b0a5e3a10dfb5fddf07d2f173",
+      "contentSha256": "5b3a646e7cc75174e81e04db5e608886aebd53a3ad5cfa5ea5295b8213db332c",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -10258,7 +10270,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "4d2d2422-e5a6-598a-929d-24bef4fd1dc6",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the old site's draft and final chart"
     },
     {
       "songId": "cd3c54e9-3346-547c-b2e4-34ed1ba20d2f",
@@ -10776,7 +10790,7 @@
       "songId": "d5837b32-e565-5685-b941-bd80ef68c131",
       "title": "Worthy Of It All",
       "file": "songs/chrd/worthy-of-it-all--d5837b32.chopro",
-      "contentSha256": "d2e84b9993dfb61ef7ad19d238d7e39dc4618b23468ba42679017116e73ea271",
+      "contentSha256": "096ae40ede235ed9c5664f469af52a9fcf6985b689ed5cfc02839da9fe10ea48",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -11478,7 +11492,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "71997a3f-5001-54d1-831d-d0d8d899c99f",
+      "supersedeReason": "same song as the chrd chart (98% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "e688a393-49d9-5d87-a7e7-4f19bc00697e",
@@ -12262,7 +12278,7 @@
       "songId": "f162ec06-76d3-548d-852b-c7beeb7494dd",
       "title": "Holy Ghost",
       "file": "songs/chrd/holy-ghost--f162ec06.chopro",
-      "contentSha256": "3b063959a2a5ef04a25c4788cf5eb23cb8ddaf3c545b9d00a65132104a2fa7b9",
+      "contentSha256": "fdbac3bcd373381eae36ddd1c4351e75d168522fcdd6f3958aafd1012fc48369",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -12683,7 +12699,7 @@
       "songId": "f9220d26-875e-5cc8-9ee9-cb19e31cd50d",
       "title": "No Other Name (Mark Yandris)",
       "file": "songs/chrd/no-other-name-mark-yandris--f9220d26.chopro",
-      "contentSha256": "b1e491ee8ab35ff45d22dd337833a30471ac2b7eca0b8b9f7737d60cb02f696b",
+      "contentSha256": "ed2e32e822d8b0077c2a864f9bacafa3cb361a28b2c9abe6cce9a20b42c0c636",
       "metadata": {
         "key": "Bb",
         "artist": null,

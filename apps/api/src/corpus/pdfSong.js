@@ -403,10 +403,24 @@ export function mergeByPosition(chordLine, lyricLine) {
 
   const chords = (chordLine.tokens ?? coalesceRuns(chordLine.elements || [])).filter((e) => e.text.trim());
 
+  // Several chords printed before the words begin come before them, across the
+  // gap they were printed over: "[B11]   [E]   [A]   oh oh", not
+  // "[B11]o[E]h[A] oh". One chord just left of the first word stays on it,
+  // which is where a musician reads it.
+  const firstX = rendered.xs[0] ?? 0;
+  const early = chords.filter((chord) => chord.x < firstX - charWidth * 1.5);
+  const lead = early.length >= 2 ? early : [];
+  let prefix = "";
+  lead.forEach((chord, n) => {
+    const name = chord.text.trim();
+    const until = lead[n + 1]?.x ?? firstX;
+    prefix += `[${name}]${" ".repeat(Math.max(1, Math.round((until - chord.x) / charWidth) - name.length))}`;
+  });
+
   let out = text;
   let shift = 0;
   let last = -1;
-  for (const chord of chords) {
+  for (const chord of chords.filter((c) => !lead.includes(c))) {
     let best = 0;
     let dist = Infinity;
     for (const p of positions) {
@@ -424,7 +438,7 @@ export function mergeByPosition(chordLine, lyricLine) {
     out = out.slice(0, at) + token + out.slice(at);
     shift += token.length;
   }
-  return out;
+  return prefix + out;
 }
 
 /**

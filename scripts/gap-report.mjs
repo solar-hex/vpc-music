@@ -124,7 +124,7 @@ export async function collectHave(corpusRoot) {
     if (!file.endsWith(".json")) continue;
     const manifest = JSON.parse(await readFile(join(manifestDir, file), "utf8"));
     for (const song of manifest.songs) {
-      if (song.decision === "superseded") continue;
+      if (song.decision === "supersede") continue;
       have.push({
         id: song.songId,
         title: song.title,

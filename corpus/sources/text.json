@@ -107,8 +107,8 @@
       "type": "text",
       "decision": "song",
       "songId": "5121fa9e-b0d7-5cfb-9f21-a768244d0484",
-      "confidence": 0.8,
-      "band": "medium",
+      "confidence": 0.9,
+      "band": "high",
       "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
@@ -121,8 +121,8 @@
       "type": "text",
       "decision": "song",
       "songId": "2fcb47d7-5e03-56f1-a5ce-78c4b656cfbe",
-      "confidence": 0.8,
-      "band": "medium",
+      "confidence": 0.9,
+      "band": "high",
       "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
@@ -149,8 +149,8 @@
       "type": "text",
       "decision": "song",
       "songId": "289089b7-5193-5668-a363-4481f704befe",
-      "confidence": 0.8,
-      "band": "medium",
+      "confidence": 0.9,
+      "band": "high",
       "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
@@ -289,12 +289,9 @@
       "type": "text",
       "decision": "song",
       "songId": "3137824b-6321-5c48-881d-803a6315ef10",
-      "confidence": 0.2,
-      "band": "low",
-      "warnings": [
-        "No chord lines found",
-        "No sections detected"
-      ],
+      "confidence": 0.8,
+      "band": "medium",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },

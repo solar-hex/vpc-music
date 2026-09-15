@@ -1,4 +1,6 @@
 {title: Let’s Dance}
+{artist: Sarah Benibo}
+{key: E}
 {tempo: 90}
 {x_tempo_source: derived from media filename}
 {x_theme: praise, healing, joy, holy-spirit}
@@ -13,7 +15,6 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/let-s-dance/charts/vocals.pdf}
 {x_source_let_s_dance_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/let-s-dance/source/Let’s-Dance-Chord-Chart-TXT.txt}
 
-Sarah Benibo                                                                        Key: E
 Key of E
 
 {comment: Intro}
@@ -36,16 +37,13 @@ Let’s d[E]ance    let’s [C#m7]move   lets’ sh[A]out  [E/G#]Hal-le-l[A]u-[B
 [E] [C#m7] [A] [Bsus]
 
 {comment: Bridge}
-[E/G#]Now my mourning is da[A]ncing__[B]____ [A/C#] now my sorrow is [Am7]joy__[Bm7]_____
-E/G#             A      B    A/C#             (A-B-C#-D#-E-F#-B-A-G#-E-C#-B-A-G#)
-He removed my depression____ gave a garmet of praise___________________________
+[E/G#]Now my mourning is da[A]ncing__[B]____[A/C#]  now my sorrow is [Am7]joy__[Bm7]_____
+[E/G#]He removed my dep[A]ression[B]____ [A/C#]gave a garmet of [(A-B-C#-D#-E-F#-B-A-G#-E-C#-B-A-G#)]praise___________________________
 
 {comment: Chorus}
-Let’s d[E]ance in His presence  be m[C#m11-]oved by[C#m11] His spirit
-B -  A                      A     E/G#  Bsus
-Let’s sing Hallelujah  let’s shout out  loud
-There’s j[E]oy in His presence there’s [C#m11-]peace l[C#m11]ike a river
-B  -  A                           A    E/G# Bsus
-His love will overtake you let’s shout out loud
+Let’s d[E]ance in His presence  be m[C#m11]oved by[C#m11] His spirit
+L[B]et’s [A]sing Hallelujah  let’s [A]shout [E/G#]out  l[Bsus]oud
+There’s j[E]oy in His presence there’s [C#m11]peace l[C#m11]ike a river
+[B]His lo[A]ve will overtake you let’s s[A]hout [E/G#]out l[Bsus]oud
 Let’s da[E]nce    let’s [C#m7]move   lets’ sh[A]out   Hal-[Bsus]lel-ujah
 Let’s da[E]nce    let’s [C#m7]move   lets’ sh[A]out   Hal-[Bsus]lel-ujah_____ [E]let’s d[E]ance

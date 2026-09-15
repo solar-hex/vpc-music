@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { buildGapReport, formatGapReport, siteOf } from "./gap-report.mjs";
+import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { buildGapReport, collectHave, formatGapReport, siteOf } from "./gap-report.mjs";
 
 const have = [
   { id: "a", title: "Way Maker", aka: null, source: "chrd", artist: "Sinach" },
@@ -104,5 +107,22 @@ describe("formatGapReport", () => {
       master: [],
     });
     expect(formatGapReport(done)).toContain("marked done but not in the library");
+  });
+});
+
+describe("collectHave", () => {
+  it("does not count a copy merged into another song as a song we have", async () => {
+    const root = await mkdtemp(join(tmpdir(), "vpc-gap-"));
+    try {
+      await mkdir(join(root, "manifest"));
+      const songs = [
+        { songId: "keep", title: "Way Maker", decision: "song", metadata: {} },
+        { songId: "gone", title: "Way Maker", decision: "supersede", supersededBy: "keep", metadata: {} },
+      ];
+      await writeFile(join(root, "manifest", "pdf.json"), JSON.stringify({ sourceType: "pdf", songs }), "utf8");
+      expect((await collectHave(root)).map((s) => s.id)).toEqual(["keep"]);
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
   });
 });

@@ -154,7 +154,7 @@
       "songId": "05720f5d-8949-53d7-b58a-0f7efc33af85",
       "title": "I got the Lord",
       "file": "songs/docx/i-got-the-lord--05720f5d.chopro",
-      "contentSha256": "e06ce0d947e13d1d1913f6575cb192d3fc587d6957120d77f9225ce362e62ea4",
+      "contentSha256": "fb597977602f906c0c4288eaa58567edbfccb80f94618300fd1fea448475e789",
       "metadata": {
         "key": "G",
         "artist": null,
@@ -175,15 +175,11 @@
         }
       ],
       "confidence": {
-        "score": 0.5,
-        "band": "low",
-        "reasons": [
-          "no chords"
-        ]
+        "score": 1,
+        "band": "high",
+        "reasons": []
       },
-      "warnings": [
-        "Lyrics only — no chords in the source"
-      ],
+      "warnings": [],
       "decision": "song"
     },
     {
@@ -6813,7 +6809,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "28482490-c364-5fee-9749-f765657ea452",
+      "supersedeReason": "same song as the chrd chart (82% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "8556cac1-629d-5f0d-a422-652d548c3900",
@@ -8371,7 +8369,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3e471a37-8978-5e97-9c12-d5d33b30a518",
+      "supersedeReason": "same song as the docx chart (100% of the lyrics): a lyrics-only copy"
     },
     {
       "songId": "9c46f7b1-4dab-5560-861e-bab94e0ed94b",
@@ -8921,7 +8921,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "35515dad-726f-5526-8f2b-3b3ec364f63a",
+      "supersedeReason": "same song as the chrd chart (84% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "aaf89cea-08f1-5544-af62-9931754f9788",
@@ -9040,7 +9042,9 @@
         "Lyrics only — no chords in the source",
         "No section labels found"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "7f79f44c-66ed-5e9c-9da9-883e18a264db",
+      "supersedeReason": "same song as the docx chart (100% of the lyrics): a lyrics-only copy"
     },
     {
       "songId": "ad96635f-b4f1-5fd2-b871-25968eecc915",
@@ -10698,7 +10702,7 @@
         "Lyrics only — no chords in the source"
       ],
       "decision": "supersede",
-      "supersededBy": "36855a3d-e5b3-5ec5-bb20-f44dce726ece",
+      "supersededBy": "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e",
       "supersedeReason": "lyrics only, superseded by the text chart"
     },
     {
@@ -11414,7 +11418,9 @@
       "warnings": [
         "Lyrics only — no chords in the source"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "2ff775e0-4c96-5f44-8f7b-13b880ba750a",
+      "supersedeReason": "same song as the docx chart (100% of the lyrics): a lyrics-only copy"
     },
     {
       "songId": "dda6b8c7-49ff-57bb-8378-9346e3bc340f",

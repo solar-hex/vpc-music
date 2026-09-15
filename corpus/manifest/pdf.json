@@ -42,7 +42,7 @@
       "songId": "03e05277-b261-5138-bff6-e0649bc9cea8",
       "title": "Your Great Name",
       "file": "songs/pdf/your-great-name--03e05277.chopro",
-      "contentSha256": "3e15a81978cb9357313e1d1353392478a643e1db22017c93be226bccb8eb57f8",
+      "contentSha256": "3b551a4a08c381ef3528331b53a2ed6e2e569f1b9c399a9a44b7e54d72403983",
       "metadata": {
         "key": "Bb",
         "artist": "Todd Dulaney",
@@ -177,7 +177,7 @@
       "songId": "079cb79d-3e5f-5226-b2a5-a336ae409836",
       "title": "Ancient of Days",
       "file": "songs/pdf/ancient-of-days--079cb79d.chopro",
-      "contentSha256": "d7561bd8728b5a7aba557e3f9ba22a9fd7fcc4889ccb909f003fb91cf061c475",
+      "contentSha256": "c566f93df7d6e34e1d93bec2e589bdc4c4c295ad84490bf409644ba6458426ad",
       "metadata": {
         "key": "B",
         "artist": "Darren Thomas & The Movement",
@@ -213,7 +213,7 @@
       "songId": "088178b0-7dcb-56c4-a093-0a0c9c909411",
       "title": "He Shall Reign Forevermore",
       "file": "songs/pdf/he-shall-reign-forevermore--088178b0.chopro",
-      "contentSha256": "4ddb27e04f6d72a950e875c40eaf91e8cfd3bbf0edf3b04dcfdb57d8d2ba0367",
+      "contentSha256": "4fca930503b1eb43a67f94a27a7eff3d0aef57920867e1aa4e48b27b9f48480b",
       "metadata": {
         "key": "Bb",
         "artist": "Christ Tomlin",
@@ -370,7 +370,7 @@
       "songId": "0d8abc76-cd81-5fa7-aa0e-3ed521dd9653",
       "title": "Not The Same",
       "file": "songs/pdf/not-the-same--0d8abc76.chopro",
-      "contentSha256": "f8b63a2175e1f2a133b7fc3c7173b319cd86d875d462b1f81bf6d8427cdb47de",
+      "contentSha256": "3232a4a1f27192e98ebe091a3c8a2260d6eeebc0d3f3b4800bb5bd25f8a8e603",
       "metadata": {
         "key": "C#",
         "artist": "Jeff Walthall",
@@ -512,7 +512,7 @@
       "songId": "13158aa5-b55b-5357-9687-d8ac0984ed76",
       "title": "Excellent",
       "file": "songs/pdf/excellent--13158aa5.chopro",
-      "contentSha256": "9bb318d007ed3b75ce7a873fa1cb4289036a2b366f1ff34e5c135140b89429d2",
+      "contentSha256": "63c0fdd912e66b6914b97bd53de888a5d3262f65ebe9a146a7cddd7a456602ac",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -700,7 +700,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9f25f88a-281a-5804-b7c9-1b3ee054801c",
+      "supersedeReason": "same song as the chrd chart (96% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "1b8b1e63-db32-5201-88b0-890471c8e92e",
@@ -1163,7 +1165,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "768cb222-2c9d-5a4f-86c1-89493df40b29",
+      "supersedeReason": "same song as the chrd chart (93% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "244cfa9b-7151-545c-9eb9-0b7a3585d05a",
@@ -1531,7 +1535,7 @@
       "songId": "369d8d37-8cd0-54bd-8af7-d04131804f66",
       "title": "Never Lost",
       "file": "songs/pdf/never-lost--369d8d37.chopro",
-      "contentSha256": "8cea3a10a893768edab4cef39eae5106ca007b071f2f62a356a016ff8ebbdde5",
+      "contentSha256": "5076540540c9d908109b26498d2bb4aca9514523d21c05831372da6f00ad4a07",
       "metadata": {
         "key": "Db",
         "artist": "All Nations Worship",
@@ -1761,7 +1765,7 @@
       "songId": "3e43e9c5-4f3c-513a-8e3a-497ca09057e3",
       "title": "It Is Well",
       "file": "songs/pdf/it-is-well--3e43e9c5.chopro",
-      "contentSha256": "544cfe97b488132848b087fcb3221c4f062890f2614a7a4d5397197d9c289939",
+      "contentSha256": "582b234904b476e678e2b3917a05da896a0d109cb2a75150ced8bfb361b0f4b5",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -1829,7 +1833,7 @@
       "songId": "3eaaa8a7-3465-5e32-af02-916ff87b9330",
       "title": "Complete Surrender",
       "file": "songs/pdf/complete-surrender--3eaaa8a7.chopro",
-      "contentSha256": "ee681ddfb5dfacc1e188904172ec120dda7932b90b8076d8cbf0a239d5f0c57d",
+      "contentSha256": "97e29a0ac7108b48054ae6c91b111f4861d2402f2e601f84907afdb123c76087",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -1960,7 +1964,9 @@
         ]
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a7eb57a9-27b8-524e-94bf-8f5915e03119",
+      "supersedeReason": "same song as the pdf chart (75% of the lyrics): the same publisher chart filed twice"
     },
     {
       "songId": "429fc22e-024d-586a-ad23-73011d3871c9",
@@ -2168,7 +2174,7 @@
       "songId": "4a325f15-3c85-5498-934b-5e2081949cf7",
       "title": "I’ve Got a Reason",
       "file": "songs/pdf/i-ve-got-a-reason--4a325f15.chopro",
-      "contentSha256": "527166c463ed1d33a6050d3721676802eb5896e297574af7d465a6c38539c0da",
+      "contentSha256": "1bd927a26fb5f6a6adc091883f37774890db803dd36cfc46f7145f3ac701577e",
       "metadata": {
         "key": "F",
         "artist": "Nashville Life Music",
@@ -2227,7 +2233,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "a1af8a74-8a63-5746-920c-0a6501bda832",
+      "supersedeReason": "same song as the chrd chart (86% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "4bba84e5-a99a-57bc-b083-030c9fbe8da3",
@@ -2266,7 +2274,7 @@
       "songId": "4d159614-c4f0-5874-a934-cf896ea9ef23",
       "title": "I Am Not Ashamed",
       "file": "songs/pdf/i-am-not-ashamed--4d159614.chopro",
-      "contentSha256": "fb3708f19d7d7aa388e901144902b00b4c550ca95b443ee5fc2416055e353ff4",
+      "contentSha256": "afd4801eec32041421248abb79f520286c0c1cb737c80f6e443cf6fdf3a14876",
       "metadata": {
         "key": "Fm",
         "artist": "Christian Life Center Mass Choir",
@@ -2363,7 +2371,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "b34656a5-bdce-5fee-92c9-88380adcfaa0",
+      "supersedeReason": "same song as the pdf chart (100% of the lyrics): the same publisher chart filed twice"
     },
     {
       "songId": "4d7a04d7-9d4e-514b-bdb1-ce36a804f8fb",
@@ -2431,7 +2441,7 @@
       "songId": "4dc350af-57a8-54ba-9ebc-5b60c7f04613",
       "title": "Lift Up Your Voices",
       "file": "songs/pdf/lift-up-your-voices--4dc350af.chopro",
-      "contentSha256": "9c511e73f805ffa301e0c1d37d63b629a585a508dbd0b358afc12640497f1115",
+      "contentSha256": "07cf346ebeb003d5cb59c86002d31d94a69da9ed259a01d521d5176f1b6460fd",
       "metadata": {
         "key": "A",
         "artist": "Sunday Service Choir",
@@ -2856,7 +2866,7 @@
       "songId": "5de4ed3b-4f69-51f7-b0d1-28ef2469091a",
       "title": "A Reason to Dance",
       "file": "songs/pdf/a-reason-to-dance--5de4ed3b.chopro",
-      "contentSha256": "c057ac41a64815fcb587a6f7ebb79f823314bbc09170920eea80d65a81a53cc0",
+      "contentSha256": "aa2a6717638193fd85f6941bbce8695afb2938b8cc9c1574b08b527bf7aef8c1",
       "metadata": {
         "key": "Db",
         "artist": "All Nations Worship",
@@ -3193,7 +3203,7 @@
       "songId": "6207eae2-4326-559f-ae46-68d2e22e389b",
       "title": "Come Move",
       "file": "songs/pdf/come-move--6207eae2.chopro",
-      "contentSha256": "0218aeedf72e4d4af55c31dd0b55fec0d1c00169aa471dc1eb53571d5e23a3e1",
+      "contentSha256": "1633dbcc325a4f1956a8caca83d9a15e32fcfa68c91b0950645a02a03837b27f",
       "metadata": {
         "key": "E",
         "artist": "Brittani Scott",
@@ -3323,7 +3333,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f9220d26-875e-5cc8-9ee9-cb19e31cd50d",
+      "supersedeReason": "same song as the chrd chart (97% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "6527f0c3-c4d5-579d-866c-c10b15842e65",
@@ -3688,7 +3700,7 @@
       "songId": "7129ec33-64fd-5179-93ed-1923bd041857",
       "title": "More",
       "file": "songs/pdf/more--7129ec33.chopro",
-      "contentSha256": "94f7955303e469e1201c18a121df0a4ce6987554b224cfb745b5a66fd3f2d86e",
+      "contentSha256": "e758b06916d4a66f306bcc9fb039bc01a9d8739dc310a16adc0dc0c35170c33e",
       "metadata": {
         "key": "C",
         "artist": "Harvest Music Live",
@@ -3923,7 +3935,7 @@
       "songId": "7711fb19-2e29-597e-a0ad-498b59b04e9b",
       "title": "Our God Reigns Forever",
       "file": "songs/pdf/our-god-reigns-forever--7711fb19.chopro",
-      "contentSha256": "f365c223df066c2d7b0f7e5d8551381ceaadd16e597951d0a53522eb434d2ed2",
+      "contentSha256": "cb18b1f8f25495e434e7cc5d866f74e85ba975d1db1a04a33ba28635cee9ddc7",
       "metadata": {
         "key": "Bb",
         "artist": "Jesse Wilson",
@@ -3955,7 +3967,7 @@
       "songId": "7813d4cc-b2d0-5e13-ae5b-24802de4f989",
       "title": "When You Believe",
       "file": "songs/pdf/when-you-believe--7813d4cc.chopro",
-      "contentSha256": "60037b4747dc2ce7e3da86e5c4fe872678b6a8465bfd06f454b089722c3e8e3f",
+      "contentSha256": "04a6aa79af38ec82684e87c33ec76e5c4ecc830e26be2f779d444f5058d7cbcd",
       "metadata": {
         "key": "B",
         "artist": "Calvary Worship",
@@ -4058,7 +4070,7 @@
       "songId": "797f3f53-59a8-558b-b430-9d3eacc62dd4",
       "title": "God of the Empty Grave",
       "file": "songs/pdf/god-of-the-empty-grave--797f3f53.chopro",
-      "contentSha256": "158a3ada27df8891953e6c56c985bb00d5bb6396a78be6dabae0141b8f6d4b32",
+      "contentSha256": "b1073a4a801c78fe31ae28441ff555b670319396d3a3027b38a76d738a09e860",
       "metadata": {
         "key": "C",
         "artist": "Assemble Worship",
@@ -4188,7 +4200,7 @@
       "songId": "7b40cb2e-b190-5c72-8314-8052b00c0222",
       "title": "Thankful",
       "file": "songs/pdf/thankful--7b40cb2e.chopro",
-      "contentSha256": "1d4a4de2d945ebfb5613b72d823abfa6132f2c171cfb60cbd02beb5c34327444",
+      "contentSha256": "e40228cbbb5ee0e77fa88977663969f81c5b1e7c1345f4255fe9e8038c4efe06",
       "metadata": {
         "key": "Ab",
         "artist": "J.J. Hairston",
@@ -4478,7 +4490,7 @@
       "songId": "82c3b564-295f-5d55-8886-7fe3c518f038",
       "title": "I Got Out",
       "file": "songs/pdf/i-got-out--82c3b564.chopro",
-      "contentSha256": "982b2bdd6d8efc79cb423d70b86224320bcd85e7b38992894577296dec0805a0",
+      "contentSha256": "7b8d3f1aaebf13bdf0c7251f7cfe6602ec961bd8de2324c6023b4656f88e25af",
       "metadata": {
         "key": "F",
         "artist": "At the Cross",
@@ -4507,7 +4519,7 @@
       "songId": "83c9cf3f-2b09-580d-86d1-5defe5f05c14",
       "title": "Joy",
       "file": "songs/pdf/joy--83c9cf3f.chopro",
-      "contentSha256": "4df13bafbb5ef5196fbc181dd70fff16682c2e2bdd7fa65a65d3b96de7f2b377",
+      "contentSha256": "6944d7f1ad2d0344146cd787bad06791742f7ba24bd0cde608b3abe4d13d4c2a",
       "metadata": {
         "key": "F",
         "artist": "Eddie James",
@@ -4836,7 +4848,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "7c212689-5922-524d-af38-cd2f1f41a1c2",
+      "supersedeReason": "same song as the pdf chart (95% of the lyrics): the same publisher chart filed twice"
     },
     {
       "songId": "8ec67746-e266-5dd2-bddc-0479b3334f15",
@@ -4876,7 +4890,7 @@
       "songId": "8f7dcf6d-d172-546e-bf62-65655043484b",
       "title": "Speak Your Name",
       "file": "songs/pdf/speak-your-name--8f7dcf6d.chopro",
-      "contentSha256": "575dc2599b8dc8185b15c67ce7334db31256412ede7bb2a129119b50273c5a49",
+      "contentSha256": "ce21113cac059343f4b43194fa06708bf5ea8c6cfada4a8cd537c792e6b53207",
       "metadata": {
         "key": "C",
         "artist": "Anthony Brown & group therAPy",
@@ -4942,7 +4956,7 @@
       "songId": "91147b7d-6cdd-5c8f-b3e4-8f1663d988b3",
       "title": "You Are",
       "file": "songs/pdf/you-are--91147b7d.chopro",
-      "contentSha256": "0caa5ab7668696074e02182d32def7b6232e28597818e23c44455471fce6e593",
+      "contentSha256": "6fd276af6f55038d4c5e839d120406f1b78b63d0d1aeeeb13898fd36dba050a2",
       "metadata": {
         "key": "E",
         "artist": "Next Generation Choir",
@@ -5040,7 +5054,7 @@
       "songId": "95b11dbd-fbf5-5b5a-9d48-8a1db17a393c",
       "title": "Tell of Your Glory",
       "file": "songs/pdf/tell-of-your-glory--95b11dbd.chopro",
-      "contentSha256": "883ac4e34214b866446be5d541f8b82c9a8fcaf7915986e6f92b322b03566a64",
+      "contentSha256": "a3256680f25ce4083e84960ce08e10331817e2547999f75612f1e2b95cc2c4dc",
       "metadata": {
         "key": "Bb",
         "artist": "David & Nicole Binion",
@@ -5073,7 +5087,7 @@
       "songId": "9696ae41-56ac-5120-a39b-7db2e1653104",
       "title": "Hallelujah, Jesus Reigns",
       "file": "songs/pdf/hallelujah-jesus-reigns--9696ae41.chopro",
-      "contentSha256": "0c7a5ee74580911e4549a5dea20d48ea2069bce15277dac4a02f937b89518527",
+      "contentSha256": "ee699d757012982d03cc604987646164ad0995574c243609127faddbee523553",
       "metadata": {
         "key": "C",
         "artist": "Angie Pearson",
@@ -5267,7 +5281,7 @@
       "songId": "9c883db2-8aa6-5d4c-948a-16d014642cb2",
       "title": "Living Sacrifice",
       "file": "songs/pdf/living-sacrifice--9c883db2.chopro",
-      "contentSha256": "8b228285cbae1755be36a63000472b80c23d9fbd2e9cb9349dc723e61659f31c",
+      "contentSha256": "0b60cfab0abd927a8ea11c7f22fddf9fcd4f3735b3a0000af632f65404de65d6",
       "metadata": {
         "key": "Eb",
         "artist": "Urshan College",
@@ -5465,7 +5479,7 @@
       "songId": "a0b1fb0c-4c6d-5a36-83b3-5ecbc01ee62a",
       "title": "I Trust In You",
       "file": "songs/pdf/i-trust-in-you--a0b1fb0c.chopro",
-      "contentSha256": "cebf6134973dd6dbe0a1c14e9b40771606164cc55f56062056538214ad1b1194",
+      "contentSha256": "7def100e7feb4deb0b7ea9a5f0d264c754430bd3afeb5a31ab8983bf795e9d99",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -5528,13 +5542,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "71997a3f-5001-54d1-831d-d0d8d899c99f",
+      "supersedeReason": "same song as the chrd chart (84% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "a1440a7a-a33b-552f-9b02-f059550e5875",
       "title": "You Reign",
       "file": "songs/pdf/you-reign--a1440a7a.chopro",
-      "contentSha256": "9200f32d2207501a2af29f612f91935ef366bb91a76c3b8de8a1e1e62a7d97ad",
+      "contentSha256": "940212fb56f7af6f2813ba13a5b87d8644a4c4c20b805e08813b5f248681c8d8",
       "metadata": {
         "key": "C",
         "artist": "Mark Goins",
@@ -5688,13 +5704,15 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9f137f76-ae5d-5530-b76b-8b571a4d001e",
+      "supersedeReason": "same song as the chrd chart (78% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "a503d79d-13a2-54a2-958c-381767a3e629",
       "title": "We Want You",
       "file": "songs/pdf/we-want-you--a503d79d.chopro",
-      "contentSha256": "fb5bb0622673f87c9cf4fb89c01e8e2753bce766cfee816992a2e0568d0a654a",
+      "contentSha256": "ad7f60b6d8267812891ff0d8f8c3d6e00849f6ae6ac04676eda32373c86e21c5",
       "metadata": {
         "key": "D",
         "artist": "Harvest Music Live",
@@ -5962,7 +5980,7 @@
       "songId": "ac860abf-6efa-5cca-98ed-a1fed99ac46d",
       "title": "Whatever It Takes",
       "file": "songs/pdf/whatever-it-takes--ac860abf.chopro",
-      "contentSha256": "022e15ed4ce4acf61ca12a0c46491222250bf249ef4b2d9daf32b50c27402eb0",
+      "contentSha256": "8698e3ad48c00da7209aa254cb8d979750566eb0cb44b9492572db10cee5b1d9",
       "metadata": {
         "key": "Gb",
         "artist": "Zebrina Anderson",
@@ -6124,7 +6142,7 @@
       "songId": "afaa8ce9-5569-52ba-8b05-8e50c8425a62",
       "title": "Joy",
       "file": "songs/pdf/joy--afaa8ce9.chopro",
-      "contentSha256": "d8fbca1e3e905d3fdde62f1b42f92c68ae5ee6eccba78b00adda07d047c23f91",
+      "contentSha256": "3593468070b1111607457c886b08df89be968952220515ee1c41a06636313a36",
       "metadata": {
         "key": "Eb",
         "artist": "Benita Jones",
@@ -6190,7 +6208,7 @@
       "songId": "b109ca7a-c152-5d5b-a96f-3fdcb20697f4",
       "title": "Covenant Keeping God",
       "file": "songs/pdf/covenant-keeping-god--b109ca7a.chopro",
-      "contentSha256": "f1540be262ea95c9b016a3836a0921b389ad88d936f8a47e2acb35aab32a1b41",
+      "contentSha256": "c0485d0761aa1312a79321710c6b474e9195a4158b0840a735c8e9fe52b551c6",
       "metadata": {
         "key": "Gb",
         "artist": "All Nations Music",
@@ -6313,13 +6331,15 @@
       "warnings": [
         "2 section(s) reference another section rather than repeating it"
       ],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c7299657-e6c4-5680-b0fe-f06716596248",
+      "supersedeReason": "same song as the chrd chart (76% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "b3d850f3-03a7-518a-a0ff-948125b938a6",
       "title": "We Bless Your Name",
       "file": "songs/pdf/we-bless-your-name--b3d850f3.chopro",
-      "contentSha256": "dcab4434df06cb055bdf5c5494e32f69e4f1383ab373a32551f7a1fe98057a92",
+      "contentSha256": "51e0d845b768c17220dafbea7c88c6722ce9b468729be5f13a7b800c57a7e80c",
       "metadata": {
         "key": "Eb",
         "artist": "Nathaniel Bassey",
@@ -6486,7 +6506,7 @@
       "songId": "bc91f115-16f1-5d57-830b-a72135283b3d",
       "title": "Greater",
       "file": "songs/pdf/greater--bc91f115.chopro",
-      "contentSha256": "fe0324afa6917f1f138993e118614481650ade74ad26964635a8620d8a0ddad4",
+      "contentSha256": "271e396a9d740ca3814d1122aad6a531166f56101d7d6fab39375b4a1d3256ec",
       "metadata": {
         "key": "Gb",
         "artist": "Todd Dulaney",
@@ -6550,7 +6570,7 @@
       "songId": "bfb4f14c-41ce-53cd-bf56-c74ef01e8d37",
       "title": "Jesus Is",
       "file": "songs/pdf/jesus-is--bfb4f14c.chopro",
-      "contentSha256": "0e7d42d83708bb0390618a6a8cbaa7ad038c715915b859007f1a2ecf58bf55aa",
+      "contentSha256": "bd91c4ada2a14369d296a0d9cf12b7e352b0cbd50eb327d4422cf1acc55708f0",
       "metadata": {
         "key": "E",
         "artist": "Brooklyn Tabernacle Choir",
@@ -6578,7 +6598,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6a2f8538-3004-5390-903d-eeddce4665eb",
+      "supersedeReason": "same song as the chrd chart (84% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "c01bd7b5-9785-541e-99b7-08450ea0c343",
@@ -6614,7 +6636,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "f162ec06-76d3-548d-852b-c7beeb7494dd",
+      "supersedeReason": "same song as the chrd chart (98% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "c116596f-7d5f-54f7-b82f-3e52aaaec07e",
@@ -6654,7 +6678,7 @@
       "songId": "c13b7641-12ad-5f7f-a549-01679a47d6b1",
       "title": "Stand and Proclaim",
       "file": "songs/pdf/stand-and-proclaim--c13b7641.chopro",
-      "contentSha256": "98347bfb096354b1c6eb3d862739eac1f867e495b32fedfff4c725ed052019c8",
+      "contentSha256": "811f38ec5a2e594d6a5c989c8fa9e81188ffe7cd311769d5eed6e2b1aaa48be2",
       "metadata": {
         "key": "E",
         "artist": "Benita Jones",
@@ -6751,7 +6775,7 @@
       "songId": "c2049288-0e2c-53d6-aaaf-526dab7ee640",
       "title": "The Wonder of the Cross",
       "file": "songs/pdf/the-wonder-of-the-cross--c2049288.chopro",
-      "contentSha256": "832e706ac4b21470f2f5ea79b190c7a44267fbdf3c83c1087bd466e956b2271f",
+      "contentSha256": "0d0be7febe76cea767d9dc732837062208284d3b181b0e0a29293afe19babe4c",
       "metadata": {
         "key": "B",
         "artist": "GPC Worship",
@@ -6819,7 +6843,7 @@
       "songId": "c2ef1d40-48b4-56af-933c-fd8799710953",
       "title": "Jesus",
       "file": "songs/pdf/jesus--c2ef1d40.chopro",
-      "contentSha256": "8db8efda7d1242110d6fb73f6712e1c973310e3c86e931498c3e14de414d15a8",
+      "contentSha256": "c84f6b9af624e39a04e5a932fc752cd56a5e99ae42d2cad863889bef4199fbd6",
       "metadata": {
         "key": "A",
         "artist": "Geoffrey Golden",
@@ -6918,7 +6942,7 @@
       "songId": "c41b24e8-1b45-53e5-a8ca-f927a7dbd0e1",
       "title": "King of Glory",
       "file": "songs/pdf/king-of-glory--c41b24e8.chopro",
-      "contentSha256": "f91a51e1411f9108ca380651965cb961d3a79aa2c53d595430b7f13f6914620a",
+      "contentSha256": "97f227f966c9982b0233d4612d4f0484ddaecfd33667d8a37eafb95db326e768",
       "metadata": {
         "key": "E",
         "artist": "Todd Dulaney",
@@ -6946,7 +6970,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "6971e83a-0510-56bc-adc8-c892068565f8",
+      "supersedeReason": "same song as the chrd chart (78% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "c42b1cc2-ab39-5d7c-9348-c8b5682d6516",
@@ -6988,7 +7014,7 @@
       "songId": "c5324a5b-c310-5e10-935d-28ba53a8b72d",
       "title": "Made a Way",
       "file": "songs/pdf/made-a-way--c5324a5b.chopro",
-      "contentSha256": "2099d432b519393a5785130f4924282e33178e68c8ebb5c9c46bb9e9c5d90219",
+      "contentSha256": "5e8b7d21ab7c5ac09aa1dbbfe3e9832d0df6366c34f4f31acf193eb2dd08b7e9",
       "metadata": {
         "key": "B",
         "artist": "Travis Greene",
@@ -7258,7 +7284,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "d5837b32-e565-5685-b941-bd80ef68c131",
+      "supersedeReason": "same song as the chrd chart (74% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "c901a411-86e4-5d78-9d9d-a3fd173a633d",
@@ -7324,7 +7352,7 @@
       "songId": "c96b9b1f-052c-5032-885e-4251c2f7730c",
       "title": "Lift You Up",
       "file": "songs/pdf/lift-you-up--c96b9b1f.chopro",
-      "contentSha256": "badad5e88c7b1f759afa2a060e6a29cec54d1703d336f06216edcd03f88661b3",
+      "contentSha256": "1bdba32886118071e608482230dcf1aa28883d8e647f0a103fab2fb662e8b831",
       "metadata": {
         "key": "Db",
         "artist": "James Wilson",
@@ -7448,7 +7476,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "9cdccdd4-3115-5ea3-9d2e-e1d414d87d41",
+      "supersedeReason": "same song as the chrd chart (91% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "cddb58bc-55ca-5dbf-b964-3f7edc2c4267",
@@ -7485,7 +7515,7 @@
       "songId": "ce1a229e-2cfb-5993-b83d-9b05c71a69f1",
       "title": "Be Exalted / I Exalt Thee",
       "file": "songs/pdf/be-exalted-i-exalt-thee--ce1a229e.chopro",
-      "contentSha256": "19bb78bae8c6cd02c32ca2a6954d698681a9644b0d1f071c49891881fe137b81",
+      "contentSha256": "bbe01da70e8eddda3430a0192f091f09f70785122fd7e58e1d0b3b6483e4ac4d",
       "metadata": {
         "key": "Eb",
         "artist": "Brittani Scott",
@@ -7551,7 +7581,7 @@
       "songId": "cf1b7b5f-63ac-5f07-8e8f-acee3555f8cb",
       "title": "That’s My King",
       "file": "songs/pdf/that-s-my-king--cf1b7b5f.chopro",
-      "contentSha256": "9d6befa8c55673b9fa922f38bc7968172b35ead4486a9d6c9cefb9609605d7e2",
+      "contentSha256": "6008798e50c749bc4f17fe8035e12d133165b060b7b63a16315456b768b69559",
       "metadata": {
         "key": "Ab",
         "artist": "CeCe Winans",
@@ -7584,7 +7614,7 @@
       "songId": "cf39cc4f-432c-5d89-b947-53b48608d392",
       "title": "He Has Come",
       "file": "songs/pdf/he-has-come--cf39cc4f.chopro",
-      "contentSha256": "1b7320c54641e710e95e1f3ea832039a8bd29455884d81227f90062ece20d3e0",
+      "contentSha256": "693dad1f0fd9eb1ef8dc511238c2eca3d60fed6cbc2ad2f95e2eb705311a9d1c",
       "metadata": {
         "key": "F",
         "artist": "Norman Hutchins",
@@ -7786,7 +7816,7 @@
       "songId": "d23758f4-2ebc-5be6-8694-989dcceb5720",
       "title": "After This",
       "file": "songs/pdf/after-this--d23758f4.chopro",
-      "contentSha256": "5cd7a8d9b73653537d597d98ef6c00a2fa265cfb05e86ad0b1027d270a45f8be",
+      "contentSha256": "01db8abd6557ae8f714fb2c2f3cbc1b828b9e670726bfae947973c9071887311",
       "metadata": {
         "key": "G",
         "artist": "J.J. Hairston & Youthful Praise",
@@ -7847,7 +7877,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "3f18a2c9-e1c0-51e7-8dc9-8517f9684334",
+      "supersedeReason": "same song as the chrd chart (100% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "d5ea892e-69f5-5534-8548-53ab2a585dc4",
@@ -7919,7 +7951,7 @@
       "songId": "d707527a-c7e3-55f6-8f1d-3c15828a7e42",
       "title": "Praise Break",
       "file": "songs/pdf/praise-break--d707527a.chopro",
-      "contentSha256": "103a2f77993d9ebbc14e77d3e61b09ff25a20a8909e4b1f86e891ff5712b7ff8",
+      "contentSha256": "ca58a19859f5d1e899a4f0cc97f7e0e4aa52645d0311c48b3db086902f62e0d0",
       "metadata": {
         "key": "Ab",
         "artist": "James Fortune",
@@ -8012,7 +8044,9 @@
         "reasons": []
       },
       "warnings": [],
-      "decision": "song"
+      "decision": "supersede",
+      "supersededBy": "c9d22cc5-677d-5641-a71e-48cacb1062ca",
+      "supersedeReason": "same song as the chrd chart (94% of the lyrics): the church's own chart, with a converted copy"
     },
     {
       "songId": "dc98a6af-3398-54c5-8749-7759087dee4d",
@@ -8085,7 +8119,7 @@
       "songId": "de6abb7c-80a7-52b0-b331-dcde9670a826",
       "title": "Go Tell It / Wonderful Child",
       "file": "songs/pdf/go-tell-it-wonderful-child--de6abb7c.chopro",
-      "contentSha256": "efd3704cd7ae991fe1cd1156134a0a9797275cd66405787cad00d216c15f48df",
+      "contentSha256": "6711e96628e098e63225b8251201678c3443e588314859040a7e01135a1a2eec",
       "metadata": {
         "key": "Eb",
         "artist": "James Fortune & FIYA",
@@ -8284,7 +8318,7 @@
       "songId": "e588c589-4cc8-565d-86f9-31c2d321cd16",
       "title": "Joy To The World",
       "file": "songs/pdf/joy-to-the-world--e588c589.chopro",
-      "contentSha256": "7b775c2eb74be5fe4fe600f23b1dac7cface7b3214e964bacaa9f7bafa057b2b",
+      "contentSha256": "9753974a885e74db0e6f96b1e15981e3a16523e1f1fd897b0b0586be477bedd7",
       "metadata": {
         "key": "G",
         "artist": "Michah Stampley & Sheri Jones Moffett",
@@ -8382,7 +8416,7 @@
       "songId": "e8da128f-f715-5aa4-9b72-18d009120dd7",
       "title": "I Am Reminded",
       "file": "songs/pdf/i-am-reminded--e8da128f.chopro",
-      "contentSha256": "65d2400b338ab4673ea0f7337da9f73dfe79eb17730fd7f6ae3913764af72627",
+      "contentSha256": "e514c521c3c2921bcbc5ca4dcc7177f8dbd0877b03ae8210715cafa75dd3b485",
       "metadata": {
         "key": "Db",
         "artist": "The Brooklyn Tabernacle Choir",
@@ -8516,7 +8550,7 @@
       "songId": "ec172787-f3a0-583b-aea5-71109dbc4662",
       "title": "Nothing Compares (You Are Good)",
       "file": "songs/pdf/nothing-compares-you-are-good--ec172787.chopro",
-      "contentSha256": "76fd917c07eec61af38e0fba2c8e5683b78a4f2859729b6fd406a7d85a1f152b",
+      "contentSha256": "8bb48d1719c919e2d6f94f114a68d5342022e4c350b8f0f6b471276dc93782f8",
       "metadata": {
         "key": "C",
         "artist": "Indiana Bible College (IBC)",

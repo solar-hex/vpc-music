@@ -1,25 +1,69 @@
 import { describe, expect, it } from "vitest";
-import { SOURCE_RANK, chordSequence, decideGroup, isSameArrangement, musicalHash, rankCopies } from "./corpus-dedupe.mjs";
+import {
+  DIFFERENT_SONG_OVERLAP,
+  SAME_SONG_OVERLAP,
+  applyMerges,
+  buildGroups,
+  lyricOverlap,
+  lyricShingles,
+  lyricWords,
+  mergeLedger,
+  musicalHash,
+  planMerges,
+  rankForMerge,
+} from "./corpus-dedupe.mjs";
 
-const song = (over = {}) => ({
-  songId: "id-" + (over.songId ?? Math.random().toString(36).slice(2)),
-  title: "Song",
-  source: "chrd",
-  chords: 20,
-  lines: 10,
-  cues: 0,
-  key: "G",
-  musicalSha256: "hash-" + (over.musicalSha256 ?? "a"),
-  chordSeq: [],
-  nashville: null,
-  ...over,
-  songId: over.songId ?? "id-a",
-});
+const GRACE = [
+  "Amazing grace how sweet the sound that saved a wretch like me",
+  "I once was lost but now am found was blind but now I see",
+  "Twas grace that taught my heart to fear and grace my fears relieved",
+  "How precious did that grace appear the hour I first believed",
+];
+const GRACE_MORE = [
+  "Through many dangers toils and snares I have already come",
+  "Tis grace hath brought me safe thus far and grace will lead me home",
+];
+
+/** A chart: header lines, then lyric lines with a chord at the front of each. */
+function chart(header, lines, chords = true) {
+  const body = lines.map((line) => (chords ? `[G]${line.replace(" ", " [C]")}` : line)).join("\n");
+  return `${header.join("\n")}\n\n{comment: Verse 1}\n${body}\n`;
+}
+
+/** A tiny corpus: manifests per source and the files they point at. */
+function corpus(copies) {
+  const files = new Map();
+  const bySource = new Map();
+  for (const c of copies) {
+    const file = `songs/${c.source}/${c.id}.chopro`;
+    files.set(file, c.content);
+    if (!bySource.has(c.source)) bySource.set(c.source, []);
+    bySource.get(c.source).push({
+      songId: c.id,
+      title: c.title ?? "Amazing Grace",
+      file,
+      metadata: { key: "G", isDraft: c.isDraft ?? false },
+      decision: c.decision ?? "song",
+      ...(c.supersededBy ? { supersededBy: c.supersededBy, supersedeReason: "identical copy" } : {}),
+    });
+  }
+  const manifests = [...bySource].map(([sourceType, songs]) => ({ file: `${sourceType}.json`, data: { sourceType, songs } }));
+  const { songs, groups } = buildGroups(manifests, (file) => files.get(file));
+  return { manifests, songs, groups };
+}
+
+const churchChart = { id: "church", source: "chrd", content: chart(["{title: Amazing Grace}", "{key: G}"], GRACE) };
+const publisherPdf = {
+  id: "pdf",
+  source: "pdf",
+  content: chart(
+    ["{title: Amazing Grace}", "{artist: Chris Tomlin}", "{key: Bb}", "{tempo: 72}", "{time: 3/4}", "{x_album: See the Morning}"],
+    [...GRACE, ...GRACE_MORE],
+  ),
+};
 
 describe("musicalHash", () => {
   it("ignores provenance, so the same chart from two paths matches", () => {
-    // This is what `contentSha256` cannot do: the enriched file carries its
-    // own source path and media links, which differ between copies.
     const a = "{title: X}\n{key: G}\n{x_source: chrd:song.chrd}\n\n[G]la la";
     const b = "{title: X}\n{key: G}\n{x_source: chrd:~song.chrd}\n{x_dropbox: http://z}\n\n[G]la la";
     expect(musicalHash(a)).toBe(musicalHash(b));
@@ -30,156 +74,161 @@ describe("musicalHash", () => {
   });
 });
 
-describe("rankCopies", () => {
-  it("puts the chart with more chords first", () => {
-    const out = rankCopies([song({ songId: "a", chords: 5 }), song({ songId: "b", chords: 40 })]);
-    expect(out[0].songId).toBe("b");
+describe("lyric overlap", () => {
+  it("reads only the sung words: no chords, directives or bar rows", () => {
+    expect(lyricWords("{title: X}\n[G]Amazing [C]grace\n| G . . . |\n{ci: softly}")).toEqual(["amazing", "grace"]);
   });
 
-  it("prefers a human-typed source when chords are equal", () => {
-    // Columns typed by a person beat columns inferred from PDF geometry.
-    expect(SOURCE_RANK.text).toBeGreaterThan(SOURCE_RANK.pdf);
-    expect(SOURCE_RANK.chrd).toBeGreaterThan(SOURCE_RANK.docx);
-    const out = rankCopies([song({ songId: "a", source: "pdf" }), song({ songId: "b", source: "chrd" })]);
-    expect(out[0].source).toBe("chrd");
+  it("counts a lyrics sheet that prints less of the song as the same song", () => {
+    const sheet = lyricShingles(chart([], GRACE, false));
+    const full = lyricShingles(chart([], [...GRACE, ...GRACE_MORE, ...GRACE]));
+    expect(lyricOverlap(sheet, full)).toBe(1);
   });
 
-  it("is deterministic when everything else ties", () => {
-    const a = [song({ songId: "b" }), song({ songId: "a" })];
-    expect(rankCopies(a)[0].songId).toBe(rankCopies([...a].reverse())[0].songId);
+  it("tells two songs that share a title apart", () => {
+    const cross = lyricShingles(chart([], ["Thank you for the cross you carried up the hill for me", "Thank you for the blood that washed me clean and set me free"]));
+    const mercy = lyricShingles(chart([], ["Every morning new mercies I see rising with the sun", "I will give you praise forever more for all that you have done"]));
+    expect(lyricOverlap(cross, mercy)).toBeLessThan(DIFFERENT_SONG_OVERLAP);
   });
 });
 
-describe("decideGroup", () => {
-  it("decides identical copies on its own", () => {
-    const r = decideGroup([
-      song({ songId: "a", musicalSha256: "same" }),
-      song({ songId: "b", musicalSha256: "same" }),
-    ]);
-    expect(r.auto).toBe(true);
-    expect(r.losers).toHaveLength(1);
-    expect(r.losers[0].reason).toBe("identical copy");
+describe("rankForMerge", () => {
+  const { songs } = corpus([
+    churchChart,
+    publisherPdf,
+    { id: "tilde", source: "chrd", content: chart(["{title: Amazing Grace}", "{x_flag: unlisted}"], [...GRACE, ...GRACE_MORE]) },
+    { id: "sheet", source: "chrd", content: chart(["{title: Amazing Grace}"], GRACE, false) },
+    { id: "draft", source: "chrd", isDraft: true, content: chart(["{title: Amazing Grace}"], [...GRACE, ...GRACE_MORE]) },
+  ]);
+  const ranked = rankForMerge(songs).map((s) => s.songId);
+
+  it("puts the church's listed chart first, ahead of a fuller publisher chart", () => {
+    expect(ranked[0]).toBe("church");
+    expect(ranked.indexOf("church")).toBeLessThan(ranked.indexOf("pdf"));
   });
 
-  it("lets a chart with chords supersede the same song with none", () => {
-    const r = decideGroup([
-      song({ songId: "a", source: "chrd", chords: 30, musicalSha256: "x" }),
-      song({ songId: "b", source: "docx", chords: 0, musicalSha256: "y" }),
-    ]);
-    expect(r.auto).toBe(true);
-    expect(r.winner.songId).toBe("a");
-    expect(r.losers[0].song.songId).toBe("b");
-    expect(r.losers[0].reason).toMatch(/lyrics only/);
+  it("puts the old site's final chart ahead of its ~ copy and a draft", () => {
+    expect(ranked.indexOf("church")).toBeLessThan(ranked.indexOf("draft"));
+    expect(ranked.indexOf("draft")).toBeLessThan(ranked.indexOf("tilde"));
   });
 
-  it("refuses to choose between two real charts", () => {
-    // Different keys, both with chords — a musician's call, not a script's.
-    const r = decideGroup([
-      song({ songId: "a", chords: 40, key: "Gb", musicalSha256: "x" }),
-      song({ songId: "b", chords: 40, key: "Ab", musicalSha256: "y" }),
-    ]);
-    expect(r.auto).toBe(false);
-    expect(r.losers).toEqual([]);
-    expect(r.why).toMatch(/two or more charts/);
+  it("puts a lyrics sheet last", () => {
+    expect(ranked.at(-1)).toBe("sheet");
   });
 
-  it("never proposes deleting anything — only superseding", () => {
-    const r = decideGroup([
-      song({ songId: "a", chords: 30, musicalSha256: "x" }),
-      song({ songId: "b", chords: 0, musicalSha256: "y" }),
-    ]);
-    // Every loser keeps its identity and points at the winner.
-    for (const l of r.losers) {
-      expect(l.song.songId).toBeTruthy();
-      expect(r.winner.songId).not.toBe(l.song.songId);
-    }
-  });
-
-  it("handles a group of one without deciding anything", () => {
-    const r = decideGroup([song({ songId: "a" })]);
-    expect(r.losers).toEqual([]);
-    expect(r.winner.songId).toBe("a");
+  it("does not depend on the order it was given", () => {
+    expect(rankForMerge([...songs].reverse()).map((s) => s.songId)).toEqual(ranked);
   });
 });
 
-describe("chordSequence", () => {
-  it("reads the primary chords in order and ignores the secondary cues", () => {
-    expect(chordSequence("[*Am][G]la [D/F#]la [*Bm]")).toEqual(["G", "D/F#"]);
+describe("planMerges", () => {
+  it("keeps the church's chart and takes the artist, tempo, time and album from the PDF, never the key", () => {
+    const { songs, groups } = corpus([churchChart, publisherPdf]);
+    const { merges, review } = planMerges(songs, groups);
+    expect(review).toEqual([]);
+    expect(merges).toHaveLength(1);
+    expect(merges[0].winner.songId).toBe("church");
+    expect(merges[0].losers.map((s) => s.songId)).toEqual(["pdf"]);
+    expect(merges[0].overlaps[0]).toBeGreaterThanOrEqual(SAME_SONG_OVERLAP);
+    expect(merges[0].carry).toEqual({ artist: "Chris Tomlin", tempo: "72", time: "3/4", x_album: "See the Morning" });
+  });
+
+  it("takes nothing the winner already has", () => {
+    const own = { ...churchChart, content: churchChart.content.replace("{key: G}", "{key: G}\n{artist: John Newton}\n{time: 4/4}") };
+    const { songs, groups } = corpus([own, publisherPdf]);
+    expect(planMerges(songs, groups).merges[0].carry).toEqual({ tempo: "72", x_album: "See the Morning" });
+  });
+
+  it("asks a person when a copy only reaches the best one through a third", () => {
+    // The bridge shares most of its words with both; the other two share less.
+    const other = ["Praise God from whom all blessings flow praise him all creatures here below", "Praise him above ye heavenly host praise Father Son and Holy Ghost", "When we have been there ten thousand years bright shining as the sun", "We have no less days to sing his praise than when we first begun"];
+    const bridge = { id: "bridge", source: "docx", content: chart(["{title: Amazing Grace}"], [GRACE[2], GRACE[3], other[0]]) };
+    const far = { id: "far", source: "pdf", content: chart(["{title: Amazing Grace}"], [GRACE[2], GRACE[3], ...other]) };
+    const { songs, groups } = corpus([churchChart, bridge, far]);
+    const { merges, review } = planMerges(songs, groups);
+    expect(merges).toEqual([]);
+    expect(review.map((r) => r.why)).toEqual(["copies that only partly match the best one"]);
+  });
+
+  it("leaves a tempo worked out from a media filename behind", () => {
+    const derived = { ...publisherPdf, content: publisherPdf.content.replace("{time: 3/4}", "{x_tempo_source: derived from media filename}") };
+    const { songs, groups } = corpus([churchChart, derived]);
+    expect(planMerges(songs, groups).merges[0].carry.tempo).toBeUndefined();
+  });
+
+  it("carries alternate titles the winner does not already answer to", () => {
+    const pdf = { ...publisherPdf, content: publisherPdf.content.replace("{key: Bb}", "{key: Bb}\n{x_aka: My Chains Are Gone; amazing grace}") };
+    const { songs, groups } = corpus([churchChart, pdf]);
+    expect(planMerges(songs, groups).merges[0].carry.aka).toEqual(["My Chains Are Gone"]);
+  });
+
+  it("leaves two publisher charts by different artists for a person", () => {
+    const other = { ...publisherPdf, id: "pdf2", content: publisherPdf.content.replace("Chris Tomlin", "Mark Yandris") };
+    const { songs, groups } = corpus([publisherPdf, other]);
+    const { merges, review } = planMerges(songs, groups);
+    expect(merges).toEqual([]);
+    expect(review).toHaveLength(1);
+    expect(review[0].why).toMatch(/different artists/);
+  });
+
+  it("never merges two different songs that share a title", () => {
+    const { songs, groups } = corpus([
+      { id: "a", source: "pdf", title: "Thank You", content: chart(["{title: Thank You}"], ["Thank you for the cross you carried up the hill for me", "Thank you for the blood that washed me clean and set me free"]) },
+      { id: "b", source: "pdf", title: "Thank You", content: chart(["{title: Thank You}"], ["Every morning new mercies I see rising with the sun", "I will give you praise forever more for all that you have done"]) },
+    ]);
+    expect(planMerges(songs, groups)).toEqual({ merges: [], review: [] });
+  });
+
+  it("asks a person about copies that share only some of their words", () => {
+    const partial = { id: "docx", source: "docx", content: chart(["{title: Amazing Grace}"], [GRACE[0], GRACE[1], "When we have been there ten thousand years bright shining as the sun", "We have no less days to sing God's praise than when we first begun", "Praise God praise God praise God forever and ever amen"]) };
+    const { songs, groups } = corpus([churchChart, partial]);
+    const { merges, review } = planMerges(songs, groups);
+    expect(merges).toEqual([]);
+    expect(review).toHaveLength(1);
+    expect(review[0].overlap).toBeGreaterThanOrEqual(DIFFERENT_SONG_OVERLAP);
+    expect(review[0].overlap).toBeLessThan(SAME_SONG_OVERLAP);
+  });
+
+  it("never reopens a copy already superseded, but lets it give what it has", () => {
+    const earlier = { ...publisherPdf, id: "old", source: "text", decision: "supersede", supersededBy: "pdf" };
+    const pdf = { ...publisherPdf, content: publisherPdf.content.replace("{x_album: See the Morning}\n", "") };
+    const { songs, groups } = corpus([churchChart, pdf, earlier]);
+    const { merges } = planMerges(songs, groups);
+    expect(merges).toHaveLength(1);
+    expect(merges[0].losers.map((s) => s.songId)).toEqual(["pdf"]);
+    expect(merges[0].earlier.map((s) => s.songId)).toEqual(["old"]);
+    expect(merges[0].carry.x_album).toBe("See the Morning");
   });
 });
 
-describe("isSameArrangement", () => {
-  const seq = ["G", "C", "D", "Em", "G", "C", "D", "G", "Am"];
-  const copy = (over) => song({ chordSeq: seq, ...over });
+describe("applyMerges", () => {
+  it("marks each loser with the winner and the reason, and points earlier copies at the new winner", () => {
+    const earlier = { ...publisherPdf, id: "old", source: "text", decision: "supersede", supersededBy: "pdf" };
+    const bystander = { id: "gone", source: "docx", title: "Other Song", decision: "supersede", supersededBy: "elsewhere", content: chart(["{title: Other Song}"], GRACE_MORE) };
+    const { manifests, songs, groups } = corpus([churchChart, publisherPdf, earlier, bystander]);
+    const changed = applyMerges(manifests, planMerges(songs, groups).merges);
 
-  it("sees through chord placement — the reason these were not caught as identical", () => {
-    // "The[Ab] everlasting" against "The [Ab]everlasting": same chords, same
-    // order, one character apart, so two rows survived as separate songs.
-    expect(isSameArrangement(copy({ songId: "a" }), copy({ songId: "b" }))).toMatch(/same order/);
-  });
-
-  it("refuses a sequence too short to prove anything", () => {
-    // Two different songs can share a title and a four-chord loop.
-    const short = ["G", "C", "D", "G"];
-    expect(isSameArrangement(song({ chordSeq: short }), song({ chordSeq: short }))).toBeNull();
-  });
-
-  it("says no when the chords actually differ", () => {
-    expect(isSameArrangement(copy({}), song({ chordSeq: [...seq.slice(0, 8), "F"] }))).toBeNull();
-  });
-
-  it("recognises the same arrangement written in another key", () => {
-    // Transposition is a URL parameter here, so a second row that is only a
-    // transposition is redundant — but only once the numbers prove it.
-    const numbers = ["1", "4", "5", "6m", "1", "4", "5", "1", "2m"];
-    const a = song({ songId: "a", key: "G", chordSeq: seq, nashville: numbers });
-    const b = song({ songId: "b", key: "Ab", chordSeq: ["Ab", "Db", "Eb", "Fm", "Ab", "Db", "Eb", "Ab", "Bbm"], nashville: numbers });
-    expect(isSameArrangement(a, b)).toMatch(/same arrangement in Ab/);
-  });
-
-  it("does not merge two different arrangements that happen to be transposed apart", () => {
-    // Same song, two keys, but the last chord genuinely differs — so the
-    // numbers disagree and it stays a person's decision.
-    const a = song({ key: "G", chordSeq: seq, nashville: ["1", "4", "5", "6m", "1", "4", "5", "1", "2m"] });
-    const b = song({
-      key: "Ab",
-      chordSeq: ["Ab", "Db", "Eb", "Fm", "Ab", "Db", "Eb", "Ab", "Db"],
-      nashville: ["1", "4", "5", "6m", "1", "4", "5", "1", "4"],
-    });
-    expect(isSameArrangement(a, b)).toBeNull();
+    const all = manifests.flatMap((m) => m.data.songs);
+    const byId = new Map(all.map((s) => [s.songId, s]));
+    expect(byId.get("pdf")).toMatchObject({ decision: "supersede", supersededBy: "church" });
+    expect(byId.get("pdf").supersedeReason).toMatch(/same song as the chrd chart \(\d+% of the lyrics\)/);
+    expect(byId.get("old")).toMatchObject({ decision: "supersede", supersededBy: "church", supersedeReason: "identical copy" });
+    expect(byId.get("church").decision).toBe("song");
+    // a decision nobody planned is never undone
+    expect(byId.get("gone")).toMatchObject({ decision: "supersede", supersededBy: "elsewhere" });
+    expect(changed.map((m) => m.data.sourceType).sort()).toEqual(["pdf", "text"]);
   });
 });
 
-describe("partial decisions", () => {
-  const seq = ["G", "C", "D", "Em", "G", "C", "D", "G", "Am"];
-
-  it("supersedes a redundant copy even while the group still needs a person", () => {
-    // "Glory, Honor, Power" carries two identical .chrd arrangements and a PDF
-    // that read only 7 chords. The PDF is the question; the second .chrd is
-    // not, and should not wait on an unrelated decision.
-    const r = decideGroup([
-      song({ songId: "a", chords: 38, cues: 53, chordSeq: seq, musicalSha256: "x" }),
-      song({ songId: "b", chords: 38, cues: 0, chordSeq: seq, musicalSha256: "y" }),
-      song({ songId: "c", source: "pdf", chords: 7, chordSeq: ["G", "C"], musicalSha256: "z" }),
-    ]);
-    expect(r.auto).toBe(false);
-    expect(r.losers.map((l) => l.song.songId)).toEqual(["b"]);
-    expect(r.open.map((c) => c.songId)).toEqual(["a", "c"]);
-  });
-
-  it("never lets a lyrics sheet wait on an unrelated question", () => {
-    const r = decideGroup([
-      song({ songId: "a", chords: 46, chordSeq: seq, musicalSha256: "x" }),
-      song({ songId: "b", source: "pdf", chords: 26, chordSeq: ["G", "C"], musicalSha256: "y" }),
-      song({ songId: "c", source: "docx", chords: 0, chordSeq: [], musicalSha256: "z" }),
-    ]);
-    expect(r.losers.map((l) => l.song.songId)).toEqual(["c"]);
-    expect(r.losers[0].reason).toMatch(/lyrics only/);
-    expect(r.open.map((c) => c.songId)).toEqual(["a", "b"]);
-  });
-
-  it("prefers the chart carrying secondary cues when the chords tie", () => {
-    const out = rankCopies([song({ songId: "a", cues: 0 }), song({ songId: "b", cues: 90 })]);
-    expect(out[0].songId).toBe("b");
+describe("mergeLedger", () => {
+  it("keeps earlier merges and folds a re-run into them, in a stable order", () => {
+    const { songs, groups } = corpus([churchChart, publisherPdf]);
+    const { merges } = planMerges(songs, groups);
+    const previous = { songs: { zzz: { title: "Later", from: ["y"], carry: {} }, church: { title: "Amazing Grace", from: ["docx"], carry: { year: "1779" } } } };
+    const ledger = mergeLedger(previous, merges);
+    expect(Object.keys(ledger.songs)).toEqual(["church", "zzz"]);
+    expect(ledger.songs.church.from).toEqual(["docx", "pdf"]);
+    expect(ledger.songs.church.carry).toMatchObject({ year: "1779", artist: "Chris Tomlin" });
+    expect(mergeLedger(ledger, merges)).toEqual(ledger);
   });
 });

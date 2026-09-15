@@ -14,6 +14,7 @@ import {
   deterministicSongId,
   slugifyTitle,
 } from "../apps/api/src/corpus/identity.js";
+import { enrichChordPro } from "../apps/api/src/corpus/enrich.js";
 
 const GOD_IS_GREAT = [
   "God is Great",
@@ -248,6 +249,28 @@ describe("buildChrdCorpus", () => {
     expect(summary.duplicateFiles).toEqual([]);
   });
 
+  it("writes what a merged song took from the copies it replaced into its chart", async () => {
+    const id = deterministicSongId("god_is_great.chrd");
+    await mkdir(corpusDir, { recursive: true });
+    await writeFile(
+      join(corpusDir, "merges.json"),
+      JSON.stringify({ version: 1, songs: { [id]: { title: "God is Great", from: ["x"], carry: { artist: "Todd Dulaney", tempo: "82", time: "6/8", x_album: "Your Great Name" } } } }),
+      "utf8",
+    );
+    const summary = await buildChrdCorpus({ tree, corpusDir });
+    const song = summary.manifest.songs.find((s) => s.songId === id);
+    const content = await readFile(join(corpusDir, song.file), "utf8");
+    expect(content).toContain("{artist: Todd Dulaney}");
+    expect(content).toContain("{tempo: 82}");
+    expect(content).toContain("{time: 6/8}");
+    expect(content).toContain("{x_album: Your Great Name}");
+    // the chart keeps its own key
+    expect(content).toContain("{key: F}");
+
+    const other = summary.manifest.songs.find((s) => s.songId !== id);
+    expect(await readFile(join(corpusDir, other.file), "utf8")).not.toContain("Todd Dulaney");
+  });
+
   it("throws when the source tree is missing", async () => {
     await expect(buildChrdCorpus({ tree: join(tree, "nope"), corpusDir })).rejects.toThrow(
       /does not exist/,
@@ -267,3 +290,54 @@ describe("collectDuplicateFiles", () => {
     ]);
   });
 });
+
+describe("enrichChordPro carry", () => {
+  const base = {
+    content: "{title: King of Glory}\n{key: G}\n\n[G]Lift up your heads\n",
+    metadata: { title: "King of Glory", key: "G" },
+  };
+
+  it("fills only what the chart lacks, and never the key", () => {
+    const out = enrichChordPro({
+      ...base,
+      metadata: { ...base.metadata, artist: "VPC" },
+      carry: { artist: "Todd Dulaney", tempo: "82", key: "Bb", x_writers: "Todd Dulaney" },
+    });
+    expect(out).toContain("{artist: VPC}");
+    expect(out).not.toContain("{artist: Todd Dulaney}");
+    expect(out).toContain("{tempo: 82}");
+    expect(out).toContain("{key: G}");
+    expect(out).not.toContain("Bb");
+    expect(out).toContain("{x_writers: Todd Dulaney}");
+  });
+
+  it("prefers a carried tempo to one guessed from a media filename", () => {
+    const out = enrichChordPro({ ...base, derivedTempo: 90, carry: { tempo: "82" } });
+    expect(out).toContain("{tempo: 82}");
+    expect(out).not.toContain("x_tempo_source");
+  });
+
+  it("adds carried alternate titles to the reviewed ones, once each", () => {
+    const out = enrichChordPro({
+      ...base,
+      aka: ["Lift Up Your Heads"],
+      carry: { aka: ["lift up your heads", "Who Is This King"] },
+    });
+    expect(out).toContain("{x_aka: Lift Up Your Heads; Who Is This King}");
+  });
+
+  it("never overrides an album the chart already carries", () => {
+    const out = enrichChordPro({
+      ...base,
+      content: "{title: King of Glory}\n{x_album: Live}\n\n[G]Lift\n",
+      carry: { x_album: "Studio" },
+    });
+    expect(out).toContain("{x_album: Live}");
+    expect(out).not.toContain("Studio");
+  });
+
+  it("changes nothing without a carry", () => {
+    expect(enrichChordPro({ ...base, carry: {} })).toBe(enrichChordPro(base));
+  });
+});
+

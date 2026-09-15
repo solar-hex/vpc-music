@@ -268,8 +268,8 @@ describe("archiving superseded duplicates", () => {
 });
 
 describe("field masks", () => {
-  it("core is exactly what the legacy importer owns", () => {
-    expect(FIELD_SETS.core).toEqual(["title", "key", "artist", "year", "tempo", "content", "isDraft"]);
+  it("core is the chart and what is read off it, never the tags", () => {
+    expect(FIELD_SETS.core).toEqual(["title", "key", "artist", "year", "tempo", "content", "isDraft", "status"]);
     expect(FIELD_SETS.core).not.toContain("tags");
   });
 
@@ -320,6 +320,19 @@ describe("runCorpusLoad", () => {
     const [row] = await db.select().from(songs).where(eqId(ID_A));
     expect(row.content).toContain("[C]great");
     expect(row.id).toBe(ID_A);
+  });
+
+  it("keeps the status in step with a chart that gains chords", async () => {
+    // "Send Me" kept its "Lyrics only" label after its chords arrived, because
+    // a chart load rewrote the content and left the status behind.
+    const lyrics = "{title: God is Great}\n\n{comment: Chorus}\nGod is great\n";
+    corpusRoot = await makeCorpus([{ songId: ID_A, slug: "god-is-great--aaaaaaaa", title: "God is Great", content: lyrics }]);
+    await runCorpusLoad(opts({ corpusRoot, dryRun: false }), { database: db, log: () => {} });
+    expect((await db.select().from(songs).where(eqId(ID_A)))[0].status).toBe("missing_chords");
+
+    corpusRoot = await makeCorpus([{ songId: ID_A, slug: "god-is-great--aaaaaaaa", title: "God is Great", content: CHART_A }]);
+    await runCorpusLoad(opts({ corpusRoot, dryRun: false, fields: "core" }), { database: db, log: () => {} });
+    expect((await db.select().from(songs).where(eqId(ID_A)))[0].status).toBeNull();
   });
 
   it("--fields tags writes tags and does NOT disturb the core fields", async () => {

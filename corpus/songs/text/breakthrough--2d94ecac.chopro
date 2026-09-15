@@ -14,22 +14,27 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/breakthrough/charts/vocals.pdf}
 {x_source_breakthrough: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/breakthrough/source/Breakthrough.txt}
 
-Intro      (F# - E - E - F# - G - F# - E - D - D)  repeat
-G (melody continues throughout) Bm7  D  G
+{comment: Intro}
+[(F#-E-E-F#-G-F#-E-D-D)]
+{ci: repeat}
+{ci: melody continues throughout}
+[G] [Bm7] [D] [G]
 
 {comment: Verse 1 & 2}
 [D]You are the undefeated One, my light and my salvation
 Omnipotent, Almighty, Defender, my victory
-[Bm7]When the wicked, my enemie[G]s and my foes, came up[A]on me to eat of my flesh
-My refuge, the one I run to		       You are the God,	 You are
-D (Intro melody)    To Verse 2, first time only: G
-They stumbled and fell
+[Bm7]When the wicked, my enemies and my foes, cam[G]e upon me to eat of my[A] flesh
+My refuge, the one I run to You are the God, You are
+{ci: Intro melody}
+{ci: To Verse 2}
+{ci: first time only}
+They stumbled and fell[D][G]
 the God of the breakthrough
 
 {comment: Chorus}
-[D]Breakth[G]rough, You are the God of the breakthrough
+[D]Breakthrough, You are the God of the brea[G]kthrough
 When I cant see my [Bm7]way through
-And I real[A]ly dont know what to do, I look to You
+And I really dont know w[A]hat to do, I look to You
 [D/F#]Breakthrough, You are the God of the breakthrough
 Walls fall down when I sh[G]out through
 Strongholds break when I [Bm7]pray through, so Im gonna praise You
@@ -39,12 +44,12 @@ Strongholds break when I [Bm7]pray through, so Im gonna praise You
 [G] [Bm7] [A] [D/F#] [G] [Bm7] [A/C#] [D/F#]
 
 {comment: Bridge}
-[G]Breakth[Bm7]rough in my heart,  breakthrough in my mind
-[A]Breakth[D/F#]rough in my spirit, breakthrough in my soul
-[G]Breakthro[Bm7]ugh in my weakness, breakthrough in my struggle
+[G]Breakthrough in my heart,  [Bm7]breakthrough in my mind
+[A]Breakthrough in my spirit, [D/F#]breakthrough in my soul
+[G]Breakthrough in my weakness, [Bm7]breakthrough in my struggle
 [A/C#]You are the God, [D/F#]You are the God of the breakthrough
-[G]Breakthr[Bm7]ough in my worship, breakthrough in my praise
-[A]Breakthro[D/F#]ugh when I lift and glorify Your name
+[G]Breakthrough in my worship, [Bm7]breakthrough in my praise
+[A]Breakthrough when I lift and [D/F#]glorify Your name
 [G]Breakthrough when I dance, break[Bm7]through when I shout
 [A/C#]You are the God, [D/F#]You are the God of the breakthrough
 {ci: Return to Chorus, then Bridge again}

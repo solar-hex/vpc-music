@@ -153,6 +153,32 @@ describe("convertLyricSheetToChordPro", () => {
     expect(r.title).toBeTruthy();
   });
 
+  it("merges chords typed without brackets onto the lyric beneath, so they transpose", () => {
+    // "I got the Lord": the chords are spaced over each line in plain text.
+    const r = convertLyricSheetToChordPro("I got the Lord.docx", [
+      "I got the Lord      G",
+      "",
+      "Chorus",
+      "      C",
+      "He raised me, And He saved me,",
+      "           G               C",
+      "I got the Lord, I got the Lord",
+      "G   C   D",
+    ]);
+    const body = r.chordProContent.split("\n");
+    expect(body).toContain("He rai[C]sed me, And He saved me,");
+    expect(body).toContain("I got the L[G]ord, I got the L[C]ord");
+    // a row with no lyric under it is still chords, not text
+    expect(body).toContain("[G] [C] [D]");
+    expect(r.chordProContent).not.toMatch(/^\s*C\s*$/m);
+  });
+
+  it("reads an indented C as the chord, and a bare C at the margin as Chorus", () => {
+    const r = convertLyricSheetToChordPro("x.docx", ["Song", "", "C", "      C", "Sing it out loud"]);
+    expect(r.chordProContent.match(/\{comment: Chorus\}/g)).toHaveLength(1);
+    expect(r.chordProContent).toContain("[C]");
+  });
+
   it("is deterministic", () => {
     const a = convertLyricSheetToChordPro("x.docx", WITH_CHORDS);
     const b = convertLyricSheetToChordPro("x.docx", WITH_CHORDS);

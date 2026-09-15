@@ -1,5 +1,7 @@
 {title: This Place}
+{artist: First Pentecostal Church of North Little Rock}
 {key: F}
+{time: 4/4}
 {tempo: 76}
 {x_tempo_source: derived from media filename}
 {x_theme: healing, grace-mercy}
@@ -16,6 +18,7 @@
 {x_chart_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-dwelling-place/charts/vocals.pdf}
 {x_source_this_place_loop_78_bpm_mp3: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/source/This-Place-Loop-78-BPM.mp3.zip}
 {x_source_this_place_vocal_parts: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/this-place--a1af8a74/source/This-Place-Vocal-Parts.zip}
+{x_album: It Is Settled}
 
 {comment: Intro}
 [Dm]      [Bb]      [F]     [C]

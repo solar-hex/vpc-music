@@ -79,6 +79,8 @@ export function mediaDirectiveKey(objectKey) {
  * @param {string} [spec.sourcePath]   path inside the source tree
  * @param {string} [spec.sourceType]   chrd | docx | …
  * @param {string} [spec.dropboxUrl]   an alternative place to find the original
+ * @param {object} [spec.carry]        details taken from merged copies of this
+ *                                     song (corpus/merges.json); they only fill gaps
  * @returns {string} the whole file
  */
 export function enrichChordPro(spec) {
@@ -100,6 +102,16 @@ export function enrichChordPro(spec) {
     ccli: existing.get("ccli"),
     copyright: existing.get("copyright"),
   };
+  /*
+   * A song merged from several copies keeps its own details and takes only
+   * what it lacks from the others: the church's chart of King of Glory gets
+   * Todd Dulaney, 82 bpm and 6/8 from the publisher's PDF it replaced.
+   */
+  const carry = spec.carry || {};
+  const present = (v) => v !== undefined && v !== null && String(v).trim() !== "";
+  for (const k of ["artist", "tempo", "time", "year"]) {
+    if (!present(core[k]) && present(carry[k])) core[k] = carry[k];
+  }
   for (const k of CORE_ORDER) {
     const v = core[k];
     if (v !== undefined && v !== null && String(v).trim() !== "") out.set(k, String(v).trim());
@@ -120,10 +132,11 @@ export function enrichChordPro(spec) {
    * Semicolons separate them, because an alternate title often contains a
    * comma. Reviewed in `corpus/aliases.json`, never guessed here.
    */
-  if (spec.aka?.length) {
+  const akaNames = [...(spec.aka || []), ...(carry.aka || [])];
+  if (akaNames.length) {
     const seen = new Set([String(out.get("title") || "").toLowerCase()]);
     const names = [];
-    for (const name of spec.aka) {
+    for (const name of akaNames) {
       const text = String(name || "").trim();
       if (!text || seen.has(text.toLowerCase())) continue;
       seen.add(text.toLowerCase());
@@ -154,6 +167,10 @@ export function enrichChordPro(spec) {
   for (const item of [...(spec.media || [])].sort((a, b) => a.key.localeCompare(b.key))) {
     const key = mediaDirectiveKey(item.key);
     if (!out.has(key)) out.set(key, item.url);
+  }
+
+  for (const k of ["x_album", "x_writers"]) {
+    if (!existing.has(k) && present(carry[k])) out.set(k, String(carry[k]).trim());
   }
 
   // Anything a human added that we do not manage is preserved, at the end.

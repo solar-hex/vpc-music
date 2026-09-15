@@ -12,6 +12,8 @@
  */
 import { basename, extname } from "node:path";
 import { isChordToken, isSecondaryToken } from "@vpc-music/shared";
+import { interpretChartLine, mergeByPosition } from "./pdfSong.js";
+import { textLineElements } from "./textChart.js";
 
 /** Section labels as written in these documents, mapped to the app's vocabulary. */
 const SECTION_ALIASES = new Map([
@@ -162,7 +164,9 @@ export function convertLyricSheetToChordPro(filename, paragraphs) {
       continue;
     }
 
-    const section = normalizeSectionLabel(text);
+    // "      C" typed over a lyric is the chord C, not a "C" for Chorus: a label
+    // is never indented.
+    const section = /^\s/.test(line) && isChordToken(text) ? null : normalizeSectionLabel(text);
     if (section) {
       if (body.length > 0) body.push("");
       body.push(`{comment: ${section}}`);
@@ -186,6 +190,34 @@ export function convertLyricSheetToChordPro(filename, paragraphs) {
         body.push(line.trim());
         chordLines += 1;
       }
+      lastWasBlank = false;
+      continue;
+    }
+
+    /*
+     * Chords typed without brackets, spaced over the lyric beneath them:
+     * "Am                D" above "And I can feel him walking right by my side".
+     * Read by the same row reader as a typed chart, so they transpose.
+     */
+    const row = interpretChartLine({ elements: textLineElements(line) });
+    if (row.length === 1 && row[0].type === "chords" && !row[0].notesBefore.length && !row[0].notesAfter.length) {
+      const chords = row[0].tokens.filter((t) => t.kind === "chord");
+      let j = i + 1;
+      while (j < lines.length && !lines[j].trim()) j += 1;
+      const next = j < lines.length ? lines[j] : null;
+      const nextRow = next === null ? [] : interpretChartLine({ elements: textLineElements(next) });
+      const merged =
+        nextRow.length === 1 && nextRow[0].type === "lyric" && !normalizeSectionLabel(next.trim())
+          ? mergeByPosition({ tokens: chords }, { elements: textLineElements(next) })
+          : null;
+      if (merged) {
+        body.push(merged);
+        lyricLines += 1;
+        i = j;
+      } else {
+        body.push(chords.map((t) => `[${t.text}]`).join(" "));
+      }
+      chordLines += 1;
       lastWasBlank = false;
       continue;
     }

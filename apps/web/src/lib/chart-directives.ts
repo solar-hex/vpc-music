@@ -77,7 +77,7 @@ export interface AdvancedSongField {
  * existing values appear, and what the corpus pipeline reads back.
  */
 export const ADVANCED_SONG_FIELDS: AdvancedSongField[] = [
-  { directive: "x_aka", label: "Alternate titles", placeholder: "Other names people search for", hint: "Separate names with commas. The song list finds the song by these too." },
+  { directive: "x_aka", label: "Alternate titles", placeholder: "Other names people search for", hint: "Separate names with semicolons, since a title can have a comma. The song list finds the song by these too." },
   { directive: "subtitle", label: "Subtitle" },
   { directive: "x_writers", label: "Songwriters", placeholder: "Separate names with commas" },
   { directive: "x_album", label: "Album" },

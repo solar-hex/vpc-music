@@ -52,6 +52,7 @@ pnpm corpus:reader                         # dist/songbook.html, one offline fil
 pnpm gap:report                            # targeted list vs the library, by source site
 pnpm gap:resolve [--list|--approve <n>]    # alternate titles → corpus/aliases.json
 pnpm corpus:verify --nashville [--write]   # chart vs the publisher's number chart
+pnpm corpus:dedupe [--apply]               # merge copies of one song → corpus/merges.json
 pnpm intake [--apply]                      # file whatever is in intake/inbox/
 ```
 
@@ -92,6 +93,11 @@ Rules that hold the whole thing together:
   unfinished. A PDF chart leaves draft only when the publisher's own number
   chart agrees with it (`corpus/verified.json`); a song with no chords is a
   finished lyrics sheet and gets `status = missing_chords` instead.
+- **Copies of one song are merged by their words, never by title alone.**
+  `corpus:dedupe` supersedes copies sharing most of their lyrics (the church's
+  chart wins, then a listed chart) and fills only what the winner lacks from
+  them; two publisher charts by different artists, or copies that share only
+  some words, are left for a person. It never undoes a recorded decision.
 - **`songs.tags` holds four namespaces**, all parsed in `shared/utils/library.js`:
   a plain tag, `theme:x`, `!theme:x` (a rejection), and `flag:x` (a property of
   the song, not a subject). `flag:unlisted` is the old site's `~` filename

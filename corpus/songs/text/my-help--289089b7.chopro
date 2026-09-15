@@ -1,4 +1,6 @@
 {title: My Help}
+{artist: James Simms}
+{key: G}
 {tempo: 77}
 {x_tempo_source: derived from media filename}
 {x_theme: healing, heaven, joy, salvation, worship}
@@ -23,18 +25,16 @@
 {x_chart_my_help_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/my-help/charts/my-help-vocals.pdf}
 {x_source_my_help_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/my-help/source/My-Help-Chord-Chart-TXT.txt}
 
-James Simms                                                       Key: G
-
 {comment: Intro}
 [C] [D] [C] [D]
 
 {comment: Verse}
-[C]   Our Father[D]       [C]You hold all p[D]ower in heaven
-[C]   Our savior[D]       [C]You purchased [D]my salvation
-[C]   Our healer[D]       [C]all sickness h[D]as to flee
+[C]Our Father[D]    [C]You hold all p[D]ower in heaven
+[C]Our savior[D]    [C]You purchased [D]my salvation
+[C]Our healer[D]    [C]all sickness h[D]as to flee
 
 {comment: Pre-chorus}
-[C]    We will worship [D]  we are thankful  [C/E]     We will sing unto thee[D/F#]
+[C]We will worship[D]   we are thankful[C/E]    We will sing unto thee[D/F#]
 
 {comment: Chorus}
 My H[G]elp cometh f[D]rom, cometh from, f[Em7]rom the L[C]ord

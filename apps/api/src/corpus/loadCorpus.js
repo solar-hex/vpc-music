@@ -33,12 +33,14 @@ const BATCH_SIZE = 50;
 /**
  * Which columns a run is allowed to touch.
  *
- * `core` is exactly the set the legacy importer owns, so the two can coexist
- * without fighting. `tags` is ours alone — the importer excludes it from its
- * fingerprint, so theme labels survive a re-import.
+ * `core` is the chart and what is read straight off it. `status` is in it
+ * because it is worked out from the content ("Lyrics only" when there are no
+ * chords): a run that rewrites a chart and leaves its status behind shows a
+ * chart full of chords labelled lyrics only. `tags` is separate so theme
+ * labels, which only ever get added, are never rewritten by a chart load.
  */
 export const FIELD_SETS = {
-  core: ["title", "key", "artist", "year", "tempo", "content", "isDraft"],
+  core: ["title", "key", "artist", "year", "tempo", "content", "isDraft", "status"],
   tags: ["tags"],
   // `aka` joins tags as ours: the legacy importer never wrote it, so a reviewed
   // alternate title cannot be clobbered by a re-import.

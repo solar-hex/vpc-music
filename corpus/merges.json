@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "note": "Songs merged by corpus:dedupe. Each winner lists the copies it replaced and the details it took from them; corpus:build writes those into the winner's chart.",
+  "songs": {
+    "064b864b-c49d-577b-b063-36a5c56a9c17": {
+      "title": "Hallelujah He is Here",
+      "from": [
+        "6401850d-ec4f-5e9f-91bb-873f8b1ef688"
+      ],
+      "carry": {}
+    },
+    "09410ae5-3e4d-5238-8d1a-188cda6b5f4b": {
+      "title": "Somebody Give Him Some Praise",
+      "from": [
+        "b5241dfd-f6b5-5b8e-a52b-cb2136b2414a"
+      ],
+      "carry": {}
+    },
+    "16ce24f6-2148-52f0-b123-7c5178bd3ef8": {
+      "title": "One God",
+      "from": [
+        "f774f571-acfd-56d0-8f40-62c0ce7b819f"
+      ],
+      "carry": {}
+    },
+    "28482490-c364-5fee-9749-f765657ea452": {
+      "title": "Ain't God Good",
+      "from": [
+        "854890a1-c51b-5162-b7a8-5ed0e30f18f5"
+      ],
+      "carry": {}
+    },
+    "2ff775e0-4c96-5f44-8f7b-13b880ba750a": {
+      "title": "Oh, how I love Jesus",
+      "from": [
+        "dd60795c-cf3b-554f-b9ba-42fb27b8d277"
+      ],
+      "carry": {}
+    },
+    "35515dad-726f-5526-8f2b-3b3ec364f63a": {
+      "title": "Amazing Grace",
+      "from": [
+        "aa6ce3b5-1f49-5daf-acc6-2cf70f278ba1"
+      ],
+      "carry": {}
+    },
+    "3e471a37-8978-5e97-9c12-d5d33b30a518": {
+      "title": "Victory, yes victory -",
+      "from": [
+        "9adbf4b6-afe3-5daf-ac66-ab259c6da641"
+      ],
+      "carry": {}
+    },
+    "3eaaa8a7-3465-5e32-af02-916ff87b9330": {
+      "title": "Complete Surrender",
+      "from": [
+        "75049d26-c323-5186-ab47-7d8b8c946918"
+      ],
+      "carry": {
+        "artist": "Indiana Bible College (IBC)"
+      }
+    },
+    "3f18a2c9-e1c0-51e7-8dc9-8517f9684334": {
+      "title": "Same God",
+      "from": [
+        "d5bb32cc-48f3-587e-b352-ad19961f4e28"
+      ],
+      "carry": {
+        "artist": "Cross Worship",
+        "time": "4/4",
+        "x_album": "Same God (Single)",
+        "x_writers": "Darius Byers, Jordan Mohilowski, Mia Fields, Troy Culbreth"
+      }
+    },
+    "4d2d2422-e5a6-598a-929d-24bef4fd1dc6": {
+      "title": "God Gave Me A Song",
+      "from": [
+        "cc9f21b1-efa1-5444-a3f6-c74afd807eaf"
+      ],
+      "carry": {}
+    },
+    "5119a6d4-1efb-5a3c-b035-f5c4074a2a82": {
+      "title": "God Is Here",
+      "from": [
+        "896be5c4-73e4-5e6b-a4a3-e22c87e5c794"
+      ],
+      "carry": {}
+    },
+    "5685c996-e977-5df4-a81b-60e60ffe96de": {
+      "title": "Let’s Dance",
+      "from": [
+        "2fcb47d7-5e03-56f1-a5ce-78c4b656cfbe"
+      ],
+      "carry": {}
+    },
+    "626b765f-11e4-5ddd-8d75-7be47f58f46c": {
+      "title": "Jesus",
+      "from": [
+        "5121fa9e-b0d7-5cfb-9f21-a768244d0484"
+      ],
+      "carry": {}
+    },
+    "6971e83a-0510-56bc-adc8-c892068565f8": {
+      "title": "King of Glory",
+      "from": [
+        "c41b24e8-1b45-53e5-a8ca-f927a7dbd0e1"
+      ],
+      "carry": {
+        "artist": "Todd Dulaney",
+        "tempo": "82",
+        "time": "6/8",
+        "x_album": "Your Great Name"
+      }
+    },
+    "699c012e-eeaa-5a85-b2ab-a4ddfa0e82d5": {
+      "title": "A Place Of Healing",
+      "from": [
+        "f645a7f1-9293-5ddf-b61a-c385775d52fc"
+      ],
+      "carry": {}
+    },
+    "6a2f8538-3004-5390-903d-eeddce4665eb": {
+      "title": "Jesus Is",
+      "from": [
+        "bfb4f14c-41ce-53cd-bf56-c74ef01e8d37"
+      ],
+      "carry": {
+        "artist": "Brooklyn Tabernacle Choir",
+        "tempo": "144",
+        "time": "4/4",
+        "x_album": "Pray"
+      }
+    },
+    "71997a3f-5001-54d1-831d-d0d8d899c99f": {
+      "title": "Still Everything",
+      "from": [
+        "a12f59ed-9c97-5da7-9d21-b4362b66569d",
+        "e53ad8ff-7501-5e2b-9b3b-3f1353ce7d39"
+      ],
+      "carry": {
+        "artist": "Indiana Bible College (IBC)",
+        "tempo": "63",
+        "time": "4/4",
+        "x_album": "Welcome Home",
+        "x_writers": "Benita Jones, Michael Ferrn"
+      }
+    },
+    "768cb222-2c9d-5a4f-86c1-89493df40b29": {
+      "title": "Anything Can Happen",
+      "from": [
+        "232e9cbe-8586-5db0-852c-bcd8e2763294"
+      ],
+      "carry": {
+        "artist": "Mark Crowder",
+        "tempo": "78",
+        "time": "4/4",
+        "x_album": "Faith Over Fear",
+        "x_writers": "Savannah McKee"
+      }
+    },
+    "7b5765b8-28b6-5c1c-9acf-d203097bb22e": {
+      "title": "Isn’t the Name",
+      "from": [
+        "74c79ec1-c0d5-5a6b-86cf-943797b26e6c"
+      ],
+      "carry": {}
+    },
+    "7c212689-5922-524d-af38-cd2f1f41a1c2": {
+      "title": "Unspeakable Joy",
+      "from": [
+        "8e8d6580-cb8e-5757-b8c2-e844ef0acd16"
+      ],
+      "carry": {}
+    },
+    "7f79f44c-66ed-5e9c-9da9-883e18a264db": {
+      "title": "Pass me not, O gentle Savior",
+      "from": [
+        "acb7d8c5-e8c4-56f5-81a0-d2ce2a3c7b53"
+      ],
+      "carry": {}
+    },
+    "826f0b19-914d-5923-91a9-f801654cc235": {
+      "title": "John 1",
+      "from": [
+        "80a8c7a1-ec82-5d55-b693-ea8e23b8aebb"
+      ],
+      "carry": {}
+    },
+    "893a0ae4-cd9b-5373-89c6-0370488756fb": {
+      "title": "Breakthrough",
+      "from": [
+        "2d94ecac-7757-56fe-9538-fcdbb3f27c6c"
+      ],
+      "carry": {}
+    },
+    "8ec67746-e266-5dd2-bddc-0479b3334f15": {
+      "title": "Noel, Christ is Born",
+      "from": [
+        "d217fb51-fbe4-5b02-89ae-964fd4dccc61"
+      ],
+      "carry": {}
+    },
+    "96c37769-8658-551d-883e-802367640b62": {
+      "title": "I Found It All In The Word OF God",
+      "from": [
+        "6d3f7364-cba4-57e2-b844-3c836943b5ad"
+      ],
+      "carry": {}
+    },
+    "9cdccdd4-3115-5ea3-9d2e-e1d414d87d41": {
+      "title": "Hes In The Room",
+      "from": [
+        "cdc03ea2-c2c8-5ce6-9c9b-00fd02ff646c"
+      ],
+      "carry": {
+        "artist": "David Jennings feat. Bethany Jennings",
+        "tempo": "75",
+        "time": "4/4",
+        "x_album": "He’s In The Room (Single)",
+        "x_writers": "David Jennings"
+      }
+    },
+    "9f137f76-ae5d-5530-b76b-8b571a4d001e": {
+      "title": "Wait On The Lord",
+      "from": [
+        "a4cac43f-0fd2-582e-ae13-6193f127419d"
+      ],
+      "carry": {
+        "artist": "James Wilson",
+        "time": "4/4",
+        "x_album": "Wait on the Lord"
+      }
+    },
+    "9f25f88a-281a-5804-b7c9-1b3ee054801c": {
+      "title": "Order My Steps",
+      "from": [
+        "1978bb8e-ea2b-5814-b1c2-7687abf1dfad"
+      ],
+      "carry": {
+        "artist": "GMWA Women of Worship",
+        "time": "4/4",
+        "x_album": "Wow Gospel 1998",
+        "x_writers": "Glen Burleigh"
+      }
+    },
+    "9f42c3c5-afbe-50cd-8d4b-787dbb37bb47": {
+      "title": "Lord, You Reign",
+      "from": [
+        "64f4344b-404b-52b2-8336-591fe72b2a99"
+      ],
+      "carry": {}
+    },
+    "a1af8a74-8a63-5746-920c-0a6501bda832": {
+      "title": "This Place",
+      "from": [
+        "4b90832c-0cfe-5d3b-bc6d-d334709e2a42"
+      ],
+      "carry": {
+        "artist": "First Pentecostal Church of North Little Rock",
+        "time": "4/4",
+        "x_album": "It Is Settled"
+      }
+    },
+    "a7eb57a9-27b8-524e-94bf-8f5915e03119": {
+      "title": "You Are Holy",
+      "from": [
+        "4191436f-f932-5d41-be54-71d976a2ab01"
+      ],
+      "carry": {}
+    },
+    "af0c51e8-e4b7-5b3d-868d-18b535e38d11": {
+      "title": "Ive Got A Reason",
+      "from": [
+        "760ea597-66d9-58d0-b284-1aa4cc2495d8"
+      ],
+      "carry": {}
+    },
+    "b34656a5-bdce-5fee-92c9-88380adcfaa0": {
+      "title": "Greater",
+      "from": [
+        "4d7201ec-e09d-56f4-b228-34e66d321bd3"
+      ],
+      "carry": {}
+    },
+    "c3c734dc-a7fd-5d55-9e3f-b8c63acbbd20": {
+      "title": "He is More",
+      "from": [
+        "1d560e84-1cc8-5352-aa1f-77b785636efe"
+      ],
+      "carry": {}
+    },
+    "c7299657-e6c4-5680-b0fe-f06716596248": {
+      "title": "Way Maker",
+      "from": [
+        "b3ad877e-a236-5781-aa3e-8ee09365d4ef"
+      ],
+      "carry": {
+        "artist": "Sinach"
+      }
+    },
+    "c9d22cc5-677d-5641-a71e-48cacb1062ca": {
+      "title": "Glory, Honor, Power",
+      "from": [
+        "db58061e-9c10-5cd8-89e0-68c6385cc176"
+      ],
+      "carry": {
+        "artist": "Influence Music",
+        "tempo": "78",
+        "time": "4/4",
+        "x_album": "Ages"
+      }
+    },
+    "cace7122-f477-5262-ab91-77b29659f90f": {
+      "title": "What A Beautiful Name",
+      "from": [
+        "fb1562ec-a677-5478-b94e-be48eb041b0c"
+      ],
+      "carry": {
+        "artist": "Hillsong Worship"
+      }
+    },
+    "d21d856b-c8e8-54b7-8a78-bd2cab3ebe8e": {
+      "title": "We Worship You",
+      "from": [
+        "36855a3d-e5b3-5ec5-bb20-f44dce726ece"
+      ],
+      "carry": {}
+    },
+    "d5837b32-e565-5685-b941-bd80ef68c131": {
+      "title": "Worthy Of It All",
+      "from": [
+        "c90061b8-38fb-5b8e-a69a-ba7c98271d79"
+      ],
+      "carry": {
+        "artist": "CeCe Winans",
+        "tempo": "71",
+        "time": "4/4",
+        "x_album": "Believe For It",
+        "x_writers": "David Brymer, Ryan Hall"
+      }
+    },
+    "f162ec06-76d3-548d-852b-c7beeb7494dd": {
+      "title": "Holy Ghost",
+      "from": [
+        "7bbd5b2a-80da-551f-9feb-1d1fe9c2b8bb",
+        "c01bd7b5-9785-541e-99b7-08450ea0c343"
+      ],
+      "carry": {
+        "artist": "Taylor Fish",
+        "time": "4/4",
+        "x_album": "Holy Ghost (Single)",
+        "x_writers": "Taylor Fish"
+      }
+    },
+    "f782d8cd-ffe3-523d-b0f4-e183ac7de298": {
+      "title": "Believe For It",
+      "from": [
+        "798b6f7f-8da9-5323-9826-20ae43a8ebae"
+      ],
+      "carry": {}
+    },
+    "f9220d26-875e-5cc8-9ee9-cb19e31cd50d": {
+      "title": "No Other Name (Mark Yandris)",
+      "from": [
+        "2a563f1c-2edd-58e4-a71d-b6970592eeaf",
+        "6483f121-01db-5cc0-b506-66f883b12945"
+      ],
+      "carry": {
+        "artist": "Mark Yandris",
+        "tempo": "110",
+        "time": "4/4",
+        "x_album": "No Other Name (Single",
+        "x_writers": "Mark Yandris"
+      }
+    },
+    "fccc3080-2055-5df3-b1e9-305a9e840435": {
+      "title": "Mighty",
+      "from": [
+        "3137824b-6321-5c48-881d-803a6315ef10"
+      ],
+      "carry": {}
+    },
+    "fd35c467-49bd-5e61-88f1-bf7b9a29b883": {
+      "title": "One Name",
+      "from": [
+        "8e8b4084-92d6-5e7b-a7f3-6a9e2145c66a"
+      ],
+      "carry": {}
+    }
+  }
+}

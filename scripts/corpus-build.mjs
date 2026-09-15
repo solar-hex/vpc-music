@@ -29,6 +29,7 @@ import { matchTitles } from "../apps/api/src/corpus/titleMatch.js";
 import { loadMediaIndex, DROPBOX_ROOTS } from "../apps/api/src/corpus/mediaIndex.js";
 import { approvedBySong, loadAliases } from "../apps/api/src/corpus/aliases.js";
 import { loadVerified, verifiedNote } from "../apps/api/src/corpus/verified.js";
+import { loadMerges } from "../apps/api/src/corpus/merges.js";
 import {
   corpusFileName,
   deterministicSongId,
@@ -298,6 +299,8 @@ export async function buildCorpus({
   const aliases = approvedBySong(loadAliases(join(corpusRoot, "aliases.json")));
   // Charts the publisher's own number chart agrees with. See corpus:verify.
   const verified = loadVerified(join(corpusRoot, "verified.json"));
+  // What a merged song took from the copies it replaced. See corpus:dedupe.
+  const merges = loadMerges(join(corpusRoot, "merges.json"));
   const stamp = todayStamp(now);
 
   const manifestEntries = [];
@@ -354,6 +357,7 @@ export async function buildCorpus({
         sourceType: source,
         sourcePath: relativePath,
         dropboxUrl: linked.dropboxUrl,
+        carry: merges.get(identity.songId),
       });
       const file = normalizeRelativePath(
         join("songs", source, corpusFileName(conversion.metadata.title, identity.songId)),

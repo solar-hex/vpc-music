@@ -16,9 +16,8 @@
  *   Broken we draw near        Jesus meet us   here
  */
 import { basename, extname } from "node:path";
-import { isChordToken } from "@vpc-music/shared";
 import { normalizeArtist } from "./artists.js";
-import { classifyChartLine } from "./pdfSong.js";
+import { chartBody, classifyChartLine } from "./pdfSong.js";
 
 /** Decode UTF-16LE/BE or UTF-8, whichever the file actually is. */
 export function decodeText(buffer) {
@@ -28,45 +27,41 @@ export function decodeText(buffer) {
   return b.toString("utf8").replace(/^﻿/, "");
 }
 
-/** Every whitespace-separated token with the column it starts at. */
-export function tokensWithColumns(line) {
-  const out = [];
-  for (const m of String(line).matchAll(/\S+/g)) out.push({ text: m[0], column: m.index });
+/** Typed charts line chords up with tab stops as well as spaces. */
+export const TAB_WIDTH = 8;
+
+/** A line with its tabs expanded to the columns they reach. */
+export function expandTabs(line, tabWidth = TAB_WIDTH) {
+  let out = "";
+  for (const ch of String(line)) {
+    if (ch === "\t") out +=" ".repeat(tabWidth - (out.length % tabWidth));
+    else out += ch;
+  }
   return out;
 }
 
-/** A line of nothing but chords. */
-export function isChordOnlyLine(line) {
-  const tokens = tokensWithColumns(line);
-  if (tokens.length === 0) return false;
-  return tokens.every((t) => isChordToken(t.text) || /^[A-G][b#]?[a-z0-9#/()+.-]*$/.test(t.text));
-}
-
 /**
- * Merge a chord line onto the lyric beneath it by character column — the
- * column a chord sits at is where it belongs, which is the whole convention
- * these charts are written in.
+ * One typed line as the chart reader sees a line of a PDF: a run per
+ * character, at its column. The column a chord is typed at is where it
+ * belongs, which is the whole convention these charts are written in, and
+ * reading them through the same reader as the PDFs means a passing-chord run,
+ * a cue or a section name with its chords reads the same in both.
  */
-export function mergeByColumn(chordLine, lyricLine) {
-  const chords = tokensWithColumns(chordLine);
-  if (chords.length === 0) return lyricLine;
-  const lyric = String(lyricLine ?? "");
-  let out = "";
-  let cursor = 0;
-  for (const chord of chords) {
-    const at = Math.min(Math.max(chord.column, cursor), lyric.length);
-    out += lyric.slice(cursor, at) + `[${chord.text}]`;
-    cursor = at;
-  }
-  return (out + lyric.slice(cursor)).replace(/\s+$/, "");
+export function textLineElements(line, lineIndex = 0, tabWidth = TAB_WIDTH) {
+  const elements = [];
+  [...expandTabs(line, tabWidth)].forEach((ch, column) => {
+    if (ch.trim()) elements.push({ text: ch, x: column, y: lineIndex, width: 1, fontSize: 1, pageIndex: 0 });
+  });
+  return elements;
 }
 
 /**
  * @param {string} filename
  * @param {Buffer|string} input
+ * @param {{tabWidth?: number}} [options]
  * @returns {{title, chordProContent, metadata, warnings, confidence}}
  */
-export function convertTextChartToChordPro(filename, input) {
+export function convertTextChartToChordPro(filename, input, { tabWidth = TAB_WIDTH } = {}) {
   const warnings = [];
   const lines = (typeof input === "string" ? input : decodeText(input))
     .replace(/\r\n?/g, "\n")
@@ -80,11 +75,18 @@ export function convertTextChartToChordPro(filename, input) {
   let tempo = null;
   let i = 0;
   for (; i < lines.length && i < 8; i += 1) {
-    const t = lines[i].trim();
+    let t = lines[i].trim();
     if (!t) { if (title) { i += 1; break; } continue; }
 
-    const k = t.match(/^key\s*[:\-]?\s*([A-G][b#]?m?(?:in)?)\b/i);
-    if (k) { key = k[1]; continue; }
+    // "Key: C#", "Key of E", or the key at the end of the artist's line
+    // ("Phase II        Key: Cm"). A word boundary after "C#" would fall back
+    // to "C", so the key must end where the letters and sharps do.
+    const k = t.match(/(?:^|\s)key(?:\s+of)?\s*[:\-]?\s*([A-G][b#]?m?(?:in)?)(?![A-Za-z0-9#])/i);
+    if (k) {
+      key = key ?? k[1];
+      t = t.slice(0, k.index).trim();
+      if (!t) continue;
+    }
     const bpm = t.match(/^(?:tempo|bpm)\s*[:\-]?\s*(\d{2,3})/i) || t.match(/(\d{2,3})\s*bpm/i);
     if (bpm) { tempo = Number(bpm[1]); continue; }
 
@@ -106,59 +108,11 @@ export function convertTextChartToChordPro(filename, input) {
   }
 
   // ── body ──────────────────────────────────────────────────────────────────
-  const body = [];
-  let chordLines = 0;
-  let lyricLines = 0;
-  let sections = 0;
-
-  for (; i < lines.length; i += 1) {
-    const raw = lines[i];
-    const text = raw.trim();
-    if (!text) continue;
-
-    const kind = classifyChartLine(text);
-    if (kind.type === "section") {
-      if (body.length > 0) body.push("");
-      body.push(`{comment: ${kind.name}}`);
-      sections += 1;
-      if (kind.note) body.push(`{ci: ${kind.note}}`);
-      continue;
-    }
-    if (kind.type === "note") { body.push(`{ci: ${kind.text}}`); continue; }
-
-    // "Intro     D  Bm7  A  G" — a heading with its chords on the same line.
-    const inline = text.match(/^([A-Za-z][A-Za-z\s]*?)\s{2,}(.+)$/);
-    if (inline && classifyChartLine(inline[1].trim()).type === "section" && isChordOnlyLine(inline[2])) {
-      if (body.length > 0) body.push("");
-      body.push(`{comment: ${classifyChartLine(inline[1].trim()).name}}`);
-      body.push(tokensWithColumns(inline[2]).map((t) => `[${t.text}]`).join(" "));
-      sections += 1;
-      chordLines += 1;
-      continue;
-    }
-
-    if (isChordOnlyLine(raw)) {
-      // Attach to the next non-blank line when that line is a lyric.
-      let j = i + 1;
-      while (j < lines.length && !lines[j].trim()) j += 1;
-      const next = j < lines.length ? lines[j] : null;
-      if (next && !isChordOnlyLine(next) && classifyChartLine(next.trim()).type === "lyric") {
-        body.push(mergeByColumn(raw, next));
-        chordLines += 1;
-        lyricLines += 1;
-        i = j;
-        continue;
-      }
-      body.push(tokensWithColumns(raw).map((t) => `[${t.text}]`).join(" "));
-      chordLines += 1;
-      continue;
-    }
-
-    body.push(text);
-    lyricLines += 1;
-  }
-
-  while (body.length > 0 && !body[body.length - 1].trim()) body.pop();
+  const read = lines.slice(i).map((line, n) => ({ pageIndex: 0, y: n, elements: textLineElements(line, n, tabWidth) }));
+  const { body } = chartBody(read, { title, artist });
+  const sections = body.filter((l) => /^\{comment:/.test(l)).length;
+  const chordLines = body.filter((l) => /\[[^\]]+\]/.test(l) || /^\|/.test(l)).length;
+  const lyricLines = body.filter((l) => l.trim() && !/^\{/.test(l) && /[a-z]{2}/i.test(l.replace(/\[[^\]]*\]/g, ""))).length;
 
   if (chordLines === 0) warnings.push("No chord lines found");
   if (sections === 0) warnings.push("No sections detected");
