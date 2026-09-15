@@ -6,7 +6,7 @@
 {x_source: pdf:UPCI Music/2016/One Name/One-Name-Chord-Chart-.pdf}
 {x_dropbox: https://www.dropbox.com/scl/fo/myezotku0yxt1y2elwnh7/AIftAUzuICIcjcCcx2x6Xqw?rlkey=28zhlw8ae4orji684sn6a7ld9&subpath=%2FUPCI%20Song%20Parts%20TG%2FUPCI%20Music%2F2016%2FOne%20Name}
 {x_audio_alto: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/alto.mp3}
-{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/full-mix.aif}
+{x_audio_full_mix: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/full-mix.mp3}
 {x_audio_soprano: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/soprano.mp3}
 {x_audio_tenor: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/audio/tenor.mp3}
 {x_chart_one_name_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/charts/one-name-chord-chart.pdf}
@@ -20,7 +20,7 @@
 {x_chart_one_name_rhythm: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/charts/one-name-rhythm.pdf}
 {x_chart_one_name_vocals: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/charts/one-name-vocals.pdf}
 {x_source_one_name_chord_chart_txt: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/one-name/source/One-Name-Chord-Chart-TXT.txt}
-{x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/audio/loop.wav}
+{x_audio_loop: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/audio/loop.mp3}
 {x_chart_chord_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/charts/chord-chart.pdf}
 {x_chart_erv: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/charts/erv.pdf}
 {x_chart_number_chart: https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/only-one-name/charts/number-chart.pdf}

@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "note": "MP3 copies of WAV and AIFF parts, made by corpus:transcode. The build links the copy under the original's part name; the original stays in storage.",
+  "files": {
+    "v1/prd/media/songs/a-better-word/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/a-better-word/audio/full-mix.mp3",
+      "size": 14967710,
+      "seconds": 563.2
+    },
+    "v1/prd/media/songs/a-reason-to-dance/audio/loop-130bpm.wav": {
+      "key": "v1/prd/media/songs/a-reason-to-dance/audio/loop-130bpm.mp3",
+      "size": 19032548,
+      "seconds": 620.3
+    },
+    "v1/prd/media/songs/ain-t-no-grave-alive/audio/loop-76bpm.wav": {
+      "key": "v1/prd/media/songs/ain-t-no-grave-alive/audio/loop-76bpm.mp3",
+      "size": 15459504,
+      "seconds": 618.9
+    },
+    "v1/prd/media/songs/ancient-of-days/audio/loop.wav": {
+      "key": "v1/prd/media/songs/ancient-of-days/audio/loop.mp3",
+      "size": 15389659,
+      "seconds": 583.8
+    },
+    "v1/prd/media/songs/anything-can-happen--d4daef67/audio/loop.wav": {
+      "key": "v1/prd/media/songs/anything-can-happen--d4daef67/audio/loop.mp3",
+      "size": 11607292,
+      "seconds": 461.5
+    },
+    "v1/prd/media/songs/awesome-and-powerful/audio/loop.wav": {
+      "key": "v1/prd/media/songs/awesome-and-powerful/audio/loop.mp3",
+      "size": 14699220,
+      "seconds": 530.5
+    },
+    "v1/prd/media/songs/be-praised/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/be-praised/audio/tenor.mp3",
+      "size": 9615968,
+      "seconds": 429.8
+    },
+    "v1/prd/media/songs/better/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/better/audio/tenor.mp3",
+      "size": 5542138,
+      "seconds": 268.1
+    },
+    "v1/prd/media/songs/bless-the-lord/audio/loop.wav": {
+      "key": "v1/prd/media/songs/bless-the-lord/audio/loop.mp3",
+      "size": 9880896,
+      "seconds": 397.5
+    },
+    "v1/prd/media/songs/bless-the-lord/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/bless-the-lord/audio/tenor.mp3",
+      "size": 5575557,
+      "seconds": 281.2
+    },
+    "v1/prd/media/songs/bless-your-name/audio/loop-56bpm.wav": {
+      "key": "v1/prd/media/songs/bless-your-name/audio/loop-56bpm.mp3",
+      "size": 9393353,
+      "seconds": 420
+    },
+    "v1/prd/media/songs/but-god/audio/loop.wav": {
+      "key": "v1/prd/media/songs/but-god/audio/loop.mp3",
+      "size": 7926488,
+      "seconds": 419.2
+    },
+    "v1/prd/media/songs/christmas-day/audio/loop-90bpm.wav": {
+      "key": "v1/prd/media/songs/christmas-day/audio/loop-90bpm.mp3",
+      "size": 6999327,
+      "seconds": 264.9
+    },
+    "v1/prd/media/songs/come-move/audio/loop.wav": {
+      "key": "v1/prd/media/songs/come-move/audio/loop.mp3",
+      "size": 14699220,
+      "seconds": 530.5
+    },
+    "v1/prd/media/songs/come-thou-long-expected-king/audio/loop-143bpm.wav": {
+      "key": "v1/prd/media/songs/come-thou-long-expected-king/audio/loop-143bpm.mp3",
+      "size": 14155390,
+      "seconds": 503.5
+    },
+    "v1/prd/media/songs/covenant-keeping-god/audio/full-mix.aif": {
+      "key": "v1/prd/media/songs/covenant-keeping-god/audio/full-mix.mp3",
+      "size": 15243024,
+      "seconds": 563.6
+    },
+    "v1/prd/media/songs/for-my-good/audio/loop-72bpm.wav": {
+      "key": "v1/prd/media/songs/for-my-good/audio/loop-72bpm.mp3",
+      "size": 16727368,
+      "seconds": 640
+    },
+    "v1/prd/media/songs/forward/audio/loop-79bpm.wav": {
+      "key": "v1/prd/media/songs/forward/audio/loop-79bpm.mp3",
+      "size": 4659460,
+      "seconds": 200.5
+    },
+    "v1/prd/media/songs/give-me-jesus/audio/loop-125bpm.wav": {
+      "key": "v1/prd/media/songs/give-me-jesus/audio/loop-125bpm.mp3",
+      "size": 10430806,
+      "seconds": 414.7
+    },
+    "v1/prd/media/songs/glory-to-the-lamb/audio/loop.aif": {
+      "key": "v1/prd/media/songs/glory-to-the-lamb/audio/loop.mp3",
+      "size": 7612839,
+      "seconds": 531.4
+    },
+    "v1/prd/media/songs/god-is-calling/audio/loop-65bpm.wav": {
+      "key": "v1/prd/media/songs/god-is-calling/audio/loop-65bpm.mp3",
+      "size": 11656205,
+      "seconds": 420.9
+    },
+    "v1/prd/media/songs/god-of-wonder/audio/loop-80bpm.wav": {
+      "key": "v1/prd/media/songs/god-of-wonder/audio/loop-80bpm.mp3",
+      "size": 13490806,
+      "seconds": 504
+    },
+    "v1/prd/media/songs/greater-highlands-worship/audio/loop-68bpm.wav": {
+      "key": "v1/prd/media/songs/greater-highlands-worship/audio/loop-68bpm.mp3",
+      "size": 13881366,
+      "seconds": 508.2
+    },
+    "v1/prd/media/songs/greater-works/audio/loop.wav": {
+      "key": "v1/prd/media/songs/greater-works/audio/loop.mp3",
+      "size": 12215909,
+      "seconds": 459.1
+    },
+    "v1/prd/media/songs/hallelujah-jesus-reigns/audio/loop.wav": {
+      "key": "v1/prd/media/songs/hallelujah-jesus-reigns/audio/loop.mp3",
+      "size": 15546023,
+      "seconds": 556.5
+    },
+    "v1/prd/media/songs/hallowed-be-your-name/audio/loop-67.5bpm.wav": {
+      "key": "v1/prd/media/songs/hallowed-be-your-name/audio/loop-67.5bpm.mp3",
+      "size": 19544491,
+      "seconds": 625.8
+    },
+    "v1/prd/media/songs/have-faith/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/have-faith/audio/full-mix.mp3",
+      "size": 22479748,
+      "seconds": 578.6
+    },
+    "v1/prd/media/songs/have-your-way-draylin-young/audio/loop.wav": {
+      "key": "v1/prd/media/songs/have-your-way-draylin-young/audio/loop.mp3",
+      "size": 8686317,
+      "seconds": 456
+    },
+    "v1/prd/media/songs/have-your-way/audio/loop-57bpm.wav": {
+      "key": "v1/prd/media/songs/have-your-way/audio/loop-57bpm.mp3",
+      "size": 10695966,
+      "seconds": 421.1
+    },
+    "v1/prd/media/songs/he-can/audio/loop-76bpm.wav": {
+      "key": "v1/prd/media/songs/he-can/audio/loop-76bpm.mp3",
+      "size": 13286560,
+      "seconds": 454.7
+    },
+    "v1/prd/media/songs/he-is/audio/loop-84bpm.wav": {
+      "key": "v1/prd/media/songs/he-is/audio/loop-84bpm.mp3",
+      "size": 12730888,
+      "seconds": 502.9
+    },
+    "v1/prd/media/songs/he-s-worthy/audio/loop-88bpm.wav": {
+      "key": "v1/prd/media/songs/he-s-worthy/audio/loop-88bpm.mp3",
+      "size": 12879532,
+      "seconds": 589.1
+    },
+    "v1/prd/media/songs/here-again/audio/loop.wav": {
+      "key": "v1/prd/media/songs/here-again/audio/loop.mp3",
+      "size": 8141321,
+      "seconds": 508.2
+    },
+    "v1/prd/media/songs/holy-forever/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/holy-forever/audio/tenor.mp3",
+      "size": 6599217,
+      "seconds": 306.7
+    },
+    "v1/prd/media/songs/hosanna/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/hosanna/audio/tenor.mp3",
+      "size": 7283763,
+      "seconds": 352.5
+    },
+    "v1/prd/media/songs/house-of-miracles/audio/drum-loop-143bpm.wav": {
+      "key": "v1/prd/media/songs/house-of-miracles/audio/drum-loop-143bpm.mp3",
+      "size": 11261567,
+      "seconds": 419.6
+    },
+    "v1/prd/media/songs/how-great/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/how-great/audio/tenor.mp3",
+      "size": 6381912,
+      "seconds": 260.6
+    },
+    "v1/prd/media/songs/how-i-need-you/audio/loop-79bpm.wav": {
+      "key": "v1/prd/media/songs/how-i-need-you/audio/loop-79bpm.mp3",
+      "size": 8847471,
+      "seconds": 378.2
+    },
+    "v1/prd/media/songs/i-am-not-alone/audio/loop-70bpm.wav": {
+      "key": "v1/prd/media/songs/i-am-not-alone/audio/loop-70bpm.mp3",
+      "size": 11457772,
+      "seconds": 603.4
+    },
+    "v1/prd/media/songs/i-m-not-ashamed/audio/loop-96bpm.wav": {
+      "key": "v1/prd/media/songs/i-m-not-ashamed/audio/loop-96bpm.mp3",
+      "size": 15311328,
+      "seconds": 540
+    },
+    "v1/prd/media/songs/i-praise-you/audio/loop.wav": {
+      "key": "v1/prd/media/songs/i-praise-you/audio/loop.mp3",
+      "size": 6532293,
+      "seconds": 311.9
+    },
+    "v1/prd/media/songs/i-trust-in-you/audio/loop-129bpm.wav": {
+      "key": "v1/prd/media/songs/i-trust-in-you/audio/loop-129bpm.mp3",
+      "size": 16496257,
+      "seconds": 602.8
+    },
+    "v1/prd/media/songs/i-ve-got-a-reason/audio/loop-79bpm.wav": {
+      "key": "v1/prd/media/songs/i-ve-got-a-reason/audio/loop-79bpm.mp3",
+      "size": 14038344,
+      "seconds": 486.1
+    },
+    "v1/prd/media/songs/i-will-go/audio/loop-135bpm.wav": {
+      "key": "v1/prd/media/songs/i-will-go/audio/loop-135bpm.mp3",
+      "size": 7558577,
+      "seconds": 282.2
+    },
+    "v1/prd/media/songs/in-control/audio/loop.wav": {
+      "key": "v1/prd/media/songs/in-control/audio/loop.mp3",
+      "size": 6653767,
+      "seconds": 441.6
+    },
+    "v1/prd/media/songs/it-is-finished-loop-136-bpm/audio/loop-136bpm.wav": {
+      "key": "v1/prd/media/songs/it-is-finished-loop-136-bpm/audio/loop-136bpm.mp3",
+      "size": 11386968,
+      "seconds": 508.2
+    },
+    "v1/prd/media/songs/it-s-happening-now/audio/loop-96bpm.wav": {
+      "key": "v1/prd/media/songs/it-s-happening-now/audio/loop-96bpm.mp3",
+      "size": 15311328,
+      "seconds": 540
+    },
+    "v1/prd/media/songs/jesus/audio/loop-165bpm.wav": {
+      "key": "v1/prd/media/songs/jesus/audio/loop-165bpm.mp3",
+      "size": 23452983,
+      "seconds": 872.7
+    },
+    "v1/prd/media/songs/joy/audio/loop-130bpm.wav": {
+      "key": "v1/prd/media/songs/joy/audio/loop-130bpm.mp3",
+      "size": 15023322,
+      "seconds": 553.8
+    },
+    "v1/prd/media/songs/light-of-the-world/audio/loop-108bpm.wav": {
+      "key": "v1/prd/media/songs/light-of-the-world/audio/loop-108bpm.mp3",
+      "size": 2944845,
+      "seconds": 106.8
+    },
+    "v1/prd/media/songs/living-sacrifice/audio/loop-72bpm.wav": {
+      "key": "v1/prd/media/songs/living-sacrifice/audio/loop-72bpm.mp3",
+      "size": 10802952,
+      "seconds": 520
+    },
+    "v1/prd/media/songs/making-room/audio/loop-80bpm.wav": {
+      "key": "v1/prd/media/songs/making-room/audio/loop-80bpm.mp3",
+      "size": 8089013,
+      "seconds": 252
+    },
+    "v1/prd/media/songs/more-than-able/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/more-than-able/audio/tenor.mp3",
+      "size": 13001139,
+      "seconds": 556.6
+    },
+    "v1/prd/media/songs/more/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/more/audio/full-mix.mp3",
+      "size": 7939778,
+      "seconds": 306.9
+    },
+    "v1/prd/media/songs/no-one/audio/loop-78bpm.wav": {
+      "key": "v1/prd/media/songs/no-one/audio/loop-78bpm.mp3",
+      "size": 10677222,
+      "seconds": 418.5
+    },
+    "v1/prd/media/songs/nobody-like-you/audio/loop.wav": {
+      "key": "v1/prd/media/songs/nobody-like-you/audio/loop.mp3",
+      "size": 14184864,
+      "seconds": 545.5
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/bass.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/bass.mp3",
+      "size": 3239888,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/loop.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/loop.mp3",
+      "size": 4204369,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-drums.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-drums.mp3",
+      "size": 8887287,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-guitars.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-guitars.mp3",
+      "size": 6847293,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-keyboard.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-keyboard.mp3",
+      "size": 8332997,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-lead-vocal.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-lead-vocal.mp3",
+      "size": 8610622,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-vocals.wav": {
+      "key": "v1/prd/media/songs/nothing-but-the-blood-medley/audio/stem-vocals.mp3",
+      "size": 8634451,
+      "seconds": 488.3
+    },
+    "v1/prd/media/songs/nothing-compares/audio/loop.wav": {
+      "key": "v1/prd/media/songs/nothing-compares/audio/loop.mp3",
+      "size": 7538715,
+      "seconds": 307.7
+    },
+    "v1/prd/media/songs/nothing-compares/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/nothing-compares/audio/tenor.mp3",
+      "size": 5917532,
+      "seconds": 303.2
+    },
+    "v1/prd/media/songs/one-name/audio/full-mix.aif": {
+      "key": "v1/prd/media/songs/one-name/audio/full-mix.mp3",
+      "size": 13069731,
+      "seconds": 600.8
+    },
+    "v1/prd/media/songs/only-one-name/audio/loop.wav": {
+      "key": "v1/prd/media/songs/only-one-name/audio/loop.mp3",
+      "size": 9867471,
+      "seconds": 430.3
+    },
+    "v1/prd/media/songs/only-one-name/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/only-one-name/audio/tenor.mp3",
+      "size": 5069290,
+      "seconds": 262.1
+    },
+    "v1/prd/media/songs/only-one/audio/loop-79bpm.wav": {
+      "key": "v1/prd/media/songs/only-one/audio/loop-79bpm.mp3",
+      "size": 10450297,
+      "seconds": 467.1
+    },
+    "v1/prd/media/songs/order-my-steps--9f25f88a/audio/loop-82bpm.wav": {
+      "key": "v1/prd/media/songs/order-my-steps--9f25f88a/audio/loop-82bpm.mp3",
+      "size": 7707211,
+      "seconds": 386.4
+    },
+    "v1/prd/media/songs/order-my-steps--9f25f88a/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/order-my-steps--9f25f88a/audio/tenor.mp3",
+      "size": 4973785,
+      "seconds": 291.5
+    },
+    "v1/prd/media/songs/our-god-reigns-forever/audio/drum-loop-80bpm.wav": {
+      "key": "v1/prd/media/songs/our-god-reigns-forever/audio/drum-loop-80bpm.mp3",
+      "size": 10086447,
+      "seconds": 354.1
+    },
+    "v1/prd/media/songs/praise-break/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/praise-break/audio/full-mix.mp3",
+      "size": 8904104,
+      "seconds": 470.9
+    },
+    "v1/prd/media/songs/praise/audio/loop-127bpm.wav": {
+      "key": "v1/prd/media/songs/praise/audio/loop-127bpm.mp3",
+      "size": 15249607,
+      "seconds": 600.9
+    },
+    "v1/prd/media/songs/promised-one/audio/loop-82bpm.wav": {
+      "key": "v1/prd/media/songs/promised-one/audio/loop-82bpm.mp3",
+      "size": 12944648,
+      "seconds": 567.6
+    },
+    "v1/prd/media/songs/revival-is-waiting/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/revival-is-waiting/audio/full-mix.mp3",
+      "size": 14814770,
+      "seconds": 600
+    },
+    "v1/prd/media/songs/rise-up/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/rise-up/audio/full-mix.mp3",
+      "size": 6138539,
+      "seconds": 203.4
+    },
+    "v1/prd/media/songs/tell-of-your-glory/audio/loop-107bpm.wav": {
+      "key": "v1/prd/media/songs/tell-of-your-glory/audio/loop-107bpm.mp3",
+      "size": 10207046,
+      "seconds": 376.8
+    },
+    "v1/prd/media/songs/thankful/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/thankful/audio/full-mix.mp3",
+      "size": 15209582,
+      "seconds": 607.6
+    },
+    "v1/prd/media/songs/the-wonder-of-the-cross/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/the-wonder-of-the-cross/audio/full-mix.mp3",
+      "size": 15381952,
+      "seconds": 574.1
+    },
+    "v1/prd/media/songs/this-dwelling-place/audio/loop-76bpm.wav": {
+      "key": "v1/prd/media/songs/this-dwelling-place/audio/loop-76bpm.mp3",
+      "size": 14510993,
+      "seconds": 511.6
+    },
+    "v1/prd/media/songs/this-dwelling-place/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/this-dwelling-place/audio/tenor.mp3",
+      "size": 9176278,
+      "seconds": 439
+    },
+    "v1/prd/media/songs/this-is-freedom/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/this-is-freedom/audio/full-mix.mp3",
+      "size": 15074076,
+      "seconds": 602
+    },
+    "v1/prd/media/songs/this-is-revival/audio/loop-132bpm.wav": {
+      "key": "v1/prd/media/songs/this-is-revival/audio/loop-132bpm.mp3",
+      "size": 12905120,
+      "seconds": 465.5
+    },
+    "v1/prd/media/songs/trusting-for-a-miracle/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/trusting-for-a-miracle/audio/full-mix.mp3",
+      "size": 23398558,
+      "seconds": 603.4
+    },
+    "v1/prd/media/songs/we-ve-come-to-praise-him/audio/loop.wav": {
+      "key": "v1/prd/media/songs/we-ve-come-to-praise-him/audio/loop.mp3",
+      "size": 6177312,
+      "seconds": 355.7
+    },
+    "v1/prd/media/songs/we-want-you/audio/alto.wav": {
+      "key": "v1/prd/media/songs/we-want-you/audio/alto.mp3",
+      "size": 7958279,
+      "seconds": 351
+    },
+    "v1/prd/media/songs/we-want-you/audio/loop-142bpm.wav": {
+      "key": "v1/prd/media/songs/we-want-you/audio/loop-142bpm.mp3",
+      "size": 8862018,
+      "seconds": 385.4
+    },
+    "v1/prd/media/songs/we-want-you/audio/soprano.wav": {
+      "key": "v1/prd/media/songs/we-want-you/audio/soprano.mp3",
+      "size": 8212771,
+      "seconds": 351
+    },
+    "v1/prd/media/songs/we-want-you/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/we-want-you/audio/tenor.mp3",
+      "size": 8459671,
+      "seconds": 351
+    },
+    "v1/prd/media/songs/when-i-shout-testify/audio/loop-93bpm.wav": {
+      "key": "v1/prd/media/songs/when-i-shout-testify/audio/loop-93bpm.mp3",
+      "size": 15521511,
+      "seconds": 526.5
+    },
+    "v1/prd/media/songs/worthy-eddie-james/audio/full-mix.wav": {
+      "key": "v1/prd/media/songs/worthy-eddie-james/audio/full-mix.mp3",
+      "size": 15310470,
+      "seconds": 664.4
+    },
+    "v1/prd/media/songs/you-reign/audio/loop.wav": {
+      "key": "v1/prd/media/songs/you-reign/audio/loop.mp3",
+      "size": 5566044,
+      "seconds": 209.1
+    },
+    "v1/prd/media/songs/your-amazing-love/audio/loop-87bpm.wav": {
+      "key": "v1/prd/media/songs/your-amazing-love/audio/loop-87bpm.mp3",
+      "size": 12993551,
+      "seconds": 546.2
+    },
+    "v1/prd/media/songs/your-name/audio/tenor.wav": {
+      "key": "v1/prd/media/songs/your-name/audio/tenor.mp3",
+      "size": 5205607,
+      "seconds": 366.7
+    }
+  }
+}

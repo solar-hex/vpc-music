@@ -47,6 +47,7 @@ pnpm sync:shared && node scripts/check-shared-drift.mjs
 pnpm corpus:build --source chrd|docx --tree <path> [--dry-run]
 pnpm corpus:scan  --tree <path>            # covered / new / changed / moved / gone
 pnpm corpus:media --tree <path> [--apply]  # media to Wasabi; dry run by default
+pnpm corpus:transcode --tree <path> [--apply]  # MP3 copies of WAV/AIFF parts → corpus/media/transcoded.json
 pnpm corpus:stats                          # the whole library, counted
 pnpm corpus:reader                         # dist/songbook.html, one offline file
 pnpm gap:report                            # targeted list vs the library, by source site

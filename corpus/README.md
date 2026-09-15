@@ -32,6 +32,7 @@ exactly how this turns back into the old file-library the database replaced.
 | `sources/<source>.json` | One record per **source file**: path, size, mtime, hash, decision, song id. The coverage ledger |
 | `songs/<source>/<slug>--<id8>.chopro` | The chart itself, the exact bytes that land in `songs.content` |
 | `media/<tree>.ndjson` | Inventory of audio and notation files. Paths and hashes only — never the bytes |
+| `media/transcoded.json` | MP3 copies of WAV and AIFF parts made by `corpus:transcode`. The build links the copy under the original's part name; the original stays in storage |
 | `merges.json` | Songs merged from several copies by `corpus:dedupe`: the copies each replaced, and the artist, tempo, album and so on it took from them. `corpus:build` writes those into the winning chart |
 
 Filenames carry the first 8 characters of the song id because titles collide:

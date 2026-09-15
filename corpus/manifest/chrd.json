@@ -379,7 +379,7 @@
       "songId": "09ba7024-8fe9-5274-b52c-cc71f587e9a4",
       "title": "Weve Come To Praise Him",
       "file": "songs/chrd/weve-come-to-praise-him--09ba7024.chopro",
-      "contentSha256": "365d5b9d34cd74262a35b5daf916b3a8b3a0637dca4c1d47a0f88c193c6cc461",
+      "contentSha256": "6f31e4e0b4996b5092b13407c739b750b67e6b75ed1c57fd9156ad8be61003b6",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3153,7 +3153,7 @@
       "songId": "47ac33e3-bb29-5184-98b6-5bca8c4cdb12",
       "title": "Hallelujah Lord We Praise Your Name",
       "file": "songs/chrd/hallelujah-lord-we-praise-your-name--47ac33e3.chopro",
-      "contentSha256": "c4cb44746f1b409931c35590ee4627532942018dc343923ce7cb56a262d716f5",
+      "contentSha256": "a1db7cfd047e9d817b5b859279903fdab3616721e28532cf88f5aca24cfdf8b9",
       "metadata": {
         "key": "Eb",
         "artist": null,
@@ -3378,7 +3378,7 @@
       "songId": "4d1d3d68-89ee-57e7-8f09-9d04861fdda7",
       "title": "Amazing Love",
       "file": "songs/chrd/amazing-love--4d1d3d68.chopro",
-      "contentSha256": "b537fb62cd6955d0a924496b0a28533dc6ae7cfa54cdf1a53ed3b87699fad2d4",
+      "contentSha256": "e3a1569b8f8fc7f6fd345648afc2292e76b36fa6f46d149f2ca4da82f36c2bd9",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -3640,7 +3640,7 @@
       "songId": "4fa2ef29-6340-52ab-90b4-6865a5ac4056",
       "title": "When I Speak Your Name",
       "file": "songs/chrd/when-i-speak-your-name--4fa2ef29.chopro",
-      "contentSha256": "3a4bd2c79bbd4efd5da4a23905cc3026eb56f818203f0005fdb5af33f630eedc",
+      "contentSha256": "e675d38838872535aa0cc757fae813b4985c973d66caf2dd0438f39237f16672",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -4811,7 +4811,7 @@
       "songId": "6691d239-eccd-591c-be7d-685838ae3b63",
       "title": "Bless The Lord Oh My Soul",
       "file": "songs/chrd/bless-the-lord-oh-my-soul--6691d239.chopro",
-      "contentSha256": "103eaf91645e193eecb7949d3a202c82294bb6198709479bc10bbb857d2d767a",
+      "contentSha256": "bbaa5e6ff6f072f003eb33a41ea595a60795c9f4ea05a921883458329e6f3834",
       "metadata": {
         "key": "D",
         "artist": null,
@@ -5448,7 +5448,7 @@
       "songId": "760ea597-66d9-58d0-b284-1aa4cc2495d8",
       "title": "Ive Got A Reason",
       "file": "songs/chrd/ive-got-a-reason--760ea597.chopro",
-      "contentSha256": "73b0d9a43995bc403203bf3c0fa837d448857801dd0cb42fccf5752ab19e390f",
+      "contentSha256": "d2267eb5c721b62b9124355c75c18e75c8e9c2edbc684a4fb0f91f0a806b45a7",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -5545,7 +5545,7 @@
       "songId": "768cb222-2c9d-5a4f-86c1-89493df40b29",
       "title": "Anything Can Happen",
       "file": "songs/chrd/anything-can-happen--768cb222.chopro",
-      "contentSha256": "94cca0019237fbe056e336aa47775694f3a0fe9a88a9044235d8311e2b14b2c2",
+      "contentSha256": "9d6d911c21f02a4fe6f2e3f403da7a043af40c45a6a83de8f8a7e563cb7edd28",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -7790,7 +7790,7 @@
       "songId": "9f25f88a-281a-5804-b7c9-1b3ee054801c",
       "title": "Order My Steps",
       "file": "songs/chrd/order-my-steps--9f25f88a.chopro",
-      "contentSha256": "0f6584f408023bf84a4002529cd8cbc8b25abf1b2929405e5e736318711ddd6a",
+      "contentSha256": "58fc4851ebce13a234cb54f5e006f1a282d11d3631af8aec2faa7c57ff8abe53",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8051,7 +8051,7 @@
       "songId": "a1af8a74-8a63-5746-920c-0a6501bda832",
       "title": "This Place",
       "file": "songs/chrd/this-place--a1af8a74.chopro",
-      "contentSha256": "42cda7af3b91d573d539d2145a1610a753bb8ba8557cd61b9c3b10ce28d77d21",
+      "contentSha256": "dc21982e1648f1fad3f5ff7df21afbb20eb3b585bce346e1d89dd3c158e51e79",
       "metadata": {
         "key": "F",
         "artist": null,
@@ -8178,7 +8178,7 @@
       "songId": "a4996b7c-d944-592a-aebe-bdefe90fc71a",
       "title": "I Bless Your Name",
       "file": "songs/chrd/i-bless-your-name--a4996b7c.chopro",
-      "contentSha256": "9581fb317aba63f332b5ed2ec5877dcb5dd2d378534148fd9ffb1460b99371fc",
+      "contentSha256": "af7fe598a14143ac6920113409774251a8e47988187d69cdf4b2e02a62533a4f",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -8802,7 +8802,7 @@
       "songId": "af0c51e8-e4b7-5b3d-868d-18b535e38d11",
       "title": "Ive Got A Reason",
       "file": "songs/chrd/ive-got-a-reason--af0c51e8.chopro",
-      "contentSha256": "0d7938dd2e5e1fa5ca03978858912f886b426a4da40e8266045c3b9e7bc5212b",
+      "contentSha256": "1e44b2d43eb1bd831b91c3b6f9a0bee7c99cd81a52eca3ffb80e524545ece449",
       "metadata": {
         "key": "B",
         "artist": null,
@@ -10753,7 +10753,7 @@
       "songId": "d4daef67-2048-59bc-895f-dc22ccbed081",
       "title": "Anything Can Happen",
       "file": "songs/chrd/anything-can-happen--d4daef67.chopro",
-      "contentSha256": "b7e586624b3e386401899cf039f04c99d91ede7b23e209f6129f7238d4b83a2e",
+      "contentSha256": "67643d7c7d5b313f82de98b83d0387492c293a5f2522414364e804249153a22c",
       "metadata": {
         "key": "Gb",
         "artist": null,
@@ -11183,7 +11183,7 @@
       "songId": "dd991095-f3e0-5622-960c-3bf818e01824",
       "title": "But God - The Devil Thought He Had Me",
       "file": "songs/chrd/but-god-the-devil-thought-he-had-me--dd991095.chopro",
-      "contentSha256": "cd505aedc001ee9ba609df13f9cf260093738c0753392d11f794ddabedad00c1",
+      "contentSha256": "bbc51d8c652c107fc18dd522e6d7cdb4e6b8af2882f32071c191d71bfd2e449d",
       "metadata": {
         "key": "Db",
         "artist": null,

@@ -51,6 +51,16 @@ export async function loadMediaIndex(corpusRoot, options = {}) {
   const byFolder = new Map();
   const seen = new Set();
 
+  /*
+   * MP3 copies of WAV and AIFF parts (corpus:transcode). A chart links the
+   * copy under the original's part name, so the player's buttons stay the
+   * same and only what they play gets smaller and plays everywhere.
+   */
+  const transcodedPath = join(dir, "transcoded.json");
+  const transcoded = existsSync(transcodedPath)
+    ? JSON.parse(await readFile(transcodedPath, "utf8")).files || {}
+    : {};
+
   if (existsSync(dir)) {
     for (const name of (await readdir(dir)).sort()) {
       if (!name.endsWith(".ndjson")) continue;
@@ -80,7 +90,7 @@ export async function loadMediaIndex(corpusRoot, options = {}) {
       const records = names.flatMap((n) => byFolder.get(n) || []);
       const bpms = [...new Set(records.map((r) => r.bpm).filter(Boolean))];
       const result = {
-        media: records.map((r) => ({ key: r.key, url: objectUrl(r.key, options), bpm: r.bpm ?? null })),
+        media: records.map((r) => ({ key: r.key, url: objectUrl(transcoded[r.key]?.key ?? r.key, options), bpm: r.bpm ?? null })),
         // Only when the sources agree — a disagreement is a data question, not
         // something to guess at.
         tempo: bpms.length === 1 ? bpms[0] : null,
