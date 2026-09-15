@@ -249,6 +249,28 @@ describe("buildChrdCorpus", () => {
     expect(summary.duplicateFiles).toEqual([]);
   });
 
+  it("leaves a chart edited in the app alone, even when its source changes", async () => {
+    const first = await buildChrdCorpus({ tree, corpusDir });
+    const song = first.manifest.songs.find((s) => s.title === "God is Great");
+    // what corpus:export does with an edit made in the app
+    const edited = "{title: God is Great}\n{key: F}\n\n{comment: Chorus}\n[F]Edited in the app\n";
+    await writeFile(join(corpusDir, song.file), edited, "utf8");
+    const manifestPath = join(corpusDir, "manifest", "chrd.json");
+    const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+    const entry = manifest.songs.find((s) => s.songId === song.songId);
+    Object.assign(entry, { appEdited: true, contentSha256: "hash-of-the-edit" });
+    await writeFile(manifestPath, JSON.stringify(manifest, null, 2), "utf8");
+
+    await writeFile(join(tree, "god_is_great.chrd"), GOD_IS_GREAT.replace("my soul", "my heart"), "utf8");
+    const second = await buildChrdCorpus({ tree, corpusDir });
+
+    expect(await readFile(join(corpusDir, song.file), "utf8")).toBe(edited);
+    expect(second.manifest.songs.find((s) => s.songId === song.songId)).toMatchObject({ appEdited: true, contentSha256: "hash-of-the-edit" });
+    // the other song still rebuilds from its source
+    const other = second.manifest.songs.find((s) => s.songId !== song.songId);
+    expect(await readFile(join(corpusDir, other.file), "utf8")).toContain("{title: Jesus Is}");
+  });
+
   it("writes what a merged song took from the copies it replaced into its chart", async () => {
     const id = deterministicSongId("god_is_great.chrd");
     await mkdir(corpusDir, { recursive: true });

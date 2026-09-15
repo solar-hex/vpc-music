@@ -324,4 +324,25 @@ declare module "@vpc-music/shared" {
   export function tempoBandLabel(bpm: number | null | undefined): string | null;
 
   export function hasChords(chordProSource: string | null | undefined): boolean;
+
+  // utils/directives.js
+  export function readDirective(content: string, name: string): string;
+  export function hasDirective(content: string, name: string): boolean;
+  export function writeDirective(content: string, name: string, value: string): string;
+
+  // utils/lyrics.js
+  export const SAME_SONG_OVERLAP: number;
+  export const SIMILAR_TITLE_OVERLAP: number;
+  export const MIN_SHARED_RUNS: number;
+  export const DISTINCT_DIRECTIVE: string;
+  export const MERGED_INTO_DIRECTIVE: string;
+  export function lyricWords(content: string): string[];
+  export function lyricShingles(content: string): Set<string>;
+  export function lyricOverlap(a: Set<string>, b: Set<string>): number;
+  export function titleWords(title: string): string[];
+  export function titleAgreement(a: string, b: string): number;
+  export function distinctIds(content: string): string[];
+  export function findDuplicatePairs(
+    songs: { id: string; title: string; content: string }[],
+  ): { a: string; b: string; overlap: number; shared: number; titlesAgree: boolean }[];
 }

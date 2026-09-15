@@ -199,6 +199,30 @@ export interface DuplicateSongMatch {
   matchedOn: string[];
 }
 
+/** One side of a possible duplicate, as the duplicate review lists it. */
+export interface DuplicateCandidate {
+  id: string;
+  title: string;
+  artist: string | null;
+  key: string | null;
+  tempo: number | null;
+  isDraft: boolean;
+  status: SongStatus | null;
+  /** Where the chart came from: chrd, docx, pdf, text, onsong, or app. */
+  source: string;
+  chords: number;
+  updatedAt?: string | null;
+}
+
+/** Two songs whose words mostly match. `overlap` is 0-1. */
+export interface DuplicatePair {
+  overlap: number;
+  shared: number;
+  titlesAgree: boolean;
+  left: DuplicateCandidate;
+  right: DuplicateCandidate;
+}
+
 export type SongWriteInput = Partial<Song> & {
   lastKnownUpdatedAt?: string;
   forceOverwrite?: boolean;
@@ -230,6 +254,22 @@ export const songsApi = {
     request<{ matches: DuplicateSongMatch[] }>("/api/songs/duplicates/check", {
       method: "POST",
       body: JSON.stringify(data),
+    }),
+  /** Pairs of songs whose words mostly match, most alike first. */
+  duplicates: () => request<{ pairs: DuplicatePair[] }>("/api/songs/duplicates"),
+  /** Keep `keepId` with this chart text; the other song is archived, pointing at it. */
+  merge: (keepId: string, data: { otherId: string; content: string; keptUpdatedAt?: string; otherUpdatedAt?: string }) =>
+    request<{ song: Song; merged: { id: string; title: string } }>(`/api/songs/${keepId}/merge`, {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  /** Bring back a song that was merged into another. */
+  unmerge: (id: string) => request<{ song: Song }>(`/api/songs/${id}/unmerge`, { method: "POST" }),
+  /** Mark two songs as different songs, so they stop being offered as duplicates (or undo that). */
+  markDistinct: (id: string, otherId: string, distinct = true) =>
+    request<{ ok: true; distinct: boolean }>(`/api/songs/${id}/distinct`, {
+      method: "POST",
+      body: JSON.stringify({ otherId, distinct }),
     }),
   create: (data: Partial<Song>) =>
     request<{ song: Song }>("/api/songs", { method: "POST", body: JSON.stringify(data) }),

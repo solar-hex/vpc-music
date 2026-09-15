@@ -282,6 +282,13 @@ export async function buildCorpus({
       .filter((s) => s.decision && s.decision !== "song")
       .map((s) => [s.songId, { decision: s.decision, supersededBy: s.supersededBy, supersedeReason: s.supersedeReason }]),
   );
+  /*
+   * A chart edited in the app and written back by corpus:export is the record
+   * from then on. Regenerating it from the source would quietly undo the edit
+   * (and the next load would push the source version over it), so its file and
+   * manifest entry are kept as exported.
+   */
+  const appEditedById = new Map(previousManifest.songs.filter((s) => s.appEdited).map((s) => [s.songId, s]));
   const previousByPath = new Map(previousLedger.files.map((f) => [f.path, { ...f }]));
   const previousByHash = new Map();
   for (const record of previousByPath.values()) {
@@ -362,9 +369,11 @@ export async function buildCorpus({
       const file = normalizeRelativePath(
         join("songs", source, corpusFileName(conversion.metadata.title, identity.songId)),
       );
-      contents.set(identity.songId, content);
+      const edited = appEditedById.get(identity.songId);
+      const keepEdit = Boolean(edited) && existsSync(join(corpusRoot, edited.file));
+      contents.set(identity.songId, keepEdit ? await readFile(join(corpusRoot, edited.file), "utf8") : content);
 
-      manifestEntries.push({
+      const entry = {
         songId: identity.songId,
         title: conversion.metadata.title,
         file,
@@ -385,7 +394,8 @@ export async function buildCorpus({
         confidence,
         warnings: conversion.warnings,
         ...(decisionsById.get(identity.songId) ?? { decision: identity.decision || "song" }),
-      });
+      };
+      manifestEntries.push(keepEdit ? edited : entry);
 
       ledgerEntries.push({
         path: relativePath,

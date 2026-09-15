@@ -14,8 +14,11 @@ projection of it. Drop Postgres and nothing is lost; rebuild it with
 
 `corpus/` is **build output**. Nothing in `apps/` reads it at runtime.
 
-- To change a song, edit it **in the app** and run `corpus:export`.
-- To re-derive from the legacy sources, run `corpus:build`.
+- To change a song, edit it **in the app** and run `corpus:export`. The
+  exported entry is marked `appEdited`, and `corpus:build` keeps that file as
+  it is instead of regenerating it from the source.
+- To re-derive from the legacy sources, run `corpus:build` (after an export, so
+  no app edit is lost).
 
 The loader verifies every file against `contentSha256` in the manifest and
 **fails loudly** if a file was edited by hand, because a hand-edited corpus is

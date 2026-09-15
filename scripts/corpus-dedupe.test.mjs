@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 import {
-  DIFFERENT_SONG_OVERLAP,
+  SIMILAR_TITLE_OVERLAP as DIFFERENT_SONG_OVERLAP,
   SAME_SONG_OVERLAP,
-  applyMerges,
-  buildGroups,
   lyricOverlap,
   lyricShingles,
   lyricWords,
+} from "../shared/utils/lyrics.js";
+import {
+  applyMerges,
+  buildGroups,
   mergeLedger,
   musicalHash,
   planMerges,
@@ -176,6 +178,13 @@ describe("planMerges", () => {
       { id: "a", source: "pdf", title: "Thank You", content: chart(["{title: Thank You}"], ["Thank you for the cross you carried up the hill for me", "Thank you for the blood that washed me clean and set me free"]) },
       { id: "b", source: "pdf", title: "Thank You", content: chart(["{title: Thank You}"], ["Every morning new mercies I see rising with the sun", "I will give you praise forever more for all that you have done"]) },
     ]);
+    expect(planMerges(songs, groups)).toEqual({ merges: [], review: [] });
+  });
+
+  it("never merges a pair a person marked as two different songs in the app", () => {
+    // Two recordings by one artist can share nearly every word.
+    const marked = { ...publisherPdf, content: publisherPdf.content.replace("{key: Bb}", "{key: Bb}\n{x_distinct: church}") };
+    const { songs, groups } = corpus([churchChart, marked]);
     expect(planMerges(songs, groups)).toEqual({ merges: [], review: [] });
   });
 

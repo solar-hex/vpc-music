@@ -19,3 +19,5 @@ export * from "./utils/nashville.js";
 export * from "./utils/onsong.js";
 export * from "./utils/plainText.js";
 export * from "./utils/library.js";
+export * from "./utils/directives.js";
+export * from "./utils/lyrics.js";

@@ -18,12 +18,14 @@ export function AppShell() {
   const location = useLocation();
   const noTeam = Boolean(user) && !activeOrg;
   const showNoTeam = noTeam && !location.pathname.startsWith("/settings");
+  // Two charts side by side need the whole screen, whatever the page width setting.
+  const wide = location.pathname.startsWith("/library/duplicates/");
 
   return (
     <div className="flex min-h-dvh flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       <AppHeader />
       <OfflineBanner />
-      <main className={`mx-auto w-full ${pageWidthClass(pageWidth)} flex-1 px-3 py-3 sm:px-6 sm:py-4`}>
+      <main className={`mx-auto w-full ${wide ? "max-w-none" : pageWidthClass(pageWidth)} flex-1 px-3 py-3 sm:px-6 sm:py-4`}>
         {showNoTeam ? (
           <EmptyState
             icon={Building2}

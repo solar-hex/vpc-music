@@ -52,7 +52,9 @@ vi.mock("sonner", () => ({
   toast: { success: vi.fn(), error: vi.fn(), info: vi.fn() },
 }));
 
-vi.mock("@vpc-music/shared", () => ({
+vi.mock("@vpc-music/shared", async (importOriginal) => ({
+  // Everything not stubbed below is the real engine (the chart directive reader, for one).
+  ...(await importOriginal<Record<string, unknown>>()),
   CHROMATIC_SHARP: ["C", "D", "E", "F", "G", "A", "B"],
   CHROMATIC_FLAT: ["C", "D", "E", "F", "G", "A", "B"],
   // The real implementations: the point of the tag tests below is that the

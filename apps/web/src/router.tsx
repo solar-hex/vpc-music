@@ -18,6 +18,8 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 
 // The editor pulls in CodeMirror; keep it out of the list/chart bundle.
 const SongEditPage = lazy(() => import("./pages/songs/SongEditPage").then((module) => ({ default: module.SongEditPage })));
+const DuplicatesPage = lazy(() => import("./pages/songs/DuplicatesPage").then((module) => ({ default: module.DuplicatesPage })));
+const CompareSongsPage = lazy(() => import("./pages/songs/CompareSongsPage").then((module) => ({ default: module.CompareSongsPage })));
 const SettingsPage = lazy(() => import("./pages/settings/SettingsPage").then((module) => ({ default: module.SettingsPage })));
 
 /*
@@ -80,6 +82,22 @@ export const router = createBrowserRouter([
     children: [
       { path: "/songs", element: <SongListPage /> },
       { path: "/library", element: <LibraryPage /> },
+      {
+        path: "/library/duplicates",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <DuplicatesPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/library/duplicates/:leftId/:rightId",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <CompareSongsPage />
+          </Suspense>
+        ),
+      },
       {
         path: "/songs/new",
         element: (

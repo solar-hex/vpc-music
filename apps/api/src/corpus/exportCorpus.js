@@ -15,11 +15,18 @@
  *
  * A conflict is never resolved automatically. This is the one place where
  * guessing costs someone the work they did.
+ *
+ * What it writes back is marked `appEdited`, so `corpus:build` leaves that
+ * chart alone instead of regenerating it from the source and undoing the edit.
+ * A copy merged into another song in the app (archived, carrying
+ * `{x_merged_into: <id>}`) becomes a supersede decision in its manifest, the
+ * same record `corpus:dedupe` writes.
  */
 import { existsSync } from "node:fs";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { and, eq, isNull } from "drizzle-orm";
+import { MERGED_INTO_DIRECTIVE, readDirective } from "@vpc-music/shared";
 import { songs } from "../schema/index.js";
 import { corpusFileName, sha256 } from "./identity.js";
 import { resolveOrganization } from "./dbLookup.js";
@@ -75,6 +82,7 @@ export function formatExportReport(report) {
     `- New (created in the app): ${report.counts.new}`,
     `- Updated from the app: ${report.counts.update}`,
     `- Unchanged: ${report.counts.unchanged}`,
+    `- Merged into another song in the app: ${report.merges?.length ?? 0}`,
     `- File ahead of the database: ${report.counts["file-ahead"] ?? 0}`,
     `- CONFLICTS: ${report.counts.conflict ?? 0}`,
   ];
@@ -106,7 +114,7 @@ export async function runCorpusExport(options, { database, log = console.log } =
     .select({
       id: songs.id, title: songs.title, key: songs.key, artist: songs.artist,
       year: songs.year, tempo: songs.tempo, content: songs.content,
-      isDraft: songs.isDraft, tags: songs.tags,
+      isDraft: songs.isDraft, tags: songs.tags, isArchived: songs.isArchived,
     })
     .from(songs)
     .where(and(eq(songs.organizationId, organization.id), isNull(songs.deletedAt)));
@@ -115,6 +123,7 @@ export async function runCorpusExport(options, { database, log = console.log } =
   const conflicts = [];
   const fileAhead = [];
   const writes = [];
+  const merges = [];
 
   for (const row of rows) {
     const entry = bySongId.get(row.id);
@@ -124,6 +133,11 @@ export async function runCorpusExport(options, { database, log = console.log } =
 
     const { action, dbContent } = classifyExport({ row, entry, fileContent });
     counts[action] += 1;
+
+    const mergedInto = row.isArchived ? readDirective(row.content, MERGED_INTO_DIRECTIVE).trim() : "";
+    if (entry && mergedInto && action !== "conflict" && (entry.song.decision !== "supersede" || entry.song.supersededBy !== mergedInto)) {
+      merges.push({ entry, row, mergedInto });
+    }
 
     if (action === "conflict") {
       conflicts.push({ title: row.title, file, id: row.id });
@@ -145,10 +159,11 @@ export async function runCorpusExport(options, { database, log = console.log } =
     conflicts,
     fileAhead,
     writes: writes.map((w) => ({ id: w.row.id, title: w.row.title, action: w.action, file: w.file })),
+    merges: merges.map((m) => ({ id: m.row.id, title: m.row.title, supersededBy: m.mergedInto })),
   };
 
   if (report.dryRun) {
-    log(`Dry run: ${counts.new} new, ${counts.update} updated, ${counts.conflict} conflict(s).`);
+    log(`Dry run: ${counts.new} new, ${counts.update} updated, ${merges.length} merged, ${counts.conflict} conflict(s).`);
     return report;
   }
 
@@ -159,6 +174,7 @@ export async function runCorpusExport(options, { database, log = console.log } =
     const hash = sha256(write.content);
     if (write.entry) {
       write.entry.song.contentSha256 = hash;
+      write.entry.song.appEdited = true;
       write.entry.song.title = write.row.title;
       write.entry.song.metadata = {
         ...write.entry.song.metadata,
@@ -200,12 +216,18 @@ export async function runCorpusExport(options, { database, log = console.log } =
     }
   }
 
+  for (const merge of merges) {
+    merge.entry.song.decision = "supersede";
+    merge.entry.song.supersededBy = merge.mergedInto;
+    merge.entry.song.supersedeReason = "merged in the app";
+  }
+
   for (const manifest of manifests) {
     manifest.data.songs.sort((a, b) => a.songId.localeCompare(b.songId));
     await mkdir(dirname(manifest.path), { recursive: true });
     await writeFile(manifest.path, `${JSON.stringify(manifest.data, null, 2)}\n`, "utf8");
   }
 
-  log(`Exported: ${counts.new} new, ${counts.update} updated, ${counts.conflict} conflict(s).`);
+  log(`Exported: ${counts.new} new, ${counts.update} updated, ${merges.length} merged, ${counts.conflict} conflict(s).`);
   return report;
 }

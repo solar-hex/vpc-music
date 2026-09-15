@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ChevronDown, Music, Search, SlidersHorizontal, X } from "lucide-react";
 import { useSongLibrary } from "@/hooks/useSongLibrary";
+import { useAuth } from "@/contexts/AuthContext";
 import { EmptyState } from "@/components/shared/EmptyState";
 import {
   decorate,
@@ -241,6 +242,8 @@ const PAGE = 100;
  * and works offline, and the percentages here are the percentages there.
  */
 export function LibraryPage() {
+  const { user, activeOrg } = useAuth();
+  const canEdit = user?.role === "owner" || activeOrg?.role === "admin" || activeOrg?.role === "musician";
   const { songs, loading, error, offline, refresh } = useSongLibrary();
   const [searchParams, setSearchParams] = useSearchParams();
   const filter = useMemo(() => readFilter(searchParams), [searchParams]);
@@ -275,9 +278,16 @@ export function LibraryPage() {
       <header className="space-y-1">
         <div className="flex items-baseline justify-between gap-3">
           <h1 className="page-title">Every song</h1>
-          <Link to="/songs" className="text-sm text-[hsl(var(--muted-foreground))] underline hover:text-[hsl(var(--foreground))]">
-            Ready list
-          </Link>
+          <div className="flex items-baseline gap-3 text-sm">
+            {canEdit && (
+              <Link to="/library/duplicates" className="text-[hsl(var(--muted-foreground))] underline hover:text-[hsl(var(--foreground))]">
+                Possible duplicates
+              </Link>
+            )}
+            <Link to="/songs" className="text-[hsl(var(--muted-foreground))] underline hover:text-[hsl(var(--foreground))]">
+              Ready list
+            </Link>
+          </div>
         </div>
         <p className="text-xs text-[hsl(var(--muted-foreground))]">
           Drafts included, and what each one still needs. The song list shows the ready ones.

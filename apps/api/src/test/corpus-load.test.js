@@ -408,6 +408,34 @@ describe("runCorpusExport", () => {
     expect(manifest.sourceType).toBe("app");
   });
 
+  it("marks what it writes back as edited in the app, so a rebuild keeps it", async () => {
+    await db.update(songs).set({ content: "{title: God is Great}\n\n[F]Edited in the app\n" }).where(eqId(ID_A));
+    await runCorpusExport(opts({ dryRun: false }), { database: db, log: () => {} });
+    const manifest = JSON.parse(await readFile(join(corpusRoot, "manifest", "chrd.json"), "utf8"));
+    expect(manifest.songs.find((s) => s.songId === ID_A).appEdited).toBe(true);
+    expect(manifest.songs.find((s) => s.songId === ID_B).appEdited).toBeUndefined();
+  });
+
+  it("records a copy merged in the app as superseded by the song it went into", async () => {
+    await db
+      .update(songs)
+      .set({ isArchived: true, content: `{title: Amazing Grace}\n{x_merged_into: ${ID_A}}\n\n{comment: Verse 1}\n[G]Amazing grace\n` })
+      .where(eqId(ID_B));
+    const dry = await runCorpusExport(opts(), { database: db, log: () => {} });
+    expect(dry.merges).toEqual([{ id: ID_B, title: "Amazing Grace", supersededBy: ID_A }]);
+
+    await runCorpusExport(opts({ dryRun: false }), { database: db, log: () => {} });
+    const manifest = JSON.parse(await readFile(join(corpusRoot, "manifest", "chrd.json"), "utf8"));
+    expect(manifest.songs.find((s) => s.songId === ID_B)).toMatchObject({
+      decision: "supersede",
+      supersededBy: ID_A,
+      supersedeReason: "merged in the app",
+    });
+    // and the next load leaves it out
+    const { skipped } = await readCorpusRows(corpusRoot);
+    expect(skipped.map((s) => s.songId)).toContain(ID_B);
+  });
+
   it("REFUSES to overwrite when both sides changed", async () => {
     // The one case where guessing costs someone their work.
     await db.update(songs).set({ content: "{title: God is Great}\n\n[F]app version\n" }).where(eqId(ID_A));

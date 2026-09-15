@@ -9,6 +9,11 @@ vi.mock("@/lib/api-client", () => ({
   songsApi: { list: (...args: any[]) => mockList(...args) },
 }));
 
+let mockRole = "musician";
+vi.mock("@/contexts/AuthContext", () => ({
+  useAuth: () => ({ user: { role: "member" }, activeOrg: { role: mockRole } }),
+}));
+
 const library = [
   { id: "s1", title: "Amazing Grace", artist: "John Newton", key: "G", tempo: 68, tags: "theme:grace-mercy", year: "1779", content: "" },
   { id: "s2", title: "Way Maker", artist: "Sinach", key: "E", tempo: 72, tags: "theme:faith-trust", content: "" },
@@ -156,5 +161,20 @@ describe("LibraryPage", () => {
     // Amazing Grace and Way Maker are both complete now, so the tie breaks A-Z.
     expect(titles[titles.length - 1]).toContain("Way Maker");
     expect(rowLink("Amazing Grace")).toHaveAttribute("href", "/songs/s1");
+  });
+
+  it("offers the duplicate review to people who can edit songs, and only them", async () => {
+    renderLibrary();
+    await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
+    expect(screen.getByRole("link", { name: "Possible duplicates" })).toHaveAttribute("href", "/library/duplicates");
+
+    mockRole = "observer";
+    try {
+      renderLibrary();
+      await waitFor(() => expect(screen.getAllByRole("link", { name: /Amazing Grace/ }).length).toBeGreaterThan(1));
+      expect(screen.getAllByRole("link", { name: "Possible duplicates" })).toHaveLength(1);
+    } finally {
+      mockRole = "musician";
+    }
   });
 });

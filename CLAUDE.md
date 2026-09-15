@@ -94,10 +94,17 @@ Rules that hold the whole thing together:
   chart agrees with it (`corpus/verified.json`); a song with no chords is a
   finished lyrics sheet and gets `status = missing_chords` instead.
 - **Copies of one song are merged by their words, never by title alone.**
-  `corpus:dedupe` supersedes copies sharing most of their lyrics (the church's
-  chart wins, then a listed chart) and fills only what the winner lacks from
-  them; two publisher charts by different artists, or copies that share only
-  some words, are left for a person. It never undoes a recorded decision.
+  One definition (`shared/utils/lyrics.js`) serves both places. `corpus:dedupe`
+  supersedes copies sharing most of their lyrics (the church's chart wins, then
+  a listed chart) and fills only what the winner lacks from them; everything
+  less certain is for a person, in the app at `/library/duplicates`, side by
+  side. An app merge archives the copy with `{x_merged_into: <id>}`; "not
+  duplicates" writes `{x_distinct: <id>}` into both charts. Nothing re-offers
+  a decided pair, and nothing undoes a recorded decision.
+- **Edits made in the app go back before anything is rebuilt or loaded.** Run
+  `corpus:export` first: it writes app edits to the files (marked `appEdited`,
+  which `corpus:build` then leaves alone) and turns app merges into supersede
+  decisions. A load without it overwrites those edits.
 - **`songs.tags` holds four namespaces**, all parsed in `shared/utils/library.js`:
   a plain tag, `theme:x`, `!theme:x` (a rejection), and `flag:x` (a property of
   the song, not a subject). `flag:unlisted` is the old site's `~` filename

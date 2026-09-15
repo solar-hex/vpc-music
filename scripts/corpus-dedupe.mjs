@@ -29,14 +29,10 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { titleKey } from "../apps/api/src/corpus/titleMatch.js";
 import { parseHeader, splitHeader } from "../apps/api/src/corpus/enrich.js";
 import { hasChords } from "../shared/utils/library.js";
+import { SAME_SONG_OVERLAP, SIMILAR_TITLE_OVERLAP, distinctIds, lyricOverlap, lyricShingles } from "../shared/utils/lyrics.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const repoRoot = resolve(__dirname, "..");
-
-/** Copies sharing at least this much of their lyrics are one song. */
-export const SAME_SONG_OVERLAP = 0.6;
-/** Below this, two copies are different songs that happen to share a title. */
-export const DIFFERENT_SONG_OVERLAP = 0.25;
 
 /**
  * Details a winner takes from its merged copies when it has none of its own.
@@ -73,41 +69,6 @@ export function musicalHash(content) {
   return createHash("sha256").update(body).digest("hex");
 }
 
-/** The sung words of a chart, in order: no directives, chords or bar rows. */
-export function lyricWords(content) {
-  return String(content)
-    .split("\n")
-    .filter((line) => !/^\s*\{/.test(line) && !/^\s*\|/.test(line))
-    .map((line) => line.replace(/\[[^\]]*\]/g, ""))
-    .join(" ")
-    .toLowerCase()
-    .replace(/[’']/g, "")
-    .replace(/[^a-z]+/g, " ")
-    .split(" ")
-    .filter((word) => word.length > 1);
-}
-
-/** Every run of three words, so word order counts but line breaks do not. */
-export function lyricShingles(content) {
-  const words = lyricWords(content);
-  const set = new Set();
-  for (let i = 0; i + 3 <= words.length; i += 1) set.add(words.slice(i, i + 3).join(" "));
-  return set;
-}
-
-/**
- * How much of the shorter lyric appears in the longer one: 1 is all of it.
- * Containment rather than similarity, because a lyrics sheet that prints the
- * chorus once is still the same song as a chart that prints it three times.
- */
-export function lyricOverlap(a, b) {
-  if (a.size === 0 || b.size === 0) return 0;
-  const [small, large] = a.size <= b.size ? [a, b] : [b, a];
-  let common = 0;
-  for (const shingle of small) if (large.has(shingle)) common += 1;
-  return common / small.size;
-}
-
 export function buildGroups(manifests, readContent) {
   const songs = [];
   for (const m of manifests) {
@@ -125,6 +86,8 @@ export function buildGroups(manifests, readContent) {
         key: s.metadata?.key ?? null,
         lines: content.split("\n").filter((l) => l.trim() && !l.startsWith("{")).length,
         shingles: lyricShingles(content),
+        // Songs a person marked as not copies of this one, in the app.
+        distinct: new Set(distinctIds(content)),
         listed: !s.metadata?.isDraft,
         unlisted: /\bunlisted\b/.test(header.get("x_flag") || ""),
       });
@@ -140,8 +103,12 @@ export function buildGroups(manifests, readContent) {
   return { songs, groups: [...groups.entries()].filter(([, v]) => v.length > 1) };
 }
 
-/** How much two copies agree: identical music counts as all of it. */
+/**
+ * How much two copies agree: identical music counts as all of it, and a pair
+ * a person marked as two different songs counts as nothing.
+ */
 function overlapOf(a, b) {
+  if (a.distinct?.has(b.songId) || b.distinct?.has(a.songId)) return 0;
   if (a.musicalSha256 === b.musicalSha256) return 1;
   return lyricOverlap(a.shingles, b.shingles);
 }
@@ -192,7 +159,7 @@ export function clusterCopies(copies) {
     byRoot.get(root).push(copy);
   });
   const partial = pairs
-    .filter((p) => find(p.i) !== find(p.j) && p.overlap >= DIFFERENT_SONG_OVERLAP)
+    .filter((p) => find(p.i) !== find(p.j) && p.overlap >= SIMILAR_TITLE_OVERLAP)
     .map((p) => ({ a: copies[p.i], b: copies[p.j], overlap: p.overlap }));
   return { clusters: [...byRoot.values()], partial };
 }
