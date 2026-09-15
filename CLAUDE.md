@@ -13,11 +13,11 @@ A worship team's lead-sheet app: sign in, find a song, put the chart on a music 
 | Tranche | Delivers |
 |---|---|
 | 1. Core | Sign in, song list, chart, editor, settings, library import. Done. |
-| 2. Offline library, then set lists + perform | Every chart kept on the device (a phone has to work at a church with no internet), then ordered sets with per-song keys, perform mode, print, share link, mark played |
+| 2. Offline library, then set lists + perform | Every chart kept on the device (a phone has to work at a church with no internet): done 2026-09-15. Next: ordered sets with per-song keys, perform mode, print, share link, mark played |
 | 3. Scheduling | A set list gets a date; upcoming list; simple month view |
-| 4. Find and organise | Filter by artist / tag / key / tempo, sort orders, collections, favourites, archive, and the bulk metadata editing that makes those filters worth having |
+| 4. Find and organise | Filter by artist / tag / key / tempo, sort orders, collections, favourites, archive, and the bulk metadata editing that makes those filters worth having. Filters, sorts and duplicate review are already live |
 | 5. More than one version | Song variations, per-instrument layers, per-person capo |
-| 6. Marks and extra notation | Ink annotations, sticky notes, staff notation (ABC), media attachments, similar songs |
+| 6. Marks and extra notation | Ink annotations, sticky notes, staff notation (ABC), media attachments, similar songs, two-column chart view. Media attachments (audio parts, chart PDFs, editor uploads) are already live |
 | 7. Team depth | Custom roles, activity log, notifications, analytics, artists and albums |
 | 8. Backend de-scope | Delete only what tranches 1-7 leave unclaimed, then drop tables (approval + backup) |
 
