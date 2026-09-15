@@ -50,6 +50,28 @@ describe("decorate", () => {
   });
 });
 
+describe("possible duplicates", () => {
+  const paired = decorate(library, new Set(["s2", "s4"]));
+
+  it("marks the songs the duplicate review pairs with another, and no others", () => {
+    expect(paired.filter((r) => r.duplicate).map((r) => r.song.id)).toEqual(["s2", "s4"]);
+    expect(decorate(library).some((r) => r.duplicate)).toBe(false);
+  });
+
+  it("filters to them and counts them", () => {
+    const filter = { ...EMPTY_FILTER, duplicates: ["possible"] };
+    expect(filterSongs(paired, filter).map((r) => r.song.title)).toEqual(["Way Maker", "Nothing But The Blood"]);
+    expect(isFiltered(filter)).toBe(true);
+    expect(libraryFacets(paired, EMPTY_FILTER).duplicates).toEqual([
+      expect.objectContaining({ value: "possible", label: "Possible duplicate", count: 2, selected: false }),
+    ]);
+  });
+
+  it("offers no duplicates filter when nothing is paired", () => {
+    expect(libraryFacets(rows, EMPTY_FILTER).duplicates).toEqual([]);
+  });
+});
+
 describe("lyrics-only songs", () => {
   // The corpus loader sets status = "missing_chords" on a finished lyrics
   // sheet that carries no chords. 194 songs are in that state, and they stay

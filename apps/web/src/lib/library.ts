@@ -42,6 +42,8 @@ export interface LibrarySong {
   artist: string;
   /** Whether the sheet carries chords, or is lyrics only. */
   content: ContentKind;
+  /** Whether the duplicate review pairs this song with another. */
+  duplicate: boolean;
 }
 
 /** `songs.status` is "missing_chords" on a complete lyrics sheet with no chords. */
@@ -51,8 +53,14 @@ export const CONTENT_KINDS: { id: ContentKind; label: string }[] = [
   { id: "lyrics", label: "Lyrics only" },
 ];
 
-/** Derive once per song; every facet count and filter reads these. */
-export function decorate(songs: Song[]): LibrarySong[] {
+/** The one value of the duplicates facet: a song the duplicate review pairs with another. */
+export const POSSIBLE_DUPLICATE = "possible";
+
+/**
+ * Derive once per song; every facet count and filter reads these.
+ * `duplicateIds` is every song in a pair from the duplicate review, when known.
+ */
+export function decorate(songs: Song[], duplicateIds: ReadonlySet<string> = new Set()): LibrarySong[] {
   return songs.map((song) => {
     const completeness = songCompleteness(song);
     const { tags, themes, flags } = parseTagField(song.tags);
@@ -68,6 +76,7 @@ export function decorate(songs: Song[]): LibrarySong[] {
       key: song.key?.trim() || NO_VALUE,
       artist: song.artist?.trim() || NO_VALUE,
       content: song.status === "missing_chords" ? "lyrics" : "chords",
+      duplicate: duplicateIds.has(song.id),
     };
   });
 }
@@ -90,6 +99,8 @@ export interface LibraryFilter {
   bands: string[];
   /** "chords" / "lyrics" — a lyrics sheet is complete, just chordless. */
   content: string[];
+  /** "possible" — songs the duplicate review pairs with another. */
+  duplicates: string[];
   drafts: DraftMode;
 }
 
@@ -103,6 +114,7 @@ export const EMPTY_FILTER: LibraryFilter = {
   missing: [],
   bands: [],
   content: [],
+  duplicates: [],
   drafts: "show",
 };
 
@@ -119,6 +131,7 @@ const FACET_TESTS = {
   missing: (row: LibrarySong, f: LibraryFilter) => f.missing.some((m) => row.missing.includes(m as CompletenessField["id"])),
   bands: (row: LibrarySong, f: LibraryFilter) => f.bands.includes(row.band),
   content: (row: LibrarySong, f: LibraryFilter) => f.content.includes(row.content),
+  duplicates: (row: LibrarySong, f: LibraryFilter) => f.duplicates.includes(POSSIBLE_DUPLICATE) && row.duplicate,
 } as const;
 
 export type FacetName = keyof typeof FACET_TESTS;
@@ -203,6 +216,7 @@ export interface LibraryFacets {
   missing: FacetOption[];
   bands: FacetOption[];
   content: FacetOption[];
+  duplicates: FacetOption[];
 }
 
 export function libraryFacets(rows: LibrarySong[], filter: LibraryFilter): LibraryFacets {
@@ -260,6 +274,12 @@ export function libraryFacets(rows: LibrarySong[], filter: LibraryFilter): Libra
       filter.content,
       (value) => contentLabels.get(value) || value,
       byOrder(CONTENT_KINDS.map((k) => k.id as string)),
+    ),
+    duplicates: options(
+      countFacet(rows, filter, "duplicates", (r) => (r.duplicate ? [POSSIBLE_DUPLICATE] : [])),
+      filter.duplicates,
+      () => "Possible duplicate",
+      byCount,
     ),
   };
 }

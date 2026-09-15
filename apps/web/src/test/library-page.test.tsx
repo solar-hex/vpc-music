@@ -5,8 +5,9 @@ import { LibraryPage } from "@/pages/songs/LibraryPage";
 import { resetSongLibraryCache } from "@/hooks/useSongLibrary";
 
 const mockList = vi.fn();
+const mockDuplicates = vi.fn();
 vi.mock("@/lib/api-client", () => ({
-  songsApi: { list: (...args: any[]) => mockList(...args) },
+  songsApi: { list: (...args: any[]) => mockList(...args), duplicates: (...args: any[]) => mockDuplicates(...args) },
 }));
 
 let mockRole = "musician";
@@ -46,6 +47,7 @@ describe("LibraryPage", () => {
     localStorage.clear();
     resetSongLibraryCache();
     mockList.mockResolvedValue({ songs: library, total: library.length });
+    mockDuplicates.mockResolvedValue({ pairs: [] });
   });
 
   it("reads the library the app already has, rather than asking for statistics", async () => {
@@ -173,6 +175,33 @@ describe("LibraryPage", () => {
       renderLibrary();
       await waitFor(() => expect(screen.getAllByRole("link", { name: /Amazing Grace/ }).length).toBeGreaterThan(1));
       expect(screen.getAllByRole("link", { name: "Possible duplicates" })).toHaveLength(1);
+    } finally {
+      mockRole = "musician";
+    }
+  });
+
+  it("marks possible duplicates and filters to them, keeping the choice in the URL", async () => {
+    mockDuplicates.mockResolvedValue({
+      pairs: [{ overlap: 0.9, shared: 20, titlesAgree: false, left: { id: "s1", title: "Amazing Grace" }, right: { id: "s4", title: "Nothing But The Blood" } }],
+    });
+    renderLibrary();
+    await waitFor(() => expect(rowLink("Amazing Grace")).toHaveTextContent("Possible duplicate"));
+    expect(rowLink("Way Maker")).not.toHaveTextContent("Possible duplicate");
+
+    fireEvent.click(screen.getByRole("button", { name: /Filters/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Possible duplicate 2/ }));
+    await waitFor(() => expect(rowLink("Way Maker")).not.toBeInTheDocument());
+    expect(rowLink("Amazing Grace")).toBeInTheDocument();
+    expect(rowLink("Nothing But The Blood")).toBeInTheDocument();
+    expect(url()).toContain("duplicate=possible");
+  });
+
+  it("does not look for duplicates for someone who cannot merge songs", async () => {
+    mockRole = "observer";
+    try {
+      renderLibrary();
+      await waitFor(() => expect(rowLink("Amazing Grace")).toBeInTheDocument());
+      expect(mockDuplicates).not.toHaveBeenCalled();
     } finally {
       mockRole = "musician";
     }

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ChevronDown, Music, Search, SlidersHorizontal, X } from "lucide-react";
 import { useSongLibrary } from "@/hooks/useSongLibrary";
 import { useAuth } from "@/contexts/AuthContext";
+import { songsApi } from "@/lib/api-client";
 import { EmptyState } from "@/components/shared/EmptyState";
 import {
   decorate,
@@ -33,6 +34,7 @@ const PARAMS: Record<string, keyof LibraryFilter> = {
   missing: "missing",
   band: "bands",
   content: "content",
+  duplicate: "duplicates",
 };
 
 function readFilter(params: URLSearchParams): LibraryFilter {
@@ -189,6 +191,7 @@ function SongRow({ row }: { row: LibrarySong }) {
             <span className="truncate font-medium text-[hsl(var(--foreground))]">{song.title}</span>
             {song.isDraft && <span className="badge-muted shrink-0">Draft</span>}
             {songStatusLabel(song.status) && <span className="badge-muted shrink-0">{songStatusLabel(song.status)}</span>}
+            {row.duplicate && <span className="badge-muted shrink-0">Possible duplicate</span>}
             {/* The old site's tilde. Kept out of the default list — not access control. */}
             {row.flags.map((flag) => (
               // A warning colour only for a flag that actually hides the song.
@@ -259,7 +262,27 @@ export function LibraryPage() {
     [setSearchParams, sort],
   );
 
-  const rows = useMemo(() => decorate(songs), [songs]);
+  /*
+   * Which songs the duplicate review pairs with another, for the "Possible
+   * duplicate" badge and filter. Only people who can merge songs see the
+   * review, so only they ask. The library shows without it meanwhile.
+   */
+  const [duplicateIds, setDuplicateIds] = useState<ReadonlySet<string>>(() => new Set());
+  useEffect(() => {
+    if (!canEdit) return;
+    let cancelled = false;
+    songsApi
+      .duplicates()
+      .then(({ pairs }) => {
+        if (!cancelled) setDuplicateIds(new Set(pairs.flatMap((pair) => [pair.left.id, pair.right.id])));
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [canEdit]);
+
+  const rows = useMemo(() => decorate(songs, duplicateIds), [songs, duplicateIds]);
   const stats = useMemo(() => libraryStats(rows), [rows]);
   const matched = useMemo(() => filterSongs(rows, filter), [rows, filter]);
   const facets = useMemo(() => libraryFacets(rows, filter), [rows, filter]);
@@ -380,6 +403,7 @@ export function LibraryPage() {
               <div className="card card-body space-y-4">
                 <FacetGroup title="Missing" options={facets.missing} onToggle={toggle("missing")} />
                 <FacetGroup title="Chords" options={facets.content} onToggle={toggle("content")} />
+                <FacetGroup title="Duplicates" options={facets.duplicates} onToggle={toggle("duplicates")} />
                 <FacetGroup title="Flags" options={facets.flags} onToggle={toggle("flags")} />
                 <FacetGroup title="Completeness" options={facets.bands} onToggle={toggle("bands")} />
                 <FacetGroup title="Tempo" options={facets.tempos} onToggle={toggle("tempos")} />
