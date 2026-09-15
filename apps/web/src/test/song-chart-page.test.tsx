@@ -31,7 +31,7 @@ vi.mock("@/lib/api-client", () => ({
     exportPdf: (...args: any[]) => mockExportPdf(...args),
     mediaHref: (id: string, key: string) => `/api/songs/${id}/media/${key}`,
   },
-  shareApi: { create: (...args: any[]) => mockShareCreate(...args) },
+  shareApi: { create: (...args: any[]) => mockShareCreate(...args), stopSharing: vi.fn() },
   songUsageApi: { log: (...args: any[]) => mockLogPlay(...args) },
 }));
 
@@ -404,16 +404,15 @@ describe("SongChartPage", () => {
       expect(revokeObjectURL).toHaveBeenCalledWith("blob:chart");
     });
 
-    it("copies a share link to the clipboard", async () => {
+    it("shares the chart through a dialog, with the key on screen in the link", async () => {
       const user = userEvent.setup();
-      const writeText = vi.fn().mockResolvedValue(undefined);
-      Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true });
-      renderChart();
+      renderChart("/songs/song-1?key=A");
       await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
       await user.click(screen.getByRole("button", { name: /more actions/i }));
-      await user.click(screen.getByRole("menuitem", { name: "Copy share link" }));
+      await user.click(screen.getByRole("menuitem", { name: "Share chart" }));
       await waitFor(() => expect(mockShareCreate).toHaveBeenCalledWith("song-1"));
-      expect(writeText).toHaveBeenCalledWith(`${window.location.origin}/shared/tok123`);
+      expect(await screen.findByLabelText("Share link")).toHaveValue(`${window.location.origin}/shared/tok123?key=A`);
+      expect(screen.getByText("Opens in the key of A.")).toBeInTheDocument();
     });
 
     it("logs a play through the dialog", async () => {
@@ -452,7 +451,7 @@ describe("SongChartPage", () => {
       expect(screen.getByRole("menuitem", { name: "Print" })).toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Edit" })).not.toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Delete" })).not.toBeInTheDocument();
-      expect(screen.queryByRole("menuitem", { name: "Copy share link" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Share chart" })).not.toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Log a play" })).not.toBeInTheDocument();
     });
   });

@@ -1,6 +1,7 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
+import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
 import { SharedSongPage } from "@/pages/SharedSongPage";
 
 // ---------- Mocks ----------
@@ -9,213 +10,159 @@ const mockGetShared = vi.fn();
 vi.mock("@/lib/api-client", () => ({
   shareApi: {
     getShared: (...args: any[]) => mockGetShared(...args),
+    mediaHref: (token: string, key: string) => `/api/shared/${token}/media/${key}`,
   },
 }));
 
+vi.mock("@/contexts/ThemeContext", () => ({
+  useTheme: () => ({ resolvedTheme: "light", toggleTheme: vi.fn(), keyNotation: "flats", pageWidth: "centered" }),
+}));
+
+// The renderer is covered by its own test; here it reports what it was asked to draw.
 vi.mock("@/components/songs/ChordProRenderer", () => ({
-  ChordProRenderer: ({ content, showChords, nashville, fontSize }: any) => (
-    <div data-testid="chordpro-renderer" data-show-chords={showChords} data-nashville={nashville} data-font-size={fontSize}>
+  ChordProRenderer: ({ content, transpose, nashville }: any) => (
+    <div data-testid="chordpro-renderer" data-transpose={transpose ?? 0} data-nashville={String(Boolean(nashville))}>
       {content}
     </div>
   ),
-  AutoScroll: () => <button>Auto Scroll</button>,
+  chartSections: () => [{ id: "section-0", label: "Verse 1" }],
 }));
 
-vi.mock("@/components/ui/ThemeToggleButton", () => ({
-  ThemeToggleButton: () => <button data-testid="theme-toggle">Theme</button>,
-}));
+const SHARED = {
+  title: "Covered",
+  artist: "Mark Yandris",
+  year: null,
+  key: "Eb",
+  tempo: 143,
+  status: null,
+  content: [
+    "{title: Covered}",
+    "{x_audio_soprano: https://media.invalid/x_audio_soprano}",
+    "{x_chart_chord_chart: https://media.invalid/x_chart_chord_chart}",
+    "",
+    "{comment: Verse 1}",
+    "[Eb]No more sacrificing lambs,",
+  ].join("\n"),
+};
 
-function renderShared(token = "valid-token") {
+function LocationProbe() {
+  const location = useLocation();
+  return <div data-testid="location">{`${location.pathname}${location.search}`}</div>;
+}
+
+function renderShared(path = "/shared/tok-abc") {
   return render(
-    <MemoryRouter initialEntries={[`/shared/${token}`]}>
+    <MemoryRouter initialEntries={[path]}>
       <Routes>
-        <Route path="/shared/:token" element={<SharedSongPage />} />
-        <Route path="/" element={<div>Home</div>} />
+        <Route
+          path="/shared/:token"
+          element={
+            <>
+              <SharedSongPage />
+              <LocationProbe />
+            </>
+          }
+        />
       </Routes>
     </MemoryRouter>,
   );
 }
 
-const mockSong = {
-  id: "song-1",
-  title: "Amazing Grace",
-  aka: "Grace Song, Old Hymn",
-  category: "Church",
-  key: "G",
-  tempo: 72,
-  artist: "John Newton",
-  shout: "Choir echoes",
-  content: "{title: Amazing Grace}\n[G]Amazing grace how sweet the sound",
-};
+const loaded = () => screen.findByRole("heading", { name: "Covered" });
 
 describe("SharedSongPage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    localStorage.clear();
+    mockGetShared.mockResolvedValue({ song: SHARED, shared: true });
+    vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => Promise.resolve());
+    vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {});
+    vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => {});
   });
 
-  it("shows loading spinner initially", () => {
-    mockGetShared.mockReturnValue(new Promise(() => {})); // never resolves
-    const { container } = renderShared();
-    expect(container.querySelector(".animate-spin")).toBeInTheDocument();
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
-  it("renders song details after loading", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("shows a spinner while the chart loads", () => {
+    mockGetShared.mockReturnValue(new Promise(() => {}));
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-    expect(screen.getByText("John Newton")).toBeInTheDocument();
-    expect(screen.getByText("Category: Church")).toBeInTheDocument();
-    expect(screen.getByText("AKA: Grace Song, Old Hymn")).toBeInTheDocument();
-    expect(screen.getByText("Shout: Choir echoes")).toBeInTheDocument();
-    expect(screen.getByText("Key: G")).toBeInTheDocument();
-    expect(screen.getByText("72 BPM")).toBeInTheDocument();
-    expect(screen.getByLabelText("Tempo 72 BPM")).toBeInTheDocument();
+    expect(screen.getByRole("status", { name: "Loading chart" })).toBeInTheDocument();
   });
 
-  it("renders ChordPro content", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("shows the chart with its credits and says it is view only", async () => {
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByTestId("chordpro-renderer")).toBeInTheDocument();
-    });
+    await loaded();
+    expect(mockGetShared).toHaveBeenCalledWith("tok-abc");
+    expect(screen.getByText("Key of Eb")).toBeInTheDocument();
+    expect(screen.getByText("Mark Yandris")).toBeInTheDocument();
+    expect(screen.getByText("Shared · view only")).toBeInTheDocument();
+    expect(screen.getByTestId("chordpro-renderer")).toHaveTextContent("No more sacrificing lambs");
   });
 
-  it("shows error state when share link is invalid", async () => {
-    mockGetShared.mockRejectedValue(new Error("Token expired"));
-    renderShared("bad-token");
-
-    await waitFor(() => {
-      expect(screen.getByText("Link Unavailable")).toBeInTheDocument();
-    });
-    expect(screen.getByText("Token expired")).toBeInTheDocument();
-  });
-
-  it("shows default error text when no error message", async () => {
-    mockGetShared.mockRejectedValue(new Error());
-    renderShared("bad-token");
-
-    await waitFor(() => {
-      expect(screen.getByText("Link Unavailable")).toBeInTheDocument();
-    });
-  });
-
-  it("has a link back to VPC Music from error state", async () => {
-    mockGetShared.mockRejectedValue(new Error("Invalid"));
-    renderShared("bad-token");
-
-    await waitFor(() => {
-      expect(screen.getByText("Go to VPC Music")).toBeInTheDocument();
-    });
-    expect(screen.getByText("Go to VPC Music").closest("a")).toHaveAttribute("href", "/");
-  });
-
-  it("toggles chord visibility", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("has the reading controls a member has, and no way into the library", async () => {
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    // Chords button should exist
-    const chordsBtn = screen.getByTitle("Hide chords");
-    expect(chordsBtn).toBeInTheDocument();
-
-    fireEvent.click(chordsBtn);
-
-    // After toggle, should now say "Show chords"
-    expect(screen.getByTitle("Show chords")).toBeInTheDocument();
+    await loaded();
+    expect(screen.getByRole("button", { name: /change key/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Transpose up" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Nashville numbers" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Comments" })).toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: /song sections/i })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /search songs/i })).not.toBeInTheDocument();
   });
 
-  it("shows Nashville toggle when chords are visible and song has key", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("offers print and the song's PDF, and nothing that edits, downloads or shares", async () => {
+    const user = userEvent.setup();
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    expect(screen.getByText("Nashville")).toBeInTheDocument();
+    await loaded();
+    await user.click(screen.getByRole("button", { name: /more actions/i }));
+    const items = screen.getAllByRole("menuitem").map((item) => item.textContent?.trim());
+    expect(items).toEqual(expect.arrayContaining(["Print", "Chord chart (PDF)"]));
+    for (const forbidden of [/edit/i, /delete/i, /share/i, /download/i, /dropbox/i, /log a play/i]) {
+      expect(items.some((item) => forbidden.test(item ?? ""))).toBe(false);
+    }
   });
 
-  it("hides Nashville toggle when chords are hidden", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("changes key, and keeps the key in the address", async () => {
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    // Hide chords
-    fireEvent.click(screen.getByTitle("Hide chords"));
-
-    expect(screen.queryByText("Nashville")).not.toBeInTheDocument();
+    await loaded();
+    fireEvent.click(screen.getByRole("button", { name: "Transpose up" }));
+    await waitFor(() => expect(screen.getByTestId("location")).toHaveTextContent("/shared/tok-abc?key=E"));
+    expect(screen.getByTestId("chordpro-renderer")).toHaveAttribute("data-transpose", "1");
   });
 
-  it("has a font size selector", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("opens in the key the link was sent in", async () => {
+    renderShared("/shared/tok-abc?key=G");
+    await loaded();
+    expect(screen.getByText("Key of G")).toBeInTheDocument();
+    expect(screen.getByTestId("chordpro-renderer")).toHaveAttribute("data-transpose", "4");
+  });
+
+  it("plays practice audio through the share link, not the member route", async () => {
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    const fontSelect = screen.getByTitle("Font size");
-    expect(fontSelect).toBeInTheDocument();
-    expect(fontSelect).toHaveValue("16");
+    await loaded();
+    fireEvent.click(screen.getByRole("button", { name: "Play Soprano" }));
+    expect(document.querySelector("audio")?.getAttribute("src")).toBe("/api/shared/tok-abc/media/x_audio_soprano");
   });
 
-  it("has a print button", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("explains a link that was turned off", async () => {
+    mockGetShared.mockRejectedValue(Object.assign(new Error("This share link has been turned off"), { status: 410 }));
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Amazing Grace")).toBeInTheDocument();
-    });
-
-    expect(screen.getByTitle("Print chord chart")).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "This link isn't working" })).toBeInTheDocument();
+    expect(screen.getByText(/sharing for this chart has been turned off/i)).toBeInTheDocument();
   });
 
-  it("displays the 'Shared Song' label in header", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
+  it("explains a link that does not exist", async () => {
+    mockGetShared.mockRejectedValue(Object.assign(new Error("Invalid or expired share link"), { status: 404 }));
     renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText("Shared Song")).toBeInTheDocument();
-    });
+    expect(await screen.findByText(/the link may be incomplete/i)).toBeInTheDocument();
   });
 
-  it("renders theme toggle button", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
-    renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByTestId("theme-toggle")).toBeInTheDocument();
-    });
-  });
-
-  it("calls shareApi.getShared with the token from URL", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
-    renderShared("my-special-token");
-
-    await waitFor(() => {
-      expect(mockGetShared).toHaveBeenCalledWith("my-special-token");
-    });
-  });
-
-  it("has a 'Powered by VPC Music' footer link", async () => {
-    mockGetShared.mockResolvedValue({ song: mockSong, shared: true });
-    renderShared();
-
-    await waitFor(() => {
-      expect(screen.getByText(/Powered by/)).toBeInTheDocument();
-    });
-
-    const vpcLink = screen.getByText("VPC Music");
-    expect(vpcLink.closest("a")).toHaveAttribute("href", "/");
+  it("keeps the page out of search engines while it is open", async () => {
+    const { unmount } = renderShared();
+    await loaded();
+    expect(document.head.querySelector('meta[name="robots"]')).toHaveAttribute("content", "noindex, nofollow");
+    unmount();
+    expect(document.head.querySelector('meta[name="robots"]')).toBeNull();
   });
 });

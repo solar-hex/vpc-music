@@ -294,14 +294,14 @@ describe("Role-gated UI", () => {
 
   // ── SongChartPage ─────────────────────────────────
   describe("SongChartPage", () => {
-    it("musician sees Edit, Delete, Copy share link and Log a play in the More menu", async () => {
+    it("musician sees Edit, Delete, Share chart and Log a play in the More menu", async () => {
       mockAuthValue = musicianAuth;
       renderSongView();
       await waitFor(() => expect(screen.getByText("Amazing Grace")).toBeInTheDocument());
       fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.getByRole("menuitem", { name: "Edit" })).toBeInTheDocument();
       expect(screen.getByRole("menuitem", { name: "Delete" })).toBeInTheDocument();
-      expect(screen.getByRole("menuitem", { name: "Copy share link" })).toBeInTheDocument();
+      expect(screen.getByRole("menuitem", { name: "Share chart" })).toBeInTheDocument();
       expect(screen.getByRole("menuitem", { name: "Log a play" })).toBeInTheDocument();
     });
 
@@ -312,7 +312,7 @@ describe("Role-gated UI", () => {
       fireEvent.click(screen.getByRole("button", { name: /more actions/i }));
       expect(screen.queryByRole("menuitem", { name: "Edit" })).not.toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Delete" })).not.toBeInTheDocument();
-      expect(screen.queryByRole("menuitem", { name: "Copy share link" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("menuitem", { name: "Share chart" })).not.toBeInTheDocument();
       expect(screen.queryByRole("menuitem", { name: "Log a play" })).not.toBeInTheDocument();
     });
 

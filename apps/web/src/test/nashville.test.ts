@@ -203,16 +203,17 @@ describe("Nashville Number System", () => {
       const toolbar = fs.readFileSync("src/components/songs/ChartToolbar.tsx", "utf-8");
       expect(toolbar).toContain("onToggleNashville");
       expect(toolbar).toContain("Nashville numbers");
-      const page = fs.readFileSync("src/pages/songs/SongChartPage.tsx", "utf-8");
-      expect(page).toContain("nashville");
+      // The toggle lives in the chart view both the member page and a share link render.
+      const view = fs.readFileSync("src/components/songs/ChartView.tsx", "utf-8");
+      expect(view).toContain("onToggleNashville");
+      expect(fs.readFileSync("src/pages/songs/SongChartPage.tsx", "utf-8")).toContain("<ChartView");
     });
 
     it("SharedSongPage has Nashville toggle", async () => {
       const fs = await import("fs");
+      // A share link renders the same chart view, toolbar and all.
       const src = fs.readFileSync("src/pages/SharedSongPage.tsx", "utf-8");
-      expect(src).toContain("nashville");
-      expect(src).toContain("Nashville");
-      expect(src).toContain("setNashville");
+      expect(src).toContain("<ChartView");
     });
   });
 });

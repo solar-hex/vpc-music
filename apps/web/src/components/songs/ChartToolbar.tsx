@@ -4,7 +4,8 @@ import { Hash, Lightbulb, Minus, MessageSquare, Moon, MoreHorizontal, Plus, Sear
 import { ActionMenu, type ActionMenuEntry } from "@/components/ui/ActionMenu";
 
 export interface ChartToolbarProps {
-  searchHref: string;
+  /** The song list, with the current key carried. Absent for a share link, which has no library behind it. */
+  searchHref?: string | null;
   /** The key being displayed, or null for a chart without a key. */
   displayKey: string | null;
   onOpenKeyPicker: () => void;
@@ -88,9 +89,11 @@ export function ChartToolbar({
       aria-label="Chart controls"
       className="print-hidden flex shrink-0 items-center gap-0.5 border-b border-[hsl(var(--border))] bg-[hsl(var(--card))]/95 px-1 py-1 backdrop-blur sm:gap-1 sm:px-2"
     >
-      <Link to={searchHref} className={ICON_BUTTON} title="Search songs" aria-label="Search songs">
-        <Search className="h-5 w-5" />
-      </Link>
+      {searchHref && (
+        <Link to={searchHref} className={ICON_BUTTON} title="Search songs" aria-label="Search songs">
+          <Search className="h-5 w-5" />
+        </Link>
+      )}
 
       <button
         type="button"

@@ -57,6 +57,28 @@ export function objectKeyFromUrl(url, config = env) {
   return key;
 }
 
+/**
+ * Answer with a 302 to a short-lived signed URL for one media directive of a
+ * chart, or throw the error the caller should see. The caller has already
+ * decided the person may see the chart; this decides what may be signed.
+ */
+export async function redirectToSignedMedia(res, content, key) {
+  const url = parseChordPro(content || "").directives?.[key];
+  if (!url || !String(url).trim()) throw createError(404, "That song has no such media");
+
+  const objectKey = objectKeyFromUrl(url);
+  if (!objectKey) throw createError(400, "That media is not in the configured store");
+
+  const signed = await getSignedUrl(getClient(), new GetObjectCommand({ Bucket: env.S3_BUCKET, Key: objectKey }), {
+    expiresIn: SIGNED_URL_SECONDS,
+  });
+
+  // Never cache the redirect: the signed URL expires, and a cached 302 would
+  // keep sending people to a dead link.
+  res.set("Cache-Control", "private, no-store");
+  res.redirect(302, signed);
+}
+
 songMediaRoutes.get(
   "/:id/media/:key",
   auth,
@@ -80,19 +102,6 @@ songMediaRoutes.get(
     const canSee = song && (req.user?.role === "owner" || (req.orgs || []).some((o) => o.id === song.organizationId));
     if (!canSee) throw createError(404, "Song not found");
 
-    const url = parseChordPro(song.content || "").directives?.[key];
-    if (!url || !String(url).trim()) throw createError(404, "That song has no such media");
-
-    const objectKey = objectKeyFromUrl(url);
-    if (!objectKey) throw createError(400, "That media is not in the configured store");
-
-    const signed = await getSignedUrl(getClient(), new GetObjectCommand({ Bucket: env.S3_BUCKET, Key: objectKey }), {
-      expiresIn: SIGNED_URL_SECONDS,
-    });
-
-    // Never cache the redirect: the signed URL expires, and a cached 302 would
-    // keep sending people to a dead link.
-    res.set("Cache-Control", "private, no-store");
-    res.redirect(302, signed);
+    await redirectToSignedMedia(res, song.content, key);
   }),
 );

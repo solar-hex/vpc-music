@@ -1,202 +1,89 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams, Link } from "react-router-dom";
-import { shareApi, type Song } from "@/lib/api-client";
-import { ChordProRenderer, AutoScroll } from "@/components/songs/ChordProRenderer";
-import { TempoIndicator } from "@/components/songs/TempoIndicator";
-import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
-import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
-import { Eye, EyeOff, Music, Printer, Hash, Minus, Plus } from "lucide-react";
-import { spellForTarget } from "@vpc-music/shared";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Music } from "lucide-react";
+import { shareApi, type SharedSong } from "@/lib/api-client";
+import { ChartView } from "@/components/songs/ChartView";
+import { songStatusLabel } from "@vpc-music/shared";
 
 /**
- * Public read-only song viewer — accessed via a share token.
+ * One chart, opened from a share link, by someone who may not be on the team.
  *
- * Features:
- * - Transpose, chord toggle, font-size control, auto-scroll
- * - No edit, delete, upload, export, or library navigation
- * - Renders outside the AppShell — standalone page
+ * It is the same lead sheet a member reads — key picker, transpose, Nashville,
+ * comments, text size, keep-awake, the song's practice audio and PDFs, print —
+ * with nothing around it: no search, no downloads, no editing, and no way to
+ * reach any other song. The server sends only this chart, without the team's
+ * Dropbox folder, and plays its media through the link, so turning the link
+ * off stops all of it.
  */
 export function SharedSongPage() {
-  const { token } = useParams<{ token: string }>();
-  const [song, setSong] = useState<Song | null>(null);
+  const { token = "" } = useParams<{ token: string }>();
+  const [song, setSong] = useState<SharedSong | null>(null);
+  const [problem, setProblem] = useState<"gone" | "missing" | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [showChords, setShowChords] = useState(true);
-  const [nashville, setNashville] = useState(false);
-  const [fontSize, setFontSize] = useState(16);
-  const [transpose, setTranspose] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Keyboard shortcuts & foot pedal support
-  useKeyboardShortcuts({
-    scrollRef,
-    onTransposeUp: () => setTranspose((steps) => (steps + 1) % 12),
-    onTransposeDown: () => setTranspose((steps) => (steps + 11) % 12),
-  });
+  // A share link is a private address; keep it out of search engines.
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => meta.remove();
+  }, []);
 
   useEffect(() => {
-    if (!token) return;
+    let current = true;
     setLoading(true);
+    setProblem(null);
     shareApi
       .getShared(token)
-      .then((res) => setSong(res.song))
-      .catch((err) => setError(err.message || "This link is invalid or has expired."))
-      .finally(() => setLoading(false));
+      .then((res) => current && setSong(res.song))
+      .catch((error: { status?: number }) => current && setProblem(error?.status === 410 ? "gone" : "missing"))
+      .finally(() => current && setLoading(false));
+    return () => {
+      current = false;
+    };
   }, [token]);
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[hsl(var(--background))]">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[hsl(var(--muted))] border-t-[hsl(var(--secondary))]" />
+      <div className="fixed inset-0 z-40 flex items-center justify-center bg-[hsl(var(--background))]" role="status" aria-label="Loading chart">
+        <div className="spinner" />
       </div>
     );
   }
 
-  if (error || !song) {
+  if (!song) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-[hsl(var(--background))] px-4 text-center">
-        <Music className="h-12 w-12 text-[hsl(var(--muted-foreground))] mb-4" />
-        <h1 className="text-xl font-semibold text-[hsl(var(--foreground))] mb-2">
-          Link Unavailable
-        </h1>
-        <p className="text-[hsl(var(--muted-foreground))] max-w-md">
-          {error || "This shared song link is invalid or has expired."}
+      <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-3 bg-[hsl(var(--background))] px-6 text-center text-[hsl(var(--foreground))]">
+        <Music className="h-10 w-10 text-[hsl(var(--muted-foreground))]" aria-hidden="true" />
+        <h1 className="text-xl font-semibold">This link isn't working</h1>
+        <p className="max-w-sm text-sm text-[hsl(var(--muted-foreground))]">
+          {problem === "gone"
+            ? "Sharing for this chart has been turned off. Ask the person who sent it for a new link."
+            : "The link may be incomplete. Check you copied all of it, or ask for a new one."}
         </p>
-        <Link
-          to="/"
-          className="mt-6 text-sm text-[hsl(var(--secondary))] hover:underline"
-        >
-          Go to VPC Music
-        </Link>
       </div>
     );
   }
+
+  const statusLabel = songStatusLabel(song.status);
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--background))]">
-      {/* Minimal header */}
-      <header className="border-b border-[hsl(var(--border))] bg-[hsl(var(--card))]">
-        <div className="mx-auto max-w-4xl px-4 py-3 flex items-center gap-3">
-          <Music className="h-5 w-5 text-[hsl(var(--secondary))]" />
-          <span className="text-sm font-medium text-[hsl(var(--muted-foreground))]">
-            Shared Song
-          </span>
-          <div className="flex-1" />
-          <ThemeToggleButton position="inline" />
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-4xl px-4 py-6 space-y-4">
-        {/* Song metadata */}
-        <div className="space-y-1 print-meta">
-          <h1 className="text-2xl font-brand text-[hsl(var(--foreground))]">
-            {song.title}
-          </h1>
-          <div className="flex flex-wrap gap-3 text-sm text-[hsl(var(--muted-foreground))]">
-            {song.artist && <span>{song.artist}</span>}
-            {song.category && <span>Category: {song.category}</span>}
-            {song.aka && <span>AKA: {song.aka}</span>}
-            {song.shout && <span>Shout: {song.shout}</span>}
-            {song.key && <span>Key: {song.key}</span>}
-            {song.tempo && <TempoIndicator tempo={song.tempo} />}
-          </div>
-        </div>
-
-        {/* Toolbar — view-only controls */}
-        <div className="flex flex-wrap items-center gap-3 print-hidden">
-          <div className="inline-flex items-center gap-1 text-xs" role="group" aria-label="Transpose">
-            <button
-              type="button"
-              onClick={() => setTranspose((steps) => (steps + 11) % 12)}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
-              aria-label="Transpose down"
-            >
-              <Minus className="h-3.5 w-3.5" />
-            </button>
-            <span className="min-w-[3ch] text-center font-mono">
-              {transpose === 0 ? song.key ?? "0" : spellForTarget(song.key, transpose).targetKey ?? `+${transpose}`}
-            </span>
-            <button
-              type="button"
-              onClick={() => setTranspose((steps) => (steps + 1) % 12)}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
-              aria-label="Transpose up"
-            >
-              <Plus className="h-3.5 w-3.5" />
-            </button>
-          </div>
-          <AutoScroll containerRef={scrollRef} />
-          <button
-            onClick={() => setShowChords((v) => !v)}
-            className="inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 py-1.5 text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-            title={showChords ? "Hide chords" : "Show chords"}
-          >
-            {showChords ? (
-              <EyeOff className="h-3.5 w-3.5" />
-            ) : (
-              <Eye className="h-3.5 w-3.5" />
-            )}
-            Chords
-          </button>
-          {showChords && song.key && (
-            <button
-              onClick={() => setNashville((v) => !v)}
-              className={`inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs transition-colors ${
-                nashville
-                  ? "border-[hsl(var(--secondary))] bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                  : "border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
-              }`}
-              title={nashville ? "Show chord names" : "Show Nashville numbers"}
-            >
-              <Hash className="h-3.5 w-3.5" />
-              Nashville
-            </button>
-          )}
-          <select
-            value={fontSize}
-            onChange={(e) => setFontSize(Number(e.target.value))}
-            className="rounded-md border border-[hsl(var(--input))] bg-[hsl(var(--background))] px-2 py-1.5 text-xs"
-            title="Font size"
-          >
-            {[12, 14, 16, 18, 20, 24].map((s) => (
-              <option key={s} value={s}>
-                {s}px
-              </option>
-            ))}
-          </select>
-          <button
-            onClick={() => window.print()}
-            className="inline-flex items-center gap-1.5 rounded-md border border-[hsl(var(--border))] px-3 py-1.5 text-xs hover:bg-[hsl(var(--muted))] transition-colors"
-            title="Print chord chart"
-          >
-            <Printer className="h-3.5 w-3.5" /> Print
-          </button>
-        </div>
-
-        {/* ChordPro renderer */}
-        <div
-          ref={scrollRef}
-          className="rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 overflow-y-auto print-sheet"
-          style={{ maxHeight: "max(320px, calc(100dvh - 280px))" }}
-        >
-          <ChordProRenderer
-            content={song.content}
-            songKey={song.key}
-            transpose={transpose}
-            showChords={showChords}
-            nashville={nashville}
-            fontSize={fontSize}
-          />
-        </div>
-
-        {/* Footer */}
-        <p className="text-center text-xs text-[hsl(var(--muted-foreground))] pt-4 print-hidden">
-          Powered by{" "}
-          <Link to="/" className="text-[hsl(var(--secondary))] hover:underline">
-            VPC Music
-          </Link>
-        </p>
-      </main>
-    </div>
+    <ChartView
+      chartId={token}
+      title={song.title}
+      artist={song.artist}
+      year={song.year}
+      tempo={song.tempo}
+      badges={
+        <>
+          {statusLabel && <span className="badge-muted">{statusLabel}</span>}
+          <span className="badge-muted print-hidden">Shared · view only</span>
+        </>
+      }
+      content={song.content}
+      originalKey={song.key}
+      mediaHref={(directive) => shareApi.mediaHref(token, directive)}
+    />
   );
 }

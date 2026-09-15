@@ -186,29 +186,22 @@ describe("Print stylesheet feature", () => {
 
   // ===================== SharedSongPage =====================
 
-  describe("SharedSongPage — print button", () => {
-    it("renders a Print button", async () => {
-      renderSharedSong();
-      await waitFor(() => {
-        expect(screen.getByText("Print")).toBeInTheDocument();
-      });
-    });
-
-    it("calls window.print when clicked", async () => {
+  describe("SharedSongPage — print", () => {
+    it("prints from the More menu, the same as a member's chart", async () => {
       const printSpy = vi.spyOn(window, "print").mockImplementation(() => {});
       renderSharedSong();
       const user = userEvent.setup();
-      await waitFor(() => screen.getByText("Print"));
-      await user.click(screen.getByText("Print"));
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("menuitem", { name: "Print" }));
       expect(printSpy).toHaveBeenCalledOnce();
       printSpy.mockRestore();
     });
 
     it("toolbar has print-hidden class", async () => {
       renderSharedSong();
-      await waitFor(() => screen.getByText("Print"));
-      const toolbar = screen.getByText("Print").closest(".print-hidden");
-      expect(toolbar).toBeInTheDocument();
+      await waitFor(() => screen.getByRole("toolbar", { name: /chart controls/i }));
+      expect(screen.getByRole("toolbar", { name: /chart controls/i })).toHaveClass("print-hidden");
     });
 
     it("song content area has print-sheet class", async () => {
@@ -225,11 +218,10 @@ describe("Print stylesheet feature", () => {
       expect(meta).toBeInTheDocument();
     });
 
-    it("footer has print-hidden class", async () => {
+    it("keeps the view-only label off paper", async () => {
       renderSharedSong();
-      await waitFor(() => screen.getByText(/powered by/i));
-      const footer = screen.getByText(/powered by/i);
-      expect(footer).toHaveClass("print-hidden");
+      await waitFor(() => screen.getByText("Shared · view only"));
+      expect(screen.getByText("Shared · view only")).toHaveClass("print-hidden");
     });
   });
 

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { AlertTriangle, Pause, Play, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
-import { songsApi } from "@/lib/api-client";
 import type { SongAudioTrack } from "@/lib/song-media";
 
 interface SongAudioBarProps {
-  songId: string;
+  /** Where a part plays from: the member media route, or a share link's. */
+  mediaHref: (directive: string) => string;
   tracks: SongAudioTrack[];
 }
 
@@ -34,7 +34,7 @@ function formatTime(seconds: number) {
  * chart as Bluetooth foot-pedal support (see hooks/useKeyboardShortcuts), and
  * binding Space to play/pause would break page turns mid-song.
  */
-export function SongAudioBar({ songId, tracks }: SongAudioBarProps) {
+export function SongAudioBar({ mediaHref, tracks }: SongAudioBarProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [active, setActive] = useState<string | null>(null);
   const [state, setStateValue] = useState<PlayState>("idle");
@@ -104,7 +104,7 @@ export function SongAudioBar({ songId, tracks }: SongAudioBarProps) {
     // nothing on an iPhone.
     generation.current += 1;
     el.pause();
-    el.src = songsApi.mediaHref(songId, track.directive);
+    el.src = mediaHref(track.directive);
     setActive(track.directive);
     setState("loading");
     setElapsed(0);

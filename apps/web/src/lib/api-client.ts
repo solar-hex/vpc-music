@@ -646,16 +646,33 @@ export interface BatchOrganizationShareResult {
   targetOrganizations?: number;
 }
 
+/** What a share link shows: the chart and its credits, and nothing else. */
+export interface SharedSong {
+  title: string;
+  artist: string | null;
+  year: string | null;
+  key: string | null;
+  tempo: number | null;
+  status: SongStatus | null;
+  content: string;
+}
+
 export const shareApi = {
-  /** Create a share link for a song */
-  create: (songId: string, data?: { label?: string; expiresInDays?: number }) =>
+  /** The song's share link: the one already out, or a new one when there is none. */
+  create: (songId: string, data?: { label?: string; expiresInDays?: number; fresh?: boolean }) =>
     request<{ shareToken: ShareToken; shareUrl: string }>(`/api/songs/${songId}/share`, {
       method: "POST",
       body: JSON.stringify(data ?? {}),
     }),
+  /** Turn off every link the song has. Sharing again makes a new one. */
+  stopSharing: (songId: string) =>
+    request<{ revoked: number }>(`/api/songs/${songId}/shares`, { method: "DELETE" }),
   /** Public: fetch a shared song by token (no auth needed) */
   getShared: (token: string) =>
-    request<{ song: Song; shared: true }>(`/api/shared/${token}`),
+    request<{ song: SharedSong; shared: true }>(`/api/shared/${encodeURIComponent(token)}`),
+  /** Public: where a shared song's practice audio or PDF plays from. */
+  mediaHref: (token: string, directiveKey: string) =>
+    buildApiUrl(`/api/shared/${encodeURIComponent(token)}/media/${encodeURIComponent(directiveKey)}`),
 };
 
 // ── Admin ────────────────────────────────────────

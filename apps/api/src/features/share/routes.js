@@ -2,10 +2,12 @@ import { Router } from "express";
 import { eq, and, inArray } from "drizzle-orm";
 import crypto from "node:crypto";
 import { db } from "../../db.js";
-import { organizationMembers, organizations, shareTeamMembers, shareTeams, shareTokens, songOrganizationShares, songTeamShares, songUserShares, songs, users, setlists, setlistSongs } from "../../schema/index.js";
+import { organizationMembers, organizations, shareTeamMembers, shareTeams, shareTokens, songOrganizationShares, songTeamShares, songUserShares, songs, songVariations, users, setlists, setlistSongs } from "../../schema/index.js";
 import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg, requireOrgRole } from "../../middlewares/orgContext.js";
+import { MEDIA_DIRECTIVE_KEY, redirectToSignedMedia } from "../songs/mediaRoutes.js";
+import { isObjectStoreConfigured } from "../../corpus/objectStore.js";
 
 export const shareRoutes = Router();
 
@@ -28,6 +30,85 @@ async function loadOrgSong(songId, organizationId) {
     .limit(1);
 
   return song || null;
+}
+
+/** A link that still opens: not turned off and not past its expiry. */
+function isActiveShare(share, now = new Date()) {
+  return Boolean(share) && !share.revoked && (!share.expiresAt || new Date(share.expiresAt) > now);
+}
+
+/**
+ * The share behind a public song token, or the error its holder should see.
+ */
+async function loadPublicSongShare(token) {
+  const [share] = await db.select().from(shareTokens).where(eq(shareTokens.token, String(token))).limit(1);
+  if (!share || !share.songId) throw createError(404, "Invalid or expired share link");
+  if (share.revoked) throw createError(410, "This share link has been turned off");
+  if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
+    throw createError(410, "This share link has expired");
+  }
+  return share;
+}
+
+/**
+ * The chart a share link shows: the song's curated default variation when it
+ * has one, exactly as a member sees it. A song moved to the trash stops being
+ * shared with it.
+ */
+async function loadSharedChart(share) {
+  const [song] = await db
+    .select({
+      title: songs.title,
+      artist: songs.artist,
+      year: songs.year,
+      key: songs.key,
+      tempo: songs.tempo,
+      status: songs.status,
+      content: songs.content,
+      deletedAt: songs.deletedAt,
+      defaultVariationId: songs.defaultVariationId,
+    })
+    .from(songs)
+    .where(eq(songs.id, share.songId))
+    .limit(1);
+  if (!song || song.deletedAt) throw createError(404, "Song no longer available");
+
+  let { content, key } = song;
+  if (song.defaultVariationId) {
+    const [variation] = await db
+      .select({ content: songVariations.content, key: songVariations.key })
+      .from(songVariations)
+      .where(eq(songVariations.id, song.defaultVariationId))
+      .limit(1);
+    if (variation) {
+      content = variation.content;
+      key = variation.key ?? key;
+    }
+  }
+  return { song, content: content || "", key };
+}
+
+/**
+ * The chart as someone outside the church may see it.
+ *
+ * A chart's directive block carries the church's own bookkeeping as `x_`
+ * directives, and one of them is a link into the shared Dropbox folder, which
+ * opens far more than this song. So every `x_` directive goes, except the
+ * practice audio and PDFs the page plays, and those keep only their names: the
+ * page plays them through the share token and never needs the storage address.
+ */
+export function publicChart(content) {
+  return String(content || "")
+    .split(/\r?\n/)
+    .flatMap((line) => {
+      const directive = line.match(/^\s*\{\s*(x_[a-z0-9_]+)\s*(?::\s*(.*?))?\s*\}\s*$/i);
+      if (!directive) return [line];
+      const key = directive[1].toLowerCase();
+      if (!MEDIA_DIRECTIVE_KEY.test(key)) return [];
+      // An empty entry stays empty, so it still draws no button.
+      return [directive[2] ? `{${key}: https://media.invalid/${key}}` : `{${key}:}`];
+    })
+    .join("\n");
 }
 
 async function loadShareTeam(teamId, organizationId) {
@@ -390,7 +471,10 @@ shareRoutes.patch(
   })
 );
 
-// ── POST /api/songs/:id/share — create a share link ─────────
+// ── POST /api/songs/:id/share — the song's share link ───────
+// One link per song. Asking again returns the link that is already out, so
+// pressing Share never scatters another permanent link, and Stop sharing has
+// a known set of links to turn off. `fresh: true` forces a new one.
 shareRoutes.post(
   "/songs/:id/share",
   auth,
@@ -398,18 +482,22 @@ shareRoutes.post(
   requireOrg,
   requireOrgRole("admin", "musician"),
   asyncHandler(async (req, res) => {
-    const songId = req.params.id;
-
-    // Verify song exists
-    const [song] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, songId))
-      .limit(1);
-
+    // In the caller's organization, not merely somewhere in the database.
+    const song = await loadOrgSong(req.params.id, req.org.id);
     if (!song) throw createError(404, "Song not found");
 
-    const { label, expiresInDays } = req.body;
+    const { label, expiresInDays, fresh } = req.body ?? {};
+
+    if (!fresh && !expiresInDays) {
+      const existing = await db.select().from(shareTokens).where(eq(shareTokens.songId, song.id));
+      const [active] = existing
+        .filter((share) => isActiveShare(share) && !share.expiresAt)
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      if (active) {
+        res.json({ shareToken: active, shareUrl: `/shared/${active.token}` });
+        return;
+      }
+    }
 
     const expiresAt = expiresInDays
       ? new Date(Date.now() + expiresInDays * 86400000)
@@ -421,7 +509,7 @@ shareRoutes.post(
       .insert(shareTokens)
       .values({
         token,
-        songId,
+        songId: song.id,
         createdBy: req.user.id,
         label: label || null,
         expiresAt,
@@ -432,6 +520,32 @@ shareRoutes.post(
       shareToken: created,
       shareUrl: `/shared/${token}`,
     });
+  })
+);
+
+// ── DELETE /api/songs/:id/shares — stop sharing the song ────
+// Turns off EVERY link the song has, including the ones the old "Copy share
+// link" made on each press, so stopping sharing really stops it.
+shareRoutes.delete(
+  "/songs/:id/shares",
+  auth,
+  orgContext,
+  requireOrg,
+  requireOrgRole("admin", "musician"),
+  asyncHandler(async (req, res) => {
+    const song = await loadOrgSong(req.params.id, req.org.id);
+    if (!song) throw createError(404, "Song not found");
+
+    const existing = await db
+      .select({ id: shareTokens.id, revoked: shareTokens.revoked })
+      .from(shareTokens)
+      .where(eq(shareTokens.songId, song.id));
+    const live = existing.filter((share) => !share.revoked).map((share) => share.id);
+    if (live.length > 0) {
+      await db.update(shareTokens).set({ revoked: true }).where(inArray(shareTokens.id, live));
+    }
+
+    res.json({ revoked: live.length });
   })
 );
 
@@ -793,6 +907,9 @@ shareRoutes.delete(
   asyncHandler(async (req, res) => {
     const { id: songId, tokenId } = req.params;
 
+    const song = await loadOrgSong(songId, req.org.id);
+    if (!song) throw createError(404, "Song not found");
+
     const [existing] = await db
       .select({ id: shareTokens.id })
       .from(shareTokens)
@@ -823,6 +940,9 @@ shareRoutes.patch(
     const { id: songId, tokenId } = req.params;
     const { label } = req.body;
 
+    const song = await loadOrgSong(songId, req.org.id);
+    if (!song) throw createError(404, "Song not found");
+
     const [existing] = await db
       .select({ id: shareTokens.id })
       .from(shareTokens)
@@ -848,41 +968,40 @@ shareRoutes.patch(
 shareRoutes.get(
   "/shared/:token",
   asyncHandler(async (req, res) => {
-    const token = req.params.token;
+    const share = await loadPublicSongShare(req.params.token);
+    const { song, content, key } = await loadSharedChart(share);
 
-    const [share] = await db
-      .select()
-      .from(shareTokens)
-      .where(eq(shareTokens.token, token))
-      .limit(1);
+    // A link can be turned off at any moment, so no copy may outlive it.
+    res.set("Cache-Control", "private, no-store");
+    // Only what the chart shows: no id, organization, tags or draft state.
+    res.json({
+      song: {
+        title: song.title,
+        artist: song.artist,
+        year: song.year,
+        key,
+        tempo: song.tempo,
+        status: song.status,
+        content: publicChart(content),
+      },
+      shared: true,
+    });
+  })
+);
 
-    if (!share || !share.songId) throw createError(404, "Invalid or expired share link");
-    if (share.revoked) throw createError(410, "This share link has been revoked");
-    if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
-      throw createError(410, "This share link has expired");
-    }
+// ── GET /api/shared/:token/media/:key — PUBLIC: that song's audio and PDFs ─
+// The same signing rules as a member's, with the token standing in for the
+// membership check: only this song's media, only from our bucket.
+shareRoutes.get(
+  "/shared/:token/media/:key",
+  asyncHandler(async (req, res) => {
+    const { token, key } = req.params;
+    if (!MEDIA_DIRECTIVE_KEY.test(key)) throw createError(400, "Not a media reference");
+    if (!isObjectStoreConfigured()) throw createError(503, "Media storage is not configured");
 
-    // Fetch the song — only fields safe for read-only view
-    const [song] = await db
-      .select({
-        id: songs.id,
-        title: songs.title,
-        aka: songs.aka,
-        category: songs.category,
-        key: songs.key,
-        tempo: songs.tempo,
-        artist: songs.artist,
-        shout: songs.shout,
-        content: songs.content,
-        tags: songs.tags,
-      })
-      .from(songs)
-      .where(eq(songs.id, share.songId))
-      .limit(1);
-
-    if (!song) throw createError(404, "Song no longer available");
-
-    res.json({ song, shared: true });
+    const share = await loadPublicSongShare(token);
+    const { content } = await loadSharedChart(share);
+    await redirectToSignedMedia(res, content, key);
   })
 );
 

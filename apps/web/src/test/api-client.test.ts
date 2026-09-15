@@ -539,6 +539,20 @@ describe("shareApi", () => {
     expect(options.method).toBe("POST");
   });
 
+  it("stopSharing — turns off every link the song has", async () => {
+    mockFetch.mockResolvedValue(jsonResponse({ revoked: 2 }));
+
+    await shareApi.stopSharing("s1");
+
+    const [url, options] = mockFetch.mock.calls[0];
+    expect(url).toContain("/api/songs/s1/shares");
+    expect(options.method).toBe("DELETE");
+  });
+
+  it("mediaHref — plays a shared song's media through its token", () => {
+    expect(shareApi.mediaHref("tok/1", "x_audio_alto")).toContain("/api/shared/tok%2F1/media/x_audio_alto");
+  });
+
   it("getShared — fetches public song by token", async () => {
     mockFetch.mockResolvedValue(jsonResponse({ song: { id: "s1" }, shared: true }));
 

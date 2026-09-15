@@ -4,9 +4,6 @@ import { SongAudioBar } from "@/components/songs/SongAudioBar";
 import type { SongAudioTrack } from "@/lib/song-media";
 
 vi.mock("sonner", () => ({ toast: { error: vi.fn(), success: vi.fn(), info: vi.fn() } }));
-vi.mock("@/lib/api-client", () => ({
-  songsApi: { mediaHref: (id: string, key: string) => `/api/songs/${id}/media/${key}` },
-}));
 
 const track = (directive: string, label: string, part: SongAudioTrack["part"] = "soprano"): SongAudioTrack => ({
   directive,
@@ -50,7 +47,7 @@ const chip = (name: RegExp | string) => screen.getByRole("button", { name });
 const fire = (type: string) => act(() => void fireEvent(audio(), new Event(type)));
 
 function renderBar(tracks = TRACKS) {
-  return render(<SongAudioBar songId="song-1" tracks={tracks} />);
+  return render(<SongAudioBar mediaHref={(key) => `/api/songs/song-1/media/${key}`} tracks={tracks} />);
 }
 
 describe("SongAudioBar", () => {
