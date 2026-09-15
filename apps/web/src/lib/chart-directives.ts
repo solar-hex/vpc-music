@@ -81,8 +81,10 @@ export const ADVANCED_SONG_FIELDS: AdvancedSongField[] = [
   { directive: "subtitle", label: "Subtitle" },
   { directive: "x_writers", label: "Songwriters", placeholder: "Separate names with commas" },
   { directive: "x_album", label: "Album" },
-  { directive: "time", label: "Time signature", placeholder: "4/4", suggestions: ["4/4", "3/4", "6/8", "12/8", "2/4", "5/4", "7/8"] },
-  { directive: "duration", label: "Length", placeholder: "4:05" },
-  { directive: "copyright", label: "Copyright", placeholder: "© 2021 Integrity Music" },
-  { directive: "ccli", label: "CCLI song number", placeholder: "7117726", inputMode: "numeric" },
+  // Placeholders describe the format, never a sample value: in the dark theme
+  // a realistic "4:05" reads as if the song already had a length.
+  { directive: "time", label: "Time signature", placeholder: "Pick or type, like 6/8", suggestions: ["4/4", "3/4", "6/8", "12/8", "2/4", "5/4", "7/8"] },
+  { directive: "duration", label: "Length", placeholder: "Minutes:seconds" },
+  { directive: "copyright", label: "Copyright", placeholder: "Year and publisher" },
+  { directive: "ccli", label: "CCLI song number", placeholder: "The number from SongSelect", inputMode: "numeric" },
 ];
