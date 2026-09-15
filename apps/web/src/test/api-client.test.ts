@@ -323,11 +323,11 @@ describe("songsApi", () => {
     mockFetch.mockResolvedValue({
       ok: false,
       status: 503,
-      json: () => Promise.resolve({ error: { message: "PDF.co API key not configured" } }),
+      json: () => Promise.resolve({ error: { message: "That PDF could not be read as a chord chart." } }),
     });
 
     const file = new File(["fake"], "test.pdf", { type: "application/pdf" });
-    await expect(songsApi.importPdf(file)).rejects.toThrow("PDF.co API key not configured");
+    await expect(songsApi.importPdf(file)).rejects.toThrow("That PDF could not be read as a chord chart.");
   });
 });
 
