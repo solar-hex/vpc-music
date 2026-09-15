@@ -8,6 +8,7 @@ import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ConnectivityProvider } from "./contexts/ConnectivityContext";
 import { PreferencesSync } from "./components/shared/PreferencesSync";
+import { OfflineLibrarySync } from "./components/shared/OfflineLibrarySync";
 import "./styles/index.css";
 
 // Register service worker — auto-update on new content
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
       <ConnectivityProvider>
         <ThemeProvider>
           <PreferencesSync />
+          <OfflineLibrarySync />
           <RouterProvider router={router} />
           <ThemedToaster />
         </ThemeProvider>

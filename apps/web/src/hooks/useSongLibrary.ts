@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { songsApi, type Song } from "@/lib/api-client";
 import { isOfflineRequestError } from "@/lib/offline-cache";
+import { syncOfflineLibrary } from "@/lib/offline-library";
 
 /**
  * The whole song library, fetched once and filtered on the device, the way
@@ -62,6 +63,8 @@ function fetchLibrary(): Promise<SongLibrarySnapshot> {
 export function invalidateSongLibrary() {
   memory = null;
   fetchLibrary().catch(() => {});
+  // A changed song is a changed chart: offline mode's copy follows (a no-op when it is off).
+  void syncOfflineLibrary();
 }
 
 /** Test helper: forget everything. */

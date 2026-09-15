@@ -56,6 +56,13 @@ vi.mock("@/contexts/ConnectivityContext", () => ({
   useConnectivity: () => ({ isOnline: true, pendingOfflineEditCount: 0, syncingOfflineEdits: false }),
 }));
 
+const mockGetOfflineSong = vi.fn();
+let mockOfflineEnabled = false;
+vi.mock("@/lib/offline-library", () => ({
+  getOfflineSong: (...args: any[]) => mockGetOfflineSong(...args),
+  isOfflineLibraryEnabled: () => mockOfflineEnabled,
+}));
+
 vi.mock("@/lib/offline-cache", () => ({
   loadCachedSong: (...args: any[]) => mockLoadCachedSong(...args),
   saveCachedSong: (...args: any[]) => mockSaveCachedSong(...args),
@@ -482,6 +489,36 @@ describe("SongChartPage", () => {
       mockLoadCachedSong.mockReturnValue({ response: { song: { ...song, title: "Cached Grace" }, variations: [] } });
       renderChart();
       await waitFor(() => expect(screen.getByRole("heading", { name: "Cached Grace" })).toBeInTheDocument());
+    });
+
+    it("opens offline mode's copy of a chart nobody opened on this device", async () => {
+      mockGet.mockRejectedValue(new Error("Failed to fetch"));
+      mockIsOfflineRequestError.mockReturnValue(true);
+      mockLoadCachedSong.mockReturnValue(null);
+      mockGetOfflineSong.mockResolvedValue({ song: { ...song, title: "Kept Offline" }, variations: [] });
+      renderChart();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Kept Offline" })).toBeInTheDocument());
+      expect(mockGetOfflineSong).toHaveBeenCalledWith("song-1");
+    });
+
+    it("prefers whichever saved copy is newer", async () => {
+      mockGet.mockRejectedValue(new Error("Failed to fetch"));
+      mockIsOfflineRequestError.mockReturnValue(true);
+      mockLoadCachedSong.mockReturnValue({ response: { song: { ...song, title: "Opened Last Week", updatedAt: "2026-09-01T00:00:00.000Z" }, variations: [] } });
+      mockGetOfflineSong.mockResolvedValue({ song: { ...song, title: "Synced Today", updatedAt: "2026-09-15T00:00:00.000Z" }, variations: [] });
+      renderChart();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Synced Today" })).toBeInTheDocument());
+    });
+
+    it("points to offline mode when a chart is not on the device", async () => {
+      mockGet.mockRejectedValue(new Error("Failed to fetch"));
+      mockIsOfflineRequestError.mockReturnValue(true);
+      mockLoadCachedSong.mockReturnValue(null);
+      mockGetOfflineSong.mockResolvedValue(null);
+      mockOfflineEnabled = false;
+      renderChart();
+      const { toast } = await import("sonner");
+      await waitFor(() => expect(toast.error).toHaveBeenCalledWith(expect.stringMatching(/Turn on Offline in Settings/)));
     });
 
     it("shows a not-found state with a way back", async () => {

@@ -5,6 +5,7 @@ import { CalendarPlus, Download, Edit, Share2, Trash2 } from "lucide-react";
 import { songsApi, songUsageApi, type Song, type SongVariation } from "@/lib/api-client";
 import { useAuth } from "@/contexts/AuthContext";
 import { isOfflineRequestError, loadCachedSong, saveCachedSong } from "@/lib/offline-cache";
+import { getOfflineSong, isOfflineLibraryEnabled } from "@/lib/offline-library";
 import { ChartView } from "@/components/songs/ChartView";
 import { LogPlayDialog } from "@/components/songs/LogPlayDialog";
 import { ShareSongDialog } from "@/components/songs/ShareSongDialog";
@@ -43,12 +44,25 @@ export function SongChartPage() {
         setVariations(res.variations || []);
         saveCachedSong(res);
       })
-      .catch((error) => {
-        const cached = loadCachedSong(id);
-        if (cached && isOfflineRequestError(error)) {
-          setSong(cached.response.song);
-          setVariations(cached.response.variations || []);
-          toast.info("Showing the cached chart while offline");
+      .catch(async (error) => {
+        if (isOfflineRequestError(error)) {
+          // The chart as last seen here, or offline mode's copy, whichever is newer.
+          const recent = loadCachedSong(id)?.response ?? null;
+          const kept = await getOfflineSong(id);
+          const newer = (a: typeof kept, b: typeof kept) =>
+            !a ? b : !b ? a : new Date(b.song.updatedAt ?? 0) > new Date(a.song.updatedAt ?? 0) ? b : a;
+          const cached = newer(recent, kept);
+          if (cached) {
+            setSong(cached.song);
+            setVariations(cached.variations || []);
+            toast.info("Showing the saved chart while offline");
+            return;
+          }
+          toast.error(
+            isOfflineLibraryEnabled()
+              ? "You're offline, and this chart isn't saved on this device yet."
+              : "You're offline, and this chart isn't saved on this device. Turn on Offline in Settings to keep every chart.",
+          );
           return;
         }
         toast.error("Song not found");

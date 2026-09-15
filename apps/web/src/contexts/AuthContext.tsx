@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
+import { clearOfflineLibrary } from "@/lib/offline-library";
 import { authApi, setActiveOrganizationId } from "@/lib/api-client";
 
 const ORG_STORAGE_KEY = "vpc-music-active-org-id";
@@ -95,6 +96,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = useCallback(async () => {
     await authApi.logout();
+    // The next person to sign in on this device should not find this person's charts.
+    void clearOfflineLibrary();
     setUser(null);
   }, [setUser]);
 

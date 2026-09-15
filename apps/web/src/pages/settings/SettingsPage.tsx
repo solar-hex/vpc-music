@@ -5,12 +5,14 @@ import { ProfileSection } from "./ProfileSection";
 import { AppearanceSection } from "./AppearanceSection";
 import { TeamSection } from "./TeamSection";
 import { DataSection } from "./DataSection";
+import { OfflineSection } from "./OfflineSection";
 import { AboutSection } from "./AboutSection";
 
 const SECTIONS = [
   { id: "profile", label: "Profile", Panel: ProfileSection },
   { id: "appearance", label: "Appearance", Panel: AppearanceSection },
   { id: "team", label: "Team", Panel: TeamSection, adminOnly: true },
+  { id: "offline", label: "Offline", Panel: OfflineSection },
   { id: "data", label: "Data", Panel: DataSection },
   { id: "about", label: "About", Panel: AboutSection },
 ] as const;

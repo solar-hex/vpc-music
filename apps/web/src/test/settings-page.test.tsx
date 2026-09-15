@@ -123,7 +123,7 @@ describe("SettingsPage", () => {
   describe("tabs", () => {
     it("offers a tab per section for an admin, and opens on Profile alone", () => {
       renderPage();
-      expect(screen.getAllByRole("tab").map((t) => t.textContent)).toEqual(["Profile", "Appearance", "Team", "Data", "About"]);
+      expect(screen.getAllByRole("tab").map((t) => t.textContent)).toEqual(["Profile", "Appearance", "Team", "Offline", "Data", "About"]);
       expect(tab("Profile")).toHaveAttribute("aria-selected", "true");
       expect(openSection()).toHaveAccessibleName("Profile");
       expect(screen.getByText(/Test Church · Worship Leader/)).toBeInTheDocument();

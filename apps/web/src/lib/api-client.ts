@@ -297,6 +297,14 @@ export const songsApi = {
    */
   requestUpload: (songId: string, data: { slot?: string; filename: string; size: number }) =>
     request<MediaUploadTicket>(`/api/songs/${songId}/media/uploads`, { method: "POST", body: JSON.stringify(data) }),
+  /**
+   * Every chart this person can open, for offline mode: all of them, or only
+   * those changed since `since`. `ids` always lists every song still there.
+   */
+  contents: (since?: string) =>
+    request<{ fetchedAt: string; ids: string[]; songs: { song: Song; variations: SongVariation[] }[] }>(
+      `/api/songs/contents${since ? `?since=${encodeURIComponent(since)}` : ""}`,
+    ),
   /** Pairs of songs whose words mostly match, most alike first. */
   duplicates: () => request<{ pairs: DuplicatePair[] }>("/api/songs/duplicates"),
   /** Keep `keepId` with this chart text; the other song is archived, pointing at it. */

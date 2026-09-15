@@ -38,6 +38,12 @@ export default defineConfig({
             handler: "NetworkOnly",
           },
           {
+            // Offline mode's full chart sync — never cache. It is already kept in
+            // IndexedDB, and each ?since= would be another megabytes-sized entry.
+            urlPattern: /^https?:\/\/.*\/api\/songs\/contents/,
+            handler: "NetworkOnly",
+          },
+          {
             // API data — network first, fallback to cache
             urlPattern: /^https?:\/\/.*\/api\/(songs|setlists|events|users|organizations)/,
             handler: "NetworkFirst",

@@ -122,6 +122,15 @@ describe("PWA / Offline Mode", () => {
       expect(networkOnly).toBeLessThan(apiData);
     });
 
+    it("never caches offline mode's chart sync, which IndexedDB already keeps", () => {
+      // Each ?since= would be another megabytes-sized entry in the api-data cache.
+      const contentsRule = viteConfig.indexOf(String.raw`\/api\/songs\/contents`);
+      const apiData = viteConfig.indexOf("api-data");
+      expect(contentsRule).toBeGreaterThan(-1);
+      expect(viteConfig.indexOf('"NetworkOnly"', contentsRule)).toBeGreaterThan(contentsRule);
+      expect(viteConfig.indexOf('"NetworkOnly"', contentsRule)).toBeLessThan(apiData);
+    });
+
     it("has navigateFallback configured", () => {
       expect(viteConfig).toContain("navigateFallback");
     });

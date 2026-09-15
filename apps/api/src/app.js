@@ -18,6 +18,7 @@ import { collaborationRoutes } from "./features/songs/collaborationRoutes.js";
 import { annotationRoutes } from "./features/songs/annotationRoutes.js";
 import { songMediaRoutes } from "./features/songs/mediaRoutes.js";
 import { songDuplicateRoutes } from "./features/songs/duplicateRoutes.js";
+import { songLibraryRoutes } from "./features/songs/libraryRoutes.js";
 import { orgRoutes } from "./features/organizations/routes.js";
 import { artistRoutes } from "./features/artists/routes.js";
 import { notificationRoutes } from "./features/notifications/routes.js";
@@ -70,6 +71,7 @@ app.use((req, _res, next) => {
 // ── Routes ───────────────────────────────────────
 app.use("/auth", authRoutes);
 app.use("/songs", songDuplicateRoutes);  // before songRoutes, whose /:id would take "duplicates"
+app.use("/songs", songLibraryRoutes);  // /songs/contents, before songRoutes for the same reason
 app.use("/songs", songRoutes);
 app.use("/songs", stickyNoteRoutes);  // /songs/:songId/notes
 app.use("/songs", collaborationRoutes);  // /songs/:songId/collaboration
