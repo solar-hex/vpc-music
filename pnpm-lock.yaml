@@ -71,6 +71,9 @@ importers:
       passport-google-oauth20:
         specifier: ^2.0.0
         version: 2.0.0
+      pdfjs-dist:
+        specifier: ^6.3.289
+        version: 6.3.289
       pg:
         specifier: ^8.13.1
         version: 8.20.0
@@ -90,9 +93,6 @@ importers:
       nodemon:
         specifier: ^3.1.9
         version: 3.1.14
-      pdfjs-dist:
-        specifier: ^6.3.289
-        version: 6.3.289
       pg-mem:
         specifier: ^3.0.14
         version: 3.0.14

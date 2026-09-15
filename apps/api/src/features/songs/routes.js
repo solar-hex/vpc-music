@@ -10,6 +10,7 @@ import multer from "multer";
 import JSZip from "jszip";
 import { convertPdfChartToChordPro } from "../../corpus/pdfSong.js";
 import { logActivity } from "../activity/service.js";
+import { logger } from "../../utils/logger.js";
 import { notifyOrgMembers } from "../notifications/service.js";
 
 export const songRoutes = Router();
@@ -1942,6 +1943,8 @@ async function readPdfChart(file) {
     if (error?.code === "NO_TEXT") {
       throw createError(422, "There is no text to read in that PDF. It may be a scan, or engraved sheet music.");
     }
+    // Say why in the log: "could not be read" hid a missing PDF library once.
+    logger.warn(`PDF import could not read ${file.originalname}: ${error?.message}`);
     throw createError(422, "That PDF could not be read as a chord chart.");
   }
   const chordPro = conversion.chordProContent;
