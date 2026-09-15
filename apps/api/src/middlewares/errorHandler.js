@@ -19,6 +19,11 @@ export function asyncHandler(fn) {
 
 // ── Central error handler (must be last middleware) ──
 export function errorHandler(err, _req, res, _next) {
+  // An upload over its size limit is the sender's problem, not a server fault.
+  if (err?.name === "MulterError" && err.code === "LIMIT_FILE_SIZE") {
+    err.status = 413;
+    err.message = "That file is too big to upload";
+  }
   const status =
     err.status || err.statusCode || (res.statusCode >= 400 ? res.statusCode : 500);
 

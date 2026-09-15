@@ -46,7 +46,7 @@ pnpm preflight       # typecheck + tests + shared drift check
 
 ### Environment variables
 
-API (`apps/api/.env.<env>`): `DATABASE_URL`, `PORT`, `NODE_ENV`, `JWT_SECRET`, `JWT_EXPIRES_IN` (default `180d`), `CORS_ORIGIN`, `FRONTEND_URL`, `PDF_CO_API_KEY` (PDF import), `MAILGUN_DOMAIN`, `MAILGUN_API_KEY`, `MAILGUN_API_BASE_URL`, `EMAIL_FROM`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL`.
+API (`apps/api/.env.<env>`): `DATABASE_URL`, `PORT`, `NODE_ENV`, `JWT_SECRET`, `JWT_EXPIRES_IN` (default `180d`), `CORS_ORIGIN`, `FRONTEND_URL`, `MAILGUN_DOMAIN`, `MAILGUN_API_KEY`, `MAILGUN_API_BASE_URL`, `EMAIL_FROM`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL`.
 
 Web: `VITE_API_URL` (empty for the dev proxy), `VITE_SANDBOX` (demo sign-in buttons), `VITE_VAPID_PUBLIC_KEY`, `VITE_LOG_VERBOSE`.
 

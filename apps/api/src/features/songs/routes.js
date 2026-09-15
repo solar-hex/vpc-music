@@ -6,10 +6,9 @@ import { createError, asyncHandler } from "../../middlewares/errorHandler.js";
 import { auth } from "../../middlewares/auth.js";
 import { orgContext, requireOrg, requireOrgRole, requirePermission } from "../../middlewares/orgContext.js";
 import { chordProToOnSong, chordProToPlainText, convertChrdToChordPro, onSongToChordPro, parseChordPro } from "@vpc-music/shared";
-import { env } from "../../config/env.js";
 import multer from "multer";
 import JSZip from "jszip";
-import { convertPdfToChordPro } from "./pdfToChordPro.js";
+import { convertPdfChartToChordPro } from "../../corpus/pdfSong.js";
 import { logActivity } from "../activity/service.js";
 import { notifyOrgMembers } from "../notifications/service.js";
 
@@ -23,7 +22,7 @@ const upload = multer({
     if (file.mimetype === "application/pdf") {
       cb(null, true);
     } else {
-      cb(new Error("Only PDF files are allowed"));
+      cb(createError(400, "Only PDF files are allowed"));
     }
   },
 });
@@ -278,6 +277,38 @@ async function loadSongById(songId) {
   return song || null;
 }
 
+const SONG_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * The song behind an id, if this person may act on it, or a 404 that says
+ * nothing about songs in other churches.
+ *
+ *   "write"  a song of the organization this request is for
+ *   "read"   also a global core-library song, a song of any church the person
+ *            belongs to (a download link cannot send the organization header),
+ *            or a song shared with them; never someone else's personal song
+ *
+ * The platform owner may act on any song.
+ */
+async function findSongFor(req, access, songId = req.params.id) {
+  if (!SONG_ID.test(String(songId ?? ""))) throw createError(404, "Song not found");
+  const song = await loadSongById(songId);
+  if (!song) throw createError(404, "Song not found");
+  if (req.user?.role === "owner") return song;
+
+  if (access === "write") {
+    if (req.org?.id && song.organizationId === req.org.id) return song;
+    throw createError(404, "Song not found");
+  }
+
+  if (song.tier === "global") return song;
+  const othersPersonal = song.tier === "personal" && song.createdBy !== req.user?.id;
+  const member = (req.orgs || []).some((org) => org.id === song.organizationId);
+  if (member && !othersPersonal) return song;
+  if (await loadSharedSongForUser(songId, req.user?.id, req.org?.id)) return song;
+  throw createError(404, "Song not found");
+}
+
 async function loadSharedSongForUser(songId, userId, organizationId) {
   if (!userId || typeof db.select !== "function") {
     return null;
@@ -399,7 +430,8 @@ function convertExportContent(target, format) {
   };
 }
 
-async function getSongExportTarget(songId, variationId) {
+async function getSongExportTarget(req, songId, variationId) {
+  await findSongFor(req, "read", songId);
   const [song] = await db
     .select({
       title: songs.title,
@@ -1585,15 +1617,7 @@ songRoutes.delete(
   requireOrg,
   requirePermission("songs:delete_permanent"),
   asyncHandler(async (req, res) => {
-    const [existing] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, req.params.id))
-      .limit(1);
-
-    if (!existing) {
-      throw createError(404, "Song not found");
-    }
+    await findSongFor(req, "write");
 
     await db
       .update(songs)
@@ -1619,6 +1643,7 @@ songRoutes.post(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "write");
     const [song] = await db
       .update(songs)
       .set({ deletedAt: null, updatedAt: new Date() })
@@ -1639,6 +1664,7 @@ songRoutes.post(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "write");
     const [song] = await db
       .update(songs)
       .set({ isArchived: true, archivedAt: new Date(), updatedAt: new Date() })
@@ -1659,6 +1685,7 @@ songRoutes.post(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "write");
     const [song] = await db
       .update(songs)
       .set({ isArchived: false, archivedAt: null, updatedAt: new Date() })
@@ -1687,6 +1714,7 @@ songRoutes.patch(
       throw createError(400, `status must be null or one of: ${SONG_STATUSES.join(", ")}`);
     }
 
+    await findSongFor(req, "write");
     const [song] = await db
       .update(songs)
       .set({ status, updatedAt: new Date() })
@@ -1706,13 +1734,7 @@ songRoutes.post(
   orgContext,
   requireOrg,
   asyncHandler(async (req, res) => {
-    const [song] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, req.params.id))
-      .limit(1);
-
-    if (!song) throw createError(404, "Song not found");
+    await findSongFor(req, "read");
 
     await db
       .insert(songFavorites)
@@ -1744,6 +1766,7 @@ songRoutes.get(
   auth,
   orgContext,
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "read");
     const rows = await db
       .select({
         id: setlists.id,
@@ -1768,16 +1791,9 @@ songRoutes.get(
 songRoutes.get(
   "/:id/history",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
-    const [song] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, req.params.id))
-      .limit(1);
-
-    if (!song) {
-      throw createError(404, "Song not found");
-    }
+    await findSongFor(req, "read");
 
     const history = await db
       .select()
@@ -1911,7 +1927,38 @@ songRoutes.post(
   })
 );
 
-// ── POST /api/songs/import/pdf — import from PDF via PDF.co ──
+// ── POST /api/songs/import/pdf — import a chord chart PDF ────
+/**
+ * A chart read out of an uploaded PDF, on this server, by the same converter
+ * that turned the publisher's PDFs into the library (columns, chords over
+ * lyrics, section names, the credit line). It used to go to PDF.co, which
+ * needed a key production never had, so every PDF import failed.
+ */
+async function readPdfChart(file) {
+  let conversion;
+  try {
+    conversion = await convertPdfChartToChordPro(file.originalname || "upload.pdf", file.buffer);
+  } catch (error) {
+    if (error?.code === "NO_TEXT") {
+      throw createError(422, "There is no text to read in that PDF. It may be a scan, or engraved sheet music.");
+    }
+    throw createError(422, "That PDF could not be read as a chord chart.");
+  }
+  const chordPro = conversion.chordProContent;
+  const fallbackTitle = file.originalname?.replace(/\.pdf$/i, "") || "Untitled (PDF Import)";
+  const parsed = parseImportedMetadata(chordPro, fallbackTitle);
+  return {
+    chordPro,
+    metadata: {
+      ...parsed,
+      title: conversion.metadata.title || parsed.title,
+      artist: conversion.metadata.artist || parsed.artist,
+      key: conversion.metadata.key || parsed.key,
+      tempo: conversion.metadata.tempo || parsed.tempo,
+    },
+  };
+}
+
 songRoutes.post(
   "/import/pdf/preview",
   auth,
@@ -1923,33 +1970,7 @@ songRoutes.post(
     if (!req.file) {
       throw createError(400, "A PDF file is required");
     }
-
-    if (!env.PDF_CO_API_KEY) {
-      throw createError(
-        503,
-        "PDF import is not available — PDF.co API key is not configured",
-      );
-    }
-
-    const { chordPro, metadata: extractedMetadata } = await convertPdfToChordPro(req.file.buffer);
-
-    if (!chordPro || !chordPro.trim()) {
-      throw createError(
-        422,
-        "Could not extract usable content from the PDF. It may be scanned or image-based.",
-      );
-    }
-
-    const fallbackTitle = extractedMetadata.title || req.file.originalname?.replace(/\.pdf$/i, "") || "Untitled (PDF Import)";
-    const metadata = {
-      ...parseImportedMetadata(chordPro, fallbackTitle),
-      title: extractedMetadata.title || parseImportedMetadata(chordPro, fallbackTitle).title,
-      artist: extractedMetadata.artist || parseImportedMetadata(chordPro, fallbackTitle).artist,
-      key: extractedMetadata.key || parseImportedMetadata(chordPro, fallbackTitle).key,
-      tempo: extractedMetadata.tempo || parseImportedMetadata(chordPro, fallbackTitle).tempo,
-    };
-
-    res.status(200).json({ chordPro, metadata });
+    res.status(200).json(await readPdfChart(req.file));
   })
 );
 
@@ -1964,27 +1985,8 @@ songRoutes.post(
     if (!req.file) {
       throw createError(400, "A PDF file is required");
     }
+    const { chordPro, metadata } = await readPdfChart(req.file);
 
-    if (!env.PDF_CO_API_KEY) {
-      throw createError(
-        503,
-        "PDF import is not available — PDF.co API key is not configured",
-      );
-    }
-
-    const pdfBuffer = req.file.buffer;
-
-    // Run the 8-step conversion pipeline
-    const { chordPro, metadata } = await convertPdfToChordPro(pdfBuffer);
-
-    if (!chordPro || !chordPro.trim()) {
-      throw createError(
-        422,
-        "Could not extract usable content from the PDF. It may be scanned or image-based.",
-      );
-    }
-
-    // Save to database
     const [song] = await db
       .insert(songs)
       .values({
@@ -2006,8 +2008,9 @@ songRoutes.post(
 songRoutes.get(
   "/:id/export/chordpro",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
-    const target = await getSongExportTarget(req.params.id, req.query.variationId);
+    const target = await getSongExportTarget(req, req.params.id, req.query.variationId);
 
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
     res.setHeader(
@@ -2022,8 +2025,9 @@ songRoutes.get(
 songRoutes.get(
   "/:id/export/onsong",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
-    const target = await getSongExportTarget(req.params.id, req.query.variationId);
+    const target = await getSongExportTarget(req, req.params.id, req.query.variationId);
 
     const onsongText = chordProToOnSong(target.content);
     const safeName = target.title.replace(/[^a-zA-Z0-9 ]/g, "");
@@ -2037,8 +2041,9 @@ songRoutes.get(
 songRoutes.get(
   "/:id/export/text",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
-    const target = await getSongExportTarget(req.params.id, req.query.variationId);
+    const target = await getSongExportTarget(req, req.params.id, req.query.variationId);
     const lyricsOnly = req.query.lyricsOnly === "true";
     const text = chordProToPlainText(target.content, { lyricsOnly });
     const safeName = target.title.replace(/[^a-zA-Z0-9 ]/g, "");
@@ -2056,8 +2061,9 @@ songRoutes.get(
 songRoutes.get(
   "/:id/export/pdf",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
-    const target = await getSongExportTarget(req.params.id, req.query.variationId);
+    const target = await getSongExportTarget(req, req.params.id, req.query.variationId);
 
     const doc = parseChordPro(target.content);
     const metaHtml = [
@@ -2136,14 +2142,7 @@ songRoutes.post(
 
     if (!usedAt) throw createError(400, "usedAt date is required (YYYY-MM-DD)");
 
-    // Verify song exists
-    const [song] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, req.params.id))
-      .limit(1);
-
-    if (!song) throw createError(404, "Song not found");
+    await findSongFor(req, "write");
 
     const [usage] = await db
       .insert(songUsages)
@@ -2164,7 +2163,9 @@ songRoutes.post(
 songRoutes.get(
   "/:id/usage",
   auth,
+  orgContext,
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "read");
     const usages = await db
       .select()
       .from(songUsages)
@@ -2183,6 +2184,7 @@ songRoutes.delete(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "write");
     const [existing] = await db
       .select({ id: songUsages.id })
       .from(songUsages)
@@ -2272,14 +2274,7 @@ songRoutes.post(
       throw createError(400, "Name and content are required");
     }
 
-    // Verify parent song exists
-    const [song] = await db
-      .select({ id: songs.id })
-      .from(songs)
-      .where(eq(songs.id, req.params.id))
-      .limit(1);
-
-    if (!song) throw createError(404, "Song not found");
+    await findSongFor(req, "write");
 
     const [variation] = await db
       .insert(songVariations)
@@ -2306,6 +2301,7 @@ songRoutes.put(
   asyncHandler(async (req, res) => {
     const { name, content, key } = req.body;
 
+    await findSongFor(req, "write");
     const [existing] = await db
       .select({ id: songVariations.id })
       .from(songVariations)
@@ -2342,6 +2338,7 @@ songRoutes.delete(
   requireOrg,
   requirePermission("songs:edit"),
   asyncHandler(async (req, res) => {
+    await findSongFor(req, "write");
     const [existing] = await db
       .select({ id: songVariations.id })
       .from(songVariations)

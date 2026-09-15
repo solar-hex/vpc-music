@@ -60,9 +60,6 @@ services:
         value: https://vpcmusic.life
       - key: FRONTEND_URL
         value: https://vpcmusic.life
-      - key: PDF_CO_API_KEY
-        type: SECRET
-        value: REPLACE_ME
 
 domains:
   - domain: api.vpcmusic.life

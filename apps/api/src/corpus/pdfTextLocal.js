@@ -1,14 +1,12 @@
 /**
  * Extract positioned text from a PDF, locally.
  *
- * Replaces step 1 of `features/songs/pdfToChordPro.js`, which uploads every
- * file to the paid PDF.co API. That is wrong for this corpus on three counts:
- * ~1,450 files of purchased church material would leave the machine, it costs
- * per call, and a batch job should not need the network.
+ * It replaced an earlier pipeline that uploaded every file to the paid PDF.co
+ * API. That was wrong on three counts: ~1,450 files of purchased church
+ * material would leave the machine, it cost per call, and a batch job should
+ * not need the network. The app's own PDF import now uses this too.
  *
- * Steps 2-7 of that pipeline are pure and local, so this returns the EXACT
- * element shape `detectColumns` already consumes and the rest is reused
- * unchanged.
+ * It returns the element shape `detectColumns` (corpus/pdfLayout.js) consumes.
  *
  * Hand-rolling this was tempting and would have been wrong: the charts use
  * subset TrueType and Type0/CIDFontType2 fonts with custom encodings, so the

@@ -2,12 +2,12 @@
  * Convert a chord-chart PDF into ChordPro.
  *
  * Extraction is local (`pdfTextLocal.js`); the page layout (header, columns,
- * lines) is `features/songs/pdfToChordPro.js`. This module reads what each line
+ * lines) is `corpus/pdfLayout.js`. This module reads what each line
  * of the chart MEANS — section, chords, bars, a performance note, a lyric — and
  * assembles the document.
  */
 import { basename } from "node:path";
-import { assembleLines, detectColumns } from "../features/songs/pdfToChordPro.js";
+import { assembleLines, detectColumns } from "./pdfLayout.js";
 import { isChordToken } from "@vpc-music/shared";
 import { normalizeCredits } from "./artists.js";
 import { charOffsets, coalesceRuns, extractPdfElements, readChartHeader, renderLine } from "./pdfTextLocal.js";

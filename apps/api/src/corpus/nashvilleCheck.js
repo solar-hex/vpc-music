@@ -12,7 +12,7 @@
  * is the key the chart is actually in.
  */
 import { nashvilleChordPro } from "@vpc-music/shared";
-import { assembleLines, detectColumns } from "../features/songs/pdfToChordPro.js";
+import { assembleLines, detectColumns } from "./pdfLayout.js";
 import { coalesceRuns } from "./pdfSong.js";
 import { extractPdfElements } from "./pdfTextLocal.js";
 

@@ -52,6 +52,12 @@ function tokenFor(globalRole = "member") {
   return jwt.sign({ id: `user-${globalRole}`, role: globalRole }, TEST_SECRET, { expiresIn: "1h" });
 }
 
+const SONG = "5a0c3f9e-1b2c-4d5e-8f60-718293a4b5c6";
+/** The song lookup every song route now makes: a song of the caller's church. */
+function ownSong(extra = {}) {
+  return createQueryChain([{ id: SONG, organizationId: "org-1", tier: "organization", createdBy: "someone", ...extra }]);
+}
+
 function membership(role) {
   return createQueryChain([{ id: "org-1", name: "Test Church", role }]);
 }
@@ -66,12 +72,12 @@ describe("Songs — status / archive / favorites", () => {
   });
 
   it("sets a song status as musician", async () => {
-    const updateChain = createUpdateChain([{ id: "song-1", status: "in_rehearsal" }]);
-    mockDb.select.mockImplementationOnce(() => membership("musician"));
+    const updateChain = createUpdateChain([{ id: SONG, status: "in_rehearsal" }]);
+    mockDb.select.mockImplementationOnce(() => membership("musician")).mockImplementationOnce(() => ownSong());
     mockDb.update.mockImplementationOnce(() => updateChain);
 
     const res = await request(app)
-      .patch("/api/songs/song-1/status")
+      .patch(`/api/songs/${SONG}/status`)
       .set("Cookie", `token=${tokenFor()}`)
       .send({ status: "in_rehearsal" });
 
@@ -80,12 +86,12 @@ describe("Songs — status / archive / favorites", () => {
   });
 
   it("clears a status with null", async () => {
-    const updateChain = createUpdateChain([{ id: "song-1", status: null }]);
-    mockDb.select.mockImplementationOnce(() => membership("admin"));
+    const updateChain = createUpdateChain([{ id: SONG, status: null }]);
+    mockDb.select.mockImplementationOnce(() => membership("admin")).mockImplementationOnce(() => ownSong());
     mockDb.update.mockImplementationOnce(() => updateChain);
 
     const res = await request(app)
-      .patch("/api/songs/song-1/status")
+      .patch(`/api/songs/${SONG}/status`)
       .set("Cookie", `token=${tokenFor()}`)
       .send({ status: null });
 
@@ -146,12 +152,12 @@ describe("Songs — status / archive / favorites", () => {
   });
 
   it("archives a song as musician", async () => {
-    const updateChain = createUpdateChain([{ id: "song-1", isArchived: true }]);
-    mockDb.select.mockImplementationOnce(() => membership("musician"));
+    const updateChain = createUpdateChain([{ id: SONG, isArchived: true }]);
+    mockDb.select.mockImplementationOnce(() => membership("musician")).mockImplementationOnce(() => ownSong());
     mockDb.update.mockImplementationOnce(() => updateChain);
 
     const res = await request(app)
-      .post("/api/songs/song-1/archive")
+      .post(`/api/songs/${SONG}/archive`)
       .set("Cookie", `token=${tokenFor()}`);
 
     expect(res.status).toBe(200);
@@ -161,7 +167,7 @@ describe("Songs — status / archive / favorites", () => {
   });
 
   it("lets observers favorite a song (personal action)", async () => {
-    const songChain = createQueryChain([{ id: "song-1" }]);
+    const songChain = ownSong();
     const insertChain = {
       values: vi.fn(() => insertChain),
       onConflictDoNothing: vi.fn(() => Promise.resolve()),
@@ -172,11 +178,11 @@ describe("Songs — status / archive / favorites", () => {
     mockDb.insert.mockImplementationOnce(() => insertChain);
 
     const res = await request(app)
-      .post("/api/songs/song-1/favorite")
+      .post(`/api/songs/${SONG}/favorite`)
       .set("Cookie", `token=${tokenFor()}`);
 
     expect(res.status).toBe(201);
-    expect(insertChain.values).toHaveBeenCalledWith({ songId: "song-1", userId: "user-member" });
+    expect(insertChain.values).toHaveBeenCalledWith({ songId: SONG, userId: "user-member" });
   });
 
   it("removes a favorite", async () => {
