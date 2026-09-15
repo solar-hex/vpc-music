@@ -15,7 +15,7 @@
  * the same reason the theme lexicon does: it is a judgement call that a person
  * should be able to correct without touching code.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -26,7 +26,9 @@ let cached = null;
 
 export function loadArtistTable(path = DEFAULT_TABLE) {
   if (cached && cached.path === path) return cached.data;
-  const data = JSON.parse(readFileSync(path, "utf8"));
+  // The API image carries no corpus: there, an import keeps credits as printed
+  // rather than failing, the way the other corpus ledgers read as empty.
+  const data = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : {};
   // Case-insensitive lookups, built once.
   data._aliases = new Map(Object.entries(data.aliases || {}).map(([k, v]) => [k.toLowerCase(), v]));
   // Keyed lowercase for lookup, but carrying the table's own spelling so a

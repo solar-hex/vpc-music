@@ -48,6 +48,13 @@ describe("normalizeArtist", () => {
     expect(normalizeArtist(null)).toBeNull();
   });
 
+  it("keeps a credit as printed where there is no table, as on the API server", () => {
+    // The API image carries no corpus; the in-app PDF import must still work.
+    const tablePath = "/nowhere/corpus/artists.json";
+    expect(normalizeArtist("IBC", { tablePath })).toBe("IBC");
+    expect(normalizeCredits({ artist: "Charity Gale", writers: "A, B" }, { tablePath }).artist).toBe("Charity Gale");
+  });
+
   it("ships a table whose aliases all resolve", () => {
     const t = loadArtistTable();
     for (const target of Object.values(t.aliases)) {
