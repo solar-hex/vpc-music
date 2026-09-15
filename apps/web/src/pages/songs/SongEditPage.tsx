@@ -409,7 +409,7 @@ export function SongEditPage() {
           </label>
           <label className="block text-sm">
             <span className="mb-1 block text-[hsl(var(--muted-foreground))]">Year</span>
-            <input value={year} onChange={(event) => setYear(event.target.value)} className="input w-full" aria-label="Year" placeholder="1779" />
+            <input value={year} onChange={(event) => setYear(event.target.value)} className="input w-full" aria-label="Year" placeholder="Year written" />
           </label>
           <label className="block text-sm">
             <span className="mb-1 block text-[hsl(var(--muted-foreground))]">Key</span>
