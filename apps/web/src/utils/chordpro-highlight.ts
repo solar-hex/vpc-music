@@ -19,8 +19,8 @@ export interface Token {
 
 /** Known ChordPro directives (beyond comment/c which are section headers) */
 const KNOWN_DIRECTIVES = new Set([
-  "title", "t", "subtitle", "st", "artist", "composer", "lyricist",
-  "album", "year", "key", "tempo", "time", "capo", "duration",
+  "title", "t", "sorttitle", "subtitle", "st", "artist", "composer", "lyricist",
+  "album", "year", "key", "tempo", "time", "capo", "duration", "copyright", "ccli",
   "comment", "c", "comment_italic", "ci", "comment_box", "cb",
   "start_of_chorus", "soc", "end_of_chorus", "eoc",
   "start_of_verse", "sov", "end_of_verse", "eov",

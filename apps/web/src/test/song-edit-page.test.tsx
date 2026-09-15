@@ -280,6 +280,82 @@ describe("SongEditPage", () => {
     });
   });
 
+  describe("advanced properties", () => {
+    const chart = ["{title: Amazing Grace}", "{time: 3/4}", "{x_album: Hymns}", "{x_aka: Amazing Grace (My Chains Are Gone)}", "", "[G]Amazing grace"].join("\n");
+    const openAdvanced = async () => {
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Edit Song" })).toBeInTheDocument());
+      fireEvent.click(screen.getByText("Advanced"));
+    };
+    const chordPro = () => screen.getByLabelText("ChordPro") as HTMLTextAreaElement;
+
+    beforeEach(() => {
+      mockGet.mockResolvedValue({ song: { ...existingSong, content: chart, aka: "Amazing Grace (My Chains Are Gone)" }, variations: [] });
+    });
+
+    it("sits folded under the tags, saying how many are set", async () => {
+      renderEdit();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Edit Song" })).toBeInTheDocument());
+      const section = screen.getByTestId("advanced-properties");
+      expect(section).not.toHaveAttribute("open");
+      expect(section).toHaveTextContent("3 set");
+    });
+
+    it("shows the properties the chart already carries", async () => {
+      renderEdit();
+      await openAdvanced();
+      expect(screen.getByLabelText("Time signature")).toHaveValue("3/4");
+      expect(screen.getByLabelText("Album")).toHaveValue("Hymns");
+      expect(screen.getByLabelText("Alternate titles")).toHaveValue("Amazing Grace (My Chains Are Gone)");
+      expect(screen.getByLabelText("Songwriters")).toHaveValue("");
+    });
+
+    it("writes a property into the chart, and the chart is what gets saved", async () => {
+      const user = userEvent.setup();
+      renderEdit();
+      await openAdvanced();
+      await user.type(screen.getByLabelText("Songwriters"), "John Newton");
+      expect(chordPro().value).toContain("{x_writers: John Newton}");
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalled());
+      expect(mockUpdate.mock.calls[0][1].content).toContain("{x_writers: John Newton}");
+    });
+
+    it("removes a property's line when the field is cleared", async () => {
+      const user = userEvent.setup();
+      renderEdit();
+      await openAdvanced();
+      await user.clear(screen.getByLabelText("Album"));
+      expect(chordPro().value).not.toContain("x_album");
+    });
+
+    it("fills the field when the line is typed into the chart", async () => {
+      renderEdit();
+      await openAdvanced();
+      fireEvent.change(chordPro(), { target: { value: `{ccli: 22025}\n${chart}` } });
+      expect(screen.getByLabelText("CCLI song number")).toHaveValue("22025");
+    });
+
+    it("keeps the song list's search in step with alternate titles", async () => {
+      const user = userEvent.setup();
+      renderEdit();
+      await openAdvanced();
+      await user.clear(screen.getByLabelText("Alternate titles"));
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalled());
+      expect(mockUpdate.mock.calls[0][1].aka).toBeNull();
+    });
+
+    it("leaves a song's search titles alone when it never had the line", async () => {
+      mockGet.mockResolvedValue({ song: existingSong, variations: [] });
+      const user = userEvent.setup();
+      renderEdit();
+      await waitFor(() => expect(screen.getByRole("heading", { name: "Edit Song" })).toBeInTheDocument());
+      await user.click(screen.getByRole("button", { name: "Update Song" }));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalled());
+      expect(mockUpdate.mock.calls[0][1]).not.toHaveProperty("aka");
+    });
+  });
+
   describe("existing song", () => {
     it("loads the song into the form and saves changes", async () => {
       const user = userEvent.setup();

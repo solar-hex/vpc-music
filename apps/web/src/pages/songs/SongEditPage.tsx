@@ -7,6 +7,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useConnectivity } from "@/contexts/ConnectivityContext";
 import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { TagInput } from "@/components/songs/TagInput";
+import { AdvancedSongProperties } from "@/components/songs/AdvancedSongProperties";
+import { hasDirective, readDirective } from "@/lib/chart-directives";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ResponsiveModal } from "@/components/ui/ResponsiveModal";
 import { invalidateSongLibrary } from "@/hooks/useSongLibrary";
@@ -227,6 +229,13 @@ export function SongEditPage() {
     // loader, so they are carried through untouched: writing back just what
     // the pills show would silently delete them.
     tags: formatTagField({ ...derivedTags, tags: splitPlainTags(tags) }) || undefined,
+    // Alternate titles live in the chart as {x_aka:}; the song list searches a
+    // column. Sent whenever the chart has the line or had it when the song was
+    // opened, so adding, changing and removing all reach search, and a song
+    // that never had one is left alone.
+    ...(hasDirective(content, "x_aka") || hasDirective(songRecord?.content ?? "", "x_aka")
+      ? { aka: readDirective(content, "x_aka").trim() || null }
+      : {}),
     content,
     isDraft,
   });
@@ -424,6 +433,7 @@ export function SongEditPage() {
               </p>
             )}
           </div>
+          <AdvancedSongProperties content={content} onChange={setContent} />
         </div>
 
         <label className="flex items-center gap-2 text-sm">

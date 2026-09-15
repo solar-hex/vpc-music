@@ -31,8 +31,8 @@ export interface ValidationIssue {
 
 /** Known directive names (same set as highlighter) */
 const KNOWN_DIRECTIVES = new Set([
-  "title", "t", "subtitle", "st", "artist", "composer", "lyricist",
-  "album", "year", "key", "tempo", "time", "capo", "duration",
+  "title", "t", "sorttitle", "subtitle", "st", "artist", "composer", "lyricist",
+  "album", "year", "key", "tempo", "time", "capo", "duration", "copyright", "ccli",
   "comment", "c", "comment_italic", "ci", "comment_box", "cb",
   "start_of_chorus", "soc", "end_of_chorus", "eoc",
   "start_of_verse", "sov", "end_of_verse", "eov",
@@ -82,8 +82,10 @@ export function validateChordPro(source: string): ValidationIssue[] {
       if (match) {
         const name = match[1];
 
-        // Unknown directive
-        if (!KNOWN_DIRECTIVES.has(name)) {
+        // Unknown directive. `x_` is ChordPro's prefix for custom directives,
+        // and every library chart carries some (audio, album, songwriters,
+        // themes), so those are never a mistake to warn about.
+        if (!KNOWN_DIRECTIVES.has(name) && !name.startsWith("x_")) {
           issues.push({
             line: lineNum,
             severity: "warning",

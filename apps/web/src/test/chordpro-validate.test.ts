@@ -60,6 +60,19 @@ describe("chordpro-validate", () => {
     expect(issues.some((issue) => issue.message.match(/Unknown directive/))).toBe(true);
   });
 
+  it("never warns on custom x_ directives or the song properties the editor writes", () => {
+    // Every library chart carries x_ directives; warning on them buried real problems.
+    const lines = [
+      "{x_album: Generations}",
+      "{x_writers: Mark Yandris}",
+      "{x_audio_soprano: https://example.com/soprano.mp3}",
+      "{copyright: © 2021 Integrity Music}",
+      "{ccli: 7117726}",
+      "{duration: 4:05}",
+    ];
+    expect(validateChordPro(lines.join("\n")).filter((issue) => issue.code === "unknown-directive")).toEqual([]);
+  });
+
   it("does not warn on known directives", () => {
     const knownLines = [
       "{title: Test}",
