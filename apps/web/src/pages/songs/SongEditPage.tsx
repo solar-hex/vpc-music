@@ -8,6 +8,7 @@ import { useConnectivity } from "@/contexts/ConnectivityContext";
 import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { TagInput } from "@/components/songs/TagInput";
 import { AdvancedSongProperties } from "@/components/songs/AdvancedSongProperties";
+import { SongFilesSection } from "@/components/songs/SongFilesSection";
 import { hasDirective, readDirective } from "@/lib/chart-directives";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ResponsiveModal } from "@/components/ui/ResponsiveModal";
@@ -434,6 +435,7 @@ export function SongEditPage() {
             )}
           </div>
           <AdvancedSongProperties content={content} onChange={setContent} />
+          <SongFilesSection songId={id ?? null} content={content} savedContent={songRecord?.content ?? ""} onContentChange={setContent} />
         </div>
 
         <label className="flex items-center gap-2 text-sm">

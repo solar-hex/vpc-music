@@ -342,6 +342,25 @@ describe("SongChartPage", () => {
       expect(openSpy).toHaveBeenCalledWith("/api/songs/song-1/media/x_chart_chord_chart", "_blank", "noopener");
     });
 
+    it("lists files attached in the editor, and calls a photo chart just a chart", async () => {
+      const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
+      const store = "https://s3.us-central-1.wasabisys.com/proj-vpcmusic/v1/prd/media/songs/x";
+      mockGet.mockResolvedValue({
+        song: { ...song, content: `${song.content}
+{x_chart_rhythm_chart: ${store}/charts/rhythm.jpg}
+{x_file_arrangement_notes: ${store}/files/notes.docx}` },
+        variations: [],
+      });
+      const user = userEvent.setup();
+      renderChart();
+      await waitFor(() => screen.getByRole("button", { name: /more actions/i }));
+      await user.click(screen.getByRole("button", { name: /more actions/i }));
+      const items = screen.getAllByRole("menuitem").map((i) => i.textContent);
+      expect(items).toContain("Rhythm chart");
+      await user.click(screen.getByRole("menuitem", { name: "Arrangement notes" }));
+      expect(openSpy).toHaveBeenCalledWith("/api/songs/song-1/media/x_file_arrangement_notes", "_blank", "noopener");
+    });
+
     it("links to the song's shared Dropbox folder as a resource, after the charts", async () => {
       const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
       mockGet.mockResolvedValue({ song: withMedia, variations: [] });

@@ -199,6 +199,41 @@ export interface DuplicateSongMatch {
   matchedOn: string[];
 }
 
+/** Where to send one file, and what to write into the chart once it is there. */
+export interface MediaUploadTicket {
+  uploadUrl: string;
+  method: "PUT";
+  headers: Record<string, string>;
+  url: string;
+  directive: string;
+  kind: "audio" | "chart" | "file";
+}
+
+/**
+ * Send a file to a signed upload link, reporting progress (0-1). XMLHttpRequest
+ * rather than fetch, because fetch cannot report how much of a body has gone.
+ */
+export function uploadFile(
+  ticket: Pick<MediaUploadTicket, "uploadUrl" | "method" | "headers">,
+  file: Blob,
+  onProgress?: (fraction: number) => void,
+  signal?: AbortSignal,
+): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(ticket.method, ticket.uploadUrl);
+    for (const [name, value] of Object.entries(ticket.headers)) xhr.setRequestHeader(name, value);
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable && onProgress) onProgress(event.loaded / event.total);
+    };
+    xhr.onload = () => (xhr.status >= 200 && xhr.status < 300 ? resolve() : reject(new Error(`Upload failed (${xhr.status})`)));
+    xhr.onerror = () => reject(new Error("The upload could not reach storage"));
+    xhr.onabort = () => reject(new Error("Upload cancelled"));
+    signal?.addEventListener("abort", () => xhr.abort());
+    xhr.send(file);
+  });
+}
+
 /** One side of a possible duplicate, as the duplicate review lists it. */
 export interface DuplicateCandidate {
   id: string;
@@ -255,6 +290,13 @@ export const songsApi = {
       method: "POST",
       body: JSON.stringify(data),
     }),
+  /**
+   * A signed link to upload one file for a song straight to storage. `slot`
+   * names a part the editor asks for (`alto`, `chord_chart`); leave it out for
+   * any other file. The returned `url` goes into the chart as `directive`.
+   */
+  requestUpload: (songId: string, data: { slot?: string; filename: string; size: number }) =>
+    request<MediaUploadTicket>(`/api/songs/${songId}/media/uploads`, { method: "POST", body: JSON.stringify(data) }),
   /** Pairs of songs whose words mostly match, most alike first. */
   duplicates: () => request<{ pairs: DuplicatePair[] }>("/api/songs/duplicates"),
   /** Keep `keepId` with this chart text; the other song is archived, pointing at it. */

@@ -134,8 +134,8 @@ describe("songMedia", () => {
   });
 
   it("returns nothing for a song with no media", () => {
-    expect(songMedia({ title: "Plain" })).toEqual({ audio: [], charts: [], dropboxUrl: null });
-    expect(songMedia(undefined)).toEqual({ audio: [], charts: [], dropboxUrl: null });
+    expect(songMedia({ title: "Plain" })).toEqual({ audio: [], charts: [], files: [], dropboxUrl: null });
+    expect(songMedia(undefined)).toEqual({ audio: [], charts: [], files: [], dropboxUrl: null });
   });
 
   it("lists one chart per kind, chords first", () => {
@@ -151,6 +151,15 @@ describe("songMedia", () => {
       ["Number chart", "x_chart_number_chart"],
       ["Vocals", "x_chart_vocals"],
       ["Easy-read vocals", "x_chart_erv"],
+    ]);
+  });
+
+  it("lists every other file on its own, by name", () => {
+    const media = songMedia({ x_file_rehearsal_video: URL, x_file_arrangement_notes: URL, x_file_arrangement_notes_2: URL, x_file_empty: "" });
+    expect(media.files).toEqual([
+      { directive: "x_file_arrangement_notes", label: "Arrangement notes" },
+      { directive: "x_file_arrangement_notes_2", label: "Arrangement notes 2" },
+      { directive: "x_file_rehearsal_video", label: "Rehearsal video" },
     ]);
   });
 

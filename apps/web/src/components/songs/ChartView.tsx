@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
-import { FileText, FolderOpen, Printer } from "lucide-react";
+import { FileText, FolderOpen, Printer, Paperclip } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { pageWidthClass } from "@/lib/page-width";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
@@ -143,13 +143,23 @@ export function ChartView({
     // Resources: the publisher's original charts, and (for members) the shared
     // Dropbox folder the song came from. In the menu rather than the audio bar
     // because they open outside the app and are an occasional reference.
-    ...(media.charts.length > 0 || dropboxUrl
+    ...(media.charts.length > 0 || media.files.length > 0 || dropboxUrl
       ? ([
           "separator",
           ...media.charts.map(
             (doc): ActionMenuEntry => ({
-              label: `${doc.label} (PDF)`,
+              // An uploaded chart can be a photo, which is not a PDF. A share link
+              // hides the file's address, and its charts are the publisher's PDFs.
+              label: /\.(png|jpe?g|webp)($|[?#])/i.test(String(parsedChart.directives?.[doc.directive] ?? "")) ? doc.label : `${doc.label} (PDF)`,
               icon: <FileText />,
+              onSelect: () => window.open(mediaHref(doc.directive), "_blank", "noopener"),
+            }),
+          ),
+          // Anything else someone attached to the song in the editor.
+          ...media.files.map(
+            (doc): ActionMenuEntry => ({
+              label: doc.label,
+              icon: <Paperclip />,
               onSelect: () => window.open(mediaHref(doc.directive), "_blank", "noopener"),
             }),
           ),

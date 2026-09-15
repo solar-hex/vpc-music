@@ -41,6 +41,12 @@ export interface SongAudioTrack {
   alternate: boolean;
 }
 
+/** A file's name from its key: `x_file_arrangement_notes_2` → "Arrangement notes 2". */
+export function fileLabel(directiveKey: string): string {
+  const name = directiveKey.replace(/^x_file_/, "").replace(/_/g, " ").trim();
+  return name ? name.charAt(0).toUpperCase() + name.slice(1) : "File";
+}
+
 /** An instrument stem's name from its key: `x_audio_stem_lead_vocal` → "Lead vocal". */
 function stemName(directiveKey: string): string {
   const name = directiveKey.replace(/^x_audio_stem_/, "").replace(/_/g, " ").trim();
@@ -53,9 +59,16 @@ export interface SongChartDoc {
   label: string;
 }
 
+/** Anything else attached to a song: `{x_file_arrangement_notes: …}`. */
+export interface SongFileDoc {
+  directive: string;
+  label: string;
+}
+
 export interface SongMedia {
   audio: SongAudioTrack[];
   charts: SongChartDoc[];
+  files: SongFileDoc[];
   /** `{x_dropbox: …}` — the shared folder the originals came from. */
   dropboxUrl: string | null;
 }
@@ -173,6 +186,7 @@ export function songMedia(directives: Record<string, string> | undefined | null)
 
   const audioByPart = new Map<AudioPartId, string[]>();
   const chartByPart = new Map<ChartPartId, string[]>();
+  const files: SongFileDoc[] = [];
 
   for (const [key, value] of entries) {
     if (!isUrl(value)) continue;
@@ -182,6 +196,8 @@ export function songMedia(directives: Record<string, string> | undefined | null)
     } else if (key.startsWith("x_chart_")) {
       const part = chartPartOf(key);
       chartByPart.set(part, [...(chartByPart.get(part) || []), key]);
+    } else if (key.startsWith("x_file_")) {
+      files.push({ directive: key, label: fileLabel(key) });
     }
   }
 
@@ -223,5 +239,6 @@ export function songMedia(directives: Record<string, string> | undefined | null)
   }
 
   const dropbox = directives?.x_dropbox;
-  return { audio, charts, dropboxUrl: isUrl(dropbox) ? dropbox.trim() : null };
+  files.sort((a, b) => a.label.localeCompare(b.label) || a.directive.localeCompare(b.directive));
+  return { audio, charts, files, dropboxUrl: isUrl(dropbox) ? dropbox.trim() : null };
 }
