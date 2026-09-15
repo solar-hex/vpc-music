@@ -9,6 +9,7 @@ import { ChordProEditor } from "@/components/songs/ChordProEditor";
 import { TagInput } from "@/components/songs/TagInput";
 import { AdvancedSongProperties } from "@/components/songs/AdvancedSongProperties";
 import { SongFilesSection } from "@/components/songs/SongFilesSection";
+import { TapTempoPad } from "@/components/songs/TapTempoPad";
 import { hasDirective, readDirective } from "@/lib/chart-directives";
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog";
 import { ResponsiveModal } from "@/components/ui/ResponsiveModal";
@@ -421,10 +422,13 @@ export function SongEditPage() {
               ))}
             </select>
           </label>
-          <label className="block text-sm">
-            <span className="mb-1 block text-[hsl(var(--muted-foreground))]">Tempo (BPM)</span>
-            <input type="number" min={20} max={300} value={tempo} onChange={(event) => setTempo(event.target.value)} className="input w-full" aria-label="Tempo" />
-          </label>
+          <div className="text-sm">
+            <label htmlFor="song-tempo" className="mb-1 block text-[hsl(var(--muted-foreground))]">Tempo (BPM)</label>
+            <div className="flex flex-wrap items-center gap-2">
+              <input id="song-tempo" type="number" min={20} max={300} value={tempo} onChange={(event) => setTempo(event.target.value)} className="input w-24" aria-label="Tempo" />
+              <TapTempoPad onTempo={(bpm) => setTempo(String(bpm))} />
+            </div>
+          </div>
           <div className="text-sm sm:col-span-2">
             <span className="mb-1 block text-[hsl(var(--muted-foreground))]">Tags</span>
             <TagInput value={tags} onChange={setTags} />

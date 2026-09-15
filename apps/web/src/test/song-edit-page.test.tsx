@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, createEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { SongEditPage } from "@/pages/songs/SongEditPage";
@@ -187,6 +187,18 @@ describe("SongEditPage", () => {
       expect(screen.getByRole("link", { name: "Cancel" })).toHaveAttribute("href", "/songs");
       // trimmed fields are gone
       expect(screen.queryByLabelText(/category|energy|aka|shout/i)).not.toBeInTheDocument();
+    });
+
+    it("fills the tempo from taps on the pad beside it", async () => {
+      renderNew();
+      await screen.findByRole("heading", { name: "New Song" });
+      const pad = screen.getByRole("button", { name: "Tap tempo" });
+      for (const time of [1000, 1500, 2000, 2500]) {
+        const event = createEvent.pointerDown(pad);
+        Object.defineProperty(event, "timeStamp", { value: time });
+        fireEvent(pad, event);
+      }
+      expect(screen.getByLabelText("Tempo")).toHaveValue(120);
     });
 
     it("requires a title", async () => {
