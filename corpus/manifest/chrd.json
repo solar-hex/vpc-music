@@ -3010,7 +3010,7 @@
       "songId": "431313ae-402c-56f3-bfa9-d8caab2967df",
       "title": "Lift Up the Name of Jesus",
       "file": "songs/chrd/lift-up-the-name-of-jesus--431313ae.chopro",
-      "contentSha256": "0c4d7ac3ad0a3c11a963521c628c29b9f8172db8f1ffce8d87a6bbb881390876",
+      "contentSha256": "877783542b830465543836a993ab15d7284ee739989c6542d355056b3abfbe72",
       "metadata": {
         "key": "Bb",
         "artist": null,
@@ -3033,16 +3033,18 @@
         }
       ],
       "confidence": {
-        "score": 0.6,
-        "band": "medium",
+        "score": 0.58,
+        "band": "low",
         "reasons": [
-          "4 block(s) kept as plain text"
+          "4 block(s) kept as plain text",
+          "1 other converter warning(s)"
         ]
       },
       "warnings": [
+        "Replaced 4 mis-decoded apostrophe(s)",
         "Block without line prefixes kept as plain text: \"Bbm                  Ab  Eb/G       B...\"",
         "Block without line prefixes kept as plain text: \"If your situation has pressed you to ...\"",
-        "Block without line prefixes kept as plain text: \"Trust God to deliver, HeÕll answer ev...\"",
+        "Block without line prefixes kept as plain text: \"Trust God to deliver, He'll answer ev...\"",
         "Block without line prefixes kept as plain text: \"Comeon and lift him up...\""
       ],
       "decision": "song"
@@ -7326,7 +7328,7 @@
       "songId": "9a8b448a-4fe6-5d62-bc76-3cb89ac07b9b",
       "title": "Eyes On Me",
       "file": "songs/chrd/eyes-on-me--9a8b448a.chopro",
-      "contentSha256": "ffca5be769d3bfb5e4a1b3d2eccb2c8d26ed6bc0152e00ad8afdcaa059809f9c",
+      "contentSha256": "9fcf87155df046e66d1deae2812d055cc4d5791bc7e94d13b63f6ad36e83765c",
       "metadata": {
         "key": "C",
         "artist": null,
@@ -7344,16 +7346,11 @@
         }
       ],
       "confidence": {
-        "score": 0.6,
-        "band": "medium",
-        "reasons": [
-          "2 block(s) kept as plain text"
-        ]
+        "score": 1,
+        "band": "high",
+        "reasons": []
       },
-      "warnings": [
-        "Unprefixed line kept as plain text: \"[G]     [C]\"",
-        "Unprefixed line kept as plain text: \"[G]     [C]\""
-      ],
+      "warnings": [],
       "decision": "song"
     },
     {
@@ -10100,7 +10097,7 @@
       "songId": "cace7122-f477-5262-ab91-77b29659f90f",
       "title": "What A Beautiful Name",
       "file": "songs/chrd/what-a-beautiful-name--cace7122.chopro",
-      "contentSha256": "5b3a646e7cc75174e81e04db5e608886aebd53a3ad5cfa5ea5295b8213db332c",
+      "contentSha256": "f85723db85e6f6b9fb673c0f10b117c88110327680fe828bc4e4a08dc4897345",
       "metadata": {
         "key": "D",
         "artist": null,

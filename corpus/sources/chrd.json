@@ -567,12 +567,9 @@
       "type": "chrd",
       "decision": "song",
       "songId": "9a8b448a-4fe6-5d62-bc76-3cb89ac07b9b",
-      "confidence": 0.6,
-      "band": "medium",
-      "warnings": [
-        "Unprefixed line kept as plain text: \"[G]     [C]\"",
-        "Unprefixed line kept as plain text: \"[G]     [C]\""
-      ],
+      "confidence": 1,
+      "band": "high",
+      "warnings": [],
       "firstSeen": "2026-09-12",
       "missingSince": null
     },
@@ -3961,12 +3958,13 @@
       "type": "chrd",
       "decision": "song",
       "songId": "431313ae-402c-56f3-bfa9-d8caab2967df",
-      "confidence": 0.6,
-      "band": "medium",
+      "confidence": 0.58,
+      "band": "low",
       "warnings": [
+        "Replaced 4 mis-decoded apostrophe(s)",
         "Block without line prefixes kept as plain text: \"Bbm                  Ab  Eb/G       B...\"",
         "Block without line prefixes kept as plain text: \"If your situation has pressed you to ...\"",
-        "Block without line prefixes kept as plain text: \"Trust God to deliver, HeÕll answer ev...\"",
+        "Block without line prefixes kept as plain text: \"Trust God to deliver, He'll answer ev...\"",
         "Block without line prefixes kept as plain text: \"Comeon and lift him up...\""
       ],
       "firstSeen": "2026-09-12",

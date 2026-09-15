@@ -129,6 +129,36 @@ describe("convertChrdToChordPro — real library conventions", () => {
     expect(normalizeLegacyText("don’t “stop”", warnings)).toBe("don't \"stop\"");
     expect(warnings).toHaveLength(1);
   });
+
+  it("repairs a Mac apostrophe read as Latin-1, and leaves a real Õ alone", () => {
+    const warnings = [];
+    expect(normalizeLegacyText("If youÕve got a mountain, Õ", warnings)).toBe("If you've got a mountain, Õ");
+    expect(warnings).toEqual(["Replaced 1 mis-decoded apostrophe(s)"]);
+  });
+
+  it("reads a chord row typed without its # over a lyric typed without its @", () => {
+    // "Lift Up the Name of Jesus" and "What A Beautiful Name" type a few rows
+    // with no prefixes; kept as plain text, those chords never transposed.
+    const input = [
+      "Title", "Bb", "", "Verse 1",
+      "#[Bbm]",
+      "@ Lift up the name",
+      "Bbm         Ab  Eb/G",
+      "If you've got a mountain",
+      "F     C      G",
+      "",
+    ].join("\n");
+    const lines = convertChrdToChordPro("t.chrd", input).chordProContent.split("\n");
+
+    expect(lines).toContain("[Bbm]If you've go[Ab]t a [Eb/G]mountain");
+    expect(lines).toContain(`[F]${" ".repeat(6)}[C]${" ".repeat(7)}[G]`);
+    expect(transposeChordPro("[Bbm]If you've go[Ab]t a [Eb/G]mountain", 2)).toContain("[Cm]");
+  });
+
+  it("leaves an unprefixed lyric that is not under a chord row as text", () => {
+    const input = ["Title", "G", "", "Verse", "#[G]", "@ Sing", "A new song"].join("\n");
+    expect(convertChrdToChordPro("t.chrd", input).chordProContent.split("\n")).toContain("A new song");
+  });
 });
 
 describe("ChordPro note lines and secondary tokens", () => {

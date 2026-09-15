@@ -95,6 +95,13 @@ export function normalizeLegacyText(input, warnings = []) {
     warnings.push(`Replaced ${typographic.length} typographic quote(s)/dash(es) with ASCII`);
   }
 
+  // A Mac apostrophe read as Latin-1 arrives as "Õ": "youÕve", "canÕt".
+  const macApostrophes = text.match(/(?<=[A-Za-z])Õ(?=[a-z])/g);
+  if (macApostrophes) {
+    text = text.replace(/(?<=[A-Za-z])Õ(?=[a-z])/g, "'");
+    warnings.push(`Replaced ${macApostrophes.length} mis-decoded apostrophe(s)`);
+  }
+
   return text;
 }
 
@@ -178,6 +185,12 @@ function tokenizeChordLine(body) {
   return tokens;
 }
 
+/** A line with no prefix whose every token is a chord. */
+function isUnprefixedChordRow(line) {
+  const tokens = tokenizeChordLine(String(line || ""));
+  return tokens.length > 0 && tokens.every((token) => token.raw !== "|" && isChordLike(token.raw));
+}
+
 /** Insert bracket tokens into a lyric at their columns (earlier columns first, lower rank first on ties). */
 function insertTokens(lyric, tokens) {
   const sorted = [...tokens].sort((a, b) => a.col - b.col || a.rank - b.rank);
@@ -228,6 +241,23 @@ function flushBlock(blockLines, out, warnings) {
 
     if (!isPrefixedLine(rawLine)) {
       flushPending();
+      /*
+       * A chord row typed without its `#`, over a lyric typed without its `@`
+       * ("Bbm        Ab  Eb/G" above "If you've got a mountain"). Read as the
+       * pair it is, so the chords transpose; a row with no lyric under it is
+       * a chord-only line.
+       */
+      if (isUnprefixedChordRow(rawLine)) {
+        const tokens = tokenizeChordLine(rawLine).map((token, n) => ({ col: token.col, rank: 1000 + n, text: `[${token.raw}]` }));
+        const next = blockLines[index];
+        if (next !== undefined && next.trim() && !isPrefixedLine(next) && !isUnprefixedChordRow(next)) {
+          out.push(insertTokens(next, tokens).trim());
+          index += 1;
+        } else {
+          out.push(insertTokens(" ".repeat(Math.max(...tokens.map((token) => token.col))), tokens).trim());
+        }
+        continue;
+      }
       out.push(trimmed);
       if (hasPrefixed) warnings.push(`Unprefixed line kept as plain text: "${truncate(trimmed)}"`);
       continue;
